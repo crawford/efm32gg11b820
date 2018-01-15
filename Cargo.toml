@@ -1,0 +1,17 @@
+[package]
+name = "efm32gg11b820"
+description = "Peripheral access API for EFM32GG11B820 microcontrollers"
+version = "0.1.0"
+authors = ["Alex Crawford <efm32gg11b820@accounts.acrawford.com>"]
+keywords = ["no-std", "arm", "cortex-m", "efm"]
+license = "Apache-2.0"
+repository = "https://github.com/crawford/efm32gg11b820"
+
+[dependencies]
+bare-metal = { version = "^0.1.1" }
+cortex-m = { version = "^0.3.1" }
+cortex-m-rt = { version = "^0.3.9", optional = true }
+vcell = { version = "^0.1.0" }
+
+[features]
+rt = ["cortex-m-rt"]
