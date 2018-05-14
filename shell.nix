@@ -5,6 +5,6 @@ with import <nixpkgs> {
 stdenv.mkDerivation {
   name = "efm32gg11b820";
   buildInputs = [
-    rustChannels.nightly.rust
+    rustChannels.stable.rust
   ];
 }
