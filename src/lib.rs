@@ -1,32 +1,430 @@
-#![cfg_attr(feature = "rt", feature(global_asm))]
-#![cfg_attr(feature = "rt", feature(macro_reexport))]
-#![cfg_attr(feature = "rt", feature(used))]
-#![doc = "Peripheral access API for EFM32GG11B820F2048GL192 microcontrollers (generated using svd2rust v0.12.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.12.0/svd2rust/#peripheral-api"]
-#![allow(private_no_mangle_statics)]
+#![doc = "Peripheral access API for EFM32GG11B820F2048GL192 microcontrollers (generated using svd2rust v0.13.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.13.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
 #![deny(warnings)]
 #![allow(non_camel_case_types)]
-#![feature(const_fn)]
 #![no_std]
 extern crate bare_metal;
 extern crate cortex_m;
-#[macro_reexport(default_handler, exception)]
 #[cfg(feature = "rt")]
 extern crate cortex_m_rt;
 extern crate vcell;
-use core::ops::Deref;
 use core::marker::PhantomData;
-pub use interrupt::Interrupt;
+use core::ops::Deref;
+#[cfg(feature = "rt")]
+extern "C" {
+    fn EMU();
+    fn WDOG0();
+    fn LDMA();
+    fn GPIO_EVEN();
+    fn SMU();
+    fn TIMER0();
+    fn USART0_RX();
+    fn USART0_TX();
+    fn ACMP0();
+    fn ADC0();
+    fn IDAC0();
+    fn I2C0();
+    fn I2C1();
+    fn GPIO_ODD();
+    fn TIMER1();
+    fn TIMER2();
+    fn TIMER3();
+    fn USART1_RX();
+    fn USART1_TX();
+    fn USART2_RX();
+    fn USART2_TX();
+    fn UART0_RX();
+    fn UART0_TX();
+    fn UART1_RX();
+    fn UART1_TX();
+    fn LEUART0();
+    fn LEUART1();
+    fn LETIMER0();
+    fn PCNT0();
+    fn PCNT1();
+    fn PCNT2();
+    fn RTCC();
+    fn CMU();
+    fn MSC();
+    fn CRYPTO0();
+    fn CRYOTIMER();
+    fn FPUEH();
+    fn USART3_RX();
+    fn USART3_TX();
+    fn USART4_RX();
+    fn USART4_TX();
+    fn WTIMER0();
+    fn WTIMER1();
+    fn WTIMER2();
+    fn WTIMER3();
+    fn I2C2();
+    fn VDAC0();
+    fn TIMER4();
+    fn TIMER5();
+    fn TIMER6();
+    fn USART5_RX();
+    fn USART5_TX();
+    fn CSEN();
+    fn LESENSE();
+    fn EBI();
+    fn ACMP2();
+    fn ADC1();
+    fn LCD();
+    fn SDIO();
+    fn ETH();
+    fn CAN0();
+    fn CAN1();
+    fn USB();
+    fn RTC();
+    fn WDOG1();
+    fn LETIMER1();
+    fn TRNG0();
+    fn QSPI0();
+}
+#[doc(hidden)]
+pub union Vector {
+    _handler: unsafe extern "C" fn(),
+    _reserved: u32,
+}
+#[cfg(feature = "rt")]
+#[doc(hidden)]
+#[link_section = ".vector_table.interrupts"]
+#[no_mangle]
+pub static __INTERRUPTS: [Vector; 68] = [
+    Vector { _handler: EMU },
+    Vector { _handler: WDOG0 },
+    Vector { _handler: LDMA },
+    Vector { _handler: GPIO_EVEN },
+    Vector { _handler: SMU },
+    Vector { _handler: TIMER0 },
+    Vector { _handler: USART0_RX },
+    Vector { _handler: USART0_TX },
+    Vector { _handler: ACMP0 },
+    Vector { _handler: ADC0 },
+    Vector { _handler: IDAC0 },
+    Vector { _handler: I2C0 },
+    Vector { _handler: I2C1 },
+    Vector { _handler: GPIO_ODD },
+    Vector { _handler: TIMER1 },
+    Vector { _handler: TIMER2 },
+    Vector { _handler: TIMER3 },
+    Vector { _handler: USART1_RX },
+    Vector { _handler: USART1_TX },
+    Vector { _handler: USART2_RX },
+    Vector { _handler: USART2_TX },
+    Vector { _handler: UART0_RX },
+    Vector { _handler: UART0_TX },
+    Vector { _handler: UART1_RX },
+    Vector { _handler: UART1_TX },
+    Vector { _handler: LEUART0 },
+    Vector { _handler: LEUART1 },
+    Vector { _handler: LETIMER0 },
+    Vector { _handler: PCNT0 },
+    Vector { _handler: PCNT1 },
+    Vector { _handler: PCNT2 },
+    Vector { _handler: RTCC },
+    Vector { _handler: CMU },
+    Vector { _handler: MSC },
+    Vector { _handler: CRYPTO0 },
+    Vector { _handler: CRYOTIMER },
+    Vector { _handler: FPUEH },
+    Vector { _handler: USART3_RX },
+    Vector { _handler: USART3_TX },
+    Vector { _handler: USART4_RX },
+    Vector { _handler: USART4_TX },
+    Vector { _handler: WTIMER0 },
+    Vector { _handler: WTIMER1 },
+    Vector { _handler: WTIMER2 },
+    Vector { _handler: WTIMER3 },
+    Vector { _handler: I2C2 },
+    Vector { _handler: VDAC0 },
+    Vector { _handler: TIMER4 },
+    Vector { _handler: TIMER5 },
+    Vector { _handler: TIMER6 },
+    Vector { _handler: USART5_RX },
+    Vector { _handler: USART5_TX },
+    Vector { _handler: CSEN },
+    Vector { _handler: LESENSE },
+    Vector { _handler: EBI },
+    Vector { _handler: ACMP2 },
+    Vector { _handler: ADC1 },
+    Vector { _handler: LCD },
+    Vector { _handler: SDIO },
+    Vector { _handler: ETH },
+    Vector { _handler: CAN0 },
+    Vector { _handler: CAN1 },
+    Vector { _handler: USB },
+    Vector { _handler: RTC },
+    Vector { _handler: WDOG1 },
+    Vector { _handler: LETIMER1 },
+    Vector { _handler: TRNG0 },
+    Vector { _handler: QSPI0 },
+];
+#[doc = r" Macro to override a device specific interrupt handler"]
+#[doc = r""]
+#[doc = r" # Syntax"]
+#[doc = r""]
+#[doc = r" ``` ignore"]
+#[doc = r" interrupt!("]
+#[doc = r"     // Name of the interrupt"]
+#[doc = r"     $Name:ident,"]
+#[doc = r""]
+#[doc = r"     // Path to the interrupt handler (a function)"]
+#[doc = r"     $handler:path,"]
+#[doc = r""]
+#[doc = r"     // Optional, state preserved across invocations of the handler"]
+#[doc = r"     state: $State:ty = $initial_state:expr,"]
+#[doc = r" );"]
+#[doc = r" ```"]
+#[doc = r""]
+#[doc = r" Where `$Name` must match the name of one of the variants of the `Interrupt`"]
+#[doc = r" enum."]
+#[doc = r""]
+#[doc = r" The handler must have signature `fn()` is no state was associated to it;"]
+#[doc = r" otherwise its signature must be `fn(&mut $State)`."]
+#[cfg(feature = "rt")]
+#[macro_export]
+macro_rules! interrupt {
+    ($Name:ident, $handler:path,state: $State:ty = $initial_state:expr) => {
+        #[allow(unsafe_code)]
+        #[deny(private_no_mangle_fns)]
+        #[no_mangle]
+        pub unsafe extern "C" fn $Name() {
+            static mut STATE: $State = $initial_state;
+            let _ = $crate::Interrupt::$Name;
+            let f: fn(&mut $State) = $handler;
+            f(&mut STATE)
+        }
+    };
+    ($Name:ident, $handler:path) => {
+        #[allow(unsafe_code)]
+        #[deny(private_no_mangle_fns)]
+        #[no_mangle]
+        pub unsafe extern "C" fn $Name() {
+            let _ = $crate::Interrupt::$Name;
+            let f: fn() = $handler;
+            f()
+        }
+    };
+}
+#[doc = r" Enumeration of all the interrupts"]
+pub enum Interrupt {
+    #[doc = "0 - EMU"]
+    EMU,
+    #[doc = "1 - WDOG0"]
+    WDOG0,
+    #[doc = "2 - LDMA"]
+    LDMA,
+    #[doc = "3 - GPIO_EVEN"]
+    GPIO_EVEN,
+    #[doc = "4 - SMU"]
+    SMU,
+    #[doc = "5 - TIMER0"]
+    TIMER0,
+    #[doc = "6 - USART0_RX"]
+    USART0_RX,
+    #[doc = "7 - USART0_TX"]
+    USART0_TX,
+    #[doc = "8 - ACMP0"]
+    ACMP0,
+    #[doc = "9 - ADC0"]
+    ADC0,
+    #[doc = "10 - IDAC0"]
+    IDAC0,
+    #[doc = "11 - I2C0"]
+    I2C0,
+    #[doc = "12 - I2C1"]
+    I2C1,
+    #[doc = "13 - GPIO_ODD"]
+    GPIO_ODD,
+    #[doc = "14 - TIMER1"]
+    TIMER1,
+    #[doc = "15 - TIMER2"]
+    TIMER2,
+    #[doc = "16 - TIMER3"]
+    TIMER3,
+    #[doc = "17 - USART1_RX"]
+    USART1_RX,
+    #[doc = "18 - USART1_TX"]
+    USART1_TX,
+    #[doc = "19 - USART2_RX"]
+    USART2_RX,
+    #[doc = "20 - USART2_TX"]
+    USART2_TX,
+    #[doc = "21 - UART0_RX"]
+    UART0_RX,
+    #[doc = "22 - UART0_TX"]
+    UART0_TX,
+    #[doc = "23 - UART1_RX"]
+    UART1_RX,
+    #[doc = "24 - UART1_TX"]
+    UART1_TX,
+    #[doc = "25 - LEUART0"]
+    LEUART0,
+    #[doc = "26 - LEUART1"]
+    LEUART1,
+    #[doc = "27 - LETIMER0"]
+    LETIMER0,
+    #[doc = "28 - PCNT0"]
+    PCNT0,
+    #[doc = "29 - PCNT1"]
+    PCNT1,
+    #[doc = "30 - PCNT2"]
+    PCNT2,
+    #[doc = "31 - RTCC"]
+    RTCC,
+    #[doc = "32 - CMU"]
+    CMU,
+    #[doc = "33 - MSC"]
+    MSC,
+    #[doc = "34 - CRYPTO0"]
+    CRYPTO0,
+    #[doc = "35 - CRYOTIMER"]
+    CRYOTIMER,
+    #[doc = "36 - FPUEH"]
+    FPUEH,
+    #[doc = "37 - USART3_RX"]
+    USART3_RX,
+    #[doc = "38 - USART3_TX"]
+    USART3_TX,
+    #[doc = "39 - USART4_RX"]
+    USART4_RX,
+    #[doc = "40 - USART4_TX"]
+    USART4_TX,
+    #[doc = "41 - WTIMER0"]
+    WTIMER0,
+    #[doc = "42 - WTIMER1"]
+    WTIMER1,
+    #[doc = "43 - WTIMER2"]
+    WTIMER2,
+    #[doc = "44 - WTIMER3"]
+    WTIMER3,
+    #[doc = "45 - I2C2"]
+    I2C2,
+    #[doc = "46 - VDAC0"]
+    VDAC0,
+    #[doc = "47 - TIMER4"]
+    TIMER4,
+    #[doc = "48 - TIMER5"]
+    TIMER5,
+    #[doc = "49 - TIMER6"]
+    TIMER6,
+    #[doc = "50 - USART5_RX"]
+    USART5_RX,
+    #[doc = "51 - USART5_TX"]
+    USART5_TX,
+    #[doc = "52 - CSEN"]
+    CSEN,
+    #[doc = "53 - LESENSE"]
+    LESENSE,
+    #[doc = "54 - EBI"]
+    EBI,
+    #[doc = "55 - ACMP2"]
+    ACMP2,
+    #[doc = "56 - ADC1"]
+    ADC1,
+    #[doc = "57 - LCD"]
+    LCD,
+    #[doc = "58 - SDIO"]
+    SDIO,
+    #[doc = "59 - ETH"]
+    ETH,
+    #[doc = "60 - CAN0"]
+    CAN0,
+    #[doc = "61 - CAN1"]
+    CAN1,
+    #[doc = "62 - USB"]
+    USB,
+    #[doc = "63 - RTC"]
+    RTC,
+    #[doc = "64 - WDOG1"]
+    WDOG1,
+    #[doc = "65 - LETIMER1"]
+    LETIMER1,
+    #[doc = "66 - TRNG0"]
+    TRNG0,
+    #[doc = "67 - QSPI0"]
+    QSPI0,
+}
+unsafe impl ::bare_metal::Nr for Interrupt {
+    #[inline]
+    fn nr(&self) -> u8 {
+        match *self {
+            Interrupt::EMU => 0,
+            Interrupt::WDOG0 => 1,
+            Interrupt::LDMA => 2,
+            Interrupt::GPIO_EVEN => 3,
+            Interrupt::SMU => 4,
+            Interrupt::TIMER0 => 5,
+            Interrupt::USART0_RX => 6,
+            Interrupt::USART0_TX => 7,
+            Interrupt::ACMP0 => 8,
+            Interrupt::ADC0 => 9,
+            Interrupt::IDAC0 => 10,
+            Interrupt::I2C0 => 11,
+            Interrupt::I2C1 => 12,
+            Interrupt::GPIO_ODD => 13,
+            Interrupt::TIMER1 => 14,
+            Interrupt::TIMER2 => 15,
+            Interrupt::TIMER3 => 16,
+            Interrupt::USART1_RX => 17,
+            Interrupt::USART1_TX => 18,
+            Interrupt::USART2_RX => 19,
+            Interrupt::USART2_TX => 20,
+            Interrupt::UART0_RX => 21,
+            Interrupt::UART0_TX => 22,
+            Interrupt::UART1_RX => 23,
+            Interrupt::UART1_TX => 24,
+            Interrupt::LEUART0 => 25,
+            Interrupt::LEUART1 => 26,
+            Interrupt::LETIMER0 => 27,
+            Interrupt::PCNT0 => 28,
+            Interrupt::PCNT1 => 29,
+            Interrupt::PCNT2 => 30,
+            Interrupt::RTCC => 31,
+            Interrupt::CMU => 32,
+            Interrupt::MSC => 33,
+            Interrupt::CRYPTO0 => 34,
+            Interrupt::CRYOTIMER => 35,
+            Interrupt::FPUEH => 36,
+            Interrupt::USART3_RX => 37,
+            Interrupt::USART3_TX => 38,
+            Interrupt::USART4_RX => 39,
+            Interrupt::USART4_TX => 40,
+            Interrupt::WTIMER0 => 41,
+            Interrupt::WTIMER1 => 42,
+            Interrupt::WTIMER2 => 43,
+            Interrupt::WTIMER3 => 44,
+            Interrupt::I2C2 => 45,
+            Interrupt::VDAC0 => 46,
+            Interrupt::TIMER4 => 47,
+            Interrupt::TIMER5 => 48,
+            Interrupt::TIMER6 => 49,
+            Interrupt::USART5_RX => 50,
+            Interrupt::USART5_TX => 51,
+            Interrupt::CSEN => 52,
+            Interrupt::LESENSE => 53,
+            Interrupt::EBI => 54,
+            Interrupt::ACMP2 => 55,
+            Interrupt::ADC1 => 56,
+            Interrupt::LCD => 57,
+            Interrupt::SDIO => 58,
+            Interrupt::ETH => 59,
+            Interrupt::CAN0 => 60,
+            Interrupt::CAN1 => 61,
+            Interrupt::USB => 62,
+            Interrupt::RTC => 63,
+            Interrupt::WDOG1 => 64,
+            Interrupt::LETIMER1 => 65,
+            Interrupt::TRNG0 => 66,
+            Interrupt::QSPI0 => 67,
+        }
+    }
+}
 #[doc(hidden)]
 pub mod interrupt;
 pub use cortex_m::peripheral::Peripherals as CorePeripherals;
-pub use cortex_m::peripheral::CPUID;
-pub use cortex_m::peripheral::DCB;
-pub use cortex_m::peripheral::DWT;
-pub use cortex_m::peripheral::MPU;
-pub use cortex_m::peripheral::NVIC;
-pub use cortex_m::peripheral::SCB;
-pub use cortex_m::peripheral::SYST;
+pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, FPU, ITM, MPU, NVIC, SCB, SYST, TPIU};
 #[doc = "MSC"]
 pub struct MSC {
     _marker: PhantomData<*const ()>,
@@ -1262,6 +1660,7 @@ impl Deref for TRNG0 {
 }
 #[doc = "TRNG0"]
 pub mod trng0;
+#[allow(private_no_mangle_statics)]
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals"]
@@ -1402,214 +1801,78 @@ impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
     #[inline]
     pub fn take() -> Option<Self> {
-        cortex_m::interrupt::free(|_| {
-            if unsafe { DEVICE_PERIPHERALS } {
-                None
-            } else {
-                Some(unsafe { Peripherals::steal() })
-            }
-        })
+        cortex_m::interrupt::free(|_| if unsafe { DEVICE_PERIPHERALS } { None } else { Some(unsafe { Peripherals::steal() }) })
     }
     #[doc = r" Unchecked version of `Peripherals::take`"]
     pub unsafe fn steal() -> Self {
         debug_assert!(!DEVICE_PERIPHERALS);
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            MSC: MSC {
-                _marker: PhantomData,
-            },
-            EMU: EMU {
-                _marker: PhantomData,
-            },
-            RMU: RMU {
-                _marker: PhantomData,
-            },
-            CMU: CMU {
-                _marker: PhantomData,
-            },
-            CRYPTO0: CRYPTO0 {
-                _marker: PhantomData,
-            },
-            LESENSE: LESENSE {
-                _marker: PhantomData,
-            },
-            EBI: EBI {
-                _marker: PhantomData,
-            },
-            ETH: ETH {
-                _marker: PhantomData,
-            },
-            SDIO: SDIO {
-                _marker: PhantomData,
-            },
-            GPIO: GPIO {
-                _marker: PhantomData,
-            },
-            PRS: PRS {
-                _marker: PhantomData,
-            },
-            LDMA: LDMA {
-                _marker: PhantomData,
-            },
-            FPUEH: FPUEH {
-                _marker: PhantomData,
-            },
-            GPCRC: GPCRC {
-                _marker: PhantomData,
-            },
-            CAN0: CAN0 {
-                _marker: PhantomData,
-            },
-            CAN1: CAN1 {
-                _marker: PhantomData,
-            },
-            TIMER0: TIMER0 {
-                _marker: PhantomData,
-            },
-            TIMER1: TIMER1 {
-                _marker: PhantomData,
-            },
-            TIMER2: TIMER2 {
-                _marker: PhantomData,
-            },
-            TIMER3: TIMER3 {
-                _marker: PhantomData,
-            },
-            TIMER4: TIMER4 {
-                _marker: PhantomData,
-            },
-            TIMER5: TIMER5 {
-                _marker: PhantomData,
-            },
-            TIMER6: TIMER6 {
-                _marker: PhantomData,
-            },
-            WTIMER0: WTIMER0 {
-                _marker: PhantomData,
-            },
-            WTIMER1: WTIMER1 {
-                _marker: PhantomData,
-            },
-            WTIMER2: WTIMER2 {
-                _marker: PhantomData,
-            },
-            WTIMER3: WTIMER3 {
-                _marker: PhantomData,
-            },
-            USART0: USART0 {
-                _marker: PhantomData,
-            },
-            USART1: USART1 {
-                _marker: PhantomData,
-            },
-            USART2: USART2 {
-                _marker: PhantomData,
-            },
-            USART3: USART3 {
-                _marker: PhantomData,
-            },
-            USART4: USART4 {
-                _marker: PhantomData,
-            },
-            USART5: USART5 {
-                _marker: PhantomData,
-            },
-            UART0: UART0 {
-                _marker: PhantomData,
-            },
-            UART1: UART1 {
-                _marker: PhantomData,
-            },
-            QSPI0: QSPI0 {
-                _marker: PhantomData,
-            },
-            LEUART0: LEUART0 {
-                _marker: PhantomData,
-            },
-            LEUART1: LEUART1 {
-                _marker: PhantomData,
-            },
-            LETIMER0: LETIMER0 {
-                _marker: PhantomData,
-            },
-            LETIMER1: LETIMER1 {
-                _marker: PhantomData,
-            },
-            CRYOTIMER: CRYOTIMER {
-                _marker: PhantomData,
-            },
-            PCNT0: PCNT0 {
-                _marker: PhantomData,
-            },
-            PCNT1: PCNT1 {
-                _marker: PhantomData,
-            },
-            PCNT2: PCNT2 {
-                _marker: PhantomData,
-            },
-            I2C0: I2C0 {
-                _marker: PhantomData,
-            },
-            I2C1: I2C1 {
-                _marker: PhantomData,
-            },
-            I2C2: I2C2 {
-                _marker: PhantomData,
-            },
-            ADC0: ADC0 {
-                _marker: PhantomData,
-            },
-            ADC1: ADC1 {
-                _marker: PhantomData,
-            },
-            ACMP0: ACMP0 {
-                _marker: PhantomData,
-            },
-            ACMP1: ACMP1 {
-                _marker: PhantomData,
-            },
-            ACMP2: ACMP2 {
-                _marker: PhantomData,
-            },
-            ACMP3: ACMP3 {
-                _marker: PhantomData,
-            },
-            VDAC0: VDAC0 {
-                _marker: PhantomData,
-            },
-            USB: USB {
-                _marker: PhantomData,
-            },
-            IDAC0: IDAC0 {
-                _marker: PhantomData,
-            },
-            CSEN: CSEN {
-                _marker: PhantomData,
-            },
-            LCD: LCD {
-                _marker: PhantomData,
-            },
-            RTC: RTC {
-                _marker: PhantomData,
-            },
-            RTCC: RTCC {
-                _marker: PhantomData,
-            },
-            WDOG0: WDOG0 {
-                _marker: PhantomData,
-            },
-            WDOG1: WDOG1 {
-                _marker: PhantomData,
-            },
-            ETM: ETM {
-                _marker: PhantomData,
-            },
-            SMU: SMU {
-                _marker: PhantomData,
-            },
-            TRNG0: TRNG0 {
-                _marker: PhantomData,
-            },
+            MSC: MSC { _marker: PhantomData },
+            EMU: EMU { _marker: PhantomData },
+            RMU: RMU { _marker: PhantomData },
+            CMU: CMU { _marker: PhantomData },
+            CRYPTO0: CRYPTO0 { _marker: PhantomData },
+            LESENSE: LESENSE { _marker: PhantomData },
+            EBI: EBI { _marker: PhantomData },
+            ETH: ETH { _marker: PhantomData },
+            SDIO: SDIO { _marker: PhantomData },
+            GPIO: GPIO { _marker: PhantomData },
+            PRS: PRS { _marker: PhantomData },
+            LDMA: LDMA { _marker: PhantomData },
+            FPUEH: FPUEH { _marker: PhantomData },
+            GPCRC: GPCRC { _marker: PhantomData },
+            CAN0: CAN0 { _marker: PhantomData },
+            CAN1: CAN1 { _marker: PhantomData },
+            TIMER0: TIMER0 { _marker: PhantomData },
+            TIMER1: TIMER1 { _marker: PhantomData },
+            TIMER2: TIMER2 { _marker: PhantomData },
+            TIMER3: TIMER3 { _marker: PhantomData },
+            TIMER4: TIMER4 { _marker: PhantomData },
+            TIMER5: TIMER5 { _marker: PhantomData },
+            TIMER6: TIMER6 { _marker: PhantomData },
+            WTIMER0: WTIMER0 { _marker: PhantomData },
+            WTIMER1: WTIMER1 { _marker: PhantomData },
+            WTIMER2: WTIMER2 { _marker: PhantomData },
+            WTIMER3: WTIMER3 { _marker: PhantomData },
+            USART0: USART0 { _marker: PhantomData },
+            USART1: USART1 { _marker: PhantomData },
+            USART2: USART2 { _marker: PhantomData },
+            USART3: USART3 { _marker: PhantomData },
+            USART4: USART4 { _marker: PhantomData },
+            USART5: USART5 { _marker: PhantomData },
+            UART0: UART0 { _marker: PhantomData },
+            UART1: UART1 { _marker: PhantomData },
+            QSPI0: QSPI0 { _marker: PhantomData },
+            LEUART0: LEUART0 { _marker: PhantomData },
+            LEUART1: LEUART1 { _marker: PhantomData },
+            LETIMER0: LETIMER0 { _marker: PhantomData },
+            LETIMER1: LETIMER1 { _marker: PhantomData },
+            CRYOTIMER: CRYOTIMER { _marker: PhantomData },
+            PCNT0: PCNT0 { _marker: PhantomData },
+            PCNT1: PCNT1 { _marker: PhantomData },
+            PCNT2: PCNT2 { _marker: PhantomData },
+            I2C0: I2C0 { _marker: PhantomData },
+            I2C1: I2C1 { _marker: PhantomData },
+            I2C2: I2C2 { _marker: PhantomData },
+            ADC0: ADC0 { _marker: PhantomData },
+            ADC1: ADC1 { _marker: PhantomData },
+            ACMP0: ACMP0 { _marker: PhantomData },
+            ACMP1: ACMP1 { _marker: PhantomData },
+            ACMP2: ACMP2 { _marker: PhantomData },
+            ACMP3: ACMP3 { _marker: PhantomData },
+            VDAC0: VDAC0 { _marker: PhantomData },
+            USB: USB { _marker: PhantomData },
+            IDAC0: IDAC0 { _marker: PhantomData },
+            CSEN: CSEN { _marker: PhantomData },
+            LCD: LCD { _marker: PhantomData },
+            RTC: RTC { _marker: PhantomData },
+            RTCC: RTCC { _marker: PhantomData },
+            WDOG0: WDOG0 { _marker: PhantomData },
+            WDOG1: WDOG1 { _marker: PhantomData },
+            ETM: ETM { _marker: PhantomData },
+            SMU: SMU { _marker: PhantomData },
+            TRNG0: TRNG0 { _marker: PhantomData },
         }
     }
 }

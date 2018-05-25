@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -126,361 +125,361 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Pre-Counter Value Register"]
 pub struct PRECNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pre-Counter Value Register"]
 pub mod precnt;
 #[doc = "Counter Value Register"]
 pub struct CNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Value Register"]
 pub mod cnt;
 #[doc = "Combined Pre-Counter and Counter Value Register"]
 pub struct COMBCNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Combined Pre-Counter and Counter Value Register"]
 pub mod combcnt;
 #[doc = "Time of Day Register"]
 pub struct TIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Time of Day Register"]
 pub mod time;
 #[doc = "Date Register"]
 pub struct DATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Date Register"]
 pub mod date;
 #[doc = "RTCC Interrupt Flags"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RTCC Interrupt Flags"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Synchronization Busy Register"]
 pub struct SYNCBUSY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Synchronization Busy Register"]
 pub mod syncbusy;
 #[doc = "Retention RAM Power-down Register"]
 pub struct POWERDOWN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention RAM Power-down Register"]
 pub mod powerdown;
 #[doc = "Configuration Lock Register"]
 pub struct LOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration Lock Register"]
 pub mod lock;
 #[doc = "Wake Up Enable"]
 pub struct EM4WUEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Wake Up Enable"]
 pub mod em4wuen;
 #[doc = "CC Channel Control Register"]
 pub struct CC0_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc0_ctrl;
 #[doc = "Capture/Compare Value Register"]
 pub struct CC0_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Value Register"]
 pub mod cc0_ccv;
 #[doc = "Capture/Compare Time Register"]
 pub struct CC0_TIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Time Register"]
 pub mod cc0_time;
 #[doc = "Capture/Compare Date Register"]
 pub struct CC0_DATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Date Register"]
 pub mod cc0_date;
 #[doc = "CC Channel Control Register"]
 pub struct CC1_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc1_ctrl;
 #[doc = "Capture/Compare Value Register"]
 pub struct CC1_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Value Register"]
 pub mod cc1_ccv;
 #[doc = "Capture/Compare Time Register"]
 pub struct CC1_TIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Time Register"]
 pub mod cc1_time;
 #[doc = "Capture/Compare Date Register"]
 pub struct CC1_DATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Date Register"]
 pub mod cc1_date;
 #[doc = "CC Channel Control Register"]
 pub struct CC2_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc2_ctrl;
 #[doc = "Capture/Compare Value Register"]
 pub struct CC2_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Value Register"]
 pub mod cc2_ccv;
 #[doc = "Capture/Compare Time Register"]
 pub struct CC2_TIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Time Register"]
 pub mod cc2_time;
 #[doc = "Capture/Compare Date Register"]
 pub struct CC2_DATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capture/Compare Date Register"]
 pub mod cc2_date;
 #[doc = "Retention Register"]
 pub struct RET0_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret0_reg;
 #[doc = "Retention Register"]
 pub struct RET1_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret1_reg;
 #[doc = "Retention Register"]
 pub struct RET2_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret2_reg;
 #[doc = "Retention Register"]
 pub struct RET3_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret3_reg;
 #[doc = "Retention Register"]
 pub struct RET4_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret4_reg;
 #[doc = "Retention Register"]
 pub struct RET5_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret5_reg;
 #[doc = "Retention Register"]
 pub struct RET6_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret6_reg;
 #[doc = "Retention Register"]
 pub struct RET7_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret7_reg;
 #[doc = "Retention Register"]
 pub struct RET8_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret8_reg;
 #[doc = "Retention Register"]
 pub struct RET9_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret9_reg;
 #[doc = "Retention Register"]
 pub struct RET10_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret10_reg;
 #[doc = "Retention Register"]
 pub struct RET11_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret11_reg;
 #[doc = "Retention Register"]
 pub struct RET12_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret12_reg;
 #[doc = "Retention Register"]
 pub struct RET13_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret13_reg;
 #[doc = "Retention Register"]
 pub struct RET14_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret14_reg;
 #[doc = "Retention Register"]
 pub struct RET15_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret15_reg;
 #[doc = "Retention Register"]
 pub struct RET16_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret16_reg;
 #[doc = "Retention Register"]
 pub struct RET17_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret17_reg;
 #[doc = "Retention Register"]
 pub struct RET18_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret18_reg;
 #[doc = "Retention Register"]
 pub struct RET19_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret19_reg;
 #[doc = "Retention Register"]
 pub struct RET20_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret20_reg;
 #[doc = "Retention Register"]
 pub struct RET21_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret21_reg;
 #[doc = "Retention Register"]
 pub struct RET22_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret22_reg;
 #[doc = "Retention Register"]
 pub struct RET23_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret23_reg;
 #[doc = "Retention Register"]
 pub struct RET24_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret24_reg;
 #[doc = "Retention Register"]
 pub struct RET25_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret25_reg;
 #[doc = "Retention Register"]
 pub struct RET26_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret26_reg;
 #[doc = "Retention Register"]
 pub struct RET27_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret27_reg;
 #[doc = "Retention Register"]
 pub struct RET28_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret28_reg;
 #[doc = "Retention Register"]
 pub struct RET29_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret29_reg;
 #[doc = "Retention Register"]
 pub struct RET30_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret30_reg;
 #[doc = "Retention Register"]
 pub struct RET31_REG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Retention Register"]
 pub mod ret31_reg;

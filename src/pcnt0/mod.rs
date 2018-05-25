@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -40,97 +39,97 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Counter Value Register"]
 pub struct CNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Value Register"]
 pub mod cnt;
 #[doc = "Top Value Register"]
 pub struct TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Top Value Register"]
 pub mod top;
 #[doc = "Top Value Buffer Register"]
 pub struct TOPB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Top Value Buffer Register"]
 pub mod topb;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "Freeze Register"]
 pub struct FREEZE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Freeze Register"]
 pub mod freeze;
 #[doc = "Synchronization Busy Register"]
 pub struct SYNCBUSY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Synchronization Busy Register"]
 pub mod syncbusy;
 #[doc = "Auxiliary Counter Value Register"]
 pub struct AUXCNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Auxiliary Counter Value Register"]
 pub mod auxcnt;
 #[doc = "PCNT Input Register"]
 pub struct INPUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PCNT Input Register"]
 pub mod input;
 #[doc = "Oversampling Config Register"]
 pub struct OVSCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Oversampling Config Register"]
 pub mod ovscfg;

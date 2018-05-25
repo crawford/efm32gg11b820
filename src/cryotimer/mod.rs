@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -21,49 +20,49 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Interrupt Duration"]
 pub struct PERIODSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Duration"]
 pub mod periodsel;
 #[doc = "Counter Value"]
 pub struct CNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Value"]
 pub mod cnt;
 #[doc = "Wake Up Enable"]
 pub struct EM4WUEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Wake Up Enable"]
 pub mod em4wuen;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;

@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -82,223 +81,223 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Counter Top Value Register"]
 pub struct TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Top Value Register"]
 pub mod top;
 #[doc = "Counter Top Value Buffer Register"]
 pub struct TOPB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Top Value Buffer Register"]
 pub mod topb;
 #[doc = "Counter Value Register"]
 pub struct CNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Counter Value Register"]
 pub mod cnt;
 #[doc = "TIMER Configuration Lock Register"]
 pub struct LOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TIMER Configuration Lock Register"]
 pub mod lock;
 #[doc = "I/O Routing Pin Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Pin Enable Register"]
 pub mod routepen;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc2;
 #[doc = "CC Channel Control Register"]
 pub struct CC0_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc0_ctrl;
 #[doc = "CC Channel Value Register"]
 pub struct CC0_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Register"]
 pub mod cc0_ccv;
 #[doc = "CC Channel Value Peek Register"]
 pub struct CC0_CCVP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Peek Register"]
 pub mod cc0_ccvp;
 #[doc = "CC Channel Buffer Register"]
 pub struct CC0_CCVB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Buffer Register"]
 pub mod cc0_ccvb;
 #[doc = "CC Channel Control Register"]
 pub struct CC1_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc1_ctrl;
 #[doc = "CC Channel Value Register"]
 pub struct CC1_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Register"]
 pub mod cc1_ccv;
 #[doc = "CC Channel Value Peek Register"]
 pub struct CC1_CCVP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Peek Register"]
 pub mod cc1_ccvp;
 #[doc = "CC Channel Buffer Register"]
 pub struct CC1_CCVB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Buffer Register"]
 pub mod cc1_ccvb;
 #[doc = "CC Channel Control Register"]
 pub struct CC2_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc2_ctrl;
 #[doc = "CC Channel Value Register"]
 pub struct CC2_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Register"]
 pub mod cc2_ccv;
 #[doc = "CC Channel Value Peek Register"]
 pub struct CC2_CCVP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Peek Register"]
 pub mod cc2_ccvp;
 #[doc = "CC Channel Buffer Register"]
 pub struct CC2_CCVB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Buffer Register"]
 pub mod cc2_ccvb;
 #[doc = "CC Channel Control Register"]
 pub struct CC3_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Control Register"]
 pub mod cc3_ctrl;
 #[doc = "CC Channel Value Register"]
 pub struct CC3_CCV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Register"]
 pub mod cc3_ccv;
 #[doc = "CC Channel Value Peek Register"]
 pub struct CC3_CCVP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Value Peek Register"]
 pub mod cc3_ccvp;
 #[doc = "CC Channel Buffer Register"]
 pub struct CC3_CCVB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CC Channel Buffer Register"]
 pub mod cc3_ccvb;
 #[doc = "DTI Control Register"]
 pub struct DTCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Control Register"]
 pub mod dtctrl;
 #[doc = "DTI Time Control Register"]
 pub struct DTTIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Time Control Register"]
 pub mod dttime;
 #[doc = "DTI Fault Configuration Register"]
 pub struct DTFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Fault Configuration Register"]
 pub mod dtfc;
 #[doc = "DTI Output Generation Enable Register"]
 pub struct DTOGEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Output Generation Enable Register"]
 pub mod dtogen;
 #[doc = "DTI Fault Register"]
 pub struct DTFAULT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Fault Register"]
 pub mod dtfault;
 #[doc = "DTI Fault Clear Register"]
 pub struct DTFAULTC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Fault Clear Register"]
 pub mod dtfaultc;
 #[doc = "DTI Configuration Lock Register"]
 pub struct DTLOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DTI Configuration Lock Register"]
 pub mod dtlock;

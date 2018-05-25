@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -35,85 +34,85 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Input Selection Register"]
 pub struct INPUTSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input Selection Register"]
 pub mod inputsel;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "APORT Request Status Register"]
 pub struct APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Request Status Register"]
 pub mod aportreq;
 #[doc = "APORT Conflict Status Register"]
 pub struct APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Conflict Status Register"]
 pub mod aportconflict;
 #[doc = "Hysteresis 0 Register"]
 pub struct HYSTERESIS0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Hysteresis 0 Register"]
 pub mod hysteresis0;
 #[doc = "Hysteresis 1 Register"]
 pub struct HYSTERESIS1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Hysteresis 1 Register"]
 pub mod hysteresis1;
 #[doc = "I/O Routing Pine Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Pine Enable Register"]
 pub mod routepen;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "External Override Interface Control"]
 pub struct EXTIFCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Override Interface Control"]
 pub mod extifctrl;

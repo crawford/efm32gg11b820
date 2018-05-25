@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -68,181 +67,181 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Single Channel Control Register"]
 pub struct SINGLECTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Channel Control Register"]
 pub mod singlectrl;
 #[doc = "Single Channel Control Register Continued"]
 pub struct SINGLECTRLX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Channel Control Register Continued"]
 pub mod singlectrlx;
 #[doc = "Scan Control Register"]
 pub struct SCANCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Control Register"]
 pub mod scanctrl;
 #[doc = "Scan Control Register Continued"]
 pub struct SCANCTRLX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Control Register Continued"]
 pub mod scanctrlx;
 #[doc = "Scan Sequence Input Mask Register"]
 pub struct SCANMASK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Sequence Input Mask Register"]
 pub mod scanmask;
 #[doc = "Input Selection Register for Scan Mode"]
 pub struct SCANINPUTSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input Selection Register for Scan Mode"]
 pub mod scaninputsel;
 #[doc = "Negative Input Select Register for Scan"]
 pub struct SCANNEGSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Negative Input Select Register for Scan"]
 pub mod scannegsel;
 #[doc = "Compare Threshold Register"]
 pub struct CMPTHR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Compare Threshold Register"]
 pub mod cmpthr;
 #[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation"]
 pub struct BIASPROG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation"]
 pub mod biasprog;
 #[doc = "Calibration Register"]
 pub struct CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration Register"]
 pub mod cal;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Single Conversion Result Data"]
 pub struct SINGLEDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Conversion Result Data"]
 pub mod singledata;
 #[doc = "Scan Conversion Result Data"]
 pub struct SCANDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Conversion Result Data"]
 pub mod scandata;
 #[doc = "Single Conversion Result Data Peek Register"]
 pub struct SINGLEDATAP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Conversion Result Data Peek Register"]
 pub mod singledatap;
 #[doc = "Scan Sequence Result Data Peek Register"]
 pub struct SCANDATAP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Sequence Result Data Peek Register"]
 pub mod scandatap;
 #[doc = "Scan Sequence Result Data + Data Source Register"]
 pub struct SCANDATAX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Sequence Result Data + Data Source Register"]
 pub mod scandatax;
 #[doc = "Scan Sequence Result Data + Data Source Peek Register"]
 pub struct SCANDATAXP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Sequence Result Data + Data Source Peek Register"]
 pub mod scandataxp;
 #[doc = "APORT Request Status Register"]
 pub struct APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Request Status Register"]
 pub mod aportreq;
 #[doc = "APORT Conflict Status Register"]
 pub struct APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Conflict Status Register"]
 pub mod aportconflict;
 #[doc = "Single FIFO Count Register"]
 pub struct SINGLEFIFOCOUNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single FIFO Count Register"]
 pub mod singlefifocount;
 #[doc = "Scan FIFO Count Register"]
 pub struct SCANFIFOCOUNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan FIFO Count Register"]
 pub mod scanfifocount;
 #[doc = "Single FIFO Clear Register"]
 pub struct SINGLEFIFOCLEAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single FIFO Clear Register"]
 pub mod singlefifoclear;
 #[doc = "Scan FIFO Clear Register"]
 pub struct SCANFIFOCLEAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan FIFO Clear Register"]
 pub mod scanfifoclear;
 #[doc = "APORT Bus Master Disable Register"]
 pub struct APORTMASTERDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Bus Master Disable Register"]
 pub mod aportmasterdis;

@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -52,139 +51,139 @@ pub struct RegisterBlock {
 }
 #[doc = "Control"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control"]
 pub mod ctrl;
 #[doc = "Timing Control"]
 pub struct TIMCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Timing Control"]
 pub mod timctrl;
 #[doc = "Command"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command"]
 pub mod cmd;
 #[doc = "Status"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status"]
 pub mod status;
 #[doc = "PRS Select"]
 pub struct PRSSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PRS Select"]
 pub mod prssel;
 #[doc = "Output Data"]
 pub struct DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Output Data"]
 pub mod data;
 #[doc = "Scan Channel Mask 0"]
 pub struct SCANMASK0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Channel Mask 0"]
 pub mod scanmask0;
 #[doc = "Scan Input Selection 0"]
 pub struct SCANINPUTSEL0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Input Selection 0"]
 pub mod scaninputsel0;
 #[doc = "Scan Channel Mask 1"]
 pub struct SCANMASK1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Channel Mask 1"]
 pub mod scanmask1;
 #[doc = "Scan Input Selection 1"]
 pub struct SCANINPUTSEL1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Input Selection 1"]
 pub mod scaninputsel1;
 #[doc = "APORT Request Status"]
 pub struct APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Request Status"]
 pub mod aportreq;
 #[doc = "APORT Request Conflict"]
 pub struct APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "APORT Request Conflict"]
 pub mod aportconflict;
 #[doc = "Comparator Threshold"]
 pub struct CMPTHR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Comparator Threshold"]
 pub mod cmpthr;
 #[doc = "Exponential Moving Average"]
 pub struct EMA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Exponential Moving Average"]
 pub mod ema;
 #[doc = "Exponential Moving Average Control"]
 pub struct EMACTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Exponential Moving Average Control"]
 pub mod emactrl;
 #[doc = "Single Conversion Control"]
 pub struct SINGLECTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Conversion Control"]
 pub mod singlectrl;
 #[doc = "Delta Modulation Baseline"]
 pub struct DMBASELINE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Delta Modulation Baseline"]
 pub mod dmbaseline;
 #[doc = "Delta Modulation Configuration"]
 pub struct DMCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Delta Modulation Configuration"]
 pub mod dmcfg;
 #[doc = "Analog Control"]
 pub struct ANACTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Analog Control"]
 pub mod anactrl;
 #[doc = "Interrupt Flag"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag"]
 pub mod if_;
 #[doc = "Interrupt Flag Set"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear"]
 pub mod ifc;
 #[doc = "Interrupt Enable"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable"]
 pub mod ien;

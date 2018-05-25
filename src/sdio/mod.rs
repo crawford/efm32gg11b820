@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -85,229 +84,229 @@ pub struct RegisterBlock {
 }
 #[doc = "SDMA System Address Register"]
 pub struct SDMASYSADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "SDMA System Address Register"]
 pub mod sdmasysaddr;
 #[doc = "Block Size and Block Count Register"]
 pub struct BLKSIZE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Block Size and Block Count Register"]
 pub mod blksize;
 #[doc = "SD Command Argument Register"]
 pub struct CMDARG1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "SD Command Argument Register"]
 pub mod cmdarg1;
 #[doc = "Transfer Mode and Command Register"]
 pub struct TFRMODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transfer Mode and Command Register"]
 pub mod tfrmode;
 #[doc = "Response0 and Response1 Register"]
 pub struct RESP0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Response0 and Response1 Register"]
 pub mod resp0;
 #[doc = "Response2 and Response3 Register"]
 pub struct RESP2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Response2 and Response3 Register"]
 pub mod resp2;
 #[doc = "Response4 and Response5 Register"]
 pub struct RESP4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Response4 and Response5 Register"]
 pub mod resp4;
 #[doc = "Response6 and Response7 Register"]
 pub struct RESP6 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Response6 and Response7 Register"]
 pub mod resp6;
 #[doc = "Buffer Data Register"]
 pub struct BUFDATPORT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Buffer Data Register"]
 pub mod bufdatport;
 #[doc = "Present State Register"]
 pub struct PRSSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Present State Register"]
 pub mod prsstat;
 #[doc = "Host Control1, Power, Block Gap and Wakeup-up Control Register"]
 pub struct HOSTCTRL1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Control1, Power, Block Gap and Wakeup-up Control Register"]
 pub mod hostctrl1;
 #[doc = "Clock Control, Timeout Control and Software Register"]
 pub struct CLOCKCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clock Control, Timeout Control and Software Register"]
 pub mod clockctrl;
 #[doc = "Normal and Error Interrupt Status Register"]
 pub struct IFCR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Normal and Error Interrupt Status Register"]
 pub mod ifcr;
 #[doc = "Normal and Error Interrupt Status Enable Register"]
 pub struct IFENC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Normal and Error Interrupt Status Enable Register"]
 pub mod ifenc;
 #[doc = "Normal and Error Interrupt Signal Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Normal and Error Interrupt Signal Enable Register"]
 pub mod ien;
 #[doc = "AUTO CMD12 Error Status and Host Control2 Register"]
 pub struct AC12ERRSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "AUTO CMD12 Error Status and Host Control2 Register"]
 pub mod ac12errstat;
 #[doc = "Capabilities Register to Hold Bits 31~0"]
 pub struct CAPAB0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capabilities Register to Hold Bits 31~0"]
 pub mod capab0;
 #[doc = "Capabilities Register to Hold Bits 63~32"]
 pub struct CAPAB2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Capabilities Register to Hold Bits 63~32"]
 pub mod capab2;
 #[doc = "Maximum Current Capabilities Register"]
 pub struct MAXCURCAPAB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Maximum Current Capabilities Register"]
 pub mod maxcurcapab;
 #[doc = "Force Event Register for Auto CMD Error Status"]
 pub struct FEVTERRSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Force Event Register for Auto CMD Error Status"]
 pub mod fevterrstat;
 #[doc = "ADMA Error Status Register"]
 pub struct ADMAES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ADMA Error Status Register"]
 pub mod admaes;
 #[doc = "ADMA System Address Register"]
 pub struct ADSADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ADMA System Address Register"]
 pub mod adsaddr;
 #[doc = "Preset Value for Initialization and Default Speed Mode"]
 pub struct PRSTVAL0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Preset Value for Initialization and Default Speed Mode"]
 pub mod prstval0;
 #[doc = "Preset Value for High Speed and SDR12 Modes"]
 pub struct PRSTVAL2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Preset Value for High Speed and SDR12 Modes"]
 pub mod prstval2;
 #[doc = "Preset Value for SDR25 and SDR50 Modes"]
 pub struct PRSTVAL4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Preset Value for SDR25 and SDR50 Modes"]
 pub mod prstval4;
 #[doc = "Preset Value for SDR104 and DDR50 Modes"]
 pub struct PRSTVAL6 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Preset Value for SDR104 and DDR50 Modes"]
 pub mod prstval6;
 #[doc = "Boot Timeout Control Register"]
 pub struct BOOTTOCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Boot Timeout Control Register"]
 pub mod boottoctrl;
 #[doc = "Slot Interrupt Status Register"]
 pub struct SLOTINTSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Slot Interrupt Status Register"]
 pub mod slotintstat;
 #[doc = "Core Control Signals"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Control Signals"]
 pub mod ctrl;
 #[doc = "Core Configuration 0"]
 pub struct CFG0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration 0"]
 pub mod cfg0;
 #[doc = "Core Configuration 1"]
 pub struct CFG1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration 1"]
 pub mod cfg1;
 #[doc = "Core Configuration Preset Value 0"]
 pub struct CFGPRESETVAL0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration Preset Value 0"]
 pub mod cfgpresetval0;
 #[doc = "Core Configuration Preset Value 1"]
 pub struct CFGPRESETVAL1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration Preset Value 1"]
 pub mod cfgpresetval1;
 #[doc = "Core Configuration Preset Value 2"]
 pub struct CFGPRESETVAL2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration Preset Value 2"]
 pub mod cfgpresetval2;
 #[doc = "Core Configuration Preset Value 3"]
 pub struct CFGPRESETVAL3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Core Configuration Preset Value 3"]
 pub mod cfgpresetval3;
 #[doc = "I/O LOCATION Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O LOCATION Register"]
 pub mod routeloc0;
 #[doc = "I/O LOCATION Register"]
 pub struct ROUTELOC1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O LOCATION Register"]
 pub mod routeloc1;
 #[doc = "I/O LOCATION Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O LOCATION Enable Register"]
 pub mod routepen;

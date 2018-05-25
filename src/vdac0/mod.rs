@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -91,247 +90,247 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Channel 0 Control Register"]
 pub struct CH0CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel 0 Control Register"]
 pub mod ch0ctrl;
 #[doc = "Channel 1 Control Register"]
 pub struct CH1CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel 1 Control Register"]
 pub mod ch1ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Channel 0 Data Register"]
 pub struct CH0DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel 0 Data Register"]
 pub mod ch0data;
 #[doc = "Channel 1 Data Register"]
 pub struct CH1DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel 1 Data Register"]
 pub mod ch1data;
 #[doc = "Combined Data Register"]
 pub struct COMBDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Combined Data Register"]
 pub mod combdata;
 #[doc = "Calibration Register"]
 pub struct CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration Register"]
 pub mod cal;
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub struct OPA0_APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub mod opa0_aportreq;
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub struct OPA0_APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub mod opa0_aportconflict;
 #[doc = "Operational Amplifier Control Register"]
 pub struct OPA0_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Control Register"]
 pub mod opa0_ctrl;
 #[doc = "Operational Amplifier Timer Control Register"]
 pub struct OPA0_TIMER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Timer Control Register"]
 pub mod opa0_timer;
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub struct OPA0_MUX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub mod opa0_mux;
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub struct OPA0_OUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub mod opa0_out;
 #[doc = "Operational Amplifier Calibration Register"]
 pub struct OPA0_CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Calibration Register"]
 pub mod opa0_cal;
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub struct OPA1_APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub mod opa1_aportreq;
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub struct OPA1_APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub mod opa1_aportconflict;
 #[doc = "Operational Amplifier Control Register"]
 pub struct OPA1_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Control Register"]
 pub mod opa1_ctrl;
 #[doc = "Operational Amplifier Timer Control Register"]
 pub struct OPA1_TIMER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Timer Control Register"]
 pub mod opa1_timer;
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub struct OPA1_MUX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub mod opa1_mux;
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub struct OPA1_OUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub mod opa1_out;
 #[doc = "Operational Amplifier Calibration Register"]
 pub struct OPA1_CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Calibration Register"]
 pub mod opa1_cal;
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub struct OPA2_APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub mod opa2_aportreq;
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub struct OPA2_APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub mod opa2_aportconflict;
 #[doc = "Operational Amplifier Control Register"]
 pub struct OPA2_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Control Register"]
 pub mod opa2_ctrl;
 #[doc = "Operational Amplifier Timer Control Register"]
 pub struct OPA2_TIMER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Timer Control Register"]
 pub mod opa2_timer;
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub struct OPA2_MUX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub mod opa2_mux;
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub struct OPA2_OUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub mod opa2_out;
 #[doc = "Operational Amplifier Calibration Register"]
 pub struct OPA2_CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Calibration Register"]
 pub mod opa2_cal;
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub struct OPA3_APORTREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Request Status Register"]
 pub mod opa3_aportreq;
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub struct OPA3_APORTCONFLICT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier APORT Conflict Status Register"]
 pub mod opa3_aportconflict;
 #[doc = "Operational Amplifier Control Register"]
 pub struct OPA3_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Control Register"]
 pub mod opa3_ctrl;
 #[doc = "Operational Amplifier Timer Control Register"]
 pub struct OPA3_TIMER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Timer Control Register"]
 pub mod opa3_timer;
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub struct OPA3_MUX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Mux Configuration Register"]
 pub mod opa3_mux;
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub struct OPA3_OUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Output Configuration Register"]
 pub mod opa3_out;
 #[doc = "Operational Amplifier Calibration Register"]
 pub struct OPA3_CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operational Amplifier Calibration Register"]
 pub mod opa3_cal;

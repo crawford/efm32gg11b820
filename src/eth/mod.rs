@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -261,733 +260,733 @@ pub struct RegisterBlock {
 }
 #[doc = "Network control register"]
 pub struct NETWORKCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Network control register"]
 pub mod networkctrl;
 #[doc = "Network configuration register"]
 pub struct NETWORKCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Network configuration register"]
 pub mod networkcfg;
 #[doc = "Network status register"]
 pub struct NETWORKSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Network status register"]
 pub mod networkstatus;
 #[doc = "DMA Configuration Register"]
 pub struct DMACFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Configuration Register"]
 pub mod dmacfg;
 #[doc = "Transmit status register"]
 pub struct TXSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit status register"]
 pub mod txstatus;
 #[doc = "Start address of the receive buffer queue"]
 pub struct RXQPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start address of the receive buffer queue"]
 pub mod rxqptr;
 #[doc = "Start address of the transmit buffer queue"]
 pub struct TXQPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start address of the transmit buffer queue"]
 pub mod txqptr;
 #[doc = "Receive status register"]
 pub struct RXSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive status register"]
 pub mod rxstatus;
 #[doc = "Interrupt status register"]
 pub struct IFCR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt status register"]
 pub mod ifcr;
 #[doc = "Interrupt Enable Register"]
 pub struct IENS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod iens;
 #[doc = "Interrupt Disable Register"]
 pub struct IENC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Disable Register"]
 pub mod ienc;
 #[doc = "Interrupt mask register"]
 pub struct IENRO {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt mask register"]
 pub mod ienro;
 #[doc = "PHY management register"]
 pub struct PHYMNGMNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PHY management register"]
 pub mod phymngmnt;
 #[doc = "Received Pause Quantum Register"]
 pub struct RXPAUSEQUANT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Received Pause Quantum Register"]
 pub mod rxpausequant;
 #[doc = "Transmit Pause Quantum Register"]
 pub struct TXPAUSEQUANT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit Pause Quantum Register"]
 pub mod txpausequant;
 #[doc = "TX Partial Store and Forward"]
 pub struct PBUFTXCUTTHRU {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX Partial Store and Forward"]
 pub mod pbuftxcutthru;
 #[doc = "RX Partial Store and Forward"]
 pub struct PBUFRXCUTTHRU {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Partial Store and Forward"]
 pub mod pbufrxcutthru;
 #[doc = "Maximum Jumbo Frame Size."]
 pub struct JUMBOMAXLEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Maximum Jumbo Frame Size."]
 pub mod jumbomaxlen;
 #[doc = "Interrupt moderation register"]
 pub struct IMOD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt moderation register"]
 pub mod imod;
 #[doc = "System wake time"]
 pub struct SYSWAKETIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "System wake time"]
 pub mod syswaketime;
 #[doc = "Hash Register Bottom [31:0]"]
 pub struct HASHBOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Hash Register Bottom [31:0]"]
 pub mod hashbottom;
 #[doc = "Hash Register Top [63:32]"]
 pub struct HASHTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Hash Register Top [63:32]"]
 pub mod hashtop;
 #[doc = "Specific Address 1 Bottom"]
 pub struct SPECADDR1BOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 1 Bottom"]
 pub mod specaddr1bottom;
 #[doc = "Specific Address 1 Top"]
 pub struct SPECADDR1TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 1 Top"]
 pub mod specaddr1top;
 #[doc = "Specific Address 2 Bottom"]
 pub struct SPECADDR2BOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 2 Bottom"]
 pub mod specaddr2bottom;
 #[doc = "Specific Address 2 Top"]
 pub struct SPECADDR2TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 2 Top"]
 pub mod specaddr2top;
 #[doc = "Specific Address 3 Bottom"]
 pub struct SPECADDR3BOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 3 Bottom"]
 pub mod specaddr3bottom;
 #[doc = "Specific Address 3 Top"]
 pub struct SPECADDR3TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 3 Top"]
 pub mod specaddr3top;
 #[doc = "Specific Address 4 Bottom"]
 pub struct SPECADDR4BOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 4 Bottom"]
 pub mod specaddr4bottom;
 #[doc = "Specific Address 4 Top"]
 pub struct SPECADDR4TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address 4 Top"]
 pub mod specaddr4top;
 #[doc = "Type ID Match 1"]
 pub struct SPECTYPE1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Type ID Match 1"]
 pub mod spectype1;
 #[doc = "Type ID Match 2"]
 pub struct SPECTYPE2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Type ID Match 2"]
 pub mod spectype2;
 #[doc = "Type ID Match 3"]
 pub struct SPECTYPE3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Type ID Match 3"]
 pub mod spectype3;
 #[doc = "Type ID Match 4"]
 pub struct SPECTYPE4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Type ID Match 4"]
 pub mod spectype4;
 #[doc = "Wake on LAN Register"]
 pub struct WOLREG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Wake on LAN Register"]
 pub mod wolreg;
 #[doc = "IPG stretch register"]
 pub struct STRETCHRATIO {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "IPG stretch register"]
 pub mod stretchratio;
 #[doc = "Stacked VLAN Register"]
 pub struct STACKEDVLAN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stacked VLAN Register"]
 pub mod stackedvlan;
 #[doc = "Transmit PFC Pause Register"]
 pub struct TXPFCPAUSE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit PFC Pause Register"]
 pub mod txpfcpause;
 #[doc = "Specific Address Mask 1 Bottom 31:0"]
 pub struct MASKADD1BOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address Mask 1 Bottom 31:0"]
 pub mod maskadd1bottom;
 #[doc = "Specific Address Mask 1 Top 47:32"]
 pub struct MASKADD1TOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Specific Address Mask 1 Top 47:32"]
 pub mod maskadd1top;
 #[doc = "PTP RX unicast IP destination address"]
 pub struct RXPTPUNICAST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP RX unicast IP destination address"]
 pub mod rxptpunicast;
 #[doc = "PTP TX unicast IP destination address"]
 pub struct TXPTPUNICAST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP TX unicast IP destination address"]
 pub mod txptpunicast;
 #[doc = "TSU timer comparison value nanoseconds"]
 pub struct TSUNSECCMP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TSU timer comparison value nanoseconds"]
 pub mod tsunseccmp;
 #[doc = "TSU timer comparison value seconds [31:0]"]
 pub struct TSUSECCMP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TSU timer comparison value seconds [31:0]"]
 pub mod tsuseccmp;
 #[doc = "TSU timer comparison value seconds [47:32]"]
 pub struct TSUMSBSECCMP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TSU timer comparison value seconds [47:32]"]
 pub mod tsumsbseccmp;
 #[doc = "PTP Event Frame Transmitted Seconds Register 47:32"]
 pub struct TSUPTPTXMSBSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Transmitted Seconds Register 47:32"]
 pub mod tsuptptxmsbsec;
 #[doc = "PTP Event Frame Received Seconds Register 47:32"]
 pub struct TSUPTPRXMSBSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Received Seconds Register 47:32"]
 pub mod tsuptprxmsbsec;
 #[doc = "PTP Peer Event Frame Transmitted Seconds Register 47:32"]
 pub struct TSUPEERTXMSBSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Transmitted Seconds Register 47:32"]
 pub mod tsupeertxmsbsec;
 #[doc = "PTP Peer Event Frame Received Seconds Register 47:32"]
 pub struct TSUPEERRXMSBSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Received Seconds Register 47:32"]
 pub mod tsupeerrxmsbsec;
 #[doc = "Octets transmitted 31:0"]
 pub struct OCTETSTXEDBOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Octets transmitted 31:0"]
 pub mod octetstxedbottom;
 #[doc = "Octets Transmitted 47:32"]
 pub struct OCTETSTXEDTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Octets Transmitted 47:32"]
 pub mod octetstxedtop;
 #[doc = "Frames Transmitted"]
 pub struct FRAMESTXEDOK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Frames Transmitted"]
 pub mod framestxedok;
 #[doc = "Broadcast Frames Transmitted"]
 pub struct BROADCASTTXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Broadcast Frames Transmitted"]
 pub mod broadcasttxed;
 #[doc = "Multicast Frames Transmitted"]
 pub struct MULTICASTTXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Multicast Frames Transmitted"]
 pub mod multicasttxed;
 #[doc = "Pause Frames Transmitted"]
 pub struct PFRAMESTXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pause Frames Transmitted"]
 pub mod pframestxed;
 #[doc = "64 Byte Frames Transmitted"]
 pub struct FRAMESTXED64 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "64 Byte Frames Transmitted"]
 pub mod framestxed64;
 #[doc = "65 to 127 Byte Frames Transmitted"]
 pub struct FRAMESTXED65 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "65 to 127 Byte Frames Transmitted"]
 pub mod framestxed65;
 #[doc = "128 to 255 Byte Frames Transmitted"]
 pub struct FRAMESTXED128 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "128 to 255 Byte Frames Transmitted"]
 pub mod framestxed128;
 #[doc = "256 to 511 Byte Frames Transmitted"]
 pub struct FRAMESTXED256 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "256 to 511 Byte Frames Transmitted"]
 pub mod framestxed256;
 #[doc = "512 to 1023 Byte Frames Transmitted"]
 pub struct FRAMESTXED512 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "512 to 1023 Byte Frames Transmitted"]
 pub mod framestxed512;
 #[doc = "1024 to 1518 Byte Frames Transmitted"]
 pub struct FRAMESTXED1024 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1024 to 1518 Byte Frames Transmitted"]
 pub mod framestxed1024;
 #[doc = "Greater Than 1518 Byte Frames Transmitted"]
 pub struct FRAMESTXED1519 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Greater Than 1518 Byte Frames Transmitted"]
 pub mod framestxed1519;
 #[doc = "Transmit Under Runs"]
 pub struct TXUNDERRUNS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit Under Runs"]
 pub mod txunderruns;
 #[doc = "Single Collision Frames"]
 pub struct SINGLECOLS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Single Collision Frames"]
 pub mod singlecols;
 #[doc = "Multiple Collision Frames"]
 pub struct MULTICOLS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Multiple Collision Frames"]
 pub mod multicols;
 #[doc = "Excessive Collisions"]
 pub struct EXCESSCOLS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Excessive Collisions"]
 pub mod excesscols;
 #[doc = "Late Collisions"]
 pub struct LATECOLS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Late Collisions"]
 pub mod latecols;
 #[doc = "Deferred Transmission Frames"]
 pub struct DEFERREDFRAMES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deferred Transmission Frames"]
 pub mod deferredframes;
 #[doc = "Carrier Sense Errors"]
 pub struct CRSERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Carrier Sense Errors"]
 pub mod crserrs;
 #[doc = "Octets Received 31:0"]
 pub struct OCTETSRXEDBOTTOM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Octets Received 31:0"]
 pub mod octetsrxedbottom;
 #[doc = "Octets Received 47:32"]
 pub struct OCTETSRXEDTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Octets Received 47:32"]
 pub mod octetsrxedtop;
 #[doc = "Frames Received"]
 pub struct FRAMESRXEDOK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Frames Received"]
 pub mod framesrxedok;
 #[doc = "Broadcast Frames Received"]
 pub struct BROADCASTRXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Broadcast Frames Received"]
 pub mod broadcastrxed;
 #[doc = "Multicast Frames Received"]
 pub struct MULTICASTRXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Multicast Frames Received"]
 pub mod multicastrxed;
 #[doc = "Pause Frames Received"]
 pub struct PFRAMESRXED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pause Frames Received"]
 pub mod pframesrxed;
 #[doc = "64 Byte Frames Received"]
 pub struct FRAMESRXED64 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "64 Byte Frames Received"]
 pub mod framesrxed64;
 #[doc = "65 to 127 Byte Frames Received"]
 pub struct FRAMESRXED65 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "65 to 127 Byte Frames Received"]
 pub mod framesrxed65;
 #[doc = "128 to 255 Byte Frames Received"]
 pub struct FRAMESRXED128 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "128 to 255 Byte Frames Received"]
 pub mod framesrxed128;
 #[doc = "256 to 511 Byte Frames Received"]
 pub struct FRAMESRXED256 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "256 to 511 Byte Frames Received"]
 pub mod framesrxed256;
 #[doc = "512 to 1023 Byte Frames Received"]
 pub struct FRAMESRXED512 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "512 to 1023 Byte Frames Received"]
 pub mod framesrxed512;
 #[doc = "1024 to 1518 Byte Frames Received"]
 pub struct FRAMESRXED1024 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1024 to 1518 Byte Frames Received"]
 pub mod framesrxed1024;
 #[doc = "1519 to maximum Byte Frames Received"]
 pub struct FRAMESRXED1519 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1519 to maximum Byte Frames Received"]
 pub mod framesrxed1519;
 #[doc = "Undersized Frames Received"]
 pub struct UNDERSIZEFRAMES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Undersized Frames Received"]
 pub mod undersizeframes;
 #[doc = "Oversize Frames Received"]
 pub struct EXCESSIVERXLEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Oversize Frames Received"]
 pub mod excessiverxlen;
 #[doc = "Jabbers Received"]
 pub struct RXJABBERS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Jabbers Received"]
 pub mod rxjabbers;
 #[doc = "Frame Check Sequence Errors"]
 pub struct FCSERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Frame Check Sequence Errors"]
 pub mod fcserrs;
 #[doc = "Length Field Frame Errors"]
 pub struct RXLENERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Length Field Frame Errors"]
 pub mod rxlenerrs;
 #[doc = "Receive Symbol Errors"]
 pub struct RXSYMBOLERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive Symbol Errors"]
 pub mod rxsymbolerrs;
 #[doc = "Alignment Errors"]
 pub struct ALIGNERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Alignment Errors"]
 pub mod alignerrs;
 #[doc = "Receive Resource Errors"]
 pub struct RXRESOURCEERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive Resource Errors"]
 pub mod rxresourceerrs;
 #[doc = "Receive Overruns"]
 pub struct RXOVERRUNS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive Overruns"]
 pub mod rxoverruns;
 #[doc = "IP Header Checksum Errors"]
 pub struct RXIPCKERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "IP Header Checksum Errors"]
 pub mod rxipckerrs;
 #[doc = "TCP Checksum Errors"]
 pub struct RXTCPCKERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TCP Checksum Errors"]
 pub mod rxtcpckerrs;
 #[doc = "UDP Checksum Errors"]
 pub struct RXUDPCKERRS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "UDP Checksum Errors"]
 pub mod rxudpckerrs;
 #[doc = "Receive DMA Flushed Packets"]
 pub struct AUTOFLUSHEDPKTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive DMA Flushed Packets"]
 pub mod autoflushedpkts;
 #[doc = "1588 Timer Increment Register subscript nsec"]
 pub struct TSUTIMERINCRSUBNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1588 Timer Increment Register subscript nsec"]
 pub mod tsutimerincrsubnsec;
 #[doc = "1588 Timer Seconds Register 47:32"]
 pub struct TSUTIMERMSBSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1588 Timer Seconds Register 47:32"]
 pub mod tsutimermsbsec;
 #[doc = "1588 Timer Seconds Register 31:0"]
 pub struct TSUTIMERSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1588 Timer Seconds Register 31:0"]
 pub mod tsutimersec;
 #[doc = "1588 Timer Nanoseconds Register"]
 pub struct TSUTIMERNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1588 Timer Nanoseconds Register"]
 pub mod tsutimernsec;
 #[doc = "This register returns all zeroes when read."]
 pub struct TSUTIMERADJUST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "This register returns all zeroes when read."]
 pub mod tsutimeradjust;
 #[doc = "1588 Timer Increment Register"]
 pub struct TSUTIMERINCR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "1588 Timer Increment Register"]
 pub mod tsutimerincr;
 #[doc = "PTP Event Frame Transmitted Seconds Register 31:0"]
 pub struct TSUPTPTXSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Transmitted Seconds Register 31:0"]
 pub mod tsuptptxsec;
 #[doc = "PTP Event Frame Transmitted Nanoseconds Register"]
 pub struct TSUPTPTXNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Transmitted Nanoseconds Register"]
 pub mod tsuptptxnsec;
 #[doc = "PTP Event Frame Received Seconds Register 31:0"]
 pub struct TSUPTPRXSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Received Seconds Register 31:0"]
 pub mod tsuptprxsec;
 #[doc = "PTP Event Frame Received Nanoseconds Register"]
 pub struct TSUPTPRXNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Event Frame Received Nanoseconds Register"]
 pub mod tsuptprxnsec;
 #[doc = "PTP Peer Event Frame Transmitted Seconds Register 31:0"]
 pub struct TSUPEERTXSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Transmitted Seconds Register 31:0"]
 pub mod tsupeertxsec;
 #[doc = "PTP Peer Event Frame Transmitted Nanoseconds Register"]
 pub struct TSUPEERTXNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Transmitted Nanoseconds Register"]
 pub mod tsupeertxnsec;
 #[doc = "PTP Peer Event Frame Received Seconds Register 31:0"]
 pub struct TSUPEERRXSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Received Seconds Register 31:0"]
 pub mod tsupeerrxsec;
 #[doc = "PTP Peer Event Frame Received Nanoseconds Register"]
 pub struct TSUPEERRXNSEC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PTP Peer Event Frame Received Nanoseconds Register"]
 pub mod tsupeerrxnsec;
 #[doc = "Transmit Pause Quantum Register 1"]
 pub struct TXPAUSEQUANT1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit Pause Quantum Register 1"]
 pub mod txpausequant1;
 #[doc = "Transmit Pause Quantum Register 2"]
 pub struct TXPAUSEQUANT2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit Pause Quantum Register 2"]
 pub mod txpausequant2;
 #[doc = "Transmit Pause Quantum Register 3"]
 pub struct TXPAUSEQUANT3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit Pause Quantum Register 3"]
 pub mod txpausequant3;
 #[doc = "Received LPI transitions"]
 pub struct RXLPI {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Received LPI transitions"]
 pub mod rxlpi;
 #[doc = "Received LPI time"]
 pub struct RXLPITIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Received LPI time"]
 pub mod rxlpitime;
 #[doc = "Transmit LPI transitions"]
 pub struct TXLPI {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit LPI transitions"]
 pub mod txlpi;
 #[doc = "Transmit LPI time"]
 pub struct TXLPITIME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit LPI time"]
 pub mod txlpitime;
 #[doc = "TX BD control register"]
 pub struct TXBDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX BD control register"]
 pub mod txbdctrl;
 #[doc = "RX BD control register"]
 pub struct RXBDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX BD control register"]
 pub mod rxbdctrl;
 #[doc = "I/O Route Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Route Enable Register"]
 pub mod routepen;
 #[doc = "I/O Route Location Register 0"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Route Location Register 0"]
 pub mod routeloc0;
 #[doc = "I/O Route Location Register 1"]
 pub struct ROUTELOC1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Route Location Register 1"]
 pub mod routeloc1;
 #[doc = "Ethernet control register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Ethernet control register"]
 pub mod ctrl;

@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -399,1105 +398,1105 @@ pub struct RegisterBlock {
 }
 #[doc = "DMA Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Control Register"]
 pub mod ctrl;
 #[doc = "DMA Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Status Register"]
 pub mod status;
 #[doc = "DMA Synchronization Trigger Register (Single-Cycle RMW)"]
 pub struct SYNC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Synchronization Trigger Register (Single-Cycle RMW)"]
 pub mod sync;
 #[doc = "DMA Channel Enable Register (Single-Cycle RMW)"]
 pub struct CHEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Enable Register (Single-Cycle RMW)"]
 pub mod chen;
 #[doc = "DMA Channel Busy Register"]
 pub struct CHBUSY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Busy Register"]
 pub mod chbusy;
 #[doc = "DMA Channel Linking Done Register (Single-Cycle RMW)"]
 pub struct CHDONE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Linking Done Register (Single-Cycle RMW)"]
 pub mod chdone;
 #[doc = "DMA Channel Debug Halt Register"]
 pub struct DBGHALT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Debug Halt Register"]
 pub mod dbghalt;
 #[doc = "DMA Channel Software Transfer Request Register"]
 pub struct SWREQ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Software Transfer Request Register"]
 pub mod swreq;
 #[doc = "DMA Channel Request Disable Register"]
 pub struct REQDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Request Disable Register"]
 pub mod reqdis;
 #[doc = "DMA Channel Requests Pending Register"]
 pub struct REQPEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Requests Pending Register"]
 pub mod reqpend;
 #[doc = "DMA Channel Link Load Register"]
 pub struct LINKLOAD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Link Load Register"]
 pub mod linkload;
 #[doc = "DMA Channel Request Clear Register"]
 pub struct REQCLEAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Channel Request Clear Register"]
 pub mod reqclear;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH0_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch0_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH0_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch0_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH0_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch0_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH0_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch0_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH0_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch0_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH0_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch0_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH0_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch0_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH1_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch1_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH1_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch1_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH1_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch1_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH1_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch1_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH1_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch1_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH1_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch1_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH1_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch1_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH2_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch2_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH2_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch2_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH2_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch2_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH2_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch2_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH2_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch2_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH2_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch2_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH2_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch2_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH3_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch3_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH3_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch3_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH3_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch3_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH3_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch3_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH3_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch3_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH3_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch3_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH3_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch3_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH4_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch4_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH4_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch4_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH4_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch4_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH4_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch4_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH4_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch4_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH4_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch4_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH4_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch4_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH5_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch5_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH5_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch5_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH5_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch5_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH5_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch5_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH5_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch5_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH5_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch5_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH5_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch5_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH6_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch6_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH6_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch6_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH6_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch6_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH6_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch6_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH6_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch6_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH6_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch6_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH6_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch6_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH7_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch7_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH7_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch7_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH7_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch7_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH7_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch7_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH7_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch7_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH7_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch7_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH7_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch7_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH8_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch8_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH8_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch8_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH8_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch8_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH8_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch8_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH8_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch8_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH8_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch8_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH8_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch8_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH9_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch9_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH9_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch9_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH9_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch9_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH9_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch9_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH9_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch9_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH9_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch9_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH9_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch9_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH10_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch10_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH10_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch10_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH10_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch10_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH10_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch10_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH10_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch10_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH10_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch10_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH10_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch10_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH11_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch11_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH11_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch11_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH11_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch11_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH11_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch11_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH11_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch11_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH11_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch11_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH11_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch11_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH12_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch12_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH12_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch12_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH12_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch12_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH12_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch12_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH12_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch12_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH12_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch12_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH12_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch12_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH13_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch13_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH13_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch13_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH13_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch13_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH13_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch13_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH13_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch13_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH13_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch13_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH13_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch13_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH14_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch14_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH14_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch14_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH14_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch14_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH14_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch14_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH14_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch14_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH14_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch14_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH14_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch14_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH15_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch15_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH15_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch15_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH15_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch15_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH15_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch15_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH15_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch15_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH15_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch15_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH15_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch15_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH16_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch16_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH16_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch16_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH16_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch16_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH16_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch16_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH16_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch16_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH16_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch16_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH16_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch16_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH17_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch17_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH17_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch17_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH17_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch17_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH17_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch17_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH17_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch17_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH17_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch17_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH17_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch17_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH18_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch18_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH18_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch18_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH18_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch18_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH18_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch18_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH18_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch18_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH18_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch18_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH18_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch18_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH19_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch19_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH19_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch19_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH19_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch19_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH19_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch19_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH19_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch19_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH19_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch19_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH19_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch19_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH20_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch20_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH20_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch20_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH20_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch20_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH20_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch20_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH20_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch20_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH20_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch20_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH20_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch20_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH21_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch21_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH21_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch21_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH21_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch21_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH21_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch21_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH21_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch21_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH21_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch21_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH21_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch21_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH22_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch22_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH22_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch22_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH22_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch22_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH22_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch22_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH22_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch22_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH22_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch22_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH22_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch22_link;
 #[doc = "Channel Peripheral Request Select Register"]
 pub struct CH23_REQSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Peripheral Request Select Register"]
 pub mod ch23_reqsel;
 #[doc = "Channel Configuration Register"]
 pub struct CH23_CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Configuration Register"]
 pub mod ch23_cfg;
 #[doc = "Channel Loop Counter Register"]
 pub struct CH23_LOOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Loop Counter Register"]
 pub mod ch23_loop;
 #[doc = "Channel Descriptor Control Word Register"]
 pub struct CH23_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Control Word Register"]
 pub mod ch23_ctrl;
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub struct CH23_SRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Source Data Address Register"]
 pub mod ch23_src;
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub struct CH23_DST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Destination Data Address Register"]
 pub mod ch23_dst;
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub struct CH23_LINK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Descriptor Link Structure Address Register"]
 pub mod ch23_link;

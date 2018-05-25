@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -25,61 +24,61 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "CRC Init Value"]
 pub struct INIT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC Init Value"]
 pub mod init;
 #[doc = "CRC Polynomial Value"]
 pub struct POLY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC Polynomial Value"]
 pub mod poly;
 #[doc = "Input 32-bit Data Register"]
 pub struct INPUTDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input 32-bit Data Register"]
 pub mod inputdata;
 #[doc = "Input 16-bit Data Register"]
 pub struct INPUTDATAHWORD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input 16-bit Data Register"]
 pub mod inputdatahword;
 #[doc = "Input 8-bit Data Register"]
 pub struct INPUTDATABYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input 8-bit Data Register"]
 pub mod inputdatabyte;
 #[doc = "CRC Data Register"]
 pub struct DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC Data Register"]
 pub mod data;
 #[doc = "CRC Data Reverse Register"]
 pub struct DATAREV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC Data Reverse Register"]
 pub mod datarev;
 #[doc = "CRC Data Byte Reverse Register"]
 pub struct DATABYTEREV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC Data Byte Reverse Register"]
 pub mod databyterev;

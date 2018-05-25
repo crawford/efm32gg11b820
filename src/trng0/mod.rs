@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -30,67 +29,67 @@ pub struct RegisterBlock {
 }
 #[doc = "Main Control Register"]
 pub struct CONTROL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Main Control Register"]
 pub mod control;
 #[doc = "FIFO Level Register"]
 pub struct FIFOLEVEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "FIFO Level Register"]
 pub mod fifolevel;
 #[doc = "FIFO Depth Register"]
 pub struct FIFODEPTH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "FIFO Depth Register"]
 pub mod fifodepth;
 #[doc = "Key Register 0"]
 pub struct KEY0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Key Register 0"]
 pub mod key0;
 #[doc = "Key Register 1"]
 pub struct KEY1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Key Register 1"]
 pub mod key1;
 #[doc = "Key Register 2"]
 pub struct KEY2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Key Register 2"]
 pub mod key2;
 #[doc = "Key Register 3"]
 pub struct KEY3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Key Register 3"]
 pub mod key3;
 #[doc = "Test Data Register"]
 pub struct TESTDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Test Data Register"]
 pub mod testdata;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Initial Wait Counter"]
 pub struct INITWAITVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Initial Wait Counter"]
 pub mod initwaitval;
 #[doc = "FIFO Data"]
 pub struct FIFO {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "FIFO Data"]
 pub mod fifo;

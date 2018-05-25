@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -109,271 +108,271 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Wide Arithmetic Configuration"]
 pub struct WAC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Wide Arithmetic Configuration"]
 pub mod wac;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Data Status Register"]
 pub struct DSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Data Status Register"]
 pub mod dstatus;
 #[doc = "Control Status Register"]
 pub struct CSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Status Register"]
 pub mod cstatus;
 #[doc = "KEY Register Access"]
 pub struct KEY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "KEY Register Access"]
 pub mod key;
 #[doc = "KEY Buffer Register Access"]
 pub struct KEYBUF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "KEY Buffer Register Access"]
 pub mod keybuf;
 #[doc = "Sequence Control"]
 pub struct SEQCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Control"]
 pub mod seqctrl;
 #[doc = "Sequence Control B"]
 pub struct SEQCTRLB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Control B"]
 pub mod seqctrlb;
 #[doc = "AES Interrupt Flags"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "AES Interrupt Flags"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Sequence Register 0"]
 pub struct SEQ0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Register 0"]
 pub mod seq0;
 #[doc = "Sequence Register 1"]
 pub struct SEQ1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Register 1"]
 pub mod seq1;
 #[doc = "Sequence Register 2"]
 pub struct SEQ2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Register 2"]
 pub mod seq2;
 #[doc = "Sequence Register 3"]
 pub struct SEQ3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Register 3"]
 pub mod seq3;
 #[doc = "Sequence Register 4"]
 pub struct SEQ4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sequence Register 4"]
 pub mod seq4;
 #[doc = "DATA0 Register Access"]
 pub struct DATA0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Access"]
 pub mod data0;
 #[doc = "DATA1 Register Access"]
 pub struct DATA1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA1 Register Access"]
 pub mod data1;
 #[doc = "DATA2 Register Access"]
 pub struct DATA2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA2 Register Access"]
 pub mod data2;
 #[doc = "DATA3 Register Access"]
 pub struct DATA3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA3 Register Access"]
 pub mod data3;
 #[doc = "DATA0XOR Register Access"]
 pub struct DATA0XOR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0XOR Register Access"]
 pub mod data0xor;
 #[doc = "DATA0 Register Byte Access"]
 pub struct DATA0BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte Access"]
 pub mod data0byte;
 #[doc = "DATA1 Register Byte Access"]
 pub struct DATA1BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA1 Register Byte Access"]
 pub mod data1byte;
 #[doc = "DATA0 Register Byte XOR Access"]
 pub struct DATA0XORBYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte XOR Access"]
 pub mod data0xorbyte;
 #[doc = "DATA0 Register Byte 12 Access"]
 pub struct DATA0BYTE12 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte 12 Access"]
 pub mod data0byte12;
 #[doc = "DATA0 Register Byte 13 Access"]
 pub struct DATA0BYTE13 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte 13 Access"]
 pub mod data0byte13;
 #[doc = "DATA0 Register Byte 14 Access"]
 pub struct DATA0BYTE14 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte 14 Access"]
 pub mod data0byte14;
 #[doc = "DATA0 Register Byte 15 Access"]
 pub struct DATA0BYTE15 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DATA0 Register Byte 15 Access"]
 pub mod data0byte15;
 #[doc = "DDATA0 Register Access"]
 pub struct DDATA0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA0 Register Access"]
 pub mod ddata0;
 #[doc = "DDATA1 Register Access"]
 pub struct DDATA1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA1 Register Access"]
 pub mod ddata1;
 #[doc = "DDATA2 Register Access"]
 pub struct DDATA2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA2 Register Access"]
 pub mod ddata2;
 #[doc = "DDATA3 Register Access"]
 pub struct DDATA3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA3 Register Access"]
 pub mod ddata3;
 #[doc = "DDATA4 Register Access"]
 pub struct DDATA4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA4 Register Access"]
 pub mod ddata4;
 #[doc = "DDATA0 Register Big Endian Access"]
 pub struct DDATA0BIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA0 Register Big Endian Access"]
 pub mod ddata0big;
 #[doc = "DDATA0 Register Byte Access"]
 pub struct DDATA0BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA0 Register Byte Access"]
 pub mod ddata0byte;
 #[doc = "DDATA1 Register Byte Access"]
 pub struct DDATA1BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA1 Register Byte Access"]
 pub mod ddata1byte;
 #[doc = "DDATA0 Register Byte 32 Access"]
 pub struct DDATA0BYTE32 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DDATA0 Register Byte 32 Access"]
 pub mod ddata0byte32;
 #[doc = "QDATA0 Register Access"]
 pub struct QDATA0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDATA0 Register Access"]
 pub mod qdata0;
 #[doc = "QDATA1 Register Access"]
 pub struct QDATA1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDATA1 Register Access"]
 pub mod qdata1;
 #[doc = "QDATA1 Register Big Endian Access"]
 pub struct QDATA1BIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDATA1 Register Big Endian Access"]
 pub mod qdata1big;
 #[doc = "QDATA0 Register Byte Access"]
 pub struct QDATA0BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDATA0 Register Byte Access"]
 pub mod qdata0byte;
 #[doc = "QDATA1 Register Byte Access"]
 pub struct QDATA1BYTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDATA1 Register Byte Access"]
 pub mod qdata1byte;

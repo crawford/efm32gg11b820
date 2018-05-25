@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -68,187 +67,187 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "USART Frame Format Register"]
 pub struct FRAME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USART Frame Format Register"]
 pub mod frame;
 #[doc = "USART Trigger Control Register"]
 pub struct TRIGCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USART Trigger Control Register"]
 pub mod trigctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "USART Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USART Status Register"]
 pub mod status;
 #[doc = "Clock Control Register"]
 pub struct CLKDIV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clock Control Register"]
 pub mod clkdiv;
 #[doc = "RX Buffer Data Extended Register"]
 pub struct RXDATAX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Buffer Data Extended Register"]
 pub mod rxdatax;
 #[doc = "RX Buffer Data Register"]
 pub struct RXDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Buffer Data Register"]
 pub mod rxdata;
 #[doc = "RX Buffer Double Data Extended Register"]
 pub struct RXDOUBLEX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Buffer Double Data Extended Register"]
 pub mod rxdoublex;
 #[doc = "RX FIFO Double Data Register"]
 pub struct RXDOUBLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX FIFO Double Data Register"]
 pub mod rxdouble;
 #[doc = "RX Buffer Data Extended Peek Register"]
 pub struct RXDATAXP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Buffer Data Extended Peek Register"]
 pub mod rxdataxp;
 #[doc = "RX Buffer Double Data Extended Peek Register"]
 pub struct RXDOUBLEXP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX Buffer Double Data Extended Peek Register"]
 pub mod rxdoublexp;
 #[doc = "TX Buffer Data Extended Register"]
 pub struct TXDATAX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX Buffer Data Extended Register"]
 pub mod txdatax;
 #[doc = "TX Buffer Data Register"]
 pub struct TXDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX Buffer Data Register"]
 pub mod txdata;
 #[doc = "TX Buffer Double Data Extended Register"]
 pub struct TXDOUBLEX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX Buffer Double Data Extended Register"]
 pub mod txdoublex;
 #[doc = "TX Buffer Double Data Register"]
 pub struct TXDOUBLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TX Buffer Double Data Register"]
 pub mod txdouble;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "IrDA Control Register"]
 pub struct IRCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "IrDA Control Register"]
 pub mod irctrl;
 #[doc = "USART Input Register"]
 pub struct INPUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USART Input Register"]
 pub mod input;
 #[doc = "I2S Control Register"]
 pub struct I2SCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I2S Control Register"]
 pub mod i2sctrl;
 #[doc = "Timing Register"]
 pub struct TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Timing Register"]
 pub mod timing;
 #[doc = "Control Register Extended"]
 pub struct CTRLX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register Extended"]
 pub mod ctrlx;
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub struct TIMECMP0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub mod timecmp0;
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub struct TIMECMP1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub mod timecmp1;
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub struct TIMECMP2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Used to Generate Interrupts and Various Delays"]
 pub mod timecmp2;
 #[doc = "I/O Routing Pin Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Pin Enable Register"]
 pub mod routepen;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc1;

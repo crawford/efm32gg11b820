@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -267,673 +266,673 @@ pub struct RegisterBlock {
 }
 #[doc = "Port Control Register"]
 pub struct PA_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pa_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PA_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pa_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PA_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pa_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PA_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pa_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PA_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pa_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PA_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pa_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PA_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pa_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PA_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pa_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PB_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pb_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PB_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pb_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PB_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pb_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PB_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pb_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PB_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pb_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PB_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pb_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PB_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pb_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PB_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pb_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PC_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pc_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PC_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pc_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PC_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pc_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PC_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pc_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PC_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pc_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PC_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pc_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PC_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pc_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PC_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pc_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PD_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pd_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PD_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pd_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PD_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pd_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PD_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pd_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PD_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pd_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PD_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pd_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PD_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pd_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PD_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pd_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PE_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pe_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PE_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pe_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PE_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pe_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PE_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pe_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PE_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pe_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PE_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pe_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PE_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pe_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PE_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pe_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PF_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pf_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PF_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pf_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PF_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pf_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PF_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pf_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PF_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pf_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PF_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pf_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PF_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pf_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PF_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pf_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PG_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pg_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PG_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pg_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PG_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pg_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PG_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pg_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PG_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pg_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PG_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pg_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PG_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pg_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PG_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pg_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PH_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod ph_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PH_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod ph_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PH_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod ph_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PH_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod ph_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PH_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod ph_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PH_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod ph_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PH_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod ph_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PH_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod ph_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PI_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pi_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PI_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pi_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PI_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pi_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PI_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pi_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PI_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pi_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PI_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pi_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PI_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pi_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PI_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pi_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PJ_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pj_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PJ_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pj_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PJ_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pj_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PJ_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pj_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PJ_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pj_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PJ_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pj_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PJ_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pj_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PJ_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pj_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PK_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pk_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PK_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pk_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PK_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pk_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PK_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pk_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PK_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pk_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PK_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pk_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PK_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pk_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PK_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pk_ovtdis;
 #[doc = "Port Control Register"]
 pub struct PL_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Control Register"]
 pub mod pl_ctrl;
 #[doc = "Port Pin Mode Low Register"]
 pub struct PL_MODEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode Low Register"]
 pub mod pl_model;
 #[doc = "Port Pin Mode High Register"]
 pub struct PL_MODEH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Pin Mode High Register"]
 pub mod pl_modeh;
 #[doc = "Port Data Out Register"]
 pub struct PL_DOUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Register"]
 pub mod pl_dout;
 #[doc = "Port Data Out Toggle Register"]
 pub struct PL_DOUTTGL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data Out Toggle Register"]
 pub mod pl_douttgl;
 #[doc = "Port Data in Register"]
 pub struct PL_DIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Data in Register"]
 pub mod pl_din;
 #[doc = "Port Unlocked Pins Register"]
 pub struct PL_PINLOCKN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Port Unlocked Pins Register"]
 pub mod pl_pinlockn;
 #[doc = "Over Voltage Disable for All Modes"]
 pub struct PL_OVTDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pl_ovtdis;
 #[doc = "External Interrupt Port Select Low Register"]
 pub struct EXTIPSELL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Port Select Low Register"]
 pub mod extipsell;
 #[doc = "External Interrupt Port Select High Register"]
 pub struct EXTIPSELH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Port Select High Register"]
 pub mod extipselh;
 #[doc = "External Interrupt Pin Select Low Register"]
 pub struct EXTIPINSELL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Pin Select Low Register"]
 pub mod extipinsell;
 #[doc = "External Interrupt Pin Select High Register"]
 pub struct EXTIPINSELH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Pin Select High Register"]
 pub mod extipinselh;
 #[doc = "External Interrupt Rising Edge Trigger Register"]
 pub struct EXTIRISE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Rising Edge Trigger Register"]
 pub mod extirise;
 #[doc = "External Interrupt Falling Edge Trigger Register"]
 pub struct EXTIFALL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Falling Edge Trigger Register"]
 pub mod extifall;
 #[doc = "External Interrupt Level Register"]
 pub struct EXTILEVEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External Interrupt Level Register"]
 pub mod extilevel;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "EM4 Wake Up Enable Register"]
 pub struct EM4WUEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "EM4 Wake Up Enable Register"]
 pub mod em4wuen;
 #[doc = "I/O Routing Pin Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Pin Enable Register"]
 pub mod routepen;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "Input Sense Register"]
 pub struct INSENSE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input Sense Register"]
 pub mod insense;
 #[doc = "Configuration Lock Register"]
 pub struct LOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration Lock Register"]
 pub mod lock;

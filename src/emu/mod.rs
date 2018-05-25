@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -104,259 +103,259 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Configuration Lock Register"]
 pub struct LOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration Lock Register"]
 pub mod lock;
 #[doc = "Memory Control Register"]
 pub struct RAM0CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Memory Control Register"]
 pub mod ram0ctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "EM4 Control Register"]
 pub struct EM4CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "EM4 Control Register"]
 pub mod em4ctrl;
 #[doc = "Temperature Limits for Interrupt Generation"]
 pub struct TEMPLIMITS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Temperature Limits for Interrupt Generation"]
 pub mod templimits;
 #[doc = "Value of Last Temperature Measurement"]
 pub struct TEMP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Value of Last Temperature Measurement"]
 pub mod temp;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Regulator and Supply Lock Register"]
 pub struct PWRLOCK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Regulator and Supply Lock Register"]
 pub mod pwrlock;
 #[doc = "Power Control Register"]
 pub struct PWRCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Power Control Register"]
 pub mod pwrctrl;
 #[doc = "DCDC Control"]
 pub struct DCDCCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Control"]
 pub mod dcdcctrl;
 #[doc = "DCDC Miscellaneous Control Register"]
 pub struct DCDCMISCCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Miscellaneous Control Register"]
 pub mod dcdcmiscctrl;
 #[doc = "DCDC Power Train NFET Zero Current Detector Control Register"]
 pub struct DCDCZDETCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Power Train NFET Zero Current Detector Control Register"]
 pub mod dcdczdetctrl;
 #[doc = "DCDC Power Train PFET Current Limiter Control Register"]
 pub struct DCDCCLIMCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Power Train PFET Current Limiter Control Register"]
 pub mod dcdcclimctrl;
 #[doc = "DCDC Low Noise Compensator Control Register"]
 pub struct DCDCLNCOMPCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Low Noise Compensator Control Register"]
 pub mod dcdclncompctrl;
 #[doc = "DCDC Low Noise Voltage Register"]
 pub struct DCDCLNVCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Low Noise Voltage Register"]
 pub mod dcdclnvctrl;
 #[doc = "DCDC Low Power Voltage Register"]
 pub struct DCDCLPVCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Low Power Voltage Register"]
 pub mod dcdclpvctrl;
 #[doc = "DCDC Low Power Control Register"]
 pub struct DCDCLPCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Low Power Control Register"]
 pub mod dcdclpctrl;
 #[doc = "DCDC Low Noise Controller Frequency Control"]
 pub struct DCDCLNFREQCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Low Noise Controller Frequency Control"]
 pub mod dcdclnfreqctrl;
 #[doc = "DCDC Read Status Register"]
 pub struct DCDCSYNC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DCDC Read Status Register"]
 pub mod dcdcsync;
 #[doc = "VMON AVDD Channel Control"]
 pub struct VMONAVDDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "VMON AVDD Channel Control"]
 pub mod vmonavddctrl;
 #[doc = "Alternate VMON AVDD Channel Control"]
 pub struct VMONALTAVDDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Alternate VMON AVDD Channel Control"]
 pub mod vmonaltavddctrl;
 #[doc = "VMON DVDD Channel Control"]
 pub struct VMONDVDDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "VMON DVDD Channel Control"]
 pub mod vmondvddctrl;
 #[doc = "VMON IOVDD0 Channel Control"]
 pub struct VMONIO0CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "VMON IOVDD0 Channel Control"]
 pub mod vmonio0ctrl;
 #[doc = "VMON IOVDD1 Channel Control"]
 pub struct VMONIO1CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "VMON IOVDD1 Channel Control"]
 pub mod vmonio1ctrl;
 #[doc = "VMON BUVDD Channel Control"]
 pub struct VMONBUVDDCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "VMON BUVDD Channel Control"]
 pub mod vmonbuvddctrl;
 #[doc = "Memory Control Register"]
 pub struct RAM1CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Memory Control Register"]
 pub mod ram1ctrl;
 #[doc = "Memory Control Register"]
 pub struct RAM2CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Memory Control Register"]
 pub mod ram2ctrl;
 #[doc = "Backup Power Configuration Register"]
 pub struct BUCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Backup Power Configuration Register"]
 pub mod buctrl;
 #[doc = "5V Regulator Control"]
 pub struct R5VCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Regulator Control"]
 pub mod r5vctrl;
 #[doc = "5V Regulator Control"]
 pub struct R5VADCCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Regulator Control"]
 pub mod r5vadcctrl;
 #[doc = "5V Regulator Voltage Select"]
 pub struct R5VOUTLEVEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Regulator Voltage Select"]
 pub mod r5voutlevel;
 #[doc = "5V Detector Enables"]
 pub struct R5VDETCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Detector Enables"]
 pub mod r5vdetctrl;
 #[doc = "Configuration Bits for Low Power Mode to Be Applied During EM01, This Field is Only Relevant If LP Mode is Used in EM01"]
 pub struct DCDCLPEM01CFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration Bits for Low Power Mode to Be Applied During EM01, This Field is Only Relevant If LP Mode is Used in EM01"]
 pub mod dcdclpem01cfg;
 #[doc = "5V Detector Status Register"]
 pub struct R5VSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Detector Status Register"]
 pub mod r5vstatus;
 #[doc = "5V Read Status Register"]
 pub struct R5VSYNC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "5V Read Status Register"]
 pub mod r5vsync;
 #[doc = "Clears Corresponding Bits in EM23PERNORETAINSTATUS Unlocking Access to Peripheral"]
 pub struct EM23PERNORETAINCMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clears Corresponding Bits in EM23PERNORETAINSTATUS Unlocking Access to Peripheral"]
 pub mod em23pernoretaincmd;
 #[doc = "Status Indicating If Peripherals Were Powered Down in EM23, Subsequently Locking Access to It"]
 pub struct EM23PERNORETAINSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Indicating If Peripherals Were Powered Down in EM23, Subsequently Locking Access to It"]
 pub mod em23pernoretainstatus;
 #[doc = "When Set Corresponding Peripherals May Get Powered Down in EM23"]
 pub struct EM23PERNORETAINCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "When Set Corresponding Peripherals May Get Powered Down in EM23"]
 pub mod em23pernoretainctrl;

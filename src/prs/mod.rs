@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -83,223 +82,223 @@ pub struct RegisterBlock {
 }
 #[doc = "Software Pulse Register"]
 pub struct SWPULSE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Software Pulse Register"]
 pub mod swpulse;
 #[doc = "Software Level Register"]
 pub struct SWLEVEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Software Level Register"]
 pub mod swlevel;
 #[doc = "I/O Routing Pin Enable Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Pin Enable Register"]
 pub mod routepen;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc1;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc2;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc3;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc4;
 #[doc = "I/O Routing Location Register"]
 pub struct ROUTELOC5 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc5;
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "DMA Request 0 Register"]
 pub struct DMAREQ0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Request 0 Register"]
 pub mod dmareq0;
 #[doc = "DMA Request 1 Register"]
 pub struct DMAREQ1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DMA Request 1 Register"]
 pub mod dmareq1;
 #[doc = "PRS Channel Values"]
 pub struct PEEK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PRS Channel Values"]
 pub mod peek;
 #[doc = "Channel Control Register"]
 pub struct CH0_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch0_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH1_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch1_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH2_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch2_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH3_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch3_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH4_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch4_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH5_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch5_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH6_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch6_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH7_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch7_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH8_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch8_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH9_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch9_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH10_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch10_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH11_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch11_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH12_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch12_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH13_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch13_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH14_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch14_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH15_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch15_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH16_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch16_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH17_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch17_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH18_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch18_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH19_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch19_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH20_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch20_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH21_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch21_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH22_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch22_ctrl;
 #[doc = "Channel Control Register"]
 pub struct CH23_CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Control Register"]
 pub mod ch23_ctrl;

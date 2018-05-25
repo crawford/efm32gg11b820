@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -326,913 +325,913 @@ pub struct RegisterBlock {
 }
 #[doc = "Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Control Register"]
 pub mod ctrl;
 #[doc = "Timing Control Register"]
 pub struct TIMCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Timing Control Register"]
 pub mod timctrl;
 #[doc = "Peripheral Control Register"]
 pub struct PERCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Peripheral Control Register"]
 pub mod perctrl;
 #[doc = "Decoder Control Register"]
 pub struct DECCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Decoder Control Register"]
 pub mod decctrl;
 #[doc = "Bias Control Register"]
 pub struct BIASCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Bias Control Register"]
 pub mod biasctrl;
 #[doc = "LESENSE Evaluation Control"]
 pub struct EVALCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "LESENSE Evaluation Control"]
 pub mod evalctrl;
 #[doc = "PRS Control Register"]
 pub struct PRSCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PRS Control Register"]
 pub mod prsctrl;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "Channel Enable Register"]
 pub struct CHEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel Enable Register"]
 pub mod chen;
 #[doc = "Scan Result Register"]
 pub struct SCANRES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Result Register"]
 pub mod scanres;
 #[doc = "Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status Register"]
 pub mod status;
 #[doc = "Result Buffer Pointers"]
 pub struct PTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Result Buffer Pointers"]
 pub mod ptr;
 #[doc = "Result Buffer Data Register"]
 pub struct BUFDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Result Buffer Data Register"]
 pub mod bufdata;
 #[doc = "Current Channel Index"]
 pub struct CURCH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Current Channel Index"]
 pub mod curch;
 #[doc = "Current Decoder State"]
 pub struct DECSTATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Current Decoder State"]
 pub mod decstate;
 #[doc = "Decoder Input Register"]
 pub struct SENSORSTATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Decoder Input Register"]
 pub mod sensorstate;
 #[doc = "GPIO Idle Phase Configuration"]
 pub struct IDLECONF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "GPIO Idle Phase Configuration"]
 pub mod idleconf;
 #[doc = "Alternative Excite Pin Configuration"]
 pub struct ALTEXCONF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Alternative Excite Pin Configuration"]
 pub mod altexconf;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "Synchronization Busy Register"]
 pub struct SYNCBUSY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Synchronization Busy Register"]
 pub mod syncbusy;
 #[doc = "I/O Routing Register"]
 pub struct ROUTEPEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Register"]
 pub mod routepen;
 #[doc = "State Transition Configuration a"]
 pub struct ST0_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st0_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST0_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st0_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST1_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st1_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST1_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st1_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST2_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st2_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST2_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st2_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST3_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st3_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST3_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st3_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST4_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st4_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST4_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st4_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST5_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st5_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST5_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st5_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST6_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st6_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST6_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st6_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST7_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st7_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST7_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st7_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST8_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st8_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST8_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st8_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST9_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st9_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST9_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st9_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST10_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st10_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST10_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st10_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST11_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st11_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST11_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st11_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST12_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st12_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST12_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st12_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST13_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st13_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST13_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st13_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST14_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st14_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST14_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st14_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST15_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st15_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST15_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st15_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST16_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st16_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST16_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st16_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST17_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st17_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST17_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st17_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST18_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st18_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST18_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st18_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST19_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st19_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST19_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st19_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST20_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st20_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST20_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st20_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST21_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st21_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST21_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st21_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST22_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st22_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST22_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st22_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST23_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st23_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST23_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st23_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST24_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st24_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST24_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st24_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST25_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st25_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST25_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st25_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST26_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st26_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST26_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st26_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST27_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st27_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST27_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st27_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST28_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st28_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST28_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st28_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST29_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st29_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST29_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st29_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST30_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st30_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST30_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st30_tconfb;
 #[doc = "State Transition Configuration a"]
 pub struct ST31_TCONFA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration a"]
 pub mod st31_tconfa;
 #[doc = "State Transition Configuration B"]
 pub struct ST31_TCONFB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "State Transition Configuration B"]
 pub mod st31_tconfb;
 #[doc = "Scan Results"]
 pub struct BUF0_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf0_data;
 #[doc = "Scan Results"]
 pub struct BUF1_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf1_data;
 #[doc = "Scan Results"]
 pub struct BUF2_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf2_data;
 #[doc = "Scan Results"]
 pub struct BUF3_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf3_data;
 #[doc = "Scan Results"]
 pub struct BUF4_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf4_data;
 #[doc = "Scan Results"]
 pub struct BUF5_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf5_data;
 #[doc = "Scan Results"]
 pub struct BUF6_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf6_data;
 #[doc = "Scan Results"]
 pub struct BUF7_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf7_data;
 #[doc = "Scan Results"]
 pub struct BUF8_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf8_data;
 #[doc = "Scan Results"]
 pub struct BUF9_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf9_data;
 #[doc = "Scan Results"]
 pub struct BUF10_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf10_data;
 #[doc = "Scan Results"]
 pub struct BUF11_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf11_data;
 #[doc = "Scan Results"]
 pub struct BUF12_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf12_data;
 #[doc = "Scan Results"]
 pub struct BUF13_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf13_data;
 #[doc = "Scan Results"]
 pub struct BUF14_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf14_data;
 #[doc = "Scan Results"]
 pub struct BUF15_DATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Results"]
 pub mod buf15_data;
 #[doc = "Scan Configuration"]
 pub struct CH0_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch0_timing;
 #[doc = "Scan Configuration"]
 pub struct CH0_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch0_interact;
 #[doc = "Scan Configuration"]
 pub struct CH0_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch0_eval;
 #[doc = "Scan Configuration"]
 pub struct CH1_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch1_timing;
 #[doc = "Scan Configuration"]
 pub struct CH1_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch1_interact;
 #[doc = "Scan Configuration"]
 pub struct CH1_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch1_eval;
 #[doc = "Scan Configuration"]
 pub struct CH2_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch2_timing;
 #[doc = "Scan Configuration"]
 pub struct CH2_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch2_interact;
 #[doc = "Scan Configuration"]
 pub struct CH2_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch2_eval;
 #[doc = "Scan Configuration"]
 pub struct CH3_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch3_timing;
 #[doc = "Scan Configuration"]
 pub struct CH3_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch3_interact;
 #[doc = "Scan Configuration"]
 pub struct CH3_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch3_eval;
 #[doc = "Scan Configuration"]
 pub struct CH4_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch4_timing;
 #[doc = "Scan Configuration"]
 pub struct CH4_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch4_interact;
 #[doc = "Scan Configuration"]
 pub struct CH4_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch4_eval;
 #[doc = "Scan Configuration"]
 pub struct CH5_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch5_timing;
 #[doc = "Scan Configuration"]
 pub struct CH5_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch5_interact;
 #[doc = "Scan Configuration"]
 pub struct CH5_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch5_eval;
 #[doc = "Scan Configuration"]
 pub struct CH6_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch6_timing;
 #[doc = "Scan Configuration"]
 pub struct CH6_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch6_interact;
 #[doc = "Scan Configuration"]
 pub struct CH6_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch6_eval;
 #[doc = "Scan Configuration"]
 pub struct CH7_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch7_timing;
 #[doc = "Scan Configuration"]
 pub struct CH7_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch7_interact;
 #[doc = "Scan Configuration"]
 pub struct CH7_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch7_eval;
 #[doc = "Scan Configuration"]
 pub struct CH8_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch8_timing;
 #[doc = "Scan Configuration"]
 pub struct CH8_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch8_interact;
 #[doc = "Scan Configuration"]
 pub struct CH8_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch8_eval;
 #[doc = "Scan Configuration"]
 pub struct CH9_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch9_timing;
 #[doc = "Scan Configuration"]
 pub struct CH9_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch9_interact;
 #[doc = "Scan Configuration"]
 pub struct CH9_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch9_eval;
 #[doc = "Scan Configuration"]
 pub struct CH10_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch10_timing;
 #[doc = "Scan Configuration"]
 pub struct CH10_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch10_interact;
 #[doc = "Scan Configuration"]
 pub struct CH10_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch10_eval;
 #[doc = "Scan Configuration"]
 pub struct CH11_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch11_timing;
 #[doc = "Scan Configuration"]
 pub struct CH11_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch11_interact;
 #[doc = "Scan Configuration"]
 pub struct CH11_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch11_eval;
 #[doc = "Scan Configuration"]
 pub struct CH12_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch12_timing;
 #[doc = "Scan Configuration"]
 pub struct CH12_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch12_interact;
 #[doc = "Scan Configuration"]
 pub struct CH12_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch12_eval;
 #[doc = "Scan Configuration"]
 pub struct CH13_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch13_timing;
 #[doc = "Scan Configuration"]
 pub struct CH13_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch13_interact;
 #[doc = "Scan Configuration"]
 pub struct CH13_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch13_eval;
 #[doc = "Scan Configuration"]
 pub struct CH14_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch14_timing;
 #[doc = "Scan Configuration"]
 pub struct CH14_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch14_interact;
 #[doc = "Scan Configuration"]
 pub struct CH14_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch14_eval;
 #[doc = "Scan Configuration"]
 pub struct CH15_TIMING {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch15_timing;
 #[doc = "Scan Configuration"]
 pub struct CH15_INTERACT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch15_interact;
 #[doc = "Scan Configuration"]
 pub struct CH15_EVAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Scan Configuration"]
 pub mod ch15_eval;

@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -468,1183 +467,1183 @@ pub struct RegisterBlock {
 }
 #[doc = "System Control Register"]
 pub struct CTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "System Control Register"]
 pub mod ctrl;
 #[doc = "System Status Register"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "System Status Register"]
 pub mod status;
 #[doc = "Interrupt Flag Register"]
 pub struct IF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
 #[doc = "Interrupt Flag Set Register"]
 pub struct IFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
 #[doc = "Interrupt Flag Clear Register"]
 pub struct IFC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
 #[doc = "Interrupt Enable Register"]
 pub struct IEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
 #[doc = "I/O Routing Register"]
 pub struct ROUTE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I/O Routing Register"]
 pub mod route;
 #[doc = "Charger Detect Configuration Register"]
 pub struct CDCONF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Charger Detect Configuration Register"]
 pub mod cdconf;
 #[doc = "Command Register"]
 pub struct CMD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Command Register"]
 pub mod cmd;
 #[doc = "USB LEM Control Register"]
 pub struct LEMCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USB LEM Control Register"]
 pub mod lemctrl;
 #[doc = "OTG Control and Status Register"]
 pub struct GOTGCTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "OTG Control and Status Register"]
 pub mod gotgctl;
 #[doc = "OTG Interrupt Register"]
 pub struct GOTGINT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "OTG Interrupt Register"]
 pub mod gotgint;
 #[doc = "AHB Configuration Register"]
 pub struct GAHBCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "AHB Configuration Register"]
 pub mod gahbcfg;
 #[doc = "USB Configuration Register"]
 pub struct GUSBCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "USB Configuration Register"]
 pub mod gusbcfg;
 #[doc = "Reset Register"]
 pub struct GRSTCTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Reset Register"]
 pub mod grstctl;
 #[doc = "Interrupt Register"]
 pub struct GINTSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Register"]
 pub mod gintsts;
 #[doc = "Interrupt Mask Register"]
 pub struct GINTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Interrupt Mask Register"]
 pub mod gintmsk;
 #[doc = "Receive Status Debug Read Register"]
 pub struct GRXSTSR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive Status Debug Read Register"]
 pub mod grxstsr;
 #[doc = "Receive Status Read /Pop Register"]
 pub struct GRXSTSP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive Status Read /Pop Register"]
 pub mod grxstsp;
 #[doc = "Receive FIFO Size Register"]
 pub struct GRXFSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive FIFO Size Register"]
 pub mod grxfsiz;
 #[doc = "Non-periodic Transmit FIFO Size Register"]
 pub struct GNPTXFSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Non-periodic Transmit FIFO Size Register"]
 pub mod gnptxfsiz;
 #[doc = "Non-periodic Transmit FIFO/Queue Status Register"]
 pub struct GNPTXSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Non-periodic Transmit FIFO/Queue Status Register"]
 pub mod gnptxsts;
 #[doc = "Synopsys ID Register"]
 pub struct GSNPSID {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Synopsys ID Register"]
 pub mod gsnpsid;
 #[doc = "Global DFIFO Configuration Register"]
 pub struct GDFIFOCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Global DFIFO Configuration Register"]
 pub mod gdfifocfg;
 #[doc = "Host Periodic Transmit FIFO Size Register"]
 pub struct HPTXFSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Periodic Transmit FIFO Size Register"]
 pub mod hptxfsiz;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 1"]
 pub struct DIEPTXF1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 1"]
 pub mod dieptxf1;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 2"]
 pub struct DIEPTXF2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 2"]
 pub mod dieptxf2;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 3"]
 pub struct DIEPTXF3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 3"]
 pub mod dieptxf3;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 4"]
 pub struct DIEPTXF4 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 4"]
 pub mod dieptxf4;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 5"]
 pub struct DIEPTXF5 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 5"]
 pub mod dieptxf5;
 #[doc = "Device in Endpoint Transmit FIFO Size Register 6"]
 pub struct DIEPTXF6 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Size Register 6"]
 pub mod dieptxf6;
 #[doc = "Host Configuration Register"]
 pub struct HCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Configuration Register"]
 pub mod hcfg;
 #[doc = "Host Frame Interval Register"]
 pub struct HFIR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Frame Interval Register"]
 pub mod hfir;
 #[doc = "Host Frame Number/Frame Time Remaining Register"]
 pub struct HFNUM {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Frame Number/Frame Time Remaining Register"]
 pub mod hfnum;
 #[doc = "Host Periodic Transmit FIFO/Queue Status Register"]
 pub struct HPTXSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Periodic Transmit FIFO/Queue Status Register"]
 pub mod hptxsts;
 #[doc = "Host All Channels Interrupt Register"]
 pub struct HAINT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host All Channels Interrupt Register"]
 pub mod haint;
 #[doc = "Host All Channels Interrupt Mask Register"]
 pub struct HAINTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host All Channels Interrupt Mask Register"]
 pub mod haintmsk;
 #[doc = "Host Port Control and Status Register"]
 pub struct HPRT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Port Control and Status Register"]
 pub mod hprt;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC0_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc0_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC0_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc0_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC0_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc0_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC0_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc0_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC0_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc0_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC0_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc0_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC1_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc1_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC1_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc1_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC1_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc1_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC1_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc1_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC1_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc1_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC1_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc1_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC2_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc2_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC2_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc2_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC2_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc2_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC2_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc2_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC2_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc2_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC2_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc2_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC3_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc3_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC3_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc3_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC3_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc3_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC3_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc3_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC3_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc3_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC3_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc3_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC4_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc4_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC4_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc4_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC4_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc4_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC4_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc4_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC4_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc4_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC4_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc4_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC5_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc5_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC5_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc5_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC5_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc5_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC5_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc5_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC5_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc5_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC5_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc5_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC6_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc6_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC6_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc6_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC6_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc6_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC6_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc6_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC6_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc6_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC6_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc6_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC7_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc7_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC7_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc7_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC7_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc7_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC7_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc7_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC7_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc7_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC7_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc7_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC8_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc8_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC8_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc8_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC8_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc8_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC8_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc8_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC8_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc8_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC8_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc8_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC9_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc9_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC9_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc9_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC9_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc9_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC9_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc9_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC9_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc9_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC9_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc9_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC10_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc10_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC10_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc10_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC10_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc10_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC10_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc10_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC10_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc10_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC10_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc10_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC11_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc11_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC11_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc11_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC11_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc11_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC11_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc11_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC11_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc11_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC11_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc11_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC12_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc12_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC12_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc12_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC12_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc12_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC12_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc12_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC12_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc12_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC12_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc12_dmaaddr;
 #[doc = "Host Channel 0 Characteristics Register"]
 pub struct HC13_CHAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Characteristics Register"]
 pub mod hc13_char;
 #[doc = "Host Channel 0 Split Control Register"]
 pub struct HC13_SPLT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Split Control Register"]
 pub mod hc13_splt;
 #[doc = "Host Channel 0 Interrupt Register"]
 pub struct HC13_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Register"]
 pub mod hc13_int;
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub struct HC13_INTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Interrupt Mask Register"]
 pub mod hc13_intmsk;
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub struct HC13_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 Transfer Size Register"]
 pub mod hc13_tsiz;
 #[doc = "Host Channel 0 DMA Address Register"]
 pub struct HC13_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Host Channel 0 DMA Address Register"]
 pub mod hc13_dmaaddr;
 #[doc = "Device Configuration Register"]
 pub struct DCFG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Configuration Register"]
 pub mod dcfg;
 #[doc = "Device Control Register"]
 pub struct DCTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control Register"]
 pub mod dctl;
 #[doc = "Device Status Register"]
 pub struct DSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Status Register"]
 pub mod dsts;
 #[doc = "Device in Endpoint Common Interrupt Mask Register"]
 pub struct DIEPMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Common Interrupt Mask Register"]
 pub mod diepmsk;
 #[doc = "Device OUT Endpoint Common Interrupt Mask Register"]
 pub struct DOEPMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint Common Interrupt Mask Register"]
 pub mod doepmsk;
 #[doc = "Device All Endpoints Interrupt Register"]
 pub struct DAINT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device All Endpoints Interrupt Register"]
 pub mod daint;
 #[doc = "Device All Endpoints Interrupt Mask Register"]
 pub struct DAINTMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device All Endpoints Interrupt Mask Register"]
 pub mod daintmsk;
 #[doc = "Device VBUS Discharge Time Register"]
 pub struct DVBUSDIS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device VBUS Discharge Time Register"]
 pub mod dvbusdis;
 #[doc = "Device VBUS Pulsing Time Register"]
 pub struct DVBUSPULSE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device VBUS Pulsing Time Register"]
 pub mod dvbuspulse;
 #[doc = "Device Threshold Control Register"]
 pub struct DTHRCTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Threshold Control Register"]
 pub mod dthrctl;
 #[doc = "Device in Endpoint FIFO Empty Interrupt Mask Register"]
 pub struct DIEPEMPMSK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint FIFO Empty Interrupt Mask Register"]
 pub mod diepempmsk;
 #[doc = "Device Control in Endpoint 0 Control Register"]
 pub struct DIEP0CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 0 Control Register"]
 pub mod diep0ctl;
 #[doc = "Device in Endpoint 0 Interrupt Register"]
 pub struct DIEP0INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 0 Interrupt Register"]
 pub mod diep0int;
 #[doc = "Device in Endpoint 0 Transfer Size Register"]
 pub struct DIEP0TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 0 Transfer Size Register"]
 pub mod diep0tsiz;
 #[doc = "Device in Endpoint 0 DMA Address Register"]
 pub struct DIEP0DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 0 DMA Address Register"]
 pub mod diep0dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 0"]
 pub struct DIEP0TXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 0"]
 pub mod diep0txfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP0_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep0_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP0_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep0_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP0_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep0_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP0_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep0_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP0_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep0_dtxfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP1_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep1_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP1_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep1_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP1_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep1_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP1_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep1_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP1_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep1_dtxfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP2_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep2_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP2_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep2_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP2_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep2_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP2_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep2_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP2_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep2_dtxfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP3_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep3_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP3_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep3_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP3_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep3_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP3_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep3_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP3_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep3_dtxfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP4_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep4_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP4_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep4_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP4_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep4_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP4_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep4_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP4_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep4_dtxfsts;
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub struct DIEP5_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control in Endpoint 1 Control Register"]
 pub mod diep5_ctl;
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub struct DIEP5_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Interrupt Register"]
 pub mod diep5_int;
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub struct DIEP5_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 Transfer Size Register"]
 pub mod diep5_tsiz;
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub struct DIEP5_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint 1 DMA Address Register"]
 pub mod diep5_dmaaddr;
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP5_DTXFSTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
 pub mod diep5_dtxfsts;
 #[doc = "Device Control OUT Endpoint 0 Control Register"]
 pub struct DOEP0CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 0 Control Register"]
 pub mod doep0ctl;
 #[doc = "Device OUT Endpoint 0 Interrupt Register"]
 pub struct DOEP0INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 0 Interrupt Register"]
 pub mod doep0int;
 #[doc = "Device OUT Endpoint 0 Transfer Size Register"]
 pub struct DOEP0TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 0 Transfer Size Register"]
 pub mod doep0tsiz;
 #[doc = "Device OUT Endpoint 0 DMA Address Register"]
 pub struct DOEP0DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 0 DMA Address Register"]
 pub mod doep0dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP0_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep0_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP0_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep0_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP0_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep0_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP0_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep0_dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP1_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep1_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP1_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep1_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP1_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep1_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP1_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep1_dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP2_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep2_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP2_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep2_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP2_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep2_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP2_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep2_dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP3_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep3_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP3_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep3_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP3_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep3_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP3_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep3_dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP4_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep4_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP4_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep4_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP4_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep4_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP4_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep4_dmaaddr;
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub struct DOEP5_CTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device Control OUT Endpoint 1 Control Register"]
 pub mod doep5_ctl;
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub struct DOEP5_INT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Interrupt Register"]
 pub mod doep5_int;
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub struct DOEP5_TSIZ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 Transfer Size Register"]
 pub mod doep5_tsiz;
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub struct DOEP5_DMAADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device OUT Endpoint 1 DMA Address Register"]
 pub mod doep5_dmaaddr;
 #[doc = "Power and Clock Gating Control Register"]
 pub struct PCGCCTL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Power and Clock Gating Control Register"]
 pub mod pcgcctl;
