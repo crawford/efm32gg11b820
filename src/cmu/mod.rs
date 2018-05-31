@@ -17,7 +17,8 @@ pub struct RegisterBlock {
     pub lfrcoctrl: LFRCOCTRL,
     #[doc = "0x24 - HFXO Control Register"]
     pub hfxoctrl: HFXOCTRL,
-    _reserved4: [u8; 4usize],
+    #[doc = "0x28 - HFXO Control 1"]
+    pub hfxoctrl1: HFXOCTRL1,
     #[doc = "0x2c - HFXO Startup Control"]
     pub hfxostartupctrl: HFXOSTARTUPCTRL,
     #[doc = "0x30 - HFXO Steady State Control"]
@@ -26,27 +27,27 @@ pub struct RegisterBlock {
     pub hfxotimeoutctrl: HFXOTIMEOUTCTRL,
     #[doc = "0x38 - LFXO Control Register"]
     pub lfxoctrl: LFXOCTRL,
-    _reserved5: [u8; 4usize],
+    _reserved4: [u8; 4usize],
     #[doc = "0x40 - DPLL Control Register"]
     pub dpllctrl: DPLLCTRL,
     #[doc = "0x44 - DPLL Control Register"]
     pub dpllctrl1: DPLLCTRL1,
-    _reserved6: [u8; 8usize],
+    _reserved5: [u8; 8usize],
     #[doc = "0x50 - Calibration Control Register"]
     pub calctrl: CALCTRL,
     #[doc = "0x54 - Calibration Counter Register"]
     pub calcnt: CALCNT,
-    _reserved7: [u8; 8usize],
+    _reserved6: [u8; 8usize],
     #[doc = "0x60 - Oscillator Enable/Disable Command Register"]
     pub oscencmd: OSCENCMD,
     #[doc = "0x64 - Command Register"]
     pub cmd: CMD,
-    _reserved8: [u8; 8usize],
+    _reserved7: [u8; 8usize],
     #[doc = "0x70 - Debug Trace Clock Select"]
     pub dbgclksel: DBGCLKSEL,
     #[doc = "0x74 - High Frequency Clock Select Command Register"]
     pub hfclksel: HFCLKSEL,
-    _reserved9: [u8; 8usize],
+    _reserved8: [u8; 8usize],
     #[doc = "0x80 - Low Frequency A Clock Select Register"]
     pub lfaclksel: LFACLKSEL,
     #[doc = "0x84 - Low Frequency B Clock Select Register"]
@@ -59,7 +60,7 @@ pub struct RegisterBlock {
     pub status: STATUS,
     #[doc = "0x94 - HFCLK Status Register"]
     pub hfclkstatus: HFCLKSTATUS,
-    _reserved10: [u8; 4usize],
+    _reserved9: [u8; 4usize],
     #[doc = "0x9c - HFXO Trim Status"]
     pub hfxotrimstatus: HFXOTRIMSTATUS,
     #[doc = "0xa0 - Interrupt Flag Register"]
@@ -72,22 +73,22 @@ pub struct RegisterBlock {
     pub ien: IEN,
     #[doc = "0xb0 - High Frequency Bus Clock Enable Register 0"]
     pub hfbusclken0: HFBUSCLKEN0,
-    _reserved11: [u8; 12usize],
+    _reserved10: [u8; 12usize],
     #[doc = "0xc0 - High Frequency Peripheral Clock Enable Register 0"]
     pub hfperclken0: HFPERCLKEN0,
     #[doc = "0xc4 - High Frequency Peripheral Clock Enable Register 1"]
     pub hfperclken1: HFPERCLKEN1,
-    _reserved12: [u8; 24usize],
+    _reserved11: [u8; 24usize],
     #[doc = "0xe0 - Low Frequency a Clock Enable Register 0 (Async Reg)"]
     pub lfaclken0: LFACLKEN0,
-    _reserved13: [u8; 4usize],
+    _reserved12: [u8; 4usize],
     #[doc = "0xe8 - Low Frequency B Clock Enable Register 0 (Async Reg)"]
     pub lfbclken0: LFBCLKEN0,
     #[doc = "0xec - Low Frequency C Clock Enable Register 0 (Async Reg)"]
     pub lfcclken0: LFCCLKEN0,
     #[doc = "0xf0 - Low Frequency E Clock Enable Register 0 (Async Reg)"]
     pub lfeclken0: LFECLKEN0,
-    _reserved14: [u8; 12usize],
+    _reserved13: [u8; 12usize],
     #[doc = "0x100 - High Frequency Clock Prescaler Register"]
     pub hfpresc: HFPRESC,
     #[doc = "0x104 - High Frequency Bus Clock Prescaler Register"]
@@ -96,7 +97,7 @@ pub struct RegisterBlock {
     pub hfcorepresc: HFCOREPRESC,
     #[doc = "0x10c - High Frequency Peripheral Clock Prescaler Register"]
     pub hfperpresc: HFPERPRESC,
-    _reserved15: [u8; 4usize],
+    _reserved14: [u8; 4usize],
     #[doc = "0x114 - High Frequency Export Clock Prescaler Register"]
     pub hfexppresc: HFEXPPRESC,
     #[doc = "0x118 - High Frequency Peripheral Clock Prescaler B Register"]
@@ -105,40 +106,40 @@ pub struct RegisterBlock {
     pub hfperprescc: HFPERPRESCC,
     #[doc = "0x120 - Low Frequency a Prescaler Register 0 (Async Reg)"]
     pub lfapresc0: LFAPRESC0,
-    _reserved16: [u8; 4usize],
+    _reserved15: [u8; 4usize],
     #[doc = "0x128 - Low Frequency B Prescaler Register 0 (Async Reg)"]
     pub lfbpresc0: LFBPRESC0,
-    _reserved17: [u8; 4usize],
+    _reserved16: [u8; 4usize],
     #[doc = "0x130 - Low Frequency E Prescaler Register 0 (Async Reg)"]
     pub lfepresc0: LFEPRESC0,
-    _reserved18: [u8; 12usize],
+    _reserved17: [u8; 12usize],
     #[doc = "0x140 - Synchronization Busy Register"]
     pub syncbusy: SYNCBUSY,
     #[doc = "0x144 - Freeze Register"]
     pub freeze: FREEZE,
-    _reserved19: [u8; 8usize],
+    _reserved18: [u8; 8usize],
     #[doc = "0x150 - PCNT Control Register"]
     pub pcntctrl: PCNTCTRL,
-    _reserved20: [u8; 8usize],
+    _reserved19: [u8; 8usize],
     #[doc = "0x15c - ADC Control Register"]
     pub adcctrl: ADCCTRL,
     #[doc = "0x160 - SDIO Control Register"]
     pub sdioctrl: SDIOCTRL,
     #[doc = "0x164 - QSPI Control Register"]
     pub qspictrl: QSPICTRL,
-    _reserved21: [u8; 8usize],
+    _reserved20: [u8; 8usize],
     #[doc = "0x170 - I/O Routing Pin Enable Register"]
     pub routepen: ROUTEPEN,
     #[doc = "0x174 - I/O Routing Location Register"]
     pub routeloc0: ROUTELOC0,
     #[doc = "0x178 - I/O Routing Location Register"]
     pub routeloc1: ROUTELOC1,
-    _reserved22: [u8; 4usize],
+    _reserved21: [u8; 4usize],
     #[doc = "0x180 - Configuration Lock Register"]
     pub lock: LOCK,
     #[doc = "0x184 - HFRCO Spread Spectrum Register"]
     pub hfrcoss: HFRCOSS,
-    _reserved23: [u8; 104usize],
+    _reserved22: [u8; 104usize],
     #[doc = "0x1f0 - USB Control Register"]
     pub usbctrl: USBCTRL,
     #[doc = "0x1f4 - USB Clock Recovery Control"]
@@ -180,6 +181,12 @@ pub struct HFXOCTRL {
 }
 #[doc = "HFXO Control Register"]
 pub mod hfxoctrl;
+#[doc = "HFXO Control 1"]
+pub struct HFXOCTRL1 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "HFXO Control 1"]
+pub mod hfxoctrl1;
 #[doc = "HFXO Startup Control"]
 pub struct HFXOSTARTUPCTRL {
     register: ::vcell::VolatileCell<u32>,

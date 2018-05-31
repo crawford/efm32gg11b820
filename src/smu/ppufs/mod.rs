@@ -614,7 +614,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:6 - \"\""]
+    #[doc = "Bits 0:6"]
     #[inline]
     pub fn periphid(&self) -> PERIPHIDR {
         PERIPHIDR::_from({

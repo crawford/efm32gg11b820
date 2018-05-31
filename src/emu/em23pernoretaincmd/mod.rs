@@ -721,7 +721,7 @@ impl W {
     pub fn rtcunlock(&mut self) -> _RTCUNLOCKW {
         _RTCUNLOCKW { w: self }
     }
-    #[doc = "Bit 24 - Clears Status Bit of USB and Ulocks Access to It"]
+    #[doc = "Bit 24 - Clears Status Bit of USB and Unlocks Access to It"]
     #[inline]
     pub fn usbunlock(&mut self) -> _USBUNLOCKW {
         _USBUNLOCKW { w: self }

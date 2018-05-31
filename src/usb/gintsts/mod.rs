@@ -1041,7 +1041,7 @@ impl R {
         };
         NPTXFEMPR { bits }
     }
-    #[doc = "Bit 6 - Global in Non-periodic NAK Effective"]
+    #[doc = "Bit 6 - Global IN Non-periodic NAK Effective"]
     #[inline]
     pub fn ginnakeff(&self) -> GINNAKEFFR {
         let bits = {
@@ -1141,7 +1141,7 @@ impl R {
         };
         OEPINTR { bits }
     }
-    #[doc = "Bit 20 - Incomplete Isochronous in Transfer"]
+    #[doc = "Bit 20 - Incomplete Isochronous IN Transfer"]
     #[inline]
     pub fn incompisoin(&self) -> INCOMPISOINR {
         let bits = {
@@ -1304,7 +1304,7 @@ impl W {
     pub fn eopf(&mut self) -> _EOPFW {
         _EOPFW { w: self }
     }
-    #[doc = "Bit 20 - Incomplete Isochronous in Transfer"]
+    #[doc = "Bit 20 - Incomplete Isochronous IN Transfer"]
     #[inline]
     pub fn incompisoin(&mut self) -> _INCOMPISOINW {
         _INCOMPISOINW { w: self }

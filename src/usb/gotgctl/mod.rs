@@ -895,7 +895,7 @@ impl R {
         };
         EHENR { bits }
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline]
     pub fn dbncefltrbypass(&self) -> DBNCEFLTRBYPASSR {
         let bits = {
@@ -1033,7 +1033,7 @@ impl W {
     pub fn ehen(&mut self) -> _EHENW {
         _EHENW { w: self }
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline]
     pub fn dbncefltrbypass(&mut self) -> _DBNCEFLTRBYPASSW {
         _DBNCEFLTRBYPASSW { w: self }

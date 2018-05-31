@@ -43,7 +43,7 @@ impl super::HFCOREPRESC {
 #[doc = "Possible values of the field `PRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESCR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NODIVISION,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -74,7 +74,7 @@ impl PRESCR {
 }
 #[doc = "Values that can be written to the field `PRESC`"]
 pub enum PRESCW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     NODIVISION,
 }
 impl PRESCW {
@@ -97,7 +97,7 @@ impl<'a> _PRESCW<'a> {
     pub fn variant(self, variant: PRESCW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(PRESCW::NODIVISION)

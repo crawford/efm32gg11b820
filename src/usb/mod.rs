@@ -20,7 +20,9 @@ pub struct RegisterBlock {
     pub cdconf: CDCONF,
     #[doc = "0x30 - Command Register"]
     pub cmd: CMD,
-    _reserved1: [u8; 8usize],
+    #[doc = "0x34 - Data TRIM 1 Values for USB DP and DM"]
+    pub dattrim1: DATTRIM1,
+    _reserved1: [u8; 4usize],
     #[doc = "0x3c - USB LEM Control Register"]
     pub lemctrl: LEMCTRL,
     _reserved2: [u8; 909248usize],
@@ -57,17 +59,17 @@ pub struct RegisterBlock {
     _reserved5: [u8; 160usize],
     #[doc = "0xde100 - Host Periodic Transmit FIFO Size Register"]
     pub hptxfsiz: HPTXFSIZ,
-    #[doc = "0xde104 - Device in Endpoint Transmit FIFO Size Register 1"]
+    #[doc = "0xde104 - Device IN Endpoint Transmit FIFO Size Register 1"]
     pub dieptxf1: DIEPTXF1,
-    #[doc = "0xde108 - Device in Endpoint Transmit FIFO Size Register 2"]
+    #[doc = "0xde108 - Device IN Endpoint Transmit FIFO Size Register 2"]
     pub dieptxf2: DIEPTXF2,
-    #[doc = "0xde10c - Device in Endpoint Transmit FIFO Size Register 3"]
+    #[doc = "0xde10c - Device IN Endpoint Transmit FIFO Size Register 3"]
     pub dieptxf3: DIEPTXF3,
-    #[doc = "0xde110 - Device in Endpoint Transmit FIFO Size Register 4"]
+    #[doc = "0xde110 - Device IN Endpoint Transmit FIFO Size Register 4"]
     pub dieptxf4: DIEPTXF4,
-    #[doc = "0xde114 - Device in Endpoint Transmit FIFO Size Register 5"]
+    #[doc = "0xde114 - Device IN Endpoint Transmit FIFO Size Register 5"]
     pub dieptxf5: DIEPTXF5,
-    #[doc = "0xde118 - Device in Endpoint Transmit FIFO Size Register 6"]
+    #[doc = "0xde118 - Device IN Endpoint Transmit FIFO Size Register 6"]
     pub dieptxf6: DIEPTXF6,
     _reserved6: [u8; 740usize],
     #[doc = "0xde400 - Host Configuration Register"]
@@ -276,7 +278,7 @@ pub struct RegisterBlock {
     #[doc = "0xde808 - Device Status Register"]
     pub dsts: DSTS,
     _reserved24: [u8; 4usize],
-    #[doc = "0xde810 - Device in Endpoint Common Interrupt Mask Register"]
+    #[doc = "0xde810 - Device IN Endpoint Common Interrupt Mask Register"]
     pub diepmsk: DIEPMSK,
     #[doc = "0xde814 - Device OUT Endpoint Common Interrupt Mask Register"]
     pub doepmsk: DOEPMSK,
@@ -291,98 +293,98 @@ pub struct RegisterBlock {
     pub dvbuspulse: DVBUSPULSE,
     #[doc = "0xde830 - Device Threshold Control Register"]
     pub dthrctl: DTHRCTL,
-    #[doc = "0xde834 - Device in Endpoint FIFO Empty Interrupt Mask Register"]
+    #[doc = "0xde834 - Device IN Endpoint FIFO Empty Interrupt Mask Register"]
     pub diepempmsk: DIEPEMPMSK,
     _reserved26: [u8; 200usize],
-    #[doc = "0xde900 - Device Control in Endpoint 0 Control Register"]
+    #[doc = "0xde900 - Device Control IN Endpoint 0 Control Register"]
     pub diep0ctl: DIEP0CTL,
     _reserved27: [u8; 4usize],
-    #[doc = "0xde908 - Device in Endpoint 0 Interrupt Register"]
+    #[doc = "0xde908 - Device IN Endpoint 0 Interrupt Register"]
     pub diep0int: DIEP0INT,
     _reserved28: [u8; 4usize],
-    #[doc = "0xde910 - Device in Endpoint 0 Transfer Size Register"]
+    #[doc = "0xde910 - Device IN Endpoint 0 Transfer Size Register"]
     pub diep0tsiz: DIEP0TSIZ,
-    #[doc = "0xde914 - Device in Endpoint 0 DMA Address Register"]
+    #[doc = "0xde914 - Device IN Endpoint 0 DMA Address Register"]
     pub diep0dmaaddr: DIEP0DMAADDR,
-    #[doc = "0xde918 - Device in Endpoint Transmit FIFO Status Register 0"]
+    #[doc = "0xde918 - Device IN Endpoint Transmit FIFO Status Register 0"]
     pub diep0txfsts: DIEP0TXFSTS,
     _reserved29: [u8; 4usize],
-    #[doc = "0xde920 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde920 - Device Control IN Endpoint 1 Control Register"]
     pub diep0_ctl: DIEP0_CTL,
     _reserved30: [u8; 4usize],
-    #[doc = "0xde928 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde928 - Device IN Endpoint 1 Interrupt Register"]
     pub diep0_int: DIEP0_INT,
     _reserved31: [u8; 4usize],
-    #[doc = "0xde930 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde930 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep0_tsiz: DIEP0_TSIZ,
-    #[doc = "0xde934 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde934 - Device IN Endpoint 1 DMA Address Register"]
     pub diep0_dmaaddr: DIEP0_DMAADDR,
-    #[doc = "0xde938 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde938 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep0_dtxfsts: DIEP0_DTXFSTS,
     _reserved32: [u8; 4usize],
-    #[doc = "0xde940 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde940 - Device Control IN Endpoint 1 Control Register"]
     pub diep1_ctl: DIEP1_CTL,
     _reserved33: [u8; 4usize],
-    #[doc = "0xde948 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde948 - Device IN Endpoint 1 Interrupt Register"]
     pub diep1_int: DIEP1_INT,
     _reserved34: [u8; 4usize],
-    #[doc = "0xde950 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde950 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep1_tsiz: DIEP1_TSIZ,
-    #[doc = "0xde954 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde954 - Device IN Endpoint 1 DMA Address Register"]
     pub diep1_dmaaddr: DIEP1_DMAADDR,
-    #[doc = "0xde958 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde958 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep1_dtxfsts: DIEP1_DTXFSTS,
     _reserved35: [u8; 4usize],
-    #[doc = "0xde960 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde960 - Device Control IN Endpoint 1 Control Register"]
     pub diep2_ctl: DIEP2_CTL,
     _reserved36: [u8; 4usize],
-    #[doc = "0xde968 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde968 - Device IN Endpoint 1 Interrupt Register"]
     pub diep2_int: DIEP2_INT,
     _reserved37: [u8; 4usize],
-    #[doc = "0xde970 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde970 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep2_tsiz: DIEP2_TSIZ,
-    #[doc = "0xde974 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde974 - Device IN Endpoint 1 DMA Address Register"]
     pub diep2_dmaaddr: DIEP2_DMAADDR,
-    #[doc = "0xde978 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde978 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep2_dtxfsts: DIEP2_DTXFSTS,
     _reserved38: [u8; 4usize],
-    #[doc = "0xde980 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde980 - Device Control IN Endpoint 1 Control Register"]
     pub diep3_ctl: DIEP3_CTL,
     _reserved39: [u8; 4usize],
-    #[doc = "0xde988 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde988 - Device IN Endpoint 1 Interrupt Register"]
     pub diep3_int: DIEP3_INT,
     _reserved40: [u8; 4usize],
-    #[doc = "0xde990 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde990 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep3_tsiz: DIEP3_TSIZ,
-    #[doc = "0xde994 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde994 - Device IN Endpoint 1 DMA Address Register"]
     pub diep3_dmaaddr: DIEP3_DMAADDR,
-    #[doc = "0xde998 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde998 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep3_dtxfsts: DIEP3_DTXFSTS,
     _reserved41: [u8; 4usize],
-    #[doc = "0xde9a0 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde9a0 - Device Control IN Endpoint 1 Control Register"]
     pub diep4_ctl: DIEP4_CTL,
     _reserved42: [u8; 4usize],
-    #[doc = "0xde9a8 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde9a8 - Device IN Endpoint 1 Interrupt Register"]
     pub diep4_int: DIEP4_INT,
     _reserved43: [u8; 4usize],
-    #[doc = "0xde9b0 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde9b0 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep4_tsiz: DIEP4_TSIZ,
-    #[doc = "0xde9b4 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde9b4 - Device IN Endpoint 1 DMA Address Register"]
     pub diep4_dmaaddr: DIEP4_DMAADDR,
-    #[doc = "0xde9b8 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde9b8 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep4_dtxfsts: DIEP4_DTXFSTS,
     _reserved44: [u8; 4usize],
-    #[doc = "0xde9c0 - Device Control in Endpoint 1 Control Register"]
+    #[doc = "0xde9c0 - Device Control IN Endpoint 1 Control Register"]
     pub diep5_ctl: DIEP5_CTL,
     _reserved45: [u8; 4usize],
-    #[doc = "0xde9c8 - Device in Endpoint 1 Interrupt Register"]
+    #[doc = "0xde9c8 - Device IN Endpoint 1 Interrupt Register"]
     pub diep5_int: DIEP5_INT,
     _reserved46: [u8; 4usize],
-    #[doc = "0xde9d0 - Device in Endpoint 1 Transfer Size Register"]
+    #[doc = "0xde9d0 - Device IN Endpoint 1 Transfer Size Register"]
     pub diep5_tsiz: DIEP5_TSIZ,
-    #[doc = "0xde9d4 - Device in Endpoint 1 DMA Address Register"]
+    #[doc = "0xde9d4 - Device IN Endpoint 1 DMA Address Register"]
     pub diep5_dmaaddr: DIEP5_DMAADDR,
-    #[doc = "0xde9d8 - Device in Endpoint Transmit FIFO Status Register 1"]
+    #[doc = "0xde9d8 - Device IN Endpoint Transmit FIFO Status Register 1"]
     pub diep5_dtxfsts: DIEP5_DTXFSTS,
     _reserved47: [u8; 292usize],
     #[doc = "0xdeb00 - Device Control OUT Endpoint 0 Control Register"]
@@ -519,6 +521,12 @@ pub struct CMD {
 }
 #[doc = "Command Register"]
 pub mod cmd;
+#[doc = "Data TRIM 1 Values for USB DP and DM"]
+pub struct DATTRIM1 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "Data TRIM 1 Values for USB DP and DM"]
+pub mod dattrim1;
 #[doc = "USB LEM Control Register"]
 pub struct LEMCTRL {
     register: ::vcell::VolatileCell<u32>,
@@ -615,41 +623,41 @@ pub struct HPTXFSIZ {
 }
 #[doc = "Host Periodic Transmit FIFO Size Register"]
 pub mod hptxfsiz;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 1"]
 pub struct DIEPTXF1 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 1"]
 pub mod dieptxf1;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 2"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 2"]
 pub struct DIEPTXF2 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 2"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 2"]
 pub mod dieptxf2;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 3"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 3"]
 pub struct DIEPTXF3 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 3"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 3"]
 pub mod dieptxf3;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 4"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 4"]
 pub struct DIEPTXF4 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 4"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 4"]
 pub mod dieptxf4;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 5"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 5"]
 pub struct DIEPTXF5 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 5"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 5"]
 pub mod dieptxf5;
-#[doc = "Device in Endpoint Transmit FIFO Size Register 6"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 6"]
 pub struct DIEPTXF6 {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Size Register 6"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register 6"]
 pub mod dieptxf6;
 #[doc = "Host Configuration Register"]
 pub struct HCFG {
@@ -1215,11 +1223,11 @@ pub struct DSTS {
 }
 #[doc = "Device Status Register"]
 pub mod dsts;
-#[doc = "Device in Endpoint Common Interrupt Mask Register"]
+#[doc = "Device IN Endpoint Common Interrupt Mask Register"]
 pub struct DIEPMSK {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Common Interrupt Mask Register"]
+#[doc = "Device IN Endpoint Common Interrupt Mask Register"]
 pub mod diepmsk;
 #[doc = "Device OUT Endpoint Common Interrupt Mask Register"]
 pub struct DOEPMSK {
@@ -1257,221 +1265,221 @@ pub struct DTHRCTL {
 }
 #[doc = "Device Threshold Control Register"]
 pub mod dthrctl;
-#[doc = "Device in Endpoint FIFO Empty Interrupt Mask Register"]
+#[doc = "Device IN Endpoint FIFO Empty Interrupt Mask Register"]
 pub struct DIEPEMPMSK {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint FIFO Empty Interrupt Mask Register"]
+#[doc = "Device IN Endpoint FIFO Empty Interrupt Mask Register"]
 pub mod diepempmsk;
-#[doc = "Device Control in Endpoint 0 Control Register"]
+#[doc = "Device Control IN Endpoint 0 Control Register"]
 pub struct DIEP0CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 0 Control Register"]
+#[doc = "Device Control IN Endpoint 0 Control Register"]
 pub mod diep0ctl;
-#[doc = "Device in Endpoint 0 Interrupt Register"]
+#[doc = "Device IN Endpoint 0 Interrupt Register"]
 pub struct DIEP0INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 0 Interrupt Register"]
+#[doc = "Device IN Endpoint 0 Interrupt Register"]
 pub mod diep0int;
-#[doc = "Device in Endpoint 0 Transfer Size Register"]
+#[doc = "Device IN Endpoint 0 Transfer Size Register"]
 pub struct DIEP0TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 0 Transfer Size Register"]
+#[doc = "Device IN Endpoint 0 Transfer Size Register"]
 pub mod diep0tsiz;
-#[doc = "Device in Endpoint 0 DMA Address Register"]
+#[doc = "Device IN Endpoint 0 DMA Address Register"]
 pub struct DIEP0DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 0 DMA Address Register"]
+#[doc = "Device IN Endpoint 0 DMA Address Register"]
 pub mod diep0dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 0"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 0"]
 pub struct DIEP0TXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 0"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 0"]
 pub mod diep0txfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP0_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep0_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP0_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep0_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP0_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep0_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP0_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep0_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP0_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep0_dtxfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP1_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep1_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP1_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep1_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP1_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep1_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP1_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep1_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP1_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep1_dtxfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP2_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep2_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP2_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep2_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP2_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep2_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP2_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep2_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP2_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep2_dtxfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP3_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep3_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP3_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep3_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP3_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep3_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP3_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep3_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP3_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep3_dtxfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP4_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep4_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP4_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep4_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP4_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep4_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP4_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep4_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP4_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep4_dtxfsts;
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub struct DIEP5_CTL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device Control in Endpoint 1 Control Register"]
+#[doc = "Device Control IN Endpoint 1 Control Register"]
 pub mod diep5_ctl;
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub struct DIEP5_INT {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Interrupt Register"]
+#[doc = "Device IN Endpoint 1 Interrupt Register"]
 pub mod diep5_int;
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub struct DIEP5_TSIZ {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 Transfer Size Register"]
+#[doc = "Device IN Endpoint 1 Transfer Size Register"]
 pub mod diep5_tsiz;
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub struct DIEP5_DMAADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint 1 DMA Address Register"]
+#[doc = "Device IN Endpoint 1 DMA Address Register"]
 pub mod diep5_dmaaddr;
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub struct DIEP5_DTXFSTS {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Device in Endpoint Transmit FIFO Status Register 1"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register 1"]
 pub mod diep5_dtxfsts;
 #[doc = "Device Control OUT Endpoint 0 Control Register"]
 pub struct DOEP0CTL {

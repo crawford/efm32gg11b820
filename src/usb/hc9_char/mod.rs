@@ -158,6 +158,48 @@ impl ODDFRMR {
         self.bit()
     }
 }
+#[doc = r" Value of the field"]
+pub struct CHDISR {
+    bits: bool,
+}
+impl CHDISR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CHENAR {
+    bits: bool,
+}
+impl CHENAR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = r" Proxy"]
 pub struct _MPSW<'a> {
     w: &'a mut W,
@@ -433,6 +475,26 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         ODDFRMR { bits }
+    }
+    #[doc = "Bit 30 - Channel Disable"]
+    #[inline]
+    pub fn chdis(&self) -> CHDISR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 30;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CHDISR { bits }
+    }
+    #[doc = "Bit 31 - Channel Enable"]
+    #[inline]
+    pub fn chena(&self) -> CHENAR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 31;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CHENAR { bits }
     }
 }
 impl W {

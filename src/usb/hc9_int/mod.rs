@@ -566,7 +566,7 @@ impl R {
         };
         BBLERRR { bits }
     }
-    #[doc = "Bit 9 - \"\""]
+    #[doc = "Bit 9"]
     #[inline]
     pub fn frmovrun(&self) -> FRMOVRUNR {
         let bits = {
@@ -576,7 +576,7 @@ impl R {
         };
         FRMOVRUNR { bits }
     }
-    #[doc = "Bit 10 - \"\""]
+    #[doc = "Bit 10"]
     #[inline]
     pub fn datatglerr(&self) -> DATATGLERRR {
         let bits = {
@@ -639,12 +639,12 @@ impl W {
     pub fn bblerr(&mut self) -> _BBLERRW {
         _BBLERRW { w: self }
     }
-    #[doc = "Bit 9 - \"\""]
+    #[doc = "Bit 9"]
     #[inline]
     pub fn frmovrun(&mut self) -> _FRMOVRUNW {
         _FRMOVRUNW { w: self }
     }
-    #[doc = "Bit 10 - \"\""]
+    #[doc = "Bit 10"]
     #[inline]
     pub fn datatglerr(&mut self) -> _DATATGLERRW {
         _DATATGLERRW { w: self }

@@ -188,6 +188,27 @@ impl PRTRESR {
     }
 }
 #[doc = r" Value of the field"]
+pub struct PRTSUSPR {
+    bits: bool,
+}
+impl PRTSUSPR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct PRTRSTR {
     bits: bool,
 }
@@ -536,6 +557,16 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         PRTRESR { bits }
+    }
+    #[doc = "Bit 7 - Port Suspend"]
+    #[inline]
+    pub fn prtsusp(&self) -> PRTSUSPR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 7;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        PRTSUSPR { bits }
     }
     #[doc = "Bit 8 - Port Reset"]
     #[inline]

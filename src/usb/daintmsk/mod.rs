@@ -662,7 +662,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - \"\""]
+    #[doc = "Bit 0"]
     #[inline]
     pub fn inepmsk0(&self) -> INEPMSK0R {
         let bits = {
@@ -672,7 +672,7 @@ impl R {
         };
         INEPMSK0R { bits }
     }
-    #[doc = "Bit 1 - \"\""]
+    #[doc = "Bit 1"]
     #[inline]
     pub fn inepmsk1(&self) -> INEPMSK1R {
         let bits = {
@@ -682,7 +682,7 @@ impl R {
         };
         INEPMSK1R { bits }
     }
-    #[doc = "Bit 2 - \"\""]
+    #[doc = "Bit 2"]
     #[inline]
     pub fn inepmsk2(&self) -> INEPMSK2R {
         let bits = {
@@ -692,7 +692,7 @@ impl R {
         };
         INEPMSK2R { bits }
     }
-    #[doc = "Bit 3 - \"\""]
+    #[doc = "Bit 3"]
     #[inline]
     pub fn inepmsk3(&self) -> INEPMSK3R {
         let bits = {
@@ -702,7 +702,7 @@ impl R {
         };
         INEPMSK3R { bits }
     }
-    #[doc = "Bit 4 - \"\""]
+    #[doc = "Bit 4"]
     #[inline]
     pub fn inepmsk4(&self) -> INEPMSK4R {
         let bits = {
@@ -712,7 +712,7 @@ impl R {
         };
         INEPMSK4R { bits }
     }
-    #[doc = "Bit 5 - \"\""]
+    #[doc = "Bit 5"]
     #[inline]
     pub fn inepmsk5(&self) -> INEPMSK5R {
         let bits = {
@@ -722,7 +722,7 @@ impl R {
         };
         INEPMSK5R { bits }
     }
-    #[doc = "Bit 6 - \"\""]
+    #[doc = "Bit 6"]
     #[inline]
     pub fn inepmsk6(&self) -> INEPMSK6R {
         let bits = {
@@ -732,7 +732,7 @@ impl R {
         };
         INEPMSK6R { bits }
     }
-    #[doc = "Bit 16 - \"\""]
+    #[doc = "Bit 16"]
     #[inline]
     pub fn outepmsk0(&self) -> OUTEPMSK0R {
         let bits = {
@@ -742,7 +742,7 @@ impl R {
         };
         OUTEPMSK0R { bits }
     }
-    #[doc = "Bit 17 - \"\""]
+    #[doc = "Bit 17"]
     #[inline]
     pub fn outepmsk1(&self) -> OUTEPMSK1R {
         let bits = {
@@ -752,7 +752,7 @@ impl R {
         };
         OUTEPMSK1R { bits }
     }
-    #[doc = "Bit 18 - \"\""]
+    #[doc = "Bit 18"]
     #[inline]
     pub fn outepmsk2(&self) -> OUTEPMSK2R {
         let bits = {
@@ -762,7 +762,7 @@ impl R {
         };
         OUTEPMSK2R { bits }
     }
-    #[doc = "Bit 19 - \"\""]
+    #[doc = "Bit 19"]
     #[inline]
     pub fn outepmsk3(&self) -> OUTEPMSK3R {
         let bits = {
@@ -772,7 +772,7 @@ impl R {
         };
         OUTEPMSK3R { bits }
     }
-    #[doc = "Bit 20 - \"\""]
+    #[doc = "Bit 20"]
     #[inline]
     pub fn outepmsk4(&self) -> OUTEPMSK4R {
         let bits = {
@@ -782,7 +782,7 @@ impl R {
         };
         OUTEPMSK4R { bits }
     }
-    #[doc = "Bit 21 - \"\""]
+    #[doc = "Bit 21"]
     #[inline]
     pub fn outepmsk5(&self) -> OUTEPMSK5R {
         let bits = {
@@ -792,7 +792,7 @@ impl R {
         };
         OUTEPMSK5R { bits }
     }
-    #[doc = "Bit 22 - \"\""]
+    #[doc = "Bit 22"]
     #[inline]
     pub fn outepmsk6(&self) -> OUTEPMSK6R {
         let bits = {
@@ -815,72 +815,72 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - \"\""]
+    #[doc = "Bit 0"]
     #[inline]
     pub fn inepmsk0(&mut self) -> _INEPMSK0W {
         _INEPMSK0W { w: self }
     }
-    #[doc = "Bit 1 - \"\""]
+    #[doc = "Bit 1"]
     #[inline]
     pub fn inepmsk1(&mut self) -> _INEPMSK1W {
         _INEPMSK1W { w: self }
     }
-    #[doc = "Bit 2 - \"\""]
+    #[doc = "Bit 2"]
     #[inline]
     pub fn inepmsk2(&mut self) -> _INEPMSK2W {
         _INEPMSK2W { w: self }
     }
-    #[doc = "Bit 3 - \"\""]
+    #[doc = "Bit 3"]
     #[inline]
     pub fn inepmsk3(&mut self) -> _INEPMSK3W {
         _INEPMSK3W { w: self }
     }
-    #[doc = "Bit 4 - \"\""]
+    #[doc = "Bit 4"]
     #[inline]
     pub fn inepmsk4(&mut self) -> _INEPMSK4W {
         _INEPMSK4W { w: self }
     }
-    #[doc = "Bit 5 - \"\""]
+    #[doc = "Bit 5"]
     #[inline]
     pub fn inepmsk5(&mut self) -> _INEPMSK5W {
         _INEPMSK5W { w: self }
     }
-    #[doc = "Bit 6 - \"\""]
+    #[doc = "Bit 6"]
     #[inline]
     pub fn inepmsk6(&mut self) -> _INEPMSK6W {
         _INEPMSK6W { w: self }
     }
-    #[doc = "Bit 16 - \"\""]
+    #[doc = "Bit 16"]
     #[inline]
     pub fn outepmsk0(&mut self) -> _OUTEPMSK0W {
         _OUTEPMSK0W { w: self }
     }
-    #[doc = "Bit 17 - \"\""]
+    #[doc = "Bit 17"]
     #[inline]
     pub fn outepmsk1(&mut self) -> _OUTEPMSK1W {
         _OUTEPMSK1W { w: self }
     }
-    #[doc = "Bit 18 - \"\""]
+    #[doc = "Bit 18"]
     #[inline]
     pub fn outepmsk2(&mut self) -> _OUTEPMSK2W {
         _OUTEPMSK2W { w: self }
     }
-    #[doc = "Bit 19 - \"\""]
+    #[doc = "Bit 19"]
     #[inline]
     pub fn outepmsk3(&mut self) -> _OUTEPMSK3W {
         _OUTEPMSK3W { w: self }
     }
-    #[doc = "Bit 20 - \"\""]
+    #[doc = "Bit 20"]
     #[inline]
     pub fn outepmsk4(&mut self) -> _OUTEPMSK4W {
         _OUTEPMSK4W { w: self }
     }
-    #[doc = "Bit 21 - \"\""]
+    #[doc = "Bit 21"]
     #[inline]
     pub fn outepmsk5(&mut self) -> _OUTEPMSK5W {
         _OUTEPMSK5W { w: self }
     }
-    #[doc = "Bit 22 - \"\""]
+    #[doc = "Bit 22"]
     #[inline]
     pub fn outepmsk6(&mut self) -> _OUTEPMSK6W {
         _OUTEPMSK6W { w: self }

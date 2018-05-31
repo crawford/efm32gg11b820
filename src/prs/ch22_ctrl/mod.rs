@@ -130,7 +130,7 @@ pub enum SOURCESELR {
     TIMER2,
     #[doc = "Universal Serial Bus Interface"]
     USB,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     CM4,
     #[doc = "Timer 3"]
     TIMER3,
@@ -751,7 +751,7 @@ pub enum SOURCESELW {
     TIMER2,
     #[doc = "Universal Serial Bus Interface"]
     USB,
-    #[doc = "\"\""]
+    #[doc = "`1000011`"]
     CM4,
     #[doc = "Timer 3"]
     TIMER3,
@@ -1026,7 +1026,7 @@ impl<'a> _SOURCESELW<'a> {
     pub fn usb(self) -> &'a mut W {
         self.variant(SOURCESELW::USB)
     }
-    #[doc = "\"\""]
+    #[doc = "`1000011`"]
     #[inline]
     pub fn cm4(self) -> &'a mut W {
         self.variant(SOURCESELW::CM4)

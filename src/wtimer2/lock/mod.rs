@@ -43,9 +43,9 @@ impl super::LOCK {
 #[doc = "Possible values of the field `TIMERLOCKKEY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMERLOCKKEYR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     LOCKED,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -83,9 +83,9 @@ impl TIMERLOCKKEYR {
 }
 #[doc = "Values that can be written to the field `TIMERLOCKKEY`"]
 pub enum TIMERLOCKKEYW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     LOCKED,
 }
 impl TIMERLOCKKEYW {
@@ -109,12 +109,12 @@ impl<'a> _TIMERLOCKKEYW<'a> {
     pub fn variant(self, variant: TIMERLOCKKEYW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn unlocked(self) -> &'a mut W {
         self.variant(TIMERLOCKKEYW::UNLOCKED)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn locked(self) -> &'a mut W {
         self.variant(TIMERLOCKKEYW::LOCKED)

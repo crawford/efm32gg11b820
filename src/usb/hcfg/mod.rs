@@ -270,7 +270,7 @@ impl R {
         };
         RESVALIDR { bits }
     }
-    #[doc = "Bit 31 - \"\""]
+    #[doc = "Bit 31"]
     #[inline]
     pub fn modechtimen(&self) -> MODECHTIMENR {
         let bits = {
@@ -313,7 +313,7 @@ impl W {
     pub fn resvalid(&mut self) -> _RESVALIDW {
         _RESVALIDW { w: self }
     }
-    #[doc = "Bit 31 - \"\""]
+    #[doc = "Bit 31"]
     #[inline]
     pub fn modechtimen(&mut self) -> _MODECHTIMENW {
         _MODECHTIMENW { w: self }

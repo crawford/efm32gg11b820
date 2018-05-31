@@ -43,133 +43,133 @@ impl super::SINGLECTRL {
 #[doc = "Possible values of the field `SINGLESEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SINGLESELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH2,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH3,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH4,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH5,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH6,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH8,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH9,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH10,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH11,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH12,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH13,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH14,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH16,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH17,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH18,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH19,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH20,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH21,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH22,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH24,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH25,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH26,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH27,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH28,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH29,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1XCH30,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1YCH31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH2,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH3,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH4,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH5,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH6,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH8,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH9,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH10,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH11,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH12,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH13,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH14,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH16,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH17,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH18,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH19,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH20,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH21,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH22,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH24,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH25,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH26,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH27,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH28,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH29,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3XCH30,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3YCH31,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -641,133 +641,133 @@ impl SINGLESELR {
 }
 #[doc = "Values that can be written to the field `SINGLESEL`"]
 pub enum SINGLESELW {
-    #[doc = "\"\""]
+    #[doc = "`100000`"]
     APORT1XCH0,
-    #[doc = "\"\""]
+    #[doc = "`100001`"]
     APORT1YCH1,
-    #[doc = "\"\""]
+    #[doc = "`100010`"]
     APORT1XCH2,
-    #[doc = "\"\""]
+    #[doc = "`100011`"]
     APORT1YCH3,
-    #[doc = "\"\""]
+    #[doc = "`100100`"]
     APORT1XCH4,
-    #[doc = "\"\""]
+    #[doc = "`100101`"]
     APORT1YCH5,
-    #[doc = "\"\""]
+    #[doc = "`100110`"]
     APORT1XCH6,
-    #[doc = "\"\""]
+    #[doc = "`100111`"]
     APORT1YCH7,
-    #[doc = "\"\""]
+    #[doc = "`101000`"]
     APORT1XCH8,
-    #[doc = "\"\""]
+    #[doc = "`101001`"]
     APORT1YCH9,
-    #[doc = "\"\""]
+    #[doc = "`101010`"]
     APORT1XCH10,
-    #[doc = "\"\""]
+    #[doc = "`101011`"]
     APORT1YCH11,
-    #[doc = "\"\""]
+    #[doc = "`101100`"]
     APORT1XCH12,
-    #[doc = "\"\""]
+    #[doc = "`101101`"]
     APORT1YCH13,
-    #[doc = "\"\""]
+    #[doc = "`101110`"]
     APORT1XCH14,
-    #[doc = "\"\""]
+    #[doc = "`101111`"]
     APORT1YCH15,
-    #[doc = "\"\""]
+    #[doc = "`110000`"]
     APORT1XCH16,
-    #[doc = "\"\""]
+    #[doc = "`110001`"]
     APORT1YCH17,
-    #[doc = "\"\""]
+    #[doc = "`110010`"]
     APORT1XCH18,
-    #[doc = "\"\""]
+    #[doc = "`110011`"]
     APORT1YCH19,
-    #[doc = "\"\""]
+    #[doc = "`110100`"]
     APORT1XCH20,
-    #[doc = "\"\""]
+    #[doc = "`110101`"]
     APORT1YCH21,
-    #[doc = "\"\""]
+    #[doc = "`110110`"]
     APORT1XCH22,
-    #[doc = "\"\""]
+    #[doc = "`110111`"]
     APORT1YCH23,
-    #[doc = "\"\""]
+    #[doc = "`111000`"]
     APORT1XCH24,
-    #[doc = "\"\""]
+    #[doc = "`111001`"]
     APORT1YCH25,
-    #[doc = "\"\""]
+    #[doc = "`111010`"]
     APORT1XCH26,
-    #[doc = "\"\""]
+    #[doc = "`111011`"]
     APORT1YCH27,
-    #[doc = "\"\""]
+    #[doc = "`111100`"]
     APORT1XCH28,
-    #[doc = "\"\""]
+    #[doc = "`111101`"]
     APORT1YCH29,
-    #[doc = "\"\""]
+    #[doc = "`111110`"]
     APORT1XCH30,
-    #[doc = "\"\""]
+    #[doc = "`111111`"]
     APORT1YCH31,
-    #[doc = "\"\""]
+    #[doc = "`1100000`"]
     APORT3XCH0,
-    #[doc = "\"\""]
+    #[doc = "`1100001`"]
     APORT3YCH1,
-    #[doc = "\"\""]
+    #[doc = "`1100010`"]
     APORT3XCH2,
-    #[doc = "\"\""]
+    #[doc = "`1100011`"]
     APORT3YCH3,
-    #[doc = "\"\""]
+    #[doc = "`1100100`"]
     APORT3XCH4,
-    #[doc = "\"\""]
+    #[doc = "`1100101`"]
     APORT3YCH5,
-    #[doc = "\"\""]
+    #[doc = "`1100110`"]
     APORT3XCH6,
-    #[doc = "\"\""]
+    #[doc = "`1100111`"]
     APORT3YCH7,
-    #[doc = "\"\""]
+    #[doc = "`1101000`"]
     APORT3XCH8,
-    #[doc = "\"\""]
+    #[doc = "`1101001`"]
     APORT3YCH9,
-    #[doc = "\"\""]
+    #[doc = "`1101010`"]
     APORT3XCH10,
-    #[doc = "\"\""]
+    #[doc = "`1101011`"]
     APORT3YCH11,
-    #[doc = "\"\""]
+    #[doc = "`1101100`"]
     APORT3XCH12,
-    #[doc = "\"\""]
+    #[doc = "`1101101`"]
     APORT3YCH13,
-    #[doc = "\"\""]
+    #[doc = "`1101110`"]
     APORT3XCH14,
-    #[doc = "\"\""]
+    #[doc = "`1101111`"]
     APORT3YCH15,
-    #[doc = "\"\""]
+    #[doc = "`1110000`"]
     APORT3XCH16,
-    #[doc = "\"\""]
+    #[doc = "`1110001`"]
     APORT3YCH17,
-    #[doc = "\"\""]
+    #[doc = "`1110010`"]
     APORT3XCH18,
-    #[doc = "\"\""]
+    #[doc = "`1110011`"]
     APORT3YCH19,
-    #[doc = "\"\""]
+    #[doc = "`1110100`"]
     APORT3XCH20,
-    #[doc = "\"\""]
+    #[doc = "`1110101`"]
     APORT3YCH21,
-    #[doc = "\"\""]
+    #[doc = "`1110110`"]
     APORT3XCH22,
-    #[doc = "\"\""]
+    #[doc = "`1110111`"]
     APORT3YCH23,
-    #[doc = "\"\""]
+    #[doc = "`1111000`"]
     APORT3XCH24,
-    #[doc = "\"\""]
+    #[doc = "`1111001`"]
     APORT3YCH25,
-    #[doc = "\"\""]
+    #[doc = "`1111010`"]
     APORT3XCH26,
-    #[doc = "\"\""]
+    #[doc = "`1111011`"]
     APORT3YCH27,
-    #[doc = "\"\""]
+    #[doc = "`1111100`"]
     APORT3XCH28,
-    #[doc = "\"\""]
+    #[doc = "`1111101`"]
     APORT3YCH29,
-    #[doc = "\"\""]
+    #[doc = "`1111110`"]
     APORT3XCH30,
-    #[doc = "\"\""]
+    #[doc = "`1111111`"]
     APORT3YCH31,
 }
 impl SINGLESELW {
@@ -853,322 +853,322 @@ impl<'a> _SINGLESELW<'a> {
     pub fn variant(self, variant: SINGLESELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`100000`"]
     #[inline]
     pub fn aport1xch0(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH0)
     }
-    #[doc = "\"\""]
+    #[doc = "`100001`"]
     #[inline]
     pub fn aport1ych1(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH1)
     }
-    #[doc = "\"\""]
+    #[doc = "`100010`"]
     #[inline]
     pub fn aport1xch2(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH2)
     }
-    #[doc = "\"\""]
+    #[doc = "`100011`"]
     #[inline]
     pub fn aport1ych3(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH3)
     }
-    #[doc = "\"\""]
+    #[doc = "`100100`"]
     #[inline]
     pub fn aport1xch4(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH4)
     }
-    #[doc = "\"\""]
+    #[doc = "`100101`"]
     #[inline]
     pub fn aport1ych5(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH5)
     }
-    #[doc = "\"\""]
+    #[doc = "`100110`"]
     #[inline]
     pub fn aport1xch6(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH6)
     }
-    #[doc = "\"\""]
+    #[doc = "`100111`"]
     #[inline]
     pub fn aport1ych7(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH7)
     }
-    #[doc = "\"\""]
+    #[doc = "`101000`"]
     #[inline]
     pub fn aport1xch8(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH8)
     }
-    #[doc = "\"\""]
+    #[doc = "`101001`"]
     #[inline]
     pub fn aport1ych9(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH9)
     }
-    #[doc = "\"\""]
+    #[doc = "`101010`"]
     #[inline]
     pub fn aport1xch10(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH10)
     }
-    #[doc = "\"\""]
+    #[doc = "`101011`"]
     #[inline]
     pub fn aport1ych11(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH11)
     }
-    #[doc = "\"\""]
+    #[doc = "`101100`"]
     #[inline]
     pub fn aport1xch12(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH12)
     }
-    #[doc = "\"\""]
+    #[doc = "`101101`"]
     #[inline]
     pub fn aport1ych13(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH13)
     }
-    #[doc = "\"\""]
+    #[doc = "`101110`"]
     #[inline]
     pub fn aport1xch14(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH14)
     }
-    #[doc = "\"\""]
+    #[doc = "`101111`"]
     #[inline]
     pub fn aport1ych15(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH15)
     }
-    #[doc = "\"\""]
+    #[doc = "`110000`"]
     #[inline]
     pub fn aport1xch16(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH16)
     }
-    #[doc = "\"\""]
+    #[doc = "`110001`"]
     #[inline]
     pub fn aport1ych17(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH17)
     }
-    #[doc = "\"\""]
+    #[doc = "`110010`"]
     #[inline]
     pub fn aport1xch18(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH18)
     }
-    #[doc = "\"\""]
+    #[doc = "`110011`"]
     #[inline]
     pub fn aport1ych19(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH19)
     }
-    #[doc = "\"\""]
+    #[doc = "`110100`"]
     #[inline]
     pub fn aport1xch20(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH20)
     }
-    #[doc = "\"\""]
+    #[doc = "`110101`"]
     #[inline]
     pub fn aport1ych21(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH21)
     }
-    #[doc = "\"\""]
+    #[doc = "`110110`"]
     #[inline]
     pub fn aport1xch22(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH22)
     }
-    #[doc = "\"\""]
+    #[doc = "`110111`"]
     #[inline]
     pub fn aport1ych23(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH23)
     }
-    #[doc = "\"\""]
+    #[doc = "`111000`"]
     #[inline]
     pub fn aport1xch24(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH24)
     }
-    #[doc = "\"\""]
+    #[doc = "`111001`"]
     #[inline]
     pub fn aport1ych25(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH25)
     }
-    #[doc = "\"\""]
+    #[doc = "`111010`"]
     #[inline]
     pub fn aport1xch26(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH26)
     }
-    #[doc = "\"\""]
+    #[doc = "`111011`"]
     #[inline]
     pub fn aport1ych27(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH27)
     }
-    #[doc = "\"\""]
+    #[doc = "`111100`"]
     #[inline]
     pub fn aport1xch28(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH28)
     }
-    #[doc = "\"\""]
+    #[doc = "`111101`"]
     #[inline]
     pub fn aport1ych29(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH29)
     }
-    #[doc = "\"\""]
+    #[doc = "`111110`"]
     #[inline]
     pub fn aport1xch30(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1XCH30)
     }
-    #[doc = "\"\""]
+    #[doc = "`111111`"]
     #[inline]
     pub fn aport1ych31(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT1YCH31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100000`"]
     #[inline]
     pub fn aport3xch0(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH0)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100001`"]
     #[inline]
     pub fn aport3ych1(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH1)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100010`"]
     #[inline]
     pub fn aport3xch2(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH2)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100011`"]
     #[inline]
     pub fn aport3ych3(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH3)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100100`"]
     #[inline]
     pub fn aport3xch4(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH4)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100101`"]
     #[inline]
     pub fn aport3ych5(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH5)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100110`"]
     #[inline]
     pub fn aport3xch6(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH6)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100111`"]
     #[inline]
     pub fn aport3ych7(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101000`"]
     #[inline]
     pub fn aport3xch8(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH8)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101001`"]
     #[inline]
     pub fn aport3ych9(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH9)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101010`"]
     #[inline]
     pub fn aport3xch10(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH10)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101011`"]
     #[inline]
     pub fn aport3ych11(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH11)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101100`"]
     #[inline]
     pub fn aport3xch12(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH12)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101101`"]
     #[inline]
     pub fn aport3ych13(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH13)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101110`"]
     #[inline]
     pub fn aport3xch14(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH14)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101111`"]
     #[inline]
     pub fn aport3ych15(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110000`"]
     #[inline]
     pub fn aport3xch16(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH16)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110001`"]
     #[inline]
     pub fn aport3ych17(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH17)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110010`"]
     #[inline]
     pub fn aport3xch18(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH18)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110011`"]
     #[inline]
     pub fn aport3ych19(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH19)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110100`"]
     #[inline]
     pub fn aport3xch20(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH20)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110101`"]
     #[inline]
     pub fn aport3ych21(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH21)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110110`"]
     #[inline]
     pub fn aport3xch22(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH22)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110111`"]
     #[inline]
     pub fn aport3ych23(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111000`"]
     #[inline]
     pub fn aport3xch24(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH24)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111001`"]
     #[inline]
     pub fn aport3ych25(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH25)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111010`"]
     #[inline]
     pub fn aport3xch26(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH26)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111011`"]
     #[inline]
     pub fn aport3ych27(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH27)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111100`"]
     #[inline]
     pub fn aport3xch28(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH28)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111101`"]
     #[inline]
     pub fn aport3ych29(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH29)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111110`"]
     #[inline]
     pub fn aport3xch30(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3XCH30)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111111`"]
     #[inline]
     pub fn aport3ych31(self) -> &'a mut W {
         self.variant(SINGLESELW::APORT3YCH31)

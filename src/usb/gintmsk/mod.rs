@@ -1284,7 +1284,7 @@ impl R {
         };
         NPTXFEMPMSKR { bits }
     }
-    #[doc = "Bit 6 - Global Non-periodic in NAK Effective Mask"]
+    #[doc = "Bit 6 - Global Non-periodic IN NAK Effective Mask"]
     #[inline]
     pub fn ginnakeffmsk(&self) -> GINNAKEFFMSKR {
         let bits = {
@@ -1394,7 +1394,7 @@ impl R {
         };
         OEPINTMSKR { bits }
     }
-    #[doc = "Bit 20 - Incomplete Isochronous in Transfer Mask"]
+    #[doc = "Bit 20 - Incomplete Isochronous IN Transfer Mask"]
     #[inline]
     pub fn incompisoinmsk(&self) -> INCOMPISOINMSKR {
         let bits = {
@@ -1542,7 +1542,7 @@ impl W {
     pub fn nptxfempmsk(&mut self) -> _NPTXFEMPMSKW {
         _NPTXFEMPMSKW { w: self }
     }
-    #[doc = "Bit 6 - Global Non-periodic in NAK Effective Mask"]
+    #[doc = "Bit 6 - Global Non-periodic IN NAK Effective Mask"]
     #[inline]
     pub fn ginnakeffmsk(&mut self) -> _GINNAKEFFMSKW {
         _GINNAKEFFMSKW { w: self }
@@ -1597,7 +1597,7 @@ impl W {
     pub fn oepintmsk(&mut self) -> _OEPINTMSKW {
         _OEPINTMSKW { w: self }
     }
-    #[doc = "Bit 20 - Incomplete Isochronous in Transfer Mask"]
+    #[doc = "Bit 20 - Incomplete Isochronous IN Transfer Mask"]
     #[inline]
     pub fn incompisoinmsk(&mut self) -> _INCOMPISOINMSKW {
         _INCOMPISOINMSKW { w: self }

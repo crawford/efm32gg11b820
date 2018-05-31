@@ -43,9 +43,9 @@ impl super::BANKSWITCHLOCK {
 #[doc = "Possible values of the field `BANKSWITCHLOCKKEY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BANKSWITCHLOCKKEYR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     LOCKED,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -83,9 +83,9 @@ impl BANKSWITCHLOCKKEYR {
 }
 #[doc = "Values that can be written to the field `BANKSWITCHLOCKKEY`"]
 pub enum BANKSWITCHLOCKKEYW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     LOCKED,
 }
 impl BANKSWITCHLOCKKEYW {
@@ -109,12 +109,12 @@ impl<'a> _BANKSWITCHLOCKKEYW<'a> {
     pub fn variant(self, variant: BANKSWITCHLOCKKEYW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn unlocked(self) -> &'a mut W {
         self.variant(BANKSWITCHLOCKKEYW::UNLOCKED)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn locked(self) -> &'a mut W {
         self.variant(BANKSWITCHLOCKKEYW::LOCKED)

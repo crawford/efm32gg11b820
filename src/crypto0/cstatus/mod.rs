@@ -12,21 +12,21 @@ impl super::CSTATUS {
 #[doc = "Possible values of the field `V0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V0R {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA2,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA3,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA4,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA2,
 }
 impl V0R {
@@ -104,21 +104,21 @@ impl V0R {
 #[doc = "Possible values of the field `V1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V1R {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA2,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA3,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA4,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA2,
 }
 impl V1R {

@@ -608,7 +608,7 @@ impl W {
     pub fn forcedevmode(&mut self) -> _FORCEDEVMODEW {
         _FORCEDEVMODEW { w: self }
     }
-    #[doc = "Bit 31 - \"\""]
+    #[doc = "Bit 31"]
     #[inline]
     pub fn corrupttxpkt(&mut self) -> _CORRUPTTXPKTW {
         _CORRUPTTXPKTW { w: self }

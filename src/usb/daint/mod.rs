@@ -309,7 +309,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - \"\""]
+    #[doc = "Bit 0"]
     #[inline]
     pub fn inepint0(&self) -> INEPINT0R {
         let bits = {
@@ -319,7 +319,7 @@ impl R {
         };
         INEPINT0R { bits }
     }
-    #[doc = "Bit 1 - \"\""]
+    #[doc = "Bit 1"]
     #[inline]
     pub fn inepint1(&self) -> INEPINT1R {
         let bits = {
@@ -329,7 +329,7 @@ impl R {
         };
         INEPINT1R { bits }
     }
-    #[doc = "Bit 2 - \"\""]
+    #[doc = "Bit 2"]
     #[inline]
     pub fn inepint2(&self) -> INEPINT2R {
         let bits = {
@@ -339,7 +339,7 @@ impl R {
         };
         INEPINT2R { bits }
     }
-    #[doc = "Bit 3 - \"\""]
+    #[doc = "Bit 3"]
     #[inline]
     pub fn inepint3(&self) -> INEPINT3R {
         let bits = {
@@ -349,7 +349,7 @@ impl R {
         };
         INEPINT3R { bits }
     }
-    #[doc = "Bit 4 - \"\""]
+    #[doc = "Bit 4"]
     #[inline]
     pub fn inepint4(&self) -> INEPINT4R {
         let bits = {
@@ -359,7 +359,7 @@ impl R {
         };
         INEPINT4R { bits }
     }
-    #[doc = "Bit 5 - \"\""]
+    #[doc = "Bit 5"]
     #[inline]
     pub fn inepint5(&self) -> INEPINT5R {
         let bits = {
@@ -369,7 +369,7 @@ impl R {
         };
         INEPINT5R { bits }
     }
-    #[doc = "Bit 6 - \"\""]
+    #[doc = "Bit 6"]
     #[inline]
     pub fn inepint6(&self) -> INEPINT6R {
         let bits = {
@@ -379,7 +379,7 @@ impl R {
         };
         INEPINT6R { bits }
     }
-    #[doc = "Bit 16 - \"\""]
+    #[doc = "Bit 16"]
     #[inline]
     pub fn outepint0(&self) -> OUTEPINT0R {
         let bits = {
@@ -389,7 +389,7 @@ impl R {
         };
         OUTEPINT0R { bits }
     }
-    #[doc = "Bit 17 - \"\""]
+    #[doc = "Bit 17"]
     #[inline]
     pub fn outepint1(&self) -> OUTEPINT1R {
         let bits = {
@@ -399,7 +399,7 @@ impl R {
         };
         OUTEPINT1R { bits }
     }
-    #[doc = "Bit 18 - \"\""]
+    #[doc = "Bit 18"]
     #[inline]
     pub fn outepint2(&self) -> OUTEPINT2R {
         let bits = {
@@ -409,7 +409,7 @@ impl R {
         };
         OUTEPINT2R { bits }
     }
-    #[doc = "Bit 19 - \"\""]
+    #[doc = "Bit 19"]
     #[inline]
     pub fn outepint3(&self) -> OUTEPINT3R {
         let bits = {
@@ -419,7 +419,7 @@ impl R {
         };
         OUTEPINT3R { bits }
     }
-    #[doc = "Bit 20 - \"\""]
+    #[doc = "Bit 20"]
     #[inline]
     pub fn outepint4(&self) -> OUTEPINT4R {
         let bits = {
@@ -429,7 +429,7 @@ impl R {
         };
         OUTEPINT4R { bits }
     }
-    #[doc = "Bit 21 - \"\""]
+    #[doc = "Bit 21"]
     #[inline]
     pub fn outepint5(&self) -> OUTEPINT5R {
         let bits = {
@@ -439,7 +439,7 @@ impl R {
         };
         OUTEPINT5R { bits }
     }
-    #[doc = "Bit 22 - \"\""]
+    #[doc = "Bit 22"]
     #[inline]
     pub fn outepint6(&self) -> OUTEPINT6R {
         let bits = {

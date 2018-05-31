@@ -430,7 +430,7 @@ impl R {
         };
         ENDEVOUTNAKR { bits }
     }
-    #[doc = "Bit 14 - \"\""]
+    #[doc = "Bit 14"]
     #[inline]
     pub fn xcvrdly(&self) -> XCVRDLYR {
         let bits = {
@@ -440,7 +440,7 @@ impl R {
         };
         XCVRDLYR { bits }
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline]
     pub fn erraticintmsk(&self) -> ERRATICINTMSKR {
         let bits = {
@@ -503,12 +503,12 @@ impl W {
     pub fn endevoutnak(&mut self) -> _ENDEVOUTNAKW {
         _ENDEVOUTNAKW { w: self }
     }
-    #[doc = "Bit 14 - \"\""]
+    #[doc = "Bit 14"]
     #[inline]
     pub fn xcvrdly(&mut self) -> _XCVRDLYW {
         _XCVRDLYW { w: self }
     }
-    #[doc = "Bit 15 - \"\""]
+    #[doc = "Bit 15"]
     #[inline]
     pub fn erraticintmsk(&mut self) -> _ERRATICINTMSKW {
         _ERRATICINTMSKW { w: self }

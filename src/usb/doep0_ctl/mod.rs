@@ -146,6 +146,69 @@ impl SNPR {
         self.bit()
     }
 }
+#[doc = r" Value of the field"]
+pub struct STALLR {
+    bits: bool,
+}
+impl STALLR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct EPDISR {
+    bits: bool,
+}
+impl EPDISR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct EPENAR {
+    bits: bool,
+}
+impl EPENAR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
 #[doc = r" Proxy"]
 pub struct _MPSW<'a> {
     w: &'a mut W,
@@ -448,6 +511,36 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         SNPR { bits }
+    }
+    #[doc = "Bit 21 - Handshake"]
+    #[inline]
+    pub fn stall(&self) -> STALLR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 21;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        STALLR { bits }
+    }
+    #[doc = "Bit 30 - Endpoint Disable"]
+    #[inline]
+    pub fn epdis(&self) -> EPDISR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 30;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        EPDISR { bits }
+    }
+    #[doc = "Bit 31 - Endpoint Enable"]
+    #[inline]
+    pub fn epena(&self) -> EPENAR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 31;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        EPENAR { bits }
     }
 }
 impl W {

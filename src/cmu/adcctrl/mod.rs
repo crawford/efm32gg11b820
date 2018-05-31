@@ -43,7 +43,7 @@ impl super::ADCCTRL {
 #[doc = "Possible values of the field `ADC0CLKDIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0CLKDIVR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NODIVISION,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -152,7 +152,7 @@ impl ADC0CLKINVR {
 #[doc = "Possible values of the field `ADC1CLKDIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1CLKDIVR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NODIVISION,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -260,7 +260,7 @@ impl ADC1CLKINVR {
 }
 #[doc = "Values that can be written to the field `ADC0CLKDIV`"]
 pub enum ADC0CLKDIVW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     NODIVISION,
 }
 impl ADC0CLKDIVW {
@@ -283,7 +283,7 @@ impl<'a> _ADC0CLKDIVW<'a> {
     pub fn variant(self, variant: ADC0CLKDIVW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(ADC0CLKDIVW::NODIVISION)
@@ -389,7 +389,7 @@ impl<'a> _ADC0CLKINVW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC1CLKDIV`"]
 pub enum ADC1CLKDIVW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     NODIVISION,
 }
 impl ADC1CLKDIVW {
@@ -412,7 +412,7 @@ impl<'a> _ADC1CLKDIVW<'a> {
     pub fn variant(self, variant: ADC1CLKDIVW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(ADC1CLKDIVW::NODIVISION)

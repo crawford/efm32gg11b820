@@ -239,13 +239,13 @@ impl DMA0MODER {
 #[doc = "Possible values of the field `DMA0RSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0RSELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA0,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA0BIG,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     QDATA0,
 }
 impl DMA0RSELR {
@@ -351,13 +351,13 @@ impl DMA1MODER {
 #[doc = "Possible values of the field `DMA1RSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1RSELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     DDATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     QDATA1,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     QDATA1BIG,
 }
 impl DMA1RSELR {
@@ -651,13 +651,13 @@ impl<'a> _DMA0MODEW<'a> {
 }
 #[doc = "Values that can be written to the field `DMA0RSEL`"]
 pub enum DMA0RSELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     DATA0,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     DDATA0,
-    #[doc = "\"\""]
+    #[doc = "`10`"]
     DDATA0BIG,
-    #[doc = "\"\""]
+    #[doc = "`11`"]
     QDATA0,
 }
 impl DMA0RSELW {
@@ -685,22 +685,22 @@ impl<'a> _DMA0RSELW<'a> {
             self.bits(variant._bits())
         }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn data0(self) -> &'a mut W {
         self.variant(DMA0RSELW::DATA0)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn ddata0(self) -> &'a mut W {
         self.variant(DMA0RSELW::DDATA0)
     }
-    #[doc = "\"\""]
+    #[doc = "`10`"]
     #[inline]
     pub fn ddata0big(self) -> &'a mut W {
         self.variant(DMA0RSELW::DDATA0BIG)
     }
-    #[doc = "\"\""]
+    #[doc = "`11`"]
     #[inline]
     pub fn qdata0(self) -> &'a mut W {
         self.variant(DMA0RSELW::QDATA0)
@@ -783,13 +783,13 @@ impl<'a> _DMA1MODEW<'a> {
 }
 #[doc = "Values that can be written to the field `DMA1RSEL`"]
 pub enum DMA1RSELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     DATA1,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     DDATA1,
-    #[doc = "\"\""]
+    #[doc = "`10`"]
     QDATA1,
-    #[doc = "\"\""]
+    #[doc = "`11`"]
     QDATA1BIG,
 }
 impl DMA1RSELW {
@@ -817,22 +817,22 @@ impl<'a> _DMA1RSELW<'a> {
             self.bits(variant._bits())
         }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn data1(self) -> &'a mut W {
         self.variant(DMA1RSELW::DATA1)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn ddata1(self) -> &'a mut W {
         self.variant(DMA1RSELW::DDATA1)
     }
-    #[doc = "\"\""]
+    #[doc = "`10`"]
     #[inline]
     pub fn qdata1(self) -> &'a mut W {
         self.variant(DMA1RSELW::QDATA1)
     }
-    #[doc = "\"\""]
+    #[doc = "`11`"]
     #[inline]
     pub fn qdata1big(self) -> &'a mut W {
         self.variant(DMA1RSELW::QDATA1BIG)

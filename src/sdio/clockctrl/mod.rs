@@ -138,7 +138,7 @@ impl UPPSDCLKFRER {
 #[doc = "Possible values of the field `SDCLKFREQSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDCLKFREQSELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NODIVISION,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -327,7 +327,7 @@ impl<'a> _UPPSDCLKFREW<'a> {
 }
 #[doc = "Values that can be written to the field `SDCLKFREQSEL`"]
 pub enum SDCLKFREQSELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     NODIVISION,
 }
 impl SDCLKFREQSELW {
@@ -350,7 +350,7 @@ impl<'a> _SDCLKFREQSELW<'a> {
     pub fn variant(self, variant: SDCLKFREQSELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(SDCLKFREQSELW::NODIVISION)

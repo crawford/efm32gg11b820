@@ -90,7 +90,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - \"\""]
+    #[doc = "Bit 0"]
     #[inline]
     pub fn enable(&self) -> ENABLER {
         let bits = {
@@ -113,7 +113,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - \"\""]
+    #[doc = "Bit 0"]
     #[inline]
     pub fn enable(&mut self) -> _ENABLEW {
         _ENABLEW { w: self }

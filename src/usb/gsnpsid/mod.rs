@@ -26,7 +26,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - \"\""]
+    #[doc = "Bits 0:31"]
     #[inline]
     pub fn synopsysid(&self) -> SYNOPSYSIDR {
         let bits = {

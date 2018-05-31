@@ -360,7 +360,7 @@ impl R {
         };
         RMIIPENR { bits }
     }
-    #[doc = "Bit 5 - TSU_TMR_TOG Output Enable"]
+    #[doc = "Bit 5 - TSU_TMR_CNT_SEC Output Enable"]
     #[inline]
     pub fn tsutmrtogpen(&self) -> TSUTMRTOGPENR {
         let bits = {
@@ -408,7 +408,7 @@ impl W {
     pub fn rmiipen(&mut self) -> _RMIIPENW {
         _RMIIPENW { w: self }
     }
-    #[doc = "Bit 5 - TSU_TMR_TOG Output Enable"]
+    #[doc = "Bit 5 - TSU_TMR_CNT_SEC Output Enable"]
     #[inline]
     pub fn tsutmrtogpen(&mut self) -> _TSUTMRTOGPENW {
         _TSUTMRTOGPENW { w: self }

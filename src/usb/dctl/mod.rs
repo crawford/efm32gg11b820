@@ -446,7 +446,7 @@ impl R {
         };
         SFTDISCONR { bits }
     }
-    #[doc = "Bit 2 - Global Non-periodic in NAK Status"]
+    #[doc = "Bit 2 - Global Non-periodic IN NAK Status"]
     #[inline]
     pub fn gnpinnaksts(&self) -> GNPINNAKSTSR {
         let bits = {
@@ -534,12 +534,12 @@ impl W {
     pub fn tstctl(&mut self) -> _TSTCTLW {
         _TSTCTLW { w: self }
     }
-    #[doc = "Bit 7 - Set Global Non-periodic in NAK"]
+    #[doc = "Bit 7 - Set Global Non-periodic IN NAK"]
     #[inline]
     pub fn sgnpinnak(&mut self) -> _SGNPINNAKW {
         _SGNPINNAKW { w: self }
     }
-    #[doc = "Bit 8 - Clear Global Non-periodic in NAK"]
+    #[doc = "Bit 8 - Clear Global Non-periodic IN NAK"]
     #[inline]
     pub fn cgnpinnak(&mut self) -> _CGNPINNAKW {
         _CGNPINNAKW { w: self }

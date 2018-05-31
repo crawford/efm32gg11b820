@@ -43,7 +43,7 @@ impl super::BLKSIZE {
 #[doc = "Possible values of the field `TFRBLKSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TFRBLKSIZER {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NOXFER,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -167,7 +167,7 @@ impl HSTSDMABUFSIZER {
 #[doc = "Possible values of the field `BLKSCNTFORCURRTFR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLKSCNTFORCURRTFRR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     STOPCNT,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -198,7 +198,7 @@ impl BLKSCNTFORCURRTFRR {
 }
 #[doc = "Values that can be written to the field `TFRBLKSIZE`"]
 pub enum TFRBLKSIZEW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     NOXFER,
 }
 impl TFRBLKSIZEW {
@@ -221,7 +221,7 @@ impl<'a> _TFRBLKSIZEW<'a> {
     pub fn variant(self, variant: TFRBLKSIZEW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn noxfer(self) -> &'a mut W {
         self.variant(TFRBLKSIZEW::NOXFER)
@@ -336,7 +336,7 @@ impl<'a> _HSTSDMABUFSIZEW<'a> {
 }
 #[doc = "Values that can be written to the field `BLKSCNTFORCURRTFR`"]
 pub enum BLKSCNTFORCURRTFRW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     STOPCNT,
 }
 impl BLKSCNTFORCURRTFRW {
@@ -359,7 +359,7 @@ impl<'a> _BLKSCNTFORCURRTFRW<'a> {
     pub fn variant(self, variant: BLKSCNTFORCURRTFRW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn stopcnt(self) -> &'a mut W {
         self.variant(BLKSCNTFORCURRTFRW::STOPCNT)

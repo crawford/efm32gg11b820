@@ -117,9 +117,9 @@ impl SCANREFWARMR {
 #[doc = "Possible values of the field `PROGERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROGERRR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     BUSCONF,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     NEGSELCONF,
     #[doc = r" Reserved"]
     _Reserved(u8),

@@ -43,9 +43,9 @@ impl super::MASSLOCK {
 #[doc = "Possible values of the field `LOCKKEY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKKEYR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     LOCKED,
     #[doc = r" Reserved"]
     _Reserved(u16),
@@ -83,9 +83,9 @@ impl LOCKKEYR {
 }
 #[doc = "Values that can be written to the field `LOCKKEY`"]
 pub enum LOCKKEYW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     UNLOCKED,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     LOCKED,
 }
 impl LOCKKEYW {
@@ -109,12 +109,12 @@ impl<'a> _LOCKKEYW<'a> {
     pub fn variant(self, variant: LOCKKEYW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn unlocked(self) -> &'a mut W {
         self.variant(LOCKKEYW::UNLOCKED)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn locked(self) -> &'a mut W {
         self.variant(LOCKKEYW::LOCKED)

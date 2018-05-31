@@ -300,7 +300,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Non-ISO in Endpoints Threshold Enable"]
+    #[doc = "Bit 0 - Non-ISO IN Endpoints Threshold Enable"]
     #[inline]
     pub fn nonisothren(&self) -> NONISOTHRENR {
         let bits = {
@@ -310,7 +310,7 @@ impl R {
         };
         NONISOTHRENR { bits }
     }
-    #[doc = "Bit 1 - ISO in Endpoints Threshold Enable"]
+    #[doc = "Bit 1 - ISO IN Endpoints Threshold Enable"]
     #[inline]
     pub fn isothren(&self) -> ISOTHRENR {
         let bits = {
@@ -383,12 +383,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Non-ISO in Endpoints Threshold Enable"]
+    #[doc = "Bit 0 - Non-ISO IN Endpoints Threshold Enable"]
     #[inline]
     pub fn nonisothren(&mut self) -> _NONISOTHRENW {
         _NONISOTHRENW { w: self }
     }
-    #[doc = "Bit 1 - ISO in Endpoints Threshold Enable"]
+    #[doc = "Bit 1 - ISO IN Endpoints Threshold Enable"]
     #[inline]
     pub fn isothren(&mut self) -> _ISOTHRENW {
         _ISOTHRENW { w: self }

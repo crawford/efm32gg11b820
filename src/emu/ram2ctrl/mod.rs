@@ -45,13 +45,13 @@ impl super::RAM2CTRL {
 pub enum RAMPOWERDOWNR {
     #[doc = "None of the RAM blocks powered down"]
     NONE,
-    #[doc = "Power down RAM block 3 (address range 0x20070000-0x2007FFFF)"]
+    #[doc = "Power down RAM block 3"]
     BLK3,
-    #[doc = "Power down RAM blocks 2-3 (address range 0x20060000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 2-3"]
     BLK2TO3,
-    #[doc = "Power down RAM blocks 1-3 (address range 0x20050000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 1-3"]
     BLK1TO3,
-    #[doc = "Power down RAM blocks 0-3 (address range 0x20040000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 0-3"]
     BLK0TO3,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -112,13 +112,13 @@ impl RAMPOWERDOWNR {
 pub enum RAMPOWERDOWNW {
     #[doc = "None of the RAM blocks powered down"]
     NONE,
-    #[doc = "Power down RAM block 3 (address range 0x20070000-0x2007FFFF)"]
+    #[doc = "Power down RAM block 3"]
     BLK3,
-    #[doc = "Power down RAM blocks 2-3 (address range 0x20060000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 2-3"]
     BLK2TO3,
-    #[doc = "Power down RAM blocks 1-3 (address range 0x20050000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 1-3"]
     BLK1TO3,
-    #[doc = "Power down RAM blocks 0-3 (address range 0x20040000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 0-3"]
     BLK0TO3,
 }
 impl RAMPOWERDOWNW {
@@ -150,22 +150,22 @@ impl<'a> _RAMPOWERDOWNW<'a> {
     pub fn none(self) -> &'a mut W {
         self.variant(RAMPOWERDOWNW::NONE)
     }
-    #[doc = "Power down RAM block 3 (address range 0x20070000-0x2007FFFF)"]
+    #[doc = "Power down RAM block 3"]
     #[inline]
     pub fn blk3(self) -> &'a mut W {
         self.variant(RAMPOWERDOWNW::BLK3)
     }
-    #[doc = "Power down RAM blocks 2-3 (address range 0x20060000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 2-3"]
     #[inline]
     pub fn blk2to3(self) -> &'a mut W {
         self.variant(RAMPOWERDOWNW::BLK2TO3)
     }
-    #[doc = "Power down RAM blocks 1-3 (address range 0x20050000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 1-3"]
     #[inline]
     pub fn blk1to3(self) -> &'a mut W {
         self.variant(RAMPOWERDOWNW::BLK1TO3)
     }
-    #[doc = "Power down RAM blocks 0-3 (address range 0x20040000-0x2007FFFF)"]
+    #[doc = "Power down RAM blocks 0-3"]
     #[inline]
     pub fn blk0to3(self) -> &'a mut W {
         self.variant(RAMPOWERDOWNW::BLK0TO3)

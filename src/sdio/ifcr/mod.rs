@@ -41,6 +41,174 @@ impl super::IFCR {
     }
 }
 #[doc = r" Value of the field"]
+pub struct CMDCOMR {
+    bits: bool,
+}
+impl CMDCOMR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct TRANCOMR {
+    bits: bool,
+}
+impl TRANCOMR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct BLKGAPEVTR {
+    bits: bool,
+}
+impl BLKGAPEVTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DMAINTR {
+    bits: bool,
+}
+impl DMAINTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct BFRWRRDYR {
+    bits: bool,
+}
+impl BFRWRRDYR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct BFRRDRDYR {
+    bits: bool,
+}
+impl BFRRDRDYR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CARDINSR {
+    bits: bool,
+}
+impl CARDINSR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CARDRMR {
+    bits: bool,
+}
+impl CARDRMR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct CARDINTR {
     bits: bool,
 }
@@ -83,10 +251,283 @@ impl RETUNINGEVTR {
     }
 }
 #[doc = r" Value of the field"]
+pub struct BOOTACKRCVR {
+    bits: bool,
+}
+impl BOOTACKRCVR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct BOOTTERMINATER {
+    bits: bool,
+}
+impl BOOTTERMINATER {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct ERRINTR {
     bits: bool,
 }
 impl ERRINTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CMDTOUTERRR {
+    bits: bool,
+}
+impl CMDTOUTERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CMDCRCERRR {
+    bits: bool,
+}
+impl CMDCRCERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CMDENDBITERRR {
+    bits: bool,
+}
+impl CMDENDBITERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CMDINDEXERRR {
+    bits: bool,
+}
+impl CMDINDEXERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DATTOUTERRR {
+    bits: bool,
+}
+impl DATTOUTERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DATCRCERRR {
+    bits: bool,
+}
+impl DATCRCERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct DATENDBITERRR {
+    bits: bool,
+}
+impl DATENDBITERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct CURRENTLIMITERRR {
+    bits: bool,
+}
+impl CURRENTLIMITERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct AUTOCMDERRR {
+    bits: bool,
+}
+impl AUTOCMDERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct ADMAERRR {
+    bits: bool,
+}
+impl ADMAERRR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct TARGETRESPR {
+    bits: bool,
+}
+impl TARGETRESPR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -592,6 +1033,86 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
+    #[doc = "Bit 0 - Command Complete"]
+    #[inline]
+    pub fn cmdcom(&self) -> CMDCOMR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CMDCOMR { bits }
+    }
+    #[doc = "Bit 1 - Transfer Complete"]
+    #[inline]
+    pub fn trancom(&self) -> TRANCOMR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 1;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        TRANCOMR { bits }
+    }
+    #[doc = "Bit 2 - Block Gap Event"]
+    #[inline]
+    pub fn blkgapevt(&self) -> BLKGAPEVTR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 2;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        BLKGAPEVTR { bits }
+    }
+    #[doc = "Bit 3 - DMA Interrupt"]
+    #[inline]
+    pub fn dmaint(&self) -> DMAINTR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 3;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        DMAINTR { bits }
+    }
+    #[doc = "Bit 4 - Buffer Write Ready"]
+    #[inline]
+    pub fn bfrwrrdy(&self) -> BFRWRRDYR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 4;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        BFRWRRDYR { bits }
+    }
+    #[doc = "Bit 5 - Buffer Read Ready"]
+    #[inline]
+    pub fn bfrrdrdy(&self) -> BFRRDRDYR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 5;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        BFRRDRDYR { bits }
+    }
+    #[doc = "Bit 6 - Card Insertion"]
+    #[inline]
+    pub fn cardins(&self) -> CARDINSR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 6;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CARDINSR { bits }
+    }
+    #[doc = "Bit 7 - Card Removal"]
+    #[inline]
+    pub fn cardrm(&self) -> CARDRMR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 7;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CARDRMR { bits }
+    }
     #[doc = "Bit 8 - Card Interrupt"]
     #[inline]
     pub fn cardint(&self) -> CARDINTR {
@@ -612,6 +1133,26 @@ impl R {
         };
         RETUNINGEVTR { bits }
     }
+    #[doc = "Bit 13 - Boot Ack Received"]
+    #[inline]
+    pub fn bootackrcv(&self) -> BOOTACKRCVR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 13;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        BOOTACKRCVR { bits }
+    }
+    #[doc = "Bit 14 - Boot Terminate Interrupt"]
+    #[inline]
+    pub fn bootterminate(&self) -> BOOTTERMINATER {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 14;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        BOOTTERMINATER { bits }
+    }
     #[doc = "Bit 15 - Error Interrupt"]
     #[inline]
     pub fn errint(&self) -> ERRINTR {
@@ -621,6 +1162,116 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         ERRINTR { bits }
+    }
+    #[doc = "Bit 16 - Command Timeout Error"]
+    #[inline]
+    pub fn cmdtouterr(&self) -> CMDTOUTERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 16;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CMDTOUTERRR { bits }
+    }
+    #[doc = "Bit 17 - CMD CRC Error"]
+    #[inline]
+    pub fn cmdcrcerr(&self) -> CMDCRCERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 17;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CMDCRCERRR { bits }
+    }
+    #[doc = "Bit 18 - Command End Bit Error"]
+    #[inline]
+    pub fn cmdendbiterr(&self) -> CMDENDBITERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 18;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CMDENDBITERRR { bits }
+    }
+    #[doc = "Bit 19 - Command Index Error"]
+    #[inline]
+    pub fn cmdindexerr(&self) -> CMDINDEXERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 19;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CMDINDEXERRR { bits }
+    }
+    #[doc = "Bit 20 - Data Time-out Error"]
+    #[inline]
+    pub fn dattouterr(&self) -> DATTOUTERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 20;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        DATTOUTERRR { bits }
+    }
+    #[doc = "Bit 21 - Data CRC Error"]
+    #[inline]
+    pub fn datcrcerr(&self) -> DATCRCERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 21;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        DATCRCERRR { bits }
+    }
+    #[doc = "Bit 22 - Data End Bit Error"]
+    #[inline]
+    pub fn datendbiterr(&self) -> DATENDBITERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 22;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        DATENDBITERRR { bits }
+    }
+    #[doc = "Bit 23 - Current Limit Error"]
+    #[inline]
+    pub fn currentlimiterr(&self) -> CURRENTLIMITERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 23;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CURRENTLIMITERRR { bits }
+    }
+    #[doc = "Bit 24 - Auto CMD Error"]
+    #[inline]
+    pub fn autocmderr(&self) -> AUTOCMDERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 24;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        AUTOCMDERRR { bits }
+    }
+    #[doc = "Bit 25 - ADMA Error"]
+    #[inline]
+    pub fn admaerr(&self) -> ADMAERRR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 25;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        ADMAERRR { bits }
+    }
+    #[doc = "Bit 28 - Specific Error STAT"]
+    #[inline]
+    pub fn targetresp(&self) -> TARGETRESPR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 28;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        TARGETRESPR { bits }
     }
 }
 impl W {

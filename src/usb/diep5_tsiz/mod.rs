@@ -144,7 +144,7 @@ impl R {
         };
         PKTCNTR { bits }
     }
-    #[doc = "Bits 29:30 - \"\""]
+    #[doc = "Bits 29:30"]
     #[inline]
     pub fn mc(&self) -> MCR {
         let bits = {
@@ -177,7 +177,7 @@ impl W {
     pub fn pktcnt(&mut self) -> _PKTCNTW {
         _PKTCNTW { w: self }
     }
-    #[doc = "Bits 29:30 - \"\""]
+    #[doc = "Bits 29:30"]
     #[inline]
     pub fn mc(&mut self) -> _MCW {
         _MCW { w: self }

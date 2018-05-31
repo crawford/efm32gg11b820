@@ -98,7 +98,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:15 - \"\""]
+    #[doc = "Bits 0:15"]
     #[inline]
     pub fn gdfifocfg(&self) -> GDFIFOCFGR {
         let bits = {
@@ -108,7 +108,7 @@ impl R {
         };
         GDFIFOCFGR { bits }
     }
-    #[doc = "Bits 16:31 - \"\""]
+    #[doc = "Bits 16:31"]
     #[inline]
     pub fn epinfobaseaddr(&self) -> EPINFOBASEADDRR {
         let bits = {
@@ -131,12 +131,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:15 - \"\""]
+    #[doc = "Bits 0:15"]
     #[inline]
     pub fn gdfifocfg(&mut self) -> _GDFIFOCFGW {
         _GDFIFOCFGW { w: self }
     }
-    #[doc = "Bits 16:31 - \"\""]
+    #[doc = "Bits 16:31"]
     #[inline]
     pub fn epinfobaseaddr(&mut self) -> _EPINFOBASEADDRW {
         _EPINFOBASEADDRW { w: self }

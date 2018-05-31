@@ -63,32 +63,26 @@ pub struct RegisterBlock {
     #[doc = "0x80 - Indirect Trigger Address Range Register"]
     pub indirecttriggeraddrrange: INDIRECTTRIGGERADDRRANGE,
     _reserved3: [u8; 8usize],
-    #[doc = "0x8c - Flash Command Control Memory Register"]
+    #[doc = "0x8c - Flash Command Control Memory Register (STIG)"]
     pub flashcommandctrlmem: FLASHCOMMANDCTRLMEM,
-    #[doc = "0x90 - Flash Command Control Register"]
+    #[doc = "0x90 - Flash Command Control Register (STIG)"]
     pub flashcmdctrl: FLASHCMDCTRL,
-    #[doc = "0x94 - Flash Command Address Register"]
+    #[doc = "0x94 - Flash Command Address Register (STIG)"]
     pub flashcmdaddr: FLASHCMDADDR,
     _reserved4: [u8; 8usize],
-    #[doc = "0xa0 - Flash Command Read Data Register (Lower)"]
+    #[doc = "0xa0 - Flash Command Read Data Register (Lower) (STIG)"]
     pub flashrddatalower: FLASHRDDATALOWER,
-    #[doc = "0xa4 - Flash Command Read Data Register (Upper)"]
+    #[doc = "0xa4 - Flash Command Read Data Register (Upper) (STIG)"]
     pub flashrddataupper: FLASHRDDATAUPPER,
-    #[doc = "0xa8 - Flash Command Write Data Register (Lower)"]
+    #[doc = "0xa8 - Flash Command Write Data Register (Lower) (STIG)"]
     pub flashwrdatalower: FLASHWRDATALOWER,
-    #[doc = "0xac - Flash Command Write Data Register (Upper)"]
+    #[doc = "0xac - Flash Command Write Data Register (Upper) (STIG)"]
     pub flashwrdataupper: FLASHWRDATAUPPER,
     #[doc = "0xb0 - Polling Flash Status Register"]
     pub pollingflashstatus: POLLINGFLASHSTATUS,
     #[doc = "0xb4 - PHY Configuration Register"]
     pub phyconfiguration: PHYCONFIGURATION,
-    #[doc = "0xb8 - PHY DLL Master Control Register"]
-    pub phymastercontrol: PHYMASTERCONTROL,
-    #[doc = "0xbc - DLL Observable Register Lower"]
-    pub dllobservablelower: DLLOBSERVABLELOWER,
-    #[doc = "0xc0 - DLL Observable Register Upper"]
-    pub dllobservableupper: DLLOBSERVABLEUPPER,
-    _reserved5: [u8; 28usize],
+    _reserved5: [u8; 40usize],
     #[doc = "0xe0 - Opcode Extension Register (Lower)"]
     pub opcodeextlower: OPCODEEXTLOWER,
     #[doc = "0xe4 - Opcode Extension Register (Upper)"]
@@ -96,8 +90,7 @@ pub struct RegisterBlock {
     _reserved6: [u8; 20usize],
     #[doc = "0xfc - Module ID Register"]
     pub moduleid: MODULEID,
-    #[doc = "0x100 - Control Register"]
-    pub ctrl: CTRL,
+    _reserved7: [u8; 4usize],
     #[doc = "0x104 - I/O Routing Pin Enable Register"]
     pub routepen: ROUTEPEN,
     #[doc = "0x108 - I/O Route Location Register 0"]
@@ -277,47 +270,47 @@ pub struct INDIRECTTRIGGERADDRRANGE {
 }
 #[doc = "Indirect Trigger Address Range Register"]
 pub mod indirecttriggeraddrrange;
-#[doc = "Flash Command Control Memory Register"]
+#[doc = "Flash Command Control Memory Register (STIG)"]
 pub struct FLASHCOMMANDCTRLMEM {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Control Memory Register"]
+#[doc = "Flash Command Control Memory Register (STIG)"]
 pub mod flashcommandctrlmem;
-#[doc = "Flash Command Control Register"]
+#[doc = "Flash Command Control Register (STIG)"]
 pub struct FLASHCMDCTRL {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Control Register"]
+#[doc = "Flash Command Control Register (STIG)"]
 pub mod flashcmdctrl;
-#[doc = "Flash Command Address Register"]
+#[doc = "Flash Command Address Register (STIG)"]
 pub struct FLASHCMDADDR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Address Register"]
+#[doc = "Flash Command Address Register (STIG)"]
 pub mod flashcmdaddr;
-#[doc = "Flash Command Read Data Register (Lower)"]
+#[doc = "Flash Command Read Data Register (Lower) (STIG)"]
 pub struct FLASHRDDATALOWER {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Read Data Register (Lower)"]
+#[doc = "Flash Command Read Data Register (Lower) (STIG)"]
 pub mod flashrddatalower;
-#[doc = "Flash Command Read Data Register (Upper)"]
+#[doc = "Flash Command Read Data Register (Upper) (STIG)"]
 pub struct FLASHRDDATAUPPER {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Read Data Register (Upper)"]
+#[doc = "Flash Command Read Data Register (Upper) (STIG)"]
 pub mod flashrddataupper;
-#[doc = "Flash Command Write Data Register (Lower)"]
+#[doc = "Flash Command Write Data Register (Lower) (STIG)"]
 pub struct FLASHWRDATALOWER {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Write Data Register (Lower)"]
+#[doc = "Flash Command Write Data Register (Lower) (STIG)"]
 pub mod flashwrdatalower;
-#[doc = "Flash Command Write Data Register (Upper)"]
+#[doc = "Flash Command Write Data Register (Upper) (STIG)"]
 pub struct FLASHWRDATAUPPER {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "Flash Command Write Data Register (Upper)"]
+#[doc = "Flash Command Write Data Register (Upper) (STIG)"]
 pub mod flashwrdataupper;
 #[doc = "Polling Flash Status Register"]
 pub struct POLLINGFLASHSTATUS {
@@ -331,24 +324,6 @@ pub struct PHYCONFIGURATION {
 }
 #[doc = "PHY Configuration Register"]
 pub mod phyconfiguration;
-#[doc = "PHY DLL Master Control Register"]
-pub struct PHYMASTERCONTROL {
-    register: ::vcell::VolatileCell<u32>,
-}
-#[doc = "PHY DLL Master Control Register"]
-pub mod phymastercontrol;
-#[doc = "DLL Observable Register Lower"]
-pub struct DLLOBSERVABLELOWER {
-    register: ::vcell::VolatileCell<u32>,
-}
-#[doc = "DLL Observable Register Lower"]
-pub mod dllobservablelower;
-#[doc = "DLL Observable Register Upper"]
-pub struct DLLOBSERVABLEUPPER {
-    register: ::vcell::VolatileCell<u32>,
-}
-#[doc = "DLL Observable Register Upper"]
-pub mod dllobservableupper;
 #[doc = "Opcode Extension Register (Lower)"]
 pub struct OPCODEEXTLOWER {
     register: ::vcell::VolatileCell<u32>,
@@ -367,12 +342,6 @@ pub struct MODULEID {
 }
 #[doc = "Module ID Register"]
 pub mod moduleid;
-#[doc = "Control Register"]
-pub struct CTRL {
-    register: ::vcell::VolatileCell<u32>,
-}
-#[doc = "Control Register"]
-pub mod ctrl;
 #[doc = "I/O Routing Pin Enable Register"]
 pub struct ROUTEPEN {
     register: ::vcell::VolatileCell<u32>,

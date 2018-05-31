@@ -41,27 +41,6 @@ impl super::RAMCTRL {
     }
 }
 #[doc = r" Value of the field"]
-pub struct RAMCACHEENR {
-    bits: bool,
-}
-impl RAMCACHEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
 pub struct RAMWSENR {
     bits: bool,
 }
@@ -87,27 +66,6 @@ pub struct RAMPREFETCHENR {
     bits: bool,
 }
 impl RAMPREFETCHENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RAM1CACHEENR {
-    bits: bool,
-}
-impl RAM1CACHEENR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -230,29 +188,6 @@ impl RAM2PREFETCHENR {
     }
 }
 #[doc = r" Proxy"]
-pub struct _RAMCACHEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAMCACHEENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
 pub struct _RAMWSENW<'a> {
     w: &'a mut W,
 }
@@ -293,29 +228,6 @@ impl<'a> _RAMPREFETCHENW<'a> {
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM1CACHEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM1CACHEENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -442,16 +354,6 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - RAM CACHE Enable"]
-    #[inline]
-    pub fn ramcacheen(&self) -> RAMCACHEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAMCACHEENR { bits }
-    }
     #[doc = "Bit 1 - RAM WAIT STATE Enable"]
     #[inline]
     pub fn ramwsen(&self) -> RAMWSENR {
@@ -462,7 +364,7 @@ impl R {
         };
         RAMWSENR { bits }
     }
-    #[doc = "Bit 2 - RAM Prfetch Enable"]
+    #[doc = "Bit 2 - RAM Prefetch Enable"]
     #[inline]
     pub fn ramprefetchen(&self) -> RAMPREFETCHENR {
         let bits = {
@@ -471,16 +373,6 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         RAMPREFETCHENR { bits }
-    }
-    #[doc = "Bit 8 - RAM1 CACHE Enable"]
-    #[inline]
-    pub fn ram1cacheen(&self) -> RAM1CACHEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAM1CACHEENR { bits }
     }
     #[doc = "Bit 9 - RAM1 WAIT STATE Enable"]
     #[inline]
@@ -492,7 +384,7 @@ impl R {
         };
         RAM1WSENR { bits }
     }
-    #[doc = "Bit 10 - RAM1 Prfetch Enable"]
+    #[doc = "Bit 10 - RAM1 Prefetch Enable"]
     #[inline]
     pub fn ram1prefetchen(&self) -> RAM1PREFETCHENR {
         let bits = {
@@ -522,7 +414,7 @@ impl R {
         };
         RAM2WSENR { bits }
     }
-    #[doc = "Bit 18 - RAM2 Prfetch Enable"]
+    #[doc = "Bit 18 - RAM2 Prefetch Enable"]
     #[inline]
     pub fn ram2prefetchen(&self) -> RAM2PREFETCHENR {
         let bits = {
@@ -545,32 +437,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - RAM CACHE Enable"]
-    #[inline]
-    pub fn ramcacheen(&mut self) -> _RAMCACHEENW {
-        _RAMCACHEENW { w: self }
-    }
     #[doc = "Bit 1 - RAM WAIT STATE Enable"]
     #[inline]
     pub fn ramwsen(&mut self) -> _RAMWSENW {
         _RAMWSENW { w: self }
     }
-    #[doc = "Bit 2 - RAM Prfetch Enable"]
+    #[doc = "Bit 2 - RAM Prefetch Enable"]
     #[inline]
     pub fn ramprefetchen(&mut self) -> _RAMPREFETCHENW {
         _RAMPREFETCHENW { w: self }
-    }
-    #[doc = "Bit 8 - RAM1 CACHE Enable"]
-    #[inline]
-    pub fn ram1cacheen(&mut self) -> _RAM1CACHEENW {
-        _RAM1CACHEENW { w: self }
     }
     #[doc = "Bit 9 - RAM1 WAIT STATE Enable"]
     #[inline]
     pub fn ram1wsen(&mut self) -> _RAM1WSENW {
         _RAM1WSENW { w: self }
     }
-    #[doc = "Bit 10 - RAM1 Prfetch Enable"]
+    #[doc = "Bit 10 - RAM1 Prefetch Enable"]
     #[inline]
     pub fn ram1prefetchen(&mut self) -> _RAM1PREFETCHENW {
         _RAM1PREFETCHENW { w: self }
@@ -585,7 +467,7 @@ impl W {
     pub fn ram2wsen(&mut self) -> _RAM2WSENW {
         _RAM2WSENW { w: self }
     }
-    #[doc = "Bit 18 - RAM2 Prfetch Enable"]
+    #[doc = "Bit 18 - RAM2 Prefetch Enable"]
     #[inline]
     pub fn ram2prefetchen(&mut self) -> _RAM2PREFETCHENW {
         _RAM2PREFETCHENW { w: self }

@@ -464,7 +464,7 @@ impl R {
         };
         EM01LDR { bits }
     }
-    #[doc = "Bit 4 - Automatically Configures Flash, Ram and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
+    #[doc = "Bit 4 - Automatically Configures Flash and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
     #[inline]
     pub fn em23vscaleautowsen(&self) -> EM23VSCALEAUTOWSENR {
         let bits = {
@@ -520,7 +520,7 @@ impl W {
     pub fn em01ld(&mut self) -> _EM01LDW {
         _EM01LDW { w: self }
     }
-    #[doc = "Bit 4 - Automatically Configures Flash, Ram and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
+    #[doc = "Bit 4 - Automatically Configures Flash and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
     #[inline]
     pub fn em23vscaleautowsen(&mut self) -> _EM23VSCALEAUTOWSENW {
         _EM23VSCALEAUTOWSENW { w: self }

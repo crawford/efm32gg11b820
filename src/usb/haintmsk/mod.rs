@@ -72,7 +72,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:13 - \"\""]
+    #[doc = "Bits 0:13"]
     #[inline]
     pub fn haintmsk(&self) -> HAINTMSKR {
         let bits = {
@@ -95,7 +95,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:13 - \"\""]
+    #[doc = "Bits 0:13"]
     #[inline]
     pub fn haintmsk(&mut self) -> _HAINTMSKW {
         _HAINTMSKW { w: self }

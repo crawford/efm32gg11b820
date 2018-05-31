@@ -325,7 +325,7 @@ impl R {
         };
         RSTPDWNMODULER { bits }
     }
-    #[doc = "Bit 6 - \"\""]
+    #[doc = "Bit 6"]
     #[inline]
     pub fn physleep(&self) -> PHYSLEEPR {
         let bits = {
@@ -335,7 +335,7 @@ impl R {
         };
         PHYSLEEPR { bits }
     }
-    #[doc = "Bit 7 - \"\""]
+    #[doc = "Bit 7"]
     #[inline]
     pub fn l1suspended(&self) -> L1SUSPENDEDR {
         let bits = {
@@ -345,7 +345,7 @@ impl R {
         };
         L1SUSPENDEDR { bits }
     }
-    #[doc = "Bit 8 - \"\""]
+    #[doc = "Bit 8"]
     #[inline]
     pub fn resetaftersusp(&self) -> RESETAFTERSUSPR {
         let bits = {

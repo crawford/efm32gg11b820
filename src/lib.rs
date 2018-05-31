@@ -10,6 +10,8 @@ extern crate cortex_m_rt;
 extern crate vcell;
 use core::marker::PhantomData;
 use core::ops::Deref;
+#[doc = r" Number available in the NVIC for configuring priority"]
+pub const NVIC_PRIO_BITS: u8 = 3;
 #[cfg(feature = "rt")]
 extern "C" {
     fn EMU();

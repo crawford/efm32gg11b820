@@ -41,10 +41,94 @@ impl super::GRSTCTL {
     }
 }
 #[doc = r" Value of the field"]
+pub struct CSFTRSTR {
+    bits: bool,
+}
+impl CSFTRSTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
 pub struct PIUFSSFTRSTR {
     bits: bool,
 }
 impl PIUFSSFTRSTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct FRMCNTRRSTR {
+    bits: bool,
+}
+impl FRMCNTRRSTR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct RXFFLSHR {
+    bits: bool,
+}
+impl RXFFLSHR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct TXFFLSHR {
+    bits: bool,
+}
+impl TXFFLSHR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -250,6 +334,16 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
+    #[doc = "Bit 0 - Core Soft Reset"]
+    #[inline]
+    pub fn csftrst(&self) -> CSFTRSTR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        CSFTRSTR { bits }
+    }
     #[doc = "Bit 1 - PIU FS Dedicated Controller Soft Reset"]
     #[inline]
     pub fn piufssftrst(&self) -> PIUFSSFTRSTR {
@@ -259,6 +353,36 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
         PIUFSSFTRSTR { bits }
+    }
+    #[doc = "Bit 2 - Host Frame Counter Reset"]
+    #[inline]
+    pub fn frmcntrrst(&self) -> FRMCNTRRSTR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 2;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        FRMCNTRRSTR { bits }
+    }
+    #[doc = "Bit 4 - RxFIFO Flush"]
+    #[inline]
+    pub fn rxfflsh(&self) -> RXFFLSHR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 4;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        RXFFLSHR { bits }
+    }
+    #[doc = "Bit 5 - TxFIFO Flush"]
+    #[inline]
+    pub fn txfflsh(&self) -> TXFFLSHR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 5;
+            ((self.bits >> OFFSET) & MASK as u32) != 0
+        };
+        TXFFLSHR { bits }
     }
     #[doc = "Bits 6:10 - TxFIFO Number"]
     #[inline]

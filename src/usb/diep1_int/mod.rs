@@ -661,7 +661,7 @@ impl R {
         };
         BBLEERRR { bits }
     }
-    #[doc = "Bit 13 - \"\""]
+    #[doc = "Bit 13"]
     #[inline]
     pub fn nakintrpt(&self) -> NAKINTRPTR {
         let bits = {
@@ -734,7 +734,7 @@ impl W {
     pub fn bbleerr(&mut self) -> _BBLEERRW {
         _BBLEERRW { w: self }
     }
-    #[doc = "Bit 13 - \"\""]
+    #[doc = "Bit 13"]
     #[inline]
     pub fn nakintrpt(&mut self) -> _NAKINTRPTW {
         _NAKINTRPTW { w: self }

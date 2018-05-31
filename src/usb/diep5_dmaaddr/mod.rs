@@ -72,7 +72,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - \"\""]
+    #[doc = "Bits 0:31"]
     #[inline]
     pub fn dmaaddr(&self) -> DMAADDRR {
         let bits = {
@@ -95,7 +95,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - \"\""]
+    #[doc = "Bits 0:31"]
     #[inline]
     pub fn dmaaddr(&mut self) -> _DMAADDRW {
         _DMAADDRW { w: self }

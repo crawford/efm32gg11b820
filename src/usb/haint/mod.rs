@@ -26,7 +26,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:13 - \"\""]
+    #[doc = "Bits 0:13"]
     #[inline]
     pub fn haint(&self) -> HAINTR {
         let bits = {

@@ -43,41 +43,41 @@ impl super::SCANINPUTSEL {
 #[doc = "Possible values of the field `INPUT0TO7SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT0TO7SELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH24TO31,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -228,41 +228,41 @@ impl INPUT0TO7SELR {
 #[doc = "Possible values of the field `INPUT8TO15SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT8TO15SELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH24TO31,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -413,41 +413,41 @@ impl INPUT8TO15SELR {
 #[doc = "Possible values of the field `INPUT16TO23SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT16TO23SELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH24TO31,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -598,41 +598,41 @@ impl INPUT16TO23SELR {
 #[doc = "Possible values of the field `INPUT24TO31SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT24TO31SELR {
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "undocumented"]
     APORT4CH24TO31,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -782,41 +782,41 @@ impl INPUT24TO31SELR {
 }
 #[doc = "Values that can be written to the field `INPUT0TO7SEL`"]
 pub enum INPUT0TO7SELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     APORT4CH24TO31,
 }
 impl INPUT0TO7SELW {
@@ -856,92 +856,92 @@ impl<'a> _INPUT0TO7SELW<'a> {
     pub fn variant(self, variant: INPUT0TO7SELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn aport0ch0to7(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT0CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn aport0ch8to15(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT0CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     #[inline]
     pub fn aport1ch0to7(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT1CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     #[inline]
     pub fn aport1ch8to15(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT1CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     #[inline]
     pub fn aport1ch16to23(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT1CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     #[inline]
     pub fn aport1ch24to31(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT1CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     #[inline]
     pub fn aport2ch0to7(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT2CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     #[inline]
     pub fn aport2ch8to15(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT2CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     #[inline]
     pub fn aport2ch16to23(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT2CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     #[inline]
     pub fn aport2ch24to31(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT2CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     #[inline]
     pub fn aport3ch0to7(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT3CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     #[inline]
     pub fn aport3ch8to15(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT3CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     #[inline]
     pub fn aport3ch16to23(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT3CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     #[inline]
     pub fn aport3ch24to31(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT3CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     #[inline]
     pub fn aport4ch0to7(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT4CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     #[inline]
     pub fn aport4ch8to15(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT4CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     #[inline]
     pub fn aport4ch16to23(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT4CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     #[inline]
     pub fn aport4ch24to31(self) -> &'a mut W {
         self.variant(INPUT0TO7SELW::APORT4CH24TO31)
@@ -958,41 +958,41 @@ impl<'a> _INPUT0TO7SELW<'a> {
 }
 #[doc = "Values that can be written to the field `INPUT8TO15SEL`"]
 pub enum INPUT8TO15SELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     APORT4CH24TO31,
 }
 impl INPUT8TO15SELW {
@@ -1032,92 +1032,92 @@ impl<'a> _INPUT8TO15SELW<'a> {
     pub fn variant(self, variant: INPUT8TO15SELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn aport0ch0to7(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT0CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn aport0ch8to15(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT0CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     #[inline]
     pub fn aport1ch0to7(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT1CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     #[inline]
     pub fn aport1ch8to15(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT1CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     #[inline]
     pub fn aport1ch16to23(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT1CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     #[inline]
     pub fn aport1ch24to31(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT1CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     #[inline]
     pub fn aport2ch0to7(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT2CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     #[inline]
     pub fn aport2ch8to15(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT2CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     #[inline]
     pub fn aport2ch16to23(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT2CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     #[inline]
     pub fn aport2ch24to31(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT2CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     #[inline]
     pub fn aport3ch0to7(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT3CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     #[inline]
     pub fn aport3ch8to15(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT3CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     #[inline]
     pub fn aport3ch16to23(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT3CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     #[inline]
     pub fn aport3ch24to31(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT3CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     #[inline]
     pub fn aport4ch0to7(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT4CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     #[inline]
     pub fn aport4ch8to15(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT4CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     #[inline]
     pub fn aport4ch16to23(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT4CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     #[inline]
     pub fn aport4ch24to31(self) -> &'a mut W {
         self.variant(INPUT8TO15SELW::APORT4CH24TO31)
@@ -1134,41 +1134,41 @@ impl<'a> _INPUT8TO15SELW<'a> {
 }
 #[doc = "Values that can be written to the field `INPUT16TO23SEL`"]
 pub enum INPUT16TO23SELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     APORT4CH24TO31,
 }
 impl INPUT16TO23SELW {
@@ -1208,92 +1208,92 @@ impl<'a> _INPUT16TO23SELW<'a> {
     pub fn variant(self, variant: INPUT16TO23SELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn aport0ch0to7(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT0CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn aport0ch8to15(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT0CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     #[inline]
     pub fn aport1ch0to7(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT1CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     #[inline]
     pub fn aport1ch8to15(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT1CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     #[inline]
     pub fn aport1ch16to23(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT1CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     #[inline]
     pub fn aport1ch24to31(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT1CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     #[inline]
     pub fn aport2ch0to7(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT2CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     #[inline]
     pub fn aport2ch8to15(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT2CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     #[inline]
     pub fn aport2ch16to23(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT2CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     #[inline]
     pub fn aport2ch24to31(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT2CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     #[inline]
     pub fn aport3ch0to7(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT3CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     #[inline]
     pub fn aport3ch8to15(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT3CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     #[inline]
     pub fn aport3ch16to23(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT3CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     #[inline]
     pub fn aport3ch24to31(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT3CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     #[inline]
     pub fn aport4ch0to7(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT4CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     #[inline]
     pub fn aport4ch8to15(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT4CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     #[inline]
     pub fn aport4ch16to23(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT4CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     #[inline]
     pub fn aport4ch24to31(self) -> &'a mut W {
         self.variant(INPUT16TO23SELW::APORT4CH24TO31)
@@ -1310,41 +1310,41 @@ impl<'a> _INPUT16TO23SELW<'a> {
 }
 #[doc = "Values that can be written to the field `INPUT24TO31SEL`"]
 pub enum INPUT24TO31SELW {
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     APORT0CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     APORT0CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     APORT1CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     APORT1CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     APORT1CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     APORT1CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     APORT2CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     APORT2CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     APORT2CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     APORT2CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     APORT3CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     APORT3CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     APORT3CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     APORT3CH24TO31,
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     APORT4CH0TO7,
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     APORT4CH8TO15,
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     APORT4CH16TO23,
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     APORT4CH24TO31,
 }
 impl INPUT24TO31SELW {
@@ -1384,92 +1384,92 @@ impl<'a> _INPUT24TO31SELW<'a> {
     pub fn variant(self, variant: INPUT24TO31SELW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "\"\""]
+    #[doc = "`0`"]
     #[inline]
     pub fn aport0ch0to7(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT0CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1`"]
     #[inline]
     pub fn aport0ch8to15(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT0CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`100`"]
     #[inline]
     pub fn aport1ch0to7(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT1CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`101`"]
     #[inline]
     pub fn aport1ch8to15(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT1CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`110`"]
     #[inline]
     pub fn aport1ch16to23(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT1CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`111`"]
     #[inline]
     pub fn aport1ch24to31(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT1CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1000`"]
     #[inline]
     pub fn aport2ch0to7(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT2CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1001`"]
     #[inline]
     pub fn aport2ch8to15(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT2CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1010`"]
     #[inline]
     pub fn aport2ch16to23(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT2CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1011`"]
     #[inline]
     pub fn aport2ch24to31(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT2CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`1100`"]
     #[inline]
     pub fn aport3ch0to7(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT3CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`1101`"]
     #[inline]
     pub fn aport3ch8to15(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT3CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`1110`"]
     #[inline]
     pub fn aport3ch16to23(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT3CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`1111`"]
     #[inline]
     pub fn aport3ch24to31(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT3CH24TO31)
     }
-    #[doc = "\"\""]
+    #[doc = "`10000`"]
     #[inline]
     pub fn aport4ch0to7(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT4CH0TO7)
     }
-    #[doc = "\"\""]
+    #[doc = "`10001`"]
     #[inline]
     pub fn aport4ch8to15(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT4CH8TO15)
     }
-    #[doc = "\"\""]
+    #[doc = "`10010`"]
     #[inline]
     pub fn aport4ch16to23(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT4CH16TO23)
     }
-    #[doc = "\"\""]
+    #[doc = "`10011`"]
     #[inline]
     pub fn aport4ch24to31(self) -> &'a mut W {
         self.variant(INPUT24TO31SELW::APORT4CH24TO31)

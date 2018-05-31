@@ -129,7 +129,7 @@ impl R {
         };
         PKTCNTR { bits }
     }
-    #[doc = "Bits 29:30 - \"\""]
+    #[doc = "Bits 29:30"]
     #[inline]
     pub fn rxdpid(&self) -> RXDPIDR {
         let bits = {

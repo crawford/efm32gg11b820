@@ -62,27 +62,6 @@ impl PHYCONFIGTXDLLDELAYR {
         self.bits
     }
 }
-#[doc = r" Value of the field"]
-pub struct PHYCONFIGRXDLLBYPASSR {
-    bits: bool,
-}
-impl PHYCONFIGRXDLLBYPASSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
 #[doc = r" Proxy"]
 pub struct _PHYCONFIGRXDLLDELAYW<'a> {
     w: &'a mut W,
@@ -108,52 +87,6 @@ impl<'a> _PHYCONFIGTXDLLDELAYW<'a> {
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 127;
         const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PHYCONFIGRXDLLBYPASSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PHYCONFIGRXDLLBYPASSW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PHYCONFIGRESETW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PHYCONFIGRESETW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -208,16 +141,6 @@ impl R {
         };
         PHYCONFIGTXDLLDELAYR { bits }
     }
-    #[doc = "Bit 29 - RX DLL Bypass"]
-    #[inline]
-    pub fn phyconfigrxdllbypass(&self) -> PHYCONFIGRXDLLBYPASSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PHYCONFIGRXDLLBYPASSR { bits }
-    }
 }
 impl W {
     #[doc = r" Reset value of the register"]
@@ -240,16 +163,6 @@ impl W {
     #[inline]
     pub fn phyconfigtxdlldelay(&mut self) -> _PHYCONFIGTXDLLDELAYW {
         _PHYCONFIGTXDLLDELAYW { w: self }
-    }
-    #[doc = "Bit 29 - RX DLL Bypass"]
-    #[inline]
-    pub fn phyconfigrxdllbypass(&mut self) -> _PHYCONFIGRXDLLBYPASSW {
-        _PHYCONFIGRXDLLBYPASSW { w: self }
-    }
-    #[doc = "Bit 30 - DLL Reset Bit"]
-    #[inline]
-    pub fn phyconfigreset(&mut self) -> _PHYCONFIGRESETW {
-        _PHYCONFIGRESETW { w: self }
     }
     #[doc = "Bit 31 - PHY Config Resync"]
     #[inline]

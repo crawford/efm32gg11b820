@@ -188,10 +188,10 @@ impl I2C1DISR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct DAC0DISR {
+pub struct VDAC0DISR {
     bits: bool,
 }
-impl DAC0DISR {
+impl VDAC0DISR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -727,10 +727,10 @@ impl<'a> _I2C1DISW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _DAC0DISW<'a> {
+pub struct _VDAC0DISW<'a> {
     w: &'a mut W,
 }
-impl<'a> _DAC0DISW<'a> {
+impl<'a> _VDAC0DISW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -1218,13 +1218,13 @@ impl R {
     }
     #[doc = "Bit 7 - Allow Power Down of DAC0 During EM23"]
     #[inline]
-    pub fn dac0dis(&self) -> DAC0DISR {
+    pub fn vdac0dis(&self) -> VDAC0DISR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 7;
             ((self.bits >> OFFSET) & MASK as u32) != 0
         };
-        DAC0DISR { bits }
+        VDAC0DISR { bits }
     }
     #[doc = "Bit 8 - Allow Power Down of IDAC0 During EM23"]
     #[inline]
@@ -1446,8 +1446,8 @@ impl W {
     }
     #[doc = "Bit 7 - Allow Power Down of DAC0 During EM23"]
     #[inline]
-    pub fn dac0dis(&mut self) -> _DAC0DISW {
-        _DAC0DISW { w: self }
+    pub fn vdac0dis(&mut self) -> _VDAC0DISW {
+        _VDAC0DISW { w: self }
     }
     #[doc = "Bit 8 - Allow Power Down of IDAC0 During EM23"]
     #[inline]
