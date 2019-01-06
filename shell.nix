@@ -5,6 +5,8 @@ with import <nixpkgs> {
 stdenv.mkDerivation {
   name = "efm32gg11b820";
   buildInputs = [
-    rustChannels.stable.rust
+    (rustChannels.stable.rust.override {
+      extensions = [ "rustfmt-preview" ];
+    })
   ];
 }
