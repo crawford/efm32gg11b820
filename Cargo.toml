@@ -9,7 +9,7 @@ repository = "https://github.com/crawford/efm32gg11b820"
 
 [dependencies]
 bare-metal = { version = "^0.2.0" }
-cortex-m = { version = "^0.5.8" }
+cortex-m = { version = "^0.6.0" }
 cortex-m-rt = { version = "^0.6.5", optional = true }
 vcell = { version = "^0.1.0" }
 
