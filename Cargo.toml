@@ -1,7 +1,7 @@
 [package]
 name = "efm32gg11b820"
 description = "Peripheral access API for EFM32GG11B820 microcontrollers"
-version = "0.6.0"
+version = "0.7.0"
 authors = ["Alex Crawford <efm32gg11b820@accounts.acrawford.com>"]
 keywords = ["no-std", "arm", "cortex-m", "efm"]
 license = "Apache-2.0"
