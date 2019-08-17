@@ -1,360 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CAPAB2 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR50SUPR {
-    bits: bool,
-}
-impl SDR50SUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR104SUPR {
-    bits: bool,
-}
-impl SDR104SUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDR50SUPR {
-    bits: bool,
-}
-impl DDR50SUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DRVTYPASUPR {
-    bits: bool,
-}
-impl DRVTYPASUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DRVTYPCSUPR {
-    bits: bool,
-}
-impl DRVTYPCSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DRVTYPDSUPR {
-    bits: bool,
-}
-impl DRVTYPDSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TIMCNTRETUNR {
-    bits: u8,
-}
-impl TIMCNTRETUNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USETUNSDR50R {
-    bits: bool,
-}
-impl USETUNSDR50R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RETUNEMODESR {
-    bits: u8,
-}
-impl RETUNEMODESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLOCKKMULR {
-    bits: u8,
-}
-impl CLOCKKMULR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPIMODER {
-    bits: bool,
-}
-impl SPIMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPIBLOCKMODER {
-    bits: bool,
-}
-impl SPIBLOCKMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register CAPAB2"]
+pub type R = crate::R<u32, super::CAPAB2>;
+#[doc = "Reader of field `SDR50SUP`"]
+pub type SDR50SUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SDR104SUP`"]
+pub type SDR104SUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DDR50SUP`"]
+pub type DDR50SUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DRVTYPASUP`"]
+pub type DRVTYPASUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DRVTYPCSUP`"]
+pub type DRVTYPCSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DRVTYPDSUP`"]
+pub type DRVTYPDSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TIMCNTRETUN`"]
+pub type TIMCNTRETUN_R = crate::R<u8, u8>;
+#[doc = "Reader of field `USETUNSDR50`"]
+pub type USETUNSDR50_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RETUNEMODES`"]
+pub type RETUNEMODES_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CLOCKKMUL`"]
+pub type CLOCKKMUL_R = crate::R<u8, u8>;
+#[doc = "Reader of field `SPIMODE`"]
+pub type SPIMODE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPIBLOCKMODE`"]
+pub type SPIBLOCKMODE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - SDR50 Support"]
-    #[inline]
-    pub fn sdr50sup(&self) -> SDR50SUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR50SUPR { bits }
+    #[inline(always)]
+    pub fn sdr50sup(&self) -> SDR50SUP_R {
+        SDR50SUP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - SDR104 Support"]
-    #[inline]
-    pub fn sdr104sup(&self) -> SDR104SUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR104SUPR { bits }
+    #[inline(always)]
+    pub fn sdr104sup(&self) -> SDR104SUP_R {
+        SDR104SUP_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - DDR50 Support"]
-    #[inline]
-    pub fn ddr50sup(&self) -> DDR50SUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DDR50SUPR { bits }
+    #[inline(always)]
+    pub fn ddr50sup(&self) -> DDR50SUP_R {
+        DDR50SUP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Driver Type a Support"]
-    #[inline]
-    pub fn drvtypasup(&self) -> DRVTYPASUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DRVTYPASUPR { bits }
+    #[inline(always)]
+    pub fn drvtypasup(&self) -> DRVTYPASUP_R {
+        DRVTYPASUP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Driver Type C Support"]
-    #[inline]
-    pub fn drvtypcsup(&self) -> DRVTYPCSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DRVTYPCSUPR { bits }
+    #[inline(always)]
+    pub fn drvtypcsup(&self) -> DRVTYPCSUP_R {
+        DRVTYPCSUP_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Driver Type D Support"]
-    #[inline]
-    pub fn drvtypdsup(&self) -> DRVTYPDSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DRVTYPDSUPR { bits }
+    #[inline(always)]
+    pub fn drvtypdsup(&self) -> DRVTYPDSUP_R {
+        DRVTYPDSUP_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bits 8:11 - Timer Count for Re-Tuning"]
-    #[inline]
-    pub fn timcntretun(&self) -> TIMCNTRETUNR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TIMCNTRETUNR { bits }
+    #[inline(always)]
+    pub fn timcntretun(&self) -> TIMCNTRETUN_R {
+        TIMCNTRETUN_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bit 13 - Use Tuning for SDR50"]
-    #[inline]
-    pub fn usetunsdr50(&self) -> USETUNSDR50R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USETUNSDR50R { bits }
+    #[inline(always)]
+    pub fn usetunsdr50(&self) -> USETUNSDR50_R {
+        USETUNSDR50_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Re-tuning Modes"]
-    #[inline]
-    pub fn retunemodes(&self) -> RETUNEMODESR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RETUNEMODESR { bits }
+    #[inline(always)]
+    pub fn retunemodes(&self) -> RETUNEMODES_R {
+        RETUNEMODES_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:23 - Clock Multiplier"]
-    #[inline]
-    pub fn clockkmul(&self) -> CLOCKKMULR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLOCKKMULR { bits }
+    #[inline(always)]
+    pub fn clockkmul(&self) -> CLOCKKMUL_R {
+        CLOCKKMUL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bit 24 - SPI Mode Support"]
-    #[inline]
-    pub fn spimode(&self) -> SPIMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPIMODER { bits }
+    #[inline(always)]
+    pub fn spimode(&self) -> SPIMODE_R {
+        SPIMODE_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - SPI Block Mode Support"]
-    #[inline]
-    pub fn spiblockmode(&self) -> SPIBLOCKMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPIBLOCKMODER { bits }
+    #[inline(always)]
+    pub fn spiblockmode(&self) -> SPIBLOCKMODE_R {
+        SPIBLOCKMODE_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }

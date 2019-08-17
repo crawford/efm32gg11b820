@@ -1,132 +1,114 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OPA3_OUT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OPA3_OUT"]
+pub type R = crate::R<u32, super::OPA3_OUT>;
+#[doc = "Writer for register OPA3_OUT"]
+pub type W = crate::W<u32, super::OPA3_OUT>;
+#[doc = "Register OPA3_OUT `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::OPA3_OUT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = r" Value of the field"]
-pub struct MAINOUTENR {
-    bits: bool,
+#[doc = "Reader of field `MAINOUTEN`"]
+pub type MAINOUTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MAINOUTEN`"]
+pub struct MAINOUTEN_W<'a> {
+    w: &'a mut W,
 }
-impl MAINOUTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> MAINOUTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALTOUTENR {
-    bits: bool,
-}
-impl ALTOUTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct APORTOUTENR {
-    bits: bool,
+#[doc = "Reader of field `ALTOUTEN`"]
+pub type ALTOUTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ALTOUTEN`"]
+pub struct ALTOUTEN_W<'a> {
+    w: &'a mut W,
 }
-impl APORTOUTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> ALTOUTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SHORTR {
-    bits: bool,
+#[doc = "Reader of field `APORTOUTEN`"]
+pub type APORTOUTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APORTOUTEN`"]
+pub struct APORTOUTEN_W<'a> {
+    w: &'a mut W,
 }
-impl SHORTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> APORTOUTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `SHORT`"]
+pub type SHORT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SHORT`"]
+pub struct SHORT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SHORT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ALTOUTPADEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALTOUTPADENR {
+pub enum ALTOUTPADEN_A {
     #[doc = "Alternate Output 0"]
     OUT0,
     #[doc = "Alternate Output 1"]
@@ -137,357 +119,179 @@ pub enum ALTOUTPADENR {
     OUT3,
     #[doc = "Alternate Output 4"]
     OUT4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl ALTOUTPADENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for ALTOUTPADEN_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            ALTOUTPADENR::OUT0 => 1,
-            ALTOUTPADENR::OUT1 => 2,
-            ALTOUTPADENR::OUT2 => 4,
-            ALTOUTPADENR::OUT3 => 8,
-            ALTOUTPADENR::OUT4 => 16,
-            ALTOUTPADENR::_Reserved(bits) => bits,
+            ALTOUTPADEN_A::OUT0 => 1,
+            ALTOUTPADEN_A::OUT1 => 2,
+            ALTOUTPADEN_A::OUT2 => 4,
+            ALTOUTPADEN_A::OUT3 => 8,
+            ALTOUTPADEN_A::OUT4 => 16,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ALTOUTPADENR {
-        match value {
-            1 => ALTOUTPADENR::OUT0,
-            2 => ALTOUTPADENR::OUT1,
-            4 => ALTOUTPADENR::OUT2,
-            8 => ALTOUTPADENR::OUT3,
-            16 => ALTOUTPADENR::OUT4,
-            i => ALTOUTPADENR::_Reserved(i),
+}
+#[doc = "Reader of field `ALTOUTPADEN`"]
+pub type ALTOUTPADEN_R = crate::R<u8, ALTOUTPADEN_A>;
+impl ALTOUTPADEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ALTOUTPADEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(ALTOUTPADEN_A::OUT0),
+            2 => Val(ALTOUTPADEN_A::OUT1),
+            4 => Val(ALTOUTPADEN_A::OUT2),
+            8 => Val(ALTOUTPADEN_A::OUT3),
+            16 => Val(ALTOUTPADEN_A::OUT4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `OUT0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_out0(&self) -> bool {
-        *self == ALTOUTPADENR::OUT0
+        *self == ALTOUTPADEN_A::OUT0
     }
     #[doc = "Checks if the value of the field is `OUT1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_out1(&self) -> bool {
-        *self == ALTOUTPADENR::OUT1
+        *self == ALTOUTPADEN_A::OUT1
     }
     #[doc = "Checks if the value of the field is `OUT2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_out2(&self) -> bool {
-        *self == ALTOUTPADENR::OUT2
+        *self == ALTOUTPADEN_A::OUT2
     }
     #[doc = "Checks if the value of the field is `OUT3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_out3(&self) -> bool {
-        *self == ALTOUTPADENR::OUT3
+        *self == ALTOUTPADEN_A::OUT3
     }
     #[doc = "Checks if the value of the field is `OUT4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_out4(&self) -> bool {
-        *self == ALTOUTPADENR::OUT4
+        *self == ALTOUTPADEN_A::OUT4
     }
 }
-#[doc = r" Value of the field"]
-pub struct APORTOUTSELR {
-    bits: u8,
-}
-impl APORTOUTSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MAINOUTENW<'a> {
+#[doc = "Write proxy for field `ALTOUTPADEN`"]
+pub struct ALTOUTPADEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MAINOUTENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ALTOUTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ALTOUTENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _APORTOUTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _APORTOUTENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SHORTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SHORTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ALTOUTPADEN`"]
-pub enum ALTOUTPADENW {
-    #[doc = "Alternate Output 0"]
-    OUT0,
-    #[doc = "Alternate Output 1"]
-    OUT1,
-    #[doc = "Alternate Output 2"]
-    OUT2,
-    #[doc = "Alternate Output 3"]
-    OUT3,
-    #[doc = "Alternate Output 4"]
-    OUT4,
-}
-impl ALTOUTPADENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ALTOUTPADENW::OUT0 => 1,
-            ALTOUTPADENW::OUT1 => 2,
-            ALTOUTPADENW::OUT2 => 4,
-            ALTOUTPADENW::OUT3 => 8,
-            ALTOUTPADENW::OUT4 => 16,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ALTOUTPADENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ALTOUTPADENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALTOUTPADENW) -> &'a mut W {
+impl<'a> ALTOUTPADEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALTOUTPADEN_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Alternate Output 0"]
-    #[inline]
+    #[inline(always)]
     pub fn out0(self) -> &'a mut W {
-        self.variant(ALTOUTPADENW::OUT0)
+        self.variant(ALTOUTPADEN_A::OUT0)
     }
     #[doc = "Alternate Output 1"]
-    #[inline]
+    #[inline(always)]
     pub fn out1(self) -> &'a mut W {
-        self.variant(ALTOUTPADENW::OUT1)
+        self.variant(ALTOUTPADEN_A::OUT1)
     }
     #[doc = "Alternate Output 2"]
-    #[inline]
+    #[inline(always)]
     pub fn out2(self) -> &'a mut W {
-        self.variant(ALTOUTPADENW::OUT2)
+        self.variant(ALTOUTPADEN_A::OUT2)
     }
     #[doc = "Alternate Output 3"]
-    #[inline]
+    #[inline(always)]
     pub fn out3(self) -> &'a mut W {
-        self.variant(ALTOUTPADENW::OUT3)
+        self.variant(ALTOUTPADEN_A::OUT3)
     }
     #[doc = "Alternate Output 4"]
-    #[inline]
+    #[inline(always)]
     pub fn out4(self) -> &'a mut W {
-        self.variant(ALTOUTPADENW::OUT4)
+        self.variant(ALTOUTPADEN_A::OUT4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 4)) | (((value as u32) & 0x1f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APORTOUTSELW<'a> {
+#[doc = "Reader of field `APORTOUTSEL`"]
+pub type APORTOUTSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `APORTOUTSEL`"]
+pub struct APORTOUTSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APORTOUTSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> APORTOUTSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - OPAx Main Output Enable"]
-    #[inline]
-    pub fn mainouten(&self) -> MAINOUTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MAINOUTENR { bits }
+    #[inline(always)]
+    pub fn mainouten(&self) -> MAINOUTEN_R {
+        MAINOUTEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - OPAx Alternative Output Enable"]
-    #[inline]
-    pub fn altouten(&self) -> ALTOUTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALTOUTENR { bits }
+    #[inline(always)]
+    pub fn altouten(&self) -> ALTOUTEN_R {
+        ALTOUTEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - OPAx Aport Output Enable"]
-    #[inline]
-    pub fn aportouten(&self) -> APORTOUTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APORTOUTENR { bits }
+    #[inline(always)]
+    pub fn aportouten(&self) -> APORTOUTEN_R {
+        APORTOUTEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - OPAx Main and Alternative Output Short"]
-    #[inline]
-    pub fn short(&self) -> SHORTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SHORTR { bits }
+    #[inline(always)]
+    pub fn short(&self) -> SHORT_R {
+        SHORT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:8 - OPAx Output Enable Value"]
-    #[inline]
-    pub fn altoutpaden(&self) -> ALTOUTPADENR {
-        ALTOUTPADENR::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn altoutpaden(&self) -> ALTOUTPADEN_R {
+        ALTOUTPADEN_R::new(((self.bits >> 4) & 0x1f) as u8)
     }
     #[doc = "Bits 16:23 - OPAx APORT Output"]
-    #[inline]
-    pub fn aportoutsel(&self) -> APORTOUTSELR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        APORTOUTSELR { bits }
+    #[inline(always)]
+    pub fn aportoutsel(&self) -> APORTOUTSEL_R {
+        APORTOUTSEL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - OPAx Main Output Enable"]
-    #[inline]
-    pub fn mainouten(&mut self) -> _MAINOUTENW {
-        _MAINOUTENW { w: self }
+    #[inline(always)]
+    pub fn mainouten(&mut self) -> MAINOUTEN_W {
+        MAINOUTEN_W { w: self }
     }
     #[doc = "Bit 1 - OPAx Alternative Output Enable"]
-    #[inline]
-    pub fn altouten(&mut self) -> _ALTOUTENW {
-        _ALTOUTENW { w: self }
+    #[inline(always)]
+    pub fn altouten(&mut self) -> ALTOUTEN_W {
+        ALTOUTEN_W { w: self }
     }
     #[doc = "Bit 2 - OPAx Aport Output Enable"]
-    #[inline]
-    pub fn aportouten(&mut self) -> _APORTOUTENW {
-        _APORTOUTENW { w: self }
+    #[inline(always)]
+    pub fn aportouten(&mut self) -> APORTOUTEN_W {
+        APORTOUTEN_W { w: self }
     }
     #[doc = "Bit 3 - OPAx Main and Alternative Output Short"]
-    #[inline]
-    pub fn short(&mut self) -> _SHORTW {
-        _SHORTW { w: self }
+    #[inline(always)]
+    pub fn short(&mut self) -> SHORT_W {
+        SHORT_W { w: self }
     }
     #[doc = "Bits 4:8 - OPAx Output Enable Value"]
-    #[inline]
-    pub fn altoutpaden(&mut self) -> _ALTOUTPADENW {
-        _ALTOUTPADENW { w: self }
+    #[inline(always)]
+    pub fn altoutpaden(&mut self) -> ALTOUTPADEN_W {
+        ALTOUTPADEN_W { w: self }
     }
     #[doc = "Bits 16:23 - OPAx APORT Output"]
-    #[inline]
-    pub fn aportoutsel(&mut self) -> _APORTOUTSELW {
-        _APORTOUTSELW { w: self }
+    #[inline(always)]
+    pub fn aportoutsel(&mut self) -> APORTOUTSEL_W {
+        APORTOUTSEL_W { w: self }
     }
 }

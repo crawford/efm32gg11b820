@@ -1,438 +1,262 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EM4CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EM4CTRL"]
+pub type R = crate::R<u32, super::EM4CTRL>;
+#[doc = "Writer for register EM4CTRL"]
+pub type W = crate::W<u32, super::EM4CTRL>;
+#[doc = "Register EM4CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::EM4CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct EM4STATER {
-    bits: bool,
+#[doc = "Reader of field `EM4STATE`"]
+pub type EM4STATE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EM4STATE`"]
+pub struct EM4STATE_W<'a> {
+    w: &'a mut W,
 }
-impl EM4STATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> EM4STATE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RETAINLFRCOR {
-    bits: bool,
-}
-impl RETAINLFRCOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct RETAINLFXOR {
-    bits: bool,
+#[doc = "Reader of field `RETAINLFRCO`"]
+pub type RETAINLFRCO_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RETAINLFRCO`"]
+pub struct RETAINLFRCO_W<'a> {
+    w: &'a mut W,
 }
-impl RETAINLFXOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> RETAINLFRCO_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct RETAINULFRCOR {
-    bits: bool,
+#[doc = "Reader of field `RETAINLFXO`"]
+pub type RETAINLFXO_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RETAINLFXO`"]
+pub struct RETAINLFXO_W<'a> {
+    w: &'a mut W,
 }
-impl RETAINULFRCOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> RETAINLFXO_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `RETAINULFRCO`"]
+pub type RETAINULFRCO_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RETAINULFRCO`"]
+pub struct RETAINULFRCO_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RETAINULFRCO_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EM4IORETMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EM4IORETMODER {
+pub enum EM4IORETMODE_A {
     #[doc = "No Retention: Pads enter reset state when entering EM4"]
     DISABLE,
     #[doc = "Retention through EM4: Pads enter reset state when exiting EM4"]
     EM4EXIT,
     #[doc = "Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
     SWUNLATCH,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl EM4IORETMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EM4IORETMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EM4IORETMODER::DISABLE => 0,
-            EM4IORETMODER::EM4EXIT => 1,
-            EM4IORETMODER::SWUNLATCH => 2,
-            EM4IORETMODER::_Reserved(bits) => bits,
+            EM4IORETMODE_A::DISABLE => 0,
+            EM4IORETMODE_A::EM4EXIT => 1,
+            EM4IORETMODE_A::SWUNLATCH => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EM4IORETMODER {
-        match value {
-            0 => EM4IORETMODER::DISABLE,
-            1 => EM4IORETMODER::EM4EXIT,
-            2 => EM4IORETMODER::SWUNLATCH,
-            i => EM4IORETMODER::_Reserved(i),
+}
+#[doc = "Reader of field `EM4IORETMODE`"]
+pub type EM4IORETMODE_R = crate::R<u8, EM4IORETMODE_A>;
+impl EM4IORETMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, EM4IORETMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(EM4IORETMODE_A::DISABLE),
+            1 => Val(EM4IORETMODE_A::EM4EXIT),
+            2 => Val(EM4IORETMODE_A::SWUNLATCH),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == EM4IORETMODER::DISABLE
+        *self == EM4IORETMODE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `EM4EXIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_em4exit(&self) -> bool {
-        *self == EM4IORETMODER::EM4EXIT
+        *self == EM4IORETMODE_A::EM4EXIT
     }
     #[doc = "Checks if the value of the field is `SWUNLATCH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_swunlatch(&self) -> bool {
-        *self == EM4IORETMODER::SWUNLATCH
+        *self == EM4IORETMODE_A::SWUNLATCH
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM4STATEW<'a> {
+#[doc = "Write proxy for field `EM4IORETMODE`"]
+pub struct EM4IORETMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM4STATEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RETAINLFRCOW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RETAINLFRCOW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RETAINLFXOW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RETAINLFXOW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RETAINULFRCOW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RETAINULFRCOW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EM4IORETMODE`"]
-pub enum EM4IORETMODEW {
-    #[doc = "No Retention: Pads enter reset state when entering EM4"]
-    DISABLE,
-    #[doc = "Retention through EM4: Pads enter reset state when exiting EM4"]
-    EM4EXIT,
-    #[doc = "Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
-    SWUNLATCH,
-}
-impl EM4IORETMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EM4IORETMODEW::DISABLE => 0,
-            EM4IORETMODEW::EM4EXIT => 1,
-            EM4IORETMODEW::SWUNLATCH => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EM4IORETMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EM4IORETMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EM4IORETMODEW) -> &'a mut W {
+impl<'a> EM4IORETMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EM4IORETMODE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "No Retention: Pads enter reset state when entering EM4"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(EM4IORETMODEW::DISABLE)
+        self.variant(EM4IORETMODE_A::DISABLE)
     }
     #[doc = "Retention through EM4: Pads enter reset state when exiting EM4"]
-    #[inline]
+    #[inline(always)]
     pub fn em4exit(self) -> &'a mut W {
-        self.variant(EM4IORETMODEW::EM4EXIT)
+        self.variant(EM4IORETMODE_A::EM4EXIT)
     }
     #[doc = "Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
-    #[inline]
+    #[inline(always)]
     pub fn swunlatch(self) -> &'a mut W {
-        self.variant(EM4IORETMODEW::SWUNLATCH)
+        self.variant(EM4IORETMODE_A::SWUNLATCH)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM4ENTRYW<'a> {
+#[doc = "Write proxy for field `EM4ENTRY`"]
+pub struct EM4ENTRY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM4ENTRYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EM4ENTRY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Energy Mode 4 State"]
-    #[inline]
-    pub fn em4state(&self) -> EM4STATER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM4STATER { bits }
+    #[inline(always)]
+    pub fn em4state(&self) -> EM4STATE_R {
+        EM4STATE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - LFRCO Retain During EM4"]
-    #[inline]
-    pub fn retainlfrco(&self) -> RETAINLFRCOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RETAINLFRCOR { bits }
+    #[inline(always)]
+    pub fn retainlfrco(&self) -> RETAINLFRCO_R {
+        RETAINLFRCO_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - LFXO Retain During EM4"]
-    #[inline]
-    pub fn retainlfxo(&self) -> RETAINLFXOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RETAINLFXOR { bits }
+    #[inline(always)]
+    pub fn retainlfxo(&self) -> RETAINLFXO_R {
+        RETAINLFXO_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - ULFRCO Retain During EM4S"]
-    #[inline]
-    pub fn retainulfrco(&self) -> RETAINULFRCOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RETAINULFRCOR { bits }
+    #[inline(always)]
+    pub fn retainulfrco(&self) -> RETAINULFRCO_R {
+        RETAINULFRCO_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - EM4 IO Retention Disable"]
-    #[inline]
-    pub fn em4ioretmode(&self) -> EM4IORETMODER {
-        EM4IORETMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn em4ioretmode(&self) -> EM4IORETMODE_R {
+        EM4IORETMODE_R::new(((self.bits >> 4) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Energy Mode 4 State"]
-    #[inline]
-    pub fn em4state(&mut self) -> _EM4STATEW {
-        _EM4STATEW { w: self }
+    #[inline(always)]
+    pub fn em4state(&mut self) -> EM4STATE_W {
+        EM4STATE_W { w: self }
     }
     #[doc = "Bit 1 - LFRCO Retain During EM4"]
-    #[inline]
-    pub fn retainlfrco(&mut self) -> _RETAINLFRCOW {
-        _RETAINLFRCOW { w: self }
+    #[inline(always)]
+    pub fn retainlfrco(&mut self) -> RETAINLFRCO_W {
+        RETAINLFRCO_W { w: self }
     }
     #[doc = "Bit 2 - LFXO Retain During EM4"]
-    #[inline]
-    pub fn retainlfxo(&mut self) -> _RETAINLFXOW {
-        _RETAINLFXOW { w: self }
+    #[inline(always)]
+    pub fn retainlfxo(&mut self) -> RETAINLFXO_W {
+        RETAINLFXO_W { w: self }
     }
     #[doc = "Bit 3 - ULFRCO Retain During EM4S"]
-    #[inline]
-    pub fn retainulfrco(&mut self) -> _RETAINULFRCOW {
-        _RETAINULFRCOW { w: self }
+    #[inline(always)]
+    pub fn retainulfrco(&mut self) -> RETAINULFRCO_W {
+        RETAINULFRCO_W { w: self }
     }
     #[doc = "Bits 4:5 - EM4 IO Retention Disable"]
-    #[inline]
-    pub fn em4ioretmode(&mut self) -> _EM4IORETMODEW {
-        _EM4IORETMODEW { w: self }
+    #[inline(always)]
+    pub fn em4ioretmode(&mut self) -> EM4IORETMODE_W {
+        EM4IORETMODE_W { w: self }
     }
     #[doc = "Bits 16:17 - Energy Mode 4 Entry"]
-    #[inline]
-    pub fn em4entry(&mut self) -> _EM4ENTRYW {
-        _EM4ENTRYW { w: self }
+    #[inline(always)]
+    pub fn em4entry(&mut self) -> EM4ENTRY_W {
+        EM4ENTRY_W { w: self }
     }
 }

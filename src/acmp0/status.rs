@@ -1,142 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ACMPACTR {
-    bits: bool,
-}
-impl ACMPACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ACMPOUTR {
-    bits: bool,
-}
-impl ACMPOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APORTCONFLICTR {
-    bits: bool,
-}
-impl APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTIFACTR {
-    bits: bool,
-}
-impl EXTIFACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `ACMPACT`"]
+pub type ACMPACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ACMPOUT`"]
+pub type ACMPOUT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `APORTCONFLICT`"]
+pub type APORTCONFLICT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EXTIFACT`"]
+pub type EXTIFACT_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Analog Comparator Active"]
-    #[inline]
-    pub fn acmpact(&self) -> ACMPACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ACMPACTR { bits }
+    #[inline(always)]
+    pub fn acmpact(&self) -> ACMPACT_R {
+        ACMPACT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Analog Comparator Output"]
-    #[inline]
-    pub fn acmpout(&self) -> ACMPOUTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ACMPOUTR { bits }
+    #[inline(always)]
+    pub fn acmpout(&self) -> ACMPOUT_R {
+        ACMPOUT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - APORT Conflict Output"]
-    #[inline]
-    pub fn aportconflict(&self) -> APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn aportconflict(&self) -> APORTCONFLICT_R {
+        APORTCONFLICT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - External Override Interface Active"]
-    #[inline]
-    pub fn extifact(&self) -> EXTIFACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EXTIFACTR { bits }
+    #[inline(always)]
+    pub fn extifact(&self) -> EXTIFACT_R {
+        EXTIFACT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }

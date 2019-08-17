@@ -1,173 +1,39 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMPR {
-    bits: bool,
-}
-impl CMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CONVR {
-    bits: bool,
-}
-impl CONVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EOSR {
-    bits: bool,
-}
-impl EOSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMAOFR {
-    bits: bool,
-}
-impl DMAOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APORTCONFLICTR {
-    bits: bool,
-}
-impl APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `CMP`"]
+pub type CMP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CONV`"]
+pub type CONV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EOS`"]
+pub type EOS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DMAOF`"]
+pub type DMAOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `APORTCONFLICT`"]
+pub type APORTCONFLICT_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Digital Comparator Interrupt Flag"]
-    #[inline]
-    pub fn cmp(&self) -> CMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMPR { bits }
+    #[inline(always)]
+    pub fn cmp(&self) -> CMP_R {
+        CMP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Conversion Done Interrupt Flag"]
-    #[inline]
-    pub fn conv(&self) -> CONVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CONVR { bits }
+    #[inline(always)]
+    pub fn conv(&self) -> CONV_R {
+        CONV_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - End of Scan Interrupt Flag."]
-    #[inline]
-    pub fn eos(&self) -> EOSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EOSR { bits }
+    #[inline(always)]
+    pub fn eos(&self) -> EOS_R {
+        EOS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - DMA Overflow Interrupt Flag."]
-    #[inline]
-    pub fn dmaof(&self) -> DMAOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMAOFR { bits }
+    #[inline(always)]
+    pub fn dmaof(&self) -> DMAOF_R {
+        DMAOF_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - APORT Conflict Interrupt Flag"]
-    #[inline]
-    pub fn aportconflict(&self) -> APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn aportconflict(&self) -> APORTCONFLICT_R {
+        APORTCONFLICT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }

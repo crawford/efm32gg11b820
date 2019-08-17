@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTR {
-    bits: u16,
-}
-impl EXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM4WUR {
-    bits: u16,
-}
-impl EM4WUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `EXT`"]
+pub type EXT_R = crate::R<u16, u16>;
+#[doc = "Reader of field `EM4WU`"]
+pub type EM4WU_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - External Pin Interrupt Flag"]
-    #[inline]
-    pub fn ext(&self) -> EXTR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        EXTR { bits }
+    #[inline(always)]
+    pub fn ext(&self) -> EXT_R {
+        EXT_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - EM4 Wake Up Pin Interrupt Flag"]
-    #[inline]
-    pub fn em4wu(&self) -> EM4WUR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        EM4WUR { bits }
+    #[inline(always)]
+    pub fn em4wu(&self) -> EM4WU_R {
+        EM4WU_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }

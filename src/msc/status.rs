@@ -1,308 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUSYR {
-    bits: bool,
-}
-impl BUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LOCKEDR {
-    bits: bool,
-}
-impl LOCKEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INVADDRR {
-    bits: bool,
-}
-impl INVADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WDATAREADYR {
-    bits: bool,
-}
-impl WDATAREADYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WORDTIMEOUTR {
-    bits: bool,
-}
-impl WORDTIMEOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERASEABORTEDR {
-    bits: bool,
-}
-impl ERASEABORTEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCRUNNINGR {
-    bits: bool,
-}
-impl PCRUNNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BANKSWITCHEDR {
-    bits: bool,
-}
-impl BANKSWITCHEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WDATAVALIDR {
-    bits: u8,
-}
-impl WDATAVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PWRUPCKBDFAILCOUNTR {
-    bits: u8,
-}
-impl PWRUPCKBDFAILCOUNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `BUSY`"]
+pub type BUSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LOCKED`"]
+pub type LOCKED_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INVADDR`"]
+pub type INVADDR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WDATAREADY`"]
+pub type WDATAREADY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WORDTIMEOUT`"]
+pub type WORDTIMEOUT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ERASEABORTED`"]
+pub type ERASEABORTED_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PCRUNNING`"]
+pub type PCRUNNING_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BANKSWITCHED`"]
+pub type BANKSWITCHED_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WDATAVALID`"]
+pub type WDATAVALID_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PWRUPCKBDFAILCOUNT`"]
+pub type PWRUPCKBDFAILCOUNT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Erase/Write Busy"]
-    #[inline]
-    pub fn busy(&self) -> BUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUSYR { bits }
+    #[inline(always)]
+    pub fn busy(&self) -> BUSY_R {
+        BUSY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Access Locked"]
-    #[inline]
-    pub fn locked(&self) -> LOCKEDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LOCKEDR { bits }
+    #[inline(always)]
+    pub fn locked(&self) -> LOCKED_R {
+        LOCKED_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Invalid Write Address or Erase Page"]
-    #[inline]
-    pub fn invaddr(&self) -> INVADDRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INVADDRR { bits }
+    #[inline(always)]
+    pub fn invaddr(&self) -> INVADDR_R {
+        INVADDR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - WDATA Write Ready"]
-    #[inline]
-    pub fn wdataready(&self) -> WDATAREADYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WDATAREADYR { bits }
+    #[inline(always)]
+    pub fn wdataready(&self) -> WDATAREADY_R {
+        WDATAREADY_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Flash Write Word Timeout"]
-    #[inline]
-    pub fn wordtimeout(&self) -> WORDTIMEOUTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WORDTIMEOUTR { bits }
+    #[inline(always)]
+    pub fn wordtimeout(&self) -> WORDTIMEOUT_R {
+        WORDTIMEOUT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - The Current Flash Erase Operation Aborted"]
-    #[inline]
-    pub fn eraseaborted(&self) -> ERASEABORTEDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERASEABORTEDR { bits }
+    #[inline(always)]
+    pub fn eraseaborted(&self) -> ERASEABORTED_R {
+        ERASEABORTED_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Performance Counters Running"]
-    #[inline]
-    pub fn pcrunning(&self) -> PCRUNNINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCRUNNINGR { bits }
+    #[inline(always)]
+    pub fn pcrunning(&self) -> PCRUNNING_R {
+        PCRUNNING_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - BANK SWITCHING STATUS"]
-    #[inline]
-    pub fn bankswitched(&self) -> BANKSWITCHEDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BANKSWITCHEDR { bits }
+    #[inline(always)]
+    pub fn bankswitched(&self) -> BANKSWITCHED_R {
+        BANKSWITCHED_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 24:27 - Write Data Buffer Valid Flag"]
-    #[inline]
-    pub fn wdatavalid(&self) -> WDATAVALIDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WDATAVALIDR { bits }
+    #[inline(always)]
+    pub fn wdatavalid(&self) -> WDATAVALID_R {
+        WDATAVALID_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - Flash Power Up Checkerboard Pattern Check Fail Count"]
-    #[inline]
-    pub fn pwrupckbdfailcount(&self) -> PWRUPCKBDFAILCOUNTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PWRUPCKBDFAILCOUNTR { bits }
+    #[inline(always)]
+    pub fn pwrupckbdfailcount(&self) -> PWRUPCKBDFAILCOUNT_R {
+        PWRUPCKBDFAILCOUNT_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }

@@ -1,49 +1,12 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSTVAL0 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INITSDCLKFREQVALR {
-    bits: u16,
-}
-impl INITSDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INITCLCKGENVALR {
-    bits: bool,
-}
-impl INITCLCKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register PRSTVAL0"]
+pub type R = crate::R<u32, super::PRSTVAL0>;
+#[doc = "Reader of field `INITSDCLKFREQVAL`"]
+pub type INITSDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `INITCLCKGENVAL`"]
+pub type INITCLCKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `INITDRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INITDRVSTVALR {
+pub enum INITDRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -53,85 +16,59 @@ pub enum INITDRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl INITDRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for INITDRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            INITDRVSTVALR::TYPEB => 0,
-            INITDRVSTVALR::TYPEA => 1,
-            INITDRVSTVALR::TYPEC => 2,
-            INITDRVSTVALR::TYPED => 3,
+            INITDRVSTVAL_A::TYPEB => 0,
+            INITDRVSTVAL_A::TYPEA => 1,
+            INITDRVSTVAL_A::TYPEC => 2,
+            INITDRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> INITDRVSTVALR {
-        match value {
-            0 => INITDRVSTVALR::TYPEB,
-            1 => INITDRVSTVALR::TYPEA,
-            2 => INITDRVSTVALR::TYPEC,
-            3 => INITDRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `INITDRVSTVAL`"]
+pub type INITDRVSTVAL_R = crate::R<u8, INITDRVSTVAL_A>;
+impl INITDRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INITDRVSTVAL_A {
+        match self.bits {
+            0 => INITDRVSTVAL_A::TYPEB,
+            1 => INITDRVSTVAL_A::TYPEA,
+            2 => INITDRVSTVAL_A::TYPEC,
+            3 => INITDRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == INITDRVSTVALR::TYPEB
+        *self == INITDRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == INITDRVSTVALR::TYPEA
+        *self == INITDRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == INITDRVSTVALR::TYPEC
+        *self == INITDRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == INITDRVSTVALR::TYPED
+        *self == INITDRVSTVAL_A::TYPED
     }
 }
-#[doc = r" Value of the field"]
-pub struct DSPSDCLKFREQVALR {
-    bits: u16,
-}
-impl DSPSDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DSPCLKGENVALR {
-    bits: bool,
-}
-impl DSPCLKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `DSPSDCLKFREQVAL`"]
+pub type DSPSDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `DSPCLKGENVAL`"]
+pub type DSPCLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `DSPDRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DSPDRVSTVALR {
+pub enum DSPDRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -141,112 +78,81 @@ pub enum DSPDRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl DSPDRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DSPDRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DSPDRVSTVALR::TYPEB => 0,
-            DSPDRVSTVALR::TYPEA => 1,
-            DSPDRVSTVALR::TYPEC => 2,
-            DSPDRVSTVALR::TYPED => 3,
+            DSPDRVSTVAL_A::TYPEB => 0,
+            DSPDRVSTVAL_A::TYPEA => 1,
+            DSPDRVSTVAL_A::TYPEC => 2,
+            DSPDRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DSPDRVSTVALR {
-        match value {
-            0 => DSPDRVSTVALR::TYPEB,
-            1 => DSPDRVSTVALR::TYPEA,
-            2 => DSPDRVSTVALR::TYPEC,
-            3 => DSPDRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `DSPDRVSTVAL`"]
+pub type DSPDRVSTVAL_R = crate::R<u8, DSPDRVSTVAL_A>;
+impl DSPDRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DSPDRVSTVAL_A {
+        match self.bits {
+            0 => DSPDRVSTVAL_A::TYPEB,
+            1 => DSPDRVSTVAL_A::TYPEA,
+            2 => DSPDRVSTVAL_A::TYPEC,
+            3 => DSPDRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == DSPDRVSTVALR::TYPEB
+        *self == DSPDRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == DSPDRVSTVALR::TYPEA
+        *self == DSPDRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == DSPDRVSTVALR::TYPEC
+        *self == DSPDRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == DSPDRVSTVALR::TYPED
+        *self == DSPDRVSTVAL_A::TYPED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - SD_CLK Frequency Select Value for Initialization"]
-    #[inline]
-    pub fn initsdclkfreqval(&self) -> INITSDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        INITSDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn initsdclkfreqval(&self) -> INITSDCLKFREQVAL_R {
+        INITSDCLKFREQVAL_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 10 - Clock Generator Select Value for Initialization"]
-    #[inline]
-    pub fn initclckgenval(&self) -> INITCLCKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INITCLCKGENVALR { bits }
+    #[inline(always)]
+    pub fn initclckgenval(&self) -> INITCLCKGENVAL_R {
+        INITCLCKGENVAL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Driver Strength Select Value for Initialization"]
-    #[inline]
-    pub fn initdrvstval(&self) -> INITDRVSTVALR {
-        INITDRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn initdrvstval(&self) -> INITDRVSTVAL_R {
+        INITDRVSTVAL_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - SD_CLK Frequency Select Value for Default Speed"]
-    #[inline]
-    pub fn dspsdclkfreqval(&self) -> DSPSDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DSPSDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn dspsdclkfreqval(&self) -> DSPSDCLKFREQVAL_R {
+        DSPSDCLKFREQVAL_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 26 - Clock Generator Select Value for Default Speed"]
-    #[inline]
-    pub fn dspclkgenval(&self) -> DSPCLKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DSPCLKGENVALR { bits }
+    #[inline(always)]
+    pub fn dspclkgenval(&self) -> DSPCLKGENVAL_R {
+        DSPCLKGENVAL_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 30:31 - Driver Strength Select Value for Default Speed"]
-    #[inline]
-    pub fn dspdrvstval(&self) -> DSPDRVSTVALR {
-        DSPDRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dspdrvstval(&self) -> DSPDRVSTVAL_R {
+        DSPDRVSTVAL_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }

@@ -1,187 +1,184 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DCDCMISCCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DCDCMISCCTRL"]
+pub type R = crate::R<u32, super::DCDCMISCCTRL>;
+#[doc = "Writer for register DCDCMISCCTRL"]
+pub type W = crate::W<u32, super::DCDCMISCCTRL>;
+#[doc = "Register DCDCMISCCTRL `reset()`'s with value 0x0310_7706"]
+impl crate::ResetValue for super::DCDCMISCCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0310_7706
     }
 }
-#[doc = r" Value of the field"]
-pub struct LNFORCECCMR {
-    bits: bool,
+#[doc = "Reader of field `LNFORCECCM`"]
+pub type LNFORCECCM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LNFORCECCM`"]
+pub struct LNFORCECCM_W<'a> {
+    w: &'a mut W,
 }
-impl LNFORCECCMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> LNFORCECCM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LPCMPHYSDISR {
-    bits: bool,
-}
-impl LPCMPHYSDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct LPCMPHYSHIR {
-    bits: bool,
+#[doc = "Reader of field `LPCMPHYSDIS`"]
+pub type LPCMPHYSDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LPCMPHYSDIS`"]
+pub struct LPCMPHYSDIS_W<'a> {
+    w: &'a mut W,
 }
-impl LPCMPHYSHIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> LPCMPHYSDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LNFORCECCMIMMR {
-    bits: bool,
-}
-impl LNFORCECCMIMMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct PFETCNTR {
-    bits: u8,
+#[doc = "Reader of field `LPCMPHYSHI`"]
+pub type LPCMPHYSHI_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LPCMPHYSHI`"]
+pub struct LPCMPHYSHI_W<'a> {
+    w: &'a mut W,
 }
-impl PFETCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> LPCMPHYSHI_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct NFETCNTR {
-    bits: u8,
+#[doc = "Reader of field `LNFORCECCMIMM`"]
+pub type LNFORCECCMIMM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LNFORCECCMIMM`"]
+pub struct LNFORCECCMIMM_W<'a> {
+    w: &'a mut W,
 }
-impl NFETCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> LNFORCECCMIMM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct BYPLIMSELR {
-    bits: u8,
+#[doc = "Reader of field `PFETCNT`"]
+pub type PFETCNT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PFETCNT`"]
+pub struct PFETCNT_W<'a> {
+    w: &'a mut W,
 }
-impl BYPLIMSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> PFETCNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct LPCLIMILIMSELR {
-    bits: u8,
+#[doc = "Reader of field `NFETCNT`"]
+pub type NFETCNT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NFETCNT`"]
+pub struct NFETCNT_W<'a> {
+    w: &'a mut W,
 }
-impl LPCLIMILIMSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> NFETCNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct LNCLIMILIMSELR {
-    bits: u8,
+#[doc = "Reader of field `BYPLIMSEL`"]
+pub type BYPLIMSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BYPLIMSEL`"]
+pub struct BYPLIMSEL_W<'a> {
+    w: &'a mut W,
 }
-impl LNCLIMILIMSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> BYPLIMSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
+    }
+}
+#[doc = "Reader of field `LPCLIMILIMSEL`"]
+pub type LPCLIMILIMSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LPCLIMILIMSEL`"]
+pub struct LPCLIMILIMSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LPCLIMILIMSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w
+    }
+}
+#[doc = "Reader of field `LNCLIMILIMSEL`"]
+pub type LNCLIMILIMSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LNCLIMILIMSEL`"]
+pub struct LNCLIMILIMSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LNCLIMILIMSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LPCMPBIASEM234H`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LPCMPBIASEM234HR {
+pub enum LPCMPBIASEM234H_A {
     #[doc = "Maximum load current less than 75uA."]
     BIAS0,
     #[doc = "Maximum load current less than 500uA."]
@@ -191,449 +188,193 @@ pub enum LPCMPBIASEM234HR {
     #[doc = "Maximum load current less than 10mA."]
     BIAS3,
 }
-impl LPCMPBIASEM234HR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LPCMPBIASEM234H_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LPCMPBIASEM234HR::BIAS0 => 0,
-            LPCMPBIASEM234HR::BIAS1 => 1,
-            LPCMPBIASEM234HR::BIAS2 => 2,
-            LPCMPBIASEM234HR::BIAS3 => 3,
+            LPCMPBIASEM234H_A::BIAS0 => 0,
+            LPCMPBIASEM234H_A::BIAS1 => 1,
+            LPCMPBIASEM234H_A::BIAS2 => 2,
+            LPCMPBIASEM234H_A::BIAS3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LPCMPBIASEM234HR {
-        match value {
-            0 => LPCMPBIASEM234HR::BIAS0,
-            1 => LPCMPBIASEM234HR::BIAS1,
-            2 => LPCMPBIASEM234HR::BIAS2,
-            3 => LPCMPBIASEM234HR::BIAS3,
+}
+#[doc = "Reader of field `LPCMPBIASEM234H`"]
+pub type LPCMPBIASEM234H_R = crate::R<u8, LPCMPBIASEM234H_A>;
+impl LPCMPBIASEM234H_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LPCMPBIASEM234H_A {
+        match self.bits {
+            0 => LPCMPBIASEM234H_A::BIAS0,
+            1 => LPCMPBIASEM234H_A::BIAS1,
+            2 => LPCMPBIASEM234H_A::BIAS2,
+            3 => LPCMPBIASEM234H_A::BIAS3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `BIAS0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bias0(&self) -> bool {
-        *self == LPCMPBIASEM234HR::BIAS0
+        *self == LPCMPBIASEM234H_A::BIAS0
     }
     #[doc = "Checks if the value of the field is `BIAS1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bias1(&self) -> bool {
-        *self == LPCMPBIASEM234HR::BIAS1
+        *self == LPCMPBIASEM234H_A::BIAS1
     }
     #[doc = "Checks if the value of the field is `BIAS2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bias2(&self) -> bool {
-        *self == LPCMPBIASEM234HR::BIAS2
+        *self == LPCMPBIASEM234H_A::BIAS2
     }
     #[doc = "Checks if the value of the field is `BIAS3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bias3(&self) -> bool {
-        *self == LPCMPBIASEM234HR::BIAS3
+        *self == LPCMPBIASEM234H_A::BIAS3
     }
 }
-#[doc = r" Proxy"]
-pub struct _LNFORCECCMW<'a> {
+#[doc = "Write proxy for field `LPCMPBIASEM234H`"]
+pub struct LPCMPBIASEM234H_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LNFORCECCMW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LPCMPHYSDISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LPCMPHYSDISW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LPCMPHYSHIW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LPCMPHYSHIW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LNFORCECCMIMMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LNFORCECCMIMMW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PFETCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PFETCNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NFETCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NFETCNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BYPLIMSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BYPLIMSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LPCLIMILIMSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LPCLIMILIMSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LNCLIMILIMSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LNCLIMILIMSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LPCMPBIASEM234H`"]
-pub enum LPCMPBIASEM234HW {
-    #[doc = "Maximum load current less than 75uA."]
-    BIAS0,
-    #[doc = "Maximum load current less than 500uA."]
-    BIAS1,
-    #[doc = "Maximum load current less than 2.5mA."]
-    BIAS2,
-    #[doc = "Maximum load current less than 10mA."]
-    BIAS3,
-}
-impl LPCMPBIASEM234HW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LPCMPBIASEM234HW::BIAS0 => 0,
-            LPCMPBIASEM234HW::BIAS1 => 1,
-            LPCMPBIASEM234HW::BIAS2 => 2,
-            LPCMPBIASEM234HW::BIAS3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LPCMPBIASEM234HW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LPCMPBIASEM234HW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LPCMPBIASEM234HW) -> &'a mut W {
+impl<'a> LPCMPBIASEM234H_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LPCMPBIASEM234H_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Maximum load current less than 75uA."]
-    #[inline]
+    #[inline(always)]
     pub fn bias0(self) -> &'a mut W {
-        self.variant(LPCMPBIASEM234HW::BIAS0)
+        self.variant(LPCMPBIASEM234H_A::BIAS0)
     }
     #[doc = "Maximum load current less than 500uA."]
-    #[inline]
+    #[inline(always)]
     pub fn bias1(self) -> &'a mut W {
-        self.variant(LPCMPBIASEM234HW::BIAS1)
+        self.variant(LPCMPBIASEM234H_A::BIAS1)
     }
     #[doc = "Maximum load current less than 2.5mA."]
-    #[inline]
+    #[inline(always)]
     pub fn bias2(self) -> &'a mut W {
-        self.variant(LPCMPBIASEM234HW::BIAS2)
+        self.variant(LPCMPBIASEM234H_A::BIAS2)
     }
     #[doc = "Maximum load current less than 10mA."]
-    #[inline]
+    #[inline(always)]
     pub fn bias3(self) -> &'a mut W {
-        self.variant(LPCMPBIASEM234HW::BIAS3)
+        self.variant(LPCMPBIASEM234H_A::BIAS3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
-    #[inline]
-    pub fn lnforceccm(&self) -> LNFORCECCMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LNFORCECCMR { bits }
+    #[inline(always)]
+    pub fn lnforceccm(&self) -> LNFORCECCM_R {
+        LNFORCECCM_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Disable LP Mode Hysteresis in the State Machine Control"]
-    #[inline]
-    pub fn lpcmphysdis(&self) -> LPCMPHYSDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LPCMPHYSDISR { bits }
+    #[inline(always)]
+    pub fn lpcmphysdis(&self) -> LPCMPHYSDIS_R {
+        LPCMPHYSDIS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Comparator Threshold on the High Side"]
-    #[inline]
-    pub fn lpcmphyshi(&self) -> LPCMPHYSHIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LPCMPHYSHIR { bits }
+    #[inline(always)]
+    pub fn lpcmphyshi(&self) -> LPCMPHYSHI_R {
+        LPCMPHYSHI_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Force DCDC Into CCM Mode Immediately, Based on LNFORCECCM"]
-    #[inline]
-    pub fn lnforceccmimm(&self) -> LNFORCECCMIMMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LNFORCECCMIMMR { bits }
+    #[inline(always)]
+    pub fn lnforceccmimm(&self) -> LNFORCECCMIMM_R {
+        LNFORCECCMIMM_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bits 8:11 - PFET Switch Number Selection"]
-    #[inline]
-    pub fn pfetcnt(&self) -> PFETCNTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PFETCNTR { bits }
+    #[inline(always)]
+    pub fn pfetcnt(&self) -> PFETCNT_R {
+        PFETCNT_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - NFET Switch Number Selection"]
-    #[inline]
-    pub fn nfetcnt(&self) -> NFETCNTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NFETCNTR { bits }
+    #[inline(always)]
+    pub fn nfetcnt(&self) -> NFETCNT_R {
+        NFETCNT_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Current Limit in Bypass Mode"]
-    #[inline]
-    pub fn byplimsel(&self) -> BYPLIMSELR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BYPLIMSELR { bits }
+    #[inline(always)]
+    pub fn byplimsel(&self) -> BYPLIMSEL_R {
+        BYPLIMSEL_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode"]
-    #[inline]
-    pub fn lpclimilimsel(&self) -> LPCLIMILIMSELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LPCLIMILIMSELR { bits }
+    #[inline(always)]
+    pub fn lpclimilimsel(&self) -> LPCLIMILIMSEL_R {
+        LPCLIMILIMSEL_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode"]
-    #[inline]
-    pub fn lnclimilimsel(&self) -> LNCLIMILIMSELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LNCLIMILIMSELR { bits }
+    #[inline(always)]
+    pub fn lnclimilimsel(&self) -> LNCLIMILIMSEL_R {
+        LNCLIMILIMSEL_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bits 28:29 - LP Mode Comparator Bias Selection for EM23 or EM4H"]
-    #[inline]
-    pub fn lpcmpbiasem234h(&self) -> LPCMPBIASEM234HR {
-        LPCMPBIASEM234HR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lpcmpbiasem234h(&self) -> LPCMPBIASEM234H_R {
+        LPCMPBIASEM234H_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 51410694 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
-    #[inline]
-    pub fn lnforceccm(&mut self) -> _LNFORCECCMW {
-        _LNFORCECCMW { w: self }
+    #[inline(always)]
+    pub fn lnforceccm(&mut self) -> LNFORCECCM_W {
+        LNFORCECCM_W { w: self }
     }
     #[doc = "Bit 1 - Disable LP Mode Hysteresis in the State Machine Control"]
-    #[inline]
-    pub fn lpcmphysdis(&mut self) -> _LPCMPHYSDISW {
-        _LPCMPHYSDISW { w: self }
+    #[inline(always)]
+    pub fn lpcmphysdis(&mut self) -> LPCMPHYSDIS_W {
+        LPCMPHYSDIS_W { w: self }
     }
     #[doc = "Bit 2 - Comparator Threshold on the High Side"]
-    #[inline]
-    pub fn lpcmphyshi(&mut self) -> _LPCMPHYSHIW {
-        _LPCMPHYSHIW { w: self }
+    #[inline(always)]
+    pub fn lpcmphyshi(&mut self) -> LPCMPHYSHI_W {
+        LPCMPHYSHI_W { w: self }
     }
     #[doc = "Bit 5 - Force DCDC Into CCM Mode Immediately, Based on LNFORCECCM"]
-    #[inline]
-    pub fn lnforceccmimm(&mut self) -> _LNFORCECCMIMMW {
-        _LNFORCECCMIMMW { w: self }
+    #[inline(always)]
+    pub fn lnforceccmimm(&mut self) -> LNFORCECCMIMM_W {
+        LNFORCECCMIMM_W { w: self }
     }
     #[doc = "Bits 8:11 - PFET Switch Number Selection"]
-    #[inline]
-    pub fn pfetcnt(&mut self) -> _PFETCNTW {
-        _PFETCNTW { w: self }
+    #[inline(always)]
+    pub fn pfetcnt(&mut self) -> PFETCNT_W {
+        PFETCNT_W { w: self }
     }
     #[doc = "Bits 12:15 - NFET Switch Number Selection"]
-    #[inline]
-    pub fn nfetcnt(&mut self) -> _NFETCNTW {
-        _NFETCNTW { w: self }
+    #[inline(always)]
+    pub fn nfetcnt(&mut self) -> NFETCNT_W {
+        NFETCNT_W { w: self }
     }
     #[doc = "Bits 16:19 - Current Limit in Bypass Mode"]
-    #[inline]
-    pub fn byplimsel(&mut self) -> _BYPLIMSELW {
-        _BYPLIMSELW { w: self }
+    #[inline(always)]
+    pub fn byplimsel(&mut self) -> BYPLIMSEL_W {
+        BYPLIMSEL_W { w: self }
     }
     #[doc = "Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode"]
-    #[inline]
-    pub fn lpclimilimsel(&mut self) -> _LPCLIMILIMSELW {
-        _LPCLIMILIMSELW { w: self }
+    #[inline(always)]
+    pub fn lpclimilimsel(&mut self) -> LPCLIMILIMSEL_W {
+        LPCLIMILIMSEL_W { w: self }
     }
     #[doc = "Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode"]
-    #[inline]
-    pub fn lnclimilimsel(&mut self) -> _LNCLIMILIMSELW {
-        _LNCLIMILIMSELW { w: self }
+    #[inline(always)]
+    pub fn lnclimilimsel(&mut self) -> LNCLIMILIMSEL_W {
+        LNCLIMILIMSEL_W { w: self }
     }
     #[doc = "Bits 28:29 - LP Mode Comparator Bias Selection for EM23 or EM4H"]
-    #[inline]
-    pub fn lpcmpbiasem234h(&mut self) -> _LPCMPBIASEM234HW {
-        _LPCMPBIASEM234HW { w: self }
+    #[inline(always)]
+    pub fn lpcmpbiasem234h(&mut self) -> LPCMPBIASEM234H_W {
+        LPCMPBIASEM234H_W { w: self }
     }
 }

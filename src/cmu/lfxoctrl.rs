@@ -1,194 +1,215 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LFXOCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LFXOCTRL"]
+pub type R = crate::R<u32, super::LFXOCTRL>;
+#[doc = "Writer for register LFXOCTRL"]
+pub type W = crate::W<u32, super::LFXOCTRL>;
+#[doc = "Register LFXOCTRL `reset()`'s with value 0x0700_9000"]
+impl crate::ResetValue for super::LFXOCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0700_9000
     }
 }
-#[doc = r" Value of the field"]
-pub struct TUNINGR {
-    bits: u8,
+#[doc = "Reader of field `TUNING`"]
+pub type TUNING_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TUNING`"]
+pub struct TUNING_W<'a> {
+    w: &'a mut W,
 }
-impl TUNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TUNING_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
+pub enum MODE_A {
     #[doc = "32768 Hz crystal oscillator"]
     XTAL,
     #[doc = "An AC coupled buffer is coupled in series with LFXTAL_N pin, suitable for external sinus wave (32768 Hz)."]
     BUFEXTCLK,
     #[doc = "Digital external clock on LFXTAL_N pin. Oscillator is effectively bypassed."]
     DIGEXTCLK,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODER::XTAL => 0,
-            MODER::BUFEXTCLK => 1,
-            MODER::DIGEXTCLK => 2,
-            MODER::_Reserved(bits) => bits,
+            MODE_A::XTAL => 0,
+            MODE_A::BUFEXTCLK => 1,
+            MODE_A::DIGEXTCLK => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::XTAL,
-            1 => MODER::BUFEXTCLK,
-            2 => MODER::DIGEXTCLK,
-            i => MODER::_Reserved(i),
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MODE_A::XTAL),
+            1 => Val(MODE_A::BUFEXTCLK),
+            2 => Val(MODE_A::DIGEXTCLK),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_xtal(&self) -> bool {
-        *self == MODER::XTAL
+        *self == MODE_A::XTAL
     }
     #[doc = "Checks if the value of the field is `BUFEXTCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bufextclk(&self) -> bool {
-        *self == MODER::BUFEXTCLK
+        *self == MODE_A::BUFEXTCLK
     }
     #[doc = "Checks if the value of the field is `DIGEXTCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_digextclk(&self) -> bool {
-        *self == MODER::DIGEXTCLK
+        *self == MODE_A::DIGEXTCLK
     }
 }
-#[doc = r" Value of the field"]
-pub struct GAINR {
-    bits: u8,
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
+    w: &'a mut W,
 }
-impl GAINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
     }
-}
-#[doc = r" Value of the field"]
-pub struct HIGHAMPLR {
-    bits: bool,
-}
-impl HIGHAMPLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+    #[doc = "32768 Hz crystal oscillator"]
+    #[inline(always)]
+    pub fn xtal(self) -> &'a mut W {
+        self.variant(MODE_A::XTAL)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "An AC coupled buffer is coupled in series with LFXTAL_N pin, suitable for external sinus wave (32768 Hz)."]
+    #[inline(always)]
+    pub fn bufextclk(self) -> &'a mut W {
+        self.variant(MODE_A::BUFEXTCLK)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "Digital external clock on LFXTAL_N pin. Oscillator is effectively bypassed."]
+    #[inline(always)]
+    pub fn digextclk(self) -> &'a mut W {
+        self.variant(MODE_A::DIGEXTCLK)
     }
-}
-#[doc = r" Value of the field"]
-pub struct AGCR {
-    bits: bool,
-}
-impl AGCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct CURR {
-    bits: u8,
+#[doc = "Reader of field `GAIN`"]
+pub type GAIN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `GAIN`"]
+pub struct GAIN_W<'a> {
+    w: &'a mut W,
 }
-impl CURR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> GAIN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct BUFCURR {
-    bits: bool,
+#[doc = "Reader of field `HIGHAMPL`"]
+pub type HIGHAMPL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HIGHAMPL`"]
+pub struct HIGHAMPL_W<'a> {
+    w: &'a mut W,
 }
-impl BUFCURR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> HIGHAMPL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
+    }
+}
+#[doc = "Reader of field `AGC`"]
+pub type AGC_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AGC`"]
+pub struct AGC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AGC_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
+    }
+}
+#[doc = "Reader of field `CUR`"]
+pub type CUR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CUR`"]
+pub struct CUR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CUR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w
+    }
+}
+#[doc = "Reader of field `BUFCUR`"]
+pub type BUFCUR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BUFCUR`"]
+pub struct BUFCUR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BUFCUR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TIMEOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMEOUTR {
+pub enum TIMEOUT_A {
     #[doc = "Timeout period of 2 cycles"]
     _2CYCLES,
     #[doc = "Timeout period of 256 cycles"]
@@ -206,481 +227,221 @@ pub enum TIMEOUTR {
     #[doc = "Timeout period of 32768 cycles"]
     _32KCYCLES,
 }
-impl TIMEOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for TIMEOUT_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            TIMEOUTR::_2CYCLES => 0,
-            TIMEOUTR::_256CYCLES => 1,
-            TIMEOUTR::_1KCYCLES => 2,
-            TIMEOUTR::_2KCYCLES => 3,
-            TIMEOUTR::_4KCYCLES => 4,
-            TIMEOUTR::_8KCYCLES => 5,
-            TIMEOUTR::_16KCYCLES => 6,
-            TIMEOUTR::_32KCYCLES => 7,
+            TIMEOUT_A::_2CYCLES => 0,
+            TIMEOUT_A::_256CYCLES => 1,
+            TIMEOUT_A::_1KCYCLES => 2,
+            TIMEOUT_A::_2KCYCLES => 3,
+            TIMEOUT_A::_4KCYCLES => 4,
+            TIMEOUT_A::_8KCYCLES => 5,
+            TIMEOUT_A::_16KCYCLES => 6,
+            TIMEOUT_A::_32KCYCLES => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TIMEOUTR {
-        match value {
-            0 => TIMEOUTR::_2CYCLES,
-            1 => TIMEOUTR::_256CYCLES,
-            2 => TIMEOUTR::_1KCYCLES,
-            3 => TIMEOUTR::_2KCYCLES,
-            4 => TIMEOUTR::_4KCYCLES,
-            5 => TIMEOUTR::_8KCYCLES,
-            6 => TIMEOUTR::_16KCYCLES,
-            7 => TIMEOUTR::_32KCYCLES,
+}
+#[doc = "Reader of field `TIMEOUT`"]
+pub type TIMEOUT_R = crate::R<u8, TIMEOUT_A>;
+impl TIMEOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIMEOUT_A {
+        match self.bits {
+            0 => TIMEOUT_A::_2CYCLES,
+            1 => TIMEOUT_A::_256CYCLES,
+            2 => TIMEOUT_A::_1KCYCLES,
+            3 => TIMEOUT_A::_2KCYCLES,
+            4 => TIMEOUT_A::_4KCYCLES,
+            5 => TIMEOUT_A::_8KCYCLES,
+            6 => TIMEOUT_A::_16KCYCLES,
+            7 => TIMEOUT_A::_32KCYCLES,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        *self == TIMEOUTR::_2CYCLES
+        *self == TIMEOUT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        *self == TIMEOUTR::_256CYCLES
+        *self == TIMEOUT_A::_256CYCLES
     }
     #[doc = "Checks if the value of the field is `_1KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1kcycles(&self) -> bool {
-        *self == TIMEOUTR::_1KCYCLES
+        *self == TIMEOUT_A::_1KCYCLES
     }
     #[doc = "Checks if the value of the field is `_2KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2kcycles(&self) -> bool {
-        *self == TIMEOUTR::_2KCYCLES
+        *self == TIMEOUT_A::_2KCYCLES
     }
     #[doc = "Checks if the value of the field is `_4KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4kcycles(&self) -> bool {
-        *self == TIMEOUTR::_4KCYCLES
+        *self == TIMEOUT_A::_4KCYCLES
     }
     #[doc = "Checks if the value of the field is `_8KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8kcycles(&self) -> bool {
-        *self == TIMEOUTR::_8KCYCLES
+        *self == TIMEOUT_A::_8KCYCLES
     }
     #[doc = "Checks if the value of the field is `_16KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16kcycles(&self) -> bool {
-        *self == TIMEOUTR::_16KCYCLES
+        *self == TIMEOUT_A::_16KCYCLES
     }
     #[doc = "Checks if the value of the field is `_32KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32kcycles(&self) -> bool {
-        *self == TIMEOUTR::_32KCYCLES
+        *self == TIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = r" Proxy"]
-pub struct _TUNINGW<'a> {
+#[doc = "Write proxy for field `TIMEOUT`"]
+pub struct TIMEOUT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TUNINGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "32768 Hz crystal oscillator"]
-    XTAL,
-    #[doc = "An AC coupled buffer is coupled in series with LFXTAL_N pin, suitable for external sinus wave (32768 Hz)."]
-    BUFEXTCLK,
-    #[doc = "Digital external clock on LFXTAL_N pin. Oscillator is effectively bypassed."]
-    DIGEXTCLK,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::XTAL => 0,
-            MODEW::BUFEXTCLK => 1,
-            MODEW::DIGEXTCLK => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "32768 Hz crystal oscillator"]
-    #[inline]
-    pub fn xtal(self) -> &'a mut W {
-        self.variant(MODEW::XTAL)
-    }
-    #[doc = "An AC coupled buffer is coupled in series with LFXTAL_N pin, suitable for external sinus wave (32768 Hz)."]
-    #[inline]
-    pub fn bufextclk(self) -> &'a mut W {
-        self.variant(MODEW::BUFEXTCLK)
-    }
-    #[doc = "Digital external clock on LFXTAL_N pin. Oscillator is effectively bypassed."]
-    #[inline]
-    pub fn digextclk(self) -> &'a mut W {
-        self.variant(MODEW::DIGEXTCLK)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GAINW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GAINW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIGHAMPLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIGHAMPLW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AGCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AGCW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CURW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CURW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BUFCURW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BUFCURW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TIMEOUT`"]
-pub enum TIMEOUTW {
-    #[doc = "Timeout period of 2 cycles"]
-    _2CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
-    _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
-    _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
-    _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
-    _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
-    _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
-    _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
-    _32KCYCLES,
-}
-impl TIMEOUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TIMEOUTW::_2CYCLES => 0,
-            TIMEOUTW::_256CYCLES => 1,
-            TIMEOUTW::_1KCYCLES => 2,
-            TIMEOUTW::_2KCYCLES => 3,
-            TIMEOUTW::_4KCYCLES => 4,
-            TIMEOUTW::_8KCYCLES => 5,
-            TIMEOUTW::_16KCYCLES => 6,
-            TIMEOUTW::_32KCYCLES => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TIMEOUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TIMEOUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TIMEOUTW) -> &'a mut W {
+impl<'a> TIMEOUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TIMEOUT_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Timeout period of 2 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_2CYCLES)
+        self.variant(TIMEOUT_A::_2CYCLES)
     }
     #[doc = "Timeout period of 256 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _256cycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_256CYCLES)
+        self.variant(TIMEOUT_A::_256CYCLES)
     }
     #[doc = "Timeout period of 1024 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _1kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_1KCYCLES)
+        self.variant(TIMEOUT_A::_1KCYCLES)
     }
     #[doc = "Timeout period of 2048 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _2kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_2KCYCLES)
+        self.variant(TIMEOUT_A::_2KCYCLES)
     }
     #[doc = "Timeout period of 4096 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _4kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_4KCYCLES)
+        self.variant(TIMEOUT_A::_4KCYCLES)
     }
     #[doc = "Timeout period of 8192 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _8kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_8KCYCLES)
+        self.variant(TIMEOUT_A::_8KCYCLES)
     }
     #[doc = "Timeout period of 16384 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _16kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_16KCYCLES)
+        self.variant(TIMEOUT_A::_16KCYCLES)
     }
     #[doc = "Timeout period of 32768 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _32kcycles(self) -> &'a mut W {
-        self.variant(TIMEOUTW::_32KCYCLES)
+        self.variant(TIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:6 - LFXO Internal Capacitor Array Tuning Value"]
-    #[inline]
-    pub fn tuning(&self) -> TUNINGR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TUNINGR { bits }
+    #[inline(always)]
+    pub fn tuning(&self) -> TUNING_R {
+        TUNING_R::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bits 8:9 - LFXO Mode"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 11:12 - LFXO Startup Gain"]
-    #[inline]
-    pub fn gain(&self) -> GAINR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        GAINR { bits }
+    #[inline(always)]
+    pub fn gain(&self) -> GAIN_R {
+        GAIN_R::new(((self.bits >> 11) & 0x03) as u8)
     }
     #[doc = "Bit 14 - LFXO High XTAL Oscillation Amplitude Enable"]
-    #[inline]
-    pub fn highampl(&self) -> HIGHAMPLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HIGHAMPLR { bits }
+    #[inline(always)]
+    pub fn highampl(&self) -> HIGHAMPL_R {
+        HIGHAMPL_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - LFXO AGC Enable"]
-    #[inline]
-    pub fn agc(&self) -> AGCR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AGCR { bits }
+    #[inline(always)]
+    pub fn agc(&self) -> AGC_R {
+        AGC_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:17 - LFXO Current Trim"]
-    #[inline]
-    pub fn cur(&self) -> CURR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CURR { bits }
+    #[inline(always)]
+    pub fn cur(&self) -> CUR_R {
+        CUR_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bit 20 - LFXO Buffer Bias Current"]
-    #[inline]
-    pub fn bufcur(&self) -> BUFCURR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFCURR { bits }
+    #[inline(always)]
+    pub fn bufcur(&self) -> BUFCUR_R {
+        BUFCUR_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bits 24:26 - LFXO Timeout"]
-    #[inline]
-    pub fn timeout(&self) -> TIMEOUTR {
-        TIMEOUTR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn timeout(&self) -> TIMEOUT_R {
+        TIMEOUT_R::new(((self.bits >> 24) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 117477376 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:6 - LFXO Internal Capacitor Array Tuning Value"]
-    #[inline]
-    pub fn tuning(&mut self) -> _TUNINGW {
-        _TUNINGW { w: self }
+    #[inline(always)]
+    pub fn tuning(&mut self) -> TUNING_W {
+        TUNING_W { w: self }
     }
     #[doc = "Bits 8:9 - LFXO Mode"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bits 11:12 - LFXO Startup Gain"]
-    #[inline]
-    pub fn gain(&mut self) -> _GAINW {
-        _GAINW { w: self }
+    #[inline(always)]
+    pub fn gain(&mut self) -> GAIN_W {
+        GAIN_W { w: self }
     }
     #[doc = "Bit 14 - LFXO High XTAL Oscillation Amplitude Enable"]
-    #[inline]
-    pub fn highampl(&mut self) -> _HIGHAMPLW {
-        _HIGHAMPLW { w: self }
+    #[inline(always)]
+    pub fn highampl(&mut self) -> HIGHAMPL_W {
+        HIGHAMPL_W { w: self }
     }
     #[doc = "Bit 15 - LFXO AGC Enable"]
-    #[inline]
-    pub fn agc(&mut self) -> _AGCW {
-        _AGCW { w: self }
+    #[inline(always)]
+    pub fn agc(&mut self) -> AGC_W {
+        AGC_W { w: self }
     }
     #[doc = "Bits 16:17 - LFXO Current Trim"]
-    #[inline]
-    pub fn cur(&mut self) -> _CURW {
-        _CURW { w: self }
+    #[inline(always)]
+    pub fn cur(&mut self) -> CUR_W {
+        CUR_W { w: self }
     }
     #[doc = "Bit 20 - LFXO Buffer Bias Current"]
-    #[inline]
-    pub fn bufcur(&mut self) -> _BUFCURW {
-        _BUFCURW { w: self }
+    #[inline(always)]
+    pub fn bufcur(&mut self) -> BUFCUR_W {
+        BUFCUR_W { w: self }
     }
     #[doc = "Bits 24:26 - LFXO Timeout"]
-    #[inline]
-    pub fn timeout(&mut self) -> _TIMEOUTW {
-        _TIMEOUTW { w: self }
+    #[inline(always)]
+    pub fn timeout(&mut self) -> TIMEOUT_W {
+        TIMEOUT_W { w: self }
     }
 }

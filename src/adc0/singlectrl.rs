@@ -1,111 +1,90 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SINGLECTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SINGLECTRL"]
+pub type R = crate::R<u32, super::SINGLECTRL>;
+#[doc = "Writer for register SINGLECTRL"]
+pub type W = crate::W<u32, super::SINGLECTRL>;
+#[doc = "Register SINGLECTRL `reset()`'s with value 0x00ff_ff00"]
+impl crate::ResetValue for super::SINGLECTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x00ff_ff00
     }
 }
-#[doc = r" Value of the field"]
-pub struct REPR {
-    bits: bool,
+#[doc = "Reader of field `REP`"]
+pub type REP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REP`"]
+pub struct REP_W<'a> {
+    w: &'a mut W,
 }
-impl REPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> REP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIFFR {
-    bits: bool,
-}
-impl DIFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct ADJR {
-    bits: bool,
+#[doc = "Reader of field `DIFF`"]
+pub type DIFF_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DIFF`"]
+pub struct DIFF_W<'a> {
+    w: &'a mut W,
 }
-impl ADJR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> DIFF_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Reader of field `ADJ`"]
+pub type ADJ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ADJ`"]
+pub struct ADJ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ADJ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RES`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESR {
+pub enum RES_A {
     #[doc = "12-bit resolution."]
     _12BIT,
     #[doc = "8-bit resolution."]
@@ -115,53 +94,95 @@ pub enum RESR {
     #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL."]
     OVS,
 }
-impl RESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for RES_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            RESR::_12BIT => 0,
-            RESR::_8BIT => 1,
-            RESR::_6BIT => 2,
-            RESR::OVS => 3,
+            RES_A::_12BIT => 0,
+            RES_A::_8BIT => 1,
+            RES_A::_6BIT => 2,
+            RES_A::OVS => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RESR {
-        match value {
-            0 => RESR::_12BIT,
-            1 => RESR::_8BIT,
-            2 => RESR::_6BIT,
-            3 => RESR::OVS,
+}
+#[doc = "Reader of field `RES`"]
+pub type RES_R = crate::R<u8, RES_A>;
+impl RES_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RES_A {
+        match self.bits {
+            0 => RES_A::_12BIT,
+            1 => RES_A::_8BIT,
+            2 => RES_A::_6BIT,
+            3 => RES_A::OVS,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_12BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_12bit(&self) -> bool {
-        *self == RESR::_12BIT
+        *self == RES_A::_12BIT
     }
     #[doc = "Checks if the value of the field is `_8BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8bit(&self) -> bool {
-        *self == RESR::_8BIT
+        *self == RES_A::_8BIT
     }
     #[doc = "Checks if the value of the field is `_6BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_6bit(&self) -> bool {
-        *self == RESR::_6BIT
+        *self == RES_A::_6BIT
     }
     #[doc = "Checks if the value of the field is `OVS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ovs(&self) -> bool {
-        *self == RESR::OVS
+        *self == RES_A::OVS
+    }
+}
+#[doc = "Write proxy for field `RES`"]
+pub struct RES_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RES_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RES_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "12-bit resolution."]
+    #[inline(always)]
+    pub fn _12bit(self) -> &'a mut W {
+        self.variant(RES_A::_12BIT)
+    }
+    #[doc = "8-bit resolution."]
+    #[inline(always)]
+    pub fn _8bit(self) -> &'a mut W {
+        self.variant(RES_A::_8BIT)
+    }
+    #[doc = "6-bit resolution."]
+    #[inline(always)]
+    pub fn _6bit(self) -> &'a mut W {
+        self.variant(RES_A::_6BIT)
+    }
+    #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL."]
+    #[inline(always)]
+    pub fn ovs(self) -> &'a mut W {
+        self.variant(RES_A::OVS)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u32) & 0x03) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `REF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFR {
+pub enum REF_A {
     #[doc = "VFS = 1.25V with internal VBGR reference"]
     _1V25,
     #[doc = "VFS = 2.5V with internal VBGR reference"]
@@ -179,103 +200,171 @@ pub enum REFR {
     #[doc = "Use SINGLECTRLX to configure reference"]
     CONF,
 }
-impl REFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for REF_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            REFR::_1V25 => 0,
-            REFR::_2V5 => 1,
-            REFR::VDD => 2,
-            REFR::_5V => 3,
-            REFR::EXTSINGLE => 4,
-            REFR::_2XEXTDIFF => 5,
-            REFR::_2XVDD => 6,
-            REFR::CONF => 7,
+            REF_A::_1V25 => 0,
+            REF_A::_2V5 => 1,
+            REF_A::VDD => 2,
+            REF_A::_5V => 3,
+            REF_A::EXTSINGLE => 4,
+            REF_A::_2XEXTDIFF => 5,
+            REF_A::_2XVDD => 6,
+            REF_A::CONF => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> REFR {
-        match value {
-            0 => REFR::_1V25,
-            1 => REFR::_2V5,
-            2 => REFR::VDD,
-            3 => REFR::_5V,
-            4 => REFR::EXTSINGLE,
-            5 => REFR::_2XEXTDIFF,
-            6 => REFR::_2XVDD,
-            7 => REFR::CONF,
+}
+#[doc = "Reader of field `REF`"]
+pub type REF_R = crate::R<u8, REF_A>;
+impl REF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REF_A {
+        match self.bits {
+            0 => REF_A::_1V25,
+            1 => REF_A::_2V5,
+            2 => REF_A::VDD,
+            3 => REF_A::_5V,
+            4 => REF_A::EXTSINGLE,
+            5 => REF_A::_2XEXTDIFF,
+            6 => REF_A::_2XVDD,
+            7 => REF_A::CONF,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_1V25`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1v25(&self) -> bool {
-        *self == REFR::_1V25
+        *self == REF_A::_1V25
     }
     #[doc = "Checks if the value of the field is `_2V5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2v5(&self) -> bool {
-        *self == REFR::_2V5
+        *self == REF_A::_2V5
     }
     #[doc = "Checks if the value of the field is `VDD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vdd(&self) -> bool {
-        *self == REFR::VDD
+        *self == REF_A::VDD
     }
     #[doc = "Checks if the value of the field is `_5V`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_5v(&self) -> bool {
-        *self == REFR::_5V
+        *self == REF_A::_5V
     }
     #[doc = "Checks if the value of the field is `EXTSINGLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extsingle(&self) -> bool {
-        *self == REFR::EXTSINGLE
+        *self == REF_A::EXTSINGLE
     }
     #[doc = "Checks if the value of the field is `_2XEXTDIFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2xextdiff(&self) -> bool {
-        *self == REFR::_2XEXTDIFF
+        *self == REF_A::_2XEXTDIFF
     }
     #[doc = "Checks if the value of the field is `_2XVDD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2xvdd(&self) -> bool {
-        *self == REFR::_2XVDD
+        *self == REF_A::_2XVDD
     }
     #[doc = "Checks if the value of the field is `CONF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_conf(&self) -> bool {
-        *self == REFR::CONF
+        *self == REF_A::CONF
     }
 }
-#[doc = r" Value of the field"]
-pub struct POSSELR {
-    bits: u8,
+#[doc = "Write proxy for field `REF`"]
+pub struct REF_W<'a> {
+    w: &'a mut W,
 }
-impl POSSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> REF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REF_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "VFS = 1.25V with internal VBGR reference"]
+    #[inline(always)]
+    pub fn _1v25(self) -> &'a mut W {
+        self.variant(REF_A::_1V25)
+    }
+    #[doc = "VFS = 2.5V with internal VBGR reference"]
+    #[inline(always)]
+    pub fn _2v5(self) -> &'a mut W {
+        self.variant(REF_A::_2V5)
+    }
+    #[doc = "VFS = AVDD with AVDD as reference source"]
+    #[inline(always)]
+    pub fn vdd(self) -> &'a mut W {
+        self.variant(REF_A::VDD)
+    }
+    #[doc = "VFS = 5V with internal VBGR reference"]
+    #[inline(always)]
+    pub fn _5v(self) -> &'a mut W {
+        self.variant(REF_A::_5V)
+    }
+    #[doc = "Single ended external reference"]
+    #[inline(always)]
+    pub fn extsingle(self) -> &'a mut W {
+        self.variant(REF_A::EXTSINGLE)
+    }
+    #[doc = "Differential external reference, 2x"]
+    #[inline(always)]
+    pub fn _2xextdiff(self) -> &'a mut W {
+        self.variant(REF_A::_2XEXTDIFF)
+    }
+    #[doc = "VFS = 2xAVDD with AVDD as the reference source"]
+    #[inline(always)]
+    pub fn _2xvdd(self) -> &'a mut W {
+        self.variant(REF_A::_2XVDD)
+    }
+    #[doc = "Use SINGLECTRLX to configure reference"]
+    #[inline(always)]
+    pub fn conf(self) -> &'a mut W {
+        self.variant(REF_A::CONF)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct NEGSELR {
-    bits: u8,
+#[doc = "Reader of field `POSSEL`"]
+pub type POSSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `POSSEL`"]
+pub struct POSSEL_W<'a> {
+    w: &'a mut W,
 }
-impl NEGSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> POSSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
+        self.w
+    }
+}
+#[doc = "Reader of field `NEGSEL`"]
+pub type NEGSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NEGSEL`"]
+pub struct NEGSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> NEGSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ATR {
+pub enum AT_A {
     #[doc = "1 conversion clock cycle acquisition time for single channel"]
     _1CYCLE,
     #[doc = "2 conversion clock cycles acquisition time for single channel"]
@@ -296,723 +385,313 @@ pub enum ATR {
     _128CYCLES,
     #[doc = "256 conversion clock cycles acquisition time for single channel"]
     _256CYCLES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl ATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for AT_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            ATR::_1CYCLE => 0,
-            ATR::_2CYCLES => 1,
-            ATR::_3CYCLES => 2,
-            ATR::_4CYCLES => 3,
-            ATR::_8CYCLES => 4,
-            ATR::_16CYCLES => 5,
-            ATR::_32CYCLES => 6,
-            ATR::_64CYCLES => 7,
-            ATR::_128CYCLES => 8,
-            ATR::_256CYCLES => 9,
-            ATR::_Reserved(bits) => bits,
+            AT_A::_1CYCLE => 0,
+            AT_A::_2CYCLES => 1,
+            AT_A::_3CYCLES => 2,
+            AT_A::_4CYCLES => 3,
+            AT_A::_8CYCLES => 4,
+            AT_A::_16CYCLES => 5,
+            AT_A::_32CYCLES => 6,
+            AT_A::_64CYCLES => 7,
+            AT_A::_128CYCLES => 8,
+            AT_A::_256CYCLES => 9,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ATR {
-        match value {
-            0 => ATR::_1CYCLE,
-            1 => ATR::_2CYCLES,
-            2 => ATR::_3CYCLES,
-            3 => ATR::_4CYCLES,
-            4 => ATR::_8CYCLES,
-            5 => ATR::_16CYCLES,
-            6 => ATR::_32CYCLES,
-            7 => ATR::_64CYCLES,
-            8 => ATR::_128CYCLES,
-            9 => ATR::_256CYCLES,
-            i => ATR::_Reserved(i),
+}
+#[doc = "Reader of field `AT`"]
+pub type AT_R = crate::R<u8, AT_A>;
+impl AT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, AT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(AT_A::_1CYCLE),
+            1 => Val(AT_A::_2CYCLES),
+            2 => Val(AT_A::_3CYCLES),
+            3 => Val(AT_A::_4CYCLES),
+            4 => Val(AT_A::_8CYCLES),
+            5 => Val(AT_A::_16CYCLES),
+            6 => Val(AT_A::_32CYCLES),
+            7 => Val(AT_A::_64CYCLES),
+            8 => Val(AT_A::_128CYCLES),
+            9 => Val(AT_A::_256CYCLES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_1CYCLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1cycle(&self) -> bool {
-        *self == ATR::_1CYCLE
+        *self == AT_A::_1CYCLE
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        *self == ATR::_2CYCLES
+        *self == AT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_3CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_3cycles(&self) -> bool {
-        *self == ATR::_3CYCLES
+        *self == AT_A::_3CYCLES
     }
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        *self == ATR::_4CYCLES
+        *self == AT_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_8CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8cycles(&self) -> bool {
-        *self == ATR::_8CYCLES
+        *self == AT_A::_8CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        *self == ATR::_16CYCLES
+        *self == AT_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        *self == ATR::_32CYCLES
+        *self == AT_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        *self == ATR::_64CYCLES
+        *self == AT_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        *self == ATR::_128CYCLES
+        *self == AT_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        *self == ATR::_256CYCLES
+        *self == AT_A::_256CYCLES
     }
 }
-#[doc = r" Value of the field"]
-pub struct PRSENR {
-    bits: bool,
-}
-impl PRSENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMPENR {
-    bits: bool,
-}
-impl CMPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REPW<'a> {
+#[doc = "Write proxy for field `AT`"]
+pub struct AT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DIFFW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DIFFW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADJW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADJW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RES`"]
-pub enum RESW {
-    #[doc = "12-bit resolution."]
-    _12BIT,
-    #[doc = "8-bit resolution."]
-    _8BIT,
-    #[doc = "6-bit resolution."]
-    _6BIT,
-    #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL."]
-    OVS,
-}
-impl RESW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RESW::_12BIT => 0,
-            RESW::_8BIT => 1,
-            RESW::_6BIT => 2,
-            RESW::OVS => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RESW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RESW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "12-bit resolution."]
-    #[inline]
-    pub fn _12bit(self) -> &'a mut W {
-        self.variant(RESW::_12BIT)
-    }
-    #[doc = "8-bit resolution."]
-    #[inline]
-    pub fn _8bit(self) -> &'a mut W {
-        self.variant(RESW::_8BIT)
-    }
-    #[doc = "6-bit resolution."]
-    #[inline]
-    pub fn _6bit(self) -> &'a mut W {
-        self.variant(RESW::_6BIT)
-    }
-    #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL."]
-    #[inline]
-    pub fn ovs(self) -> &'a mut W {
-        self.variant(RESW::OVS)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `REF`"]
-pub enum REFW {
-    #[doc = "VFS = 1.25V with internal VBGR reference"]
-    _1V25,
-    #[doc = "VFS = 2.5V with internal VBGR reference"]
-    _2V5,
-    #[doc = "VFS = AVDD with AVDD as reference source"]
-    VDD,
-    #[doc = "VFS = 5V with internal VBGR reference"]
-    _5V,
-    #[doc = "Single ended external reference"]
-    EXTSINGLE,
-    #[doc = "Differential external reference, 2x"]
-    _2XEXTDIFF,
-    #[doc = "VFS = 2xAVDD with AVDD as the reference source"]
-    _2XVDD,
-    #[doc = "Use SINGLECTRLX to configure reference"]
-    CONF,
-}
-impl REFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            REFW::_1V25 => 0,
-            REFW::_2V5 => 1,
-            REFW::VDD => 2,
-            REFW::_5V => 3,
-            REFW::EXTSINGLE => 4,
-            REFW::_2XEXTDIFF => 5,
-            REFW::_2XVDD => 6,
-            REFW::CONF => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REFW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _REFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REFW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "VFS = 1.25V with internal VBGR reference"]
-    #[inline]
-    pub fn _1v25(self) -> &'a mut W {
-        self.variant(REFW::_1V25)
-    }
-    #[doc = "VFS = 2.5V with internal VBGR reference"]
-    #[inline]
-    pub fn _2v5(self) -> &'a mut W {
-        self.variant(REFW::_2V5)
-    }
-    #[doc = "VFS = AVDD with AVDD as reference source"]
-    #[inline]
-    pub fn vdd(self) -> &'a mut W {
-        self.variant(REFW::VDD)
-    }
-    #[doc = "VFS = 5V with internal VBGR reference"]
-    #[inline]
-    pub fn _5v(self) -> &'a mut W {
-        self.variant(REFW::_5V)
-    }
-    #[doc = "Single ended external reference"]
-    #[inline]
-    pub fn extsingle(self) -> &'a mut W {
-        self.variant(REFW::EXTSINGLE)
-    }
-    #[doc = "Differential external reference, 2x"]
-    #[inline]
-    pub fn _2xextdiff(self) -> &'a mut W {
-        self.variant(REFW::_2XEXTDIFF)
-    }
-    #[doc = "VFS = 2xAVDD with AVDD as the reference source"]
-    #[inline]
-    pub fn _2xvdd(self) -> &'a mut W {
-        self.variant(REFW::_2XVDD)
-    }
-    #[doc = "Use SINGLECTRLX to configure reference"]
-    #[inline]
-    pub fn conf(self) -> &'a mut W {
-        self.variant(REFW::CONF)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _POSSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _POSSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NEGSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NEGSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AT`"]
-pub enum ATW {
-    #[doc = "1 conversion clock cycle acquisition time for single channel"]
-    _1CYCLE,
-    #[doc = "2 conversion clock cycles acquisition time for single channel"]
-    _2CYCLES,
-    #[doc = "3 conversion clock cycles acquisition time for single channel"]
-    _3CYCLES,
-    #[doc = "4 conversion clock cycles acquisition time for single channel"]
-    _4CYCLES,
-    #[doc = "8 conversion clock cycles acquisition time for single channel"]
-    _8CYCLES,
-    #[doc = "16 conversion clock cycles acquisition time for single channel"]
-    _16CYCLES,
-    #[doc = "32 conversion clock cycles acquisition time for single channel"]
-    _32CYCLES,
-    #[doc = "64 conversion clock cycles acquisition time for single channel"]
-    _64CYCLES,
-    #[doc = "128 conversion clock cycles acquisition time for single channel"]
-    _128CYCLES,
-    #[doc = "256 conversion clock cycles acquisition time for single channel"]
-    _256CYCLES,
-}
-impl ATW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ATW::_1CYCLE => 0,
-            ATW::_2CYCLES => 1,
-            ATW::_3CYCLES => 2,
-            ATW::_4CYCLES => 3,
-            ATW::_8CYCLES => 4,
-            ATW::_16CYCLES => 5,
-            ATW::_32CYCLES => 6,
-            ATW::_64CYCLES => 7,
-            ATW::_128CYCLES => 8,
-            ATW::_256CYCLES => 9,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ATW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ATW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ATW) -> &'a mut W {
+impl<'a> AT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AT_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "1 conversion clock cycle acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _1cycle(self) -> &'a mut W {
-        self.variant(ATW::_1CYCLE)
+        self.variant(AT_A::_1CYCLE)
     }
     #[doc = "2 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
-        self.variant(ATW::_2CYCLES)
+        self.variant(AT_A::_2CYCLES)
     }
     #[doc = "3 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _3cycles(self) -> &'a mut W {
-        self.variant(ATW::_3CYCLES)
+        self.variant(AT_A::_3CYCLES)
     }
     #[doc = "4 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _4cycles(self) -> &'a mut W {
-        self.variant(ATW::_4CYCLES)
+        self.variant(AT_A::_4CYCLES)
     }
     #[doc = "8 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _8cycles(self) -> &'a mut W {
-        self.variant(ATW::_8CYCLES)
+        self.variant(AT_A::_8CYCLES)
     }
     #[doc = "16 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _16cycles(self) -> &'a mut W {
-        self.variant(ATW::_16CYCLES)
+        self.variant(AT_A::_16CYCLES)
     }
     #[doc = "32 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _32cycles(self) -> &'a mut W {
-        self.variant(ATW::_32CYCLES)
+        self.variant(AT_A::_32CYCLES)
     }
     #[doc = "64 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _64cycles(self) -> &'a mut W {
-        self.variant(ATW::_64CYCLES)
+        self.variant(AT_A::_64CYCLES)
     }
     #[doc = "128 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _128cycles(self) -> &'a mut W {
-        self.variant(ATW::_128CYCLES)
+        self.variant(AT_A::_128CYCLES)
     }
     #[doc = "256 conversion clock cycles acquisition time for single channel"]
-    #[inline]
+    #[inline(always)]
     pub fn _256cycles(self) -> &'a mut W {
-        self.variant(ATW::_256CYCLES)
+        self.variant(AT_A::_256CYCLES)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRSENW<'a> {
+#[doc = "Reader of field `PRSEN`"]
+pub type PRSEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PRSEN`"]
+pub struct PRSEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRSENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PRSEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CMPENW<'a> {
+#[doc = "Reader of field `CMPEN`"]
+pub type CMPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CMPEN`"]
+pub struct CMPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CMPENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CMPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Single Channel Repetitive Mode"]
-    #[inline]
-    pub fn rep(&self) -> REPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        REPR { bits }
+    #[inline(always)]
+    pub fn rep(&self) -> REP_R {
+        REP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Single Channel Differential Mode"]
-    #[inline]
-    pub fn diff(&self) -> DIFFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIFFR { bits }
+    #[inline(always)]
+    pub fn diff(&self) -> DIFF_R {
+        DIFF_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Single Channel Result Adjustment"]
-    #[inline]
-    pub fn adj(&self) -> ADJR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ADJR { bits }
+    #[inline(always)]
+    pub fn adj(&self) -> ADJ_R {
+        ADJ_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 3:4 - Single Channel Resolution Select"]
-    #[inline]
-    pub fn res(&self) -> RESR {
-        RESR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn res(&self) -> RES_R {
+        RES_R::new(((self.bits >> 3) & 0x03) as u8)
     }
     #[doc = "Bits 5:7 - Single Channel Reference Selection"]
-    #[inline]
-    pub fn ref_(&self) -> REFR {
-        REFR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ref_(&self) -> REF_R {
+        REF_R::new(((self.bits >> 5) & 0x07) as u8)
     }
     #[doc = "Bits 8:15 - Single Channel Positive Input Selection"]
-    #[inline]
-    pub fn possel(&self) -> POSSELR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        POSSELR { bits }
+    #[inline(always)]
+    pub fn possel(&self) -> POSSEL_R {
+        POSSEL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Single Channel Negative Input Selection"]
-    #[inline]
-    pub fn negsel(&self) -> NEGSELR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NEGSELR { bits }
+    #[inline(always)]
+    pub fn negsel(&self) -> NEGSEL_R {
+        NEGSEL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:27 - Single Channel Acquisition Time"]
-    #[inline]
-    pub fn at(&self) -> ATR {
-        ATR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn at(&self) -> AT_R {
+        AT_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 29 - Single Channel PRS Trigger Enable"]
-    #[inline]
-    pub fn prsen(&self) -> PRSENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PRSENR { bits }
+    #[inline(always)]
+    pub fn prsen(&self) -> PRSEN_R {
+        PRSEN_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Compare Logic Enable for Single Channel"]
-    #[inline]
-    pub fn cmpen(&self) -> CMPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMPENR { bits }
+    #[inline(always)]
+    pub fn cmpen(&self) -> CMPEN_R {
+        CMPEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 16776960 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Single Channel Repetitive Mode"]
-    #[inline]
-    pub fn rep(&mut self) -> _REPW {
-        _REPW { w: self }
+    #[inline(always)]
+    pub fn rep(&mut self) -> REP_W {
+        REP_W { w: self }
     }
     #[doc = "Bit 1 - Single Channel Differential Mode"]
-    #[inline]
-    pub fn diff(&mut self) -> _DIFFW {
-        _DIFFW { w: self }
+    #[inline(always)]
+    pub fn diff(&mut self) -> DIFF_W {
+        DIFF_W { w: self }
     }
     #[doc = "Bit 2 - Single Channel Result Adjustment"]
-    #[inline]
-    pub fn adj(&mut self) -> _ADJW {
-        _ADJW { w: self }
+    #[inline(always)]
+    pub fn adj(&mut self) -> ADJ_W {
+        ADJ_W { w: self }
     }
     #[doc = "Bits 3:4 - Single Channel Resolution Select"]
-    #[inline]
-    pub fn res(&mut self) -> _RESW {
-        _RESW { w: self }
+    #[inline(always)]
+    pub fn res(&mut self) -> RES_W {
+        RES_W { w: self }
     }
     #[doc = "Bits 5:7 - Single Channel Reference Selection"]
-    #[inline]
-    pub fn ref_(&mut self) -> _REFW {
-        _REFW { w: self }
+    #[inline(always)]
+    pub fn ref_(&mut self) -> REF_W {
+        REF_W { w: self }
     }
     #[doc = "Bits 8:15 - Single Channel Positive Input Selection"]
-    #[inline]
-    pub fn possel(&mut self) -> _POSSELW {
-        _POSSELW { w: self }
+    #[inline(always)]
+    pub fn possel(&mut self) -> POSSEL_W {
+        POSSEL_W { w: self }
     }
     #[doc = "Bits 16:23 - Single Channel Negative Input Selection"]
-    #[inline]
-    pub fn negsel(&mut self) -> _NEGSELW {
-        _NEGSELW { w: self }
+    #[inline(always)]
+    pub fn negsel(&mut self) -> NEGSEL_W {
+        NEGSEL_W { w: self }
     }
     #[doc = "Bits 24:27 - Single Channel Acquisition Time"]
-    #[inline]
-    pub fn at(&mut self) -> _ATW {
-        _ATW { w: self }
+    #[inline(always)]
+    pub fn at(&mut self) -> AT_W {
+        AT_W { w: self }
     }
     #[doc = "Bit 29 - Single Channel PRS Trigger Enable"]
-    #[inline]
-    pub fn prsen(&mut self) -> _PRSENW {
-        _PRSENW { w: self }
+    #[inline(always)]
+    pub fn prsen(&mut self) -> PRSEN_W {
+        PRSEN_W { w: self }
     }
     #[doc = "Bit 31 - Compare Logic Enable for Single Channel"]
-    #[inline]
-    pub fn cmpen(&mut self) -> _CMPENW {
-        _CMPENW { w: self }
+    #[inline(always)]
+    pub fn cmpen(&mut self) -> CMPEN_W {
+        CMPEN_W { w: self }
     }
 }

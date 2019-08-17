@@ -1,81 +1,25 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::GNPTXSTS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NPTXFSPCAVAILR {
-    bits: u16,
-}
-impl NPTXFSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NPTXQSPCAVAILR {
-    bits: u8,
-}
-impl NPTXQSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NPTXQTOPR {
-    bits: u8,
-}
-impl NPTXQTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register GNPTXSTS"]
+pub type R = crate::R<u32, super::GNPTXSTS>;
+#[doc = "Reader of field `NPTXFSPCAVAIL`"]
+pub type NPTXFSPCAVAIL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `NPTXQSPCAVAIL`"]
+pub type NPTXQSPCAVAIL_R = crate::R<u8, u8>;
+#[doc = "Reader of field `NPTXQTOP`"]
+pub type NPTXQTOP_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Non-periodic TxFIFO Space Avail"]
-    #[inline]
-    pub fn nptxfspcavail(&self) -> NPTXFSPCAVAILR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        NPTXFSPCAVAILR { bits }
+    #[inline(always)]
+    pub fn nptxfspcavail(&self) -> NPTXFSPCAVAIL_R {
+        NPTXFSPCAVAIL_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - Non-periodic Transmit Request Queue Space Available"]
-    #[inline]
-    pub fn nptxqspcavail(&self) -> NPTXQSPCAVAILR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NPTXQSPCAVAILR { bits }
+    #[inline(always)]
+    pub fn nptxqspcavail(&self) -> NPTXQSPCAVAIL_R {
+        NPTXQSPCAVAIL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:30 - Top of the Non-periodic Transmit Request Queue"]
-    #[inline]
-    pub fn nptxqtop(&self) -> NPTXQTOPR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NPTXQTOPR { bits }
+    #[inline(always)]
+    pub fn nptxqtop(&self) -> NPTXQTOP_R {
+        NPTXQTOP_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }

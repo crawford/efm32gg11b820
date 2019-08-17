@@ -1,130 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CH3_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH3_CTRL"]
+pub type R = crate::R<u32, super::CH3_CTRL>;
+#[doc = "Writer for register CH3_CTRL"]
+pub type W = crate::W<u32, super::CH3_CTRL>;
+#[doc = "Register CH3_CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CH3_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `STRUCTTYPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STRUCTTYPER {
+pub enum STRUCTTYPE_A {
     #[doc = "DMA transfer structure type selected."]
     TRANSFER,
     #[doc = "Synchronization structure type selected."]
     SYNCHRONIZE,
     #[doc = "Write immediate value structure type selected."]
     WRITE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STRUCTTYPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for STRUCTTYPE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            STRUCTTYPER::TRANSFER => 0,
-            STRUCTTYPER::SYNCHRONIZE => 1,
-            STRUCTTYPER::WRITE => 2,
-            STRUCTTYPER::_Reserved(bits) => bits,
+            STRUCTTYPE_A::TRANSFER => 0,
+            STRUCTTYPE_A::SYNCHRONIZE => 1,
+            STRUCTTYPE_A::WRITE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STRUCTTYPER {
-        match value {
-            0 => STRUCTTYPER::TRANSFER,
-            1 => STRUCTTYPER::SYNCHRONIZE,
-            2 => STRUCTTYPER::WRITE,
-            i => STRUCTTYPER::_Reserved(i),
+}
+#[doc = "Reader of field `STRUCTTYPE`"]
+pub type STRUCTTYPE_R = crate::R<u8, STRUCTTYPE_A>;
+impl STRUCTTYPE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STRUCTTYPE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STRUCTTYPE_A::TRANSFER),
+            1 => Val(STRUCTTYPE_A::SYNCHRONIZE),
+            2 => Val(STRUCTTYPE_A::WRITE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `TRANSFER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer(&self) -> bool {
-        *self == STRUCTTYPER::TRANSFER
+        *self == STRUCTTYPE_A::TRANSFER
     }
     #[doc = "Checks if the value of the field is `SYNCHRONIZE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_synchronize(&self) -> bool {
-        *self == STRUCTTYPER::SYNCHRONIZE
+        *self == STRUCTTYPE_A::SYNCHRONIZE
     }
     #[doc = "Checks if the value of the field is `WRITE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_write(&self) -> bool {
-        *self == STRUCTTYPER::WRITE
+        *self == STRUCTTYPE_A::WRITE
     }
 }
-#[doc = r" Value of the field"]
-pub struct XFERCNTR {
-    bits: u16,
+#[doc = "Write proxy for field `STRUCTREQ`"]
+pub struct STRUCTREQ_W<'a> {
+    w: &'a mut W,
 }
-impl XFERCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> STRUCTREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct BYTESWAPR {
-    bits: bool,
+#[doc = "Reader of field `XFERCNT`"]
+pub type XFERCNT_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `XFERCNT`"]
+pub struct XFERCNT_W<'a> {
+    w: &'a mut W,
 }
-impl BYTESWAPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> XFERCNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07ff << 4)) | (((value as u32) & 0x07ff) << 4);
+        self.w
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+}
+#[doc = "Reader of field `BYTESWAP`"]
+pub type BYTESWAP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BYTESWAP`"]
+pub struct BYTESWAP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BYTESWAP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BLOCKSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BLOCKSIZER {
+pub enum BLOCKSIZE_A {
     #[doc = "One unit transfer per arbitration"]
     UNIT1,
     #[doc = "Two unit transfers per arbitration"]
@@ -153,211 +151,311 @@ pub enum BLOCKSIZER {
     UNIT1024,
     #[doc = "Transfer all units as specified by the XFRCNT field"]
     ALL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl BLOCKSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for BLOCKSIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            BLOCKSIZER::UNIT1 => 0,
-            BLOCKSIZER::UNIT2 => 1,
-            BLOCKSIZER::UNIT3 => 2,
-            BLOCKSIZER::UNIT4 => 3,
-            BLOCKSIZER::UNIT6 => 4,
-            BLOCKSIZER::UNIT8 => 5,
-            BLOCKSIZER::UNIT16 => 7,
-            BLOCKSIZER::UNIT32 => 9,
-            BLOCKSIZER::UNIT64 => 10,
-            BLOCKSIZER::UNIT128 => 11,
-            BLOCKSIZER::UNIT256 => 12,
-            BLOCKSIZER::UNIT512 => 13,
-            BLOCKSIZER::UNIT1024 => 14,
-            BLOCKSIZER::ALL => 15,
-            BLOCKSIZER::_Reserved(bits) => bits,
+            BLOCKSIZE_A::UNIT1 => 0,
+            BLOCKSIZE_A::UNIT2 => 1,
+            BLOCKSIZE_A::UNIT3 => 2,
+            BLOCKSIZE_A::UNIT4 => 3,
+            BLOCKSIZE_A::UNIT6 => 4,
+            BLOCKSIZE_A::UNIT8 => 5,
+            BLOCKSIZE_A::UNIT16 => 7,
+            BLOCKSIZE_A::UNIT32 => 9,
+            BLOCKSIZE_A::UNIT64 => 10,
+            BLOCKSIZE_A::UNIT128 => 11,
+            BLOCKSIZE_A::UNIT256 => 12,
+            BLOCKSIZE_A::UNIT512 => 13,
+            BLOCKSIZE_A::UNIT1024 => 14,
+            BLOCKSIZE_A::ALL => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BLOCKSIZER {
-        match value {
-            0 => BLOCKSIZER::UNIT1,
-            1 => BLOCKSIZER::UNIT2,
-            2 => BLOCKSIZER::UNIT3,
-            3 => BLOCKSIZER::UNIT4,
-            4 => BLOCKSIZER::UNIT6,
-            5 => BLOCKSIZER::UNIT8,
-            7 => BLOCKSIZER::UNIT16,
-            9 => BLOCKSIZER::UNIT32,
-            10 => BLOCKSIZER::UNIT64,
-            11 => BLOCKSIZER::UNIT128,
-            12 => BLOCKSIZER::UNIT256,
-            13 => BLOCKSIZER::UNIT512,
-            14 => BLOCKSIZER::UNIT1024,
-            15 => BLOCKSIZER::ALL,
-            i => BLOCKSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `BLOCKSIZE`"]
+pub type BLOCKSIZE_R = crate::R<u8, BLOCKSIZE_A>;
+impl BLOCKSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BLOCKSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BLOCKSIZE_A::UNIT1),
+            1 => Val(BLOCKSIZE_A::UNIT2),
+            2 => Val(BLOCKSIZE_A::UNIT3),
+            3 => Val(BLOCKSIZE_A::UNIT4),
+            4 => Val(BLOCKSIZE_A::UNIT6),
+            5 => Val(BLOCKSIZE_A::UNIT8),
+            7 => Val(BLOCKSIZE_A::UNIT16),
+            9 => Val(BLOCKSIZE_A::UNIT32),
+            10 => Val(BLOCKSIZE_A::UNIT64),
+            11 => Val(BLOCKSIZE_A::UNIT128),
+            12 => Val(BLOCKSIZE_A::UNIT256),
+            13 => Val(BLOCKSIZE_A::UNIT512),
+            14 => Val(BLOCKSIZE_A::UNIT1024),
+            15 => Val(BLOCKSIZE_A::ALL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `UNIT1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit1(&self) -> bool {
-        *self == BLOCKSIZER::UNIT1
+        *self == BLOCKSIZE_A::UNIT1
     }
     #[doc = "Checks if the value of the field is `UNIT2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit2(&self) -> bool {
-        *self == BLOCKSIZER::UNIT2
+        *self == BLOCKSIZE_A::UNIT2
     }
     #[doc = "Checks if the value of the field is `UNIT3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit3(&self) -> bool {
-        *self == BLOCKSIZER::UNIT3
+        *self == BLOCKSIZE_A::UNIT3
     }
     #[doc = "Checks if the value of the field is `UNIT4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit4(&self) -> bool {
-        *self == BLOCKSIZER::UNIT4
+        *self == BLOCKSIZE_A::UNIT4
     }
     #[doc = "Checks if the value of the field is `UNIT6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit6(&self) -> bool {
-        *self == BLOCKSIZER::UNIT6
+        *self == BLOCKSIZE_A::UNIT6
     }
     #[doc = "Checks if the value of the field is `UNIT8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit8(&self) -> bool {
-        *self == BLOCKSIZER::UNIT8
+        *self == BLOCKSIZE_A::UNIT8
     }
     #[doc = "Checks if the value of the field is `UNIT16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit16(&self) -> bool {
-        *self == BLOCKSIZER::UNIT16
+        *self == BLOCKSIZE_A::UNIT16
     }
     #[doc = "Checks if the value of the field is `UNIT32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit32(&self) -> bool {
-        *self == BLOCKSIZER::UNIT32
+        *self == BLOCKSIZE_A::UNIT32
     }
     #[doc = "Checks if the value of the field is `UNIT64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit64(&self) -> bool {
-        *self == BLOCKSIZER::UNIT64
+        *self == BLOCKSIZE_A::UNIT64
     }
     #[doc = "Checks if the value of the field is `UNIT128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit128(&self) -> bool {
-        *self == BLOCKSIZER::UNIT128
+        *self == BLOCKSIZE_A::UNIT128
     }
     #[doc = "Checks if the value of the field is `UNIT256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit256(&self) -> bool {
-        *self == BLOCKSIZER::UNIT256
+        *self == BLOCKSIZE_A::UNIT256
     }
     #[doc = "Checks if the value of the field is `UNIT512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit512(&self) -> bool {
-        *self == BLOCKSIZER::UNIT512
+        *self == BLOCKSIZE_A::UNIT512
     }
     #[doc = "Checks if the value of the field is `UNIT1024`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unit1024(&self) -> bool {
-        *self == BLOCKSIZER::UNIT1024
+        *self == BLOCKSIZE_A::UNIT1024
     }
     #[doc = "Checks if the value of the field is `ALL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_all(&self) -> bool {
-        *self == BLOCKSIZER::ALL
+        *self == BLOCKSIZE_A::ALL
     }
 }
-#[doc = r" Value of the field"]
-pub struct DONEIFSENR {
-    bits: bool,
+#[doc = "Write proxy for field `BLOCKSIZE`"]
+pub struct BLOCKSIZE_W<'a> {
+    w: &'a mut W,
 }
-impl DONEIFSENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> BLOCKSIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BLOCKSIZE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "One unit transfer per arbitration"]
+    #[inline(always)]
+    pub fn unit1(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT1)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "Two unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit2(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT2)
+    }
+    #[doc = "Three unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit3(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT3)
+    }
+    #[doc = "Four unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit4(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT4)
+    }
+    #[doc = "Six unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit6(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT6)
+    }
+    #[doc = "Eight unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit8(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT8)
+    }
+    #[doc = "Sixteen unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit16(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT16)
+    }
+    #[doc = "32 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit32(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT32)
+    }
+    #[doc = "64 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit64(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT64)
+    }
+    #[doc = "128 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit128(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT128)
+    }
+    #[doc = "256 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit256(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT256)
+    }
+    #[doc = "512 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit512(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT512)
+    }
+    #[doc = "1024 unit transfers per arbitration"]
+    #[inline(always)]
+    pub fn unit1024(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::UNIT1024)
+    }
+    #[doc = "Transfer all units as specified by the XFRCNT field"]
+    #[inline(always)]
+    pub fn all(self) -> &'a mut W {
+        self.variant(BLOCKSIZE_A::ALL)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct REQMODER {
-    bits: bool,
+#[doc = "Reader of field `DONEIFSEN`"]
+pub type DONEIFSEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DONEIFSEN`"]
+pub struct DONEIFSEN_W<'a> {
+    w: &'a mut W,
 }
-impl REQMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> DONEIFSEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DECLOOPCNTR {
-    bits: bool,
-}
-impl DECLOOPCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct IGNORESREQR {
-    bits: bool,
+#[doc = "Reader of field `REQMODE`"]
+pub type REQMODE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REQMODE`"]
+pub struct REQMODE_W<'a> {
+    w: &'a mut W,
 }
-impl IGNORESREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> REQMODE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w
+    }
+}
+#[doc = "Reader of field `DECLOOPCNT`"]
+pub type DECLOOPCNT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DECLOOPCNT`"]
+pub struct DECLOOPCNT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DECLOOPCNT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w
+    }
+}
+#[doc = "Reader of field `IGNORESREQ`"]
+pub type IGNORESREQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `IGNORESREQ`"]
+pub struct IGNORESREQ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IGNORESREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SRCINC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRCINCR {
+pub enum SRCINC_A {
     #[doc = "Increment source address by one unit data size after each read"]
     ONE,
     #[doc = "Increment source address by two unit data sizes after each read"]
@@ -367,103 +465,178 @@ pub enum SRCINCR {
     #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
     NONE,
 }
-impl SRCINCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SRCINC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SRCINCR::ONE => 0,
-            SRCINCR::TWO => 1,
-            SRCINCR::FOUR => 2,
-            SRCINCR::NONE => 3,
+            SRCINC_A::ONE => 0,
+            SRCINC_A::TWO => 1,
+            SRCINC_A::FOUR => 2,
+            SRCINC_A::NONE => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SRCINCR {
-        match value {
-            0 => SRCINCR::ONE,
-            1 => SRCINCR::TWO,
-            2 => SRCINCR::FOUR,
-            3 => SRCINCR::NONE,
+}
+#[doc = "Reader of field `SRCINC`"]
+pub type SRCINC_R = crate::R<u8, SRCINC_A>;
+impl SRCINC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRCINC_A {
+        match self.bits {
+            0 => SRCINC_A::ONE,
+            1 => SRCINC_A::TWO,
+            2 => SRCINC_A::FOUR,
+            3 => SRCINC_A::NONE,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == SRCINCR::ONE
+        *self == SRCINC_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == SRCINCR::TWO
+        *self == SRCINC_A::TWO
     }
     #[doc = "Checks if the value of the field is `FOUR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_four(&self) -> bool {
-        *self == SRCINCR::FOUR
+        *self == SRCINC_A::FOUR
     }
     #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SRCINCR::NONE
+        *self == SRCINC_A::NONE
+    }
+}
+#[doc = "Write proxy for field `SRCINC`"]
+pub struct SRCINC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SRCINC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRCINC_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Increment source address by one unit data size after each read"]
+    #[inline(always)]
+    pub fn one(self) -> &'a mut W {
+        self.variant(SRCINC_A::ONE)
+    }
+    #[doc = "Increment source address by two unit data sizes after each read"]
+    #[inline(always)]
+    pub fn two(self) -> &'a mut W {
+        self.variant(SRCINC_A::TWO)
+    }
+    #[doc = "Increment source address by four unit data sizes after each read"]
+    #[inline(always)]
+    pub fn four(self) -> &'a mut W {
+        self.variant(SRCINC_A::FOUR)
+    }
+    #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
+    #[inline(always)]
+    pub fn none(self) -> &'a mut W {
+        self.variant(SRCINC_A::NONE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIZER {
+pub enum SIZE_A {
     #[doc = "Each unit transfer is a byte"]
     BYTE,
     #[doc = "Each unit transfer is a half-word"]
     HALFWORD,
     #[doc = "Each unit transfer is a word"]
     WORD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SIZER::BYTE => 0,
-            SIZER::HALFWORD => 1,
-            SIZER::WORD => 2,
-            SIZER::_Reserved(bits) => bits,
+            SIZE_A::BYTE => 0,
+            SIZE_A::HALFWORD => 1,
+            SIZE_A::WORD => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SIZER {
-        match value {
-            0 => SIZER::BYTE,
-            1 => SIZER::HALFWORD,
-            2 => SIZER::WORD,
-            i => SIZER::_Reserved(i),
+}
+#[doc = "Reader of field `SIZE`"]
+pub type SIZE_R = crate::R<u8, SIZE_A>;
+impl SIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SIZE_A::BYTE),
+            1 => Val(SIZE_A::HALFWORD),
+            2 => Val(SIZE_A::WORD),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BYTE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        *self == SIZER::BYTE
+        *self == SIZE_A::BYTE
     }
     #[doc = "Checks if the value of the field is `HALFWORD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_halfword(&self) -> bool {
-        *self == SIZER::HALFWORD
+        *self == SIZE_A::HALFWORD
     }
     #[doc = "Checks if the value of the field is `WORD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_word(&self) -> bool {
-        *self == SIZER::WORD
+        *self == SIZE_A::WORD
+    }
+}
+#[doc = "Write proxy for field `SIZE`"]
+pub struct SIZE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIZE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Each unit transfer is a byte"]
+    #[inline(always)]
+    pub fn byte(self) -> &'a mut W {
+        self.variant(SIZE_A::BYTE)
+    }
+    #[doc = "Each unit transfer is a half-word"]
+    #[inline(always)]
+    pub fn halfword(self) -> &'a mut W {
+        self.variant(SIZE_A::HALFWORD)
+    }
+    #[doc = "Each unit transfer is a word"]
+    #[inline(always)]
+    pub fn word(self) -> &'a mut W {
+        self.variant(SIZE_A::WORD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DSTINC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DSTINCR {
+pub enum DSTINC_A {
     #[doc = "Increment destination address by one unit data size after each write"]
     ONE,
     #[doc = "Increment destination address by two unit data sizes after each write"]
@@ -473,774 +646,217 @@ pub enum DSTINCR {
     #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
     NONE,
 }
-impl DSTINCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DSTINC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DSTINCR::ONE => 0,
-            DSTINCR::TWO => 1,
-            DSTINCR::FOUR => 2,
-            DSTINCR::NONE => 3,
+            DSTINC_A::ONE => 0,
+            DSTINC_A::TWO => 1,
+            DSTINC_A::FOUR => 2,
+            DSTINC_A::NONE => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DSTINCR {
-        match value {
-            0 => DSTINCR::ONE,
-            1 => DSTINCR::TWO,
-            2 => DSTINCR::FOUR,
-            3 => DSTINCR::NONE,
+}
+#[doc = "Reader of field `DSTINC`"]
+pub type DSTINC_R = crate::R<u8, DSTINC_A>;
+impl DSTINC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DSTINC_A {
+        match self.bits {
+            0 => DSTINC_A::ONE,
+            1 => DSTINC_A::TWO,
+            2 => DSTINC_A::FOUR,
+            3 => DSTINC_A::NONE,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == DSTINCR::ONE
+        *self == DSTINC_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == DSTINCR::TWO
+        *self == DSTINC_A::TWO
     }
     #[doc = "Checks if the value of the field is `FOUR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_four(&self) -> bool {
-        *self == DSTINCR::FOUR
+        *self == DSTINC_A::FOUR
     }
     #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == DSTINCR::NONE
+        *self == DSTINC_A::NONE
     }
 }
-#[doc = r" Value of the field"]
-pub struct SRCMODER {
-    bits: bool,
-}
-impl SRCMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DSTMODER {
-    bits: bool,
-}
-impl DSTMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STRUCTREQW<'a> {
+#[doc = "Write proxy for field `DSTINC`"]
+pub struct DSTINC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STRUCTREQW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _XFERCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _XFERCNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 2047;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BYTESWAPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BYTESWAPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BLOCKSIZE`"]
-pub enum BLOCKSIZEW {
-    #[doc = "One unit transfer per arbitration"]
-    UNIT1,
-    #[doc = "Two unit transfers per arbitration"]
-    UNIT2,
-    #[doc = "Three unit transfers per arbitration"]
-    UNIT3,
-    #[doc = "Four unit transfers per arbitration"]
-    UNIT4,
-    #[doc = "Six unit transfers per arbitration"]
-    UNIT6,
-    #[doc = "Eight unit transfers per arbitration"]
-    UNIT8,
-    #[doc = "Sixteen unit transfers per arbitration"]
-    UNIT16,
-    #[doc = "32 unit transfers per arbitration"]
-    UNIT32,
-    #[doc = "64 unit transfers per arbitration"]
-    UNIT64,
-    #[doc = "128 unit transfers per arbitration"]
-    UNIT128,
-    #[doc = "256 unit transfers per arbitration"]
-    UNIT256,
-    #[doc = "512 unit transfers per arbitration"]
-    UNIT512,
-    #[doc = "1024 unit transfers per arbitration"]
-    UNIT1024,
-    #[doc = "Transfer all units as specified by the XFRCNT field"]
-    ALL,
-}
-impl BLOCKSIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BLOCKSIZEW::UNIT1 => 0,
-            BLOCKSIZEW::UNIT2 => 1,
-            BLOCKSIZEW::UNIT3 => 2,
-            BLOCKSIZEW::UNIT4 => 3,
-            BLOCKSIZEW::UNIT6 => 4,
-            BLOCKSIZEW::UNIT8 => 5,
-            BLOCKSIZEW::UNIT16 => 7,
-            BLOCKSIZEW::UNIT32 => 9,
-            BLOCKSIZEW::UNIT64 => 10,
-            BLOCKSIZEW::UNIT128 => 11,
-            BLOCKSIZEW::UNIT256 => 12,
-            BLOCKSIZEW::UNIT512 => 13,
-            BLOCKSIZEW::UNIT1024 => 14,
-            BLOCKSIZEW::ALL => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BLOCKSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BLOCKSIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BLOCKSIZEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "One unit transfer per arbitration"]
-    #[inline]
-    pub fn unit1(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT1)
-    }
-    #[doc = "Two unit transfers per arbitration"]
-    #[inline]
-    pub fn unit2(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT2)
-    }
-    #[doc = "Three unit transfers per arbitration"]
-    #[inline]
-    pub fn unit3(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT3)
-    }
-    #[doc = "Four unit transfers per arbitration"]
-    #[inline]
-    pub fn unit4(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT4)
-    }
-    #[doc = "Six unit transfers per arbitration"]
-    #[inline]
-    pub fn unit6(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT6)
-    }
-    #[doc = "Eight unit transfers per arbitration"]
-    #[inline]
-    pub fn unit8(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT8)
-    }
-    #[doc = "Sixteen unit transfers per arbitration"]
-    #[inline]
-    pub fn unit16(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT16)
-    }
-    #[doc = "32 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit32(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT32)
-    }
-    #[doc = "64 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit64(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT64)
-    }
-    #[doc = "128 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit128(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT128)
-    }
-    #[doc = "256 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit256(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT256)
-    }
-    #[doc = "512 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit512(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT512)
-    }
-    #[doc = "1024 unit transfers per arbitration"]
-    #[inline]
-    pub fn unit1024(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::UNIT1024)
-    }
-    #[doc = "Transfer all units as specified by the XFRCNT field"]
-    #[inline]
-    pub fn all(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::ALL)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DONEIFSENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DONEIFSENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REQMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _REQMODEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DECLOOPCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DECLOOPCNTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IGNORESREQW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IGNORESREQW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SRCINC`"]
-pub enum SRCINCW {
-    #[doc = "Increment source address by one unit data size after each read"]
-    ONE,
-    #[doc = "Increment source address by two unit data sizes after each read"]
-    TWO,
-    #[doc = "Increment source address by four unit data sizes after each read"]
-    FOUR,
-    #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
-    NONE,
-}
-impl SRCINCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SRCINCW::ONE => 0,
-            SRCINCW::TWO => 1,
-            SRCINCW::FOUR => 2,
-            SRCINCW::NONE => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRCINCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRCINCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRCINCW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Increment source address by one unit data size after each read"]
-    #[inline]
-    pub fn one(self) -> &'a mut W {
-        self.variant(SRCINCW::ONE)
-    }
-    #[doc = "Increment source address by two unit data sizes after each read"]
-    #[inline]
-    pub fn two(self) -> &'a mut W {
-        self.variant(SRCINCW::TWO)
-    }
-    #[doc = "Increment source address by four unit data sizes after each read"]
-    #[inline]
-    pub fn four(self) -> &'a mut W {
-        self.variant(SRCINCW::FOUR)
-    }
-    #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
-    #[inline]
-    pub fn none(self) -> &'a mut W {
-        self.variant(SRCINCW::NONE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SIZE`"]
-pub enum SIZEW {
-    #[doc = "Each unit transfer is a byte"]
-    BYTE,
-    #[doc = "Each unit transfer is a half-word"]
-    HALFWORD,
-    #[doc = "Each unit transfer is a word"]
-    WORD,
-}
-impl SIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SIZEW::BYTE => 0,
-            SIZEW::HALFWORD => 1,
-            SIZEW::WORD => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIZEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Each unit transfer is a byte"]
-    #[inline]
-    pub fn byte(self) -> &'a mut W {
-        self.variant(SIZEW::BYTE)
-    }
-    #[doc = "Each unit transfer is a half-word"]
-    #[inline]
-    pub fn halfword(self) -> &'a mut W {
-        self.variant(SIZEW::HALFWORD)
-    }
-    #[doc = "Each unit transfer is a word"]
-    #[inline]
-    pub fn word(self) -> &'a mut W {
-        self.variant(SIZEW::WORD)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DSTINC`"]
-pub enum DSTINCW {
-    #[doc = "Increment destination address by one unit data size after each write"]
-    ONE,
-    #[doc = "Increment destination address by two unit data sizes after each write"]
-    TWO,
-    #[doc = "Increment destination address by four unit data sizes after each write"]
-    FOUR,
-    #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
-    NONE,
-}
-impl DSTINCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DSTINCW::ONE => 0,
-            DSTINCW::TWO => 1,
-            DSTINCW::FOUR => 2,
-            DSTINCW::NONE => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DSTINCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DSTINCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DSTINCW) -> &'a mut W {
+impl<'a> DSTINC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DSTINC_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Increment destination address by one unit data size after each write"]
-    #[inline]
+    #[inline(always)]
     pub fn one(self) -> &'a mut W {
-        self.variant(DSTINCW::ONE)
+        self.variant(DSTINC_A::ONE)
     }
     #[doc = "Increment destination address by two unit data sizes after each write"]
-    #[inline]
+    #[inline(always)]
     pub fn two(self) -> &'a mut W {
-        self.variant(DSTINCW::TWO)
+        self.variant(DSTINC_A::TWO)
     }
     #[doc = "Increment destination address by four unit data sizes after each write"]
-    #[inline]
+    #[inline(always)]
     pub fn four(self) -> &'a mut W {
-        self.variant(DSTINCW::FOUR)
+        self.variant(DSTINC_A::FOUR)
     }
     #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
-    #[inline]
+    #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(DSTINCW::NONE)
+        self.variant(DSTINC_A::NONE)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
+#[doc = "Reader of field `SRCMODE`"]
+pub type SRCMODE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DSTMODE`"]
+pub type DSTMODE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - DMA Structure Type"]
-    #[inline]
-    pub fn structtype(&self) -> STRUCTTYPER {
-        STRUCTTYPER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn structtype(&self) -> STRUCTTYPE_R {
+        STRUCTTYPE_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:14 - DMA Unit Data Transfer Count"]
-    #[inline]
-    pub fn xfercnt(&self) -> XFERCNTR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        XFERCNTR { bits }
+    #[inline(always)]
+    pub fn xfercnt(&self) -> XFERCNT_R {
+        XFERCNT_R::new(((self.bits >> 4) & 0x07ff) as u16)
     }
     #[doc = "Bit 15 - Endian Byte Swap"]
-    #[inline]
-    pub fn byteswap(&self) -> BYTESWAPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BYTESWAPR { bits }
+    #[inline(always)]
+    pub fn byteswap(&self) -> BYTESWAP_R {
+        BYTESWAP_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - Block Transfer Size"]
-    #[inline]
-    pub fn blocksize(&self) -> BLOCKSIZER {
-        BLOCKSIZER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn blocksize(&self) -> BLOCKSIZE_R {
+        BLOCKSIZE_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 20 - DMA Operation Done Interrupt Flag Set Enable"]
-    #[inline]
-    pub fn doneifsen(&self) -> DONEIFSENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DONEIFSENR { bits }
+    #[inline(always)]
+    pub fn doneifsen(&self) -> DONEIFSEN_R {
+        DONEIFSEN_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - DMA Request Transfer Mode Select"]
-    #[inline]
-    pub fn reqmode(&self) -> REQMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        REQMODER { bits }
+    #[inline(always)]
+    pub fn reqmode(&self) -> REQMODE_R {
+        REQMODE_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Decrement Loop Count"]
-    #[inline]
-    pub fn decloopcnt(&self) -> DECLOOPCNTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DECLOOPCNTR { bits }
+    #[inline(always)]
+    pub fn decloopcnt(&self) -> DECLOOPCNT_R {
+        DECLOOPCNT_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Ignore Sreq"]
-    #[inline]
-    pub fn ignoresreq(&self) -> IGNORESREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        IGNORESREQR { bits }
+    #[inline(always)]
+    pub fn ignoresreq(&self) -> IGNORESREQ_R {
+        IGNORESREQ_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bits 24:25 - Source Address Increment Size"]
-    #[inline]
-    pub fn srcinc(&self) -> SRCINCR {
-        SRCINCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn srcinc(&self) -> SRCINC_R {
+        SRCINC_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 26:27 - Unit Data Transfer Size"]
-    #[inline]
-    pub fn size(&self) -> SIZER {
-        SIZER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn size(&self) -> SIZE_R {
+        SIZE_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - Destination Address Increment Size"]
-    #[inline]
-    pub fn dstinc(&self) -> DSTINCR {
-        DSTINCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dstinc(&self) -> DSTINC_R {
+        DSTINC_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bit 30 - Source Addressing Mode"]
-    #[inline]
-    pub fn srcmode(&self) -> SRCMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SRCMODER { bits }
+    #[inline(always)]
+    pub fn srcmode(&self) -> SRCMODE_R {
+        SRCMODE_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Destination Addressing Mode"]
-    #[inline]
-    pub fn dstmode(&self) -> DSTMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DSTMODER { bits }
+    #[inline(always)]
+    pub fn dstmode(&self) -> DSTMODE_R {
+        DSTMODE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 3 - Structure DMA Transfer Request"]
-    #[inline]
-    pub fn structreq(&mut self) -> _STRUCTREQW {
-        _STRUCTREQW { w: self }
+    #[inline(always)]
+    pub fn structreq(&mut self) -> STRUCTREQ_W {
+        STRUCTREQ_W { w: self }
     }
     #[doc = "Bits 4:14 - DMA Unit Data Transfer Count"]
-    #[inline]
-    pub fn xfercnt(&mut self) -> _XFERCNTW {
-        _XFERCNTW { w: self }
+    #[inline(always)]
+    pub fn xfercnt(&mut self) -> XFERCNT_W {
+        XFERCNT_W { w: self }
     }
     #[doc = "Bit 15 - Endian Byte Swap"]
-    #[inline]
-    pub fn byteswap(&mut self) -> _BYTESWAPW {
-        _BYTESWAPW { w: self }
+    #[inline(always)]
+    pub fn byteswap(&mut self) -> BYTESWAP_W {
+        BYTESWAP_W { w: self }
     }
     #[doc = "Bits 16:19 - Block Transfer Size"]
-    #[inline]
-    pub fn blocksize(&mut self) -> _BLOCKSIZEW {
-        _BLOCKSIZEW { w: self }
+    #[inline(always)]
+    pub fn blocksize(&mut self) -> BLOCKSIZE_W {
+        BLOCKSIZE_W { w: self }
     }
     #[doc = "Bit 20 - DMA Operation Done Interrupt Flag Set Enable"]
-    #[inline]
-    pub fn doneifsen(&mut self) -> _DONEIFSENW {
-        _DONEIFSENW { w: self }
+    #[inline(always)]
+    pub fn doneifsen(&mut self) -> DONEIFSEN_W {
+        DONEIFSEN_W { w: self }
     }
     #[doc = "Bit 21 - DMA Request Transfer Mode Select"]
-    #[inline]
-    pub fn reqmode(&mut self) -> _REQMODEW {
-        _REQMODEW { w: self }
+    #[inline(always)]
+    pub fn reqmode(&mut self) -> REQMODE_W {
+        REQMODE_W { w: self }
     }
     #[doc = "Bit 22 - Decrement Loop Count"]
-    #[inline]
-    pub fn decloopcnt(&mut self) -> _DECLOOPCNTW {
-        _DECLOOPCNTW { w: self }
+    #[inline(always)]
+    pub fn decloopcnt(&mut self) -> DECLOOPCNT_W {
+        DECLOOPCNT_W { w: self }
     }
     #[doc = "Bit 23 - Ignore Sreq"]
-    #[inline]
-    pub fn ignoresreq(&mut self) -> _IGNORESREQW {
-        _IGNORESREQW { w: self }
+    #[inline(always)]
+    pub fn ignoresreq(&mut self) -> IGNORESREQ_W {
+        IGNORESREQ_W { w: self }
     }
     #[doc = "Bits 24:25 - Source Address Increment Size"]
-    #[inline]
-    pub fn srcinc(&mut self) -> _SRCINCW {
-        _SRCINCW { w: self }
+    #[inline(always)]
+    pub fn srcinc(&mut self) -> SRCINC_W {
+        SRCINC_W { w: self }
     }
     #[doc = "Bits 26:27 - Unit Data Transfer Size"]
-    #[inline]
-    pub fn size(&mut self) -> _SIZEW {
-        _SIZEW { w: self }
+    #[inline(always)]
+    pub fn size(&mut self) -> SIZE_W {
+        SIZE_W { w: self }
     }
     #[doc = "Bits 28:29 - Destination Address Increment Size"]
-    #[inline]
-    pub fn dstinc(&mut self) -> _DSTINCW {
-        _DSTINCW { w: self }
+    #[inline(always)]
+    pub fn dstinc(&mut self) -> DSTINC_W {
+        DSTINC_W { w: self }
     }
 }

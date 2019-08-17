@@ -1,267 +1,136 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DEVSIZECONFIG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DEVSIZECONFIG"]
+pub type R = crate::R<u32, super::DEVSIZECONFIG>;
+#[doc = "Writer for register DEVSIZECONFIG"]
+pub type W = crate::W<u32, super::DEVSIZECONFIG>;
+#[doc = "Register DEVSIZECONFIG `reset()`'s with value 0x0010_1002"]
+impl crate::ResetValue for super::DEVSIZECONFIG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0010_1002
     }
 }
-#[doc = r" Value of the field"]
-pub struct NUMADDRBYTESR {
-    bits: u8,
-}
-impl NUMADDRBYTESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BYTESPERDEVICEPAGER {
-    bits: u16,
-}
-impl BYTESPERDEVICEPAGER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BYTESPERSUBSECTORR {
-    bits: u8,
-}
-impl BYTESPERSUBSECTORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MEMSIZEONCS0R {
-    bits: u8,
-}
-impl MEMSIZEONCS0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MEMSIZEONCS1R {
-    bits: u8,
-}
-impl MEMSIZEONCS1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NUMADDRBYTESW<'a> {
+#[doc = "Reader of field `NUMADDRBYTES`"]
+pub type NUMADDRBYTES_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NUMADDRBYTES`"]
+pub struct NUMADDRBYTES_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NUMADDRBYTESW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NUMADDRBYTES_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _BYTESPERDEVICEPAGEW<'a> {
+#[doc = "Reader of field `BYTESPERDEVICEPAGE`"]
+pub type BYTESPERDEVICEPAGE_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `BYTESPERDEVICEPAGE`"]
+pub struct BYTESPERDEVICEPAGE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYTESPERDEVICEPAGEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> BYTESPERDEVICEPAGE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0fff << 4)) | (((value as u32) & 0x0fff) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _BYTESPERSUBSECTORW<'a> {
+#[doc = "Reader of field `BYTESPERSUBSECTOR`"]
+pub type BYTESPERSUBSECTOR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BYTESPERSUBSECTOR`"]
+pub struct BYTESPERSUBSECTOR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYTESPERSUBSECTORW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> BYTESPERSUBSECTOR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MEMSIZEONCS0W<'a> {
+#[doc = "Reader of field `MEMSIZEONCS0`"]
+pub type MEMSIZEONCS0_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MEMSIZEONCS0`"]
+pub struct MEMSIZEONCS0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MEMSIZEONCS0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MEMSIZEONCS0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 21)) | (((value as u32) & 0x03) << 21);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MEMSIZEONCS1W<'a> {
+#[doc = "Reader of field `MEMSIZEONCS1`"]
+pub type MEMSIZEONCS1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MEMSIZEONCS1`"]
+pub struct MEMSIZEONCS1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MEMSIZEONCS1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MEMSIZEONCS1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 23)) | (((value as u32) & 0x03) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Number of Address Bytes"]
-    #[inline]
-    pub fn numaddrbytes(&self) -> NUMADDRBYTESR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NUMADDRBYTESR { bits }
+    #[inline(always)]
+    pub fn numaddrbytes(&self) -> NUMADDRBYTES_R {
+        NUMADDRBYTES_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:15 - Number of Bytes Per Device Page"]
-    #[inline]
-    pub fn bytesperdevicepage(&self) -> BYTESPERDEVICEPAGER {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        BYTESPERDEVICEPAGER { bits }
+    #[inline(always)]
+    pub fn bytesperdevicepage(&self) -> BYTESPERDEVICEPAGE_R {
+        BYTESPERDEVICEPAGE_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
     #[doc = "Bits 16:20 - Number of Bytes Per Block"]
-    #[inline]
-    pub fn bytespersubsector(&self) -> BYTESPERSUBSECTORR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BYTESPERSUBSECTORR { bits }
+    #[inline(always)]
+    pub fn bytespersubsector(&self) -> BYTESPERSUBSECTOR_R {
+        BYTESPERSUBSECTOR_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\] Pin"]
-    #[inline]
-    pub fn memsizeoncs0(&self) -> MEMSIZEONCS0R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MEMSIZEONCS0R { bits }
+    #[inline(always)]
+    pub fn memsizeoncs0(&self) -> MEMSIZEONCS0_R {
+        MEMSIZEONCS0_R::new(((self.bits >> 21) & 0x03) as u8)
     }
     #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\] Pin"]
-    #[inline]
-    pub fn memsizeoncs1(&self) -> MEMSIZEONCS1R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MEMSIZEONCS1R { bits }
+    #[inline(always)]
+    pub fn memsizeoncs1(&self) -> MEMSIZEONCS1_R {
+        MEMSIZEONCS1_R::new(((self.bits >> 23) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1052674 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Number of Address Bytes"]
-    #[inline]
-    pub fn numaddrbytes(&mut self) -> _NUMADDRBYTESW {
-        _NUMADDRBYTESW { w: self }
+    #[inline(always)]
+    pub fn numaddrbytes(&mut self) -> NUMADDRBYTES_W {
+        NUMADDRBYTES_W { w: self }
     }
     #[doc = "Bits 4:15 - Number of Bytes Per Device Page"]
-    #[inline]
-    pub fn bytesperdevicepage(&mut self) -> _BYTESPERDEVICEPAGEW {
-        _BYTESPERDEVICEPAGEW { w: self }
+    #[inline(always)]
+    pub fn bytesperdevicepage(&mut self) -> BYTESPERDEVICEPAGE_W {
+        BYTESPERDEVICEPAGE_W { w: self }
     }
     #[doc = "Bits 16:20 - Number of Bytes Per Block"]
-    #[inline]
-    pub fn bytespersubsector(&mut self) -> _BYTESPERSUBSECTORW {
-        _BYTESPERSUBSECTORW { w: self }
+    #[inline(always)]
+    pub fn bytespersubsector(&mut self) -> BYTESPERSUBSECTOR_W {
+        BYTESPERSUBSECTOR_W { w: self }
     }
     #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\] Pin"]
-    #[inline]
-    pub fn memsizeoncs0(&mut self) -> _MEMSIZEONCS0W {
-        _MEMSIZEONCS0W { w: self }
+    #[inline(always)]
+    pub fn memsizeoncs0(&mut self) -> MEMSIZEONCS0_W {
+        MEMSIZEONCS0_W { w: self }
     }
     #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\] Pin"]
-    #[inline]
-    pub fn memsizeoncs1(&mut self) -> _MEMSIZEONCS1W {
-        _MEMSIZEONCS1W { w: self }
+    #[inline(always)]
+    pub fn memsizeoncs1(&mut self) -> MEMSIZEONCS1_W {
+        MEMSIZEONCS1_W { w: self }
     }
 }

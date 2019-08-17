@@ -1,131 +1,71 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMAUTHSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NONSECINVDBGR {
-    bits: u8,
-}
-impl NONSECINVDBGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ETMAUTHSTATUS"]
+pub type R = crate::R<u32, super::ETMAUTHSTATUS>;
+#[doc = "Reader of field `NONSECINVDBG`"]
+pub type NONSECINVDBG_R = crate::R<u8, u8>;
 #[doc = "Possible values of the field `NONSECNONINVDBG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NONSECNONINVDBGR {
+pub enum NONSECNONINVDBG_A {
     #[doc = "Non-secure non-invasive debug disable"]
     DISABLE,
     #[doc = "Non-secure non-invasive debug enable"]
     ENABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl NONSECNONINVDBGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for NONSECNONINVDBG_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            NONSECNONINVDBGR::DISABLE => 2,
-            NONSECNONINVDBGR::ENABLE => 3,
-            NONSECNONINVDBGR::_Reserved(bits) => bits,
+            NONSECNONINVDBG_A::DISABLE => 2,
+            NONSECNONINVDBG_A::ENABLE => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> NONSECNONINVDBGR {
-        match value {
-            2 => NONSECNONINVDBGR::DISABLE,
-            3 => NONSECNONINVDBGR::ENABLE,
-            i => NONSECNONINVDBGR::_Reserved(i),
+}
+#[doc = "Reader of field `NONSECNONINVDBG`"]
+pub type NONSECNONINVDBG_R = crate::R<u8, NONSECNONINVDBG_A>;
+impl NONSECNONINVDBG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, NONSECNONINVDBG_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(NONSECNONINVDBG_A::DISABLE),
+            3 => Val(NONSECNONINVDBG_A::ENABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == NONSECNONINVDBGR::DISABLE
+        *self == NONSECNONINVDBG_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == NONSECNONINVDBGR::ENABLE
+        *self == NONSECNONINVDBG_A::ENABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct SECINVDBGR {
-    bits: u8,
-}
-impl SECINVDBGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SECNONINVDBGR {
-    bits: u8,
-}
-impl SECNONINVDBGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `SECINVDBG`"]
+pub type SECINVDBG_R = crate::R<u8, u8>;
+#[doc = "Reader of field `SECNONINVDBG`"]
+pub type SECNONINVDBG_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Non-secure invasive Debug Status"]
-    #[inline]
-    pub fn nonsecinvdbg(&self) -> NONSECINVDBGR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NONSECINVDBGR { bits }
+    #[inline(always)]
+    pub fn nonsecinvdbg(&self) -> NONSECINVDBG_R {
+        NONSECINVDBG_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Non-secure non-invasive Debug Status"]
-    #[inline]
-    pub fn nonsecnoninvdbg(&self) -> NONSECNONINVDBGR {
-        NONSECNONINVDBGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn nonsecnoninvdbg(&self) -> NONSECNONINVDBG_R {
+        NONSECNONINVDBG_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Secure invasive Debug Status"]
-    #[inline]
-    pub fn secinvdbg(&self) -> SECINVDBGR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SECINVDBGR { bits }
+    #[inline(always)]
+    pub fn secinvdbg(&self) -> SECINVDBG_R {
+        SECINVDBG_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Secure non-invasive Debug Status"]
-    #[inline]
-    pub fn secnoninvdbg(&self) -> SECNONINVDBGR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SECNONINVDBGR { bits }
+    #[inline(always)]
+    pub fn secnoninvdbg(&self) -> SECNONINVDBG_R {
+        SECNONINVDBG_R::new(((self.bits >> 6) & 0x03) as u8)
     }
 }

@@ -1,262 +1,132 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RDDATACAPTURE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RDDATACAPTURE"]
+pub type R = crate::R<u32, super::RDDATACAPTURE>;
+#[doc = "Writer for register RDDATACAPTURE"]
+pub type W = crate::W<u32, super::RDDATACAPTURE>;
+#[doc = "Register RDDATACAPTURE `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::RDDATACAPTURE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = r" Value of the field"]
-pub struct BYPASSR {
-    bits: bool,
-}
-impl BYPASSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DELAYR {
-    bits: u8,
-}
-impl DELAYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DQSENABLER {
-    bits: bool,
-}
-impl DQSENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDRREADDELAYR {
-    bits: u8,
-}
-impl DDRREADDELAYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BYPASSW<'a> {
+#[doc = "Reader of field `BYPASS`"]
+pub type BYPASS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BYPASS`"]
+pub struct BYPASS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYPASSW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> BYPASS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DELAYW<'a> {
+#[doc = "Reader of field `DELAY`"]
+pub type DELAY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DELAY`"]
+pub struct DELAY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DELAYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DELAY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 1)) | (((value as u32) & 0x0f) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DQSENABLEW<'a> {
+#[doc = "Reader of field `DQSENABLE`"]
+pub type DQSENABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DQSENABLE`"]
+pub struct DQSENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DQSENABLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DQSENABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DDRREADDELAYW<'a> {
+#[doc = "Reader of field `DDRREADDELAY`"]
+pub type DDRREADDELAY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DDRREADDELAY`"]
+pub struct DDRREADDELAY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDRREADDELAYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DDRREADDELAY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Bypass the Adapted Loopback Clock Circuit"]
-    #[inline]
-    pub fn bypass(&self) -> BYPASSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BYPASSR { bits }
+    #[inline(always)]
+    pub fn bypass(&self) -> BYPASS_R {
+        BYPASS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:4 - Read Delay"]
-    #[inline]
-    pub fn delay(&self) -> DELAYR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DELAYR { bits }
+    #[inline(always)]
+    pub fn delay(&self) -> DELAY_R {
+        DELAY_R::new(((self.bits >> 1) & 0x0f) as u8)
     }
     #[doc = "Bit 8 - DQS Enable Bit"]
-    #[inline]
-    pub fn dqsenable(&self) -> DQSENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DQSENABLER { bits }
+    #[inline(always)]
+    pub fn dqsenable(&self) -> DQSENABLE_R {
+        DQSENABLE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - DDR Read Delay"]
-    #[inline]
-    pub fn ddrreaddelay(&self) -> DDRREADDELAYR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DDRREADDELAYR { bits }
+    #[inline(always)]
+    pub fn ddrreaddelay(&self) -> DDRREADDELAY_R {
+        DDRREADDELAY_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Bypass the Adapted Loopback Clock Circuit"]
-    #[inline]
-    pub fn bypass(&mut self) -> _BYPASSW {
-        _BYPASSW { w: self }
+    #[inline(always)]
+    pub fn bypass(&mut self) -> BYPASS_W {
+        BYPASS_W { w: self }
     }
     #[doc = "Bits 1:4 - Read Delay"]
-    #[inline]
-    pub fn delay(&mut self) -> _DELAYW {
-        _DELAYW { w: self }
+    #[inline(always)]
+    pub fn delay(&mut self) -> DELAY_W {
+        DELAY_W { w: self }
     }
     #[doc = "Bit 8 - DQS Enable Bit"]
-    #[inline]
-    pub fn dqsenable(&mut self) -> _DQSENABLEW {
-        _DQSENABLEW { w: self }
+    #[inline(always)]
+    pub fn dqsenable(&mut self) -> DQSENABLE_W {
+        DQSENABLE_W { w: self }
     }
     #[doc = "Bits 16:19 - DDR Read Delay"]
-    #[inline]
-    pub fn ddrreaddelay(&mut self) -> _DDRREADDELAYW {
-        _DDRREADDELAYW { w: self }
+    #[inline(always)]
+    pub fn ddrreaddelay(&mut self) -> DDRREADDELAY_W {
+        DDRREADDELAY_W { w: self }
     }
 }

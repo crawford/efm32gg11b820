@@ -1,1494 +1,1032 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ALTEXCONF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ALTEXCONF"]
+pub type R = crate::R<u32, super::ALTEXCONF>;
+#[doc = "Writer for register ALTEXCONF"]
+pub type W = crate::W<u32, super::ALTEXCONF>;
+#[doc = "Register ALTEXCONF `reset()`'s with value 0"]
+impl crate::ResetValue for super::ALTEXCONF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `IDLECONF0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF0R {
+pub enum IDLECONF0_A {
     #[doc = "ALTEX0 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX0 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX0 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF0R::DISABLE => 0,
-            IDLECONF0R::HIGH => 1,
-            IDLECONF0R::LOW => 2,
-            IDLECONF0R::_Reserved(bits) => bits,
+            IDLECONF0_A::DISABLE => 0,
+            IDLECONF0_A::HIGH => 1,
+            IDLECONF0_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF0R {
-        match value {
-            0 => IDLECONF0R::DISABLE,
-            1 => IDLECONF0R::HIGH,
-            2 => IDLECONF0R::LOW,
-            i => IDLECONF0R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF0`"]
+pub type IDLECONF0_R = crate::R<u8, IDLECONF0_A>;
+impl IDLECONF0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF0_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF0_A::DISABLE),
+            1 => Val(IDLECONF0_A::HIGH),
+            2 => Val(IDLECONF0_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF0R::DISABLE
+        *self == IDLECONF0_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF0R::HIGH
+        *self == IDLECONF0_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF0R::LOW
+        *self == IDLECONF0_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF0`"]
+pub struct IDLECONF0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF0_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX0 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF0_A::DISABLE)
+    }
+    #[doc = "ALTEX0 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF0_A::HIGH)
+    }
+    #[doc = "ALTEX0 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF0_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF1R {
+pub enum IDLECONF1_A {
     #[doc = "ALTEX1 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX1 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX1 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF1R::DISABLE => 0,
-            IDLECONF1R::HIGH => 1,
-            IDLECONF1R::LOW => 2,
-            IDLECONF1R::_Reserved(bits) => bits,
+            IDLECONF1_A::DISABLE => 0,
+            IDLECONF1_A::HIGH => 1,
+            IDLECONF1_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF1R {
-        match value {
-            0 => IDLECONF1R::DISABLE,
-            1 => IDLECONF1R::HIGH,
-            2 => IDLECONF1R::LOW,
-            i => IDLECONF1R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF1`"]
+pub type IDLECONF1_R = crate::R<u8, IDLECONF1_A>;
+impl IDLECONF1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF1_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF1_A::DISABLE),
+            1 => Val(IDLECONF1_A::HIGH),
+            2 => Val(IDLECONF1_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF1R::DISABLE
+        *self == IDLECONF1_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF1R::HIGH
+        *self == IDLECONF1_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF1R::LOW
+        *self == IDLECONF1_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF1`"]
+pub struct IDLECONF1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF1_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX1 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF1_A::DISABLE)
+    }
+    #[doc = "ALTEX1 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF1_A::HIGH)
+    }
+    #[doc = "ALTEX1 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF1_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF2R {
+pub enum IDLECONF2_A {
     #[doc = "ALTEX2 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX2 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX2 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF2_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF2R::DISABLE => 0,
-            IDLECONF2R::HIGH => 1,
-            IDLECONF2R::LOW => 2,
-            IDLECONF2R::_Reserved(bits) => bits,
+            IDLECONF2_A::DISABLE => 0,
+            IDLECONF2_A::HIGH => 1,
+            IDLECONF2_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF2R {
-        match value {
-            0 => IDLECONF2R::DISABLE,
-            1 => IDLECONF2R::HIGH,
-            2 => IDLECONF2R::LOW,
-            i => IDLECONF2R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF2`"]
+pub type IDLECONF2_R = crate::R<u8, IDLECONF2_A>;
+impl IDLECONF2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF2_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF2_A::DISABLE),
+            1 => Val(IDLECONF2_A::HIGH),
+            2 => Val(IDLECONF2_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF2R::DISABLE
+        *self == IDLECONF2_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF2R::HIGH
+        *self == IDLECONF2_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF2R::LOW
+        *self == IDLECONF2_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF2`"]
+pub struct IDLECONF2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF2_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX2 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF2_A::DISABLE)
+    }
+    #[doc = "ALTEX2 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF2_A::HIGH)
+    }
+    #[doc = "ALTEX2 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF2_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF3R {
+pub enum IDLECONF3_A {
     #[doc = "ALTEX3 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX3 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX3 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF3_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF3R::DISABLE => 0,
-            IDLECONF3R::HIGH => 1,
-            IDLECONF3R::LOW => 2,
-            IDLECONF3R::_Reserved(bits) => bits,
+            IDLECONF3_A::DISABLE => 0,
+            IDLECONF3_A::HIGH => 1,
+            IDLECONF3_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF3R {
-        match value {
-            0 => IDLECONF3R::DISABLE,
-            1 => IDLECONF3R::HIGH,
-            2 => IDLECONF3R::LOW,
-            i => IDLECONF3R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF3`"]
+pub type IDLECONF3_R = crate::R<u8, IDLECONF3_A>;
+impl IDLECONF3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF3_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF3_A::DISABLE),
+            1 => Val(IDLECONF3_A::HIGH),
+            2 => Val(IDLECONF3_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF3R::DISABLE
+        *self == IDLECONF3_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF3R::HIGH
+        *self == IDLECONF3_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF3R::LOW
+        *self == IDLECONF3_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF3`"]
+pub struct IDLECONF3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF3_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX3 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF3_A::DISABLE)
+    }
+    #[doc = "ALTEX3 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF3_A::HIGH)
+    }
+    #[doc = "ALTEX3 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF3_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF4R {
+pub enum IDLECONF4_A {
     #[doc = "ALTEX4 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX4 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX4 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF4_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF4R::DISABLE => 0,
-            IDLECONF4R::HIGH => 1,
-            IDLECONF4R::LOW => 2,
-            IDLECONF4R::_Reserved(bits) => bits,
+            IDLECONF4_A::DISABLE => 0,
+            IDLECONF4_A::HIGH => 1,
+            IDLECONF4_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF4R {
-        match value {
-            0 => IDLECONF4R::DISABLE,
-            1 => IDLECONF4R::HIGH,
-            2 => IDLECONF4R::LOW,
-            i => IDLECONF4R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF4`"]
+pub type IDLECONF4_R = crate::R<u8, IDLECONF4_A>;
+impl IDLECONF4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF4_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF4_A::DISABLE),
+            1 => Val(IDLECONF4_A::HIGH),
+            2 => Val(IDLECONF4_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF4R::DISABLE
+        *self == IDLECONF4_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF4R::HIGH
+        *self == IDLECONF4_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF4R::LOW
+        *self == IDLECONF4_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF4`"]
+pub struct IDLECONF4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF4_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX4 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF4_A::DISABLE)
+    }
+    #[doc = "ALTEX4 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF4_A::HIGH)
+    }
+    #[doc = "ALTEX4 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF4_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF5R {
+pub enum IDLECONF5_A {
     #[doc = "ALTEX5 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX5 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX5 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF5_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF5R::DISABLE => 0,
-            IDLECONF5R::HIGH => 1,
-            IDLECONF5R::LOW => 2,
-            IDLECONF5R::_Reserved(bits) => bits,
+            IDLECONF5_A::DISABLE => 0,
+            IDLECONF5_A::HIGH => 1,
+            IDLECONF5_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF5R {
-        match value {
-            0 => IDLECONF5R::DISABLE,
-            1 => IDLECONF5R::HIGH,
-            2 => IDLECONF5R::LOW,
-            i => IDLECONF5R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF5`"]
+pub type IDLECONF5_R = crate::R<u8, IDLECONF5_A>;
+impl IDLECONF5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF5_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF5_A::DISABLE),
+            1 => Val(IDLECONF5_A::HIGH),
+            2 => Val(IDLECONF5_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF5R::DISABLE
+        *self == IDLECONF5_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF5R::HIGH
+        *self == IDLECONF5_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF5R::LOW
+        *self == IDLECONF5_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF5`"]
+pub struct IDLECONF5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF5_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX5 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF5_A::DISABLE)
+    }
+    #[doc = "ALTEX5 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF5_A::HIGH)
+    }
+    #[doc = "ALTEX5 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF5_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF6R {
+pub enum IDLECONF6_A {
     #[doc = "ALTEX6 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX6 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX6 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF6_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF6R::DISABLE => 0,
-            IDLECONF6R::HIGH => 1,
-            IDLECONF6R::LOW => 2,
-            IDLECONF6R::_Reserved(bits) => bits,
+            IDLECONF6_A::DISABLE => 0,
+            IDLECONF6_A::HIGH => 1,
+            IDLECONF6_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF6R {
-        match value {
-            0 => IDLECONF6R::DISABLE,
-            1 => IDLECONF6R::HIGH,
-            2 => IDLECONF6R::LOW,
-            i => IDLECONF6R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF6`"]
+pub type IDLECONF6_R = crate::R<u8, IDLECONF6_A>;
+impl IDLECONF6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF6_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF6_A::DISABLE),
+            1 => Val(IDLECONF6_A::HIGH),
+            2 => Val(IDLECONF6_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF6R::DISABLE
+        *self == IDLECONF6_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF6R::HIGH
+        *self == IDLECONF6_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF6R::LOW
+        *self == IDLECONF6_A::LOW
+    }
+}
+#[doc = "Write proxy for field `IDLECONF6`"]
+pub struct IDLECONF6_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDLECONF6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF6_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "ALTEX6 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IDLECONF6_A::DISABLE)
+    }
+    #[doc = "ALTEX6 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(IDLECONF6_A::HIGH)
+    }
+    #[doc = "ALTEX6 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(IDLECONF6_A::LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `IDLECONF7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IDLECONF7R {
+pub enum IDLECONF7_A {
     #[doc = "ALTEX7 output is disabled in idle phase"]
     DISABLE,
     #[doc = "ALTEX7 output is high in idle phase"]
     HIGH,
     #[doc = "ALTEX7 output is low in idle phase"]
     LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IDLECONF7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IDLECONF7_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IDLECONF7R::DISABLE => 0,
-            IDLECONF7R::HIGH => 1,
-            IDLECONF7R::LOW => 2,
-            IDLECONF7R::_Reserved(bits) => bits,
+            IDLECONF7_A::DISABLE => 0,
+            IDLECONF7_A::HIGH => 1,
+            IDLECONF7_A::LOW => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IDLECONF7R {
-        match value {
-            0 => IDLECONF7R::DISABLE,
-            1 => IDLECONF7R::HIGH,
-            2 => IDLECONF7R::LOW,
-            i => IDLECONF7R::_Reserved(i),
+}
+#[doc = "Reader of field `IDLECONF7`"]
+pub type IDLECONF7_R = crate::R<u8, IDLECONF7_A>;
+impl IDLECONF7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IDLECONF7_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IDLECONF7_A::DISABLE),
+            1 => Val(IDLECONF7_A::HIGH),
+            2 => Val(IDLECONF7_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDLECONF7R::DISABLE
+        *self == IDLECONF7_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == IDLECONF7R::HIGH
+        *self == IDLECONF7_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == IDLECONF7R::LOW
+        *self == IDLECONF7_A::LOW
     }
 }
-#[doc = r" Value of the field"]
-pub struct AEX0R {
-    bits: bool,
-}
-impl AEX0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX1R {
-    bits: bool,
-}
-impl AEX1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX2R {
-    bits: bool,
-}
-impl AEX2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX3R {
-    bits: bool,
-}
-impl AEX3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX4R {
-    bits: bool,
-}
-impl AEX4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX5R {
-    bits: bool,
-}
-impl AEX5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX6R {
-    bits: bool,
-}
-impl AEX6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AEX7R {
-    bits: bool,
-}
-impl AEX7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF0`"]
-pub enum IDLECONF0W {
-    #[doc = "ALTEX0 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX0 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX0 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF0W::DISABLE => 0,
-            IDLECONF0W::HIGH => 1,
-            IDLECONF0W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF0W<'a> {
+#[doc = "Write proxy for field `IDLECONF7`"]
+pub struct IDLECONF7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDLECONF0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF0W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX0 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF0W::DISABLE)
-    }
-    #[doc = "ALTEX0 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF0W::HIGH)
-    }
-    #[doc = "ALTEX0 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF0W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF1`"]
-pub enum IDLECONF1W {
-    #[doc = "ALTEX1 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX1 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX1 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF1W::DISABLE => 0,
-            IDLECONF1W::HIGH => 1,
-            IDLECONF1W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF1W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX1 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF1W::DISABLE)
-    }
-    #[doc = "ALTEX1 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF1W::HIGH)
-    }
-    #[doc = "ALTEX1 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF1W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF2`"]
-pub enum IDLECONF2W {
-    #[doc = "ALTEX2 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX2 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX2 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF2W::DISABLE => 0,
-            IDLECONF2W::HIGH => 1,
-            IDLECONF2W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF2W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX2 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF2W::DISABLE)
-    }
-    #[doc = "ALTEX2 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF2W::HIGH)
-    }
-    #[doc = "ALTEX2 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF2W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF3`"]
-pub enum IDLECONF3W {
-    #[doc = "ALTEX3 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX3 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX3 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF3W::DISABLE => 0,
-            IDLECONF3W::HIGH => 1,
-            IDLECONF3W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF3W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX3 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF3W::DISABLE)
-    }
-    #[doc = "ALTEX3 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF3W::HIGH)
-    }
-    #[doc = "ALTEX3 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF3W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF4`"]
-pub enum IDLECONF4W {
-    #[doc = "ALTEX4 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX4 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX4 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF4W::DISABLE => 0,
-            IDLECONF4W::HIGH => 1,
-            IDLECONF4W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF4W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX4 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF4W::DISABLE)
-    }
-    #[doc = "ALTEX4 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF4W::HIGH)
-    }
-    #[doc = "ALTEX4 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF4W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF5`"]
-pub enum IDLECONF5W {
-    #[doc = "ALTEX5 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX5 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX5 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF5W::DISABLE => 0,
-            IDLECONF5W::HIGH => 1,
-            IDLECONF5W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF5W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX5 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF5W::DISABLE)
-    }
-    #[doc = "ALTEX5 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF5W::HIGH)
-    }
-    #[doc = "ALTEX5 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF5W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF6`"]
-pub enum IDLECONF6W {
-    #[doc = "ALTEX6 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX6 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX6 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF6W::DISABLE => 0,
-            IDLECONF6W::HIGH => 1,
-            IDLECONF6W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF6W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ALTEX6 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF6W::DISABLE)
-    }
-    #[doc = "ALTEX6 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF6W::HIGH)
-    }
-    #[doc = "ALTEX6 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF6W::LOW)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IDLECONF7`"]
-pub enum IDLECONF7W {
-    #[doc = "ALTEX7 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "ALTEX7 output is high in idle phase"]
-    HIGH,
-    #[doc = "ALTEX7 output is low in idle phase"]
-    LOW,
-}
-impl IDLECONF7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            IDLECONF7W::DISABLE => 0,
-            IDLECONF7W::HIGH => 1,
-            IDLECONF7W::LOW => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDLECONF7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IDLECONF7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IDLECONF7W) -> &'a mut W {
+impl<'a> IDLECONF7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IDLECONF7_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "ALTEX7 output is disabled in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(IDLECONF7W::DISABLE)
+        self.variant(IDLECONF7_A::DISABLE)
     }
     #[doc = "ALTEX7 output is high in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(IDLECONF7W::HIGH)
+        self.variant(IDLECONF7_A::HIGH)
     }
     #[doc = "ALTEX7 output is low in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(IDLECONF7W::LOW)
+        self.variant(IDLECONF7_A::LOW)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX0W<'a> {
+#[doc = "Reader of field `AEX0`"]
+pub type AEX0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX0`"]
+pub struct AEX0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX1W<'a> {
+#[doc = "Reader of field `AEX1`"]
+pub type AEX1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX1`"]
+pub struct AEX1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX2W<'a> {
+#[doc = "Reader of field `AEX2`"]
+pub type AEX2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX2`"]
+pub struct AEX2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX3W<'a> {
+#[doc = "Reader of field `AEX3`"]
+pub type AEX3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX3`"]
+pub struct AEX3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX4W<'a> {
+#[doc = "Reader of field `AEX4`"]
+pub type AEX4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX4`"]
+pub struct AEX4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX5W<'a> {
+#[doc = "Reader of field `AEX5`"]
+pub type AEX5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX5`"]
+pub struct AEX5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX6W<'a> {
+#[doc = "Reader of field `AEX6`"]
+pub type AEX6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX6`"]
+pub struct AEX6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AEX7W<'a> {
+#[doc = "Reader of field `AEX7`"]
+pub type AEX7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AEX7`"]
+pub struct AEX7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AEX7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AEX7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - ALTEX0 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf0(&self) -> IDLECONF0R {
-        IDLECONF0R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf0(&self) -> IDLECONF0_R {
+        IDLECONF0_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - ALTEX1 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf1(&self) -> IDLECONF1R {
-        IDLECONF1R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf1(&self) -> IDLECONF1_R {
+        IDLECONF1_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - ALTEX2 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf2(&self) -> IDLECONF2R {
-        IDLECONF2R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf2(&self) -> IDLECONF2_R {
+        IDLECONF2_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - ALTEX3 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf3(&self) -> IDLECONF3R {
-        IDLECONF3R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf3(&self) -> IDLECONF3_R {
+        IDLECONF3_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - ALTEX4 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf4(&self) -> IDLECONF4R {
-        IDLECONF4R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf4(&self) -> IDLECONF4_R {
+        IDLECONF4_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - ALTEX5 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf5(&self) -> IDLECONF5R {
-        IDLECONF5R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf5(&self) -> IDLECONF5_R {
+        IDLECONF5_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - ALTEX6 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf6(&self) -> IDLECONF6R {
-        IDLECONF6R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf6(&self) -> IDLECONF6_R {
+        IDLECONF6_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:15 - ALTEX7 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf7(&self) -> IDLECONF7R {
-        IDLECONF7R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn idleconf7(&self) -> IDLECONF7_R {
+        IDLECONF7_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bit 16 - ALTEX0 Always Excite Enable"]
-    #[inline]
-    pub fn aex0(&self) -> AEX0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX0R { bits }
+    #[inline(always)]
+    pub fn aex0(&self) -> AEX0_R {
+        AEX0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - ALTEX1 Always Excite Enable"]
-    #[inline]
-    pub fn aex1(&self) -> AEX1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX1R { bits }
+    #[inline(always)]
+    pub fn aex1(&self) -> AEX1_R {
+        AEX1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - ALTEX2 Always Excite Enable"]
-    #[inline]
-    pub fn aex2(&self) -> AEX2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX2R { bits }
+    #[inline(always)]
+    pub fn aex2(&self) -> AEX2_R {
+        AEX2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - ALTEX3 Always Excite Enable"]
-    #[inline]
-    pub fn aex3(&self) -> AEX3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX3R { bits }
+    #[inline(always)]
+    pub fn aex3(&self) -> AEX3_R {
+        AEX3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - ALTEX4 Always Excite Enable"]
-    #[inline]
-    pub fn aex4(&self) -> AEX4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX4R { bits }
+    #[inline(always)]
+    pub fn aex4(&self) -> AEX4_R {
+        AEX4_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - ALTEX5 Always Excite Enable"]
-    #[inline]
-    pub fn aex5(&self) -> AEX5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX5R { bits }
+    #[inline(always)]
+    pub fn aex5(&self) -> AEX5_R {
+        AEX5_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - ALTEX6 Always Excite Enable"]
-    #[inline]
-    pub fn aex6(&self) -> AEX6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX6R { bits }
+    #[inline(always)]
+    pub fn aex6(&self) -> AEX6_R {
+        AEX6_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - ALTEX7 Always Excite Enable"]
-    #[inline]
-    pub fn aex7(&self) -> AEX7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AEX7R { bits }
+    #[inline(always)]
+    pub fn aex7(&self) -> AEX7_R {
+        AEX7_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - ALTEX0 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf0(&mut self) -> _IDLECONF0W {
-        _IDLECONF0W { w: self }
+    #[inline(always)]
+    pub fn idleconf0(&mut self) -> IDLECONF0_W {
+        IDLECONF0_W { w: self }
     }
     #[doc = "Bits 2:3 - ALTEX1 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf1(&mut self) -> _IDLECONF1W {
-        _IDLECONF1W { w: self }
+    #[inline(always)]
+    pub fn idleconf1(&mut self) -> IDLECONF1_W {
+        IDLECONF1_W { w: self }
     }
     #[doc = "Bits 4:5 - ALTEX2 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf2(&mut self) -> _IDLECONF2W {
-        _IDLECONF2W { w: self }
+    #[inline(always)]
+    pub fn idleconf2(&mut self) -> IDLECONF2_W {
+        IDLECONF2_W { w: self }
     }
     #[doc = "Bits 6:7 - ALTEX3 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf3(&mut self) -> _IDLECONF3W {
-        _IDLECONF3W { w: self }
+    #[inline(always)]
+    pub fn idleconf3(&mut self) -> IDLECONF3_W {
+        IDLECONF3_W { w: self }
     }
     #[doc = "Bits 8:9 - ALTEX4 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf4(&mut self) -> _IDLECONF4W {
-        _IDLECONF4W { w: self }
+    #[inline(always)]
+    pub fn idleconf4(&mut self) -> IDLECONF4_W {
+        IDLECONF4_W { w: self }
     }
     #[doc = "Bits 10:11 - ALTEX5 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf5(&mut self) -> _IDLECONF5W {
-        _IDLECONF5W { w: self }
+    #[inline(always)]
+    pub fn idleconf5(&mut self) -> IDLECONF5_W {
+        IDLECONF5_W { w: self }
     }
     #[doc = "Bits 12:13 - ALTEX6 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf6(&mut self) -> _IDLECONF6W {
-        _IDLECONF6W { w: self }
+    #[inline(always)]
+    pub fn idleconf6(&mut self) -> IDLECONF6_W {
+        IDLECONF6_W { w: self }
     }
     #[doc = "Bits 14:15 - ALTEX7 Idle Phase Configuration"]
-    #[inline]
-    pub fn idleconf7(&mut self) -> _IDLECONF7W {
-        _IDLECONF7W { w: self }
+    #[inline(always)]
+    pub fn idleconf7(&mut self) -> IDLECONF7_W {
+        IDLECONF7_W { w: self }
     }
     #[doc = "Bit 16 - ALTEX0 Always Excite Enable"]
-    #[inline]
-    pub fn aex0(&mut self) -> _AEX0W {
-        _AEX0W { w: self }
+    #[inline(always)]
+    pub fn aex0(&mut self) -> AEX0_W {
+        AEX0_W { w: self }
     }
     #[doc = "Bit 17 - ALTEX1 Always Excite Enable"]
-    #[inline]
-    pub fn aex1(&mut self) -> _AEX1W {
-        _AEX1W { w: self }
+    #[inline(always)]
+    pub fn aex1(&mut self) -> AEX1_W {
+        AEX1_W { w: self }
     }
     #[doc = "Bit 18 - ALTEX2 Always Excite Enable"]
-    #[inline]
-    pub fn aex2(&mut self) -> _AEX2W {
-        _AEX2W { w: self }
+    #[inline(always)]
+    pub fn aex2(&mut self) -> AEX2_W {
+        AEX2_W { w: self }
     }
     #[doc = "Bit 19 - ALTEX3 Always Excite Enable"]
-    #[inline]
-    pub fn aex3(&mut self) -> _AEX3W {
-        _AEX3W { w: self }
+    #[inline(always)]
+    pub fn aex3(&mut self) -> AEX3_W {
+        AEX3_W { w: self }
     }
     #[doc = "Bit 20 - ALTEX4 Always Excite Enable"]
-    #[inline]
-    pub fn aex4(&mut self) -> _AEX4W {
-        _AEX4W { w: self }
+    #[inline(always)]
+    pub fn aex4(&mut self) -> AEX4_W {
+        AEX4_W { w: self }
     }
     #[doc = "Bit 21 - ALTEX5 Always Excite Enable"]
-    #[inline]
-    pub fn aex5(&mut self) -> _AEX5W {
-        _AEX5W { w: self }
+    #[inline(always)]
+    pub fn aex5(&mut self) -> AEX5_W {
+        AEX5_W { w: self }
     }
     #[doc = "Bit 22 - ALTEX6 Always Excite Enable"]
-    #[inline]
-    pub fn aex6(&mut self) -> _AEX6W {
-        _AEX6W { w: self }
+    #[inline(always)]
+    pub fn aex6(&mut self) -> AEX6_W {
+        AEX6_W { w: self }
     }
     #[doc = "Bit 23 - ALTEX7 Always Excite Enable"]
-    #[inline]
-    pub fn aex7(&mut self) -> _AEX7W {
-        _AEX7W { w: self }
+    #[inline(always)]
+    pub fn aex7(&mut self) -> AEX7_W {
+        AEX7_W { w: self }
     }
 }

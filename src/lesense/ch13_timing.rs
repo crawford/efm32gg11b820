@@ -1,185 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CH13_TIMING {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH13_TIMING"]
+pub type R = crate::R<u32, super::CH13_TIMING>;
+#[doc = "Writer for register CH13_TIMING"]
+pub type W = crate::W<u32, super::CH13_TIMING>;
+#[doc = "Register CH13_TIMING `reset()`'s with value 0"]
+impl crate::ResetValue for super::CH13_TIMING {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct EXTIMER {
-    bits: u8,
-}
-impl EXTIMER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SAMPLEDLYR {
-    bits: u8,
-}
-impl SAMPLEDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MEASUREDLYR {
-    bits: u16,
-}
-impl MEASUREDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIMEW<'a> {
+#[doc = "Reader of field `EXTIME`"]
+pub type EXTIME_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTIME`"]
+pub struct EXTIME_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTIMEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTIME_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SAMPLEDLYW<'a> {
+#[doc = "Reader of field `SAMPLEDLY`"]
+pub type SAMPLEDLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SAMPLEDLY`"]
+pub struct SAMPLEDLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SAMPLEDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SAMPLEDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 6)) | (((value as u32) & 0xff) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MEASUREDLYW<'a> {
+#[doc = "Reader of field `MEASUREDLY`"]
+pub type MEASUREDLY_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `MEASUREDLY`"]
+pub struct MEASUREDLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MEASUREDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MEASUREDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03ff << 14)) | (((value as u32) & 0x03ff) << 14);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Set Excitation Time"]
-    #[inline]
-    pub fn extime(&self) -> EXTIMER {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTIMER { bits }
+    #[inline(always)]
+    pub fn extime(&self) -> EXTIME_R {
+        EXTIME_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 6:13 - Set Sample Delay"]
-    #[inline]
-    pub fn sampledly(&self) -> SAMPLEDLYR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SAMPLEDLYR { bits }
+    #[inline(always)]
+    pub fn sampledly(&self) -> SAMPLEDLY_R {
+        SAMPLEDLY_R::new(((self.bits >> 6) & 0xff) as u8)
     }
     #[doc = "Bits 14:23 - Set Measure Delay"]
-    #[inline]
-    pub fn measuredly(&self) -> MEASUREDLYR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        MEASUREDLYR { bits }
+    #[inline(always)]
+    pub fn measuredly(&self) -> MEASUREDLY_R {
+        MEASUREDLY_R::new(((self.bits >> 14) & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Set Excitation Time"]
-    #[inline]
-    pub fn extime(&mut self) -> _EXTIMEW {
-        _EXTIMEW { w: self }
+    #[inline(always)]
+    pub fn extime(&mut self) -> EXTIME_W {
+        EXTIME_W { w: self }
     }
     #[doc = "Bits 6:13 - Set Sample Delay"]
-    #[inline]
-    pub fn sampledly(&mut self) -> _SAMPLEDLYW {
-        _SAMPLEDLYW { w: self }
+    #[inline(always)]
+    pub fn sampledly(&mut self) -> SAMPLEDLY_W {
+        SAMPLEDLY_W { w: self }
     }
     #[doc = "Bits 14:23 - Set Measure Delay"]
-    #[inline]
-    pub fn measuredly(&mut self) -> _MEASUREDLYW {
-        _MEASUREDLYW { w: self }
+    #[inline(always)]
+    pub fn measuredly(&mut self) -> MEASUREDLY_W {
+        MEASUREDLY_W { w: self }
     }
 }

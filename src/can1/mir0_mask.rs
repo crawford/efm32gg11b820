@@ -1,221 +1,108 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MIR0_MASK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MIR0_MASK"]
+pub type R = crate::R<u32, super::MIR0_MASK>;
+#[doc = "Writer for register MIR0_MASK"]
+pub type W = crate::W<u32, super::MIR0_MASK>;
+#[doc = "Register MIR0_MASK `reset()`'s with value 0xdfff_ffff"]
+impl crate::ResetValue for super::MIR0_MASK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xdfff_ffff
     }
 }
-#[doc = r" Value of the field"]
-pub struct MASKR {
-    bits: u32,
-}
-impl MASKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MDIRR {
-    bits: bool,
-}
-impl MDIRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MXTDR {
-    bits: bool,
-}
-impl MXTDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MASKW<'a> {
+#[doc = "Reader of field `MASK`"]
+pub type MASK_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `MASK`"]
+pub struct MASK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MASKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MASK_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 536870911;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1fff_ffff) | ((value as u32) & 0x1fff_ffff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDIRW<'a> {
+#[doc = "Reader of field `MDIR`"]
+pub type MDIR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MDIR`"]
+pub struct MDIR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDIRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MDIR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MXTDW<'a> {
+#[doc = "Reader of field `MXTD`"]
+pub type MXTD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MXTD`"]
+pub struct MXTD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MXTDW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MXTD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:28 - Identifier Mask"]
-    #[inline]
-    pub fn mask(&self) -> MASKR {
-        let bits = {
-            const MASK: u32 = 536870911;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        MASKR { bits }
+    #[inline(always)]
+    pub fn mask(&self) -> MASK_R {
+        MASK_R::new((self.bits & 0x1fff_ffff) as u32)
     }
     #[doc = "Bit 30 - Mask Message Direction"]
-    #[inline]
-    pub fn mdir(&self) -> MDIRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MDIRR { bits }
+    #[inline(always)]
+    pub fn mdir(&self) -> MDIR_R {
+        MDIR_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Mask Extended Identifier"]
-    #[inline]
-    pub fn mxtd(&self) -> MXTDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MXTDR { bits }
+    #[inline(always)]
+    pub fn mxtd(&self) -> MXTD_R {
+        MXTD_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3758096383 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:28 - Identifier Mask"]
-    #[inline]
-    pub fn mask(&mut self) -> _MASKW {
-        _MASKW { w: self }
+    #[inline(always)]
+    pub fn mask(&mut self) -> MASK_W {
+        MASK_W { w: self }
     }
     #[doc = "Bit 30 - Mask Message Direction"]
-    #[inline]
-    pub fn mdir(&mut self) -> _MDIRW {
-        _MDIRW { w: self }
+    #[inline(always)]
+    pub fn mdir(&mut self) -> MDIR_W {
+        MDIR_W { w: self }
     }
     #[doc = "Bit 31 - Mask Extended Identifier"]
-    #[inline]
-    pub fn mxtd(&mut self) -> _MXTDW {
-        _MXTDW { w: self }
+    #[inline(always)]
+    pub fn mxtd(&mut self) -> MXTD_W {
+        MXTD_W { w: self }
     }
 }

@@ -1,221 +1,108 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEQCTRLB {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SEQCTRLB"]
+pub type R = crate::R<u32, super::SEQCTRLB>;
+#[doc = "Writer for register SEQCTRLB"]
+pub type W = crate::W<u32, super::SEQCTRLB>;
+#[doc = "Register SEQCTRLB `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEQCTRLB {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LENGTHBR {
-    bits: u16,
-}
-impl LENGTHBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMA0PRESBR {
-    bits: bool,
-}
-impl DMA0PRESBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMA1PRESBR {
-    bits: bool,
-}
-impl DMA1PRESBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LENGTHBW<'a> {
+#[doc = "Reader of field `LENGTHB`"]
+pub type LENGTHB_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `LENGTHB`"]
+pub struct LENGTHB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LENGTHBW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> LENGTHB_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 16383;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3fff) | ((value as u32) & 0x3fff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA0PRESBW<'a> {
+#[doc = "Reader of field `DMA0PRESB`"]
+pub type DMA0PRESB_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMA0PRESB`"]
+pub struct DMA0PRESB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA0PRESBW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMA0PRESB_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA1PRESBW<'a> {
+#[doc = "Reader of field `DMA1PRESB`"]
+pub type DMA1PRESB_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMA1PRESB`"]
+pub struct DMA1PRESB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA1PRESBW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMA1PRESB_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
-    #[inline]
-    pub fn lengthb(&self) -> LENGTHBR {
-        let bits = {
-            const MASK: u16 = 16383;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        LENGTHBR { bits }
+    #[inline(always)]
+    pub fn lengthb(&self) -> LENGTHB_R {
+        LENGTHB_R::new((self.bits & 0x3fff) as u16)
     }
     #[doc = "Bit 28 - DMA0 Preserve B"]
-    #[inline]
-    pub fn dma0presb(&self) -> DMA0PRESBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMA0PRESBR { bits }
+    #[inline(always)]
+    pub fn dma0presb(&self) -> DMA0PRESB_R {
+        DMA0PRESB_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - DMA1 Preserve B"]
-    #[inline]
-    pub fn dma1presb(&self) -> DMA1PRESBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMA1PRESBR { bits }
+    #[inline(always)]
+    pub fn dma1presb(&self) -> DMA1PRESB_R {
+        DMA1PRESB_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
-    #[inline]
-    pub fn lengthb(&mut self) -> _LENGTHBW {
-        _LENGTHBW { w: self }
+    #[inline(always)]
+    pub fn lengthb(&mut self) -> LENGTHB_W {
+        LENGTHB_W { w: self }
     }
     #[doc = "Bit 28 - DMA0 Preserve B"]
-    #[inline]
-    pub fn dma0presb(&mut self) -> _DMA0PRESBW {
-        _DMA0PRESBW { w: self }
+    #[inline(always)]
+    pub fn dma0presb(&mut self) -> DMA0PRESB_W {
+        DMA0PRESB_W { w: self }
     }
     #[doc = "Bit 29 - DMA1 Preserve B"]
-    #[inline]
-    pub fn dma1presb(&mut self) -> _DMA1PRESBW {
-        _DMA1PRESBW { w: self }
+    #[inline(always)]
+    pub fn dma1presb(&mut self) -> DMA1PRESB_W {
+        DMA1PRESB_W { w: self }
     }
 }

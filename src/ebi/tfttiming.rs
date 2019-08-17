@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TFTTIMING {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TFTTIMING"]
+pub type R = crate::R<u32, super::TFTTIMING>;
+#[doc = "Writer for register TFTTIMING"]
+pub type W = crate::W<u32, super::TFTTIMING>;
+#[doc = "Register TFTTIMING `reset()`'s with value 0"]
+impl crate::ResetValue for super::TFTTIMING {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DCLKPERIODR {
-    bits: u16,
-}
-impl DCLKPERIODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTSTARTR {
-    bits: u16,
-}
-impl TFTSTARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTSETUPR {
-    bits: u8,
-}
-impl TFTSETUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTHOLDR {
-    bits: u8,
-}
-impl TFTHOLDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DCLKPERIODW<'a> {
+#[doc = "Reader of field `DCLKPERIOD`"]
+pub type DCLKPERIOD_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `DCLKPERIOD`"]
+pub struct DCLKPERIOD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DCLKPERIODW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DCLKPERIOD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TFTSTARTW<'a> {
+#[doc = "Reader of field `TFTSTART`"]
+pub type TFTSTART_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `TFTSTART`"]
+pub struct TFTSTART_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TFTSTARTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TFTSTART_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0fff << 12)) | (((value as u32) & 0x0fff) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TFTSETUPW<'a> {
+#[doc = "Reader of field `TFTSETUP`"]
+pub type TFTSETUP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TFTSETUP`"]
+pub struct TFTSETUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TFTSETUPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TFTSETUP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TFTHOLDW<'a> {
+#[doc = "Reader of field `TFTHOLD`"]
+pub type TFTHOLD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TFTHOLD`"]
+pub struct TFTHOLD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TFTHOLDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TFTHOLD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:11 - TFT Direct Drive Transaction (EBI_DCLK) Period"]
-    #[inline]
-    pub fn dclkperiod(&self) -> DCLKPERIODR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DCLKPERIODR { bits }
+    #[inline(always)]
+    pub fn dclkperiod(&self) -> DCLKPERIOD_R {
+        DCLKPERIOD_R::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bits 12:23 - TFT Direct Drive Transaction Start"]
-    #[inline]
-    pub fn tftstart(&self) -> TFTSTARTR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        TFTSTARTR { bits }
+    #[inline(always)]
+    pub fn tftstart(&self) -> TFTSTART_R {
+        TFTSTART_R::new(((self.bits >> 12) & 0x0fff) as u16)
     }
     #[doc = "Bits 24:26 - TFT Setup Time"]
-    #[inline]
-    pub fn tftsetup(&self) -> TFTSETUPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TFTSETUPR { bits }
+    #[inline(always)]
+    pub fn tftsetup(&self) -> TFTSETUP_R {
+        TFTSETUP_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bits 28:30 - TFT Hold Time"]
-    #[inline]
-    pub fn tfthold(&self) -> TFTHOLDR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TFTHOLDR { bits }
+    #[inline(always)]
+    pub fn tfthold(&self) -> TFTHOLD_R {
+        TFTHOLD_R::new(((self.bits >> 28) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:11 - TFT Direct Drive Transaction (EBI_DCLK) Period"]
-    #[inline]
-    pub fn dclkperiod(&mut self) -> _DCLKPERIODW {
-        _DCLKPERIODW { w: self }
+    #[inline(always)]
+    pub fn dclkperiod(&mut self) -> DCLKPERIOD_W {
+        DCLKPERIOD_W { w: self }
     }
     #[doc = "Bits 12:23 - TFT Direct Drive Transaction Start"]
-    #[inline]
-    pub fn tftstart(&mut self) -> _TFTSTARTW {
-        _TFTSTARTW { w: self }
+    #[inline(always)]
+    pub fn tftstart(&mut self) -> TFTSTART_W {
+        TFTSTART_W { w: self }
     }
     #[doc = "Bits 24:26 - TFT Setup Time"]
-    #[inline]
-    pub fn tftsetup(&mut self) -> _TFTSETUPW {
-        _TFTSETUPW { w: self }
+    #[inline(always)]
+    pub fn tftsetup(&mut self) -> TFTSETUP_W {
+        TFTSETUP_W { w: self }
     }
     #[doc = "Bits 28:30 - TFT Hold Time"]
-    #[inline]
-    pub fn tfthold(&mut self) -> _TFTHOLDW {
-        _TFTHOLDW { w: self }
+    #[inline(always)]
+    pub fn tfthold(&mut self) -> TFTHOLD_W {
+        TFTHOLD_W { w: self }
     }
 }

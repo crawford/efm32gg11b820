@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF0IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MESSAGER {
-    bits: u32,
-}
-impl MESSAGER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register IF0IF"]
+pub type R = crate::R<u32, super::IF0IF>;
+#[doc = "Reader of field `MESSAGE`"]
+pub type MESSAGE_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Message Object Interrupt Flag"]
-    #[inline]
-    pub fn message(&self) -> MESSAGER {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        MESSAGER { bits }
+    #[inline(always)]
+    pub fn message(&self) -> MESSAGE_R {
+        MESSAGE_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

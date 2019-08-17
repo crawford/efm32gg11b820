@@ -1,113 +1,93 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CMD {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CMD"]
+pub type W = crate::W<u32, super::CMD>;
+#[doc = "Register CMD `reset()`'s with value 0"]
+impl crate::ResetValue for super::CMD {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECCSTARTW<'a> {
+#[doc = "Write proxy for field `ECCSTART`"]
+pub struct ECCSTART_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECCSTARTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ECCSTART_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECCSTOPW<'a> {
+#[doc = "Write proxy for field `ECCSTOP`"]
+pub struct ECCSTOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECCSTOPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ECCSTOP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECCCLEARW<'a> {
+#[doc = "Write proxy for field `ECCCLEAR`"]
+pub struct ECCCLEAR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECCCLEARW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ECCCLEAR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Error Correction Code Generation Start"]
-    #[inline]
-    pub fn eccstart(&mut self) -> _ECCSTARTW {
-        _ECCSTARTW { w: self }
+    #[inline(always)]
+    pub fn eccstart(&mut self) -> ECCSTART_W {
+        ECCSTART_W { w: self }
     }
     #[doc = "Bit 1 - Error Correction Code Generation Stop"]
-    #[inline]
-    pub fn eccstop(&mut self) -> _ECCSTOPW {
-        _ECCSTOPW { w: self }
+    #[inline(always)]
+    pub fn eccstop(&mut self) -> ECCSTOP_W {
+        ECCSTOP_W { w: self }
     }
     #[doc = "Bit 2 - Error Correction Code Clear"]
-    #[inline]
-    pub fn eccclear(&mut self) -> _ECCCLEARW {
-        _ECCCLEARW { w: self }
+    #[inline(always)]
+    pub fn eccclear(&mut self) -> ECCCLEAR_W {
+        ECCCLEAR_W { w: self }
     }
 }

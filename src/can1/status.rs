@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Writer for register STATUS"]
+pub type W = crate::W<u32, super::STATUS>;
+#[doc = "Register STATUS `reset()`'s with value 0"]
+impl crate::ResetValue for super::STATUS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `LEC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LECR {
+pub enum LEC_A {
     #[doc = " No error occurred during last CAN bus event."]
     NONE,
     #[doc = "More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
@@ -60,418 +30,240 @@ pub enum LECR {
     #[doc = "When the LEC shows the value '7', no CAN bus event was detected since the CPU wrote this value to the LEC."]
     UNUSED,
 }
-impl LECR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LEC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LECR::NONE => 0,
-            LECR::STUFF => 1,
-            LECR::FORM => 2,
-            LECR::ACK => 3,
-            LECR::BIT1 => 4,
-            LECR::BIT0 => 5,
-            LECR::CRC => 6,
-            LECR::UNUSED => 7,
+            LEC_A::NONE => 0,
+            LEC_A::STUFF => 1,
+            LEC_A::FORM => 2,
+            LEC_A::ACK => 3,
+            LEC_A::BIT1 => 4,
+            LEC_A::BIT0 => 5,
+            LEC_A::CRC => 6,
+            LEC_A::UNUSED => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LECR {
-        match value {
-            0 => LECR::NONE,
-            1 => LECR::STUFF,
-            2 => LECR::FORM,
-            3 => LECR::ACK,
-            4 => LECR::BIT1,
-            5 => LECR::BIT0,
-            6 => LECR::CRC,
-            7 => LECR::UNUSED,
+}
+#[doc = "Reader of field `LEC`"]
+pub type LEC_R = crate::R<u8, LEC_A>;
+impl LEC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LEC_A {
+        match self.bits {
+            0 => LEC_A::NONE,
+            1 => LEC_A::STUFF,
+            2 => LEC_A::FORM,
+            3 => LEC_A::ACK,
+            4 => LEC_A::BIT1,
+            5 => LEC_A::BIT0,
+            6 => LEC_A::CRC,
+            7 => LEC_A::UNUSED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == LECR::NONE
+        *self == LEC_A::NONE
     }
     #[doc = "Checks if the value of the field is `STUFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_stuff(&self) -> bool {
-        *self == LECR::STUFF
+        *self == LEC_A::STUFF
     }
     #[doc = "Checks if the value of the field is `FORM`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_form(&self) -> bool {
-        *self == LECR::FORM
+        *self == LEC_A::FORM
     }
     #[doc = "Checks if the value of the field is `ACK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ack(&self) -> bool {
-        *self == LECR::ACK
+        *self == LEC_A::ACK
     }
     #[doc = "Checks if the value of the field is `BIT1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bit1(&self) -> bool {
-        *self == LECR::BIT1
+        *self == LEC_A::BIT1
     }
     #[doc = "Checks if the value of the field is `BIT0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bit0(&self) -> bool {
-        *self == LECR::BIT0
+        *self == LEC_A::BIT0
     }
     #[doc = "Checks if the value of the field is `CRC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crc(&self) -> bool {
-        *self == LECR::CRC
+        *self == LEC_A::CRC
     }
     #[doc = "Checks if the value of the field is `UNUSED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unused(&self) -> bool {
-        *self == LECR::UNUSED
+        *self == LEC_A::UNUSED
     }
 }
-#[doc = r" Value of the field"]
-pub struct TXOKR {
-    bits: bool,
-}
-impl TXOKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXOKR {
-    bits: bool,
-}
-impl RXOKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EPASSR {
-    bits: bool,
-}
-impl EPASSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EWARNR {
-    bits: bool,
-}
-impl EWARNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BOFFR {
-    bits: bool,
-}
-impl BOFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `LEC`"]
-pub enum LECW {
-    #[doc = " No error occurred during last CAN bus event."]
-    NONE,
-    #[doc = "More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
-    STUFF,
-    #[doc = "A fixed format part of a received frame has the wrong format."]
-    FORM,
-    #[doc = "The message this CAN Core transmitted was not acknowledged by another node."]
-    ACK,
-    #[doc = "During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant."]
-    BIT1,
-    #[doc = "During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored Bus value was recessive. During Bus Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed)."]
-    BIT0,
-    #[doc = "The CRC check sum was incorrect in the message received; the CRC received for an incoming message does not match with the calculated CRC for the received data."]
-    CRC,
-    #[doc = "When the LEC shows the value '7', no CAN bus event was detected since the CPU wrote this value to the LEC."]
-    UNUSED,
-}
-impl LECW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LECW::NONE => 0,
-            LECW::STUFF => 1,
-            LECW::FORM => 2,
-            LECW::ACK => 3,
-            LECW::BIT1 => 4,
-            LECW::BIT0 => 5,
-            LECW::CRC => 6,
-            LECW::UNUSED => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LECW<'a> {
+#[doc = "Write proxy for field `LEC`"]
+pub struct LEC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LECW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LECW) -> &'a mut W {
+impl<'a> LEC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LEC_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "No error occurred during last CAN bus event."]
-    #[inline]
+    #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(LECW::NONE)
+        self.variant(LEC_A::NONE)
     }
     #[doc = "More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn stuff(self) -> &'a mut W {
-        self.variant(LECW::STUFF)
+        self.variant(LEC_A::STUFF)
     }
     #[doc = "A fixed format part of a received frame has the wrong format."]
-    #[inline]
+    #[inline(always)]
     pub fn form(self) -> &'a mut W {
-        self.variant(LECW::FORM)
+        self.variant(LEC_A::FORM)
     }
     #[doc = "The message this CAN Core transmitted was not acknowledged by another node."]
-    #[inline]
+    #[inline(always)]
     pub fn ack(self) -> &'a mut W {
-        self.variant(LECW::ACK)
+        self.variant(LEC_A::ACK)
     }
     #[doc = "During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant."]
-    #[inline]
+    #[inline(always)]
     pub fn bit1(self) -> &'a mut W {
-        self.variant(LECW::BIT1)
+        self.variant(LEC_A::BIT1)
     }
     #[doc = "During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored Bus value was recessive. During Bus Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed)."]
-    #[inline]
+    #[inline(always)]
     pub fn bit0(self) -> &'a mut W {
-        self.variant(LECW::BIT0)
+        self.variant(LEC_A::BIT0)
     }
     #[doc = "The CRC check sum was incorrect in the message received; the CRC received for an incoming message does not match with the calculated CRC for the received data."]
-    #[inline]
+    #[inline(always)]
     pub fn crc(self) -> &'a mut W {
-        self.variant(LECW::CRC)
+        self.variant(LEC_A::CRC)
     }
     #[doc = "When the LEC shows the value '7', no CAN bus event was detected since the CPU wrote this value to the LEC."]
-    #[inline]
+    #[inline(always)]
     pub fn unused(self) -> &'a mut W {
-        self.variant(LECW::UNUSED)
+        self.variant(LEC_A::UNUSED)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXOKW<'a> {
+#[doc = "Reader of field `TXOK`"]
+pub type TXOK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXOK`"]
+pub struct TXOK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXOKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXOK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXOKW<'a> {
+#[doc = "Reader of field `RXOK`"]
+pub type RXOK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RXOK`"]
+pub struct RXOK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXOKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RXOK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
+#[doc = "Reader of field `EPASS`"]
+pub type EPASS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EWARN`"]
+pub type EWARN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BOFF`"]
+pub type BOFF_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Last Error Code"]
-    #[inline]
-    pub fn lec(&self) -> LECR {
-        LECR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lec(&self) -> LEC_R {
+        LEC_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 3 - Transmitted a Message Successfully"]
-    #[inline]
-    pub fn txok(&self) -> TXOKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXOKR { bits }
+    #[inline(always)]
+    pub fn txok(&self) -> TXOK_R {
+        TXOK_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Received a Message Successfully"]
-    #[inline]
-    pub fn rxok(&self) -> RXOKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXOKR { bits }
+    #[inline(always)]
+    pub fn rxok(&self) -> RXOK_R {
+        RXOK_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Error Passive"]
-    #[inline]
-    pub fn epass(&self) -> EPASSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EPASSR { bits }
+    #[inline(always)]
+    pub fn epass(&self) -> EPASS_R {
+        EPASS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Warning Status"]
-    #[inline]
-    pub fn ewarn(&self) -> EWARNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EWARNR { bits }
+    #[inline(always)]
+    pub fn ewarn(&self) -> EWARN_R {
+        EWARN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Bus Off Status"]
-    #[inline]
-    pub fn boff(&self) -> BOFFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BOFFR { bits }
+    #[inline(always)]
+    pub fn boff(&self) -> BOFF_R {
+        BOFF_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Last Error Code"]
-    #[inline]
-    pub fn lec(&mut self) -> _LECW {
-        _LECW { w: self }
+    #[inline(always)]
+    pub fn lec(&mut self) -> LEC_W {
+        LEC_W { w: self }
     }
     #[doc = "Bit 3 - Transmitted a Message Successfully"]
-    #[inline]
-    pub fn txok(&mut self) -> _TXOKW {
-        _TXOKW { w: self }
+    #[inline(always)]
+    pub fn txok(&mut self) -> TXOK_W {
+        TXOK_W { w: self }
     }
     #[doc = "Bit 4 - Received a Message Successfully"]
-    #[inline]
-    pub fn rxok(&mut self) -> _RXOKW {
-        _RXOKW { w: self }
+    #[inline(always)]
+    pub fn rxok(&mut self) -> RXOK_W {
+        RXOK_W { w: self }
     }
 }

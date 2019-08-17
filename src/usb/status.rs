@@ -1,297 +1,67 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VBUSDETHR {
-    bits: bool,
-}
-impl VBUSDETHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LEMACTIVER {
-    bits: bool,
-}
-impl LEMACTIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCDTOR {
-    bits: bool,
-}
-impl DCDTOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDPR {
-    bits: bool,
-}
-impl SDPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CDPR {
-    bits: bool,
-}
-impl CDPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCPR {
-    bits: bool,
-}
-impl DCPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ACAFSR {
-    bits: bool,
-}
-impl ACAFSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ACALSR {
-    bits: bool,
-}
-impl ACALSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USBCDBUSYR {
-    bits: bool,
-}
-impl USBCDBUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `VBUSDETH`"]
+pub type VBUSDETH_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LEMACTIVE`"]
+pub type LEMACTIVE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DCDTO`"]
+pub type DCDTO_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SDP`"]
+pub type SDP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CDP`"]
+pub type CDP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DCP`"]
+pub type DCP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ACAFS`"]
+pub type ACAFS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ACALS`"]
+pub type ACALS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `USBCDBUSY`"]
+pub type USBCDBUSY_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VBUS Detect High"]
-    #[inline]
-    pub fn vbusdeth(&self) -> VBUSDETHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VBUSDETHR { bits }
+    #[inline(always)]
+    pub fn vbusdeth(&self) -> VBUSDETH_R {
+        VBUSDETH_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Low Energy Mode Active"]
-    #[inline]
-    pub fn lemactive(&self) -> LEMACTIVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LEMACTIVER { bits }
+    #[inline(always)]
+    pub fn lemactive(&self) -> LEMACTIVE_R {
+        LEMACTIVE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Data Contact Detection Timeout"]
-    #[inline]
-    pub fn dcdto(&self) -> DCDTOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDTOR { bits }
+    #[inline(always)]
+    pub fn dcdto(&self) -> DCDTO_R {
+        DCDTO_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Standard Downstream Port Detected"]
-    #[inline]
-    pub fn sdp(&self) -> SDPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDPR { bits }
+    #[inline(always)]
+    pub fn sdp(&self) -> SDP_R {
+        SDP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Charging Downstream Port Detected"]
-    #[inline]
-    pub fn cdp(&self) -> CDPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CDPR { bits }
+    #[inline(always)]
+    pub fn cdp(&self) -> CDP_R {
+        CDP_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Dedicated Charging Port Detected"]
-    #[inline]
-    pub fn dcp(&self) -> DCPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCPR { bits }
+    #[inline(always)]
+    pub fn dcp(&self) -> DCP_R {
+        DCP_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - ACA Full Speed TypeB Device"]
-    #[inline]
-    pub fn acafs(&self) -> ACAFSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ACAFSR { bits }
+    #[inline(always)]
+    pub fn acafs(&self) -> ACAFS_R {
+        ACAFS_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - ACA Low Speed TypeB Device"]
-    #[inline]
-    pub fn acals(&self) -> ACALSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ACALSR { bits }
+    #[inline(always)]
+    pub fn acals(&self) -> ACALS_R {
+        ACALS_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 15 - USB Charger Detect Busy"]
-    #[inline]
-    pub fn usbcdbusy(&self) -> USBCDBUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USBCDBUSYR { bits }
+    #[inline(always)]
+    pub fn usbcdbusy(&self) -> USBCDBUSY_R {
+        USBCDBUSY_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }

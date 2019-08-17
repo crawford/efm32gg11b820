@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SCANFIFOCOUNT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANDCR {
-    bits: u8,
-}
-impl SCANDCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register SCANFIFOCOUNT"]
+pub type R = crate::R<u32, super::SCANFIFOCOUNT>;
+#[doc = "Reader of field `SCANDC`"]
+pub type SCANDC_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Scan Data Count"]
-    #[inline]
-    pub fn scandc(&self) -> SCANDCR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SCANDCR { bits }
+    #[inline(always)]
+    pub fn scandc(&self) -> SCANDC_R {
+        SCANDC_R::new((self.bits & 0x07) as u8)
     }
 }

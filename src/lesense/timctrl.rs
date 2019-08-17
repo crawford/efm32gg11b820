@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TIMCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TIMCTRL"]
+pub type R = crate::R<u32, super::TIMCTRL>;
+#[doc = "Writer for register TIMCTRL"]
+pub type W = crate::W<u32, super::TIMCTRL>;
+#[doc = "Register TIMCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::TIMCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `AUXPRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AUXPRESCR {
+pub enum AUXPRESC_A {
     #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
     DIV1,
     #[doc = "High frequency timer is clocked with AUXHFRCO/2"]
@@ -52,53 +22,95 @@ pub enum AUXPRESCR {
     #[doc = "High frequency timer is clocked with AUXHFRCO/8"]
     DIV8,
 }
-impl AUXPRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for AUXPRESC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            AUXPRESCR::DIV1 => 0,
-            AUXPRESCR::DIV2 => 1,
-            AUXPRESCR::DIV4 => 2,
-            AUXPRESCR::DIV8 => 3,
+            AUXPRESC_A::DIV1 => 0,
+            AUXPRESC_A::DIV2 => 1,
+            AUXPRESC_A::DIV4 => 2,
+            AUXPRESC_A::DIV8 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> AUXPRESCR {
-        match value {
-            0 => AUXPRESCR::DIV1,
-            1 => AUXPRESCR::DIV2,
-            2 => AUXPRESCR::DIV4,
-            3 => AUXPRESCR::DIV8,
+}
+#[doc = "Reader of field `AUXPRESC`"]
+pub type AUXPRESC_R = crate::R<u8, AUXPRESC_A>;
+impl AUXPRESC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AUXPRESC_A {
+        match self.bits {
+            0 => AUXPRESC_A::DIV1,
+            1 => AUXPRESC_A::DIV2,
+            2 => AUXPRESC_A::DIV4,
+            3 => AUXPRESC_A::DIV8,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == AUXPRESCR::DIV1
+        *self == AUXPRESC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == AUXPRESCR::DIV2
+        *self == AUXPRESC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == AUXPRESCR::DIV4
+        *self == AUXPRESC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == AUXPRESCR::DIV8
+        *self == AUXPRESC_A::DIV8
+    }
+}
+#[doc = "Write proxy for field `AUXPRESC`"]
+pub struct AUXPRESC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AUXPRESC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AUXPRESC_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(AUXPRESC_A::DIV1)
+    }
+    #[doc = "High frequency timer is clocked with AUXHFRCO/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(AUXPRESC_A::DIV2)
+    }
+    #[doc = "High frequency timer is clocked with AUXHFRCO/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(AUXPRESC_A::DIV4)
+    }
+    #[doc = "High frequency timer is clocked with AUXHFRCO/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(AUXPRESC_A::DIV8)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LFPRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LFPRESCR {
+pub enum LFPRESC_A {
     #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
     DIV1,
     #[doc = "Low frequency timer is clocked with LFACLKLESENSE/2"]
@@ -116,81 +128,143 @@ pub enum LFPRESCR {
     #[doc = "Low frequency timer is clocked with LFACLKLESENSE/128"]
     DIV128,
 }
-impl LFPRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LFPRESC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LFPRESCR::DIV1 => 0,
-            LFPRESCR::DIV2 => 1,
-            LFPRESCR::DIV4 => 2,
-            LFPRESCR::DIV8 => 3,
-            LFPRESCR::DIV16 => 4,
-            LFPRESCR::DIV32 => 5,
-            LFPRESCR::DIV64 => 6,
-            LFPRESCR::DIV128 => 7,
+            LFPRESC_A::DIV1 => 0,
+            LFPRESC_A::DIV2 => 1,
+            LFPRESC_A::DIV4 => 2,
+            LFPRESC_A::DIV8 => 3,
+            LFPRESC_A::DIV16 => 4,
+            LFPRESC_A::DIV32 => 5,
+            LFPRESC_A::DIV64 => 6,
+            LFPRESC_A::DIV128 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LFPRESCR {
-        match value {
-            0 => LFPRESCR::DIV1,
-            1 => LFPRESCR::DIV2,
-            2 => LFPRESCR::DIV4,
-            3 => LFPRESCR::DIV8,
-            4 => LFPRESCR::DIV16,
-            5 => LFPRESCR::DIV32,
-            6 => LFPRESCR::DIV64,
-            7 => LFPRESCR::DIV128,
+}
+#[doc = "Reader of field `LFPRESC`"]
+pub type LFPRESC_R = crate::R<u8, LFPRESC_A>;
+impl LFPRESC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LFPRESC_A {
+        match self.bits {
+            0 => LFPRESC_A::DIV1,
+            1 => LFPRESC_A::DIV2,
+            2 => LFPRESC_A::DIV4,
+            3 => LFPRESC_A::DIV8,
+            4 => LFPRESC_A::DIV16,
+            5 => LFPRESC_A::DIV32,
+            6 => LFPRESC_A::DIV64,
+            7 => LFPRESC_A::DIV128,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == LFPRESCR::DIV1
+        *self == LFPRESC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == LFPRESCR::DIV2
+        *self == LFPRESC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == LFPRESCR::DIV4
+        *self == LFPRESC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == LFPRESCR::DIV8
+        *self == LFPRESC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == LFPRESCR::DIV16
+        *self == LFPRESC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == LFPRESCR::DIV32
+        *self == LFPRESC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == LFPRESCR::DIV64
+        *self == LFPRESC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == LFPRESCR::DIV128
+        *self == LFPRESC_A::DIV128
+    }
+}
+#[doc = "Write proxy for field `LFPRESC`"]
+pub struct LFPRESC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LFPRESC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LFPRESC_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV1)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV2)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV4)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV8)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/16"]
+    #[inline(always)]
+    pub fn div16(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV16)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/32"]
+    #[inline(always)]
+    pub fn div32(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV32)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/64"]
+    #[inline(always)]
+    pub fn div64(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV64)
+    }
+    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/128"]
+    #[inline(always)]
+    pub fn div128(self) -> &'a mut W {
+        self.variant(LFPRESC_A::DIV128)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PCPRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PCPRESCR {
+pub enum PCPRESC_A {
     #[doc = "The period counter clock frequency is LFACLKLESENSE/1"]
     DIV1,
     #[doc = "The period counter clock frequency is LFACLKLESENSE/2"]
@@ -208,540 +282,253 @@ pub enum PCPRESCR {
     #[doc = "The period counter clock frequency is LFACLKLESENSE/128"]
     DIV128,
 }
-impl PCPRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PCPRESC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PCPRESCR::DIV1 => 0,
-            PCPRESCR::DIV2 => 1,
-            PCPRESCR::DIV4 => 2,
-            PCPRESCR::DIV8 => 3,
-            PCPRESCR::DIV16 => 4,
-            PCPRESCR::DIV32 => 5,
-            PCPRESCR::DIV64 => 6,
-            PCPRESCR::DIV128 => 7,
+            PCPRESC_A::DIV1 => 0,
+            PCPRESC_A::DIV2 => 1,
+            PCPRESC_A::DIV4 => 2,
+            PCPRESC_A::DIV8 => 3,
+            PCPRESC_A::DIV16 => 4,
+            PCPRESC_A::DIV32 => 5,
+            PCPRESC_A::DIV64 => 6,
+            PCPRESC_A::DIV128 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PCPRESCR {
-        match value {
-            0 => PCPRESCR::DIV1,
-            1 => PCPRESCR::DIV2,
-            2 => PCPRESCR::DIV4,
-            3 => PCPRESCR::DIV8,
-            4 => PCPRESCR::DIV16,
-            5 => PCPRESCR::DIV32,
-            6 => PCPRESCR::DIV64,
-            7 => PCPRESCR::DIV128,
+}
+#[doc = "Reader of field `PCPRESC`"]
+pub type PCPRESC_R = crate::R<u8, PCPRESC_A>;
+impl PCPRESC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PCPRESC_A {
+        match self.bits {
+            0 => PCPRESC_A::DIV1,
+            1 => PCPRESC_A::DIV2,
+            2 => PCPRESC_A::DIV4,
+            3 => PCPRESC_A::DIV8,
+            4 => PCPRESC_A::DIV16,
+            5 => PCPRESC_A::DIV32,
+            6 => PCPRESC_A::DIV64,
+            7 => PCPRESC_A::DIV128,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == PCPRESCR::DIV1
+        *self == PCPRESC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == PCPRESCR::DIV2
+        *self == PCPRESC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == PCPRESCR::DIV4
+        *self == PCPRESC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == PCPRESCR::DIV8
+        *self == PCPRESC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == PCPRESCR::DIV16
+        *self == PCPRESC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == PCPRESCR::DIV32
+        *self == PCPRESC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == PCPRESCR::DIV64
+        *self == PCPRESC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == PCPRESCR::DIV128
+        *self == PCPRESC_A::DIV128
     }
 }
-#[doc = r" Value of the field"]
-pub struct PCTOPR {
-    bits: u8,
-}
-impl PCTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct STARTDLYR {
-    bits: u8,
-}
-impl STARTDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXSTARTUPR {
-    bits: bool,
-}
-impl AUXSTARTUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `AUXPRESC`"]
-pub enum AUXPRESCW {
-    #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
-    DIV1,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/2"]
-    DIV2,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/4"]
-    DIV4,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/8"]
-    DIV8,
-}
-impl AUXPRESCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            AUXPRESCW::DIV1 => 0,
-            AUXPRESCW::DIV2 => 1,
-            AUXPRESCW::DIV4 => 2,
-            AUXPRESCW::DIV8 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AUXPRESCW<'a> {
+#[doc = "Write proxy for field `PCPRESC`"]
+pub struct PCPRESC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AUXPRESCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AUXPRESCW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(AUXPRESCW::DIV1)
-    }
-    #[doc = "High frequency timer is clocked with AUXHFRCO/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(AUXPRESCW::DIV2)
-    }
-    #[doc = "High frequency timer is clocked with AUXHFRCO/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(AUXPRESCW::DIV4)
-    }
-    #[doc = "High frequency timer is clocked with AUXHFRCO/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(AUXPRESCW::DIV8)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LFPRESC`"]
-pub enum LFPRESCW {
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
-    DIV1,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/2"]
-    DIV2,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/4"]
-    DIV4,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/8"]
-    DIV8,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/16"]
-    DIV16,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/32"]
-    DIV32,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/64"]
-    DIV64,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/128"]
-    DIV128,
-}
-impl LFPRESCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LFPRESCW::DIV1 => 0,
-            LFPRESCW::DIV2 => 1,
-            LFPRESCW::DIV4 => 2,
-            LFPRESCW::DIV8 => 3,
-            LFPRESCW::DIV16 => 4,
-            LFPRESCW::DIV32 => 5,
-            LFPRESCW::DIV64 => 6,
-            LFPRESCW::DIV128 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LFPRESCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LFPRESCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LFPRESCW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV1)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV2)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV4)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV8)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/16"]
-    #[inline]
-    pub fn div16(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV16)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/32"]
-    #[inline]
-    pub fn div32(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV32)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/64"]
-    #[inline]
-    pub fn div64(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV64)
-    }
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/128"]
-    #[inline]
-    pub fn div128(self) -> &'a mut W {
-        self.variant(LFPRESCW::DIV128)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PCPRESC`"]
-pub enum PCPRESCW {
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/1"]
-    DIV1,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/2"]
-    DIV2,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/4"]
-    DIV4,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/8"]
-    DIV8,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/16"]
-    DIV16,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/32"]
-    DIV32,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/64"]
-    DIV64,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/128"]
-    DIV128,
-}
-impl PCPRESCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PCPRESCW::DIV1 => 0,
-            PCPRESCW::DIV2 => 1,
-            PCPRESCW::DIV4 => 2,
-            PCPRESCW::DIV8 => 3,
-            PCPRESCW::DIV16 => 4,
-            PCPRESCW::DIV32 => 5,
-            PCPRESCW::DIV64 => 6,
-            PCPRESCW::DIV128 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PCPRESCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PCPRESCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PCPRESCW) -> &'a mut W {
+impl<'a> PCPRESC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PCPRESC_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/1"]
-    #[inline]
+    #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV1)
+        self.variant(PCPRESC_A::DIV1)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/2"]
-    #[inline]
+    #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV2)
+        self.variant(PCPRESC_A::DIV2)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/4"]
-    #[inline]
+    #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV4)
+        self.variant(PCPRESC_A::DIV4)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/8"]
-    #[inline]
+    #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV8)
+        self.variant(PCPRESC_A::DIV8)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/16"]
-    #[inline]
+    #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV16)
+        self.variant(PCPRESC_A::DIV16)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/32"]
-    #[inline]
+    #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV32)
+        self.variant(PCPRESC_A::DIV32)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/64"]
-    #[inline]
+    #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV64)
+        self.variant(PCPRESC_A::DIV64)
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/128"]
-    #[inline]
+    #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(PCPRESCW::DIV128)
+        self.variant(PCPRESC_A::DIV128)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCTOPW<'a> {
+#[doc = "Reader of field `PCTOP`"]
+pub type PCTOP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PCTOP`"]
+pub struct PCTOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCTOPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PCTOP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 12)) | (((value as u32) & 0xff) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _STARTDLYW<'a> {
+#[doc = "Reader of field `STARTDLY`"]
+pub type STARTDLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `STARTDLY`"]
+pub struct STARTDLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STARTDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> STARTDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AUXSTARTUPW<'a> {
+#[doc = "Reader of field `AUXSTARTUP`"]
+pub type AUXSTARTUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AUXSTARTUP`"]
+pub struct AUXSTARTUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AUXSTARTUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AUXSTARTUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Prescaling Factor for High Frequency Timer"]
-    #[inline]
-    pub fn auxpresc(&self) -> AUXPRESCR {
-        AUXPRESCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn auxpresc(&self) -> AUXPRESC_R {
+        AUXPRESC_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:6 - Prescaling Factor for Low Frequency Timer"]
-    #[inline]
-    pub fn lfpresc(&self) -> LFPRESCR {
-        LFPRESCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lfpresc(&self) -> LFPRESC_R {
+        LFPRESC_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Period Counter Prescaling"]
-    #[inline]
-    pub fn pcpresc(&self) -> PCPRESCR {
-        PCPRESCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pcpresc(&self) -> PCPRESC_R {
+        PCPRESC_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:19 - Period Counter Top Value"]
-    #[inline]
-    pub fn pctop(&self) -> PCTOPR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PCTOPR { bits }
+    #[inline(always)]
+    pub fn pctop(&self) -> PCTOP_R {
+        PCTOP_R::new(((self.bits >> 12) & 0xff) as u8)
     }
     #[doc = "Bits 22:23 - Start Delay Configuration"]
-    #[inline]
-    pub fn startdly(&self) -> STARTDLYR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        STARTDLYR { bits }
+    #[inline(always)]
+    pub fn startdly(&self) -> STARTDLY_R {
+        STARTDLY_R::new(((self.bits >> 22) & 0x03) as u8)
     }
     #[doc = "Bit 28 - AUXHFRCO Startup Configuration"]
-    #[inline]
-    pub fn auxstartup(&self) -> AUXSTARTUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUXSTARTUPR { bits }
+    #[inline(always)]
+    pub fn auxstartup(&self) -> AUXSTARTUP_R {
+        AUXSTARTUP_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Prescaling Factor for High Frequency Timer"]
-    #[inline]
-    pub fn auxpresc(&mut self) -> _AUXPRESCW {
-        _AUXPRESCW { w: self }
+    #[inline(always)]
+    pub fn auxpresc(&mut self) -> AUXPRESC_W {
+        AUXPRESC_W { w: self }
     }
     #[doc = "Bits 4:6 - Prescaling Factor for Low Frequency Timer"]
-    #[inline]
-    pub fn lfpresc(&mut self) -> _LFPRESCW {
-        _LFPRESCW { w: self }
+    #[inline(always)]
+    pub fn lfpresc(&mut self) -> LFPRESC_W {
+        LFPRESC_W { w: self }
     }
     #[doc = "Bits 8:10 - Period Counter Prescaling"]
-    #[inline]
-    pub fn pcpresc(&mut self) -> _PCPRESCW {
-        _PCPRESCW { w: self }
+    #[inline(always)]
+    pub fn pcpresc(&mut self) -> PCPRESC_W {
+        PCPRESC_W { w: self }
     }
     #[doc = "Bits 12:19 - Period Counter Top Value"]
-    #[inline]
-    pub fn pctop(&mut self) -> _PCTOPW {
-        _PCTOPW { w: self }
+    #[inline(always)]
+    pub fn pctop(&mut self) -> PCTOP_W {
+        PCTOP_W { w: self }
     }
     #[doc = "Bits 22:23 - Start Delay Configuration"]
-    #[inline]
-    pub fn startdly(&mut self) -> _STARTDLYW {
-        _STARTDLYW { w: self }
+    #[inline(always)]
+    pub fn startdly(&mut self) -> STARTDLY_W {
+        STARTDLY_W { w: self }
     }
     #[doc = "Bit 28 - AUXHFRCO Startup Configuration"]
-    #[inline]
-    pub fn auxstartup(&mut self) -> _AUXSTARTUPW {
-        _AUXSTARTUPW { w: self }
+    #[inline(always)]
+    pub fn auxstartup(&mut self) -> AUXSTARTUP_W {
+        AUXSTARTUP_W { w: self }
     }
 }

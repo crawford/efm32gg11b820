@@ -1,185 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0x1700_0000"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x1700_0000
     }
 }
-#[doc = r" Value of the field"]
-pub struct SYNCPRSSETENR {
-    bits: u8,
-}
-impl SYNCPRSSETENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SYNCPRSCLRENR {
-    bits: u8,
-}
-impl SYNCPRSCLRENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NUMFIXEDR {
-    bits: u8,
-}
-impl NUMFIXEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYNCPRSSETENW<'a> {
+#[doc = "Reader of field `SYNCPRSSETEN`"]
+pub type SYNCPRSSETEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SYNCPRSSETEN`"]
+pub struct SYNCPRSSETEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYNCPRSSETENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SYNCPRSSETEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SYNCPRSCLRENW<'a> {
+#[doc = "Reader of field `SYNCPRSCLREN`"]
+pub type SYNCPRSCLREN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SYNCPRSCLREN`"]
+pub struct SYNCPRSCLREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYNCPRSCLRENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SYNCPRSCLREN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NUMFIXEDW<'a> {
+#[doc = "Reader of field `NUMFIXED`"]
+pub type NUMFIXED_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NUMFIXED`"]
+pub struct NUMFIXED_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NUMFIXEDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NUMFIXED_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 24)) | (((value as u32) & 0x1f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Synchronization PRS Set Enable"]
-    #[inline]
-    pub fn syncprsseten(&self) -> SYNCPRSSETENR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SYNCPRSSETENR { bits }
+    #[inline(always)]
+    pub fn syncprsseten(&self) -> SYNCPRSSETEN_R {
+        SYNCPRSSETEN_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Synchronization PRS Clear Enable"]
-    #[inline]
-    pub fn syncprsclren(&self) -> SYNCPRSCLRENR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SYNCPRSCLRENR { bits }
+    #[inline(always)]
+    pub fn syncprsclren(&self) -> SYNCPRSCLREN_R {
+        SYNCPRSCLREN_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 24:28 - Number of Fixed Priority Channels"]
-    #[inline]
-    pub fn numfixed(&self) -> NUMFIXEDR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NUMFIXEDR { bits }
+    #[inline(always)]
+    pub fn numfixed(&self) -> NUMFIXED_R {
+        NUMFIXED_R::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 385875968 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Synchronization PRS Set Enable"]
-    #[inline]
-    pub fn syncprsseten(&mut self) -> _SYNCPRSSETENW {
-        _SYNCPRSSETENW { w: self }
+    #[inline(always)]
+    pub fn syncprsseten(&mut self) -> SYNCPRSSETEN_W {
+        SYNCPRSSETEN_W { w: self }
     }
     #[doc = "Bits 8:15 - Synchronization PRS Clear Enable"]
-    #[inline]
-    pub fn syncprsclren(&mut self) -> _SYNCPRSCLRENW {
-        _SYNCPRSCLRENW { w: self }
+    #[inline(always)]
+    pub fn syncprsclren(&mut self) -> SYNCPRSCLREN_W {
+        SYNCPRSCLREN_W { w: self }
     }
     #[doc = "Bits 24:28 - Number of Fixed Priority Channels"]
-    #[inline]
-    pub fn numfixed(&mut self) -> _NUMFIXEDW {
-        _NUMFIXEDW { w: self }
+    #[inline(always)]
+    pub fn numfixed(&mut self) -> NUMFIXED_W {
+        NUMFIXED_W { w: self }
     }
 }

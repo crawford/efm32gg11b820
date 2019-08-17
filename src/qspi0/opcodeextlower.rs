@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OPCODEEXTLOWER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OPCODEEXTLOWER"]
+pub type R = crate::R<u32, super::OPCODEEXTLOWER>;
+#[doc = "Writer for register OPCODEEXTLOWER"]
+pub type W = crate::W<u32, super::OPCODEEXTLOWER>;
+#[doc = "Register OPCODEEXTLOWER `reset()`'s with value 0x13ed_fa00"]
+impl crate::ResetValue for super::OPCODEEXTLOWER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x13ed_fa00
     }
 }
-#[doc = r" Value of the field"]
-pub struct EXTSTIGOPCODER {
-    bits: u8,
-}
-impl EXTSTIGOPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTPOLLOPCODER {
-    bits: u8,
-}
-impl EXTPOLLOPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTWRITEOPCODER {
-    bits: u8,
-}
-impl EXTWRITEOPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTREADOPCODER {
-    bits: u8,
-}
-impl EXTREADOPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTSTIGOPCODEW<'a> {
+#[doc = "Reader of field `EXTSTIGOPCODE`"]
+pub type EXTSTIGOPCODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTSTIGOPCODE`"]
+pub struct EXTSTIGOPCODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTSTIGOPCODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTSTIGOPCODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTPOLLOPCODEW<'a> {
+#[doc = "Reader of field `EXTPOLLOPCODE`"]
+pub type EXTPOLLOPCODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTPOLLOPCODE`"]
+pub struct EXTPOLLOPCODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTPOLLOPCODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTPOLLOPCODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTWRITEOPCODEW<'a> {
+#[doc = "Reader of field `EXTWRITEOPCODE`"]
+pub type EXTWRITEOPCODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTWRITEOPCODE`"]
+pub struct EXTWRITEOPCODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTWRITEOPCODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTWRITEOPCODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTREADOPCODEW<'a> {
+#[doc = "Reader of field `EXTREADOPCODE`"]
+pub type EXTREADOPCODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTREADOPCODE`"]
+pub struct EXTREADOPCODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTREADOPCODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTREADOPCODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - STIG Opcode Extension"]
-    #[inline]
-    pub fn extstigopcode(&self) -> EXTSTIGOPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTSTIGOPCODER { bits }
+    #[inline(always)]
+    pub fn extstigopcode(&self) -> EXTSTIGOPCODE_R {
+        EXTSTIGOPCODE_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Polling Opcode Extension"]
-    #[inline]
-    pub fn extpollopcode(&self) -> EXTPOLLOPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTPOLLOPCODER { bits }
+    #[inline(always)]
+    pub fn extpollopcode(&self) -> EXTPOLLOPCODE_R {
+        EXTPOLLOPCODE_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Write Opcode Extension"]
-    #[inline]
-    pub fn extwriteopcode(&self) -> EXTWRITEOPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTWRITEOPCODER { bits }
+    #[inline(always)]
+    pub fn extwriteopcode(&self) -> EXTWRITEOPCODE_R {
+        EXTWRITEOPCODE_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Read Opcode Extension"]
-    #[inline]
-    pub fn extreadopcode(&self) -> EXTREADOPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTREADOPCODER { bits }
+    #[inline(always)]
+    pub fn extreadopcode(&self) -> EXTREADOPCODE_R {
+        EXTREADOPCODE_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 334363136 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - STIG Opcode Extension"]
-    #[inline]
-    pub fn extstigopcode(&mut self) -> _EXTSTIGOPCODEW {
-        _EXTSTIGOPCODEW { w: self }
+    #[inline(always)]
+    pub fn extstigopcode(&mut self) -> EXTSTIGOPCODE_W {
+        EXTSTIGOPCODE_W { w: self }
     }
     #[doc = "Bits 8:15 - Polling Opcode Extension"]
-    #[inline]
-    pub fn extpollopcode(&mut self) -> _EXTPOLLOPCODEW {
-        _EXTPOLLOPCODEW { w: self }
+    #[inline(always)]
+    pub fn extpollopcode(&mut self) -> EXTPOLLOPCODE_W {
+        EXTPOLLOPCODE_W { w: self }
     }
     #[doc = "Bits 16:23 - Write Opcode Extension"]
-    #[inline]
-    pub fn extwriteopcode(&mut self) -> _EXTWRITEOPCODEW {
-        _EXTWRITEOPCODEW { w: self }
+    #[inline(always)]
+    pub fn extwriteopcode(&mut self) -> EXTWRITEOPCODE_W {
+        EXTWRITEOPCODE_W { w: self }
     }
     #[doc = "Bits 24:31 - Read Opcode Extension"]
-    #[inline]
-    pub fn extreadopcode(&mut self) -> _EXTREADOPCODEW {
-        _EXTREADOPCODEW { w: self }
+    #[inline(always)]
+    pub fn extreadopcode(&mut self) -> EXTREADOPCODE_W {
+        EXTREADOPCODE_W { w: self }
     }
 }

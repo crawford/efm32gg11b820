@@ -1,113 +1,93 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CMD {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CMD"]
+pub type W = crate::W<u32, super::CMD>;
+#[doc = "Register CMD `reset()`'s with value 0"]
+impl crate::ResetValue for super::CMD {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM4UNLATCHW<'a> {
+#[doc = "Write proxy for field `EM4UNLATCH`"]
+pub struct EM4UNLATCH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM4UNLATCHW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EM4UNLATCH_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM01VSCALE0W<'a> {
+#[doc = "Write proxy for field `EM01VSCALE0`"]
+pub struct EM01VSCALE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM01VSCALE0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EM01VSCALE0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM01VSCALE2W<'a> {
+#[doc = "Write proxy for field `EM01VSCALE2`"]
+pub struct EM01VSCALE2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM01VSCALE2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EM01VSCALE2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - EM4 Unlatch"]
-    #[inline]
-    pub fn em4unlatch(&mut self) -> _EM4UNLATCHW {
-        _EM4UNLATCHW { w: self }
+    #[inline(always)]
+    pub fn em4unlatch(&mut self) -> EM4UNLATCH_W {
+        EM4UNLATCH_W { w: self }
     }
     #[doc = "Bit 4 - EM01 Voltage Scale Command to Scale to Voltage Scale Level 0"]
-    #[inline]
-    pub fn em01vscale0(&mut self) -> _EM01VSCALE0W {
-        _EM01VSCALE0W { w: self }
+    #[inline(always)]
+    pub fn em01vscale0(&mut self) -> EM01VSCALE0_W {
+        EM01VSCALE0_W { w: self }
     }
     #[doc = "Bit 6 - EM01 Voltage Scale Command to Scale to Voltage Scale Level 2"]
-    #[inline]
-    pub fn em01vscale2(&mut self) -> _EM01VSCALE2W {
-        _EM01VSCALE2W { w: self }
+    #[inline(always)]
+    pub fn em01vscale2(&mut self) -> EM01VSCALE2_W {
+        EM01VSCALE2_W { w: self }
     }
 }

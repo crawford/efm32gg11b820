@@ -1,144 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TXPFCPAUSE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TXPFCPAUSE"]
+pub type R = crate::R<u32, super::TXPFCPAUSE>;
+#[doc = "Writer for register TXPFCPAUSE"]
+pub type W = crate::W<u32, super::TXPFCPAUSE>;
+#[doc = "Register TXPFCPAUSE `reset()`'s with value 0"]
+impl crate::ResetValue for super::TXPFCPAUSE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct VECTORENBR {
-    bits: u8,
-}
-impl VECTORENBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VECTORR {
-    bits: u8,
-}
-impl VECTORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VECTORENBW<'a> {
+#[doc = "Reader of field `VECTORENB`"]
+pub type VECTORENB_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `VECTORENB`"]
+pub struct VECTORENB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VECTORENBW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> VECTORENB_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _VECTORW<'a> {
+#[doc = "Reader of field `VECTOR`"]
+pub type VECTOR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `VECTOR`"]
+pub struct VECTOR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VECTORW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> VECTOR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Priority Vector Enable. If bit 17 of the network control register is written with a one then the priority enable vector of the PFC priority based pause frame will be set equal to the value stored in this register \\[7:0\\]."]
-    #[inline]
-    pub fn vectorenb(&self) -> VECTORENBR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VECTORENBR { bits }
+    #[inline(always)]
+    pub fn vectorenb(&self) -> VECTORENB_R {
+        VECTORENB_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Priority Vector Pause Size. If bit 17 of the network control register is written with a one then for each entry equal to zero in the Transmit PFC Pause Register\\[15:8\\], the PFC pause frame's pause quantum field associated with that entry will be taken from the transmit pause quantum register. For each entry equal to one in the Transmit PFC Pause Register \\[15:8\\], the pause quantum associated with that entry will be zero."]
-    #[inline]
-    pub fn vector(&self) -> VECTORR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VECTORR { bits }
+    #[inline(always)]
+    pub fn vector(&self) -> VECTOR_R {
+        VECTOR_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Priority Vector Enable. If bit 17 of the network control register is written with a one then the priority enable vector of the PFC priority based pause frame will be set equal to the value stored in this register \\[7:0\\]."]
-    #[inline]
-    pub fn vectorenb(&mut self) -> _VECTORENBW {
-        _VECTORENBW { w: self }
+    #[inline(always)]
+    pub fn vectorenb(&mut self) -> VECTORENB_W {
+        VECTORENB_W { w: self }
     }
     #[doc = "Bits 8:15 - Priority Vector Pause Size. If bit 17 of the network control register is written with a one then for each entry equal to zero in the Transmit PFC Pause Register\\[15:8\\], the PFC pause frame's pause quantum field associated with that entry will be taken from the transmit pause quantum register. For each entry equal to one in the Transmit PFC Pause Register \\[15:8\\], the pause quantum associated with that entry will be zero."]
-    #[inline]
-    pub fn vector(&mut self) -> _VECTORW {
-        _VECTORW { w: self }
+    #[inline(always)]
+    pub fn vector(&mut self) -> VECTOR_W {
+        VECTOR_W { w: self }
     }
 }

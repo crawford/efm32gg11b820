@@ -1,162 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PBUFRXCUTTHRU {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PBUFRXCUTTHRU"]
+pub type R = crate::R<u32, super::PBUFRXCUTTHRU>;
+#[doc = "Writer for register PBUFRXCUTTHRU"]
+pub type W = crate::W<u32, super::PBUFRXCUTTHRU>;
+#[doc = "Register PBUFRXCUTTHRU `reset()`'s with value 0x03ff"]
+impl crate::ResetValue for super::PBUFRXCUTTHRU {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03ff
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMARXCUTTHRUTHRR {
-    bits: u16,
-}
-impl DMARXCUTTHRUTHRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMARXCUTTHRUR {
-    bits: bool,
-}
-impl DMARXCUTTHRUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMARXCUTTHRUTHRW<'a> {
+#[doc = "Reader of field `DMARXCUTTHRUTHR`"]
+pub type DMARXCUTTHRUTHR_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `DMARXCUTTHRUTHR`"]
+pub struct DMARXCUTTHRUTHR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMARXCUTTHRUTHRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DMARXCUTTHRUTHR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMARXCUTTHRUW<'a> {
+#[doc = "Reader of field `DMARXCUTTHRU`"]
+pub type DMARXCUTTHRU_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMARXCUTTHRU`"]
+pub struct DMARXCUTTHRU_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMARXCUTTHRUW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMARXCUTTHRU_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - Watermark value"]
-    #[inline]
-    pub fn dmarxcutthruthr(&self) -> DMARXCUTTHRUTHRR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DMARXCUTTHRUTHRR { bits }
+    #[inline(always)]
+    pub fn dmarxcutthruthr(&self) -> DMARXCUTTHRUTHR_R {
+        DMARXCUTTHRUTHR_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 31 - Enable RX partial store and forward operation"]
-    #[inline]
-    pub fn dmarxcutthru(&self) -> DMARXCUTTHRUR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMARXCUTTHRUR { bits }
+    #[inline(always)]
+    pub fn dmarxcutthru(&self) -> DMARXCUTTHRU_R {
+        DMARXCUTTHRU_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1023 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:9 - Watermark value"]
-    #[inline]
-    pub fn dmarxcutthruthr(&mut self) -> _DMARXCUTTHRUTHRW {
-        _DMARXCUTTHRUTHRW { w: self }
+    #[inline(always)]
+    pub fn dmarxcutthruthr(&mut self) -> DMARXCUTTHRUTHR_W {
+        DMARXCUTTHRUTHR_W { w: self }
     }
     #[doc = "Bit 31 - Enable RX partial store and forward operation"]
-    #[inline]
-    pub fn dmarxcutthru(&mut self) -> _DMARXCUTTHRUW {
-        _DMARXCUTTHRUW { w: self }
+    #[inline(always)]
+    pub fn dmarxcutthru(&mut self) -> DMARXCUTTHRU_W {
+        DMARXCUTTHRU_W { w: self }
     }
 }

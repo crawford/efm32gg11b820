@@ -1,165 +1,95 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PWRLOCK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PWRLOCK"]
+pub type R = crate::R<u32, super::PWRLOCK>;
+#[doc = "Writer for register PWRLOCK"]
+pub type W = crate::W<u32, super::PWRLOCK>;
+#[doc = "Register PWRLOCK `reset()`'s with value 0"]
+impl crate::ResetValue for super::PWRLOCK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `LOCKKEY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKKEYR {
-    #[doc = "undocumented"]
+pub enum LOCKKEY_A {
+    #[doc = "`0`"]
     UNLOCKED,
-    #[doc = "undocumented"]
+    #[doc = "`1`"]
     LOCKED,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl LOCKKEYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
+impl crate::ToBits<u16> for LOCKKEY_A {
+    #[inline(always)]
+    fn _bits(&self) -> u16 {
         match *self {
-            LOCKKEYR::UNLOCKED => 0,
-            LOCKKEYR::LOCKED => 1,
-            LOCKKEYR::_Reserved(bits) => bits,
+            LOCKKEY_A::UNLOCKED => 0,
+            LOCKKEY_A::LOCKED => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> LOCKKEYR {
-        match value {
-            0 => LOCKKEYR::UNLOCKED,
-            1 => LOCKKEYR::LOCKED,
-            i => LOCKKEYR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCKKEY`"]
+pub type LOCKKEY_R = crate::R<u16, LOCKKEY_A>;
+impl LOCKKEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, LOCKKEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOCKKEY_A::UNLOCKED),
+            1 => Val(LOCKKEY_A::LOCKED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKKEYR::UNLOCKED
+        *self == LOCKKEY_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKKEYR::LOCKED
+        *self == LOCKKEY_A::LOCKED
     }
 }
-#[doc = "Values that can be written to the field `LOCKKEY`"]
-pub enum LOCKKEYW {
-    #[doc = "`0`"]
-    UNLOCKED,
-    #[doc = "`1`"]
-    LOCKED,
-}
-impl LOCKKEYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            LOCKKEYW::UNLOCKED => 0,
-            LOCKKEYW::LOCKED => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCKKEYW<'a> {
+#[doc = "Write proxy for field `LOCKKEY`"]
+pub struct LOCKKEY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCKKEYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCKKEYW) -> &'a mut W {
+impl<'a> LOCKKEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCKKEY_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "`0`"]
-    #[inline]
+    #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKKEYW::UNLOCKED)
+        self.variant(LOCKKEY_A::UNLOCKED)
     }
     #[doc = "`1`"]
-    #[inline]
+    #[inline(always)]
     pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKKEYW::LOCKED)
+        self.variant(LOCKKEY_A::LOCKED)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Regulator and Supply Configuration Lock Key"]
-    #[inline]
-    pub fn lockkey(&self) -> LOCKKEYR {
-        LOCKKEYR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn lockkey(&self) -> LOCKKEY_R {
+        LOCKKEY_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Regulator and Supply Configuration Lock Key"]
-    #[inline]
-    pub fn lockkey(&mut self) -> _LOCKKEYW {
-        _LOCKKEYW { w: self }
+    #[inline(always)]
+    pub fn lockkey(&mut self) -> LOCKKEY_W {
+        LOCKKEY_W { w: self }
     }
 }

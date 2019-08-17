@@ -1,482 +1,283 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEQCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SEQCTRL"]
+pub type R = crate::R<u32, super::SEQCTRL>;
+#[doc = "Writer for register SEQCTRL"]
+pub type W = crate::W<u32, super::SEQCTRL>;
+#[doc = "Register SEQCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEQCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LENGTHAR {
-    bits: u16,
+#[doc = "Reader of field `LENGTHA`"]
+pub type LENGTHA_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `LENGTHA`"]
+pub struct LENGTHA_W<'a> {
+    w: &'a mut W,
 }
-impl LENGTHAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> LENGTHA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3fff) | ((value as u32) & 0x3fff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BLOCKSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BLOCKSIZER {
+pub enum BLOCKSIZE_A {
     #[doc = "A block is 16 bytes long"]
     _16BYTES,
     #[doc = "A block is 32 bytes long"]
     _32BYTES,
     #[doc = "A block is 64 bytes long"]
     _64BYTES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl BLOCKSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for BLOCKSIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            BLOCKSIZER::_16BYTES => 0,
-            BLOCKSIZER::_32BYTES => 1,
-            BLOCKSIZER::_64BYTES => 2,
-            BLOCKSIZER::_Reserved(bits) => bits,
+            BLOCKSIZE_A::_16BYTES => 0,
+            BLOCKSIZE_A::_32BYTES => 1,
+            BLOCKSIZE_A::_64BYTES => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BLOCKSIZER {
-        match value {
-            0 => BLOCKSIZER::_16BYTES,
-            1 => BLOCKSIZER::_32BYTES,
-            2 => BLOCKSIZER::_64BYTES,
-            i => BLOCKSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `BLOCKSIZE`"]
+pub type BLOCKSIZE_R = crate::R<u8, BLOCKSIZE_A>;
+impl BLOCKSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BLOCKSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BLOCKSIZE_A::_16BYTES),
+            1 => Val(BLOCKSIZE_A::_32BYTES),
+            2 => Val(BLOCKSIZE_A::_64BYTES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_16BYTES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16bytes(&self) -> bool {
-        *self == BLOCKSIZER::_16BYTES
+        *self == BLOCKSIZE_A::_16BYTES
     }
     #[doc = "Checks if the value of the field is `_32BYTES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32bytes(&self) -> bool {
-        *self == BLOCKSIZER::_32BYTES
+        *self == BLOCKSIZE_A::_32BYTES
     }
     #[doc = "Checks if the value of the field is `_64BYTES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64bytes(&self) -> bool {
-        *self == BLOCKSIZER::_64BYTES
+        *self == BLOCKSIZE_A::_64BYTES
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMA0SKIPR {
-    bits: u8,
-}
-impl DMA0SKIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMA1SKIPR {
-    bits: u8,
-}
-impl DMA1SKIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMA0PRESAR {
-    bits: bool,
-}
-impl DMA0PRESAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMA1PRESAR {
-    bits: bool,
-}
-impl DMA1PRESAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HALTR {
-    bits: bool,
-}
-impl HALTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LENGTHAW<'a> {
+#[doc = "Write proxy for field `BLOCKSIZE`"]
+pub struct BLOCKSIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LENGTHAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 16383;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BLOCKSIZE`"]
-pub enum BLOCKSIZEW {
-    #[doc = "A block is 16 bytes long"]
-    _16BYTES,
-    #[doc = "A block is 32 bytes long"]
-    _32BYTES,
-    #[doc = "A block is 64 bytes long"]
-    _64BYTES,
-}
-impl BLOCKSIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BLOCKSIZEW::_16BYTES => 0,
-            BLOCKSIZEW::_32BYTES => 1,
-            BLOCKSIZEW::_64BYTES => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BLOCKSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BLOCKSIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BLOCKSIZEW) -> &'a mut W {
+impl<'a> BLOCKSIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BLOCKSIZE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "A block is 16 bytes long"]
-    #[inline]
+    #[inline(always)]
     pub fn _16bytes(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::_16BYTES)
+        self.variant(BLOCKSIZE_A::_16BYTES)
     }
     #[doc = "A block is 32 bytes long"]
-    #[inline]
+    #[inline(always)]
     pub fn _32bytes(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::_32BYTES)
+        self.variant(BLOCKSIZE_A::_32BYTES)
     }
     #[doc = "A block is 64 bytes long"]
-    #[inline]
+    #[inline(always)]
     pub fn _64bytes(self) -> &'a mut W {
-        self.variant(BLOCKSIZEW::_64BYTES)
+        self.variant(BLOCKSIZE_A::_64BYTES)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA0SKIPW<'a> {
+#[doc = "Reader of field `DMA0SKIP`"]
+pub type DMA0SKIP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DMA0SKIP`"]
+pub struct DMA0SKIP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA0SKIPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DMA0SKIP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA1SKIPW<'a> {
+#[doc = "Reader of field `DMA1SKIP`"]
+pub type DMA1SKIP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DMA1SKIP`"]
+pub struct DMA1SKIP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA1SKIPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DMA1SKIP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA0PRESAW<'a> {
+#[doc = "Reader of field `DMA0PRESA`"]
+pub type DMA0PRESA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMA0PRESA`"]
+pub struct DMA0PRESA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA0PRESAW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMA0PRESA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA1PRESAW<'a> {
+#[doc = "Reader of field `DMA1PRESA`"]
+pub type DMA1PRESA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMA1PRESA`"]
+pub struct DMA1PRESA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA1PRESAW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMA1PRESA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HALTW<'a> {
+#[doc = "Reader of field `HALT`"]
+pub type HALT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HALT`"]
+pub struct HALT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HALTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> HALT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:13 - Buffer Length a in Bytes"]
-    #[inline]
-    pub fn lengtha(&self) -> LENGTHAR {
-        let bits = {
-            const MASK: u16 = 16383;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        LENGTHAR { bits }
+    #[inline(always)]
+    pub fn lengtha(&self) -> LENGTHA_R {
+        LENGTHA_R::new((self.bits & 0x3fff) as u16)
     }
     #[doc = "Bits 20:21 - Size of Data Blocks"]
-    #[inline]
-    pub fn blocksize(&self) -> BLOCKSIZER {
-        BLOCKSIZER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn blocksize(&self) -> BLOCKSIZE_R {
+        BLOCKSIZE_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 24:25 - DMA0 Skip"]
-    #[inline]
-    pub fn dma0skip(&self) -> DMA0SKIPR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMA0SKIPR { bits }
+    #[inline(always)]
+    pub fn dma0skip(&self) -> DMA0SKIP_R {
+        DMA0SKIP_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 26:27 - DMA1 Skip"]
-    #[inline]
-    pub fn dma1skip(&self) -> DMA1SKIPR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMA1SKIPR { bits }
+    #[inline(always)]
+    pub fn dma1skip(&self) -> DMA1SKIP_R {
+        DMA1SKIP_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bit 28 - DMA0 Preserve a"]
-    #[inline]
-    pub fn dma0presa(&self) -> DMA0PRESAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMA0PRESAR { bits }
+    #[inline(always)]
+    pub fn dma0presa(&self) -> DMA0PRESA_R {
+        DMA0PRESA_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - DMA1 Preserve a"]
-    #[inline]
-    pub fn dma1presa(&self) -> DMA1PRESAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMA1PRESAR { bits }
+    #[inline(always)]
+    pub fn dma1presa(&self) -> DMA1PRESA_R {
+        DMA1PRESA_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Halt Sequence"]
-    #[inline]
-    pub fn halt(&self) -> HALTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HALTR { bits }
+    #[inline(always)]
+    pub fn halt(&self) -> HALT_R {
+        HALT_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:13 - Buffer Length a in Bytes"]
-    #[inline]
-    pub fn lengtha(&mut self) -> _LENGTHAW {
-        _LENGTHAW { w: self }
+    #[inline(always)]
+    pub fn lengtha(&mut self) -> LENGTHA_W {
+        LENGTHA_W { w: self }
     }
     #[doc = "Bits 20:21 - Size of Data Blocks"]
-    #[inline]
-    pub fn blocksize(&mut self) -> _BLOCKSIZEW {
-        _BLOCKSIZEW { w: self }
+    #[inline(always)]
+    pub fn blocksize(&mut self) -> BLOCKSIZE_W {
+        BLOCKSIZE_W { w: self }
     }
     #[doc = "Bits 24:25 - DMA0 Skip"]
-    #[inline]
-    pub fn dma0skip(&mut self) -> _DMA0SKIPW {
-        _DMA0SKIPW { w: self }
+    #[inline(always)]
+    pub fn dma0skip(&mut self) -> DMA0SKIP_W {
+        DMA0SKIP_W { w: self }
     }
     #[doc = "Bits 26:27 - DMA1 Skip"]
-    #[inline]
-    pub fn dma1skip(&mut self) -> _DMA1SKIPW {
-        _DMA1SKIPW { w: self }
+    #[inline(always)]
+    pub fn dma1skip(&mut self) -> DMA1SKIP_W {
+        DMA1SKIP_W { w: self }
     }
     #[doc = "Bit 28 - DMA0 Preserve a"]
-    #[inline]
-    pub fn dma0presa(&mut self) -> _DMA0PRESAW {
-        _DMA0PRESAW { w: self }
+    #[inline(always)]
+    pub fn dma0presa(&mut self) -> DMA0PRESA_W {
+        DMA0PRESA_W { w: self }
     }
     #[doc = "Bit 29 - DMA1 Preserve a"]
-    #[inline]
-    pub fn dma1presa(&mut self) -> _DMA1PRESAW {
-        _DMA1PRESAW { w: self }
+    #[inline(always)]
+    pub fn dma1presa(&mut self) -> DMA1PRESA_W {
+        DMA1PRESA_W { w: self }
     }
     #[doc = "Bit 31 - Halt Sequence"]
-    #[inline]
-    pub fn halt(&mut self) -> _HALTW {
-        _HALTW { w: self }
+    #[inline(always)]
+    pub fn halt(&mut self) -> HALT_W {
+        HALT_W { w: self }
     }
 }

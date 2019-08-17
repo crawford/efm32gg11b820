@@ -1,339 +1,176 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::WOLREG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register WOLREG"]
+pub type R = crate::R<u32, super::WOLREG>;
+#[doc = "Writer for register WOLREG"]
+pub type W = crate::W<u32, super::WOLREG>;
+#[doc = "Register WOLREG `reset()`'s with value 0"]
+impl crate::ResetValue for super::WOLREG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ADDRR {
-    bits: u16,
-}
-impl ADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WOLMASK0R {
-    bits: bool,
-}
-impl WOLMASK0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WOLMASK1R {
-    bits: bool,
-}
-impl WOLMASK1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WOLMASK2R {
-    bits: bool,
-}
-impl WOLMASK2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WOLMASK3R {
-    bits: bool,
-}
-impl WOLMASK3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADDRW<'a> {
+#[doc = "Reader of field `ADDR`"]
+pub type ADDR_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `ADDR`"]
+pub struct ADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WOLMASK0W<'a> {
+#[doc = "Reader of field `WOLMASK0`"]
+pub type WOLMASK0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WOLMASK0`"]
+pub struct WOLMASK0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WOLMASK0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WOLMASK0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WOLMASK1W<'a> {
+#[doc = "Reader of field `WOLMASK1`"]
+pub type WOLMASK1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WOLMASK1`"]
+pub struct WOLMASK1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WOLMASK1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WOLMASK1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WOLMASK2W<'a> {
+#[doc = "Reader of field `WOLMASK2`"]
+pub type WOLMASK2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WOLMASK2`"]
+pub struct WOLMASK2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WOLMASK2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WOLMASK2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WOLMASK3W<'a> {
+#[doc = "Reader of field `WOLMASK3`"]
+pub type WOLMASK3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WOLMASK3`"]
+pub struct WOLMASK3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WOLMASK3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WOLMASK3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Wake on LAN ARP request IP address. Written to define the least significant 16 bits of the target IP address that is matched to generate a Wake on LAN event. A value of zero will not generate an event, even if this is matched by the received frame."]
-    #[inline]
-    pub fn addr(&self) -> ADDRR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        ADDRR { bits }
+    #[inline(always)]
+    pub fn addr(&self) -> ADDR_R {
+        ADDR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bit 16 - Wake on LAN magic packet event enable"]
-    #[inline]
-    pub fn wolmask0(&self) -> WOLMASK0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WOLMASK0R { bits }
+    #[inline(always)]
+    pub fn wolmask0(&self) -> WOLMASK0_R {
+        WOLMASK0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Wake on LAN ARP request event enable"]
-    #[inline]
-    pub fn wolmask1(&self) -> WOLMASK1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WOLMASK1R { bits }
+    #[inline(always)]
+    pub fn wolmask1(&self) -> WOLMASK1_R {
+        WOLMASK1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Wake on LAN specific address register 1 event enable"]
-    #[inline]
-    pub fn wolmask2(&self) -> WOLMASK2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WOLMASK2R { bits }
+    #[inline(always)]
+    pub fn wolmask2(&self) -> WOLMASK2_R {
+        WOLMASK2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Wake on LAN multicast hash event enable"]
-    #[inline]
-    pub fn wolmask3(&self) -> WOLMASK3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WOLMASK3R { bits }
+    #[inline(always)]
+    pub fn wolmask3(&self) -> WOLMASK3_R {
+        WOLMASK3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Wake on LAN ARP request IP address. Written to define the least significant 16 bits of the target IP address that is matched to generate a Wake on LAN event. A value of zero will not generate an event, even if this is matched by the received frame."]
-    #[inline]
-    pub fn addr(&mut self) -> _ADDRW {
-        _ADDRW { w: self }
+    #[inline(always)]
+    pub fn addr(&mut self) -> ADDR_W {
+        ADDR_W { w: self }
     }
     #[doc = "Bit 16 - Wake on LAN magic packet event enable"]
-    #[inline]
-    pub fn wolmask0(&mut self) -> _WOLMASK0W {
-        _WOLMASK0W { w: self }
+    #[inline(always)]
+    pub fn wolmask0(&mut self) -> WOLMASK0_W {
+        WOLMASK0_W { w: self }
     }
     #[doc = "Bit 17 - Wake on LAN ARP request event enable"]
-    #[inline]
-    pub fn wolmask1(&mut self) -> _WOLMASK1W {
-        _WOLMASK1W { w: self }
+    #[inline(always)]
+    pub fn wolmask1(&mut self) -> WOLMASK1_W {
+        WOLMASK1_W { w: self }
     }
     #[doc = "Bit 18 - Wake on LAN specific address register 1 event enable"]
-    #[inline]
-    pub fn wolmask2(&mut self) -> _WOLMASK2W {
-        _WOLMASK2W { w: self }
+    #[inline(always)]
+    pub fn wolmask2(&mut self) -> WOLMASK2_W {
+        WOLMASK2_W { w: self }
     }
     #[doc = "Bit 19 - Wake on LAN multicast hash event enable"]
-    #[inline]
-    pub fn wolmask3(&mut self) -> _WOLMASK3W {
-        _WOLMASK3W { w: self }
+    #[inline(always)]
+    pub fn wolmask3(&mut self) -> WOLMASK3_W {
+        WOLMASK3_W { w: self }
     }
 }

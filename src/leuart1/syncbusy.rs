@@ -1,266 +1,60 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SYNCBUSY {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CTRLR {
-    bits: bool,
-}
-impl CTRLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMDR {
-    bits: bool,
-}
-impl CMDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLKDIVR {
-    bits: bool,
-}
-impl CLKDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct STARTFRAMER {
-    bits: bool,
-}
-impl STARTFRAMER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SIGFRAMER {
-    bits: bool,
-}
-impl SIGFRAMER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDATAXR {
-    bits: bool,
-}
-impl TXDATAXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDATAR {
-    bits: bool,
-}
-impl TXDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PULSECTRLR {
-    bits: bool,
-}
-impl PULSECTRLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register SYNCBUSY"]
+pub type R = crate::R<u32, super::SYNCBUSY>;
+#[doc = "Reader of field `CTRL`"]
+pub type CTRL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CMD`"]
+pub type CMD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CLKDIV`"]
+pub type CLKDIV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `STARTFRAME`"]
+pub type STARTFRAME_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SIGFRAME`"]
+pub type SIGFRAME_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXDATAX`"]
+pub type TXDATAX_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXDATA`"]
+pub type TXDATA_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PULSECTRL`"]
+pub type PULSECTRL_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - CTRL Register Busy"]
-    #[inline]
-    pub fn ctrl(&self) -> CTRLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CTRLR { bits }
+    #[inline(always)]
+    pub fn ctrl(&self) -> CTRL_R {
+        CTRL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - CMD Register Busy"]
-    #[inline]
-    pub fn cmd(&self) -> CMDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMDR { bits }
+    #[inline(always)]
+    pub fn cmd(&self) -> CMD_R {
+        CMD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - CLKDIV Register Busy"]
-    #[inline]
-    pub fn clkdiv(&self) -> CLKDIVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLKDIVR { bits }
+    #[inline(always)]
+    pub fn clkdiv(&self) -> CLKDIV_R {
+        CLKDIV_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - STARTFRAME Register Busy"]
-    #[inline]
-    pub fn startframe(&self) -> STARTFRAMER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        STARTFRAMER { bits }
+    #[inline(always)]
+    pub fn startframe(&self) -> STARTFRAME_R {
+        STARTFRAME_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - SIGFRAME Register Busy"]
-    #[inline]
-    pub fn sigframe(&self) -> SIGFRAMER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SIGFRAMER { bits }
+    #[inline(always)]
+    pub fn sigframe(&self) -> SIGFRAME_R {
+        SIGFRAME_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - TXDATAX Register Busy"]
-    #[inline]
-    pub fn txdatax(&self) -> TXDATAXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXDATAXR { bits }
+    #[inline(always)]
+    pub fn txdatax(&self) -> TXDATAX_R {
+        TXDATAX_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - TXDATA Register Busy"]
-    #[inline]
-    pub fn txdata(&self) -> TXDATAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXDATAR { bits }
+    #[inline(always)]
+    pub fn txdata(&self) -> TXDATA_R {
+        TXDATA_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - PULSECTRL Register Busy"]
-    #[inline]
-    pub fn pulsectrl(&self) -> PULSECTRLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PULSECTRLR { bits }
+    #[inline(always)]
+    pub fn pulsectrl(&self) -> PULSECTRL_R {
+        PULSECTRL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

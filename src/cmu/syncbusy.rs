@@ -1,452 +1,102 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SYNCBUSY {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFACLKEN0R {
-    bits: bool,
-}
-impl LFACLKEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFAPRESC0R {
-    bits: bool,
-}
-impl LFAPRESC0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFBCLKEN0R {
-    bits: bool,
-}
-impl LFBCLKEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFBPRESC0R {
-    bits: bool,
-}
-impl LFBPRESC0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFCCLKEN0R {
-    bits: bool,
-}
-impl LFCCLKEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFECLKEN0R {
-    bits: bool,
-}
-impl LFECLKEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFEPRESC0R {
-    bits: bool,
-}
-impl LFEPRESC0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFRCOBSYR {
-    bits: bool,
-}
-impl HFRCOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXHFRCOBSYR {
-    bits: bool,
-}
-impl AUXHFRCOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFRCOBSYR {
-    bits: bool,
-}
-impl LFRCOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFRCOVREFBSYR {
-    bits: bool,
-}
-impl LFRCOVREFBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFXOBSYR {
-    bits: bool,
-}
-impl HFXOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFXOBSYR {
-    bits: bool,
-}
-impl LFXOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USHFRCOBSYR {
-    bits: bool,
-}
-impl USHFRCOBSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register SYNCBUSY"]
+pub type R = crate::R<u32, super::SYNCBUSY>;
+#[doc = "Reader of field `LFACLKEN0`"]
+pub type LFACLKEN0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFAPRESC0`"]
+pub type LFAPRESC0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFBCLKEN0`"]
+pub type LFBCLKEN0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFBPRESC0`"]
+pub type LFBPRESC0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFCCLKEN0`"]
+pub type LFCCLKEN0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFECLKEN0`"]
+pub type LFECLKEN0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFEPRESC0`"]
+pub type LFEPRESC0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFRCOBSY`"]
+pub type HFRCOBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AUXHFRCOBSY`"]
+pub type AUXHFRCOBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFRCOBSY`"]
+pub type LFRCOBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFRCOVREFBSY`"]
+pub type LFRCOVREFBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFXOBSY`"]
+pub type HFXOBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFXOBSY`"]
+pub type LFXOBSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `USHFRCOBSY`"]
+pub type USHFRCOBSY_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Low Frequency a Clock Enable 0 Busy"]
-    #[inline]
-    pub fn lfaclken0(&self) -> LFACLKEN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFACLKEN0R { bits }
+    #[inline(always)]
+    pub fn lfaclken0(&self) -> LFACLKEN0_R {
+        LFACLKEN0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Low Frequency a Prescaler 0 Busy"]
-    #[inline]
-    pub fn lfapresc0(&self) -> LFAPRESC0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFAPRESC0R { bits }
+    #[inline(always)]
+    pub fn lfapresc0(&self) -> LFAPRESC0_R {
+        LFAPRESC0_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Low Frequency B Clock Enable 0 Busy"]
-    #[inline]
-    pub fn lfbclken0(&self) -> LFBCLKEN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFBCLKEN0R { bits }
+    #[inline(always)]
+    pub fn lfbclken0(&self) -> LFBCLKEN0_R {
+        LFBCLKEN0_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Low Frequency B Prescaler 0 Busy"]
-    #[inline]
-    pub fn lfbpresc0(&self) -> LFBPRESC0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFBPRESC0R { bits }
+    #[inline(always)]
+    pub fn lfbpresc0(&self) -> LFBPRESC0_R {
+        LFBPRESC0_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Low Frequency C Clock Enable 0 Busy"]
-    #[inline]
-    pub fn lfcclken0(&self) -> LFCCLKEN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFCCLKEN0R { bits }
+    #[inline(always)]
+    pub fn lfcclken0(&self) -> LFCCLKEN0_R {
+        LFCCLKEN0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Low Frequency E Clock Enable 0 Busy"]
-    #[inline]
-    pub fn lfeclken0(&self) -> LFECLKEN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFECLKEN0R { bits }
+    #[inline(always)]
+    pub fn lfeclken0(&self) -> LFECLKEN0_R {
+        LFECLKEN0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Low Frequency E Prescaler 0 Busy"]
-    #[inline]
-    pub fn lfepresc0(&self) -> LFEPRESC0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFEPRESC0R { bits }
+    #[inline(always)]
+    pub fn lfepresc0(&self) -> LFEPRESC0_R {
+        LFEPRESC0_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 24 - HFRCO Busy"]
-    #[inline]
-    pub fn hfrcobsy(&self) -> HFRCOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFRCOBSYR { bits }
+    #[inline(always)]
+    pub fn hfrcobsy(&self) -> HFRCOBSY_R {
+        HFRCOBSY_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - AUXHFRCO Busy"]
-    #[inline]
-    pub fn auxhfrcobsy(&self) -> AUXHFRCOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUXHFRCOBSYR { bits }
+    #[inline(always)]
+    pub fn auxhfrcobsy(&self) -> AUXHFRCOBSY_R {
+        AUXHFRCOBSY_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - LFRCO Busy"]
-    #[inline]
-    pub fn lfrcobsy(&self) -> LFRCOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFRCOBSYR { bits }
+    #[inline(always)]
+    pub fn lfrcobsy(&self) -> LFRCOBSY_R {
+        LFRCOBSY_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - LFRCO VREF Busy"]
-    #[inline]
-    pub fn lfrcovrefbsy(&self) -> LFRCOVREFBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFRCOVREFBSYR { bits }
+    #[inline(always)]
+    pub fn lfrcovrefbsy(&self) -> LFRCOVREFBSY_R {
+        LFRCOVREFBSY_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - HFXO Busy"]
-    #[inline]
-    pub fn hfxobsy(&self) -> HFXOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFXOBSYR { bits }
+    #[inline(always)]
+    pub fn hfxobsy(&self) -> HFXOBSY_R {
+        HFXOBSY_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - LFXO Busy"]
-    #[inline]
-    pub fn lfxobsy(&self) -> LFXOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFXOBSYR { bits }
+    #[inline(always)]
+    pub fn lfxobsy(&self) -> LFXOBSY_R {
+        LFXOBSY_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - USHFRCO Busy"]
-    #[inline]
-    pub fn ushfrcobsy(&self) -> USHFRCOBSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USHFRCOBSYR { bits }
+    #[inline(always)]
+    pub fn ushfrcobsy(&self) -> USHFRCOBSY_R {
+        USHFRCOBSY_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }

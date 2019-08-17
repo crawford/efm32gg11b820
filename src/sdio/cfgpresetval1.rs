@@ -1,344 +1,180 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFGPRESETVAL1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFGPRESETVAL1"]
+pub type R = crate::R<u32, super::CFGPRESETVAL1>;
+#[doc = "Writer for register CFGPRESETVAL1"]
+pub type W = crate::W<u32, super::CFGPRESETVAL1>;
+#[doc = "Register CFGPRESETVAL1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFGPRESETVAL1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct HSPSDCLKFREQR {
-    bits: u16,
-}
-impl HSPSDCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSPCLKGENENR {
-    bits: bool,
-}
-impl HSPCLKGENENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSPDRVSTR {
-    bits: u8,
-}
-impl HSPDRVSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR12SDCLKFREQR {
-    bits: u16,
-}
-impl SDR12SDCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR12CLKGENENR {
-    bits: bool,
-}
-impl SDR12CLKGENENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR12DRVSTR {
-    bits: u8,
-}
-impl SDR12DRVSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HSPSDCLKFREQW<'a> {
+#[doc = "Reader of field `HSPSDCLKFREQ`"]
+pub type HSPSDCLKFREQ_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `HSPSDCLKFREQ`"]
+pub struct HSPSDCLKFREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HSPSDCLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> HSPSDCLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HSPCLKGENENW<'a> {
+#[doc = "Reader of field `HSPCLKGENEN`"]
+pub type HSPCLKGENEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HSPCLKGENEN`"]
+pub struct HSPCLKGENEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HSPCLKGENENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> HSPCLKGENEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HSPDRVSTW<'a> {
+#[doc = "Reader of field `HSPDRVST`"]
+pub type HSPDRVST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `HSPDRVST`"]
+pub struct HSPDRVST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HSPDRVSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> HSPDRVST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDR12SDCLKFREQW<'a> {
+#[doc = "Reader of field `SDR12SDCLKFREQ`"]
+pub type SDR12SDCLKFREQ_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `SDR12SDCLKFREQ`"]
+pub struct SDR12SDCLKFREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR12SDCLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SDR12SDCLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDR12CLKGENENW<'a> {
+#[doc = "Reader of field `SDR12CLKGENEN`"]
+pub type SDR12CLKGENEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SDR12CLKGENEN`"]
+pub struct SDR12CLKGENEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR12CLKGENENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SDR12CLKGENEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDR12DRVSTW<'a> {
+#[doc = "Reader of field `SDR12DRVST`"]
+pub type SDR12DRVST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SDR12DRVST`"]
+pub struct SDR12DRVST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR12DRVSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SDR12DRVST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 27)) | (((value as u32) & 0x03) << 27);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - High Speed SD_CLK Frequency"]
-    #[inline]
-    pub fn hspsdclkfreq(&self) -> HSPSDCLKFREQR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        HSPSDCLKFREQR { bits }
+    #[inline(always)]
+    pub fn hspsdclkfreq(&self) -> HSPSDCLKFREQ_R {
+        HSPSDCLKFREQ_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 10 - High Speed SD_CLK Gen Enable"]
-    #[inline]
-    pub fn hspclkgenen(&self) -> HSPCLKGENENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HSPCLKGENENR { bits }
+    #[inline(always)]
+    pub fn hspclkgenen(&self) -> HSPCLKGENEN_R {
+        HSPCLKGENEN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 11:12 - High Speed SD Drive Strength"]
-    #[inline]
-    pub fn hspdrvst(&self) -> HSPDRVSTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        HSPDRVSTR { bits }
+    #[inline(always)]
+    pub fn hspdrvst(&self) -> HSPDRVST_R {
+        HSPDRVST_R::new(((self.bits >> 11) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - Preset Value for SDR12 Speed of SD_CLK"]
-    #[inline]
-    pub fn sdr12sdclkfreq(&self) -> SDR12SDCLKFREQR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SDR12SDCLKFREQR { bits }
+    #[inline(always)]
+    pub fn sdr12sdclkfreq(&self) -> SDR12SDCLKFREQ_R {
+        SDR12SDCLKFREQ_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 26 - SDR12 Speed Clock Gen Enable"]
-    #[inline]
-    pub fn sdr12clkgenen(&self) -> SDR12CLKGENENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR12CLKGENENR { bits }
+    #[inline(always)]
+    pub fn sdr12clkgenen(&self) -> SDR12CLKGENEN_R {
+        SDR12CLKGENEN_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 27:28 - SDR12 Speed Drive Strength"]
-    #[inline]
-    pub fn sdr12drvst(&self) -> SDR12DRVSTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SDR12DRVSTR { bits }
+    #[inline(always)]
+    pub fn sdr12drvst(&self) -> SDR12DRVST_R {
+        SDR12DRVST_R::new(((self.bits >> 27) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:9 - High Speed SD_CLK Frequency"]
-    #[inline]
-    pub fn hspsdclkfreq(&mut self) -> _HSPSDCLKFREQW {
-        _HSPSDCLKFREQW { w: self }
+    #[inline(always)]
+    pub fn hspsdclkfreq(&mut self) -> HSPSDCLKFREQ_W {
+        HSPSDCLKFREQ_W { w: self }
     }
     #[doc = "Bit 10 - High Speed SD_CLK Gen Enable"]
-    #[inline]
-    pub fn hspclkgenen(&mut self) -> _HSPCLKGENENW {
-        _HSPCLKGENENW { w: self }
+    #[inline(always)]
+    pub fn hspclkgenen(&mut self) -> HSPCLKGENEN_W {
+        HSPCLKGENEN_W { w: self }
     }
     #[doc = "Bits 11:12 - High Speed SD Drive Strength"]
-    #[inline]
-    pub fn hspdrvst(&mut self) -> _HSPDRVSTW {
-        _HSPDRVSTW { w: self }
+    #[inline(always)]
+    pub fn hspdrvst(&mut self) -> HSPDRVST_W {
+        HSPDRVST_W { w: self }
     }
     #[doc = "Bits 16:25 - Preset Value for SDR12 Speed of SD_CLK"]
-    #[inline]
-    pub fn sdr12sdclkfreq(&mut self) -> _SDR12SDCLKFREQW {
-        _SDR12SDCLKFREQW { w: self }
+    #[inline(always)]
+    pub fn sdr12sdclkfreq(&mut self) -> SDR12SDCLKFREQ_W {
+        SDR12SDCLKFREQ_W { w: self }
     }
     #[doc = "Bit 26 - SDR12 Speed Clock Gen Enable"]
-    #[inline]
-    pub fn sdr12clkgenen(&mut self) -> _SDR12CLKGENENW {
-        _SDR12CLKGENENW { w: self }
+    #[inline(always)]
+    pub fn sdr12clkgenen(&mut self) -> SDR12CLKGENEN_W {
+        SDR12CLKGENEN_W { w: self }
     }
     #[doc = "Bits 27:28 - SDR12 Speed Drive Strength"]
-    #[inline]
-    pub fn sdr12drvst(&mut self) -> _SDR12DRVSTW {
-        _SDR12DRVSTW { w: self }
+    #[inline(always)]
+    pub fn sdr12drvst(&mut self) -> SDR12DRVST_W {
+        SDR12DRVST_W { w: self }
     }
 }

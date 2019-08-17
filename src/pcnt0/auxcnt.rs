@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::AUXCNT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXCNTR {
-    bits: u16,
-}
-impl AUXCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register AUXCNT"]
+pub type R = crate::R<u32, super::AUXCNT>;
+#[doc = "Reader of field `AUXCNT`"]
+pub type AUXCNT_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Auxiliary Counter Value"]
-    #[inline]
-    pub fn auxcnt(&self) -> AUXCNTR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        AUXCNTR { bits }
+    #[inline(always)]
+    pub fn auxcnt(&self) -> AUXCNT_R {
+        AUXCNT_R::new((self.bits & 0xffff) as u16)
     }
 }

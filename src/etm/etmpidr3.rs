@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMPIDR3 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CUSTMODR {
-    bits: u8,
-}
-impl CUSTMODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REVANDR {
-    bits: u8,
-}
-impl REVANDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ETMPIDR3"]
+pub type R = crate::R<u32, super::ETMPIDR3>;
+#[doc = "Reader of field `CUSTMOD`"]
+pub type CUSTMOD_R = crate::R<u8, u8>;
+#[doc = "Reader of field `REVAND`"]
+pub type REVAND_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Customer Modified"]
-    #[inline]
-    pub fn custmod(&self) -> CUSTMODR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CUSTMODR { bits }
+    #[inline(always)]
+    pub fn custmod(&self) -> CUSTMOD_R {
+        CUSTMOD_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - RevAnd"]
-    #[inline]
-    pub fn revand(&self) -> REVANDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REVANDR { bits }
+    #[inline(always)]
+    pub fn revand(&self) -> REVAND_R {
+        REVAND_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }

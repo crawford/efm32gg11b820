@@ -1,221 +1,108 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PULSECTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PULSECTRL"]
+pub type R = crate::R<u32, super::PULSECTRL>;
+#[doc = "Writer for register PULSECTRL"]
+pub type W = crate::W<u32, super::PULSECTRL>;
+#[doc = "Register PULSECTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::PULSECTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PULSEWR {
-    bits: u8,
-}
-impl PULSEWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PULSEENR {
-    bits: bool,
-}
-impl PULSEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PULSEFILTR {
-    bits: bool,
-}
-impl PULSEFILTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PULSEWW<'a> {
+#[doc = "Reader of field `PULSEW`"]
+pub type PULSEW_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PULSEW`"]
+pub struct PULSEW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PULSEWW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PULSEW_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PULSEENW<'a> {
+#[doc = "Reader of field `PULSEEN`"]
+pub type PULSEEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PULSEEN`"]
+pub struct PULSEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PULSEENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PULSEEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PULSEFILTW<'a> {
+#[doc = "Reader of field `PULSEFILT`"]
+pub type PULSEFILT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PULSEFILT`"]
+pub struct PULSEFILT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PULSEFILTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PULSEFILT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Pulse Width"]
-    #[inline]
-    pub fn pulsew(&self) -> PULSEWR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PULSEWR { bits }
+    #[inline(always)]
+    pub fn pulsew(&self) -> PULSEW_R {
+        PULSEW_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 4 - Pulse Generator/Extender Enable"]
-    #[inline]
-    pub fn pulseen(&self) -> PULSEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PULSEENR { bits }
+    #[inline(always)]
+    pub fn pulseen(&self) -> PULSEEN_R {
+        PULSEEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Pulse Filter"]
-    #[inline]
-    pub fn pulsefilt(&self) -> PULSEFILTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PULSEFILTR { bits }
+    #[inline(always)]
+    pub fn pulsefilt(&self) -> PULSEFILT_R {
+        PULSEFILT_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Pulse Width"]
-    #[inline]
-    pub fn pulsew(&mut self) -> _PULSEWW {
-        _PULSEWW { w: self }
+    #[inline(always)]
+    pub fn pulsew(&mut self) -> PULSEW_W {
+        PULSEW_W { w: self }
     }
     #[doc = "Bit 4 - Pulse Generator/Extender Enable"]
-    #[inline]
-    pub fn pulseen(&mut self) -> _PULSEENW {
-        _PULSEENW { w: self }
+    #[inline(always)]
+    pub fn pulseen(&mut self) -> PULSEEN_W {
+        PULSEEN_W { w: self }
     }
     #[doc = "Bit 5 - Pulse Filter"]
-    #[inline]
-    pub fn pulsefilt(&mut self) -> _PULSEFILTW {
-        _PULSEFILTW { w: self }
+    #[inline(always)]
+    pub fn pulsefilt(&mut self) -> PULSEFILT_W {
+        PULSEFILT_W { w: self }
     }
 }

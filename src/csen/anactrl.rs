@@ -1,185 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ANACTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ANACTRL"]
+pub type R = crate::R<u32, super::ANACTRL>;
+#[doc = "Writer for register ANACTRL"]
+pub type W = crate::W<u32, super::ANACTRL>;
+#[doc = "Register ANACTRL `reset()`'s with value 0x70"]
+impl crate::ResetValue for super::ANACTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x70
     }
 }
-#[doc = r" Value of the field"]
-pub struct IREFPROGR {
-    bits: u8,
-}
-impl IREFPROGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDACIREFSR {
-    bits: u8,
-}
-impl IDACIREFSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRSTPROGR {
-    bits: u8,
-}
-impl TRSTPROGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IREFPROGW<'a> {
+#[doc = "Reader of field `IREFPROG`"]
+pub type IREFPROG_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IREFPROG`"]
+pub struct IREFPROG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IREFPROGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IREFPROG_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDACIREFSW<'a> {
+#[doc = "Reader of field `IDACIREFS`"]
+pub type IDACIREFS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDACIREFS`"]
+pub struct IDACIREFS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDACIREFSW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDACIREFS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRSTPROGW<'a> {
+#[doc = "Reader of field `TRSTPROG`"]
+pub type TRSTPROG_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TRSTPROG`"]
+pub struct TRSTPROG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRSTPROGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRSTPROG_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 4:6 - Reference Current Control."]
-    #[inline]
-    pub fn irefprog(&self) -> IREFPROGR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IREFPROGR { bits }
+    #[inline(always)]
+    pub fn irefprog(&self) -> IREFPROG_R {
+        IREFPROG_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Current DAC and Reference Current Scale"]
-    #[inline]
-    pub fn idacirefs(&self) -> IDACIREFSR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDACIREFSR { bits }
+    #[inline(always)]
+    pub fn idacirefs(&self) -> IDACIREFS_R {
+        IDACIREFS_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 20:22 - Reset Timing"]
-    #[inline]
-    pub fn trstprog(&self) -> TRSTPROGR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRSTPROGR { bits }
+    #[inline(always)]
+    pub fn trstprog(&self) -> TRSTPROG_R {
+        TRSTPROG_R::new(((self.bits >> 20) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 112 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 4:6 - Reference Current Control."]
-    #[inline]
-    pub fn irefprog(&mut self) -> _IREFPROGW {
-        _IREFPROGW { w: self }
+    #[inline(always)]
+    pub fn irefprog(&mut self) -> IREFPROG_W {
+        IREFPROG_W { w: self }
     }
     #[doc = "Bits 8:10 - Current DAC and Reference Current Scale"]
-    #[inline]
-    pub fn idacirefs(&mut self) -> _IDACIREFSW {
-        _IDACIREFSW { w: self }
+    #[inline(always)]
+    pub fn idacirefs(&mut self) -> IDACIREFS_W {
+        IDACIREFS_W { w: self }
     }
     #[doc = "Bits 20:22 - Reset Timing"]
-    #[inline]
-    pub fn trstprog(&mut self) -> _TRSTPROGW {
-        _TRSTPROGW { w: self }
+    #[inline(always)]
+    pub fn trstprog(&mut self) -> TRSTPROG_W {
+        TRSTPROG_W { w: self }
     }
 }

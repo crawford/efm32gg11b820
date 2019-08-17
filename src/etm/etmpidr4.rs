@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMPIDR4 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CONTCODER {
-    bits: u8,
-}
-impl CONTCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COUNTR {
-    bits: u8,
-}
-impl COUNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ETMPIDR4"]
+pub type R = crate::R<u32, super::ETMPIDR4>;
+#[doc = "Reader of field `CONTCODE`"]
+pub type CONTCODE_R = crate::R<u8, u8>;
+#[doc = "Reader of field `COUNT`"]
+pub type COUNT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - JEP106 Continuation Code"]
-    #[inline]
-    pub fn contcode(&self) -> CONTCODER {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CONTCODER { bits }
+    #[inline(always)]
+    pub fn contcode(&self) -> CONTCODE_R {
+        CONTCODE_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - 4KB Count"]
-    #[inline]
-    pub fn count(&self) -> COUNTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COUNTR { bits }
+    #[inline(always)]
+    pub fn count(&self) -> COUNT_R {
+        COUNT_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }

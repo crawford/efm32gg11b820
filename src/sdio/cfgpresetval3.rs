@@ -1,344 +1,180 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFGPRESETVAL3 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFGPRESETVAL3"]
+pub type R = crate::R<u32, super::CFGPRESETVAL3>;
+#[doc = "Writer for register CFGPRESETVAL3"]
+pub type W = crate::W<u32, super::CFGPRESETVAL3>;
+#[doc = "Register CFGPRESETVAL3 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFGPRESETVAL3 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct SDR104SDCLKFREQR {
-    bits: u16,
-}
-impl SDR104SDCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR104CLKGENENR {
-    bits: bool,
-}
-impl SDR104CLKGENENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR104DRVSTR {
-    bits: u8,
-}
-impl SDR104DRVSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDR50SDCLKFREQR {
-    bits: u16,
-}
-impl DDR50SDCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDR50CLKGENENR {
-    bits: bool,
-}
-impl DDR50CLKGENENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDR50DRVSTR {
-    bits: u8,
-}
-impl DDR50DRVSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDR104SDCLKFREQW<'a> {
+#[doc = "Reader of field `SDR104SDCLKFREQ`"]
+pub type SDR104SDCLKFREQ_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `SDR104SDCLKFREQ`"]
+pub struct SDR104SDCLKFREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR104SDCLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SDR104SDCLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDR104CLKGENENW<'a> {
+#[doc = "Reader of field `SDR104CLKGENEN`"]
+pub type SDR104CLKGENEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SDR104CLKGENEN`"]
+pub struct SDR104CLKGENEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR104CLKGENENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SDR104CLKGENEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDR104DRVSTW<'a> {
+#[doc = "Reader of field `SDR104DRVST`"]
+pub type SDR104DRVST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SDR104DRVST`"]
+pub struct SDR104DRVST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDR104DRVSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SDR104DRVST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DDR50SDCLKFREQW<'a> {
+#[doc = "Reader of field `DDR50SDCLKFREQ`"]
+pub type DDR50SDCLKFREQ_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `DDR50SDCLKFREQ`"]
+pub struct DDR50SDCLKFREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDR50SDCLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DDR50SDCLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DDR50CLKGENENW<'a> {
+#[doc = "Reader of field `DDR50CLKGENEN`"]
+pub type DDR50CLKGENEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DDR50CLKGENEN`"]
+pub struct DDR50CLKGENEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDR50CLKGENENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DDR50CLKGENEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DDR50DRVSTW<'a> {
+#[doc = "Reader of field `DDR50DRVST`"]
+pub type DDR50DRVST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DDR50DRVST`"]
+pub struct DDR50DRVST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDR50DRVSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DDR50DRVST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 27)) | (((value as u32) & 0x03) << 27);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - SDR104 SD_CLK Frequency"]
-    #[inline]
-    pub fn sdr104sdclkfreq(&self) -> SDR104SDCLKFREQR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SDR104SDCLKFREQR { bits }
+    #[inline(always)]
+    pub fn sdr104sdclkfreq(&self) -> SDR104SDCLKFREQ_R {
+        SDR104SDCLKFREQ_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 10 - SDR104 SD_CLK Gen Enable"]
-    #[inline]
-    pub fn sdr104clkgenen(&self) -> SDR104CLKGENENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR104CLKGENENR { bits }
+    #[inline(always)]
+    pub fn sdr104clkgenen(&self) -> SDR104CLKGENEN_R {
+        SDR104CLKGENEN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 11:12 - SDR104 SD Drive Strength"]
-    #[inline]
-    pub fn sdr104drvst(&self) -> SDR104DRVSTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SDR104DRVSTR { bits }
+    #[inline(always)]
+    pub fn sdr104drvst(&self) -> SDR104DRVST_R {
+        SDR104DRVST_R::new(((self.bits >> 11) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - Preset Value for DDR50 Speed of SD_CLK"]
-    #[inline]
-    pub fn ddr50sdclkfreq(&self) -> DDR50SDCLKFREQR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DDR50SDCLKFREQR { bits }
+    #[inline(always)]
+    pub fn ddr50sdclkfreq(&self) -> DDR50SDCLKFREQ_R {
+        DDR50SDCLKFREQ_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 26 - DDR50 Speed Clock Gen Enable"]
-    #[inline]
-    pub fn ddr50clkgenen(&self) -> DDR50CLKGENENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DDR50CLKGENENR { bits }
+    #[inline(always)]
+    pub fn ddr50clkgenen(&self) -> DDR50CLKGENEN_R {
+        DDR50CLKGENEN_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 27:28 - DDR50 Speed Drive Strength"]
-    #[inline]
-    pub fn ddr50drvst(&self) -> DDR50DRVSTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DDR50DRVSTR { bits }
+    #[inline(always)]
+    pub fn ddr50drvst(&self) -> DDR50DRVST_R {
+        DDR50DRVST_R::new(((self.bits >> 27) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:9 - SDR104 SD_CLK Frequency"]
-    #[inline]
-    pub fn sdr104sdclkfreq(&mut self) -> _SDR104SDCLKFREQW {
-        _SDR104SDCLKFREQW { w: self }
+    #[inline(always)]
+    pub fn sdr104sdclkfreq(&mut self) -> SDR104SDCLKFREQ_W {
+        SDR104SDCLKFREQ_W { w: self }
     }
     #[doc = "Bit 10 - SDR104 SD_CLK Gen Enable"]
-    #[inline]
-    pub fn sdr104clkgenen(&mut self) -> _SDR104CLKGENENW {
-        _SDR104CLKGENENW { w: self }
+    #[inline(always)]
+    pub fn sdr104clkgenen(&mut self) -> SDR104CLKGENEN_W {
+        SDR104CLKGENEN_W { w: self }
     }
     #[doc = "Bits 11:12 - SDR104 SD Drive Strength"]
-    #[inline]
-    pub fn sdr104drvst(&mut self) -> _SDR104DRVSTW {
-        _SDR104DRVSTW { w: self }
+    #[inline(always)]
+    pub fn sdr104drvst(&mut self) -> SDR104DRVST_W {
+        SDR104DRVST_W { w: self }
     }
     #[doc = "Bits 16:25 - Preset Value for DDR50 Speed of SD_CLK"]
-    #[inline]
-    pub fn ddr50sdclkfreq(&mut self) -> _DDR50SDCLKFREQW {
-        _DDR50SDCLKFREQW { w: self }
+    #[inline(always)]
+    pub fn ddr50sdclkfreq(&mut self) -> DDR50SDCLKFREQ_W {
+        DDR50SDCLKFREQ_W { w: self }
     }
     #[doc = "Bit 26 - DDR50 Speed Clock Gen Enable"]
-    #[inline]
-    pub fn ddr50clkgenen(&mut self) -> _DDR50CLKGENENW {
-        _DDR50CLKGENENW { w: self }
+    #[inline(always)]
+    pub fn ddr50clkgenen(&mut self) -> DDR50CLKGENEN_W {
+        DDR50CLKGENEN_W { w: self }
     }
     #[doc = "Bits 27:28 - DDR50 Speed Drive Strength"]
-    #[inline]
-    pub fn ddr50drvst(&mut self) -> _DDR50DRVSTW {
-        _DDR50DRVSTW { w: self }
+    #[inline(always)]
+    pub fn ddr50drvst(&mut self) -> DDR50DRVST_W {
+        DDR50DRVST_W { w: self }
     }
 }

@@ -1,481 +1,157 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CAPAB0 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TMOUTCLKFREQR {
-    bits: u8,
-}
-impl TMOUTCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TMOUTCLKUNITR {
-    bits: bool,
-}
-impl TMOUTCLKUNITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BASECLKFREQSDR {
-    bits: u8,
-}
-impl BASECLKFREQSDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAXBLOCKLENR {
-    bits: u8,
-}
-impl MAXBLOCKLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTMEDIABUSSUPR {
-    bits: bool,
-}
-impl EXTMEDIABUSSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ADMA2SUPR {
-    bits: bool,
-}
-impl ADMA2SUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSSUPR {
-    bits: bool,
-}
-impl HSSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDMASUPR {
-    bits: bool,
-}
-impl SDMASUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SUSRESSUPR {
-    bits: bool,
-}
-impl SUSRESSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VOLTSUP3P3VR {
-    bits: bool,
-}
-impl VOLTSUP3P3VR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VOLTSUP3P0VR {
-    bits: bool,
-}
-impl VOLTSUP3P0VR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VOLTSUP1P8VR {
-    bits: bool,
-}
-impl VOLTSUP1P8VR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SYSBUS64BSUPR {
-    bits: bool,
-}
-impl SYSBUS64BSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ASYNCINTSUPR {
-    bits: bool,
-}
-impl ASYNCINTSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register CAPAB0"]
+pub type R = crate::R<u32, super::CAPAB0>;
+#[doc = "Reader of field `TMOUTCLKFREQ`"]
+pub type TMOUTCLKFREQ_R = crate::R<u8, u8>;
+#[doc = "Reader of field `TMOUTCLKUNIT`"]
+pub type TMOUTCLKUNIT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BASECLKFREQSD`"]
+pub type BASECLKFREQSD_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MAXBLOCKLEN`"]
+pub type MAXBLOCKLEN_R = crate::R<u8, u8>;
+#[doc = "Reader of field `EXTMEDIABUSSUP`"]
+pub type EXTMEDIABUSSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ADMA2SUP`"]
+pub type ADMA2SUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HSSUP`"]
+pub type HSSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SDMASUP`"]
+pub type SDMASUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SUSRESSUP`"]
+pub type SUSRESSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VOLTSUP3P3V`"]
+pub type VOLTSUP3P3V_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VOLTSUP3P0V`"]
+pub type VOLTSUP3P0V_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VOLTSUP1P8V`"]
+pub type VOLTSUP1P8V_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SYSBUS64BSUP`"]
+pub type SYSBUS64BSUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ASYNCINTSUP`"]
+pub type ASYNCINTSUP_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `IFSLOTTYPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IFSLOTTYPER {
+pub enum IFSLOTTYPE_A {
     #[doc = "Removable Card Slot"]
     REMOVABLE,
     #[doc = "Only one non-removable device is conected to a SD bus slot"]
     EMBEDDED,
     #[doc = "Can be set if Host controller supports Shared Bus CTRL register"]
     SHARED,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl IFSLOTTYPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for IFSLOTTYPE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            IFSLOTTYPER::REMOVABLE => 0,
-            IFSLOTTYPER::EMBEDDED => 1,
-            IFSLOTTYPER::SHARED => 2,
-            IFSLOTTYPER::_Reserved(bits) => bits,
+            IFSLOTTYPE_A::REMOVABLE => 0,
+            IFSLOTTYPE_A::EMBEDDED => 1,
+            IFSLOTTYPE_A::SHARED => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> IFSLOTTYPER {
-        match value {
-            0 => IFSLOTTYPER::REMOVABLE,
-            1 => IFSLOTTYPER::EMBEDDED,
-            2 => IFSLOTTYPER::SHARED,
-            i => IFSLOTTYPER::_Reserved(i),
+}
+#[doc = "Reader of field `IFSLOTTYPE`"]
+pub type IFSLOTTYPE_R = crate::R<u8, IFSLOTTYPE_A>;
+impl IFSLOTTYPE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IFSLOTTYPE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(IFSLOTTYPE_A::REMOVABLE),
+            1 => Val(IFSLOTTYPE_A::EMBEDDED),
+            2 => Val(IFSLOTTYPE_A::SHARED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `REMOVABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_removable(&self) -> bool {
-        *self == IFSLOTTYPER::REMOVABLE
+        *self == IFSLOTTYPE_A::REMOVABLE
     }
     #[doc = "Checks if the value of the field is `EMBEDDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_embedded(&self) -> bool {
-        *self == IFSLOTTYPER::EMBEDDED
+        *self == IFSLOTTYPE_A::EMBEDDED
     }
     #[doc = "Checks if the value of the field is `SHARED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_shared(&self) -> bool {
-        *self == IFSLOTTYPER::SHARED
+        *self == IFSLOTTYPE_A::SHARED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Timeout Clock Frequency"]
-    #[inline]
-    pub fn tmoutclkfreq(&self) -> TMOUTCLKFREQR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TMOUTCLKFREQR { bits }
+    #[inline(always)]
+    pub fn tmoutclkfreq(&self) -> TMOUTCLKFREQ_R {
+        TMOUTCLKFREQ_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bit 7 - Timeout Clock Unit"]
-    #[inline]
-    pub fn tmoutclkunit(&self) -> TMOUTCLKUNITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TMOUTCLKUNITR { bits }
+    #[inline(always)]
+    pub fn tmoutclkunit(&self) -> TMOUTCLKUNIT_R {
+        TMOUTCLKUNIT_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:15 - Base Clock Frequency for SD_CLK"]
-    #[inline]
-    pub fn baseclkfreqsd(&self) -> BASECLKFREQSDR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BASECLKFREQSDR { bits }
+    #[inline(always)]
+    pub fn baseclkfreqsd(&self) -> BASECLKFREQSD_R {
+        BASECLKFREQSD_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:17 - Maximum Block Length"]
-    #[inline]
-    pub fn maxblocklen(&self) -> MAXBLOCKLENR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAXBLOCKLENR { bits }
+    #[inline(always)]
+    pub fn maxblocklen(&self) -> MAXBLOCKLEN_R {
+        MAXBLOCKLEN_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bit 18 - Extended Media Bus Support"]
-    #[inline]
-    pub fn extmediabussup(&self) -> EXTMEDIABUSSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EXTMEDIABUSSUPR { bits }
+    #[inline(always)]
+    pub fn extmediabussup(&self) -> EXTMEDIABUSSUP_R {
+        EXTMEDIABUSSUP_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - ADMA2 Support"]
-    #[inline]
-    pub fn adma2sup(&self) -> ADMA2SUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ADMA2SUPR { bits }
+    #[inline(always)]
+    pub fn adma2sup(&self) -> ADMA2SUP_R {
+        ADMA2SUP_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 21 - High Speed Support"]
-    #[inline]
-    pub fn hssup(&self) -> HSSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HSSUPR { bits }
+    #[inline(always)]
+    pub fn hssup(&self) -> HSSUP_R {
+        HSSUP_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - SDMA Support"]
-    #[inline]
-    pub fn sdmasup(&self) -> SDMASUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDMASUPR { bits }
+    #[inline(always)]
+    pub fn sdmasup(&self) -> SDMASUP_R {
+        SDMASUP_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Suspend / Resume Support"]
-    #[inline]
-    pub fn susressup(&self) -> SUSRESSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SUSRESSUPR { bits }
+    #[inline(always)]
+    pub fn susressup(&self) -> SUSRESSUP_R {
+        SUSRESSUP_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Voltage Support 3.3V"]
-    #[inline]
-    pub fn voltsup3p3v(&self) -> VOLTSUP3P3VR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VOLTSUP3P3VR { bits }
+    #[inline(always)]
+    pub fn voltsup3p3v(&self) -> VOLTSUP3P3V_R {
+        VOLTSUP3P3V_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Voltage Support 3.0V"]
-    #[inline]
-    pub fn voltsup3p0v(&self) -> VOLTSUP3P0VR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VOLTSUP3P0VR { bits }
+    #[inline(always)]
+    pub fn voltsup3p0v(&self) -> VOLTSUP3P0V_R {
+        VOLTSUP3P0V_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Voltage Support 1.8V"]
-    #[inline]
-    pub fn voltsup1p8v(&self) -> VOLTSUP1P8VR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VOLTSUP1P8VR { bits }
+    #[inline(always)]
+    pub fn voltsup1p8v(&self) -> VOLTSUP1P8V_R {
+        VOLTSUP1P8V_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 28 - System Bus 64-bit Support"]
-    #[inline]
-    pub fn sysbus64bsup(&self) -> SYSBUS64BSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SYSBUS64BSUPR { bits }
+    #[inline(always)]
+    pub fn sysbus64bsup(&self) -> SYSBUS64BSUP_R {
+        SYSBUS64BSUP_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Asynchronous Interrupt Support"]
-    #[inline]
-    pub fn asyncintsup(&self) -> ASYNCINTSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ASYNCINTSUPR { bits }
+    #[inline(always)]
+    pub fn asyncintsup(&self) -> ASYNCINTSUP_R {
+        ASYNCINTSUP_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bits 30:31 - Interface Card Slot Type"]
-    #[inline]
-    pub fn ifslottype(&self) -> IFSLOTTYPER {
-        IFSLOTTYPER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ifslottype(&self) -> IFSLOTTYPE_R {
+        IFSLOTTYPE_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }

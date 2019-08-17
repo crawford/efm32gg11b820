@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DISPCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DISPCTRL"]
+pub type R = crate::R<u32, super::DISPCTRL>;
+#[doc = "Writer for register DISPCTRL"]
+pub type W = crate::W<u32, super::DISPCTRL>;
+#[doc = "Register DISPCTRL `reset()`'s with value 0x0010_3f00"]
+impl crate::ResetValue for super::DISPCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0010_3f00
     }
 }
 #[doc = "Possible values of the field `MUX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUXR {
+pub enum MUX_A {
     #[doc = "Static"]
     STATIC,
     #[doc = "Duplex"]
@@ -55,103 +25,157 @@ pub enum MUXR {
     SEXTAPLEX,
     #[doc = "Octaplex"]
     OCTAPLEX,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MUXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MUX_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MUXR::STATIC => 0,
-            MUXR::DUPLEX => 1,
-            MUXR::TRIPLEX => 2,
-            MUXR::QUADRUPLEX => 3,
-            MUXR::SEXTAPLEX => 5,
-            MUXR::OCTAPLEX => 7,
-            MUXR::_Reserved(bits) => bits,
+            MUX_A::STATIC => 0,
+            MUX_A::DUPLEX => 1,
+            MUX_A::TRIPLEX => 2,
+            MUX_A::QUADRUPLEX => 3,
+            MUX_A::SEXTAPLEX => 5,
+            MUX_A::OCTAPLEX => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MUXR {
-        match value {
-            0 => MUXR::STATIC,
-            1 => MUXR::DUPLEX,
-            2 => MUXR::TRIPLEX,
-            3 => MUXR::QUADRUPLEX,
-            5 => MUXR::SEXTAPLEX,
-            7 => MUXR::OCTAPLEX,
-            i => MUXR::_Reserved(i),
+}
+#[doc = "Reader of field `MUX`"]
+pub type MUX_R = crate::R<u8, MUX_A>;
+impl MUX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MUX_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MUX_A::STATIC),
+            1 => Val(MUX_A::DUPLEX),
+            2 => Val(MUX_A::TRIPLEX),
+            3 => Val(MUX_A::QUADRUPLEX),
+            5 => Val(MUX_A::SEXTAPLEX),
+            7 => Val(MUX_A::OCTAPLEX),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `STATIC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_static_(&self) -> bool {
-        *self == MUXR::STATIC
+        *self == MUX_A::STATIC
     }
     #[doc = "Checks if the value of the field is `DUPLEX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_duplex(&self) -> bool {
-        *self == MUXR::DUPLEX
+        *self == MUX_A::DUPLEX
     }
     #[doc = "Checks if the value of the field is `TRIPLEX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_triplex(&self) -> bool {
-        *self == MUXR::TRIPLEX
+        *self == MUX_A::TRIPLEX
     }
     #[doc = "Checks if the value of the field is `QUADRUPLEX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_quadruplex(&self) -> bool {
-        *self == MUXR::QUADRUPLEX
+        *self == MUX_A::QUADRUPLEX
     }
     #[doc = "Checks if the value of the field is `SEXTAPLEX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sextaplex(&self) -> bool {
-        *self == MUXR::SEXTAPLEX
+        *self == MUX_A::SEXTAPLEX
     }
     #[doc = "Checks if the value of the field is `OCTAPLEX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_octaplex(&self) -> bool {
-        *self == MUXR::OCTAPLEX
+        *self == MUX_A::OCTAPLEX
     }
 }
-#[doc = r" Value of the field"]
-pub struct WAVER {
-    bits: bool,
+#[doc = "Write proxy for field `MUX`"]
+pub struct MUX_W<'a> {
+    w: &'a mut W,
 }
-impl WAVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> MUX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MUX_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "Static"]
+    #[inline(always)]
+    pub fn static_(self) -> &'a mut W {
+        self.variant(MUX_A::STATIC)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "Duplex"]
+    #[inline(always)]
+    pub fn duplex(self) -> &'a mut W {
+        self.variant(MUX_A::DUPLEX)
+    }
+    #[doc = "Triplex"]
+    #[inline(always)]
+    pub fn triplex(self) -> &'a mut W {
+        self.variant(MUX_A::TRIPLEX)
+    }
+    #[doc = "Quadruplex"]
+    #[inline(always)]
+    pub fn quadruplex(self) -> &'a mut W {
+        self.variant(MUX_A::QUADRUPLEX)
+    }
+    #[doc = "Sextaplex"]
+    #[inline(always)]
+    pub fn sextaplex(self) -> &'a mut W {
+        self.variant(MUX_A::SEXTAPLEX)
+    }
+    #[doc = "Octaplex"]
+    #[inline(always)]
+    pub fn octaplex(self) -> &'a mut W {
+        self.variant(MUX_A::OCTAPLEX)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct CONTRASTR {
-    bits: u8,
+#[doc = "Reader of field `WAVE`"]
+pub type WAVE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WAVE`"]
+pub struct WAVE_W<'a> {
+    w: &'a mut W,
 }
-impl CONTRASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> WAVE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Reader of field `CONTRAST`"]
+pub type CONTRAST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CONTRAST`"]
+pub struct CONTRAST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CONTRAST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CHGRDST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CHGRDSTR {
+pub enum CHGRDST_A {
     #[doc = "Disable charge redistribution."]
     DISABLE,
     #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
@@ -162,64 +186,107 @@ pub enum CHGRDSTR {
     THREE,
     #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
     FOUR,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CHGRDSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CHGRDST_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CHGRDSTR::DISABLE => 0,
-            CHGRDSTR::ONE => 1,
-            CHGRDSTR::TWO => 2,
-            CHGRDSTR::THREE => 3,
-            CHGRDSTR::FOUR => 4,
-            CHGRDSTR::_Reserved(bits) => bits,
+            CHGRDST_A::DISABLE => 0,
+            CHGRDST_A::ONE => 1,
+            CHGRDST_A::TWO => 2,
+            CHGRDST_A::THREE => 3,
+            CHGRDST_A::FOUR => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CHGRDSTR {
-        match value {
-            0 => CHGRDSTR::DISABLE,
-            1 => CHGRDSTR::ONE,
-            2 => CHGRDSTR::TWO,
-            3 => CHGRDSTR::THREE,
-            4 => CHGRDSTR::FOUR,
-            i => CHGRDSTR::_Reserved(i),
+}
+#[doc = "Reader of field `CHGRDST`"]
+pub type CHGRDST_R = crate::R<u8, CHGRDST_A>;
+impl CHGRDST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CHGRDST_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CHGRDST_A::DISABLE),
+            1 => Val(CHGRDST_A::ONE),
+            2 => Val(CHGRDST_A::TWO),
+            3 => Val(CHGRDST_A::THREE),
+            4 => Val(CHGRDST_A::FOUR),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CHGRDSTR::DISABLE
+        *self == CHGRDST_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == CHGRDSTR::ONE
+        *self == CHGRDST_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == CHGRDSTR::TWO
+        *self == CHGRDST_A::TWO
     }
     #[doc = "Checks if the value of the field is `THREE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == CHGRDSTR::THREE
+        *self == CHGRDST_A::THREE
     }
     #[doc = "Checks if the value of the field is `FOUR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_four(&self) -> bool {
-        *self == CHGRDSTR::FOUR
+        *self == CHGRDST_A::FOUR
+    }
+}
+#[doc = "Write proxy for field `CHGRDST`"]
+pub struct CHGRDST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CHGRDST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CHGRDST_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Disable charge redistribution."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHGRDST_A::DISABLE)
+    }
+    #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
+    #[inline(always)]
+    pub fn one(self) -> &'a mut W {
+        self.variant(CHGRDST_A::ONE)
+    }
+    #[doc = "Use 2 prescaled low frequency clock cycles for charge redistribution."]
+    #[inline(always)]
+    pub fn two(self) -> &'a mut W {
+        self.variant(CHGRDST_A::TWO)
+    }
+    #[doc = "Use 3 prescaled low frequency clock cycles for charge redistribution."]
+    #[inline(always)]
+    pub fn three(self) -> &'a mut W {
+        self.variant(CHGRDST_A::THREE)
+    }
+    #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
+    #[inline(always)]
+    pub fn four(self) -> &'a mut W {
+        self.variant(CHGRDST_A::FOUR)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BIAS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BIASR {
+pub enum BIAS_A {
     #[doc = "Static"]
     STATIC,
     #[doc = "1/2 Bias"]
@@ -229,358 +296,95 @@ pub enum BIASR {
     #[doc = "1/4 Bias"]
     ONEFOURTH,
 }
-impl BIASR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for BIAS_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            BIASR::STATIC => 0,
-            BIASR::ONEHALF => 1,
-            BIASR::ONETHIRD => 2,
-            BIASR::ONEFOURTH => 3,
+            BIAS_A::STATIC => 0,
+            BIAS_A::ONEHALF => 1,
+            BIAS_A::ONETHIRD => 2,
+            BIAS_A::ONEFOURTH => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BIASR {
-        match value {
-            0 => BIASR::STATIC,
-            1 => BIASR::ONEHALF,
-            2 => BIASR::ONETHIRD,
-            3 => BIASR::ONEFOURTH,
+}
+#[doc = "Reader of field `BIAS`"]
+pub type BIAS_R = crate::R<u8, BIAS_A>;
+impl BIAS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BIAS_A {
+        match self.bits {
+            0 => BIAS_A::STATIC,
+            1 => BIAS_A::ONEHALF,
+            2 => BIAS_A::ONETHIRD,
+            3 => BIAS_A::ONEFOURTH,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `STATIC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_static_(&self) -> bool {
-        *self == BIASR::STATIC
+        *self == BIAS_A::STATIC
     }
     #[doc = "Checks if the value of the field is `ONEHALF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_onehalf(&self) -> bool {
-        *self == BIASR::ONEHALF
+        *self == BIAS_A::ONEHALF
     }
     #[doc = "Checks if the value of the field is `ONETHIRD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_onethird(&self) -> bool {
-        *self == BIASR::ONETHIRD
+        *self == BIAS_A::ONETHIRD
     }
     #[doc = "Checks if the value of the field is `ONEFOURTH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_onefourth(&self) -> bool {
-        *self == BIASR::ONEFOURTH
+        *self == BIAS_A::ONEFOURTH
     }
 }
-#[doc = "Possible values of the field `MODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
-    NOEXTCAP,
-    #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
-    STEPDOWN,
-    #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
-    CPINTOSC,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MODER::NOEXTCAP => 0,
-            MODER::STEPDOWN => 1,
-            MODER::CPINTOSC => 2,
-            MODER::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::NOEXTCAP,
-            1 => MODER::STEPDOWN,
-            2 => MODER::CPINTOSC,
-            i => MODER::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOEXTCAP`"]
-    #[inline]
-    pub fn is_noextcap(&self) -> bool {
-        *self == MODER::NOEXTCAP
-    }
-    #[doc = "Checks if the value of the field is `STEPDOWN`"]
-    #[inline]
-    pub fn is_stepdown(&self) -> bool {
-        *self == MODER::STEPDOWN
-    }
-    #[doc = "Checks if the value of the field is `CPINTOSC`"]
-    #[inline]
-    pub fn is_cpintosc(&self) -> bool {
-        *self == MODER::CPINTOSC
-    }
-}
-#[doc = "Values that can be written to the field `MUX`"]
-pub enum MUXW {
-    #[doc = "Static"]
-    STATIC,
-    #[doc = "Duplex"]
-    DUPLEX,
-    #[doc = "Triplex"]
-    TRIPLEX,
-    #[doc = "Quadruplex"]
-    QUADRUPLEX,
-    #[doc = "Sextaplex"]
-    SEXTAPLEX,
-    #[doc = "Octaplex"]
-    OCTAPLEX,
-}
-impl MUXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MUXW::STATIC => 0,
-            MUXW::DUPLEX => 1,
-            MUXW::TRIPLEX => 2,
-            MUXW::QUADRUPLEX => 3,
-            MUXW::SEXTAPLEX => 5,
-            MUXW::OCTAPLEX => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MUXW<'a> {
+#[doc = "Write proxy for field `BIAS`"]
+pub struct BIAS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MUXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MUXW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Static"]
-    #[inline]
-    pub fn static_(self) -> &'a mut W {
-        self.variant(MUXW::STATIC)
-    }
-    #[doc = "Duplex"]
-    #[inline]
-    pub fn duplex(self) -> &'a mut W {
-        self.variant(MUXW::DUPLEX)
-    }
-    #[doc = "Triplex"]
-    #[inline]
-    pub fn triplex(self) -> &'a mut W {
-        self.variant(MUXW::TRIPLEX)
-    }
-    #[doc = "Quadruplex"]
-    #[inline]
-    pub fn quadruplex(self) -> &'a mut W {
-        self.variant(MUXW::QUADRUPLEX)
-    }
-    #[doc = "Sextaplex"]
-    #[inline]
-    pub fn sextaplex(self) -> &'a mut W {
-        self.variant(MUXW::SEXTAPLEX)
-    }
-    #[doc = "Octaplex"]
-    #[inline]
-    pub fn octaplex(self) -> &'a mut W {
-        self.variant(MUXW::OCTAPLEX)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAVEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WAVEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CONTRASTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CONTRASTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CHGRDST`"]
-pub enum CHGRDSTW {
-    #[doc = "Disable charge redistribution."]
-    DISABLE,
-    #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
-    ONE,
-    #[doc = "Use 2 prescaled low frequency clock cycles for charge redistribution."]
-    TWO,
-    #[doc = "Use 3 prescaled low frequency clock cycles for charge redistribution."]
-    THREE,
-    #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
-    FOUR,
-}
-impl CHGRDSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CHGRDSTW::DISABLE => 0,
-            CHGRDSTW::ONE => 1,
-            CHGRDSTW::TWO => 2,
-            CHGRDSTW::THREE => 3,
-            CHGRDSTW::FOUR => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CHGRDSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CHGRDSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CHGRDSTW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Disable charge redistribution."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CHGRDSTW::DISABLE)
-    }
-    #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
-    #[inline]
-    pub fn one(self) -> &'a mut W {
-        self.variant(CHGRDSTW::ONE)
-    }
-    #[doc = "Use 2 prescaled low frequency clock cycles for charge redistribution."]
-    #[inline]
-    pub fn two(self) -> &'a mut W {
-        self.variant(CHGRDSTW::TWO)
-    }
-    #[doc = "Use 3 prescaled low frequency clock cycles for charge redistribution."]
-    #[inline]
-    pub fn three(self) -> &'a mut W {
-        self.variant(CHGRDSTW::THREE)
-    }
-    #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
-    #[inline]
-    pub fn four(self) -> &'a mut W {
-        self.variant(CHGRDSTW::FOUR)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BIAS`"]
-pub enum BIASW {
-    #[doc = "Static"]
-    STATIC,
-    #[doc = "1/2 Bias"]
-    ONEHALF,
-    #[doc = "1/3 Bias"]
-    ONETHIRD,
-    #[doc = "1/4 Bias"]
-    ONEFOURTH,
-}
-impl BIASW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BIASW::STATIC => 0,
-            BIASW::ONEHALF => 1,
-            BIASW::ONETHIRD => 2,
-            BIASW::ONEFOURTH => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BIASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BIASW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BIASW) -> &'a mut W {
+impl<'a> BIAS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BIAS_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Static"]
-    #[inline]
+    #[inline(always)]
     pub fn static_(self) -> &'a mut W {
-        self.variant(BIASW::STATIC)
+        self.variant(BIAS_A::STATIC)
     }
     #[doc = "1/2 Bias"]
-    #[inline]
+    #[inline(always)]
     pub fn onehalf(self) -> &'a mut W {
-        self.variant(BIASW::ONEHALF)
+        self.variant(BIAS_A::ONEHALF)
     }
     #[doc = "1/3 Bias"]
-    #[inline]
+    #[inline(always)]
     pub fn onethird(self) -> &'a mut W {
-        self.variant(BIASW::ONETHIRD)
+        self.variant(BIAS_A::ONETHIRD)
     }
     #[doc = "1/4 Bias"]
-    #[inline]
+    #[inline(always)]
     pub fn onefourth(self) -> &'a mut W {
-        self.variant(BIASW::ONEFOURTH)
+        self.variant(BIAS_A::ONEFOURTH)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
+#[doc = "Possible values of the field `MODE`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODE_A {
     #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
     NOEXTCAP,
     #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
@@ -588,156 +392,140 @@ pub enum MODEW {
     #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
     CPINTOSC,
 }
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODEW::NOEXTCAP => 0,
-            MODEW::STEPDOWN => 1,
-            MODEW::CPINTOSC => 2,
+            MODE_A::NOEXTCAP => 0,
+            MODE_A::STEPDOWN => 1,
+            MODE_A::CPINTOSC => 2,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MODE_A::NOEXTCAP),
+            1 => Val(MODE_A::STEPDOWN),
+            2 => Val(MODE_A::CPINTOSC),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOEXTCAP`"]
+    #[inline(always)]
+    pub fn is_noextcap(&self) -> bool {
+        *self == MODE_A::NOEXTCAP
+    }
+    #[doc = "Checks if the value of the field is `STEPDOWN`"]
+    #[inline(always)]
+    pub fn is_stepdown(&self) -> bool {
+        *self == MODE_A::STEPDOWN
+    }
+    #[doc = "Checks if the value of the field is `CPINTOSC`"]
+    #[inline(always)]
+    pub fn is_cpintosc(&self) -> bool {
+        *self == MODE_A::CPINTOSC
+    }
+}
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
-    #[inline]
+    #[inline(always)]
     pub fn noextcap(self) -> &'a mut W {
-        self.variant(MODEW::NOEXTCAP)
+        self.variant(MODE_A::NOEXTCAP)
     }
     #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
-    #[inline]
+    #[inline(always)]
     pub fn stepdown(self) -> &'a mut W {
-        self.variant(MODEW::STEPDOWN)
+        self.variant(MODE_A::STEPDOWN)
     }
     #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
-    #[inline]
+    #[inline(always)]
     pub fn cpintosc(self) -> &'a mut W {
-        self.variant(MODEW::CPINTOSC)
+        self.variant(MODE_A::CPINTOSC)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Mux Configuration"]
-    #[inline]
-    pub fn mux(&self) -> MUXR {
-        MUXR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mux(&self) -> MUX_R {
+        MUX_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 4 - Waveform Selection"]
-    #[inline]
-    pub fn wave(&self) -> WAVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WAVER { bits }
+    #[inline(always)]
+    pub fn wave(&self) -> WAVE_R {
+        WAVE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 8:13 - Contrast Control"]
-    #[inline]
-    pub fn contrast(&self) -> CONTRASTR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CONTRASTR { bits }
+    #[inline(always)]
+    pub fn contrast(&self) -> CONTRAST_R {
+        CONTRAST_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 20:22 - Charge Redistribution Cycles"]
-    #[inline]
-    pub fn chgrdst(&self) -> CHGRDSTR {
-        CHGRDSTR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn chgrdst(&self) -> CHGRDST_R {
+        CHGRDST_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bits 24:25 - Bias Configuration"]
-    #[inline]
-    pub fn bias(&self) -> BIASR {
-        BIASR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bias(&self) -> BIAS_R {
+        BIAS_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - Mode Setting"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1064704 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Mux Configuration"]
-    #[inline]
-    pub fn mux(&mut self) -> _MUXW {
-        _MUXW { w: self }
+    #[inline(always)]
+    pub fn mux(&mut self) -> MUX_W {
+        MUX_W { w: self }
     }
     #[doc = "Bit 4 - Waveform Selection"]
-    #[inline]
-    pub fn wave(&mut self) -> _WAVEW {
-        _WAVEW { w: self }
+    #[inline(always)]
+    pub fn wave(&mut self) -> WAVE_W {
+        WAVE_W { w: self }
     }
     #[doc = "Bits 8:13 - Contrast Control"]
-    #[inline]
-    pub fn contrast(&mut self) -> _CONTRASTW {
-        _CONTRASTW { w: self }
+    #[inline(always)]
+    pub fn contrast(&mut self) -> CONTRAST_W {
+        CONTRAST_W { w: self }
     }
     #[doc = "Bits 20:22 - Charge Redistribution Cycles"]
-    #[inline]
-    pub fn chgrdst(&mut self) -> _CHGRDSTW {
-        _CHGRDSTW { w: self }
+    #[inline(always)]
+    pub fn chgrdst(&mut self) -> CHGRDST_W {
+        CHGRDST_W { w: self }
     }
     #[doc = "Bits 24:25 - Bias Configuration"]
-    #[inline]
-    pub fn bias(&mut self) -> _BIASW {
-        _BIASW { w: self }
+    #[inline(always)]
+    pub fn bias(&mut self) -> BIAS_W {
+        BIAS_W { w: self }
     }
     #[doc = "Bits 28:29 - Mode Setting"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
 }

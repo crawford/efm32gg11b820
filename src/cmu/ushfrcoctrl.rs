@@ -1,505 +1,297 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USHFRCOCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USHFRCOCTRL"]
+pub type R = crate::R<u32, super::USHFRCOCTRL>;
+#[doc = "Writer for register USHFRCOCTRL"]
+pub type W = crate::W<u32, super::USHFRCOCTRL>;
+#[doc = "Register USHFRCOCTRL `reset()`'s with value 0xb148_1f7f"]
+impl crate::ResetValue for super::USHFRCOCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xb148_1f7f
     }
 }
-#[doc = r" Value of the field"]
-pub struct TUNINGR {
-    bits: u8,
+#[doc = "Reader of field `TUNING`"]
+pub type TUNING_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TUNING`"]
+pub struct TUNING_W<'a> {
+    w: &'a mut W,
 }
-impl TUNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TUNING_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct FINETUNINGR {
-    bits: u8,
+#[doc = "Reader of field `FINETUNING`"]
+pub type FINETUNING_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FINETUNING`"]
+pub struct FINETUNING_W<'a> {
+    w: &'a mut W,
 }
-impl FINETUNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> FINETUNING_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct FREQRANGER {
-    bits: u8,
+#[doc = "Reader of field `FREQRANGE`"]
+pub type FREQRANGE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FREQRANGE`"]
+pub struct FREQRANGE_W<'a> {
+    w: &'a mut W,
 }
-impl FREQRANGER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> FREQRANGE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct CMPBIASR {
-    bits: u8,
+#[doc = "Reader of field `CMPBIAS`"]
+pub type CMPBIAS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CMPBIAS`"]
+pub struct CMPBIAS_W<'a> {
+    w: &'a mut W,
 }
-impl CMPBIASR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> CMPBIAS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct LDOHPR {
-    bits: bool,
+#[doc = "Reader of field `LDOHP`"]
+pub type LDOHP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LDOHP`"]
+pub struct LDOHP_W<'a> {
+    w: &'a mut W,
 }
-impl LDOHPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> LDOHP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CLKDIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKDIVR {
+pub enum CLKDIV_A {
     #[doc = "Divide by 1."]
     DIV1,
     #[doc = "Divide by 2."]
     DIV2,
     #[doc = "Divide by 4."]
     DIV4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CLKDIV_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CLKDIVR::DIV1 => 0,
-            CLKDIVR::DIV2 => 1,
-            CLKDIVR::DIV4 => 2,
-            CLKDIVR::_Reserved(bits) => bits,
+            CLKDIV_A::DIV1 => 0,
+            CLKDIV_A::DIV2 => 1,
+            CLKDIV_A::DIV4 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKDIVR {
-        match value {
-            0 => CLKDIVR::DIV1,
-            1 => CLKDIVR::DIV2,
-            2 => CLKDIVR::DIV4,
-            i => CLKDIVR::_Reserved(i),
+}
+#[doc = "Reader of field `CLKDIV`"]
+pub type CLKDIV_R = crate::R<u8, CLKDIV_A>;
+impl CLKDIV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKDIV_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKDIV_A::DIV1),
+            1 => Val(CLKDIV_A::DIV2),
+            2 => Val(CLKDIV_A::DIV4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == CLKDIVR::DIV1
+        *self == CLKDIV_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == CLKDIVR::DIV2
+        *self == CLKDIV_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == CLKDIVR::DIV4
+        *self == CLKDIV_A::DIV4
     }
 }
-#[doc = r" Value of the field"]
-pub struct FINETUNINGENR {
-    bits: bool,
-}
-impl FINETUNINGENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VREFTCR {
-    bits: u8,
-}
-impl VREFTCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TUNINGW<'a> {
+#[doc = "Write proxy for field `CLKDIV`"]
+pub struct CLKDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TUNINGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FINETUNINGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FINETUNINGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FREQRANGEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FREQRANGEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CMPBIASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CMPBIASW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LDOHPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LDOHPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CLKDIV`"]
-pub enum CLKDIVW {
-    #[doc = "Divide by 1."]
-    DIV1,
-    #[doc = "Divide by 2."]
-    DIV2,
-    #[doc = "Divide by 4."]
-    DIV4,
-}
-impl CLKDIVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKDIVW::DIV1 => 0,
-            CLKDIVW::DIV2 => 1,
-            CLKDIVW::DIV4 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKDIVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLKDIVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKDIVW) -> &'a mut W {
+impl<'a> CLKDIV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKDIV_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Divide by 1."]
-    #[inline]
+    #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(CLKDIVW::DIV1)
+        self.variant(CLKDIV_A::DIV1)
     }
     #[doc = "Divide by 2."]
-    #[inline]
+    #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(CLKDIVW::DIV2)
+        self.variant(CLKDIV_A::DIV2)
     }
     #[doc = "Divide by 4."]
-    #[inline]
+    #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(CLKDIVW::DIV4)
+        self.variant(CLKDIV_A::DIV4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 25)) | (((value as u32) & 0x03) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FINETUNINGENW<'a> {
+#[doc = "Reader of field `FINETUNINGEN`"]
+pub type FINETUNINGEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FINETUNINGEN`"]
+pub struct FINETUNINGEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FINETUNINGENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FINETUNINGEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _VREFTCW<'a> {
+#[doc = "Reader of field `VREFTC`"]
+pub type VREFTC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `VREFTC`"]
+pub struct VREFTC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VREFTCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> VREFTC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:6 - USHFRCO Tuning Value"]
-    #[inline]
-    pub fn tuning(&self) -> TUNINGR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TUNINGR { bits }
+    #[inline(always)]
+    pub fn tuning(&self) -> TUNING_R {
+        TUNING_R::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bits 8:13 - USHFRCO Fine Tuning Value"]
-    #[inline]
-    pub fn finetuning(&self) -> FINETUNINGR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FINETUNINGR { bits }
+    #[inline(always)]
+    pub fn finetuning(&self) -> FINETUNING_R {
+        FINETUNING_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:20 - USHFRCO Frequency Range"]
-    #[inline]
-    pub fn freqrange(&self) -> FREQRANGER {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FREQRANGER { bits }
+    #[inline(always)]
+    pub fn freqrange(&self) -> FREQRANGE_R {
+        FREQRANGE_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 21:23 - USHFRCO Comparator Bias Current"]
-    #[inline]
-    pub fn cmpbias(&self) -> CMPBIASR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CMPBIASR { bits }
+    #[inline(always)]
+    pub fn cmpbias(&self) -> CMPBIAS_R {
+        CMPBIAS_R::new(((self.bits >> 21) & 0x07) as u8)
     }
     #[doc = "Bit 24 - USHFRCO LDO High Power Mode"]
-    #[inline]
-    pub fn ldohp(&self) -> LDOHPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LDOHPR { bits }
+    #[inline(always)]
+    pub fn ldohp(&self) -> LDOHP_R {
+        LDOHP_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bits 25:26 - Locally Divide USHFRCO Clock Output"]
-    #[inline]
-    pub fn clkdiv(&self) -> CLKDIVR {
-        CLKDIVR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clkdiv(&self) -> CLKDIV_R {
+        CLKDIV_R::new(((self.bits >> 25) & 0x03) as u8)
     }
     #[doc = "Bit 27 - Enable Reference for Fine Tuning"]
-    #[inline]
-    pub fn finetuningen(&self) -> FINETUNINGENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FINETUNINGENR { bits }
+    #[inline(always)]
+    pub fn finetuningen(&self) -> FINETUNINGEN_R {
+        FINETUNINGEN_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bits 28:31 - USHFRCO Temperature Coefficient Trim on Comparator Reference"]
-    #[inline]
-    pub fn vreftc(&self) -> VREFTCR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VREFTCR { bits }
+    #[inline(always)]
+    pub fn vreftc(&self) -> VREFTC_R {
+        VREFTC_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2974293887 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:6 - USHFRCO Tuning Value"]
-    #[inline]
-    pub fn tuning(&mut self) -> _TUNINGW {
-        _TUNINGW { w: self }
+    #[inline(always)]
+    pub fn tuning(&mut self) -> TUNING_W {
+        TUNING_W { w: self }
     }
     #[doc = "Bits 8:13 - USHFRCO Fine Tuning Value"]
-    #[inline]
-    pub fn finetuning(&mut self) -> _FINETUNINGW {
-        _FINETUNINGW { w: self }
+    #[inline(always)]
+    pub fn finetuning(&mut self) -> FINETUNING_W {
+        FINETUNING_W { w: self }
     }
     #[doc = "Bits 16:20 - USHFRCO Frequency Range"]
-    #[inline]
-    pub fn freqrange(&mut self) -> _FREQRANGEW {
-        _FREQRANGEW { w: self }
+    #[inline(always)]
+    pub fn freqrange(&mut self) -> FREQRANGE_W {
+        FREQRANGE_W { w: self }
     }
     #[doc = "Bits 21:23 - USHFRCO Comparator Bias Current"]
-    #[inline]
-    pub fn cmpbias(&mut self) -> _CMPBIASW {
-        _CMPBIASW { w: self }
+    #[inline(always)]
+    pub fn cmpbias(&mut self) -> CMPBIAS_W {
+        CMPBIAS_W { w: self }
     }
     #[doc = "Bit 24 - USHFRCO LDO High Power Mode"]
-    #[inline]
-    pub fn ldohp(&mut self) -> _LDOHPW {
-        _LDOHPW { w: self }
+    #[inline(always)]
+    pub fn ldohp(&mut self) -> LDOHP_W {
+        LDOHP_W { w: self }
     }
     #[doc = "Bits 25:26 - Locally Divide USHFRCO Clock Output"]
-    #[inline]
-    pub fn clkdiv(&mut self) -> _CLKDIVW {
-        _CLKDIVW { w: self }
+    #[inline(always)]
+    pub fn clkdiv(&mut self) -> CLKDIV_W {
+        CLKDIV_W { w: self }
     }
     #[doc = "Bit 27 - Enable Reference for Fine Tuning"]
-    #[inline]
-    pub fn finetuningen(&mut self) -> _FINETUNINGENW {
-        _FINETUNINGENW { w: self }
+    #[inline(always)]
+    pub fn finetuningen(&mut self) -> FINETUNINGEN_W {
+        FINETUNINGEN_W { w: self }
     }
     #[doc = "Bits 28:31 - USHFRCO Temperature Coefficient Trim on Comparator Reference"]
-    #[inline]
-    pub fn vreftc(&mut self) -> _VREFTCW {
-        _VREFTCW { w: self }
+    #[inline(always)]
+    pub fn vreftc(&mut self) -> VREFTC_W {
+        VREFTC_W { w: self }
     }
 }

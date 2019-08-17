@@ -1,398 +1,210 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TXDATAX {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TXDATAX"]
+pub type R = crate::R<u32, super::TXDATAX>;
+#[doc = "Writer for register TXDATAX"]
+pub type W = crate::W<u32, super::TXDATAX>;
+#[doc = "Register TXDATAX `reset()`'s with value 0"]
+impl crate::ResetValue for super::TXDATAX {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TXDATAXR {
-    bits: u16,
-}
-impl TXDATAXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UBRXATR {
-    bits: bool,
-}
-impl UBRXATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXTRIATR {
-    bits: bool,
-}
-impl TXTRIATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXBREAKR {
-    bits: bool,
-}
-impl TXBREAKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDISATR {
-    bits: bool,
-}
-impl TXDISATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXENATR {
-    bits: bool,
-}
-impl RXENATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXDATAXW<'a> {
+#[doc = "Reader of field `TXDATAX`"]
+pub type TXDATAX_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `TXDATAX`"]
+pub struct TXDATAX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXDATAXW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TXDATAX_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01ff) | ((value as u32) & 0x01ff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _UBRXATW<'a> {
+#[doc = "Reader of field `UBRXAT`"]
+pub type UBRXAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `UBRXAT`"]
+pub struct UBRXAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UBRXATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> UBRXAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXTRIATW<'a> {
+#[doc = "Reader of field `TXTRIAT`"]
+pub type TXTRIAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXTRIAT`"]
+pub struct TXTRIAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXTRIATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXTRIAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXBREAKW<'a> {
+#[doc = "Reader of field `TXBREAK`"]
+pub type TXBREAK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXBREAK`"]
+pub struct TXBREAK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXBREAKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXBREAK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXDISATW<'a> {
+#[doc = "Reader of field `TXDISAT`"]
+pub type TXDISAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXDISAT`"]
+pub struct TXDISAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXDISATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXDISAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXENATW<'a> {
+#[doc = "Reader of field `RXENAT`"]
+pub type RXENAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RXENAT`"]
+pub struct RXENAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXENATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RXENAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:8 - TX Data"]
-    #[inline]
-    pub fn txdatax(&self) -> TXDATAXR {
-        let bits = {
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        TXDATAXR { bits }
+    #[inline(always)]
+    pub fn txdatax(&self) -> TXDATAX_R {
+        TXDATAX_R::new((self.bits & 0x01ff) as u16)
     }
     #[doc = "Bit 11 - Unblock RX After Transmission"]
-    #[inline]
-    pub fn ubrxat(&self) -> UBRXATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        UBRXATR { bits }
+    #[inline(always)]
+    pub fn ubrxat(&self) -> UBRXAT_R {
+        UBRXAT_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Set TXTRI After Transmission"]
-    #[inline]
-    pub fn txtriat(&self) -> TXTRIATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXTRIATR { bits }
+    #[inline(always)]
+    pub fn txtriat(&self) -> TXTRIAT_R {
+        TXTRIAT_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Transmit Data as Break"]
-    #[inline]
-    pub fn txbreak(&self) -> TXBREAKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXBREAKR { bits }
+    #[inline(always)]
+    pub fn txbreak(&self) -> TXBREAK_R {
+        TXBREAK_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Clear TXEN After Transmission"]
-    #[inline]
-    pub fn txdisat(&self) -> TXDISATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXDISATR { bits }
+    #[inline(always)]
+    pub fn txdisat(&self) -> TXDISAT_R {
+        TXDISAT_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Enable RX After Transmission"]
-    #[inline]
-    pub fn rxenat(&self) -> RXENATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXENATR { bits }
+    #[inline(always)]
+    pub fn rxenat(&self) -> RXENAT_R {
+        RXENAT_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:8 - TX Data"]
-    #[inline]
-    pub fn txdatax(&mut self) -> _TXDATAXW {
-        _TXDATAXW { w: self }
+    #[inline(always)]
+    pub fn txdatax(&mut self) -> TXDATAX_W {
+        TXDATAX_W { w: self }
     }
     #[doc = "Bit 11 - Unblock RX After Transmission"]
-    #[inline]
-    pub fn ubrxat(&mut self) -> _UBRXATW {
-        _UBRXATW { w: self }
+    #[inline(always)]
+    pub fn ubrxat(&mut self) -> UBRXAT_W {
+        UBRXAT_W { w: self }
     }
     #[doc = "Bit 12 - Set TXTRI After Transmission"]
-    #[inline]
-    pub fn txtriat(&mut self) -> _TXTRIATW {
-        _TXTRIATW { w: self }
+    #[inline(always)]
+    pub fn txtriat(&mut self) -> TXTRIAT_W {
+        TXTRIAT_W { w: self }
     }
     #[doc = "Bit 13 - Transmit Data as Break"]
-    #[inline]
-    pub fn txbreak(&mut self) -> _TXBREAKW {
-        _TXBREAKW { w: self }
+    #[inline(always)]
+    pub fn txbreak(&mut self) -> TXBREAK_W {
+        TXBREAK_W { w: self }
     }
     #[doc = "Bit 14 - Clear TXEN After Transmission"]
-    #[inline]
-    pub fn txdisat(&mut self) -> _TXDISATW {
-        _TXDISATW { w: self }
+    #[inline(always)]
+    pub fn txdisat(&mut self) -> TXDISAT_W {
+        TXDISAT_W { w: self }
     }
     #[doc = "Bit 15 - Enable RX After Transmission"]
-    #[inline]
-    pub fn rxenat(&mut self) -> _RXENATW {
-        _RXENATW { w: self }
+    #[inline(always)]
+    pub fn rxenat(&mut self) -> RXENAT_W {
+        RXENAT_W { w: self }
     }
 }

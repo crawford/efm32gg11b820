@@ -1,17 +1,8 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::HFCLKSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
+#[doc = "Reader of register HFCLKSTATUS"]
+pub type R = crate::R<u32, super::HFCLKSTATUS>;
 #[doc = "Possible values of the field `SELECTED`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SELECTEDR {
+pub enum SELECTED_A {
     #[doc = "HFRCO is selected as HFCLK clock source"]
     HFRCO,
     #[doc = "HFXO is selected as HFCLK clock source"]
@@ -26,88 +17,79 @@ pub enum SELECTEDR {
     USHFRCO,
     #[doc = "CLKIN0 is selected as HFCLK clock source"]
     CLKIN0,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SELECTEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SELECTED_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SELECTEDR::HFRCO => 1,
-            SELECTEDR::HFXO => 2,
-            SELECTEDR::LFRCO => 3,
-            SELECTEDR::LFXO => 4,
-            SELECTEDR::HFRCODIV2 => 5,
-            SELECTEDR::USHFRCO => 6,
-            SELECTEDR::CLKIN0 => 7,
-            SELECTEDR::_Reserved(bits) => bits,
+            SELECTED_A::HFRCO => 1,
+            SELECTED_A::HFXO => 2,
+            SELECTED_A::LFRCO => 3,
+            SELECTED_A::LFXO => 4,
+            SELECTED_A::HFRCODIV2 => 5,
+            SELECTED_A::USHFRCO => 6,
+            SELECTED_A::CLKIN0 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SELECTEDR {
-        match value {
-            1 => SELECTEDR::HFRCO,
-            2 => SELECTEDR::HFXO,
-            3 => SELECTEDR::LFRCO,
-            4 => SELECTEDR::LFXO,
-            5 => SELECTEDR::HFRCODIV2,
-            6 => SELECTEDR::USHFRCO,
-            7 => SELECTEDR::CLKIN0,
-            i => SELECTEDR::_Reserved(i),
+}
+#[doc = "Reader of field `SELECTED`"]
+pub type SELECTED_R = crate::R<u8, SELECTED_A>;
+impl SELECTED_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SELECTED_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(SELECTED_A::HFRCO),
+            2 => Val(SELECTED_A::HFXO),
+            3 => Val(SELECTED_A::LFRCO),
+            4 => Val(SELECTED_A::LFXO),
+            5 => Val(SELECTED_A::HFRCODIV2),
+            6 => Val(SELECTED_A::USHFRCO),
+            7 => Val(SELECTED_A::CLKIN0),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `HFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrco(&self) -> bool {
-        *self == SELECTEDR::HFRCO
+        *self == SELECTED_A::HFRCO
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == SELECTEDR::HFXO
+        *self == SELECTED_A::HFXO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        *self == SELECTEDR::LFRCO
+        *self == SELECTED_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == SELECTEDR::LFXO
+        *self == SELECTED_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFRCODIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrcodiv2(&self) -> bool {
-        *self == SELECTEDR::HFRCODIV2
+        *self == SELECTED_A::HFRCODIV2
     }
     #[doc = "Checks if the value of the field is `USHFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrco(&self) -> bool {
-        *self == SELECTEDR::USHFRCO
+        *self == SELECTED_A::USHFRCO
     }
     #[doc = "Checks if the value of the field is `CLKIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_clkin0(&self) -> bool {
-        *self == SELECTEDR::CLKIN0
+        *self == SELECTED_A::CLKIN0
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - HFCLK Selected"]
-    #[inline]
-    pub fn selected(&self) -> SELECTEDR {
-        SELECTEDR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn selected(&self) -> SELECTED_R {
+        SELECTED_R::new((self.bits & 0x07) as u8)
     }
 }

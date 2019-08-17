@@ -1,80 +1,73 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BLKSIZE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BLKSIZE"]
+pub type R = crate::R<u32, super::BLKSIZE>;
+#[doc = "Writer for register BLKSIZE"]
+pub type W = crate::W<u32, super::BLKSIZE>;
+#[doc = "Register BLKSIZE `reset()`'s with value 0"]
+impl crate::ResetValue for super::BLKSIZE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `TFRBLKSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TFRBLKSIZER {
-    #[doc = "undocumented"]
+pub enum TFRBLKSIZE_A {
+    #[doc = "`0`"]
     NOXFER,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl TFRBLKSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
+impl crate::ToBits<u16> for TFRBLKSIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u16 {
         match *self {
-            TFRBLKSIZER::NOXFER => 0,
-            TFRBLKSIZER::_Reserved(bits) => bits,
+            TFRBLKSIZE_A::NOXFER => 0,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> TFRBLKSIZER {
-        match value {
-            0 => TFRBLKSIZER::NOXFER,
-            i => TFRBLKSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `TFRBLKSIZE`"]
+pub type TFRBLKSIZE_R = crate::R<u16, TFRBLKSIZE_A>;
+impl TFRBLKSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, TFRBLKSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TFRBLKSIZE_A::NOXFER),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOXFER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noxfer(&self) -> bool {
-        *self == TFRBLKSIZER::NOXFER
+        *self == TFRBLKSIZE_A::NOXFER
+    }
+}
+#[doc = "Write proxy for field `TFRBLKSIZE`"]
+pub struct TFRBLKSIZE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TFRBLKSIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TFRBLKSIZE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn noxfer(self) -> &'a mut W {
+        self.variant(TFRBLKSIZE_A::NOXFER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `HSTSDMABUFSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HSTSDMABUFSIZER {
+pub enum HSTSDMABUFSIZE_A {
     #[doc = "4KB(Detects A11 Carry out)"]
     SIZE4,
     #[doc = "8KB(Detects A12 Carry out)"]
@@ -92,347 +85,226 @@ pub enum HSTSDMABUFSIZER {
     #[doc = "512KB(Detects A18 Carry out)"]
     SIZE512,
 }
-impl HSTSDMABUFSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for HSTSDMABUFSIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            HSTSDMABUFSIZER::SIZE4 => 0,
-            HSTSDMABUFSIZER::SIZE8 => 1,
-            HSTSDMABUFSIZER::SIZE16 => 2,
-            HSTSDMABUFSIZER::SIZE32 => 3,
-            HSTSDMABUFSIZER::SIZE64 => 4,
-            HSTSDMABUFSIZER::SIZE128 => 5,
-            HSTSDMABUFSIZER::SIZE256 => 6,
-            HSTSDMABUFSIZER::SIZE512 => 7,
+            HSTSDMABUFSIZE_A::SIZE4 => 0,
+            HSTSDMABUFSIZE_A::SIZE8 => 1,
+            HSTSDMABUFSIZE_A::SIZE16 => 2,
+            HSTSDMABUFSIZE_A::SIZE32 => 3,
+            HSTSDMABUFSIZE_A::SIZE64 => 4,
+            HSTSDMABUFSIZE_A::SIZE128 => 5,
+            HSTSDMABUFSIZE_A::SIZE256 => 6,
+            HSTSDMABUFSIZE_A::SIZE512 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HSTSDMABUFSIZER {
-        match value {
-            0 => HSTSDMABUFSIZER::SIZE4,
-            1 => HSTSDMABUFSIZER::SIZE8,
-            2 => HSTSDMABUFSIZER::SIZE16,
-            3 => HSTSDMABUFSIZER::SIZE32,
-            4 => HSTSDMABUFSIZER::SIZE64,
-            5 => HSTSDMABUFSIZER::SIZE128,
-            6 => HSTSDMABUFSIZER::SIZE256,
-            7 => HSTSDMABUFSIZER::SIZE512,
+}
+#[doc = "Reader of field `HSTSDMABUFSIZE`"]
+pub type HSTSDMABUFSIZE_R = crate::R<u8, HSTSDMABUFSIZE_A>;
+impl HSTSDMABUFSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HSTSDMABUFSIZE_A {
+        match self.bits {
+            0 => HSTSDMABUFSIZE_A::SIZE4,
+            1 => HSTSDMABUFSIZE_A::SIZE8,
+            2 => HSTSDMABUFSIZE_A::SIZE16,
+            3 => HSTSDMABUFSIZE_A::SIZE32,
+            4 => HSTSDMABUFSIZE_A::SIZE64,
+            5 => HSTSDMABUFSIZE_A::SIZE128,
+            6 => HSTSDMABUFSIZE_A::SIZE256,
+            7 => HSTSDMABUFSIZE_A::SIZE512,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SIZE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size4(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE4
+        *self == HSTSDMABUFSIZE_A::SIZE4
     }
     #[doc = "Checks if the value of the field is `SIZE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size8(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE8
+        *self == HSTSDMABUFSIZE_A::SIZE8
     }
     #[doc = "Checks if the value of the field is `SIZE16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size16(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE16
+        *self == HSTSDMABUFSIZE_A::SIZE16
     }
     #[doc = "Checks if the value of the field is `SIZE32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size32(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE32
+        *self == HSTSDMABUFSIZE_A::SIZE32
     }
     #[doc = "Checks if the value of the field is `SIZE64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size64(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE64
+        *self == HSTSDMABUFSIZE_A::SIZE64
     }
     #[doc = "Checks if the value of the field is `SIZE128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size128(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE128
+        *self == HSTSDMABUFSIZE_A::SIZE128
     }
     #[doc = "Checks if the value of the field is `SIZE256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size256(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE256
+        *self == HSTSDMABUFSIZE_A::SIZE256
     }
     #[doc = "Checks if the value of the field is `SIZE512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size512(&self) -> bool {
-        *self == HSTSDMABUFSIZER::SIZE512
+        *self == HSTSDMABUFSIZE_A::SIZE512
     }
 }
-#[doc = "Possible values of the field `BLKSCNTFORCURRTFR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BLKSCNTFORCURRTFRR {
-    #[doc = "undocumented"]
-    STOPCNT,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
-}
-impl BLKSCNTFORCURRTFRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            BLKSCNTFORCURRTFRR::STOPCNT => 0,
-            BLKSCNTFORCURRTFRR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> BLKSCNTFORCURRTFRR {
-        match value {
-            0 => BLKSCNTFORCURRTFRR::STOPCNT,
-            i => BLKSCNTFORCURRTFRR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `STOPCNT`"]
-    #[inline]
-    pub fn is_stopcnt(&self) -> bool {
-        *self == BLKSCNTFORCURRTFRR::STOPCNT
-    }
-}
-#[doc = "Values that can be written to the field `TFRBLKSIZE`"]
-pub enum TFRBLKSIZEW {
-    #[doc = "`0`"]
-    NOXFER,
-}
-impl TFRBLKSIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            TFRBLKSIZEW::NOXFER => 0,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TFRBLKSIZEW<'a> {
+#[doc = "Write proxy for field `HSTSDMABUFSIZE`"]
+pub struct HSTSDMABUFSIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TFRBLKSIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TFRBLKSIZEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "`0`"]
-    #[inline]
-    pub fn noxfer(self) -> &'a mut W {
-        self.variant(TFRBLKSIZEW::NOXFER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HSTSDMABUFSIZE`"]
-pub enum HSTSDMABUFSIZEW {
-    #[doc = "4KB(Detects A11 Carry out)"]
-    SIZE4,
-    #[doc = "8KB(Detects A12 Carry out)"]
-    SIZE8,
-    #[doc = "16KB(Detects A13 Carry out)"]
-    SIZE16,
-    #[doc = "32KB(Detects A14 Carry out)"]
-    SIZE32,
-    #[doc = "64KB(Detects A15 Carry out)"]
-    SIZE64,
-    #[doc = "128KB(Detects A16 Carry out)"]
-    SIZE128,
-    #[doc = "256KB(Detects A17 Carry out)"]
-    SIZE256,
-    #[doc = "512KB(Detects A18 Carry out)"]
-    SIZE512,
-}
-impl HSTSDMABUFSIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            HSTSDMABUFSIZEW::SIZE4 => 0,
-            HSTSDMABUFSIZEW::SIZE8 => 1,
-            HSTSDMABUFSIZEW::SIZE16 => 2,
-            HSTSDMABUFSIZEW::SIZE32 => 3,
-            HSTSDMABUFSIZEW::SIZE64 => 4,
-            HSTSDMABUFSIZEW::SIZE128 => 5,
-            HSTSDMABUFSIZEW::SIZE256 => 6,
-            HSTSDMABUFSIZEW::SIZE512 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HSTSDMABUFSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HSTSDMABUFSIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HSTSDMABUFSIZEW) -> &'a mut W {
+impl<'a> HSTSDMABUFSIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HSTSDMABUFSIZE_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "4KB(Detects A11 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size4(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE4)
+        self.variant(HSTSDMABUFSIZE_A::SIZE4)
     }
     #[doc = "8KB(Detects A12 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size8(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE8)
+        self.variant(HSTSDMABUFSIZE_A::SIZE8)
     }
     #[doc = "16KB(Detects A13 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size16(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE16)
+        self.variant(HSTSDMABUFSIZE_A::SIZE16)
     }
     #[doc = "32KB(Detects A14 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size32(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE32)
+        self.variant(HSTSDMABUFSIZE_A::SIZE32)
     }
     #[doc = "64KB(Detects A15 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size64(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE64)
+        self.variant(HSTSDMABUFSIZE_A::SIZE64)
     }
     #[doc = "128KB(Detects A16 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size128(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE128)
+        self.variant(HSTSDMABUFSIZE_A::SIZE128)
     }
     #[doc = "256KB(Detects A17 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size256(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE256)
+        self.variant(HSTSDMABUFSIZE_A::SIZE256)
     }
     #[doc = "512KB(Detects A18 Carry out)"]
-    #[inline]
+    #[inline(always)]
     pub fn size512(self) -> &'a mut W {
-        self.variant(HSTSDMABUFSIZEW::SIZE512)
+        self.variant(HSTSDMABUFSIZE_A::SIZE512)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BLKSCNTFORCURRTFR`"]
-pub enum BLKSCNTFORCURRTFRW {
+#[doc = "Possible values of the field `BLKSCNTFORCURRTFR`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BLKSCNTFORCURRTFR_A {
     #[doc = "`0`"]
     STOPCNT,
 }
-impl BLKSCNTFORCURRTFRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
+impl crate::ToBits<u16> for BLKSCNTFORCURRTFR_A {
+    #[inline(always)]
+    fn _bits(&self) -> u16 {
         match *self {
-            BLKSCNTFORCURRTFRW::STOPCNT => 0,
+            BLKSCNTFORCURRTFR_A::STOPCNT => 0,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BLKSCNTFORCURRTFRW<'a> {
+#[doc = "Reader of field `BLKSCNTFORCURRTFR`"]
+pub type BLKSCNTFORCURRTFR_R = crate::R<u16, BLKSCNTFORCURRTFR_A>;
+impl BLKSCNTFORCURRTFR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, BLKSCNTFORCURRTFR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BLKSCNTFORCURRTFR_A::STOPCNT),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `STOPCNT`"]
+    #[inline(always)]
+    pub fn is_stopcnt(&self) -> bool {
+        *self == BLKSCNTFORCURRTFR_A::STOPCNT
+    }
+}
+#[doc = "Write proxy for field `BLKSCNTFORCURRTFR`"]
+pub struct BLKSCNTFORCURRTFR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BLKSCNTFORCURRTFRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BLKSCNTFORCURRTFRW) -> &'a mut W {
+impl<'a> BLKSCNTFORCURRTFR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BLKSCNTFORCURRTFR_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "`0`"]
-    #[inline]
+    #[inline(always)]
     pub fn stopcnt(self) -> &'a mut W {
-        self.variant(BLKSCNTFORCURRTFRW::STOPCNT)
+        self.variant(BLKSCNTFORCURRTFR_A::STOPCNT)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:11 - Transfer Block Size, Specifies the Block Size for Block Data Transfers for CMD17, CMD18, CMD24, CMD25, and CMD53"]
-    #[inline]
-    pub fn tfrblksize(&self) -> TFRBLKSIZER {
-        TFRBLKSIZER::_from({
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn tfrblksize(&self) -> TFRBLKSIZE_R {
+        TFRBLKSIZE_R::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bits 12:14 - Host SDMA Buffer Size"]
-    #[inline]
-    pub fn hstsdmabufsize(&self) -> HSTSDMABUFSIZER {
-        HSTSDMABUFSIZER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hstsdmabufsize(&self) -> HSTSDMABUFSIZE_R {
+        HSTSDMABUFSIZE_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 16:31 - Blocks Count for Current Transfer"]
-    #[inline]
-    pub fn blkscntforcurrtfr(&self) -> BLKSCNTFORCURRTFRR {
-        BLKSCNTFORCURRTFRR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn blkscntforcurrtfr(&self) -> BLKSCNTFORCURRTFR_R {
+        BLKSCNTFORCURRTFR_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:11 - Transfer Block Size, Specifies the Block Size for Block Data Transfers for CMD17, CMD18, CMD24, CMD25, and CMD53"]
-    #[inline]
-    pub fn tfrblksize(&mut self) -> _TFRBLKSIZEW {
-        _TFRBLKSIZEW { w: self }
+    #[inline(always)]
+    pub fn tfrblksize(&mut self) -> TFRBLKSIZE_W {
+        TFRBLKSIZE_W { w: self }
     }
     #[doc = "Bits 12:14 - Host SDMA Buffer Size"]
-    #[inline]
-    pub fn hstsdmabufsize(&mut self) -> _HSTSDMABUFSIZEW {
-        _HSTSDMABUFSIZEW { w: self }
+    #[inline(always)]
+    pub fn hstsdmabufsize(&mut self) -> HSTSDMABUFSIZE_W {
+        HSTSDMABUFSIZE_W { w: self }
     }
     #[doc = "Bits 16:31 - Blocks Count for Current Transfer"]
-    #[inline]
-    pub fn blkscntforcurrtfr(&mut self) -> _BLKSCNTFORCURRTFRW {
-        _BLKSCNTFORCURRTFRW { w: self }
+    #[inline(always)]
+    pub fn blkscntforcurrtfr(&mut self) -> BLKSCNTFORCURRTFR_W {
+        BLKSCNTFORCURRTFR_W { w: self }
     }
 }

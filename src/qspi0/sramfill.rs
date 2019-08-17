@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SRAMFILL {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SRAMFILLINDACREADR {
-    bits: u16,
-}
-impl SRAMFILLINDACREADR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SRAMFILLINDACWRITER {
-    bits: u16,
-}
-impl SRAMFILLINDACWRITER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register SRAMFILL"]
+pub type R = crate::R<u32, super::SRAMFILL>;
+#[doc = "Reader of field `SRAMFILLINDACREAD`"]
+pub type SRAMFILLINDACREAD_R = crate::R<u16, u16>;
+#[doc = "Reader of field `SRAMFILLINDACWRITE`"]
+pub type SRAMFILLINDACWRITE_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - SRAM Fill Level (Indirect Read Partition)"]
-    #[inline]
-    pub fn sramfillindacread(&self) -> SRAMFILLINDACREADR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SRAMFILLINDACREADR { bits }
+    #[inline(always)]
+    pub fn sramfillindacread(&self) -> SRAMFILLINDACREAD_R {
+        SRAMFILLINDACREAD_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - SRAM Fill Level (Indirect Write Partition)"]
-    #[inline]
-    pub fn sramfillindacwrite(&self) -> SRAMFILLINDACWRITER {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SRAMFILLINDACWRITER { bits }
+    #[inline(always)]
+    pub fn sramfillindacwrite(&self) -> SRAMFILLINDACWRITE_R {
+        SRAMFILLINDACWRITE_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }

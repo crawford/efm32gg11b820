@@ -1,162 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ETMISCIN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ETMISCIN"]
+pub type R = crate::R<u32, super::ETMISCIN>;
+#[doc = "Writer for register ETMISCIN"]
+pub type W = crate::W<u32, super::ETMISCIN>;
+#[doc = "Register ETMISCIN `reset()`'s with value 0"]
+impl crate::ResetValue for super::ETMISCIN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct EXTINR {
-    bits: u8,
-}
-impl EXTINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COREHALTR {
-    bits: bool,
-}
-impl COREHALTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTINW<'a> {
+#[doc = "Reader of field `EXTIN`"]
+pub type EXTIN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EXTIN`"]
+pub struct EXTIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTINW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> EXTIN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COREHALTW<'a> {
+#[doc = "Reader of field `COREHALT`"]
+pub type COREHALT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `COREHALT`"]
+pub struct COREHALT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COREHALTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> COREHALT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - EXTIN Value"]
-    #[inline]
-    pub fn extin(&self) -> EXTINR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EXTINR { bits }
+    #[inline(always)]
+    pub fn extin(&self) -> EXTIN_R {
+        EXTIN_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 4 - Core Halt"]
-    #[inline]
-    pub fn corehalt(&self) -> COREHALTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        COREHALTR { bits }
+    #[inline(always)]
+    pub fn corehalt(&self) -> COREHALT_R {
+        COREHALT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - EXTIN Value"]
-    #[inline]
-    pub fn extin(&mut self) -> _EXTINW {
-        _EXTINW { w: self }
+    #[inline(always)]
+    pub fn extin(&mut self) -> EXTIN_W {
+        EXTIN_W { w: self }
     }
     #[doc = "Bit 4 - Core Halt"]
-    #[inline]
-    pub fn corehalt(&mut self) -> _COREHALTW {
-        _COREHALTW { w: self }
+    #[inline(always)]
+    pub fn corehalt(&mut self) -> COREHALT_W {
+        COREHALT_W { w: self }
     }
 }

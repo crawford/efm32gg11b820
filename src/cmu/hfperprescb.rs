@@ -1,148 +1,81 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HFPERPRESCB {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HFPERPRESCB"]
+pub type R = crate::R<u32, super::HFPERPRESCB>;
+#[doc = "Writer for register HFPERPRESCB"]
+pub type W = crate::W<u32, super::HFPERPRESCB>;
+#[doc = "Register HFPERPRESCB `reset()`'s with value 0"]
+impl crate::ResetValue for super::HFPERPRESCB {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `PRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRESCR {
-    #[doc = "undocumented"]
+pub enum PRESC_A {
+    #[doc = "`0`"]
     NODIVISION,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl PRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
+impl crate::ToBits<u16> for PRESC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u16 {
         match *self {
-            PRESCR::NODIVISION => 0,
-            PRESCR::_Reserved(bits) => bits,
+            PRESC_A::NODIVISION => 0,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> PRESCR {
-        match value {
-            0 => PRESCR::NODIVISION,
-            i => PRESCR::_Reserved(i),
+}
+#[doc = "Reader of field `PRESC`"]
+pub type PRESC_R = crate::R<u16, PRESC_A>;
+impl PRESC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, PRESC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRESC_A::NODIVISION),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NODIVISION`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nodivision(&self) -> bool {
-        *self == PRESCR::NODIVISION
+        *self == PRESC_A::NODIVISION
     }
 }
-#[doc = "Values that can be written to the field `PRESC`"]
-pub enum PRESCW {
-    #[doc = "`0`"]
-    NODIVISION,
-}
-impl PRESCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            PRESCW::NODIVISION => 0,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRESCW<'a> {
+#[doc = "Write proxy for field `PRESC`"]
+pub struct PRESC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRESCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRESCW) -> &'a mut W {
+impl<'a> PRESC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "`0`"]
-    #[inline]
+    #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
-        self.variant(PRESCW::NODIVISION)
+        self.variant(PRESC_A::NODIVISION)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01ff << 8)) | (((value as u32) & 0x01ff) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 8:16 - HFPERCLK Prescaler"]
-    #[inline]
-    pub fn presc(&self) -> PRESCR {
-        PRESCR::_from({
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn presc(&self) -> PRESC_R {
+        PRESC_R::new(((self.bits >> 8) & 0x01ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 8:16 - HFPERCLK Prescaler"]
-    #[inline]
-    pub fn presc(&mut self) -> _PRESCW {
-        _PRESCW { w: self }
+    #[inline(always)]
+    pub fn presc(&mut self) -> PRESC_W {
+        PRESC_W { w: self }
     }
 }

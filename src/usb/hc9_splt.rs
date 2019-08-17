@@ -1,303 +1,156 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HC9_SPLT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HC9_SPLT"]
+pub type R = crate::R<u32, super::HC9_SPLT>;
+#[doc = "Writer for register HC9_SPLT"]
+pub type W = crate::W<u32, super::HC9_SPLT>;
+#[doc = "Register HC9_SPLT `reset()`'s with value 0"]
+impl crate::ResetValue for super::HC9_SPLT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PRTADDRR {
-    bits: u8,
-}
-impl PRTADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HUBADDRR {
-    bits: u8,
-}
-impl HUBADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct XACTPOSR {
-    bits: u8,
-}
-impl XACTPOSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPSPLTR {
-    bits: bool,
-}
-impl COMPSPLTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPLTENAR {
-    bits: bool,
-}
-impl SPLTENAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRTADDRW<'a> {
+#[doc = "Reader of field `PRTADDR`"]
+pub type PRTADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PRTADDR`"]
+pub struct PRTADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRTADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PRTADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HUBADDRW<'a> {
+#[doc = "Reader of field `HUBADDR`"]
+pub type HUBADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `HUBADDR`"]
+pub struct HUBADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HUBADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> HUBADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x7f << 7)) | (((value as u32) & 0x7f) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _XACTPOSW<'a> {
+#[doc = "Reader of field `XACTPOS`"]
+pub type XACTPOS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `XACTPOS`"]
+pub struct XACTPOS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _XACTPOSW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> XACTPOS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPSPLTW<'a> {
+#[doc = "Reader of field `COMPSPLT`"]
+pub type COMPSPLT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `COMPSPLT`"]
+pub struct COMPSPLT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPSPLTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> COMPSPLT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SPLTENAW<'a> {
+#[doc = "Reader of field `SPLTENA`"]
+pub type SPLTENA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SPLTENA`"]
+pub struct SPLTENA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SPLTENAW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SPLTENA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:6 - Port Address"]
-    #[inline]
-    pub fn prtaddr(&self) -> PRTADDRR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PRTADDRR { bits }
+    #[inline(always)]
+    pub fn prtaddr(&self) -> PRTADDR_R {
+        PRTADDR_R::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bits 7:13 - Hub Address"]
-    #[inline]
-    pub fn hubaddr(&self) -> HUBADDRR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        HUBADDRR { bits }
+    #[inline(always)]
+    pub fn hubaddr(&self) -> HUBADDR_R {
+        HUBADDR_R::new(((self.bits >> 7) & 0x7f) as u8)
     }
     #[doc = "Bits 14:15 - Transaction Position"]
-    #[inline]
-    pub fn xactpos(&self) -> XACTPOSR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        XACTPOSR { bits }
+    #[inline(always)]
+    pub fn xactpos(&self) -> XACTPOS_R {
+        XACTPOS_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bit 16 - Do Complete Split"]
-    #[inline]
-    pub fn compsplt(&self) -> COMPSPLTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        COMPSPLTR { bits }
+    #[inline(always)]
+    pub fn compsplt(&self) -> COMPSPLT_R {
+        COMPSPLT_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Split Enable"]
-    #[inline]
-    pub fn spltena(&self) -> SPLTENAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPLTENAR { bits }
+    #[inline(always)]
+    pub fn spltena(&self) -> SPLTENA_R {
+        SPLTENA_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:6 - Port Address"]
-    #[inline]
-    pub fn prtaddr(&mut self) -> _PRTADDRW {
-        _PRTADDRW { w: self }
+    #[inline(always)]
+    pub fn prtaddr(&mut self) -> PRTADDR_W {
+        PRTADDR_W { w: self }
     }
     #[doc = "Bits 7:13 - Hub Address"]
-    #[inline]
-    pub fn hubaddr(&mut self) -> _HUBADDRW {
-        _HUBADDRW { w: self }
+    #[inline(always)]
+    pub fn hubaddr(&mut self) -> HUBADDR_W {
+        HUBADDR_W { w: self }
     }
     #[doc = "Bits 14:15 - Transaction Position"]
-    #[inline]
-    pub fn xactpos(&mut self) -> _XACTPOSW {
-        _XACTPOSW { w: self }
+    #[inline(always)]
+    pub fn xactpos(&mut self) -> XACTPOS_W {
+        XACTPOS_W { w: self }
     }
     #[doc = "Bit 16 - Do Complete Split"]
-    #[inline]
-    pub fn compsplt(&mut self) -> _COMPSPLTW {
-        _COMPSPLTW { w: self }
+    #[inline(always)]
+    pub fn compsplt(&mut self) -> COMPSPLT_W {
+        COMPSPLT_W { w: self }
     }
     #[doc = "Bit 31 - Split Enable"]
-    #[inline]
-    pub fn spltena(&mut self) -> _SPLTENAW {
-        _SPLTENAW { w: self }
+    #[inline(always)]
+    pub fn spltena(&mut self) -> SPLTENA_W {
+        SPLTENA_W { w: self }
     }
 }

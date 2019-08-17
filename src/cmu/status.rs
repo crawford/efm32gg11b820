@@ -1,700 +1,158 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFRCOENSR {
-    bits: bool,
-}
-impl HFRCOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFRCORDYR {
-    bits: bool,
-}
-impl HFRCORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFXOENSR {
-    bits: bool,
-}
-impl HFXOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFXORDYR {
-    bits: bool,
-}
-impl HFXORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXHFRCOENSR {
-    bits: bool,
-}
-impl AUXHFRCOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXHFRCORDYR {
-    bits: bool,
-}
-impl AUXHFRCORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFRCOENSR {
-    bits: bool,
-}
-impl LFRCOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFRCORDYR {
-    bits: bool,
-}
-impl LFRCORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFXOENSR {
-    bits: bool,
-}
-impl LFXOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFXORDYR {
-    bits: bool,
-}
-impl LFXORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USHFRCOENSR {
-    bits: bool,
-}
-impl USHFRCOENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USHFRCORDYR {
-    bits: bool,
-}
-impl USHFRCORDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DPLLENSR {
-    bits: bool,
-}
-impl DPLLENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DPLLRDYR {
-    bits: bool,
-}
-impl DPLLRDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CALRDYR {
-    bits: bool,
-}
-impl CALRDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDIOCLKENSR {
-    bits: bool,
-}
-impl SDIOCLKENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct QSPI0CLKENSR {
-    bits: bool,
-}
-impl QSPI0CLKENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFXOPEAKDETRDYR {
-    bits: bool,
-}
-impl HFXOPEAKDETRDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFXOAMPLOWR {
-    bits: bool,
-}
-impl HFXOAMPLOWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFXOPHASER {
-    bits: bool,
-}
-impl LFXOPHASER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LFRCOPHASER {
-    bits: bool,
-}
-impl LFRCOPHASER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ULFRCOPHASER {
-    bits: bool,
-}
-impl ULFRCOPHASER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `HFRCOENS`"]
+pub type HFRCOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFRCORDY`"]
+pub type HFRCORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFXOENS`"]
+pub type HFXOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFXORDY`"]
+pub type HFXORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AUXHFRCOENS`"]
+pub type AUXHFRCOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AUXHFRCORDY`"]
+pub type AUXHFRCORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFRCOENS`"]
+pub type LFRCOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFRCORDY`"]
+pub type LFRCORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFXOENS`"]
+pub type LFXOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFXORDY`"]
+pub type LFXORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `USHFRCOENS`"]
+pub type USHFRCOENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `USHFRCORDY`"]
+pub type USHFRCORDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DPLLENS`"]
+pub type DPLLENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DPLLRDY`"]
+pub type DPLLRDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CALRDY`"]
+pub type CALRDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SDIOCLKENS`"]
+pub type SDIOCLKENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `QSPI0CLKENS`"]
+pub type QSPI0CLKENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFXOPEAKDETRDY`"]
+pub type HFXOPEAKDETRDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HFXOAMPLOW`"]
+pub type HFXOAMPLOW_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFXOPHASE`"]
+pub type LFXOPHASE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LFRCOPHASE`"]
+pub type LFRCOPHASE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ULFRCOPHASE`"]
+pub type ULFRCOPHASE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - HFRCO Enable Status"]
-    #[inline]
-    pub fn hfrcoens(&self) -> HFRCOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFRCOENSR { bits }
+    #[inline(always)]
+    pub fn hfrcoens(&self) -> HFRCOENS_R {
+        HFRCOENS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - HFRCO Ready"]
-    #[inline]
-    pub fn hfrcordy(&self) -> HFRCORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFRCORDYR { bits }
+    #[inline(always)]
+    pub fn hfrcordy(&self) -> HFRCORDY_R {
+        HFRCORDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - HFXO Enable Status"]
-    #[inline]
-    pub fn hfxoens(&self) -> HFXOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFXOENSR { bits }
+    #[inline(always)]
+    pub fn hfxoens(&self) -> HFXOENS_R {
+        HFXOENS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - HFXO Ready"]
-    #[inline]
-    pub fn hfxordy(&self) -> HFXORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFXORDYR { bits }
+    #[inline(always)]
+    pub fn hfxordy(&self) -> HFXORDY_R {
+        HFXORDY_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - AUXHFRCO Enable Status"]
-    #[inline]
-    pub fn auxhfrcoens(&self) -> AUXHFRCOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUXHFRCOENSR { bits }
+    #[inline(always)]
+    pub fn auxhfrcoens(&self) -> AUXHFRCOENS_R {
+        AUXHFRCOENS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - AUXHFRCO Ready"]
-    #[inline]
-    pub fn auxhfrcordy(&self) -> AUXHFRCORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUXHFRCORDYR { bits }
+    #[inline(always)]
+    pub fn auxhfrcordy(&self) -> AUXHFRCORDY_R {
+        AUXHFRCORDY_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - LFRCO Enable Status"]
-    #[inline]
-    pub fn lfrcoens(&self) -> LFRCOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFRCOENSR { bits }
+    #[inline(always)]
+    pub fn lfrcoens(&self) -> LFRCOENS_R {
+        LFRCOENS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - LFRCO Ready"]
-    #[inline]
-    pub fn lfrcordy(&self) -> LFRCORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFRCORDYR { bits }
+    #[inline(always)]
+    pub fn lfrcordy(&self) -> LFRCORDY_R {
+        LFRCORDY_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - LFXO Enable Status"]
-    #[inline]
-    pub fn lfxoens(&self) -> LFXOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFXOENSR { bits }
+    #[inline(always)]
+    pub fn lfxoens(&self) -> LFXOENS_R {
+        LFXOENS_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - LFXO Ready"]
-    #[inline]
-    pub fn lfxordy(&self) -> LFXORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFXORDYR { bits }
+    #[inline(always)]
+    pub fn lfxordy(&self) -> LFXORDY_R {
+        LFXORDY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - USHFRCO Enable Status"]
-    #[inline]
-    pub fn ushfrcoens(&self) -> USHFRCOENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USHFRCOENSR { bits }
+    #[inline(always)]
+    pub fn ushfrcoens(&self) -> USHFRCOENS_R {
+        USHFRCOENS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - USHFRCO Ready"]
-    #[inline]
-    pub fn ushfrcordy(&self) -> USHFRCORDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USHFRCORDYR { bits }
+    #[inline(always)]
+    pub fn ushfrcordy(&self) -> USHFRCORDY_R {
+        USHFRCORDY_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - DPLL Enable Status"]
-    #[inline]
-    pub fn dpllens(&self) -> DPLLENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DPLLENSR { bits }
+    #[inline(always)]
+    pub fn dpllens(&self) -> DPLLENS_R {
+        DPLLENS_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - DPLL Ready"]
-    #[inline]
-    pub fn dpllrdy(&self) -> DPLLRDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DPLLRDYR { bits }
+    #[inline(always)]
+    pub fn dpllrdy(&self) -> DPLLRDY_R {
+        DPLLRDY_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Calibration Ready"]
-    #[inline]
-    pub fn calrdy(&self) -> CALRDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CALRDYR { bits }
+    #[inline(always)]
+    pub fn calrdy(&self) -> CALRDY_R {
+        CALRDY_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - SDIO Clock Enabled Status"]
-    #[inline]
-    pub fn sdioclkens(&self) -> SDIOCLKENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDIOCLKENSR { bits }
+    #[inline(always)]
+    pub fn sdioclkens(&self) -> SDIOCLKENS_R {
+        SDIOCLKENS_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - QSPI0 Clock Enabled Status"]
-    #[inline]
-    pub fn qspi0clkens(&self) -> QSPI0CLKENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        QSPI0CLKENSR { bits }
+    #[inline(always)]
+    pub fn qspi0clkens(&self) -> QSPI0CLKENS_R {
+        QSPI0CLKENS_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 22 - HFXO Peak Detection Ready"]
-    #[inline]
-    pub fn hfxopeakdetrdy(&self) -> HFXOPEAKDETRDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFXOPEAKDETRDYR { bits }
+    #[inline(always)]
+    pub fn hfxopeakdetrdy(&self) -> HFXOPEAKDETRDY_R {
+        HFXOPEAKDETRDY_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 25 - HFXO Amplitude Tuning Value Too Low"]
-    #[inline]
-    pub fn hfxoamplow(&self) -> HFXOAMPLOWR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFXOAMPLOWR { bits }
+    #[inline(always)]
+    pub fn hfxoamplow(&self) -> HFXOAMPLOW_R {
+        HFXOAMPLOW_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 27 - LFXO Clock Phase"]
-    #[inline]
-    pub fn lfxophase(&self) -> LFXOPHASER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFXOPHASER { bits }
+    #[inline(always)]
+    pub fn lfxophase(&self) -> LFXOPHASE_R {
+        LFXOPHASE_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - LFRCO Clock Phase"]
-    #[inline]
-    pub fn lfrcophase(&self) -> LFRCOPHASER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LFRCOPHASER { bits }
+    #[inline(always)]
+    pub fn lfrcophase(&self) -> LFRCOPHASE_R {
+        LFRCOPHASE_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - ULFRCO Clock Phase"]
-    #[inline]
-    pub fn ulfrcophase(&self) -> ULFRCOPHASER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ULFRCOPHASER { bits }
+    #[inline(always)]
+    pub fn ulfrcophase(&self) -> ULFRCOPHASE_R {
+        ULFRCOPHASE_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }

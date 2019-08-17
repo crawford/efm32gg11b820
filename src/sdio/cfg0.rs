@@ -1,836 +1,487 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFG0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFG0"]
+pub type R = crate::R<u32, super::CFG0>;
+#[doc = "Writer for register CFG0"]
+pub type W = crate::W<u32, super::CFG0>;
+#[doc = "Register CFG0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFG0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TUNINGCNTR {
-    bits: u8,
+#[doc = "Reader of field `TUNINGCNT`"]
+pub type TUNINGCNT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TUNINGCNT`"]
+pub struct TUNINGCNT_W<'a> {
+    w: &'a mut W,
 }
-impl TUNINGCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TUNINGCNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct TOUTCLKFREQR {
-    bits: u8,
+#[doc = "Reader of field `TOUTCLKFREQ`"]
+pub type TOUTCLKFREQ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TOUTCLKFREQ`"]
+pub struct TOUTCLKFREQ_W<'a> {
+    w: &'a mut W,
 }
-impl TOUTCLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TOUTCLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 6)) | (((value as u32) & 0x3f) << 6);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct TOUTCLKUNITR {
-    bits: bool,
+#[doc = "Reader of field `TOUTCLKUNIT`"]
+pub type TOUTCLKUNIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TOUTCLKUNIT`"]
+pub struct TOUTCLKUNIT_W<'a> {
+    w: &'a mut W,
 }
-impl TOUTCLKUNITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> TOUTCLKUNIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct BASECLKFREQR {
-    bits: u8,
+#[doc = "Reader of field `BASECLKFREQ`"]
+pub type BASECLKFREQ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BASECLKFREQ`"]
+pub struct BASECLKFREQ_W<'a> {
+    w: &'a mut W,
 }
-impl BASECLKFREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> BASECLKFREQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 13)) | (((value as u32) & 0xff) << 13);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MAXBLKLEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAXBLKLENR {
+pub enum MAXBLKLEN_A {
     #[doc = "512 Bytes are Selected"]
     _512B,
     #[doc = "1024 Bytes are Selected"]
     _1024B,
     #[doc = "2048 Bytes are Selected"]
     _2048B,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MAXBLKLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MAXBLKLEN_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MAXBLKLENR::_512B => 0,
-            MAXBLKLENR::_1024B => 1,
-            MAXBLKLENR::_2048B => 2,
-            MAXBLKLENR::_Reserved(bits) => bits,
+            MAXBLKLEN_A::_512B => 0,
+            MAXBLKLEN_A::_1024B => 1,
+            MAXBLKLEN_A::_2048B => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MAXBLKLENR {
-        match value {
-            0 => MAXBLKLENR::_512B,
-            1 => MAXBLKLENR::_1024B,
-            2 => MAXBLKLENR::_2048B,
-            i => MAXBLKLENR::_Reserved(i),
+}
+#[doc = "Reader of field `MAXBLKLEN`"]
+pub type MAXBLKLEN_R = crate::R<u8, MAXBLKLEN_A>;
+impl MAXBLKLEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MAXBLKLEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MAXBLKLEN_A::_512B),
+            1 => Val(MAXBLKLEN_A::_1024B),
+            2 => Val(MAXBLKLEN_A::_2048B),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_512B`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_512b(&self) -> bool {
-        *self == MAXBLKLENR::_512B
+        *self == MAXBLKLEN_A::_512B
     }
     #[doc = "Checks if the value of the field is `_1024B`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1024b(&self) -> bool {
-        *self == MAXBLKLENR::_1024B
+        *self == MAXBLKLEN_A::_1024B
     }
     #[doc = "Checks if the value of the field is `_2048B`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2048b(&self) -> bool {
-        *self == MAXBLKLENR::_2048B
+        *self == MAXBLKLEN_A::_2048B
     }
 }
-#[doc = r" Value of the field"]
-pub struct C8BITSUPR {
-    bits: bool,
-}
-impl C8BITSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CADMA2SUPR {
-    bits: bool,
-}
-impl CADMA2SUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHSSUPR {
-    bits: bool,
-}
-impl CHSSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CSDMASUPR {
-    bits: bool,
-}
-impl CSDMASUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CSUSPRESSUPR {
-    bits: bool,
-}
-impl CSUSPRESSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct C3P3VSUPR {
-    bits: bool,
-}
-impl C3P3VSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct C3P0VSUPR {
-    bits: bool,
-}
-impl C3P0VSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct C1P8VSUPR {
-    bits: bool,
-}
-impl C1P8VSUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TUNINGCNTW<'a> {
+#[doc = "Write proxy for field `MAXBLKLEN`"]
+pub struct MAXBLKLEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TUNINGCNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TOUTCLKFREQW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TOUTCLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TOUTCLKUNITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TOUTCLKUNITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BASECLKFREQW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BASECLKFREQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MAXBLKLEN`"]
-pub enum MAXBLKLENW {
-    #[doc = "512 Bytes are Selected"]
-    _512B,
-    #[doc = "1024 Bytes are Selected"]
-    _1024B,
-    #[doc = "2048 Bytes are Selected"]
-    _2048B,
-}
-impl MAXBLKLENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MAXBLKLENW::_512B => 0,
-            MAXBLKLENW::_1024B => 1,
-            MAXBLKLENW::_2048B => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MAXBLKLENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MAXBLKLENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MAXBLKLENW) -> &'a mut W {
+impl<'a> MAXBLKLEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MAXBLKLEN_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "512 Bytes are Selected"]
-    #[inline]
+    #[inline(always)]
     pub fn _512b(self) -> &'a mut W {
-        self.variant(MAXBLKLENW::_512B)
+        self.variant(MAXBLKLEN_A::_512B)
     }
     #[doc = "1024 Bytes are Selected"]
-    #[inline]
+    #[inline(always)]
     pub fn _1024b(self) -> &'a mut W {
-        self.variant(MAXBLKLENW::_1024B)
+        self.variant(MAXBLKLEN_A::_1024B)
     }
     #[doc = "2048 Bytes are Selected"]
-    #[inline]
+    #[inline(always)]
     pub fn _2048b(self) -> &'a mut W {
-        self.variant(MAXBLKLENW::_2048B)
+        self.variant(MAXBLKLEN_A::_2048B)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 21)) | (((value as u32) & 0x03) << 21);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _C8BITSUPW<'a> {
+#[doc = "Reader of field `C8BITSUP`"]
+pub type C8BITSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `C8BITSUP`"]
+pub struct C8BITSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _C8BITSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> C8BITSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CADMA2SUPW<'a> {
+#[doc = "Reader of field `CADMA2SUP`"]
+pub type CADMA2SUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CADMA2SUP`"]
+pub struct CADMA2SUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CADMA2SUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CADMA2SUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHSSUPW<'a> {
+#[doc = "Reader of field `CHSSUP`"]
+pub type CHSSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHSSUP`"]
+pub struct CHSSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHSSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHSSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CSDMASUPW<'a> {
+#[doc = "Reader of field `CSDMASUP`"]
+pub type CSDMASUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CSDMASUP`"]
+pub struct CSDMASUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CSDMASUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CSDMASUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CSUSPRESSUPW<'a> {
+#[doc = "Reader of field `CSUSPRESSUP`"]
+pub type CSUSPRESSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CSUSPRESSUP`"]
+pub struct CSUSPRESSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CSUSPRESSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CSUSPRESSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _C3P3VSUPW<'a> {
+#[doc = "Reader of field `C3P3VSUP`"]
+pub type C3P3VSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `C3P3VSUP`"]
+pub struct C3P3VSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _C3P3VSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> C3P3VSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _C3P0VSUPW<'a> {
+#[doc = "Reader of field `C3P0VSUP`"]
+pub type C3P0VSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `C3P0VSUP`"]
+pub struct C3P0VSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _C3P0VSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> C3P0VSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _C1P8VSUPW<'a> {
+#[doc = "Reader of field `C1P8VSUP`"]
+pub type C1P8VSUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `C1P8VSUP`"]
+pub struct C1P8VSUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _C1P8VSUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> C1P8VSUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Tuning Counter Value"]
-    #[inline]
-    pub fn tuningcnt(&self) -> TUNINGCNTR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TUNINGCNTR { bits }
+    #[inline(always)]
+    pub fn tuningcnt(&self) -> TUNINGCNT_R {
+        TUNINGCNT_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 6:11 - Timeout Clock Frequency"]
-    #[inline]
-    pub fn toutclkfreq(&self) -> TOUTCLKFREQR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TOUTCLKFREQR { bits }
+    #[inline(always)]
+    pub fn toutclkfreq(&self) -> TOUTCLKFREQ_R {
+        TOUTCLKFREQ_R::new(((self.bits >> 6) & 0x3f) as u8)
     }
     #[doc = "Bit 12 - Timeout Clock Unit in kHz or MHz"]
-    #[inline]
-    pub fn toutclkunit(&self) -> TOUTCLKUNITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TOUTCLKUNITR { bits }
+    #[inline(always)]
+    pub fn toutclkunit(&self) -> TOUTCLKUNIT_R {
+        TOUTCLKUNIT_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bits 13:20 - Base Clock Frequency for SD_CLK"]
-    #[inline]
-    pub fn baseclkfreq(&self) -> BASECLKFREQR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BASECLKFREQR { bits }
+    #[inline(always)]
+    pub fn baseclkfreq(&self) -> BASECLKFREQ_R {
+        BASECLKFREQ_R::new(((self.bits >> 13) & 0xff) as u8)
     }
     #[doc = "Bits 21:22 - MAX Block Length of Transfer"]
-    #[inline]
-    pub fn maxblklen(&self) -> MAXBLKLENR {
-        MAXBLKLENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn maxblklen(&self) -> MAXBLKLEN_R {
+        MAXBLKLEN_R::new(((self.bits >> 21) & 0x03) as u8)
     }
     #[doc = "Bit 23 - 8-bit Interface Support"]
-    #[inline]
-    pub fn c8bitsup(&self) -> C8BITSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        C8BITSUPR { bits }
+    #[inline(always)]
+    pub fn c8bitsup(&self) -> C8BITSUP_R {
+        C8BITSUP_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - ADMA2 Mode Support"]
-    #[inline]
-    pub fn cadma2sup(&self) -> CADMA2SUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CADMA2SUPR { bits }
+    #[inline(always)]
+    pub fn cadma2sup(&self) -> CADMA2SUP_R {
+        CADMA2SUP_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - High Speed Mode Support"]
-    #[inline]
-    pub fn chssup(&self) -> CHSSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHSSUPR { bits }
+    #[inline(always)]
+    pub fn chssup(&self) -> CHSSUP_R {
+        CHSSUP_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - SDMA Mode Support"]
-    #[inline]
-    pub fn csdmasup(&self) -> CSDMASUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CSDMASUPR { bits }
+    #[inline(always)]
+    pub fn csdmasup(&self) -> CSDMASUP_R {
+        CSDMASUP_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Suspend/Resume Support"]
-    #[inline]
-    pub fn csuspressup(&self) -> CSUSPRESSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CSUSPRESSUPR { bits }
+    #[inline(always)]
+    pub fn csuspressup(&self) -> CSUSPRESSUP_R {
+        CSUSPRESSUP_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Core 3P3V Support"]
-    #[inline]
-    pub fn c3p3vsup(&self) -> C3P3VSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        C3P3VSUPR { bits }
+    #[inline(always)]
+    pub fn c3p3vsup(&self) -> C3P3VSUP_R {
+        C3P3VSUP_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - 3P0V Support"]
-    #[inline]
-    pub fn c3p0vsup(&self) -> C3P0VSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        C3P0VSUPR { bits }
+    #[inline(always)]
+    pub fn c3p0vsup(&self) -> C3P0VSUP_R {
+        C3P0VSUP_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - 1P8V Support"]
-    #[inline]
-    pub fn c1p8vsup(&self) -> C1P8VSUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        C1P8VSUPR { bits }
+    #[inline(always)]
+    pub fn c1p8vsup(&self) -> C1P8VSUP_R {
+        C1P8VSUP_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Tuning Counter Value"]
-    #[inline]
-    pub fn tuningcnt(&mut self) -> _TUNINGCNTW {
-        _TUNINGCNTW { w: self }
+    #[inline(always)]
+    pub fn tuningcnt(&mut self) -> TUNINGCNT_W {
+        TUNINGCNT_W { w: self }
     }
     #[doc = "Bits 6:11 - Timeout Clock Frequency"]
-    #[inline]
-    pub fn toutclkfreq(&mut self) -> _TOUTCLKFREQW {
-        _TOUTCLKFREQW { w: self }
+    #[inline(always)]
+    pub fn toutclkfreq(&mut self) -> TOUTCLKFREQ_W {
+        TOUTCLKFREQ_W { w: self }
     }
     #[doc = "Bit 12 - Timeout Clock Unit in kHz or MHz"]
-    #[inline]
-    pub fn toutclkunit(&mut self) -> _TOUTCLKUNITW {
-        _TOUTCLKUNITW { w: self }
+    #[inline(always)]
+    pub fn toutclkunit(&mut self) -> TOUTCLKUNIT_W {
+        TOUTCLKUNIT_W { w: self }
     }
     #[doc = "Bits 13:20 - Base Clock Frequency for SD_CLK"]
-    #[inline]
-    pub fn baseclkfreq(&mut self) -> _BASECLKFREQW {
-        _BASECLKFREQW { w: self }
+    #[inline(always)]
+    pub fn baseclkfreq(&mut self) -> BASECLKFREQ_W {
+        BASECLKFREQ_W { w: self }
     }
     #[doc = "Bits 21:22 - MAX Block Length of Transfer"]
-    #[inline]
-    pub fn maxblklen(&mut self) -> _MAXBLKLENW {
-        _MAXBLKLENW { w: self }
+    #[inline(always)]
+    pub fn maxblklen(&mut self) -> MAXBLKLEN_W {
+        MAXBLKLEN_W { w: self }
     }
     #[doc = "Bit 23 - 8-bit Interface Support"]
-    #[inline]
-    pub fn c8bitsup(&mut self) -> _C8BITSUPW {
-        _C8BITSUPW { w: self }
+    #[inline(always)]
+    pub fn c8bitsup(&mut self) -> C8BITSUP_W {
+        C8BITSUP_W { w: self }
     }
     #[doc = "Bit 24 - ADMA2 Mode Support"]
-    #[inline]
-    pub fn cadma2sup(&mut self) -> _CADMA2SUPW {
-        _CADMA2SUPW { w: self }
+    #[inline(always)]
+    pub fn cadma2sup(&mut self) -> CADMA2SUP_W {
+        CADMA2SUP_W { w: self }
     }
     #[doc = "Bit 25 - High Speed Mode Support"]
-    #[inline]
-    pub fn chssup(&mut self) -> _CHSSUPW {
-        _CHSSUPW { w: self }
+    #[inline(always)]
+    pub fn chssup(&mut self) -> CHSSUP_W {
+        CHSSUP_W { w: self }
     }
     #[doc = "Bit 26 - SDMA Mode Support"]
-    #[inline]
-    pub fn csdmasup(&mut self) -> _CSDMASUPW {
-        _CSDMASUPW { w: self }
+    #[inline(always)]
+    pub fn csdmasup(&mut self) -> CSDMASUP_W {
+        CSDMASUP_W { w: self }
     }
     #[doc = "Bit 27 - Suspend/Resume Support"]
-    #[inline]
-    pub fn csuspressup(&mut self) -> _CSUSPRESSUPW {
-        _CSUSPRESSUPW { w: self }
+    #[inline(always)]
+    pub fn csuspressup(&mut self) -> CSUSPRESSUP_W {
+        CSUSPRESSUP_W { w: self }
     }
     #[doc = "Bit 28 - Core 3P3V Support"]
-    #[inline]
-    pub fn c3p3vsup(&mut self) -> _C3P3VSUPW {
-        _C3P3VSUPW { w: self }
+    #[inline(always)]
+    pub fn c3p3vsup(&mut self) -> C3P3VSUP_W {
+        C3P3VSUP_W { w: self }
     }
     #[doc = "Bit 29 - 3P0V Support"]
-    #[inline]
-    pub fn c3p0vsup(&mut self) -> _C3P0VSUPW {
-        _C3P0VSUPW { w: self }
+    #[inline(always)]
+    pub fn c3p0vsup(&mut self) -> C3P0VSUP_W {
+        C3P0VSUP_W { w: self }
     }
     #[doc = "Bit 30 - 1P8V Support"]
-    #[inline]
-    pub fn c1p8vsup(&mut self) -> _C1P8VSUPW {
-        _C1P8VSUPW { w: self }
+    #[inline(always)]
+    pub fn c1p8vsup(&mut self) -> C1P8VSUP_W {
+        C1P8VSUP_W { w: self }
     }
 }

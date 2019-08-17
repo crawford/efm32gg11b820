@@ -1,615 +1,340 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CLOCKCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CLOCKCTRL"]
+pub type R = crate::R<u32, super::CLOCKCTRL>;
+#[doc = "Writer for register CLOCKCTRL"]
+pub type W = crate::W<u32, super::CLOCKCTRL>;
+#[doc = "Register CLOCKCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CLOCKCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INTCLKENR {
-    bits: bool,
+#[doc = "Reader of field `INTCLKEN`"]
+pub type INTCLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTCLKEN`"]
+pub struct INTCLKEN_W<'a> {
+    w: &'a mut W,
 }
-impl INTCLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> INTCLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTCLKSTABLER {
-    bits: bool,
-}
-impl INTCLKSTABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SDCLKENR {
-    bits: bool,
+#[doc = "Reader of field `INTCLKSTABLE`"]
+pub type INTCLKSTABLE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SDCLKEN`"]
+pub type SDCLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SDCLKEN`"]
+pub struct SDCLKEN_W<'a> {
+    w: &'a mut W,
 }
-impl SDCLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> SDCLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLKGENSELR {
-    bits: bool,
-}
-impl CLKGENSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct UPPSDCLKFRER {
-    bits: u8,
+#[doc = "Reader of field `CLKGENSEL`"]
+pub type CLKGENSEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLKGENSEL`"]
+pub struct CLKGENSEL_W<'a> {
+    w: &'a mut W,
 }
-impl UPPSDCLKFRER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> CLKGENSEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Reader of field `UPPSDCLKFRE`"]
+pub type UPPSDCLKFRE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `UPPSDCLKFRE`"]
+pub struct UPPSDCLKFRE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> UPPSDCLKFRE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SDCLKFREQSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDCLKFREQSELR {
-    #[doc = "undocumented"]
+pub enum SDCLKFREQSEL_A {
+    #[doc = "`0`"]
     NODIVISION,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SDCLKFREQSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SDCLKFREQSEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SDCLKFREQSELR::NODIVISION => 0,
-            SDCLKFREQSELR::_Reserved(bits) => bits,
+            SDCLKFREQSEL_A::NODIVISION => 0,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SDCLKFREQSELR {
-        match value {
-            0 => SDCLKFREQSELR::NODIVISION,
-            i => SDCLKFREQSELR::_Reserved(i),
+}
+#[doc = "Reader of field `SDCLKFREQSEL`"]
+pub type SDCLKFREQSEL_R = crate::R<u8, SDCLKFREQSEL_A>;
+impl SDCLKFREQSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SDCLKFREQSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SDCLKFREQSEL_A::NODIVISION),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NODIVISION`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nodivision(&self) -> bool {
-        *self == SDCLKFREQSELR::NODIVISION
+        *self == SDCLKFREQSEL_A::NODIVISION
     }
 }
-#[doc = r" Value of the field"]
-pub struct DATTOUTCNTVALR {
-    bits: u8,
-}
-impl DATTOUTCNTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SFTRSTAR {
-    bits: bool,
-}
-impl SFTRSTAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SFTRSTCMDR {
-    bits: bool,
-}
-impl SFTRSTCMDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SFTRSTDATR {
-    bits: bool,
-}
-impl SFTRSTDATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INTCLKENW<'a> {
+#[doc = "Write proxy for field `SDCLKFREQSEL`"]
+pub struct SDCLKFREQSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTCLKENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDCLKENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SDCLKENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKGENSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLKGENSELW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _UPPSDCLKFREW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _UPPSDCLKFREW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SDCLKFREQSEL`"]
-pub enum SDCLKFREQSELW {
-    #[doc = "`0`"]
-    NODIVISION,
-}
-impl SDCLKFREQSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SDCLKFREQSELW::NODIVISION => 0,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDCLKFREQSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SDCLKFREQSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SDCLKFREQSELW) -> &'a mut W {
+impl<'a> SDCLKFREQSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SDCLKFREQSEL_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "`0`"]
-    #[inline]
+    #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
-        self.variant(SDCLKFREQSELW::NODIVISION)
+        self.variant(SDCLKFREQSEL_A::NODIVISION)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATTOUTCNTVALW<'a> {
+#[doc = "Reader of field `DATTOUTCNTVAL`"]
+pub type DATTOUTCNTVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATTOUTCNTVAL`"]
+pub struct DATTOUTCNTVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATTOUTCNTVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATTOUTCNTVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SFTRSTAW<'a> {
+#[doc = "Reader of field `SFTRSTA`"]
+pub type SFTRSTA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SFTRSTA`"]
+pub struct SFTRSTA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SFTRSTAW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SFTRSTA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SFTRSTCMDW<'a> {
+#[doc = "Reader of field `SFTRSTCMD`"]
+pub type SFTRSTCMD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SFTRSTCMD`"]
+pub struct SFTRSTCMD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SFTRSTCMDW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SFTRSTCMD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SFTRSTDATW<'a> {
+#[doc = "Reader of field `SFTRSTDAT`"]
+pub type SFTRSTDAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SFTRSTDAT`"]
+pub struct SFTRSTDAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SFTRSTDATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SFTRSTDAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Internal Clock Enable"]
-    #[inline]
-    pub fn intclken(&self) -> INTCLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTCLKENR { bits }
+    #[inline(always)]
+    pub fn intclken(&self) -> INTCLKEN_R {
+        INTCLKEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Internal Clock Stable"]
-    #[inline]
-    pub fn intclkstable(&self) -> INTCLKSTABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTCLKSTABLER { bits }
+    #[inline(always)]
+    pub fn intclkstable(&self) -> INTCLKSTABLE_R {
+        INTCLKSTABLE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - SDIO_CLK Pin Clock Enable"]
-    #[inline]
-    pub fn sdclken(&self) -> SDCLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDCLKENR { bits }
+    #[inline(always)]
+    pub fn sdclken(&self) -> SDCLKEN_R {
+        SDCLKEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Clock Generator Select"]
-    #[inline]
-    pub fn clkgensel(&self) -> CLKGENSELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLKGENSELR { bits }
+    #[inline(always)]
+    pub fn clkgensel(&self) -> CLKGENSEL_R {
+        CLKGENSEL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bits 6:7 - Upper Bits of SD_CLK Frequency Select"]
-    #[inline]
-    pub fn uppsdclkfre(&self) -> UPPSDCLKFRER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        UPPSDCLKFRER { bits }
+    #[inline(always)]
+    pub fn uppsdclkfre(&self) -> UPPSDCLKFRE_R {
+        UPPSDCLKFRE_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:15 - SD_CLK Frequency Select"]
-    #[inline]
-    pub fn sdclkfreqsel(&self) -> SDCLKFREQSELR {
-        SDCLKFREQSELR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sdclkfreqsel(&self) -> SDCLKFREQSEL_R {
+        SDCLKFREQSEL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:19 - Data Timeout Counter Value"]
-    #[inline]
-    pub fn dattoutcntval(&self) -> DATTOUTCNTVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATTOUTCNTVALR { bits }
+    #[inline(always)]
+    pub fn dattoutcntval(&self) -> DATTOUTCNTVAL_R {
+        DATTOUTCNTVAL_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 24 - Software Reset for All"]
-    #[inline]
-    pub fn sftrsta(&self) -> SFTRSTAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SFTRSTAR { bits }
+    #[inline(always)]
+    pub fn sftrsta(&self) -> SFTRSTA_R {
+        SFTRSTA_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Software Reset for CMD Line"]
-    #[inline]
-    pub fn sftrstcmd(&self) -> SFTRSTCMDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SFTRSTCMDR { bits }
+    #[inline(always)]
+    pub fn sftrstcmd(&self) -> SFTRSTCMD_R {
+        SFTRSTCMD_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Software Reset for DAT Line"]
-    #[inline]
-    pub fn sftrstdat(&self) -> SFTRSTDATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SFTRSTDATR { bits }
+    #[inline(always)]
+    pub fn sftrstdat(&self) -> SFTRSTDAT_R {
+        SFTRSTDAT_R::new(((self.bits >> 26) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Internal Clock Enable"]
-    #[inline]
-    pub fn intclken(&mut self) -> _INTCLKENW {
-        _INTCLKENW { w: self }
+    #[inline(always)]
+    pub fn intclken(&mut self) -> INTCLKEN_W {
+        INTCLKEN_W { w: self }
     }
     #[doc = "Bit 2 - SDIO_CLK Pin Clock Enable"]
-    #[inline]
-    pub fn sdclken(&mut self) -> _SDCLKENW {
-        _SDCLKENW { w: self }
+    #[inline(always)]
+    pub fn sdclken(&mut self) -> SDCLKEN_W {
+        SDCLKEN_W { w: self }
     }
     #[doc = "Bit 5 - Clock Generator Select"]
-    #[inline]
-    pub fn clkgensel(&mut self) -> _CLKGENSELW {
-        _CLKGENSELW { w: self }
+    #[inline(always)]
+    pub fn clkgensel(&mut self) -> CLKGENSEL_W {
+        CLKGENSEL_W { w: self }
     }
     #[doc = "Bits 6:7 - Upper Bits of SD_CLK Frequency Select"]
-    #[inline]
-    pub fn uppsdclkfre(&mut self) -> _UPPSDCLKFREW {
-        _UPPSDCLKFREW { w: self }
+    #[inline(always)]
+    pub fn uppsdclkfre(&mut self) -> UPPSDCLKFRE_W {
+        UPPSDCLKFRE_W { w: self }
     }
     #[doc = "Bits 8:15 - SD_CLK Frequency Select"]
-    #[inline]
-    pub fn sdclkfreqsel(&mut self) -> _SDCLKFREQSELW {
-        _SDCLKFREQSELW { w: self }
+    #[inline(always)]
+    pub fn sdclkfreqsel(&mut self) -> SDCLKFREQSEL_W {
+        SDCLKFREQSEL_W { w: self }
     }
     #[doc = "Bits 16:19 - Data Timeout Counter Value"]
-    #[inline]
-    pub fn dattoutcntval(&mut self) -> _DATTOUTCNTVALW {
-        _DATTOUTCNTVALW { w: self }
+    #[inline(always)]
+    pub fn dattoutcntval(&mut self) -> DATTOUTCNTVAL_W {
+        DATTOUTCNTVAL_W { w: self }
     }
     #[doc = "Bit 24 - Software Reset for All"]
-    #[inline]
-    pub fn sftrsta(&mut self) -> _SFTRSTAW {
-        _SFTRSTAW { w: self }
+    #[inline(always)]
+    pub fn sftrsta(&mut self) -> SFTRSTA_W {
+        SFTRSTA_W { w: self }
     }
     #[doc = "Bit 25 - Software Reset for CMD Line"]
-    #[inline]
-    pub fn sftrstcmd(&mut self) -> _SFTRSTCMDW {
-        _SFTRSTCMDW { w: self }
+    #[inline(always)]
+    pub fn sftrstcmd(&mut self) -> SFTRSTCMD_W {
+        SFTRSTCMD_W { w: self }
     }
     #[doc = "Bit 26 - Software Reset for DAT Line"]
-    #[inline]
-    pub fn sftrstdat(&mut self) -> _SFTRSTDATW {
-        _SFTRSTDATW { w: self }
+    #[inline(always)]
+    pub fn sftrstdat(&mut self) -> SFTRSTDAT_W {
+        SFTRSTDAT_W { w: self }
     }
 }

@@ -1,359 +1,81 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OFR {
-    bits: bool,
-}
-impl OFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UFR {
-    bits: bool,
-}
-impl UFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIRCHGR {
-    bits: bool,
-}
-impl DIRCHGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CC0R {
-    bits: bool,
-}
-impl CC0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CC1R {
-    bits: bool,
-}
-impl CC1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CC2R {
-    bits: bool,
-}
-impl CC2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CC3R {
-    bits: bool,
-}
-impl CC3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ICBOF0R {
-    bits: bool,
-}
-impl ICBOF0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ICBOF1R {
-    bits: bool,
-}
-impl ICBOF1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ICBOF2R {
-    bits: bool,
-}
-impl ICBOF2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ICBOF3R {
-    bits: bool,
-}
-impl ICBOF3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `OF`"]
+pub type OF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `UF`"]
+pub type UF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DIRCHG`"]
+pub type DIRCHG_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CC0`"]
+pub type CC0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CC1`"]
+pub type CC1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CC2`"]
+pub type CC2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CC3`"]
+pub type CC3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ICBOF0`"]
+pub type ICBOF0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ICBOF1`"]
+pub type ICBOF1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ICBOF2`"]
+pub type ICBOF2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ICBOF3`"]
+pub type ICBOF3_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Overflow Interrupt Flag"]
-    #[inline]
-    pub fn of(&self) -> OFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OFR { bits }
+    #[inline(always)]
+    pub fn of(&self) -> OF_R {
+        OF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Underflow Interrupt Flag"]
-    #[inline]
-    pub fn uf(&self) -> UFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        UFR { bits }
+    #[inline(always)]
+    pub fn uf(&self) -> UF_R {
+        UF_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Flag"]
-    #[inline]
-    pub fn dirchg(&self) -> DIRCHGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIRCHGR { bits }
+    #[inline(always)]
+    pub fn dirchg(&self) -> DIRCHG_R {
+        DIRCHG_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - CC Channel 0 Interrupt Flag"]
-    #[inline]
-    pub fn cc0(&self) -> CC0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CC0R { bits }
+    #[inline(always)]
+    pub fn cc0(&self) -> CC0_R {
+        CC0_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - CC Channel 1 Interrupt Flag"]
-    #[inline]
-    pub fn cc1(&self) -> CC1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CC1R { bits }
+    #[inline(always)]
+    pub fn cc1(&self) -> CC1_R {
+        CC1_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - CC Channel 2 Interrupt Flag"]
-    #[inline]
-    pub fn cc2(&self) -> CC2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CC2R { bits }
+    #[inline(always)]
+    pub fn cc2(&self) -> CC2_R {
+        CC2_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - CC Channel 3 Interrupt Flag"]
-    #[inline]
-    pub fn cc3(&self) -> CC3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CC3R { bits }
+    #[inline(always)]
+    pub fn cc3(&self) -> CC3_R {
+        CC3_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - CC Channel 0 Input Capture Buffer Overflow Interrupt Flag"]
-    #[inline]
-    pub fn icbof0(&self) -> ICBOF0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ICBOF0R { bits }
+    #[inline(always)]
+    pub fn icbof0(&self) -> ICBOF0_R {
+        ICBOF0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - CC Channel 1 Input Capture Buffer Overflow Interrupt Flag"]
-    #[inline]
-    pub fn icbof1(&self) -> ICBOF1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ICBOF1R { bits }
+    #[inline(always)]
+    pub fn icbof1(&self) -> ICBOF1_R {
+        ICBOF1_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - CC Channel 2 Input Capture Buffer Overflow Interrupt Flag"]
-    #[inline]
-    pub fn icbof2(&self) -> ICBOF2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ICBOF2R { bits }
+    #[inline(always)]
+    pub fn icbof2(&self) -> ICBOF2_R {
+        ICBOF2_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - CC Channel 3 Input Capture Buffer Overflow Interrupt Flag"]
-    #[inline]
-    pub fn icbof3(&self) -> ICBOF3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ICBOF3R { bits }
+    #[inline(always)]
+    pub fn icbof3(&self) -> ICBOF3_R {
+        ICBOF3_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }

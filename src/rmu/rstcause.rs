@@ -1,328 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RSTCAUSE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PORSTR {
-    bits: bool,
-}
-impl PORSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AVDDBODR {
-    bits: bool,
-}
-impl AVDDBODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DVDDBODR {
-    bits: bool,
-}
-impl DVDDBODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DECBODR {
-    bits: bool,
-}
-impl DECBODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTRSTR {
-    bits: bool,
-}
-impl EXTRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LOCKUPRSTR {
-    bits: bool,
-}
-impl LOCKUPRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SYSREQRSTR {
-    bits: bool,
-}
-impl SYSREQRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WDOGRSTR {
-    bits: bool,
-}
-impl WDOGRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUMODERSTR {
-    bits: bool,
-}
-impl BUMODERSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM4RSTR {
-    bits: bool,
-}
-impl EM4RSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register RSTCAUSE"]
+pub type R = crate::R<u32, super::RSTCAUSE>;
+#[doc = "Reader of field `PORST`"]
+pub type PORST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AVDDBOD`"]
+pub type AVDDBOD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DVDDBOD`"]
+pub type DVDDBOD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DECBOD`"]
+pub type DECBOD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EXTRST`"]
+pub type EXTRST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `LOCKUPRST`"]
+pub type LOCKUPRST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SYSREQRST`"]
+pub type SYSREQRST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WDOGRST`"]
+pub type WDOGRST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUMODERST`"]
+pub type BUMODERST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EM4RST`"]
+pub type EM4RST_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Power on Reset"]
-    #[inline]
-    pub fn porst(&self) -> PORSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PORSTR { bits }
+    #[inline(always)]
+    pub fn porst(&self) -> PORST_R {
+        PORST_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Brown Out Detector AVDD Reset"]
-    #[inline]
-    pub fn avddbod(&self) -> AVDDBODR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AVDDBODR { bits }
+    #[inline(always)]
+    pub fn avddbod(&self) -> AVDDBOD_R {
+        AVDDBOD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Brown Out Detector DVDD Reset"]
-    #[inline]
-    pub fn dvddbod(&self) -> DVDDBODR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DVDDBODR { bits }
+    #[inline(always)]
+    pub fn dvddbod(&self) -> DVDDBOD_R {
+        DVDDBOD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Brown Out Detector Decouple Domain Reset"]
-    #[inline]
-    pub fn decbod(&self) -> DECBODR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DECBODR { bits }
+    #[inline(always)]
+    pub fn decbod(&self) -> DECBOD_R {
+        DECBOD_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - External Pin Reset"]
-    #[inline]
-    pub fn extrst(&self) -> EXTRSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EXTRSTR { bits }
+    #[inline(always)]
+    pub fn extrst(&self) -> EXTRST_R {
+        EXTRST_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - LOCKUP Reset"]
-    #[inline]
-    pub fn lockuprst(&self) -> LOCKUPRSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LOCKUPRSTR { bits }
+    #[inline(always)]
+    pub fn lockuprst(&self) -> LOCKUPRST_R {
+        LOCKUPRST_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - System Request Reset"]
-    #[inline]
-    pub fn sysreqrst(&self) -> SYSREQRSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SYSREQRSTR { bits }
+    #[inline(always)]
+    pub fn sysreqrst(&self) -> SYSREQRST_R {
+        SYSREQRST_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Watchdog Reset"]
-    #[inline]
-    pub fn wdogrst(&self) -> WDOGRSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WDOGRSTR { bits }
+    #[inline(always)]
+    pub fn wdogrst(&self) -> WDOGRST_R {
+        WDOGRST_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Backup Mode Reset"]
-    #[inline]
-    pub fn bumoderst(&self) -> BUMODERSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUMODERSTR { bits }
+    #[inline(always)]
+    pub fn bumoderst(&self) -> BUMODERST_R {
+        BUMODERST_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 16 - EM4 Reset"]
-    #[inline]
-    pub fn em4rst(&self) -> EM4RSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM4RSTR { bits }
+    #[inline(always)]
+    pub fn em4rst(&self) -> EM4RST_R {
+        EM4RST_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }

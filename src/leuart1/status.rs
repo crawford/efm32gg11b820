@@ -1,235 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXENSR {
-    bits: bool,
-}
-impl RXENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXENSR {
-    bits: bool,
-}
-impl TXENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXBLOCKR {
-    bits: bool,
-}
-impl RXBLOCKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXCR {
-    bits: bool,
-}
-impl TXCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXBLR {
-    bits: bool,
-}
-impl TXBLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXDATAVR {
-    bits: bool,
-}
-impl RXDATAVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXIDLER {
-    bits: bool,
-}
-impl TXIDLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `RXENS`"]
+pub type RXENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXENS`"]
+pub type TXENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXBLOCK`"]
+pub type RXBLOCK_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXC`"]
+pub type TXC_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXBL`"]
+pub type TXBL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXDATAV`"]
+pub type RXDATAV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TXIDLE`"]
+pub type TXIDLE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Receiver Enable Status"]
-    #[inline]
-    pub fn rxens(&self) -> RXENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXENSR { bits }
+    #[inline(always)]
+    pub fn rxens(&self) -> RXENS_R {
+        RXENS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Transmitter Enable Status"]
-    #[inline]
-    pub fn txens(&self) -> TXENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXENSR { bits }
+    #[inline(always)]
+    pub fn txens(&self) -> TXENS_R {
+        TXENS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Block Incoming Data"]
-    #[inline]
-    pub fn rxblock(&self) -> RXBLOCKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXBLOCKR { bits }
+    #[inline(always)]
+    pub fn rxblock(&self) -> RXBLOCK_R {
+        RXBLOCK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - TX Complete"]
-    #[inline]
-    pub fn txc(&self) -> TXCR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXCR { bits }
+    #[inline(always)]
+    pub fn txc(&self) -> TXC_R {
+        TXC_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - TX Buffer Level"]
-    #[inline]
-    pub fn txbl(&self) -> TXBLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXBLR { bits }
+    #[inline(always)]
+    pub fn txbl(&self) -> TXBL_R {
+        TXBL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - RX Data Valid"]
-    #[inline]
-    pub fn rxdatav(&self) -> RXDATAVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXDATAVR { bits }
+    #[inline(always)]
+    pub fn rxdatav(&self) -> RXDATAV_R {
+        RXDATAV_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - TX Idle"]
-    #[inline]
-    pub fn txidle(&self) -> TXIDLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXIDLER { bits }
+    #[inline(always)]
+    pub fn txidle(&self) -> TXIDLE_R {
+        TXIDLE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }

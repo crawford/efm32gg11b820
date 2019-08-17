@@ -1,321 +1,166 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HCFG"]
+pub type R = crate::R<u32, super::HCFG>;
+#[doc = "Writer for register HCFG"]
+pub type W = crate::W<u32, super::HCFG>;
+#[doc = "Register HCFG `reset()`'s with value 0x0200"]
+impl crate::ResetValue for super::HCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0200
     }
 }
-#[doc = r" Value of the field"]
-pub struct FSLSPCLKSELR {
-    bits: u8,
-}
-impl FSLSPCLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FSLSSUPPR {
-    bits: bool,
-}
-impl FSLSSUPPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ENA32KHZSR {
-    bits: bool,
-}
-impl ENA32KHZSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RESVALIDR {
-    bits: u8,
-}
-impl RESVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MODECHTIMENR {
-    bits: bool,
-}
-impl MODECHTIMENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FSLSPCLKSELW<'a> {
+#[doc = "Reader of field `FSLSPCLKSEL`"]
+pub type FSLSPCLKSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FSLSPCLKSEL`"]
+pub struct FSLSPCLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FSLSPCLKSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FSLSPCLKSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FSLSSUPPW<'a> {
+#[doc = "Reader of field `FSLSSUPP`"]
+pub type FSLSSUPP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FSLSSUPP`"]
+pub struct FSLSSUPP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FSLSSUPPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FSLSSUPP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENA32KHZSW<'a> {
+#[doc = "Reader of field `ENA32KHZS`"]
+pub type ENA32KHZS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ENA32KHZS`"]
+pub struct ENA32KHZS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA32KHZSW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ENA32KHZS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RESVALIDW<'a> {
+#[doc = "Reader of field `RESVALID`"]
+pub type RESVALID_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RESVALID`"]
+pub struct RESVALID_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESVALIDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RESVALID_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MODECHTIMENW<'a> {
+#[doc = "Reader of field `MODECHTIMEN`"]
+pub type MODECHTIMEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MODECHTIMEN`"]
+pub struct MODECHTIMEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODECHTIMENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MODECHTIMEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - FS/LS PHY Clock Select"]
-    #[inline]
-    pub fn fslspclksel(&self) -> FSLSPCLKSELR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FSLSPCLKSELR { bits }
+    #[inline(always)]
+    pub fn fslspclksel(&self) -> FSLSPCLKSEL_R {
+        FSLSPCLKSEL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - FS- and LS-Only Support"]
-    #[inline]
-    pub fn fslssupp(&self) -> FSLSSUPPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FSLSSUPPR { bits }
+    #[inline(always)]
+    pub fn fslssupp(&self) -> FSLSSUPP_R {
+        FSLSSUPP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable 32 kHz Suspend Mode"]
-    #[inline]
-    pub fn ena32khzs(&self) -> ENA32KHZSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENA32KHZSR { bits }
+    #[inline(always)]
+    pub fn ena32khzs(&self) -> ENA32KHZS_R {
+        ENA32KHZS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:15 - Resume Validation Period"]
-    #[inline]
-    pub fn resvalid(&self) -> RESVALIDR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RESVALIDR { bits }
+    #[inline(always)]
+    pub fn resvalid(&self) -> RESVALID_R {
+        RESVALID_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bit 31"]
-    #[inline]
-    pub fn modechtimen(&self) -> MODECHTIMENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MODECHTIMENR { bits }
+    #[inline(always)]
+    pub fn modechtimen(&self) -> MODECHTIMEN_R {
+        MODECHTIMEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 512 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - FS/LS PHY Clock Select"]
-    #[inline]
-    pub fn fslspclksel(&mut self) -> _FSLSPCLKSELW {
-        _FSLSPCLKSELW { w: self }
+    #[inline(always)]
+    pub fn fslspclksel(&mut self) -> FSLSPCLKSEL_W {
+        FSLSPCLKSEL_W { w: self }
     }
     #[doc = "Bit 2 - FS- and LS-Only Support"]
-    #[inline]
-    pub fn fslssupp(&mut self) -> _FSLSSUPPW {
-        _FSLSSUPPW { w: self }
+    #[inline(always)]
+    pub fn fslssupp(&mut self) -> FSLSSUPP_W {
+        FSLSSUPP_W { w: self }
     }
     #[doc = "Bit 7 - Enable 32 kHz Suspend Mode"]
-    #[inline]
-    pub fn ena32khzs(&mut self) -> _ENA32KHZSW {
-        _ENA32KHZSW { w: self }
+    #[inline(always)]
+    pub fn ena32khzs(&mut self) -> ENA32KHZS_W {
+        ENA32KHZS_W { w: self }
     }
     #[doc = "Bits 8:15 - Resume Validation Period"]
-    #[inline]
-    pub fn resvalid(&mut self) -> _RESVALIDW {
-        _RESVALIDW { w: self }
+    #[inline(always)]
+    pub fn resvalid(&mut self) -> RESVALID_W {
+        RESVALID_W { w: self }
     }
     #[doc = "Bit 31"]
-    #[inline]
-    pub fn modechtimen(&mut self) -> _MODECHTIMENW {
-        _MODECHTIMENW { w: self }
+    #[inline(always)]
+    pub fn modechtimen(&mut self) -> MODECHTIMEN_W {
+        MODECHTIMEN_W { w: self }
     }
 }

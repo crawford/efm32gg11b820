@@ -1,165 +1,95 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LOCK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LOCK"]
+pub type R = crate::R<u32, super::LOCK>;
+#[doc = "Writer for register LOCK"]
+pub type W = crate::W<u32, super::LOCK>;
+#[doc = "Register LOCK `reset()`'s with value 0"]
+impl crate::ResetValue for super::LOCK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `TIMERLOCKKEY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMERLOCKKEYR {
-    #[doc = "undocumented"]
+pub enum TIMERLOCKKEY_A {
+    #[doc = "`0`"]
     UNLOCKED,
-    #[doc = "undocumented"]
+    #[doc = "`1`"]
     LOCKED,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl TIMERLOCKKEYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
+impl crate::ToBits<u16> for TIMERLOCKKEY_A {
+    #[inline(always)]
+    fn _bits(&self) -> u16 {
         match *self {
-            TIMERLOCKKEYR::UNLOCKED => 0,
-            TIMERLOCKKEYR::LOCKED => 1,
-            TIMERLOCKKEYR::_Reserved(bits) => bits,
+            TIMERLOCKKEY_A::UNLOCKED => 0,
+            TIMERLOCKKEY_A::LOCKED => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> TIMERLOCKKEYR {
-        match value {
-            0 => TIMERLOCKKEYR::UNLOCKED,
-            1 => TIMERLOCKKEYR::LOCKED,
-            i => TIMERLOCKKEYR::_Reserved(i),
+}
+#[doc = "Reader of field `TIMERLOCKKEY`"]
+pub type TIMERLOCKKEY_R = crate::R<u16, TIMERLOCKKEY_A>;
+impl TIMERLOCKKEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, TIMERLOCKKEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TIMERLOCKKEY_A::UNLOCKED),
+            1 => Val(TIMERLOCKKEY_A::LOCKED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == TIMERLOCKKEYR::UNLOCKED
+        *self == TIMERLOCKKEY_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == TIMERLOCKKEYR::LOCKED
+        *self == TIMERLOCKKEY_A::LOCKED
     }
 }
-#[doc = "Values that can be written to the field `TIMERLOCKKEY`"]
-pub enum TIMERLOCKKEYW {
-    #[doc = "`0`"]
-    UNLOCKED,
-    #[doc = "`1`"]
-    LOCKED,
-}
-impl TIMERLOCKKEYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            TIMERLOCKKEYW::UNLOCKED => 0,
-            TIMERLOCKKEYW::LOCKED => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TIMERLOCKKEYW<'a> {
+#[doc = "Write proxy for field `TIMERLOCKKEY`"]
+pub struct TIMERLOCKKEY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TIMERLOCKKEYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TIMERLOCKKEYW) -> &'a mut W {
+impl<'a> TIMERLOCKKEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TIMERLOCKKEY_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "`0`"]
-    #[inline]
+    #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
-        self.variant(TIMERLOCKKEYW::UNLOCKED)
+        self.variant(TIMERLOCKKEY_A::UNLOCKED)
     }
     #[doc = "`1`"]
-    #[inline]
+    #[inline(always)]
     pub fn locked(self) -> &'a mut W {
-        self.variant(TIMERLOCKKEYW::LOCKED)
+        self.variant(TIMERLOCKKEY_A::LOCKED)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Timer Lock Key"]
-    #[inline]
-    pub fn timerlockkey(&self) -> TIMERLOCKKEYR {
-        TIMERLOCKKEYR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn timerlockkey(&self) -> TIMERLOCKKEY_R {
+        TIMERLOCKKEY_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Timer Lock Key"]
-    #[inline]
-    pub fn timerlockkey(&mut self) -> _TIMERLOCKKEYW {
-        _TIMERLOCKKEYW { w: self }
+    #[inline(always)]
+    pub fn timerlockkey(&mut self) -> TIMERLOCKKEY_W {
+        TIMERLOCKKEY_W { w: self }
     }
 }

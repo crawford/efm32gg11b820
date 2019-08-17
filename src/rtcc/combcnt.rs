@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::COMBCNT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PRECNTR {
-    bits: u16,
-}
-impl PRECNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CNTLSBR {
-    bits: u32,
-}
-impl CNTLSBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register COMBCNT"]
+pub type R = crate::R<u32, super::COMBCNT>;
+#[doc = "Reader of field `PRECNT`"]
+pub type PRECNT_R = crate::R<u16, u16>;
+#[doc = "Reader of field `CNTLSB`"]
+pub type CNTLSB_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:14 - Pre-Counter Value"]
-    #[inline]
-    pub fn precnt(&self) -> PRECNTR {
-        let bits = {
-            const MASK: u16 = 32767;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PRECNTR { bits }
+    #[inline(always)]
+    pub fn precnt(&self) -> PRECNT_R {
+        PRECNT_R::new((self.bits & 0x7fff) as u16)
     }
     #[doc = "Bits 15:31 - Counter Value"]
-    #[inline]
-    pub fn cntlsb(&self) -> CNTLSBR {
-        let bits = {
-            const MASK: u32 = 131071;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        CNTLSBR { bits }
+    #[inline(always)]
+    pub fn cntlsb(&self) -> CNTLSB_R {
+        CNTLSB_R::new(((self.bits >> 15) & 0x0001_ffff) as u32)
     }
 }

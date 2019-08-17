@@ -1,303 +1,223 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
+#[doc = "Reader of register CSTATUS"]
+pub type R = crate::R<u32, super::CSTATUS>;
 #[doc = "Possible values of the field `V0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum V0R {
-    #[doc = "undocumented"]
+pub enum V0_A {
+    #[doc = "`0`"]
     DDATA0,
-    #[doc = "undocumented"]
+    #[doc = "`1`"]
     DDATA1,
-    #[doc = "undocumented"]
+    #[doc = "`10`"]
     DDATA2,
-    #[doc = "undocumented"]
+    #[doc = "`11`"]
     DDATA3,
-    #[doc = "undocumented"]
+    #[doc = "`100`"]
     DDATA4,
-    #[doc = "undocumented"]
+    #[doc = "`101`"]
     DATA0,
-    #[doc = "undocumented"]
+    #[doc = "`110`"]
     DATA1,
-    #[doc = "undocumented"]
+    #[doc = "`111`"]
     DATA2,
 }
-impl V0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for V0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            V0R::DDATA0 => 0,
-            V0R::DDATA1 => 1,
-            V0R::DDATA2 => 2,
-            V0R::DDATA3 => 3,
-            V0R::DDATA4 => 4,
-            V0R::DATA0 => 5,
-            V0R::DATA1 => 6,
-            V0R::DATA2 => 7,
+            V0_A::DDATA0 => 0,
+            V0_A::DDATA1 => 1,
+            V0_A::DDATA2 => 2,
+            V0_A::DDATA3 => 3,
+            V0_A::DDATA4 => 4,
+            V0_A::DATA0 => 5,
+            V0_A::DATA1 => 6,
+            V0_A::DATA2 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> V0R {
-        match value {
-            0 => V0R::DDATA0,
-            1 => V0R::DDATA1,
-            2 => V0R::DDATA2,
-            3 => V0R::DDATA3,
-            4 => V0R::DDATA4,
-            5 => V0R::DATA0,
-            6 => V0R::DATA1,
-            7 => V0R::DATA2,
+}
+#[doc = "Reader of field `V0`"]
+pub type V0_R = crate::R<u8, V0_A>;
+impl V0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V0_A {
+        match self.bits {
+            0 => V0_A::DDATA0,
+            1 => V0_A::DDATA1,
+            2 => V0_A::DDATA2,
+            3 => V0_A::DDATA3,
+            4 => V0_A::DDATA4,
+            5 => V0_A::DATA0,
+            6 => V0_A::DATA1,
+            7 => V0_A::DATA2,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DDATA0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
-        *self == V0R::DDATA0
+        *self == V0_A::DDATA0
     }
     #[doc = "Checks if the value of the field is `DDATA1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
-        *self == V0R::DDATA1
+        *self == V0_A::DDATA1
     }
     #[doc = "Checks if the value of the field is `DDATA2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
-        *self == V0R::DDATA2
+        *self == V0_A::DDATA2
     }
     #[doc = "Checks if the value of the field is `DDATA3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
-        *self == V0R::DDATA3
+        *self == V0_A::DDATA3
     }
     #[doc = "Checks if the value of the field is `DDATA4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
-        *self == V0R::DDATA4
+        *self == V0_A::DDATA4
     }
     #[doc = "Checks if the value of the field is `DATA0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == V0R::DATA0
+        *self == V0_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == V0R::DATA1
+        *self == V0_A::DATA1
     }
     #[doc = "Checks if the value of the field is `DATA2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == V0R::DATA2
+        *self == V0_A::DATA2
     }
 }
 #[doc = "Possible values of the field `V1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum V1R {
-    #[doc = "undocumented"]
+pub enum V1_A {
+    #[doc = "`0`"]
     DDATA0,
-    #[doc = "undocumented"]
+    #[doc = "`1`"]
     DDATA1,
-    #[doc = "undocumented"]
+    #[doc = "`10`"]
     DDATA2,
-    #[doc = "undocumented"]
+    #[doc = "`11`"]
     DDATA3,
-    #[doc = "undocumented"]
+    #[doc = "`100`"]
     DDATA4,
-    #[doc = "undocumented"]
+    #[doc = "`101`"]
     DATA0,
-    #[doc = "undocumented"]
+    #[doc = "`110`"]
     DATA1,
-    #[doc = "undocumented"]
+    #[doc = "`111`"]
     DATA2,
 }
-impl V1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for V1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            V1R::DDATA0 => 0,
-            V1R::DDATA1 => 1,
-            V1R::DDATA2 => 2,
-            V1R::DDATA3 => 3,
-            V1R::DDATA4 => 4,
-            V1R::DATA0 => 5,
-            V1R::DATA1 => 6,
-            V1R::DATA2 => 7,
+            V1_A::DDATA0 => 0,
+            V1_A::DDATA1 => 1,
+            V1_A::DDATA2 => 2,
+            V1_A::DDATA3 => 3,
+            V1_A::DDATA4 => 4,
+            V1_A::DATA0 => 5,
+            V1_A::DATA1 => 6,
+            V1_A::DATA2 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> V1R {
-        match value {
-            0 => V1R::DDATA0,
-            1 => V1R::DDATA1,
-            2 => V1R::DDATA2,
-            3 => V1R::DDATA3,
-            4 => V1R::DDATA4,
-            5 => V1R::DATA0,
-            6 => V1R::DATA1,
-            7 => V1R::DATA2,
+}
+#[doc = "Reader of field `V1`"]
+pub type V1_R = crate::R<u8, V1_A>;
+impl V1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V1_A {
+        match self.bits {
+            0 => V1_A::DDATA0,
+            1 => V1_A::DDATA1,
+            2 => V1_A::DDATA2,
+            3 => V1_A::DDATA3,
+            4 => V1_A::DDATA4,
+            5 => V1_A::DATA0,
+            6 => V1_A::DATA1,
+            7 => V1_A::DATA2,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DDATA0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
-        *self == V1R::DDATA0
+        *self == V1_A::DDATA0
     }
     #[doc = "Checks if the value of the field is `DDATA1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
-        *self == V1R::DDATA1
+        *self == V1_A::DDATA1
     }
     #[doc = "Checks if the value of the field is `DDATA2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
-        *self == V1R::DDATA2
+        *self == V1_A::DDATA2
     }
     #[doc = "Checks if the value of the field is `DDATA3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
-        *self == V1R::DDATA3
+        *self == V1_A::DDATA3
     }
     #[doc = "Checks if the value of the field is `DDATA4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
-        *self == V1R::DDATA4
+        *self == V1_A::DDATA4
     }
     #[doc = "Checks if the value of the field is `DATA0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == V1R::DATA0
+        *self == V1_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == V1R::DATA1
+        *self == V1_A::DATA1
     }
     #[doc = "Checks if the value of the field is `DATA2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == V1R::DATA2
+        *self == V1_A::DATA2
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEQPARTR {
-    bits: bool,
-}
-impl SEQPARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SEQSKIPR {
-    bits: bool,
-}
-impl SEQSKIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SEQIPR {
-    bits: u8,
-}
-impl SEQIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `SEQPART`"]
+pub type SEQPART_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SEQSKIP`"]
+pub type SEQSKIP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SEQIP`"]
+pub type SEQIP_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Selected ALU Operand 0"]
-    #[inline]
-    pub fn v0(&self) -> V0R {
-        V0R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn v0(&self) -> V0_R {
+        V0_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Selected ALU Operand 1"]
-    #[inline]
-    pub fn v1(&self) -> V1R {
-        V1R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn v1(&self) -> V1_R {
+        V1_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bit 16 - Sequence Part"]
-    #[inline]
-    pub fn seqpart(&self) -> SEQPARTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SEQPARTR { bits }
+    #[inline(always)]
+    pub fn seqpart(&self) -> SEQPART_R {
+        SEQPART_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Sequence Skip Next Instruction"]
-    #[inline]
-    pub fn seqskip(&self) -> SEQSKIPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SEQSKIPR { bits }
+    #[inline(always)]
+    pub fn seqskip(&self) -> SEQSKIP_R {
+        SEQSKIP_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bits 20:24 - Sequence Next Instruction Pointer"]
-    #[inline]
-    pub fn seqip(&self) -> SEQIPR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEQIPR { bits }
+    #[inline(always)]
+    pub fn seqip(&self) -> SEQIP_R {
+        SEQIP_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
 }

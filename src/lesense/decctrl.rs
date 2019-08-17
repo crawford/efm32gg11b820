@@ -1,237 +1,234 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DECCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DECCTRL"]
+pub type R = crate::R<u32, super::DECCTRL>;
+#[doc = "Writer for register DECCTRL"]
+pub type W = crate::W<u32, super::DECCTRL>;
+#[doc = "Register DECCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::DECCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DISABLER {
-    bits: bool,
+#[doc = "Reader of field `DISABLE`"]
+pub type DISABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DISABLE`"]
+pub struct DISABLE_W<'a> {
+    w: &'a mut W,
 }
-impl DISABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> DISABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERRCHKR {
-    bits: bool,
-}
-impl ERRCHKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct INTMAPR {
-    bits: bool,
+#[doc = "Reader of field `ERRCHK`"]
+pub type ERRCHK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERRCHK`"]
+pub struct ERRCHK_W<'a> {
+    w: &'a mut W,
 }
-impl INTMAPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> ERRCHK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HYSTPRS0R {
-    bits: bool,
-}
-impl HYSTPRS0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct HYSTPRS1R {
-    bits: bool,
+#[doc = "Reader of field `INTMAP`"]
+pub type INTMAP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTMAP`"]
+pub struct INTMAP_W<'a> {
+    w: &'a mut W,
 }
-impl HYSTPRS1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> INTMAP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HYSTPRS2R {
-    bits: bool,
-}
-impl HYSTPRS2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct HYSTIRQR {
-    bits: bool,
+#[doc = "Reader of field `HYSTPRS0`"]
+pub type HYSTPRS0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HYSTPRS0`"]
+pub struct HYSTPRS0_W<'a> {
+    w: &'a mut W,
 }
-impl HYSTIRQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> HYSTPRS0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PRSCNTR {
-    bits: bool,
-}
-impl PRSCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct INPUTR {
-    bits: bool,
+#[doc = "Reader of field `HYSTPRS1`"]
+pub type HYSTPRS1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HYSTPRS1`"]
+pub struct HYSTPRS1_W<'a> {
+    w: &'a mut W,
 }
-impl INPUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> HYSTPRS1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Reader of field `HYSTPRS2`"]
+pub type HYSTPRS2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HYSTPRS2`"]
+pub struct HYSTPRS2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HYSTPRS2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Reader of field `HYSTIRQ`"]
+pub type HYSTIRQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HYSTIRQ`"]
+pub struct HYSTIRQ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HYSTIRQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
+    }
+}
+#[doc = "Reader of field `PRSCNT`"]
+pub type PRSCNT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PRSCNT`"]
+pub struct PRSCNT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRSCNT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
+#[doc = "Reader of field `INPUT`"]
+pub type INPUT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INPUT`"]
+pub struct INPUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INPUT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PRSSEL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRSSEL0R {
+pub enum PRSSEL0_A {
     #[doc = "PRS Channel 0 selected as input"]
     PRSCH0,
     #[doc = "PRS Channel 1 selected as input"]
@@ -280,197 +277,335 @@ pub enum PRSSEL0R {
     PRSCH22,
     #[doc = "PRS Channel 23 selected as input"]
     PRSCH23,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PRSSEL0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PRSSEL0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PRSSEL0R::PRSCH0 => 0,
-            PRSSEL0R::PRSCH1 => 1,
-            PRSSEL0R::PRSCH2 => 2,
-            PRSSEL0R::PRSCH3 => 3,
-            PRSSEL0R::PRSCH4 => 4,
-            PRSSEL0R::PRSCH5 => 5,
-            PRSSEL0R::PRSCH6 => 6,
-            PRSSEL0R::PRSCH7 => 7,
-            PRSSEL0R::PRSCH8 => 8,
-            PRSSEL0R::PRSCH9 => 9,
-            PRSSEL0R::PRSCH10 => 10,
-            PRSSEL0R::PRSCH11 => 11,
-            PRSSEL0R::PRSCH12 => 12,
-            PRSSEL0R::PRSCH13 => 13,
-            PRSSEL0R::PRSCH14 => 14,
-            PRSSEL0R::PRSCH15 => 15,
-            PRSSEL0R::PRSCH16 => 16,
-            PRSSEL0R::PRSCH17 => 17,
-            PRSSEL0R::PRSCH18 => 18,
-            PRSSEL0R::PRSCH19 => 19,
-            PRSSEL0R::PRSCH20 => 20,
-            PRSSEL0R::PRSCH21 => 21,
-            PRSSEL0R::PRSCH22 => 22,
-            PRSSEL0R::PRSCH23 => 23,
-            PRSSEL0R::_Reserved(bits) => bits,
+            PRSSEL0_A::PRSCH0 => 0,
+            PRSSEL0_A::PRSCH1 => 1,
+            PRSSEL0_A::PRSCH2 => 2,
+            PRSSEL0_A::PRSCH3 => 3,
+            PRSSEL0_A::PRSCH4 => 4,
+            PRSSEL0_A::PRSCH5 => 5,
+            PRSSEL0_A::PRSCH6 => 6,
+            PRSSEL0_A::PRSCH7 => 7,
+            PRSSEL0_A::PRSCH8 => 8,
+            PRSSEL0_A::PRSCH9 => 9,
+            PRSSEL0_A::PRSCH10 => 10,
+            PRSSEL0_A::PRSCH11 => 11,
+            PRSSEL0_A::PRSCH12 => 12,
+            PRSSEL0_A::PRSCH13 => 13,
+            PRSSEL0_A::PRSCH14 => 14,
+            PRSSEL0_A::PRSCH15 => 15,
+            PRSSEL0_A::PRSCH16 => 16,
+            PRSSEL0_A::PRSCH17 => 17,
+            PRSSEL0_A::PRSCH18 => 18,
+            PRSSEL0_A::PRSCH19 => 19,
+            PRSSEL0_A::PRSCH20 => 20,
+            PRSSEL0_A::PRSCH21 => 21,
+            PRSSEL0_A::PRSCH22 => 22,
+            PRSSEL0_A::PRSCH23 => 23,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRSSEL0R {
-        match value {
-            0 => PRSSEL0R::PRSCH0,
-            1 => PRSSEL0R::PRSCH1,
-            2 => PRSSEL0R::PRSCH2,
-            3 => PRSSEL0R::PRSCH3,
-            4 => PRSSEL0R::PRSCH4,
-            5 => PRSSEL0R::PRSCH5,
-            6 => PRSSEL0R::PRSCH6,
-            7 => PRSSEL0R::PRSCH7,
-            8 => PRSSEL0R::PRSCH8,
-            9 => PRSSEL0R::PRSCH9,
-            10 => PRSSEL0R::PRSCH10,
-            11 => PRSSEL0R::PRSCH11,
-            12 => PRSSEL0R::PRSCH12,
-            13 => PRSSEL0R::PRSCH13,
-            14 => PRSSEL0R::PRSCH14,
-            15 => PRSSEL0R::PRSCH15,
-            16 => PRSSEL0R::PRSCH16,
-            17 => PRSSEL0R::PRSCH17,
-            18 => PRSSEL0R::PRSCH18,
-            19 => PRSSEL0R::PRSCH19,
-            20 => PRSSEL0R::PRSCH20,
-            21 => PRSSEL0R::PRSCH21,
-            22 => PRSSEL0R::PRSCH22,
-            23 => PRSSEL0R::PRSCH23,
-            i => PRSSEL0R::_Reserved(i),
+}
+#[doc = "Reader of field `PRSSEL0`"]
+pub type PRSSEL0_R = crate::R<u8, PRSSEL0_A>;
+impl PRSSEL0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRSSEL0_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRSSEL0_A::PRSCH0),
+            1 => Val(PRSSEL0_A::PRSCH1),
+            2 => Val(PRSSEL0_A::PRSCH2),
+            3 => Val(PRSSEL0_A::PRSCH3),
+            4 => Val(PRSSEL0_A::PRSCH4),
+            5 => Val(PRSSEL0_A::PRSCH5),
+            6 => Val(PRSSEL0_A::PRSCH6),
+            7 => Val(PRSSEL0_A::PRSCH7),
+            8 => Val(PRSSEL0_A::PRSCH8),
+            9 => Val(PRSSEL0_A::PRSCH9),
+            10 => Val(PRSSEL0_A::PRSCH10),
+            11 => Val(PRSSEL0_A::PRSCH11),
+            12 => Val(PRSSEL0_A::PRSCH12),
+            13 => Val(PRSSEL0_A::PRSCH13),
+            14 => Val(PRSSEL0_A::PRSCH14),
+            15 => Val(PRSSEL0_A::PRSCH15),
+            16 => Val(PRSSEL0_A::PRSCH16),
+            17 => Val(PRSSEL0_A::PRSCH17),
+            18 => Val(PRSSEL0_A::PRSCH18),
+            19 => Val(PRSSEL0_A::PRSCH19),
+            20 => Val(PRSSEL0_A::PRSCH20),
+            21 => Val(PRSSEL0_A::PRSCH21),
+            22 => Val(PRSSEL0_A::PRSCH22),
+            23 => Val(PRSSEL0_A::PRSCH23),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSEL0R::PRSCH0
+        *self == PRSSEL0_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSEL0R::PRSCH1
+        *self == PRSSEL0_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSEL0R::PRSCH2
+        *self == PRSSEL0_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSEL0R::PRSCH3
+        *self == PRSSEL0_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSEL0R::PRSCH4
+        *self == PRSSEL0_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSEL0R::PRSCH5
+        *self == PRSSEL0_A::PRSCH5
     }
     #[doc = "Checks if the value of the field is `PRSCH6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSEL0R::PRSCH6
+        *self == PRSSEL0_A::PRSCH6
     }
     #[doc = "Checks if the value of the field is `PRSCH7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSEL0R::PRSCH7
+        *self == PRSSEL0_A::PRSCH7
     }
     #[doc = "Checks if the value of the field is `PRSCH8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSEL0R::PRSCH8
+        *self == PRSSEL0_A::PRSCH8
     }
     #[doc = "Checks if the value of the field is `PRSCH9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSEL0R::PRSCH9
+        *self == PRSSEL0_A::PRSCH9
     }
     #[doc = "Checks if the value of the field is `PRSCH10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSEL0R::PRSCH10
+        *self == PRSSEL0_A::PRSCH10
     }
     #[doc = "Checks if the value of the field is `PRSCH11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSEL0R::PRSCH11
+        *self == PRSSEL0_A::PRSCH11
     }
     #[doc = "Checks if the value of the field is `PRSCH12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch12(&self) -> bool {
-        *self == PRSSEL0R::PRSCH12
+        *self == PRSSEL0_A::PRSCH12
     }
     #[doc = "Checks if the value of the field is `PRSCH13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch13(&self) -> bool {
-        *self == PRSSEL0R::PRSCH13
+        *self == PRSSEL0_A::PRSCH13
     }
     #[doc = "Checks if the value of the field is `PRSCH14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch14(&self) -> bool {
-        *self == PRSSEL0R::PRSCH14
+        *self == PRSSEL0_A::PRSCH14
     }
     #[doc = "Checks if the value of the field is `PRSCH15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch15(&self) -> bool {
-        *self == PRSSEL0R::PRSCH15
+        *self == PRSSEL0_A::PRSCH15
     }
     #[doc = "Checks if the value of the field is `PRSCH16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch16(&self) -> bool {
-        *self == PRSSEL0R::PRSCH16
+        *self == PRSSEL0_A::PRSCH16
     }
     #[doc = "Checks if the value of the field is `PRSCH17`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch17(&self) -> bool {
-        *self == PRSSEL0R::PRSCH17
+        *self == PRSSEL0_A::PRSCH17
     }
     #[doc = "Checks if the value of the field is `PRSCH18`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch18(&self) -> bool {
-        *self == PRSSEL0R::PRSCH18
+        *self == PRSSEL0_A::PRSCH18
     }
     #[doc = "Checks if the value of the field is `PRSCH19`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch19(&self) -> bool {
-        *self == PRSSEL0R::PRSCH19
+        *self == PRSSEL0_A::PRSCH19
     }
     #[doc = "Checks if the value of the field is `PRSCH20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch20(&self) -> bool {
-        *self == PRSSEL0R::PRSCH20
+        *self == PRSSEL0_A::PRSCH20
     }
     #[doc = "Checks if the value of the field is `PRSCH21`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch21(&self) -> bool {
-        *self == PRSSEL0R::PRSCH21
+        *self == PRSSEL0_A::PRSCH21
     }
     #[doc = "Checks if the value of the field is `PRSCH22`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch22(&self) -> bool {
-        *self == PRSSEL0R::PRSCH22
+        *self == PRSSEL0_A::PRSCH22
     }
     #[doc = "Checks if the value of the field is `PRSCH23`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch23(&self) -> bool {
-        *self == PRSSEL0R::PRSCH23
+        *self == PRSSEL0_A::PRSCH23
+    }
+}
+#[doc = "Write proxy for field `PRSSEL0`"]
+pub struct PRSSEL0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRSSEL0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRSSEL0_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "PRS Channel 0 selected as input"]
+    #[inline(always)]
+    pub fn prsch0(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH0)
+    }
+    #[doc = "PRS Channel 1 selected as input"]
+    #[inline(always)]
+    pub fn prsch1(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH1)
+    }
+    #[doc = "PRS Channel 2 selected as input"]
+    #[inline(always)]
+    pub fn prsch2(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH2)
+    }
+    #[doc = "PRS Channel 3 selected as input"]
+    #[inline(always)]
+    pub fn prsch3(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH3)
+    }
+    #[doc = "PRS Channel 4 selected as input"]
+    #[inline(always)]
+    pub fn prsch4(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH4)
+    }
+    #[doc = "PRS Channel 5 selected as input"]
+    #[inline(always)]
+    pub fn prsch5(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH5)
+    }
+    #[doc = "PRS Channel 6 selected as input"]
+    #[inline(always)]
+    pub fn prsch6(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH6)
+    }
+    #[doc = "PRS Channel 7 selected as input"]
+    #[inline(always)]
+    pub fn prsch7(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH7)
+    }
+    #[doc = "PRS Channel 8 selected as input"]
+    #[inline(always)]
+    pub fn prsch8(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH8)
+    }
+    #[doc = "PRS Channel 9 selected as input"]
+    #[inline(always)]
+    pub fn prsch9(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH9)
+    }
+    #[doc = "PRS Channel 10 selected as input"]
+    #[inline(always)]
+    pub fn prsch10(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH10)
+    }
+    #[doc = "PRS Channel 11 selected as input"]
+    #[inline(always)]
+    pub fn prsch11(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH11)
+    }
+    #[doc = "PRS Channel 12 selected as input"]
+    #[inline(always)]
+    pub fn prsch12(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH12)
+    }
+    #[doc = "PRS Channel 13 selected as input"]
+    #[inline(always)]
+    pub fn prsch13(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH13)
+    }
+    #[doc = "PRS Channel 14 selected as input"]
+    #[inline(always)]
+    pub fn prsch14(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH14)
+    }
+    #[doc = "PRS Channel 15 selected as input"]
+    #[inline(always)]
+    pub fn prsch15(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH15)
+    }
+    #[doc = "PRS Channel 16 selected as input"]
+    #[inline(always)]
+    pub fn prsch16(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH16)
+    }
+    #[doc = "PRS Channel 17 selected as input"]
+    #[inline(always)]
+    pub fn prsch17(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH17)
+    }
+    #[doc = "PRS Channel 18 selected as input"]
+    #[inline(always)]
+    pub fn prsch18(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH18)
+    }
+    #[doc = "PRS Channel 19 selected as input"]
+    #[inline(always)]
+    pub fn prsch19(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH19)
+    }
+    #[doc = "PRS Channel 20 selected as input"]
+    #[inline(always)]
+    pub fn prsch20(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH20)
+    }
+    #[doc = "PRS Channel 21 selected as input"]
+    #[inline(always)]
+    pub fn prsch21(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH21)
+    }
+    #[doc = "PRS Channel 22 selected as input"]
+    #[inline(always)]
+    pub fn prsch22(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH22)
+    }
+    #[doc = "PRS Channel 23 selected as input"]
+    #[inline(always)]
+    pub fn prsch23(self) -> &'a mut W {
+        self.variant(PRSSEL0_A::PRSCH23)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PRSSEL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRSSEL1R {
+pub enum PRSSEL1_A {
     #[doc = "PRS Channel 0 selected as input"]
     PRSCH0,
     #[doc = "PRS Channel 1 selected as input"]
@@ -519,197 +654,335 @@ pub enum PRSSEL1R {
     PRSCH22,
     #[doc = "PRS Channel 23 selected as input"]
     PRSCH23,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PRSSEL1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PRSSEL1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PRSSEL1R::PRSCH0 => 0,
-            PRSSEL1R::PRSCH1 => 1,
-            PRSSEL1R::PRSCH2 => 2,
-            PRSSEL1R::PRSCH3 => 3,
-            PRSSEL1R::PRSCH4 => 4,
-            PRSSEL1R::PRSCH5 => 5,
-            PRSSEL1R::PRSCH6 => 6,
-            PRSSEL1R::PRSCH7 => 7,
-            PRSSEL1R::PRSCH8 => 8,
-            PRSSEL1R::PRSCH9 => 9,
-            PRSSEL1R::PRSCH10 => 10,
-            PRSSEL1R::PRSCH11 => 11,
-            PRSSEL1R::PRSCH12 => 12,
-            PRSSEL1R::PRSCH13 => 13,
-            PRSSEL1R::PRSCH14 => 14,
-            PRSSEL1R::PRSCH15 => 15,
-            PRSSEL1R::PRSCH16 => 16,
-            PRSSEL1R::PRSCH17 => 17,
-            PRSSEL1R::PRSCH18 => 18,
-            PRSSEL1R::PRSCH19 => 19,
-            PRSSEL1R::PRSCH20 => 20,
-            PRSSEL1R::PRSCH21 => 21,
-            PRSSEL1R::PRSCH22 => 22,
-            PRSSEL1R::PRSCH23 => 23,
-            PRSSEL1R::_Reserved(bits) => bits,
+            PRSSEL1_A::PRSCH0 => 0,
+            PRSSEL1_A::PRSCH1 => 1,
+            PRSSEL1_A::PRSCH2 => 2,
+            PRSSEL1_A::PRSCH3 => 3,
+            PRSSEL1_A::PRSCH4 => 4,
+            PRSSEL1_A::PRSCH5 => 5,
+            PRSSEL1_A::PRSCH6 => 6,
+            PRSSEL1_A::PRSCH7 => 7,
+            PRSSEL1_A::PRSCH8 => 8,
+            PRSSEL1_A::PRSCH9 => 9,
+            PRSSEL1_A::PRSCH10 => 10,
+            PRSSEL1_A::PRSCH11 => 11,
+            PRSSEL1_A::PRSCH12 => 12,
+            PRSSEL1_A::PRSCH13 => 13,
+            PRSSEL1_A::PRSCH14 => 14,
+            PRSSEL1_A::PRSCH15 => 15,
+            PRSSEL1_A::PRSCH16 => 16,
+            PRSSEL1_A::PRSCH17 => 17,
+            PRSSEL1_A::PRSCH18 => 18,
+            PRSSEL1_A::PRSCH19 => 19,
+            PRSSEL1_A::PRSCH20 => 20,
+            PRSSEL1_A::PRSCH21 => 21,
+            PRSSEL1_A::PRSCH22 => 22,
+            PRSSEL1_A::PRSCH23 => 23,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRSSEL1R {
-        match value {
-            0 => PRSSEL1R::PRSCH0,
-            1 => PRSSEL1R::PRSCH1,
-            2 => PRSSEL1R::PRSCH2,
-            3 => PRSSEL1R::PRSCH3,
-            4 => PRSSEL1R::PRSCH4,
-            5 => PRSSEL1R::PRSCH5,
-            6 => PRSSEL1R::PRSCH6,
-            7 => PRSSEL1R::PRSCH7,
-            8 => PRSSEL1R::PRSCH8,
-            9 => PRSSEL1R::PRSCH9,
-            10 => PRSSEL1R::PRSCH10,
-            11 => PRSSEL1R::PRSCH11,
-            12 => PRSSEL1R::PRSCH12,
-            13 => PRSSEL1R::PRSCH13,
-            14 => PRSSEL1R::PRSCH14,
-            15 => PRSSEL1R::PRSCH15,
-            16 => PRSSEL1R::PRSCH16,
-            17 => PRSSEL1R::PRSCH17,
-            18 => PRSSEL1R::PRSCH18,
-            19 => PRSSEL1R::PRSCH19,
-            20 => PRSSEL1R::PRSCH20,
-            21 => PRSSEL1R::PRSCH21,
-            22 => PRSSEL1R::PRSCH22,
-            23 => PRSSEL1R::PRSCH23,
-            i => PRSSEL1R::_Reserved(i),
+}
+#[doc = "Reader of field `PRSSEL1`"]
+pub type PRSSEL1_R = crate::R<u8, PRSSEL1_A>;
+impl PRSSEL1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRSSEL1_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRSSEL1_A::PRSCH0),
+            1 => Val(PRSSEL1_A::PRSCH1),
+            2 => Val(PRSSEL1_A::PRSCH2),
+            3 => Val(PRSSEL1_A::PRSCH3),
+            4 => Val(PRSSEL1_A::PRSCH4),
+            5 => Val(PRSSEL1_A::PRSCH5),
+            6 => Val(PRSSEL1_A::PRSCH6),
+            7 => Val(PRSSEL1_A::PRSCH7),
+            8 => Val(PRSSEL1_A::PRSCH8),
+            9 => Val(PRSSEL1_A::PRSCH9),
+            10 => Val(PRSSEL1_A::PRSCH10),
+            11 => Val(PRSSEL1_A::PRSCH11),
+            12 => Val(PRSSEL1_A::PRSCH12),
+            13 => Val(PRSSEL1_A::PRSCH13),
+            14 => Val(PRSSEL1_A::PRSCH14),
+            15 => Val(PRSSEL1_A::PRSCH15),
+            16 => Val(PRSSEL1_A::PRSCH16),
+            17 => Val(PRSSEL1_A::PRSCH17),
+            18 => Val(PRSSEL1_A::PRSCH18),
+            19 => Val(PRSSEL1_A::PRSCH19),
+            20 => Val(PRSSEL1_A::PRSCH20),
+            21 => Val(PRSSEL1_A::PRSCH21),
+            22 => Val(PRSSEL1_A::PRSCH22),
+            23 => Val(PRSSEL1_A::PRSCH23),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSEL1R::PRSCH0
+        *self == PRSSEL1_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSEL1R::PRSCH1
+        *self == PRSSEL1_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSEL1R::PRSCH2
+        *self == PRSSEL1_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSEL1R::PRSCH3
+        *self == PRSSEL1_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSEL1R::PRSCH4
+        *self == PRSSEL1_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSEL1R::PRSCH5
+        *self == PRSSEL1_A::PRSCH5
     }
     #[doc = "Checks if the value of the field is `PRSCH6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSEL1R::PRSCH6
+        *self == PRSSEL1_A::PRSCH6
     }
     #[doc = "Checks if the value of the field is `PRSCH7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSEL1R::PRSCH7
+        *self == PRSSEL1_A::PRSCH7
     }
     #[doc = "Checks if the value of the field is `PRSCH8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSEL1R::PRSCH8
+        *self == PRSSEL1_A::PRSCH8
     }
     #[doc = "Checks if the value of the field is `PRSCH9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSEL1R::PRSCH9
+        *self == PRSSEL1_A::PRSCH9
     }
     #[doc = "Checks if the value of the field is `PRSCH10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSEL1R::PRSCH10
+        *self == PRSSEL1_A::PRSCH10
     }
     #[doc = "Checks if the value of the field is `PRSCH11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSEL1R::PRSCH11
+        *self == PRSSEL1_A::PRSCH11
     }
     #[doc = "Checks if the value of the field is `PRSCH12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch12(&self) -> bool {
-        *self == PRSSEL1R::PRSCH12
+        *self == PRSSEL1_A::PRSCH12
     }
     #[doc = "Checks if the value of the field is `PRSCH13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch13(&self) -> bool {
-        *self == PRSSEL1R::PRSCH13
+        *self == PRSSEL1_A::PRSCH13
     }
     #[doc = "Checks if the value of the field is `PRSCH14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch14(&self) -> bool {
-        *self == PRSSEL1R::PRSCH14
+        *self == PRSSEL1_A::PRSCH14
     }
     #[doc = "Checks if the value of the field is `PRSCH15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch15(&self) -> bool {
-        *self == PRSSEL1R::PRSCH15
+        *self == PRSSEL1_A::PRSCH15
     }
     #[doc = "Checks if the value of the field is `PRSCH16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch16(&self) -> bool {
-        *self == PRSSEL1R::PRSCH16
+        *self == PRSSEL1_A::PRSCH16
     }
     #[doc = "Checks if the value of the field is `PRSCH17`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch17(&self) -> bool {
-        *self == PRSSEL1R::PRSCH17
+        *self == PRSSEL1_A::PRSCH17
     }
     #[doc = "Checks if the value of the field is `PRSCH18`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch18(&self) -> bool {
-        *self == PRSSEL1R::PRSCH18
+        *self == PRSSEL1_A::PRSCH18
     }
     #[doc = "Checks if the value of the field is `PRSCH19`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch19(&self) -> bool {
-        *self == PRSSEL1R::PRSCH19
+        *self == PRSSEL1_A::PRSCH19
     }
     #[doc = "Checks if the value of the field is `PRSCH20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch20(&self) -> bool {
-        *self == PRSSEL1R::PRSCH20
+        *self == PRSSEL1_A::PRSCH20
     }
     #[doc = "Checks if the value of the field is `PRSCH21`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch21(&self) -> bool {
-        *self == PRSSEL1R::PRSCH21
+        *self == PRSSEL1_A::PRSCH21
     }
     #[doc = "Checks if the value of the field is `PRSCH22`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch22(&self) -> bool {
-        *self == PRSSEL1R::PRSCH22
+        *self == PRSSEL1_A::PRSCH22
     }
     #[doc = "Checks if the value of the field is `PRSCH23`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch23(&self) -> bool {
-        *self == PRSSEL1R::PRSCH23
+        *self == PRSSEL1_A::PRSCH23
+    }
+}
+#[doc = "Write proxy for field `PRSSEL1`"]
+pub struct PRSSEL1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRSSEL1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRSSEL1_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "PRS Channel 0 selected as input"]
+    #[inline(always)]
+    pub fn prsch0(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH0)
+    }
+    #[doc = "PRS Channel 1 selected as input"]
+    #[inline(always)]
+    pub fn prsch1(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH1)
+    }
+    #[doc = "PRS Channel 2 selected as input"]
+    #[inline(always)]
+    pub fn prsch2(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH2)
+    }
+    #[doc = "PRS Channel 3 selected as input"]
+    #[inline(always)]
+    pub fn prsch3(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH3)
+    }
+    #[doc = "PRS Channel 4 selected as input"]
+    #[inline(always)]
+    pub fn prsch4(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH4)
+    }
+    #[doc = "PRS Channel 5 selected as input"]
+    #[inline(always)]
+    pub fn prsch5(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH5)
+    }
+    #[doc = "PRS Channel 6 selected as input"]
+    #[inline(always)]
+    pub fn prsch6(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH6)
+    }
+    #[doc = "PRS Channel 7 selected as input"]
+    #[inline(always)]
+    pub fn prsch7(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH7)
+    }
+    #[doc = "PRS Channel 8 selected as input"]
+    #[inline(always)]
+    pub fn prsch8(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH8)
+    }
+    #[doc = "PRS Channel 9 selected as input"]
+    #[inline(always)]
+    pub fn prsch9(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH9)
+    }
+    #[doc = "PRS Channel 10 selected as input"]
+    #[inline(always)]
+    pub fn prsch10(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH10)
+    }
+    #[doc = "PRS Channel 11 selected as input"]
+    #[inline(always)]
+    pub fn prsch11(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH11)
+    }
+    #[doc = "PRS Channel 12 selected as input"]
+    #[inline(always)]
+    pub fn prsch12(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH12)
+    }
+    #[doc = "PRS Channel 13 selected as input"]
+    #[inline(always)]
+    pub fn prsch13(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH13)
+    }
+    #[doc = "PRS Channel 14 selected as input"]
+    #[inline(always)]
+    pub fn prsch14(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH14)
+    }
+    #[doc = "PRS Channel 15 selected as input"]
+    #[inline(always)]
+    pub fn prsch15(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH15)
+    }
+    #[doc = "PRS Channel 16 selected as input"]
+    #[inline(always)]
+    pub fn prsch16(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH16)
+    }
+    #[doc = "PRS Channel 17 selected as input"]
+    #[inline(always)]
+    pub fn prsch17(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH17)
+    }
+    #[doc = "PRS Channel 18 selected as input"]
+    #[inline(always)]
+    pub fn prsch18(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH18)
+    }
+    #[doc = "PRS Channel 19 selected as input"]
+    #[inline(always)]
+    pub fn prsch19(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH19)
+    }
+    #[doc = "PRS Channel 20 selected as input"]
+    #[inline(always)]
+    pub fn prsch20(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH20)
+    }
+    #[doc = "PRS Channel 21 selected as input"]
+    #[inline(always)]
+    pub fn prsch21(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH21)
+    }
+    #[doc = "PRS Channel 22 selected as input"]
+    #[inline(always)]
+    pub fn prsch22(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH22)
+    }
+    #[doc = "PRS Channel 23 selected as input"]
+    #[inline(always)]
+    pub fn prsch23(self) -> &'a mut W {
+        self.variant(PRSSEL1_A::PRSCH23)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 15)) | (((value as u32) & 0x1f) << 15);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PRSSEL2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRSSEL2R {
+pub enum PRSSEL2_A {
     #[doc = "PRS Channel 0 selected as input"]
     PRSCH0,
     #[doc = "PRS Channel 1 selected as input"]
@@ -758,197 +1031,335 @@ pub enum PRSSEL2R {
     PRSCH22,
     #[doc = "PRS Channel 23 selected as input"]
     PRSCH23,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PRSSEL2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PRSSEL2_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PRSSEL2R::PRSCH0 => 0,
-            PRSSEL2R::PRSCH1 => 1,
-            PRSSEL2R::PRSCH2 => 2,
-            PRSSEL2R::PRSCH3 => 3,
-            PRSSEL2R::PRSCH4 => 4,
-            PRSSEL2R::PRSCH5 => 5,
-            PRSSEL2R::PRSCH6 => 6,
-            PRSSEL2R::PRSCH7 => 7,
-            PRSSEL2R::PRSCH8 => 8,
-            PRSSEL2R::PRSCH9 => 9,
-            PRSSEL2R::PRSCH10 => 10,
-            PRSSEL2R::PRSCH11 => 11,
-            PRSSEL2R::PRSCH12 => 12,
-            PRSSEL2R::PRSCH13 => 13,
-            PRSSEL2R::PRSCH14 => 14,
-            PRSSEL2R::PRSCH15 => 15,
-            PRSSEL2R::PRSCH16 => 16,
-            PRSSEL2R::PRSCH17 => 17,
-            PRSSEL2R::PRSCH18 => 18,
-            PRSSEL2R::PRSCH19 => 19,
-            PRSSEL2R::PRSCH20 => 20,
-            PRSSEL2R::PRSCH21 => 21,
-            PRSSEL2R::PRSCH22 => 22,
-            PRSSEL2R::PRSCH23 => 23,
-            PRSSEL2R::_Reserved(bits) => bits,
+            PRSSEL2_A::PRSCH0 => 0,
+            PRSSEL2_A::PRSCH1 => 1,
+            PRSSEL2_A::PRSCH2 => 2,
+            PRSSEL2_A::PRSCH3 => 3,
+            PRSSEL2_A::PRSCH4 => 4,
+            PRSSEL2_A::PRSCH5 => 5,
+            PRSSEL2_A::PRSCH6 => 6,
+            PRSSEL2_A::PRSCH7 => 7,
+            PRSSEL2_A::PRSCH8 => 8,
+            PRSSEL2_A::PRSCH9 => 9,
+            PRSSEL2_A::PRSCH10 => 10,
+            PRSSEL2_A::PRSCH11 => 11,
+            PRSSEL2_A::PRSCH12 => 12,
+            PRSSEL2_A::PRSCH13 => 13,
+            PRSSEL2_A::PRSCH14 => 14,
+            PRSSEL2_A::PRSCH15 => 15,
+            PRSSEL2_A::PRSCH16 => 16,
+            PRSSEL2_A::PRSCH17 => 17,
+            PRSSEL2_A::PRSCH18 => 18,
+            PRSSEL2_A::PRSCH19 => 19,
+            PRSSEL2_A::PRSCH20 => 20,
+            PRSSEL2_A::PRSCH21 => 21,
+            PRSSEL2_A::PRSCH22 => 22,
+            PRSSEL2_A::PRSCH23 => 23,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRSSEL2R {
-        match value {
-            0 => PRSSEL2R::PRSCH0,
-            1 => PRSSEL2R::PRSCH1,
-            2 => PRSSEL2R::PRSCH2,
-            3 => PRSSEL2R::PRSCH3,
-            4 => PRSSEL2R::PRSCH4,
-            5 => PRSSEL2R::PRSCH5,
-            6 => PRSSEL2R::PRSCH6,
-            7 => PRSSEL2R::PRSCH7,
-            8 => PRSSEL2R::PRSCH8,
-            9 => PRSSEL2R::PRSCH9,
-            10 => PRSSEL2R::PRSCH10,
-            11 => PRSSEL2R::PRSCH11,
-            12 => PRSSEL2R::PRSCH12,
-            13 => PRSSEL2R::PRSCH13,
-            14 => PRSSEL2R::PRSCH14,
-            15 => PRSSEL2R::PRSCH15,
-            16 => PRSSEL2R::PRSCH16,
-            17 => PRSSEL2R::PRSCH17,
-            18 => PRSSEL2R::PRSCH18,
-            19 => PRSSEL2R::PRSCH19,
-            20 => PRSSEL2R::PRSCH20,
-            21 => PRSSEL2R::PRSCH21,
-            22 => PRSSEL2R::PRSCH22,
-            23 => PRSSEL2R::PRSCH23,
-            i => PRSSEL2R::_Reserved(i),
+}
+#[doc = "Reader of field `PRSSEL2`"]
+pub type PRSSEL2_R = crate::R<u8, PRSSEL2_A>;
+impl PRSSEL2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRSSEL2_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRSSEL2_A::PRSCH0),
+            1 => Val(PRSSEL2_A::PRSCH1),
+            2 => Val(PRSSEL2_A::PRSCH2),
+            3 => Val(PRSSEL2_A::PRSCH3),
+            4 => Val(PRSSEL2_A::PRSCH4),
+            5 => Val(PRSSEL2_A::PRSCH5),
+            6 => Val(PRSSEL2_A::PRSCH6),
+            7 => Val(PRSSEL2_A::PRSCH7),
+            8 => Val(PRSSEL2_A::PRSCH8),
+            9 => Val(PRSSEL2_A::PRSCH9),
+            10 => Val(PRSSEL2_A::PRSCH10),
+            11 => Val(PRSSEL2_A::PRSCH11),
+            12 => Val(PRSSEL2_A::PRSCH12),
+            13 => Val(PRSSEL2_A::PRSCH13),
+            14 => Val(PRSSEL2_A::PRSCH14),
+            15 => Val(PRSSEL2_A::PRSCH15),
+            16 => Val(PRSSEL2_A::PRSCH16),
+            17 => Val(PRSSEL2_A::PRSCH17),
+            18 => Val(PRSSEL2_A::PRSCH18),
+            19 => Val(PRSSEL2_A::PRSCH19),
+            20 => Val(PRSSEL2_A::PRSCH20),
+            21 => Val(PRSSEL2_A::PRSCH21),
+            22 => Val(PRSSEL2_A::PRSCH22),
+            23 => Val(PRSSEL2_A::PRSCH23),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSEL2R::PRSCH0
+        *self == PRSSEL2_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSEL2R::PRSCH1
+        *self == PRSSEL2_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSEL2R::PRSCH2
+        *self == PRSSEL2_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSEL2R::PRSCH3
+        *self == PRSSEL2_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSEL2R::PRSCH4
+        *self == PRSSEL2_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSEL2R::PRSCH5
+        *self == PRSSEL2_A::PRSCH5
     }
     #[doc = "Checks if the value of the field is `PRSCH6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSEL2R::PRSCH6
+        *self == PRSSEL2_A::PRSCH6
     }
     #[doc = "Checks if the value of the field is `PRSCH7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSEL2R::PRSCH7
+        *self == PRSSEL2_A::PRSCH7
     }
     #[doc = "Checks if the value of the field is `PRSCH8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSEL2R::PRSCH8
+        *self == PRSSEL2_A::PRSCH8
     }
     #[doc = "Checks if the value of the field is `PRSCH9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSEL2R::PRSCH9
+        *self == PRSSEL2_A::PRSCH9
     }
     #[doc = "Checks if the value of the field is `PRSCH10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSEL2R::PRSCH10
+        *self == PRSSEL2_A::PRSCH10
     }
     #[doc = "Checks if the value of the field is `PRSCH11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSEL2R::PRSCH11
+        *self == PRSSEL2_A::PRSCH11
     }
     #[doc = "Checks if the value of the field is `PRSCH12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch12(&self) -> bool {
-        *self == PRSSEL2R::PRSCH12
+        *self == PRSSEL2_A::PRSCH12
     }
     #[doc = "Checks if the value of the field is `PRSCH13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch13(&self) -> bool {
-        *self == PRSSEL2R::PRSCH13
+        *self == PRSSEL2_A::PRSCH13
     }
     #[doc = "Checks if the value of the field is `PRSCH14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch14(&self) -> bool {
-        *self == PRSSEL2R::PRSCH14
+        *self == PRSSEL2_A::PRSCH14
     }
     #[doc = "Checks if the value of the field is `PRSCH15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch15(&self) -> bool {
-        *self == PRSSEL2R::PRSCH15
+        *self == PRSSEL2_A::PRSCH15
     }
     #[doc = "Checks if the value of the field is `PRSCH16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch16(&self) -> bool {
-        *self == PRSSEL2R::PRSCH16
+        *self == PRSSEL2_A::PRSCH16
     }
     #[doc = "Checks if the value of the field is `PRSCH17`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch17(&self) -> bool {
-        *self == PRSSEL2R::PRSCH17
+        *self == PRSSEL2_A::PRSCH17
     }
     #[doc = "Checks if the value of the field is `PRSCH18`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch18(&self) -> bool {
-        *self == PRSSEL2R::PRSCH18
+        *self == PRSSEL2_A::PRSCH18
     }
     #[doc = "Checks if the value of the field is `PRSCH19`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch19(&self) -> bool {
-        *self == PRSSEL2R::PRSCH19
+        *self == PRSSEL2_A::PRSCH19
     }
     #[doc = "Checks if the value of the field is `PRSCH20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch20(&self) -> bool {
-        *self == PRSSEL2R::PRSCH20
+        *self == PRSSEL2_A::PRSCH20
     }
     #[doc = "Checks if the value of the field is `PRSCH21`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch21(&self) -> bool {
-        *self == PRSSEL2R::PRSCH21
+        *self == PRSSEL2_A::PRSCH21
     }
     #[doc = "Checks if the value of the field is `PRSCH22`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch22(&self) -> bool {
-        *self == PRSSEL2R::PRSCH22
+        *self == PRSSEL2_A::PRSCH22
     }
     #[doc = "Checks if the value of the field is `PRSCH23`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch23(&self) -> bool {
-        *self == PRSSEL2R::PRSCH23
+        *self == PRSSEL2_A::PRSCH23
+    }
+}
+#[doc = "Write proxy for field `PRSSEL2`"]
+pub struct PRSSEL2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRSSEL2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRSSEL2_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "PRS Channel 0 selected as input"]
+    #[inline(always)]
+    pub fn prsch0(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH0)
+    }
+    #[doc = "PRS Channel 1 selected as input"]
+    #[inline(always)]
+    pub fn prsch1(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH1)
+    }
+    #[doc = "PRS Channel 2 selected as input"]
+    #[inline(always)]
+    pub fn prsch2(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH2)
+    }
+    #[doc = "PRS Channel 3 selected as input"]
+    #[inline(always)]
+    pub fn prsch3(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH3)
+    }
+    #[doc = "PRS Channel 4 selected as input"]
+    #[inline(always)]
+    pub fn prsch4(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH4)
+    }
+    #[doc = "PRS Channel 5 selected as input"]
+    #[inline(always)]
+    pub fn prsch5(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH5)
+    }
+    #[doc = "PRS Channel 6 selected as input"]
+    #[inline(always)]
+    pub fn prsch6(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH6)
+    }
+    #[doc = "PRS Channel 7 selected as input"]
+    #[inline(always)]
+    pub fn prsch7(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH7)
+    }
+    #[doc = "PRS Channel 8 selected as input"]
+    #[inline(always)]
+    pub fn prsch8(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH8)
+    }
+    #[doc = "PRS Channel 9 selected as input"]
+    #[inline(always)]
+    pub fn prsch9(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH9)
+    }
+    #[doc = "PRS Channel 10 selected as input"]
+    #[inline(always)]
+    pub fn prsch10(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH10)
+    }
+    #[doc = "PRS Channel 11 selected as input"]
+    #[inline(always)]
+    pub fn prsch11(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH11)
+    }
+    #[doc = "PRS Channel 12 selected as input"]
+    #[inline(always)]
+    pub fn prsch12(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH12)
+    }
+    #[doc = "PRS Channel 13 selected as input"]
+    #[inline(always)]
+    pub fn prsch13(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH13)
+    }
+    #[doc = "PRS Channel 14 selected as input"]
+    #[inline(always)]
+    pub fn prsch14(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH14)
+    }
+    #[doc = "PRS Channel 15 selected as input"]
+    #[inline(always)]
+    pub fn prsch15(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH15)
+    }
+    #[doc = "PRS Channel 16 selected as input"]
+    #[inline(always)]
+    pub fn prsch16(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH16)
+    }
+    #[doc = "PRS Channel 17 selected as input"]
+    #[inline(always)]
+    pub fn prsch17(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH17)
+    }
+    #[doc = "PRS Channel 18 selected as input"]
+    #[inline(always)]
+    pub fn prsch18(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH18)
+    }
+    #[doc = "PRS Channel 19 selected as input"]
+    #[inline(always)]
+    pub fn prsch19(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH19)
+    }
+    #[doc = "PRS Channel 20 selected as input"]
+    #[inline(always)]
+    pub fn prsch20(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH20)
+    }
+    #[doc = "PRS Channel 21 selected as input"]
+    #[inline(always)]
+    pub fn prsch21(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH21)
+    }
+    #[doc = "PRS Channel 22 selected as input"]
+    #[inline(always)]
+    pub fn prsch22(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH22)
+    }
+    #[doc = "PRS Channel 23 selected as input"]
+    #[inline(always)]
+    pub fn prsch23(self) -> &'a mut W {
+        self.variant(PRSSEL2_A::PRSCH23)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 20)) | (((value as u32) & 0x1f) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PRSSEL3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRSSEL3R {
+pub enum PRSSEL3_A {
     #[doc = "PRS Channel 0 selected as input"]
     PRSCH0,
     #[doc = "PRS Channel 1 selected as input"]
@@ -997,1505 +1408,463 @@ pub enum PRSSEL3R {
     PRSCH22,
     #[doc = "PRS Channel 23 selected as input"]
     PRSCH23,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PRSSEL3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PRSSEL3_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PRSSEL3R::PRSCH0 => 0,
-            PRSSEL3R::PRSCH1 => 1,
-            PRSSEL3R::PRSCH2 => 2,
-            PRSSEL3R::PRSCH3 => 3,
-            PRSSEL3R::PRSCH4 => 4,
-            PRSSEL3R::PRSCH5 => 5,
-            PRSSEL3R::PRSCH6 => 6,
-            PRSSEL3R::PRSCH7 => 7,
-            PRSSEL3R::PRSCH8 => 8,
-            PRSSEL3R::PRSCH9 => 9,
-            PRSSEL3R::PRSCH10 => 10,
-            PRSSEL3R::PRSCH11 => 11,
-            PRSSEL3R::PRSCH12 => 12,
-            PRSSEL3R::PRSCH13 => 13,
-            PRSSEL3R::PRSCH14 => 14,
-            PRSSEL3R::PRSCH15 => 15,
-            PRSSEL3R::PRSCH16 => 16,
-            PRSSEL3R::PRSCH17 => 17,
-            PRSSEL3R::PRSCH18 => 18,
-            PRSSEL3R::PRSCH19 => 19,
-            PRSSEL3R::PRSCH20 => 20,
-            PRSSEL3R::PRSCH21 => 21,
-            PRSSEL3R::PRSCH22 => 22,
-            PRSSEL3R::PRSCH23 => 23,
-            PRSSEL3R::_Reserved(bits) => bits,
+            PRSSEL3_A::PRSCH0 => 0,
+            PRSSEL3_A::PRSCH1 => 1,
+            PRSSEL3_A::PRSCH2 => 2,
+            PRSSEL3_A::PRSCH3 => 3,
+            PRSSEL3_A::PRSCH4 => 4,
+            PRSSEL3_A::PRSCH5 => 5,
+            PRSSEL3_A::PRSCH6 => 6,
+            PRSSEL3_A::PRSCH7 => 7,
+            PRSSEL3_A::PRSCH8 => 8,
+            PRSSEL3_A::PRSCH9 => 9,
+            PRSSEL3_A::PRSCH10 => 10,
+            PRSSEL3_A::PRSCH11 => 11,
+            PRSSEL3_A::PRSCH12 => 12,
+            PRSSEL3_A::PRSCH13 => 13,
+            PRSSEL3_A::PRSCH14 => 14,
+            PRSSEL3_A::PRSCH15 => 15,
+            PRSSEL3_A::PRSCH16 => 16,
+            PRSSEL3_A::PRSCH17 => 17,
+            PRSSEL3_A::PRSCH18 => 18,
+            PRSSEL3_A::PRSCH19 => 19,
+            PRSSEL3_A::PRSCH20 => 20,
+            PRSSEL3_A::PRSCH21 => 21,
+            PRSSEL3_A::PRSCH22 => 22,
+            PRSSEL3_A::PRSCH23 => 23,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRSSEL3R {
-        match value {
-            0 => PRSSEL3R::PRSCH0,
-            1 => PRSSEL3R::PRSCH1,
-            2 => PRSSEL3R::PRSCH2,
-            3 => PRSSEL3R::PRSCH3,
-            4 => PRSSEL3R::PRSCH4,
-            5 => PRSSEL3R::PRSCH5,
-            6 => PRSSEL3R::PRSCH6,
-            7 => PRSSEL3R::PRSCH7,
-            8 => PRSSEL3R::PRSCH8,
-            9 => PRSSEL3R::PRSCH9,
-            10 => PRSSEL3R::PRSCH10,
-            11 => PRSSEL3R::PRSCH11,
-            12 => PRSSEL3R::PRSCH12,
-            13 => PRSSEL3R::PRSCH13,
-            14 => PRSSEL3R::PRSCH14,
-            15 => PRSSEL3R::PRSCH15,
-            16 => PRSSEL3R::PRSCH16,
-            17 => PRSSEL3R::PRSCH17,
-            18 => PRSSEL3R::PRSCH18,
-            19 => PRSSEL3R::PRSCH19,
-            20 => PRSSEL3R::PRSCH20,
-            21 => PRSSEL3R::PRSCH21,
-            22 => PRSSEL3R::PRSCH22,
-            23 => PRSSEL3R::PRSCH23,
-            i => PRSSEL3R::_Reserved(i),
+}
+#[doc = "Reader of field `PRSSEL3`"]
+pub type PRSSEL3_R = crate::R<u8, PRSSEL3_A>;
+impl PRSSEL3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRSSEL3_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRSSEL3_A::PRSCH0),
+            1 => Val(PRSSEL3_A::PRSCH1),
+            2 => Val(PRSSEL3_A::PRSCH2),
+            3 => Val(PRSSEL3_A::PRSCH3),
+            4 => Val(PRSSEL3_A::PRSCH4),
+            5 => Val(PRSSEL3_A::PRSCH5),
+            6 => Val(PRSSEL3_A::PRSCH6),
+            7 => Val(PRSSEL3_A::PRSCH7),
+            8 => Val(PRSSEL3_A::PRSCH8),
+            9 => Val(PRSSEL3_A::PRSCH9),
+            10 => Val(PRSSEL3_A::PRSCH10),
+            11 => Val(PRSSEL3_A::PRSCH11),
+            12 => Val(PRSSEL3_A::PRSCH12),
+            13 => Val(PRSSEL3_A::PRSCH13),
+            14 => Val(PRSSEL3_A::PRSCH14),
+            15 => Val(PRSSEL3_A::PRSCH15),
+            16 => Val(PRSSEL3_A::PRSCH16),
+            17 => Val(PRSSEL3_A::PRSCH17),
+            18 => Val(PRSSEL3_A::PRSCH18),
+            19 => Val(PRSSEL3_A::PRSCH19),
+            20 => Val(PRSSEL3_A::PRSCH20),
+            21 => Val(PRSSEL3_A::PRSCH21),
+            22 => Val(PRSSEL3_A::PRSCH22),
+            23 => Val(PRSSEL3_A::PRSCH23),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSEL3R::PRSCH0
+        *self == PRSSEL3_A::PRSCH0
     }
     #[doc = "Checks if the value of the field is `PRSCH1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSEL3R::PRSCH1
+        *self == PRSSEL3_A::PRSCH1
     }
     #[doc = "Checks if the value of the field is `PRSCH2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSEL3R::PRSCH2
+        *self == PRSSEL3_A::PRSCH2
     }
     #[doc = "Checks if the value of the field is `PRSCH3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSEL3R::PRSCH3
+        *self == PRSSEL3_A::PRSCH3
     }
     #[doc = "Checks if the value of the field is `PRSCH4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSEL3R::PRSCH4
+        *self == PRSSEL3_A::PRSCH4
     }
     #[doc = "Checks if the value of the field is `PRSCH5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSEL3R::PRSCH5
+        *self == PRSSEL3_A::PRSCH5
     }
     #[doc = "Checks if the value of the field is `PRSCH6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSEL3R::PRSCH6
+        *self == PRSSEL3_A::PRSCH6
     }
     #[doc = "Checks if the value of the field is `PRSCH7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSEL3R::PRSCH7
+        *self == PRSSEL3_A::PRSCH7
     }
     #[doc = "Checks if the value of the field is `PRSCH8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSEL3R::PRSCH8
+        *self == PRSSEL3_A::PRSCH8
     }
     #[doc = "Checks if the value of the field is `PRSCH9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSEL3R::PRSCH9
+        *self == PRSSEL3_A::PRSCH9
     }
     #[doc = "Checks if the value of the field is `PRSCH10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSEL3R::PRSCH10
+        *self == PRSSEL3_A::PRSCH10
     }
     #[doc = "Checks if the value of the field is `PRSCH11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSEL3R::PRSCH11
+        *self == PRSSEL3_A::PRSCH11
     }
     #[doc = "Checks if the value of the field is `PRSCH12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch12(&self) -> bool {
-        *self == PRSSEL3R::PRSCH12
+        *self == PRSSEL3_A::PRSCH12
     }
     #[doc = "Checks if the value of the field is `PRSCH13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch13(&self) -> bool {
-        *self == PRSSEL3R::PRSCH13
+        *self == PRSSEL3_A::PRSCH13
     }
     #[doc = "Checks if the value of the field is `PRSCH14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch14(&self) -> bool {
-        *self == PRSSEL3R::PRSCH14
+        *self == PRSSEL3_A::PRSCH14
     }
     #[doc = "Checks if the value of the field is `PRSCH15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch15(&self) -> bool {
-        *self == PRSSEL3R::PRSCH15
+        *self == PRSSEL3_A::PRSCH15
     }
     #[doc = "Checks if the value of the field is `PRSCH16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch16(&self) -> bool {
-        *self == PRSSEL3R::PRSCH16
+        *self == PRSSEL3_A::PRSCH16
     }
     #[doc = "Checks if the value of the field is `PRSCH17`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch17(&self) -> bool {
-        *self == PRSSEL3R::PRSCH17
+        *self == PRSSEL3_A::PRSCH17
     }
     #[doc = "Checks if the value of the field is `PRSCH18`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch18(&self) -> bool {
-        *self == PRSSEL3R::PRSCH18
+        *self == PRSSEL3_A::PRSCH18
     }
     #[doc = "Checks if the value of the field is `PRSCH19`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch19(&self) -> bool {
-        *self == PRSSEL3R::PRSCH19
+        *self == PRSSEL3_A::PRSCH19
     }
     #[doc = "Checks if the value of the field is `PRSCH20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch20(&self) -> bool {
-        *self == PRSSEL3R::PRSCH20
+        *self == PRSSEL3_A::PRSCH20
     }
     #[doc = "Checks if the value of the field is `PRSCH21`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch21(&self) -> bool {
-        *self == PRSSEL3R::PRSCH21
+        *self == PRSSEL3_A::PRSCH21
     }
     #[doc = "Checks if the value of the field is `PRSCH22`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch22(&self) -> bool {
-        *self == PRSSEL3R::PRSCH22
+        *self == PRSSEL3_A::PRSCH22
     }
     #[doc = "Checks if the value of the field is `PRSCH23`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsch23(&self) -> bool {
-        *self == PRSSEL3R::PRSCH23
+        *self == PRSSEL3_A::PRSCH23
     }
 }
-#[doc = r" Proxy"]
-pub struct _DISABLEW<'a> {
+#[doc = "Write proxy for field `PRSSEL3`"]
+pub struct PRSSEL3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DISABLEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ERRCHKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ERRCHKW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INTMAPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INTMAPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTPRS0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HYSTPRS0W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTPRS1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HYSTPRS1W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTPRS2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HYSTPRS2W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTIRQW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HYSTIRQW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRSCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRSCNTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INPUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INPUTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PRSSEL0`"]
-pub enum PRSSEL0W {
-    #[doc = "PRS Channel 0 selected as input"]
-    PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
-    PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
-    PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
-    PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
-    PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
-    PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
-    PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
-    PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
-    PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
-    PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
-    PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
-    PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
-    PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
-    PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
-    PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
-    PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
-    PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
-    PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
-    PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
-    PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
-    PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
-    PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
-    PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
-    PRSCH23,
-}
-impl PRSSEL0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRSSEL0W::PRSCH0 => 0,
-            PRSSEL0W::PRSCH1 => 1,
-            PRSSEL0W::PRSCH2 => 2,
-            PRSSEL0W::PRSCH3 => 3,
-            PRSSEL0W::PRSCH4 => 4,
-            PRSSEL0W::PRSCH5 => 5,
-            PRSSEL0W::PRSCH6 => 6,
-            PRSSEL0W::PRSCH7 => 7,
-            PRSSEL0W::PRSCH8 => 8,
-            PRSSEL0W::PRSCH9 => 9,
-            PRSSEL0W::PRSCH10 => 10,
-            PRSSEL0W::PRSCH11 => 11,
-            PRSSEL0W::PRSCH12 => 12,
-            PRSSEL0W::PRSCH13 => 13,
-            PRSSEL0W::PRSCH14 => 14,
-            PRSSEL0W::PRSCH15 => 15,
-            PRSSEL0W::PRSCH16 => 16,
-            PRSSEL0W::PRSCH17 => 17,
-            PRSSEL0W::PRSCH18 => 18,
-            PRSSEL0W::PRSCH19 => 19,
-            PRSSEL0W::PRSCH20 => 20,
-            PRSSEL0W::PRSCH21 => 21,
-            PRSSEL0W::PRSCH22 => 22,
-            PRSSEL0W::PRSCH23 => 23,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRSSEL0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRSSEL0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRSSEL0W) -> &'a mut W {
+impl<'a> PRSSEL3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRSSEL3_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "PRS Channel 0 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH0)
+        self.variant(PRSSEL3_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch1(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH1)
+        self.variant(PRSSEL3_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch2(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH2)
+        self.variant(PRSSEL3_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch3(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH3)
+        self.variant(PRSSEL3_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch4(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH4)
+        self.variant(PRSSEL3_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch5(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH5)
+        self.variant(PRSSEL3_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch6(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH6)
+        self.variant(PRSSEL3_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch7(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH7)
+        self.variant(PRSSEL3_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch8(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH8)
+        self.variant(PRSSEL3_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch9(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH9)
+        self.variant(PRSSEL3_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch10(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH10)
+        self.variant(PRSSEL3_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch11(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH11)
+        self.variant(PRSSEL3_A::PRSCH11)
     }
     #[doc = "PRS Channel 12 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch12(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH12)
+        self.variant(PRSSEL3_A::PRSCH12)
     }
     #[doc = "PRS Channel 13 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch13(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH13)
+        self.variant(PRSSEL3_A::PRSCH13)
     }
     #[doc = "PRS Channel 14 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch14(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH14)
+        self.variant(PRSSEL3_A::PRSCH14)
     }
     #[doc = "PRS Channel 15 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch15(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH15)
+        self.variant(PRSSEL3_A::PRSCH15)
     }
     #[doc = "PRS Channel 16 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch16(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH16)
+        self.variant(PRSSEL3_A::PRSCH16)
     }
     #[doc = "PRS Channel 17 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch17(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH17)
+        self.variant(PRSSEL3_A::PRSCH17)
     }
     #[doc = "PRS Channel 18 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch18(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH18)
+        self.variant(PRSSEL3_A::PRSCH18)
     }
     #[doc = "PRS Channel 19 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch19(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH19)
+        self.variant(PRSSEL3_A::PRSCH19)
     }
     #[doc = "PRS Channel 20 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch20(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH20)
+        self.variant(PRSSEL3_A::PRSCH20)
     }
     #[doc = "PRS Channel 21 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch21(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH21)
+        self.variant(PRSSEL3_A::PRSCH21)
     }
     #[doc = "PRS Channel 22 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch22(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH22)
+        self.variant(PRSSEL3_A::PRSCH22)
     }
     #[doc = "PRS Channel 23 selected as input"]
-    #[inline]
+    #[inline(always)]
     pub fn prsch23(self) -> &'a mut W {
-        self.variant(PRSSEL0W::PRSCH23)
+        self.variant(PRSSEL3_A::PRSCH23)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PRSSEL1`"]
-pub enum PRSSEL1W {
-    #[doc = "PRS Channel 0 selected as input"]
-    PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
-    PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
-    PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
-    PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
-    PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
-    PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
-    PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
-    PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
-    PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
-    PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
-    PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
-    PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
-    PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
-    PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
-    PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
-    PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
-    PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
-    PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
-    PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
-    PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
-    PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
-    PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
-    PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
-    PRSCH23,
-}
-impl PRSSEL1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRSSEL1W::PRSCH0 => 0,
-            PRSSEL1W::PRSCH1 => 1,
-            PRSSEL1W::PRSCH2 => 2,
-            PRSSEL1W::PRSCH3 => 3,
-            PRSSEL1W::PRSCH4 => 4,
-            PRSSEL1W::PRSCH5 => 5,
-            PRSSEL1W::PRSCH6 => 6,
-            PRSSEL1W::PRSCH7 => 7,
-            PRSSEL1W::PRSCH8 => 8,
-            PRSSEL1W::PRSCH9 => 9,
-            PRSSEL1W::PRSCH10 => 10,
-            PRSSEL1W::PRSCH11 => 11,
-            PRSSEL1W::PRSCH12 => 12,
-            PRSSEL1W::PRSCH13 => 13,
-            PRSSEL1W::PRSCH14 => 14,
-            PRSSEL1W::PRSCH15 => 15,
-            PRSSEL1W::PRSCH16 => 16,
-            PRSSEL1W::PRSCH17 => 17,
-            PRSSEL1W::PRSCH18 => 18,
-            PRSSEL1W::PRSCH19 => 19,
-            PRSSEL1W::PRSCH20 => 20,
-            PRSSEL1W::PRSCH21 => 21,
-            PRSSEL1W::PRSCH22 => 22,
-            PRSSEL1W::PRSCH23 => 23,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRSSEL1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRSSEL1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRSSEL1W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "PRS Channel 0 selected as input"]
-    #[inline]
-    pub fn prsch0(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH0)
-    }
-    #[doc = "PRS Channel 1 selected as input"]
-    #[inline]
-    pub fn prsch1(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH1)
-    }
-    #[doc = "PRS Channel 2 selected as input"]
-    #[inline]
-    pub fn prsch2(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH2)
-    }
-    #[doc = "PRS Channel 3 selected as input"]
-    #[inline]
-    pub fn prsch3(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH3)
-    }
-    #[doc = "PRS Channel 4 selected as input"]
-    #[inline]
-    pub fn prsch4(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH4)
-    }
-    #[doc = "PRS Channel 5 selected as input"]
-    #[inline]
-    pub fn prsch5(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH5)
-    }
-    #[doc = "PRS Channel 6 selected as input"]
-    #[inline]
-    pub fn prsch6(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH6)
-    }
-    #[doc = "PRS Channel 7 selected as input"]
-    #[inline]
-    pub fn prsch7(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH7)
-    }
-    #[doc = "PRS Channel 8 selected as input"]
-    #[inline]
-    pub fn prsch8(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH8)
-    }
-    #[doc = "PRS Channel 9 selected as input"]
-    #[inline]
-    pub fn prsch9(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH9)
-    }
-    #[doc = "PRS Channel 10 selected as input"]
-    #[inline]
-    pub fn prsch10(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH10)
-    }
-    #[doc = "PRS Channel 11 selected as input"]
-    #[inline]
-    pub fn prsch11(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH11)
-    }
-    #[doc = "PRS Channel 12 selected as input"]
-    #[inline]
-    pub fn prsch12(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH12)
-    }
-    #[doc = "PRS Channel 13 selected as input"]
-    #[inline]
-    pub fn prsch13(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH13)
-    }
-    #[doc = "PRS Channel 14 selected as input"]
-    #[inline]
-    pub fn prsch14(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH14)
-    }
-    #[doc = "PRS Channel 15 selected as input"]
-    #[inline]
-    pub fn prsch15(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH15)
-    }
-    #[doc = "PRS Channel 16 selected as input"]
-    #[inline]
-    pub fn prsch16(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH16)
-    }
-    #[doc = "PRS Channel 17 selected as input"]
-    #[inline]
-    pub fn prsch17(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH17)
-    }
-    #[doc = "PRS Channel 18 selected as input"]
-    #[inline]
-    pub fn prsch18(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH18)
-    }
-    #[doc = "PRS Channel 19 selected as input"]
-    #[inline]
-    pub fn prsch19(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH19)
-    }
-    #[doc = "PRS Channel 20 selected as input"]
-    #[inline]
-    pub fn prsch20(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH20)
-    }
-    #[doc = "PRS Channel 21 selected as input"]
-    #[inline]
-    pub fn prsch21(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH21)
-    }
-    #[doc = "PRS Channel 22 selected as input"]
-    #[inline]
-    pub fn prsch22(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH22)
-    }
-    #[doc = "PRS Channel 23 selected as input"]
-    #[inline]
-    pub fn prsch23(self) -> &'a mut W {
-        self.variant(PRSSEL1W::PRSCH23)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PRSSEL2`"]
-pub enum PRSSEL2W {
-    #[doc = "PRS Channel 0 selected as input"]
-    PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
-    PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
-    PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
-    PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
-    PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
-    PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
-    PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
-    PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
-    PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
-    PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
-    PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
-    PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
-    PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
-    PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
-    PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
-    PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
-    PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
-    PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
-    PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
-    PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
-    PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
-    PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
-    PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
-    PRSCH23,
-}
-impl PRSSEL2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRSSEL2W::PRSCH0 => 0,
-            PRSSEL2W::PRSCH1 => 1,
-            PRSSEL2W::PRSCH2 => 2,
-            PRSSEL2W::PRSCH3 => 3,
-            PRSSEL2W::PRSCH4 => 4,
-            PRSSEL2W::PRSCH5 => 5,
-            PRSSEL2W::PRSCH6 => 6,
-            PRSSEL2W::PRSCH7 => 7,
-            PRSSEL2W::PRSCH8 => 8,
-            PRSSEL2W::PRSCH9 => 9,
-            PRSSEL2W::PRSCH10 => 10,
-            PRSSEL2W::PRSCH11 => 11,
-            PRSSEL2W::PRSCH12 => 12,
-            PRSSEL2W::PRSCH13 => 13,
-            PRSSEL2W::PRSCH14 => 14,
-            PRSSEL2W::PRSCH15 => 15,
-            PRSSEL2W::PRSCH16 => 16,
-            PRSSEL2W::PRSCH17 => 17,
-            PRSSEL2W::PRSCH18 => 18,
-            PRSSEL2W::PRSCH19 => 19,
-            PRSSEL2W::PRSCH20 => 20,
-            PRSSEL2W::PRSCH21 => 21,
-            PRSSEL2W::PRSCH22 => 22,
-            PRSSEL2W::PRSCH23 => 23,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRSSEL2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRSSEL2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRSSEL2W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "PRS Channel 0 selected as input"]
-    #[inline]
-    pub fn prsch0(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH0)
-    }
-    #[doc = "PRS Channel 1 selected as input"]
-    #[inline]
-    pub fn prsch1(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH1)
-    }
-    #[doc = "PRS Channel 2 selected as input"]
-    #[inline]
-    pub fn prsch2(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH2)
-    }
-    #[doc = "PRS Channel 3 selected as input"]
-    #[inline]
-    pub fn prsch3(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH3)
-    }
-    #[doc = "PRS Channel 4 selected as input"]
-    #[inline]
-    pub fn prsch4(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH4)
-    }
-    #[doc = "PRS Channel 5 selected as input"]
-    #[inline]
-    pub fn prsch5(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH5)
-    }
-    #[doc = "PRS Channel 6 selected as input"]
-    #[inline]
-    pub fn prsch6(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH6)
-    }
-    #[doc = "PRS Channel 7 selected as input"]
-    #[inline]
-    pub fn prsch7(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH7)
-    }
-    #[doc = "PRS Channel 8 selected as input"]
-    #[inline]
-    pub fn prsch8(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH8)
-    }
-    #[doc = "PRS Channel 9 selected as input"]
-    #[inline]
-    pub fn prsch9(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH9)
-    }
-    #[doc = "PRS Channel 10 selected as input"]
-    #[inline]
-    pub fn prsch10(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH10)
-    }
-    #[doc = "PRS Channel 11 selected as input"]
-    #[inline]
-    pub fn prsch11(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH11)
-    }
-    #[doc = "PRS Channel 12 selected as input"]
-    #[inline]
-    pub fn prsch12(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH12)
-    }
-    #[doc = "PRS Channel 13 selected as input"]
-    #[inline]
-    pub fn prsch13(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH13)
-    }
-    #[doc = "PRS Channel 14 selected as input"]
-    #[inline]
-    pub fn prsch14(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH14)
-    }
-    #[doc = "PRS Channel 15 selected as input"]
-    #[inline]
-    pub fn prsch15(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH15)
-    }
-    #[doc = "PRS Channel 16 selected as input"]
-    #[inline]
-    pub fn prsch16(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH16)
-    }
-    #[doc = "PRS Channel 17 selected as input"]
-    #[inline]
-    pub fn prsch17(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH17)
-    }
-    #[doc = "PRS Channel 18 selected as input"]
-    #[inline]
-    pub fn prsch18(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH18)
-    }
-    #[doc = "PRS Channel 19 selected as input"]
-    #[inline]
-    pub fn prsch19(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH19)
-    }
-    #[doc = "PRS Channel 20 selected as input"]
-    #[inline]
-    pub fn prsch20(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH20)
-    }
-    #[doc = "PRS Channel 21 selected as input"]
-    #[inline]
-    pub fn prsch21(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH21)
-    }
-    #[doc = "PRS Channel 22 selected as input"]
-    #[inline]
-    pub fn prsch22(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH22)
-    }
-    #[doc = "PRS Channel 23 selected as input"]
-    #[inline]
-    pub fn prsch23(self) -> &'a mut W {
-        self.variant(PRSSEL2W::PRSCH23)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PRSSEL3`"]
-pub enum PRSSEL3W {
-    #[doc = "PRS Channel 0 selected as input"]
-    PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
-    PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
-    PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
-    PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
-    PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
-    PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
-    PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
-    PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
-    PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
-    PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
-    PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
-    PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
-    PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
-    PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
-    PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
-    PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
-    PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
-    PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
-    PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
-    PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
-    PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
-    PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
-    PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
-    PRSCH23,
-}
-impl PRSSEL3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRSSEL3W::PRSCH0 => 0,
-            PRSSEL3W::PRSCH1 => 1,
-            PRSSEL3W::PRSCH2 => 2,
-            PRSSEL3W::PRSCH3 => 3,
-            PRSSEL3W::PRSCH4 => 4,
-            PRSSEL3W::PRSCH5 => 5,
-            PRSSEL3W::PRSCH6 => 6,
-            PRSSEL3W::PRSCH7 => 7,
-            PRSSEL3W::PRSCH8 => 8,
-            PRSSEL3W::PRSCH9 => 9,
-            PRSSEL3W::PRSCH10 => 10,
-            PRSSEL3W::PRSCH11 => 11,
-            PRSSEL3W::PRSCH12 => 12,
-            PRSSEL3W::PRSCH13 => 13,
-            PRSSEL3W::PRSCH14 => 14,
-            PRSSEL3W::PRSCH15 => 15,
-            PRSSEL3W::PRSCH16 => 16,
-            PRSSEL3W::PRSCH17 => 17,
-            PRSSEL3W::PRSCH18 => 18,
-            PRSSEL3W::PRSCH19 => 19,
-            PRSSEL3W::PRSCH20 => 20,
-            PRSSEL3W::PRSCH21 => 21,
-            PRSSEL3W::PRSCH22 => 22,
-            PRSSEL3W::PRSCH23 => 23,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRSSEL3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRSSEL3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRSSEL3W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "PRS Channel 0 selected as input"]
-    #[inline]
-    pub fn prsch0(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH0)
-    }
-    #[doc = "PRS Channel 1 selected as input"]
-    #[inline]
-    pub fn prsch1(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH1)
-    }
-    #[doc = "PRS Channel 2 selected as input"]
-    #[inline]
-    pub fn prsch2(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH2)
-    }
-    #[doc = "PRS Channel 3 selected as input"]
-    #[inline]
-    pub fn prsch3(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH3)
-    }
-    #[doc = "PRS Channel 4 selected as input"]
-    #[inline]
-    pub fn prsch4(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH4)
-    }
-    #[doc = "PRS Channel 5 selected as input"]
-    #[inline]
-    pub fn prsch5(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH5)
-    }
-    #[doc = "PRS Channel 6 selected as input"]
-    #[inline]
-    pub fn prsch6(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH6)
-    }
-    #[doc = "PRS Channel 7 selected as input"]
-    #[inline]
-    pub fn prsch7(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH7)
-    }
-    #[doc = "PRS Channel 8 selected as input"]
-    #[inline]
-    pub fn prsch8(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH8)
-    }
-    #[doc = "PRS Channel 9 selected as input"]
-    #[inline]
-    pub fn prsch9(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH9)
-    }
-    #[doc = "PRS Channel 10 selected as input"]
-    #[inline]
-    pub fn prsch10(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH10)
-    }
-    #[doc = "PRS Channel 11 selected as input"]
-    #[inline]
-    pub fn prsch11(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH11)
-    }
-    #[doc = "PRS Channel 12 selected as input"]
-    #[inline]
-    pub fn prsch12(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH12)
-    }
-    #[doc = "PRS Channel 13 selected as input"]
-    #[inline]
-    pub fn prsch13(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH13)
-    }
-    #[doc = "PRS Channel 14 selected as input"]
-    #[inline]
-    pub fn prsch14(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH14)
-    }
-    #[doc = "PRS Channel 15 selected as input"]
-    #[inline]
-    pub fn prsch15(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH15)
-    }
-    #[doc = "PRS Channel 16 selected as input"]
-    #[inline]
-    pub fn prsch16(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH16)
-    }
-    #[doc = "PRS Channel 17 selected as input"]
-    #[inline]
-    pub fn prsch17(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH17)
-    }
-    #[doc = "PRS Channel 18 selected as input"]
-    #[inline]
-    pub fn prsch18(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH18)
-    }
-    #[doc = "PRS Channel 19 selected as input"]
-    #[inline]
-    pub fn prsch19(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH19)
-    }
-    #[doc = "PRS Channel 20 selected as input"]
-    #[inline]
-    pub fn prsch20(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH20)
-    }
-    #[doc = "PRS Channel 21 selected as input"]
-    #[inline]
-    pub fn prsch21(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH21)
-    }
-    #[doc = "PRS Channel 22 selected as input"]
-    #[inline]
-    pub fn prsch22(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH22)
-    }
-    #[doc = "PRS Channel 23 selected as input"]
-    #[inline]
-    pub fn prsch23(self) -> &'a mut W {
-        self.variant(PRSSEL3W::PRSCH23)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 25)) | (((value as u32) & 0x1f) << 25);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Disable the Decoder"]
-    #[inline]
-    pub fn disable(&self) -> DISABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DISABLER { bits }
+    #[inline(always)]
+    pub fn disable(&self) -> DISABLE_R {
+        DISABLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable Check of Current State"]
-    #[inline]
-    pub fn errchk(&self) -> ERRCHKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERRCHKR { bits }
+    #[inline(always)]
+    pub fn errchk(&self) -> ERRCHK_R {
+        ERRCHK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable Decoder to Channel Interrupt Mapping"]
-    #[inline]
-    pub fn intmap(&self) -> INTMAPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTMAPR { bits }
+    #[inline(always)]
+    pub fn intmap(&self) -> INTMAP_R {
+        INTMAP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable Decoder Hysteresis on PRS0 Output"]
-    #[inline]
-    pub fn hystprs0(&self) -> HYSTPRS0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HYSTPRS0R { bits }
+    #[inline(always)]
+    pub fn hystprs0(&self) -> HYSTPRS0_R {
+        HYSTPRS0_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable Decoder Hysteresis on PRS1 Output"]
-    #[inline]
-    pub fn hystprs1(&self) -> HYSTPRS1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HYSTPRS1R { bits }
+    #[inline(always)]
+    pub fn hystprs1(&self) -> HYSTPRS1_R {
+        HYSTPRS1_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable Decoder Hysteresis on PRS2 Output"]
-    #[inline]
-    pub fn hystprs2(&self) -> HYSTPRS2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HYSTPRS2R { bits }
+    #[inline(always)]
+    pub fn hystprs2(&self) -> HYSTPRS2_R {
+        HYSTPRS2_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable Decoder Hysteresis on Interrupt Requests"]
-    #[inline]
-    pub fn hystirq(&self) -> HYSTIRQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HYSTIRQR { bits }
+    #[inline(always)]
+    pub fn hystirq(&self) -> HYSTIRQ_R {
+        HYSTIRQ_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable Count Mode on Decoder PRS Channels 0 and 1"]
-    #[inline]
-    pub fn prscnt(&self) -> PRSCNTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PRSCNTR { bits }
+    #[inline(always)]
+    pub fn prscnt(&self) -> PRSCNT_R {
+        PRSCNT_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - LESENSE Decoder Input Configuration"]
-    #[inline]
-    pub fn input(&self) -> INPUTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INPUTR { bits }
+    #[inline(always)]
+    pub fn input(&self) -> INPUT_R {
+        INPUT_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 10:14 - LESENSE Decoder PRS Input 0 Configuration"]
-    #[inline]
-    pub fn prssel0(&self) -> PRSSEL0R {
-        PRSSEL0R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prssel0(&self) -> PRSSEL0_R {
+        PRSSEL0_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bits 15:19 - LESENSE Decoder PRS Input 1 Configuration"]
-    #[inline]
-    pub fn prssel1(&self) -> PRSSEL1R {
-        PRSSEL1R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prssel1(&self) -> PRSSEL1_R {
+        PRSSEL1_R::new(((self.bits >> 15) & 0x1f) as u8)
     }
     #[doc = "Bits 20:24 - LESENSE Decoder PRS Input 2 Configuration"]
-    #[inline]
-    pub fn prssel2(&self) -> PRSSEL2R {
-        PRSSEL2R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prssel2(&self) -> PRSSEL2_R {
+        PRSSEL2_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
     #[doc = "Bits 25:29 - LESENSE Decoder PRS Input 3 Configuration"]
-    #[inline]
-    pub fn prssel3(&self) -> PRSSEL3R {
-        PRSSEL3R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prssel3(&self) -> PRSSEL3_R {
+        PRSSEL3_R::new(((self.bits >> 25) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Disable the Decoder"]
-    #[inline]
-    pub fn disable(&mut self) -> _DISABLEW {
-        _DISABLEW { w: self }
+    #[inline(always)]
+    pub fn disable(&mut self) -> DISABLE_W {
+        DISABLE_W { w: self }
     }
     #[doc = "Bit 1 - Enable Check of Current State"]
-    #[inline]
-    pub fn errchk(&mut self) -> _ERRCHKW {
-        _ERRCHKW { w: self }
+    #[inline(always)]
+    pub fn errchk(&mut self) -> ERRCHK_W {
+        ERRCHK_W { w: self }
     }
     #[doc = "Bit 2 - Enable Decoder to Channel Interrupt Mapping"]
-    #[inline]
-    pub fn intmap(&mut self) -> _INTMAPW {
-        _INTMAPW { w: self }
+    #[inline(always)]
+    pub fn intmap(&mut self) -> INTMAP_W {
+        INTMAP_W { w: self }
     }
     #[doc = "Bit 3 - Enable Decoder Hysteresis on PRS0 Output"]
-    #[inline]
-    pub fn hystprs0(&mut self) -> _HYSTPRS0W {
-        _HYSTPRS0W { w: self }
+    #[inline(always)]
+    pub fn hystprs0(&mut self) -> HYSTPRS0_W {
+        HYSTPRS0_W { w: self }
     }
     #[doc = "Bit 4 - Enable Decoder Hysteresis on PRS1 Output"]
-    #[inline]
-    pub fn hystprs1(&mut self) -> _HYSTPRS1W {
-        _HYSTPRS1W { w: self }
+    #[inline(always)]
+    pub fn hystprs1(&mut self) -> HYSTPRS1_W {
+        HYSTPRS1_W { w: self }
     }
     #[doc = "Bit 5 - Enable Decoder Hysteresis on PRS2 Output"]
-    #[inline]
-    pub fn hystprs2(&mut self) -> _HYSTPRS2W {
-        _HYSTPRS2W { w: self }
+    #[inline(always)]
+    pub fn hystprs2(&mut self) -> HYSTPRS2_W {
+        HYSTPRS2_W { w: self }
     }
     #[doc = "Bit 6 - Enable Decoder Hysteresis on Interrupt Requests"]
-    #[inline]
-    pub fn hystirq(&mut self) -> _HYSTIRQW {
-        _HYSTIRQW { w: self }
+    #[inline(always)]
+    pub fn hystirq(&mut self) -> HYSTIRQ_W {
+        HYSTIRQ_W { w: self }
     }
     #[doc = "Bit 7 - Enable Count Mode on Decoder PRS Channels 0 and 1"]
-    #[inline]
-    pub fn prscnt(&mut self) -> _PRSCNTW {
-        _PRSCNTW { w: self }
+    #[inline(always)]
+    pub fn prscnt(&mut self) -> PRSCNT_W {
+        PRSCNT_W { w: self }
     }
     #[doc = "Bit 8 - LESENSE Decoder Input Configuration"]
-    #[inline]
-    pub fn input(&mut self) -> _INPUTW {
-        _INPUTW { w: self }
+    #[inline(always)]
+    pub fn input(&mut self) -> INPUT_W {
+        INPUT_W { w: self }
     }
     #[doc = "Bits 10:14 - LESENSE Decoder PRS Input 0 Configuration"]
-    #[inline]
-    pub fn prssel0(&mut self) -> _PRSSEL0W {
-        _PRSSEL0W { w: self }
+    #[inline(always)]
+    pub fn prssel0(&mut self) -> PRSSEL0_W {
+        PRSSEL0_W { w: self }
     }
     #[doc = "Bits 15:19 - LESENSE Decoder PRS Input 1 Configuration"]
-    #[inline]
-    pub fn prssel1(&mut self) -> _PRSSEL1W {
-        _PRSSEL1W { w: self }
+    #[inline(always)]
+    pub fn prssel1(&mut self) -> PRSSEL1_W {
+        PRSSEL1_W { w: self }
     }
     #[doc = "Bits 20:24 - LESENSE Decoder PRS Input 2 Configuration"]
-    #[inline]
-    pub fn prssel2(&mut self) -> _PRSSEL2W {
-        _PRSSEL2W { w: self }
+    #[inline(always)]
+    pub fn prssel2(&mut self) -> PRSSEL2_W {
+        PRSSEL2_W { w: self }
     }
     #[doc = "Bits 25:29 - LESENSE Decoder PRS Input 3 Configuration"]
-    #[inline]
-    pub fn prssel3(&mut self) -> _PRSSEL3W {
-        _PRSSEL3W { w: self }
+    #[inline(always)]
+    pub fn prssel3(&mut self) -> PRSSEL3_W {
+        PRSSEL3_W { w: self }
     }
 }

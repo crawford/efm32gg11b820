@@ -1,215 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMSCR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAXPORTSIZER {
-    bits: u8,
-}
-impl MAXPORTSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FIFOFULLR {
-    bits: bool,
-}
-impl FIFOFULLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAXPORTSIZE3R {
-    bits: bool,
-}
-impl MAXPORTSIZE3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PORTSIZER {
-    bits: bool,
-}
-impl PORTSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PORTMODER {
-    bits: bool,
-}
-impl PORTMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PROCNUMR {
-    bits: u8,
-}
-impl PROCNUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NOFETCHCOMPR {
-    bits: bool,
-}
-impl NOFETCHCOMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register ETMSCR"]
+pub type R = crate::R<u32, super::ETMSCR>;
+#[doc = "Reader of field `MAXPORTSIZE`"]
+pub type MAXPORTSIZE_R = crate::R<u8, u8>;
+#[doc = "Reader of field `FIFOFULL`"]
+pub type FIFOFULL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MAXPORTSIZE3`"]
+pub type MAXPORTSIZE3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PORTSIZE`"]
+pub type PORTSIZE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PORTMODE`"]
+pub type PORTMODE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PROCNUM`"]
+pub type PROCNUM_R = crate::R<u8, u8>;
+#[doc = "Reader of field `NOFETCHCOMP`"]
+pub type NOFETCHCOMP_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Maximum Port Size"]
-    #[inline]
-    pub fn maxportsize(&self) -> MAXPORTSIZER {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAXPORTSIZER { bits }
+    #[inline(always)]
+    pub fn maxportsize(&self) -> MAXPORTSIZE_R {
+        MAXPORTSIZE_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 8 - FIFO FULL Supported"]
-    #[inline]
-    pub fn fifofull(&self) -> FIFOFULLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FIFOFULLR { bits }
+    #[inline(always)]
+    pub fn fifofull(&self) -> FIFOFULL_R {
+        FIFOFULL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Max Port Size\\[3\\]"]
-    #[inline]
-    pub fn maxportsize3(&self) -> MAXPORTSIZE3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MAXPORTSIZE3R { bits }
+    #[inline(always)]
+    pub fn maxportsize3(&self) -> MAXPORTSIZE3_R {
+        MAXPORTSIZE3_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Port Size Supported"]
-    #[inline]
-    pub fn portsize(&self) -> PORTSIZER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PORTSIZER { bits }
+    #[inline(always)]
+    pub fn portsize(&self) -> PORTSIZE_R {
+        PORTSIZE_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Port Mode Supported"]
-    #[inline]
-    pub fn portmode(&self) -> PORTMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PORTMODER { bits }
+    #[inline(always)]
+    pub fn portmode(&self) -> PORTMODE_R {
+        PORTMODE_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bits 12:14 - Number of Supported Processros"]
-    #[inline]
-    pub fn procnum(&self) -> PROCNUMR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PROCNUMR { bits }
+    #[inline(always)]
+    pub fn procnum(&self) -> PROCNUM_R {
+        PROCNUM_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bit 17 - No Fetch Comparison"]
-    #[inline]
-    pub fn nofetchcomp(&self) -> NOFETCHCOMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NOFETCHCOMPR { bits }
+    #[inline(always)]
+    pub fn nofetchcomp(&self) -> NOFETCHCOMP_R {
+        NOFETCHCOMP_R::new(((self.bits >> 17) & 0x01) != 0)
     }
 }

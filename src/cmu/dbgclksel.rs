@@ -1,182 +1,109 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DBGCLKSEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DBGCLKSEL"]
+pub type R = crate::R<u32, super::DBGCLKSEL>;
+#[doc = "Writer for register DBGCLKSEL"]
+pub type W = crate::W<u32, super::DBGCLKSEL>;
+#[doc = "Register DBGCLKSEL `reset()`'s with value 0"]
+impl crate::ResetValue for super::DBGCLKSEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `DBG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBGR {
+pub enum DBG_A {
     #[doc = "AUXHFRCO is the debug trace clock"]
     AUXHFRCO,
     #[doc = "HFCLK is the debug trace clock"]
     HFCLK,
     #[doc = "HFRCO divided by 2 is the debug trace clock"]
     HFRCODIV2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DBGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DBG_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DBGR::AUXHFRCO => 0,
-            DBGR::HFCLK => 1,
-            DBGR::HFRCODIV2 => 2,
-            DBGR::_Reserved(bits) => bits,
+            DBG_A::AUXHFRCO => 0,
+            DBG_A::HFCLK => 1,
+            DBG_A::HFRCODIV2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DBGR {
-        match value {
-            0 => DBGR::AUXHFRCO,
-            1 => DBGR::HFCLK,
-            2 => DBGR::HFRCODIV2,
-            i => DBGR::_Reserved(i),
+}
+#[doc = "Reader of field `DBG`"]
+pub type DBG_R = crate::R<u8, DBG_A>;
+impl DBG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DBG_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DBG_A::AUXHFRCO),
+            1 => Val(DBG_A::HFCLK),
+            2 => Val(DBG_A::HFRCODIV2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `AUXHFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auxhfrco(&self) -> bool {
-        *self == DBGR::AUXHFRCO
+        *self == DBG_A::AUXHFRCO
     }
     #[doc = "Checks if the value of the field is `HFCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfclk(&self) -> bool {
-        *self == DBGR::HFCLK
+        *self == DBG_A::HFCLK
     }
     #[doc = "Checks if the value of the field is `HFRCODIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrcodiv2(&self) -> bool {
-        *self == DBGR::HFRCODIV2
+        *self == DBG_A::HFRCODIV2
     }
 }
-#[doc = "Values that can be written to the field `DBG`"]
-pub enum DBGW {
-    #[doc = "AUXHFRCO is the debug trace clock"]
-    AUXHFRCO,
-    #[doc = "HFCLK is the debug trace clock"]
-    HFCLK,
-    #[doc = "HFRCO divided by 2 is the debug trace clock"]
-    HFRCODIV2,
-}
-impl DBGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DBGW::AUXHFRCO => 0,
-            DBGW::HFCLK => 1,
-            DBGW::HFRCODIV2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DBGW<'a> {
+#[doc = "Write proxy for field `DBG`"]
+pub struct DBG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DBGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DBGW) -> &'a mut W {
+impl<'a> DBG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DBG_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "AUXHFRCO is the debug trace clock"]
-    #[inline]
+    #[inline(always)]
     pub fn auxhfrco(self) -> &'a mut W {
-        self.variant(DBGW::AUXHFRCO)
+        self.variant(DBG_A::AUXHFRCO)
     }
     #[doc = "HFCLK is the debug trace clock"]
-    #[inline]
+    #[inline(always)]
     pub fn hfclk(self) -> &'a mut W {
-        self.variant(DBGW::HFCLK)
+        self.variant(DBG_A::HFCLK)
     }
     #[doc = "HFRCO divided by 2 is the debug trace clock"]
-    #[inline]
+    #[inline(always)]
     pub fn hfrcodiv2(self) -> &'a mut W {
-        self.variant(DBGW::HFRCODIV2)
+        self.variant(DBG_A::HFRCODIV2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Debug Trace Clock"]
-    #[inline]
-    pub fn dbg(&self) -> DBGR {
-        DBGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dbg(&self) -> DBG_R {
+        DBG_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Debug Trace Clock"]
-    #[inline]
-    pub fn dbg(&mut self) -> _DBGW {
-        _DBGW { w: self }
+    #[inline(always)]
+    pub fn dbg(&mut self) -> DBG_W {
+        DBG_W { w: self }
     }
 }

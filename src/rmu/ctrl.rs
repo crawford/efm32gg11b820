@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0x4204"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x4204
     }
 }
 #[doc = "Possible values of the field `WDOGRMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WDOGRMODER {
+pub enum WDOGRMODE_A {
     #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
     DISABLED,
     #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
@@ -51,57 +21,95 @@ pub enum WDOGRMODER {
     EXTENDED,
     #[doc = "The entire device is reset except some EMU and RMU registers."]
     FULL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl WDOGRMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for WDOGRMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            WDOGRMODER::DISABLED => 0,
-            WDOGRMODER::LIMITED => 1,
-            WDOGRMODER::EXTENDED => 2,
-            WDOGRMODER::FULL => 4,
-            WDOGRMODER::_Reserved(bits) => bits,
+            WDOGRMODE_A::DISABLED => 0,
+            WDOGRMODE_A::LIMITED => 1,
+            WDOGRMODE_A::EXTENDED => 2,
+            WDOGRMODE_A::FULL => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WDOGRMODER {
-        match value {
-            0 => WDOGRMODER::DISABLED,
-            1 => WDOGRMODER::LIMITED,
-            2 => WDOGRMODER::EXTENDED,
-            4 => WDOGRMODER::FULL,
-            i => WDOGRMODER::_Reserved(i),
+}
+#[doc = "Reader of field `WDOGRMODE`"]
+pub type WDOGRMODE_R = crate::R<u8, WDOGRMODE_A>;
+impl WDOGRMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WDOGRMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WDOGRMODE_A::DISABLED),
+            1 => Val(WDOGRMODE_A::LIMITED),
+            2 => Val(WDOGRMODE_A::EXTENDED),
+            4 => Val(WDOGRMODE_A::FULL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == WDOGRMODER::DISABLED
+        *self == WDOGRMODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `LIMITED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_limited(&self) -> bool {
-        *self == WDOGRMODER::LIMITED
+        *self == WDOGRMODE_A::LIMITED
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        *self == WDOGRMODER::EXTENDED
+        *self == WDOGRMODE_A::EXTENDED
     }
     #[doc = "Checks if the value of the field is `FULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_full(&self) -> bool {
-        *self == WDOGRMODER::FULL
+        *self == WDOGRMODE_A::FULL
+    }
+}
+#[doc = "Write proxy for field `WDOGRMODE`"]
+pub struct WDOGRMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WDOGRMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WDOGRMODE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(WDOGRMODE_A::DISABLED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[inline(always)]
+    pub fn limited(self) -> &'a mut W {
+        self.variant(WDOGRMODE_A::LIMITED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(WDOGRMODE_A::EXTENDED)
+    }
+    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[inline(always)]
+    pub fn full(self) -> &'a mut W {
+        self.variant(WDOGRMODE_A::FULL)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOCKUPRMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKUPRMODER {
+pub enum LOCKUPRMODE_A {
     #[doc = "Reset request is blocked."]
     DISABLED,
     #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
@@ -110,57 +118,95 @@ pub enum LOCKUPRMODER {
     EXTENDED,
     #[doc = "The entire device is reset except some EMU and RMU registers."]
     FULL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCKUPRMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LOCKUPRMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LOCKUPRMODER::DISABLED => 0,
-            LOCKUPRMODER::LIMITED => 1,
-            LOCKUPRMODER::EXTENDED => 2,
-            LOCKUPRMODER::FULL => 4,
-            LOCKUPRMODER::_Reserved(bits) => bits,
+            LOCKUPRMODE_A::DISABLED => 0,
+            LOCKUPRMODE_A::LIMITED => 1,
+            LOCKUPRMODE_A::EXTENDED => 2,
+            LOCKUPRMODE_A::FULL => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCKUPRMODER {
-        match value {
-            0 => LOCKUPRMODER::DISABLED,
-            1 => LOCKUPRMODER::LIMITED,
-            2 => LOCKUPRMODER::EXTENDED,
-            4 => LOCKUPRMODER::FULL,
-            i => LOCKUPRMODER::_Reserved(i),
+}
+#[doc = "Reader of field `LOCKUPRMODE`"]
+pub type LOCKUPRMODE_R = crate::R<u8, LOCKUPRMODE_A>;
+impl LOCKUPRMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCKUPRMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOCKUPRMODE_A::DISABLED),
+            1 => Val(LOCKUPRMODE_A::LIMITED),
+            2 => Val(LOCKUPRMODE_A::EXTENDED),
+            4 => Val(LOCKUPRMODE_A::FULL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == LOCKUPRMODER::DISABLED
+        *self == LOCKUPRMODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `LIMITED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_limited(&self) -> bool {
-        *self == LOCKUPRMODER::LIMITED
+        *self == LOCKUPRMODE_A::LIMITED
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        *self == LOCKUPRMODER::EXTENDED
+        *self == LOCKUPRMODE_A::EXTENDED
     }
     #[doc = "Checks if the value of the field is `FULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_full(&self) -> bool {
-        *self == LOCKUPRMODER::FULL
+        *self == LOCKUPRMODE_A::FULL
+    }
+}
+#[doc = "Write proxy for field `LOCKUPRMODE`"]
+pub struct LOCKUPRMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCKUPRMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCKUPRMODE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Reset request is blocked."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(LOCKUPRMODE_A::DISABLED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[inline(always)]
+    pub fn limited(self) -> &'a mut W {
+        self.variant(LOCKUPRMODE_A::LIMITED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(LOCKUPRMODE_A::EXTENDED)
+    }
+    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[inline(always)]
+    pub fn full(self) -> &'a mut W {
+        self.variant(LOCKUPRMODE_A::FULL)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SYSRMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYSRMODER {
+pub enum SYSRMODE_A {
     #[doc = "Reset request is blocked. "]
     DISABLED,
     #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
@@ -169,57 +215,95 @@ pub enum SYSRMODER {
     EXTENDED,
     #[doc = "The entire device is reset except some EMU and RMU registers."]
     FULL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SYSRMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SYSRMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SYSRMODER::DISABLED => 0,
-            SYSRMODER::LIMITED => 1,
-            SYSRMODER::EXTENDED => 2,
-            SYSRMODER::FULL => 4,
-            SYSRMODER::_Reserved(bits) => bits,
+            SYSRMODE_A::DISABLED => 0,
+            SYSRMODE_A::LIMITED => 1,
+            SYSRMODE_A::EXTENDED => 2,
+            SYSRMODE_A::FULL => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SYSRMODER {
-        match value {
-            0 => SYSRMODER::DISABLED,
-            1 => SYSRMODER::LIMITED,
-            2 => SYSRMODER::EXTENDED,
-            4 => SYSRMODER::FULL,
-            i => SYSRMODER::_Reserved(i),
+}
+#[doc = "Reader of field `SYSRMODE`"]
+pub type SYSRMODE_R = crate::R<u8, SYSRMODE_A>;
+impl SYSRMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SYSRMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SYSRMODE_A::DISABLED),
+            1 => Val(SYSRMODE_A::LIMITED),
+            2 => Val(SYSRMODE_A::EXTENDED),
+            4 => Val(SYSRMODE_A::FULL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SYSRMODER::DISABLED
+        *self == SYSRMODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `LIMITED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_limited(&self) -> bool {
-        *self == SYSRMODER::LIMITED
+        *self == SYSRMODE_A::LIMITED
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        *self == SYSRMODER::EXTENDED
+        *self == SYSRMODE_A::EXTENDED
     }
     #[doc = "Checks if the value of the field is `FULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_full(&self) -> bool {
-        *self == SYSRMODER::FULL
+        *self == SYSRMODE_A::FULL
+    }
+}
+#[doc = "Write proxy for field `SYSRMODE`"]
+pub struct SYSRMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SYSRMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYSRMODE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Reset request is blocked."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SYSRMODE_A::DISABLED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[inline(always)]
+    pub fn limited(self) -> &'a mut W {
+        self.variant(SYSRMODE_A::LIMITED)
+    }
+    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(SYSRMODE_A::EXTENDED)
+    }
+    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[inline(always)]
+    pub fn full(self) -> &'a mut W {
+        self.variant(SYSRMODE_A::FULL)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PINRMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PINRMODER {
+pub enum PINRMODE_A {
     #[doc = "Reset request is blocked. "]
     DISABLED,
     #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
@@ -228,424 +312,157 @@ pub enum PINRMODER {
     EXTENDED,
     #[doc = "The entire device is reset except some EMU and RMU registers."]
     FULL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PINRMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PINRMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PINRMODER::DISABLED => 0,
-            PINRMODER::LIMITED => 1,
-            PINRMODER::EXTENDED => 2,
-            PINRMODER::FULL => 4,
-            PINRMODER::_Reserved(bits) => bits,
+            PINRMODE_A::DISABLED => 0,
+            PINRMODE_A::LIMITED => 1,
+            PINRMODE_A::EXTENDED => 2,
+            PINRMODE_A::FULL => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PINRMODER {
-        match value {
-            0 => PINRMODER::DISABLED,
-            1 => PINRMODER::LIMITED,
-            2 => PINRMODER::EXTENDED,
-            4 => PINRMODER::FULL,
-            i => PINRMODER::_Reserved(i),
+}
+#[doc = "Reader of field `PINRMODE`"]
+pub type PINRMODE_R = crate::R<u8, PINRMODE_A>;
+impl PINRMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PINRMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PINRMODE_A::DISABLED),
+            1 => Val(PINRMODE_A::LIMITED),
+            2 => Val(PINRMODE_A::EXTENDED),
+            4 => Val(PINRMODE_A::FULL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == PINRMODER::DISABLED
+        *self == PINRMODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `LIMITED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_limited(&self) -> bool {
-        *self == PINRMODER::LIMITED
+        *self == PINRMODE_A::LIMITED
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        *self == PINRMODER::EXTENDED
+        *self == PINRMODE_A::EXTENDED
     }
     #[doc = "Checks if the value of the field is `FULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_full(&self) -> bool {
-        *self == PINRMODER::FULL
+        *self == PINRMODE_A::FULL
     }
 }
-#[doc = r" Value of the field"]
-pub struct RESETSTATER {
-    bits: u8,
-}
-impl RESETSTATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `WDOGRMODE`"]
-pub enum WDOGRMODEW {
-    #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
-    DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    FULL,
-}
-impl WDOGRMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            WDOGRMODEW::DISABLED => 0,
-            WDOGRMODEW::LIMITED => 1,
-            WDOGRMODEW::EXTENDED => 2,
-            WDOGRMODEW::FULL => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WDOGRMODEW<'a> {
+#[doc = "Write proxy for field `PINRMODE`"]
+pub struct PINRMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WDOGRMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WDOGRMODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(WDOGRMODEW::DISABLED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    #[inline]
-    pub fn limited(self) -> &'a mut W {
-        self.variant(WDOGRMODEW::LIMITED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
-    #[inline]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(WDOGRMODEW::EXTENDED)
-    }
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    #[inline]
-    pub fn full(self) -> &'a mut W {
-        self.variant(WDOGRMODEW::FULL)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOCKUPRMODE`"]
-pub enum LOCKUPRMODEW {
-    #[doc = "Reset request is blocked."]
-    DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    FULL,
-}
-impl LOCKUPRMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCKUPRMODEW::DISABLED => 0,
-            LOCKUPRMODEW::LIMITED => 1,
-            LOCKUPRMODEW::EXTENDED => 2,
-            LOCKUPRMODEW::FULL => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCKUPRMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCKUPRMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCKUPRMODEW) -> &'a mut W {
+impl<'a> PINRMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PINRMODE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Reset request is blocked."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LOCKUPRMODEW::DISABLED)
+        self.variant(PINRMODE_A::DISABLED)
     }
     #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    #[inline]
+    #[inline(always)]
     pub fn limited(self) -> &'a mut W {
-        self.variant(LOCKUPRMODEW::LIMITED)
+        self.variant(PINRMODE_A::LIMITED)
     }
     #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
-    #[inline]
+    #[inline(always)]
     pub fn extended(self) -> &'a mut W {
-        self.variant(LOCKUPRMODEW::EXTENDED)
+        self.variant(PINRMODE_A::EXTENDED)
     }
     #[doc = "The entire device is reset except some EMU and RMU registers."]
-    #[inline]
+    #[inline(always)]
     pub fn full(self) -> &'a mut W {
-        self.variant(LOCKUPRMODEW::FULL)
+        self.variant(PINRMODE_A::FULL)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SYSRMODE`"]
-pub enum SYSRMODEW {
-    #[doc = "Reset request is blocked. "]
-    DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    FULL,
-}
-impl SYSRMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SYSRMODEW::DISABLED => 0,
-            SYSRMODEW::LIMITED => 1,
-            SYSRMODEW::EXTENDED => 2,
-            SYSRMODEW::FULL => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYSRMODEW<'a> {
+#[doc = "Reader of field `RESETSTATE`"]
+pub type RESETSTATE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RESETSTATE`"]
+pub struct RESETSTATE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYSRMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYSRMODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Reset request is blocked."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SYSRMODEW::DISABLED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    #[inline]
-    pub fn limited(self) -> &'a mut W {
-        self.variant(SYSRMODEW::LIMITED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
-    #[inline]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(SYSRMODEW::EXTENDED)
-    }
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    #[inline]
-    pub fn full(self) -> &'a mut W {
-        self.variant(SYSRMODEW::FULL)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RESETSTATE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PINRMODE`"]
-pub enum PINRMODEW {
-    #[doc = "Reset request is blocked. "]
-    DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    FULL,
-}
-impl PINRMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PINRMODEW::DISABLED => 0,
-            PINRMODEW::LIMITED => 1,
-            PINRMODEW::EXTENDED => 2,
-            PINRMODEW::FULL => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PINRMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PINRMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PINRMODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Reset request is blocked."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PINRMODEW::DISABLED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    #[inline]
-    pub fn limited(self) -> &'a mut W {
-        self.variant(PINRMODEW::LIMITED)
-    }
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset."]
-    #[inline]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(PINRMODEW::EXTENDED)
-    }
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
-    #[inline]
-    pub fn full(self) -> &'a mut W {
-        self.variant(PINRMODEW::FULL)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESETSTATEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RESETSTATEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
-    #[inline]
-    pub fn wdogrmode(&self) -> WDOGRMODER {
-        WDOGRMODER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wdogrmode(&self) -> WDOGRMODE_R {
+        WDOGRMODE_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:6 - Core LOCKUP Reset Mode"]
-    #[inline]
-    pub fn lockuprmode(&self) -> LOCKUPRMODER {
-        LOCKUPRMODER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lockuprmode(&self) -> LOCKUPRMODE_R {
+        LOCKUPRMODE_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Core Sysreset Reset Mode"]
-    #[inline]
-    pub fn sysrmode(&self) -> SYSRMODER {
-        SYSRMODER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sysrmode(&self) -> SYSRMODE_R {
+        SYSRMODE_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:14 - PIN Reset Mode"]
-    #[inline]
-    pub fn pinrmode(&self) -> PINRMODER {
-        PINRMODER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pinrmode(&self) -> PINRMODE_R {
+        PINRMODE_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 24:25 - System Software Reset State"]
-    #[inline]
-    pub fn resetstate(&self) -> RESETSTATER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RESETSTATER { bits }
+    #[inline(always)]
+    pub fn resetstate(&self) -> RESETSTATE_R {
+        RESETSTATE_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 16900 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
-    #[inline]
-    pub fn wdogrmode(&mut self) -> _WDOGRMODEW {
-        _WDOGRMODEW { w: self }
+    #[inline(always)]
+    pub fn wdogrmode(&mut self) -> WDOGRMODE_W {
+        WDOGRMODE_W { w: self }
     }
     #[doc = "Bits 4:6 - Core LOCKUP Reset Mode"]
-    #[inline]
-    pub fn lockuprmode(&mut self) -> _LOCKUPRMODEW {
-        _LOCKUPRMODEW { w: self }
+    #[inline(always)]
+    pub fn lockuprmode(&mut self) -> LOCKUPRMODE_W {
+        LOCKUPRMODE_W { w: self }
     }
     #[doc = "Bits 8:10 - Core Sysreset Reset Mode"]
-    #[inline]
-    pub fn sysrmode(&mut self) -> _SYSRMODEW {
-        _SYSRMODEW { w: self }
+    #[inline(always)]
+    pub fn sysrmode(&mut self) -> SYSRMODE_W {
+        SYSRMODE_W { w: self }
     }
     #[doc = "Bits 12:14 - PIN Reset Mode"]
-    #[inline]
-    pub fn pinrmode(&mut self) -> _PINRMODEW {
-        _PINRMODEW { w: self }
+    #[inline(always)]
+    pub fn pinrmode(&mut self) -> PINRMODE_W {
+        PINRMODE_W { w: self }
     }
     #[doc = "Bits 24:25 - System Software Reset State"]
-    #[inline]
-    pub fn resetstate(&mut self) -> _RESETSTATEW {
-        _RESETSTATEW { w: self }
+    #[inline(always)]
+    pub fn resetstate(&mut self) -> RESETSTATE_W {
+        RESETSTATE_W { w: self }
     }
 }

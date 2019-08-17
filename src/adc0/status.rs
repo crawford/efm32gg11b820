@@ -1,316 +1,106 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLEACTR {
-    bits: bool,
-}
-impl SINGLEACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANACTR {
-    bits: bool,
-}
-impl SCANACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANPENDINGR {
-    bits: bool,
-}
-impl SCANPENDINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLEREFWARMR {
-    bits: bool,
-}
-impl SINGLEREFWARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANREFWARMR {
-    bits: bool,
-}
-impl SCANREFWARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `SINGLEACT`"]
+pub type SINGLEACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANACT`"]
+pub type SCANACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANPENDING`"]
+pub type SCANPENDING_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SINGLEREFWARM`"]
+pub type SINGLEREFWARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANREFWARM`"]
+pub type SCANREFWARM_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `PROGERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROGERRR {
-    #[doc = "undocumented"]
+pub enum PROGERR_A {
+    #[doc = "`1`"]
     BUSCONF,
-    #[doc = "undocumented"]
+    #[doc = "`10`"]
     NEGSELCONF,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PROGERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PROGERR_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PROGERRR::BUSCONF => 1,
-            PROGERRR::NEGSELCONF => 2,
-            PROGERRR::_Reserved(bits) => bits,
+            PROGERR_A::BUSCONF => 1,
+            PROGERR_A::NEGSELCONF => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PROGERRR {
-        match value {
-            1 => PROGERRR::BUSCONF,
-            2 => PROGERRR::NEGSELCONF,
-            i => PROGERRR::_Reserved(i),
+}
+#[doc = "Reader of field `PROGERR`"]
+pub type PROGERR_R = crate::R<u8, PROGERR_A>;
+impl PROGERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PROGERR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(PROGERR_A::BUSCONF),
+            2 => Val(PROGERR_A::NEGSELCONF),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BUSCONF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_busconf(&self) -> bool {
-        *self == PROGERRR::BUSCONF
+        *self == PROGERR_A::BUSCONF
     }
     #[doc = "Checks if the value of the field is `NEGSELCONF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_negselconf(&self) -> bool {
-        *self == PROGERRR::NEGSELCONF
+        *self == PROGERR_A::NEGSELCONF
     }
 }
-#[doc = r" Value of the field"]
-pub struct WARMR {
-    bits: bool,
-}
-impl WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLEDVR {
-    bits: bool,
-}
-impl SINGLEDVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANDVR {
-    bits: bool,
-}
-impl SCANDVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `WARM`"]
+pub type WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SINGLEDV`"]
+pub type SINGLEDV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANDV`"]
+pub type SCANDV_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Single Channel Conversion Active"]
-    #[inline]
-    pub fn singleact(&self) -> SINGLEACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLEACTR { bits }
+    #[inline(always)]
+    pub fn singleact(&self) -> SINGLEACT_R {
+        SINGLEACT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Scan Conversion Active"]
-    #[inline]
-    pub fn scanact(&self) -> SCANACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANACTR { bits }
+    #[inline(always)]
+    pub fn scanact(&self) -> SCANACT_R {
+        SCANACT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Scan Conversion Pending"]
-    #[inline]
-    pub fn scanpending(&self) -> SCANPENDINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANPENDINGR { bits }
+    #[inline(always)]
+    pub fn scanpending(&self) -> SCANPENDING_R {
+        SCANPENDING_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Single Channel Reference Warmed Up"]
-    #[inline]
-    pub fn singlerefwarm(&self) -> SINGLEREFWARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLEREFWARMR { bits }
+    #[inline(always)]
+    pub fn singlerefwarm(&self) -> SINGLEREFWARM_R {
+        SINGLEREFWARM_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Scan Reference Warmed Up"]
-    #[inline]
-    pub fn scanrefwarm(&self) -> SCANREFWARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANREFWARMR { bits }
+    #[inline(always)]
+    pub fn scanrefwarm(&self) -> SCANREFWARM_R {
+        SCANREFWARM_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bits 10:11 - Programming Error Status"]
-    #[inline]
-    pub fn progerr(&self) -> PROGERRR {
-        PROGERRR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn progerr(&self) -> PROGERR_R {
+        PROGERR_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bit 12 - ADC Warmed Up"]
-    #[inline]
-    pub fn warm(&self) -> WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WARMR { bits }
+    #[inline(always)]
+    pub fn warm(&self) -> WARM_R {
+        WARM_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Single Channel Data Valid"]
-    #[inline]
-    pub fn singledv(&self) -> SINGLEDVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLEDVR { bits }
+    #[inline(always)]
+    pub fn singledv(&self) -> SINGLEDV_R {
+        SINGLEDV_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Scan Data Valid"]
-    #[inline]
-    pub fn scandv(&self) -> SCANDVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANDVR { bits }
+    #[inline(always)]
+    pub fn scandv(&self) -> SCANDV_R {
+        SCANDV_R::new(((self.bits >> 17) & 0x01) != 0)
     }
 }

@@ -1,49 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::R5VSYNC {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTLEVELBUSYR {
-    bits: bool,
-}
-impl OUTLEVELBUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register R5VSYNC"]
+pub type R = crate::R<u32, super::R5VSYNC>;
+#[doc = "Reader of field `OUTLEVELBUSY`"]
+pub type OUTLEVELBUSY_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - 5V Regulator Voltage Register Transfer Busy"]
-    #[inline]
-    pub fn outlevelbusy(&self) -> OUTLEVELBUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTLEVELBUSYR { bits }
+    #[inline(always)]
+    pub fn outlevelbusy(&self) -> OUTLEVELBUSY_R {
+        OUTLEVELBUSY_R::new((self.bits & 0x01) != 0)
     }
 }

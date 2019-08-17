@@ -1,542 +1,388 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ROUTELOC5 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ROUTELOC5"]
+pub type R = crate::R<u32, super::ROUTELOC5>;
+#[doc = "Writer for register ROUTELOC5"]
+pub type W = crate::W<u32, super::ROUTELOC5>;
+#[doc = "Register ROUTELOC5 `reset()`'s with value 0"]
+impl crate::ResetValue for super::ROUTELOC5 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `CH20LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH20LOCR {
+pub enum CH20LOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CH20LOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH20LOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH20LOCR::LOC0 => 0,
-            CH20LOCR::LOC1 => 1,
-            CH20LOCR::LOC2 => 2,
-            CH20LOCR::_Reserved(bits) => bits,
+            CH20LOC_A::LOC0 => 0,
+            CH20LOC_A::LOC1 => 1,
+            CH20LOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH20LOCR {
-        match value {
-            0 => CH20LOCR::LOC0,
-            1 => CH20LOCR::LOC1,
-            2 => CH20LOCR::LOC2,
-            i => CH20LOCR::_Reserved(i),
+}
+#[doc = "Reader of field `CH20LOC`"]
+pub type CH20LOC_R = crate::R<u8, CH20LOC_A>;
+impl CH20LOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CH20LOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CH20LOC_A::LOC0),
+            1 => Val(CH20LOC_A::LOC1),
+            2 => Val(CH20LOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CH20LOCR::LOC0
+        *self == CH20LOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CH20LOCR::LOC1
+        *self == CH20LOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CH20LOCR::LOC2
+        *self == CH20LOC_A::LOC2
+    }
+}
+#[doc = "Write proxy for field `CH20LOC`"]
+pub struct CH20LOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH20LOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH20LOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(CH20LOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(CH20LOC_A::LOC1)
+    }
+    #[doc = "Location 2"]
+    #[inline(always)]
+    pub fn loc2(self) -> &'a mut W {
+        self.variant(CH20LOC_A::LOC2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH21LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH21LOCR {
+pub enum CH21LOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CH21LOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH21LOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH21LOCR::LOC0 => 0,
-            CH21LOCR::LOC1 => 1,
-            CH21LOCR::LOC2 => 2,
-            CH21LOCR::_Reserved(bits) => bits,
+            CH21LOC_A::LOC0 => 0,
+            CH21LOC_A::LOC1 => 1,
+            CH21LOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH21LOCR {
-        match value {
-            0 => CH21LOCR::LOC0,
-            1 => CH21LOCR::LOC1,
-            2 => CH21LOCR::LOC2,
-            i => CH21LOCR::_Reserved(i),
+}
+#[doc = "Reader of field `CH21LOC`"]
+pub type CH21LOC_R = crate::R<u8, CH21LOC_A>;
+impl CH21LOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CH21LOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CH21LOC_A::LOC0),
+            1 => Val(CH21LOC_A::LOC1),
+            2 => Val(CH21LOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CH21LOCR::LOC0
+        *self == CH21LOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CH21LOCR::LOC1
+        *self == CH21LOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CH21LOCR::LOC2
+        *self == CH21LOC_A::LOC2
+    }
+}
+#[doc = "Write proxy for field `CH21LOC`"]
+pub struct CH21LOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH21LOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH21LOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(CH21LOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(CH21LOC_A::LOC1)
+    }
+    #[doc = "Location 2"]
+    #[inline(always)]
+    pub fn loc2(self) -> &'a mut W {
+        self.variant(CH21LOC_A::LOC2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH22LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH22LOCR {
+pub enum CH22LOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CH22LOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH22LOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH22LOCR::LOC0 => 0,
-            CH22LOCR::LOC1 => 1,
-            CH22LOCR::LOC2 => 2,
-            CH22LOCR::_Reserved(bits) => bits,
+            CH22LOC_A::LOC0 => 0,
+            CH22LOC_A::LOC1 => 1,
+            CH22LOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH22LOCR {
-        match value {
-            0 => CH22LOCR::LOC0,
-            1 => CH22LOCR::LOC1,
-            2 => CH22LOCR::LOC2,
-            i => CH22LOCR::_Reserved(i),
+}
+#[doc = "Reader of field `CH22LOC`"]
+pub type CH22LOC_R = crate::R<u8, CH22LOC_A>;
+impl CH22LOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CH22LOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CH22LOC_A::LOC0),
+            1 => Val(CH22LOC_A::LOC1),
+            2 => Val(CH22LOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CH22LOCR::LOC0
+        *self == CH22LOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CH22LOCR::LOC1
+        *self == CH22LOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CH22LOCR::LOC2
+        *self == CH22LOC_A::LOC2
+    }
+}
+#[doc = "Write proxy for field `CH22LOC`"]
+pub struct CH22LOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH22LOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH22LOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(CH22LOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(CH22LOC_A::LOC1)
+    }
+    #[doc = "Location 2"]
+    #[inline(always)]
+    pub fn loc2(self) -> &'a mut W {
+        self.variant(CH22LOC_A::LOC2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH23LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH23LOCR {
+pub enum CH23LOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CH23LOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH23LOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH23LOCR::LOC0 => 0,
-            CH23LOCR::LOC1 => 1,
-            CH23LOCR::LOC2 => 2,
-            CH23LOCR::_Reserved(bits) => bits,
+            CH23LOC_A::LOC0 => 0,
+            CH23LOC_A::LOC1 => 1,
+            CH23LOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH23LOCR {
-        match value {
-            0 => CH23LOCR::LOC0,
-            1 => CH23LOCR::LOC1,
-            2 => CH23LOCR::LOC2,
-            i => CH23LOCR::_Reserved(i),
+}
+#[doc = "Reader of field `CH23LOC`"]
+pub type CH23LOC_R = crate::R<u8, CH23LOC_A>;
+impl CH23LOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CH23LOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CH23LOC_A::LOC0),
+            1 => Val(CH23LOC_A::LOC1),
+            2 => Val(CH23LOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CH23LOCR::LOC0
+        *self == CH23LOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CH23LOCR::LOC1
+        *self == CH23LOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CH23LOCR::LOC2
+        *self == CH23LOC_A::LOC2
     }
 }
-#[doc = "Values that can be written to the field `CH20LOC`"]
-pub enum CH20LOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl CH20LOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH20LOCW::LOC0 => 0,
-            CH20LOCW::LOC1 => 1,
-            CH20LOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH20LOCW<'a> {
+#[doc = "Write proxy for field `CH23LOC`"]
+pub struct CH23LOC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH20LOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH20LOCW) -> &'a mut W {
+impl<'a> CH23LOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH23LOC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Location 0"]
-    #[inline]
+    #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
-        self.variant(CH20LOCW::LOC0)
+        self.variant(CH23LOC_A::LOC0)
     }
     #[doc = "Location 1"]
-    #[inline]
+    #[inline(always)]
     pub fn loc1(self) -> &'a mut W {
-        self.variant(CH20LOCW::LOC1)
+        self.variant(CH23LOC_A::LOC1)
     }
     #[doc = "Location 2"]
-    #[inline]
+    #[inline(always)]
     pub fn loc2(self) -> &'a mut W {
-        self.variant(CH20LOCW::LOC2)
+        self.variant(CH23LOC_A::LOC2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH21LOC`"]
-pub enum CH21LOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl CH21LOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH21LOCW::LOC0 => 0,
-            CH21LOCW::LOC1 => 1,
-            CH21LOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH21LOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH21LOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH21LOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(CH21LOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(CH21LOCW::LOC1)
-    }
-    #[doc = "Location 2"]
-    #[inline]
-    pub fn loc2(self) -> &'a mut W {
-        self.variant(CH21LOCW::LOC2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH22LOC`"]
-pub enum CH22LOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl CH22LOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH22LOCW::LOC0 => 0,
-            CH22LOCW::LOC1 => 1,
-            CH22LOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH22LOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH22LOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH22LOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(CH22LOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(CH22LOCW::LOC1)
-    }
-    #[doc = "Location 2"]
-    #[inline]
-    pub fn loc2(self) -> &'a mut W {
-        self.variant(CH22LOCW::LOC2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH23LOC`"]
-pub enum CH23LOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl CH23LOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH23LOCW::LOC0 => 0,
-            CH23LOCW::LOC1 => 1,
-            CH23LOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH23LOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH23LOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH23LOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(CH23LOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(CH23LOCW::LOC1)
-    }
-    #[doc = "Location 2"]
-    #[inline]
-    pub fn loc2(self) -> &'a mut W {
-        self.variant(CH23LOCW::LOC2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - I/O Location"]
-    #[inline]
-    pub fn ch20loc(&self) -> CH20LOCR {
-        CH20LOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch20loc(&self) -> CH20LOC_R {
+        CH20LOC_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - I/O Location"]
-    #[inline]
-    pub fn ch21loc(&self) -> CH21LOCR {
-        CH21LOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch21loc(&self) -> CH21LOC_R {
+        CH21LOC_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
-    #[inline]
-    pub fn ch22loc(&self) -> CH22LOCR {
-        CH22LOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch22loc(&self) -> CH22LOC_R {
+        CH22LOC_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - I/O Location"]
-    #[inline]
-    pub fn ch23loc(&self) -> CH23LOCR {
-        CH23LOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch23loc(&self) -> CH23LOC_R {
+        CH23LOC_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - I/O Location"]
-    #[inline]
-    pub fn ch20loc(&mut self) -> _CH20LOCW {
-        _CH20LOCW { w: self }
+    #[inline(always)]
+    pub fn ch20loc(&mut self) -> CH20LOC_W {
+        CH20LOC_W { w: self }
     }
     #[doc = "Bits 8:13 - I/O Location"]
-    #[inline]
-    pub fn ch21loc(&mut self) -> _CH21LOCW {
-        _CH21LOCW { w: self }
+    #[inline(always)]
+    pub fn ch21loc(&mut self) -> CH21LOC_W {
+        CH21LOC_W { w: self }
     }
     #[doc = "Bits 16:21 - I/O Location"]
-    #[inline]
-    pub fn ch22loc(&mut self) -> _CH22LOCW {
-        _CH22LOCW { w: self }
+    #[inline(always)]
+    pub fn ch22loc(&mut self) -> CH22LOC_W {
+        CH22LOC_W { w: self }
     }
     #[doc = "Bits 24:29 - I/O Location"]
-    #[inline]
-    pub fn ch23loc(&mut self) -> _CH23LOCW {
-        _CH23LOCW { w: self }
+    #[inline(always)]
+    pub fn ch23loc(&mut self) -> CH23LOC_W {
+        CH23LOC_W { w: self }
     }
 }

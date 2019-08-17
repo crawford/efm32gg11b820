@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEQ2 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SEQ2"]
+pub type R = crate::R<u32, super::SEQ2>;
+#[doc = "Writer for register SEQ2"]
+pub type W = crate::W<u32, super::SEQ2>;
+#[doc = "Register SEQ2 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEQ2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INSTR8R {
-    bits: u8,
-}
-impl INSTR8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR9R {
-    bits: u8,
-}
-impl INSTR9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR10R {
-    bits: u8,
-}
-impl INSTR10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR11R {
-    bits: u8,
-}
-impl INSTR11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INSTR8W<'a> {
+#[doc = "Reader of field `INSTR8`"]
+pub type INSTR8_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR8`"]
+pub struct INSTR8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR8W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR8_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR9W<'a> {
+#[doc = "Reader of field `INSTR9`"]
+pub type INSTR9_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR9`"]
+pub struct INSTR9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR9W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR9_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR10W<'a> {
+#[doc = "Reader of field `INSTR10`"]
+pub type INSTR10_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR10`"]
+pub struct INSTR10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR10W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR10_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR11W<'a> {
+#[doc = "Reader of field `INSTR11`"]
+pub type INSTR11_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR11`"]
+pub struct INSTR11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR11W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR11_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Sequence Instruction 8"]
-    #[inline]
-    pub fn instr8(&self) -> INSTR8R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR8R { bits }
+    #[inline(always)]
+    pub fn instr8(&self) -> INSTR8_R {
+        INSTR8_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Sequence Instruction 9"]
-    #[inline]
-    pub fn instr9(&self) -> INSTR9R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR9R { bits }
+    #[inline(always)]
+    pub fn instr9(&self) -> INSTR9_R {
+        INSTR9_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Sequence Instruction 10"]
-    #[inline]
-    pub fn instr10(&self) -> INSTR10R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR10R { bits }
+    #[inline(always)]
+    pub fn instr10(&self) -> INSTR10_R {
+        INSTR10_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Sequence Instruction 11"]
-    #[inline]
-    pub fn instr11(&self) -> INSTR11R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR11R { bits }
+    #[inline(always)]
+    pub fn instr11(&self) -> INSTR11_R {
+        INSTR11_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Sequence Instruction 8"]
-    #[inline]
-    pub fn instr8(&mut self) -> _INSTR8W {
-        _INSTR8W { w: self }
+    #[inline(always)]
+    pub fn instr8(&mut self) -> INSTR8_W {
+        INSTR8_W { w: self }
     }
     #[doc = "Bits 8:15 - Sequence Instruction 9"]
-    #[inline]
-    pub fn instr9(&mut self) -> _INSTR9W {
-        _INSTR9W { w: self }
+    #[inline(always)]
+    pub fn instr9(&mut self) -> INSTR9_W {
+        INSTR9_W { w: self }
     }
     #[doc = "Bits 16:23 - Sequence Instruction 10"]
-    #[inline]
-    pub fn instr10(&mut self) -> _INSTR10W {
-        _INSTR10W { w: self }
+    #[inline(always)]
+    pub fn instr10(&mut self) -> INSTR10_W {
+        INSTR10_W { w: self }
     }
     #[doc = "Bits 24:31 - Sequence Instruction 11"]
-    #[inline]
-    pub fn instr11(&mut self) -> _INSTR11W {
-        _INSTR11W { w: self }
+    #[inline(always)]
+    pub fn instr11(&mut self) -> INSTR11_W {
+        INSTR11_W { w: self }
     }
 }

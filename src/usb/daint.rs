@@ -1,452 +1,102 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DAINT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT0R {
-    bits: bool,
-}
-impl INEPINT0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT1R {
-    bits: bool,
-}
-impl INEPINT1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT2R {
-    bits: bool,
-}
-impl INEPINT2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT3R {
-    bits: bool,
-}
-impl INEPINT3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT4R {
-    bits: bool,
-}
-impl INEPINT4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT5R {
-    bits: bool,
-}
-impl INEPINT5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INEPINT6R {
-    bits: bool,
-}
-impl INEPINT6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT0R {
-    bits: bool,
-}
-impl OUTEPINT0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT1R {
-    bits: bool,
-}
-impl OUTEPINT1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT2R {
-    bits: bool,
-}
-impl OUTEPINT2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT3R {
-    bits: bool,
-}
-impl OUTEPINT3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT4R {
-    bits: bool,
-}
-impl OUTEPINT4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT5R {
-    bits: bool,
-}
-impl OUTEPINT5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OUTEPINT6R {
-    bits: bool,
-}
-impl OUTEPINT6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register DAINT"]
+pub type R = crate::R<u32, super::DAINT>;
+#[doc = "Reader of field `INEPINT0`"]
+pub type INEPINT0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT1`"]
+pub type INEPINT1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT2`"]
+pub type INEPINT2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT3`"]
+pub type INEPINT3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT4`"]
+pub type INEPINT4_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT5`"]
+pub type INEPINT5_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INEPINT6`"]
+pub type INEPINT6_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT0`"]
+pub type OUTEPINT0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT1`"]
+pub type OUTEPINT1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT2`"]
+pub type OUTEPINT2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT3`"]
+pub type OUTEPINT3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT4`"]
+pub type OUTEPINT4_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT5`"]
+pub type OUTEPINT5_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OUTEPINT6`"]
+pub type OUTEPINT6_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0"]
-    #[inline]
-    pub fn inepint0(&self) -> INEPINT0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT0R { bits }
+    #[inline(always)]
+    pub fn inepint0(&self) -> INEPINT0_R {
+        INEPINT0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1"]
-    #[inline]
-    pub fn inepint1(&self) -> INEPINT1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT1R { bits }
+    #[inline(always)]
+    pub fn inepint1(&self) -> INEPINT1_R {
+        INEPINT1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2"]
-    #[inline]
-    pub fn inepint2(&self) -> INEPINT2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT2R { bits }
+    #[inline(always)]
+    pub fn inepint2(&self) -> INEPINT2_R {
+        INEPINT2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3"]
-    #[inline]
-    pub fn inepint3(&self) -> INEPINT3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT3R { bits }
+    #[inline(always)]
+    pub fn inepint3(&self) -> INEPINT3_R {
+        INEPINT3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4"]
-    #[inline]
-    pub fn inepint4(&self) -> INEPINT4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT4R { bits }
+    #[inline(always)]
+    pub fn inepint4(&self) -> INEPINT4_R {
+        INEPINT4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5"]
-    #[inline]
-    pub fn inepint5(&self) -> INEPINT5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT5R { bits }
+    #[inline(always)]
+    pub fn inepint5(&self) -> INEPINT5_R {
+        INEPINT5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6"]
-    #[inline]
-    pub fn inepint6(&self) -> INEPINT6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INEPINT6R { bits }
+    #[inline(always)]
+    pub fn inepint6(&self) -> INEPINT6_R {
+        INEPINT6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 16"]
-    #[inline]
-    pub fn outepint0(&self) -> OUTEPINT0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT0R { bits }
+    #[inline(always)]
+    pub fn outepint0(&self) -> OUTEPINT0_R {
+        OUTEPINT0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17"]
-    #[inline]
-    pub fn outepint1(&self) -> OUTEPINT1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT1R { bits }
+    #[inline(always)]
+    pub fn outepint1(&self) -> OUTEPINT1_R {
+        OUTEPINT1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18"]
-    #[inline]
-    pub fn outepint2(&self) -> OUTEPINT2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT2R { bits }
+    #[inline(always)]
+    pub fn outepint2(&self) -> OUTEPINT2_R {
+        OUTEPINT2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19"]
-    #[inline]
-    pub fn outepint3(&self) -> OUTEPINT3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT3R { bits }
+    #[inline(always)]
+    pub fn outepint3(&self) -> OUTEPINT3_R {
+        OUTEPINT3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20"]
-    #[inline]
-    pub fn outepint4(&self) -> OUTEPINT4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT4R { bits }
+    #[inline(always)]
+    pub fn outepint4(&self) -> OUTEPINT4_R {
+        OUTEPINT4_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21"]
-    #[inline]
-    pub fn outepint5(&self) -> OUTEPINT5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT5R { bits }
+    #[inline(always)]
+    pub fn outepint5(&self) -> OUTEPINT5_R {
+        OUTEPINT5_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22"]
-    #[inline]
-    pub fn outepint6(&self) -> OUTEPINT6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OUTEPINT6R { bits }
+    #[inline(always)]
+    pub fn outepint6(&self) -> OUTEPINT6_R {
+        OUTEPINT6_R::new(((self.bits >> 22) & 0x01) != 0)
     }
 }

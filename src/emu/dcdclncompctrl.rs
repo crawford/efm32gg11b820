@@ -1,308 +1,160 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DCDCLNCOMPCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DCDCLNCOMPCTRL"]
+pub type R = crate::R<u32, super::DCDCLNCOMPCTRL>;
+#[doc = "Writer for register DCDCLNCOMPCTRL"]
+pub type W = crate::W<u32, super::DCDCLNCOMPCTRL>;
+#[doc = "Register DCDCLNCOMPCTRL `reset()`'s with value 0x5720_4077"]
+impl crate::ResetValue for super::DCDCLNCOMPCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x5720_4077
     }
 }
-#[doc = r" Value of the field"]
-pub struct COMPENR1R {
-    bits: u8,
-}
-impl COMPENR1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPENR2R {
-    bits: u8,
-}
-impl COMPENR2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPENR3R {
-    bits: u8,
-}
-impl COMPENR3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPENC1R {
-    bits: u8,
-}
-impl COMPENC1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPENC2R {
-    bits: u8,
-}
-impl COMPENC2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPENC3R {
-    bits: u8,
-}
-impl COMPENC3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _COMPENR1W<'a> {
+#[doc = "Reader of field `COMPENR1`"]
+pub type COMPENR1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENR1`"]
+pub struct COMPENR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENR1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENR1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPENR2W<'a> {
+#[doc = "Reader of field `COMPENR2`"]
+pub type COMPENR2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENR2`"]
+pub struct COMPENR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENR2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENR2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 4)) | (((value as u32) & 0x1f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPENR3W<'a> {
+#[doc = "Reader of field `COMPENR3`"]
+pub type COMPENR3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENR3`"]
+pub struct COMPENR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENR3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENR3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPENC1W<'a> {
+#[doc = "Reader of field `COMPENC1`"]
+pub type COMPENC1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENC1`"]
+pub struct COMPENC1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENC1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENC1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPENC2W<'a> {
+#[doc = "Reader of field `COMPENC2`"]
+pub type COMPENC2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENC2`"]
+pub struct COMPENC2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENC2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENC2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPENC3W<'a> {
+#[doc = "Reader of field `COMPENC3`"]
+pub type COMPENC3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMPENC3`"]
+pub struct COMPENC3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPENC3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMPENC3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Low Noise Mode Compensator R1 Trim Value"]
-    #[inline]
-    pub fn compenr1(&self) -> COMPENR1R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENR1R { bits }
+    #[inline(always)]
+    pub fn compenr1(&self) -> COMPENR1_R {
+        COMPENR1_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:8 - Low Noise Mode Compensator R2 Trim Value"]
-    #[inline]
-    pub fn compenr2(&self) -> COMPENR2R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENR2R { bits }
+    #[inline(always)]
+    pub fn compenr2(&self) -> COMPENR2_R {
+        COMPENR2_R::new(((self.bits >> 4) & 0x1f) as u8)
     }
     #[doc = "Bits 12:15 - Low Noise Mode Compensator R3 Trim Value"]
-    #[inline]
-    pub fn compenr3(&self) -> COMPENR3R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENR3R { bits }
+    #[inline(always)]
+    pub fn compenr3(&self) -> COMPENR3_R {
+        COMPENR3_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 20:21 - Low Noise Mode Compensator C1 Trim Value"]
-    #[inline]
-    pub fn compenc1(&self) -> COMPENC1R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENC1R { bits }
+    #[inline(always)]
+    pub fn compenc1(&self) -> COMPENC1_R {
+        COMPENC1_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 24:26 - Low Noise Mode Compensator C2 Trim Value"]
-    #[inline]
-    pub fn compenc2(&self) -> COMPENC2R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENC2R { bits }
+    #[inline(always)]
+    pub fn compenc2(&self) -> COMPENC2_R {
+        COMPENC2_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bits 28:31 - Low Noise Mode Compensator C3 Trim Value"]
-    #[inline]
-    pub fn compenc3(&self) -> COMPENC3R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPENC3R { bits }
+    #[inline(always)]
+    pub fn compenc3(&self) -> COMPENC3_R {
+        COMPENC3_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1461731447 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Low Noise Mode Compensator R1 Trim Value"]
-    #[inline]
-    pub fn compenr1(&mut self) -> _COMPENR1W {
-        _COMPENR1W { w: self }
+    #[inline(always)]
+    pub fn compenr1(&mut self) -> COMPENR1_W {
+        COMPENR1_W { w: self }
     }
     #[doc = "Bits 4:8 - Low Noise Mode Compensator R2 Trim Value"]
-    #[inline]
-    pub fn compenr2(&mut self) -> _COMPENR2W {
-        _COMPENR2W { w: self }
+    #[inline(always)]
+    pub fn compenr2(&mut self) -> COMPENR2_W {
+        COMPENR2_W { w: self }
     }
     #[doc = "Bits 12:15 - Low Noise Mode Compensator R3 Trim Value"]
-    #[inline]
-    pub fn compenr3(&mut self) -> _COMPENR3W {
-        _COMPENR3W { w: self }
+    #[inline(always)]
+    pub fn compenr3(&mut self) -> COMPENR3_W {
+        COMPENR3_W { w: self }
     }
     #[doc = "Bits 20:21 - Low Noise Mode Compensator C1 Trim Value"]
-    #[inline]
-    pub fn compenc1(&mut self) -> _COMPENC1W {
-        _COMPENC1W { w: self }
+    #[inline(always)]
+    pub fn compenc1(&mut self) -> COMPENC1_W {
+        COMPENC1_W { w: self }
     }
     #[doc = "Bits 24:26 - Low Noise Mode Compensator C2 Trim Value"]
-    #[inline]
-    pub fn compenc2(&mut self) -> _COMPENC2W {
-        _COMPENC2W { w: self }
+    #[inline(always)]
+    pub fn compenc2(&mut self) -> COMPENC2_W {
+        COMPENC2_W { w: self }
     }
     #[doc = "Bits 28:31 - Low Noise Mode Compensator C3 Trim Value"]
-    #[inline]
-    pub fn compenc3(&mut self) -> _COMPENC3W {
-        _COMPENC3W { w: self }
+    #[inline(always)]
+    pub fn compenc3(&mut self) -> COMPENC3_W {
+        COMPENC3_W { w: self }
     }
 }

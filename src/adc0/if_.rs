@@ -1,452 +1,102 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLER {
-    bits: bool,
-}
-impl SINGLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANR {
-    bits: bool,
-}
-impl SCANR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLEOFR {
-    bits: bool,
-}
-impl SINGLEOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANOFR {
-    bits: bool,
-}
-impl SCANOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLEUFR {
-    bits: bool,
-}
-impl SINGLEUFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANUFR {
-    bits: bool,
-}
-impl SCANUFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SINGLECMPR {
-    bits: bool,
-}
-impl SINGLECMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANCMPR {
-    bits: bool,
-}
-impl SCANCMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VREFOVR {
-    bits: bool,
-}
-impl VREFOVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PROGERRR {
-    bits: bool,
-}
-impl PROGERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANEXTPENDR {
-    bits: bool,
-}
-impl SCANEXTPENDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANPENDR {
-    bits: bool,
-}
-impl SCANPENDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PRSTIMEDERRR {
-    bits: bool,
-}
-impl PRSTIMEDERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM23ERRR {
-    bits: bool,
-}
-impl EM23ERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `SINGLE`"]
+pub type SINGLE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCAN`"]
+pub type SCAN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SINGLEOF`"]
+pub type SINGLEOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANOF`"]
+pub type SCANOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SINGLEUF`"]
+pub type SINGLEUF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANUF`"]
+pub type SCANUF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SINGLECMP`"]
+pub type SINGLECMP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANCMP`"]
+pub type SCANCMP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VREFOV`"]
+pub type VREFOV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PROGERR`"]
+pub type PROGERR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANEXTPEND`"]
+pub type SCANEXTPEND_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANPEND`"]
+pub type SCANPEND_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PRSTIMEDERR`"]
+pub type PRSTIMEDERR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EM23ERR`"]
+pub type EM23ERR_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Single Conversion Complete Interrupt Flag"]
-    #[inline]
-    pub fn single(&self) -> SINGLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLER { bits }
+    #[inline(always)]
+    pub fn single(&self) -> SINGLE_R {
+        SINGLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Scan Conversion Complete Interrupt Flag"]
-    #[inline]
-    pub fn scan(&self) -> SCANR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANR { bits }
+    #[inline(always)]
+    pub fn scan(&self) -> SCAN_R {
+        SCAN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Single FIFO Overflow Interrupt Flag"]
-    #[inline]
-    pub fn singleof(&self) -> SINGLEOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLEOFR { bits }
+    #[inline(always)]
+    pub fn singleof(&self) -> SINGLEOF_R {
+        SINGLEOF_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Scan FIFO Overflow Interrupt Flag"]
-    #[inline]
-    pub fn scanof(&self) -> SCANOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANOFR { bits }
+    #[inline(always)]
+    pub fn scanof(&self) -> SCANOF_R {
+        SCANOF_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Single FIFO Underflow Interrupt Flag"]
-    #[inline]
-    pub fn singleuf(&self) -> SINGLEUFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLEUFR { bits }
+    #[inline(always)]
+    pub fn singleuf(&self) -> SINGLEUF_R {
+        SINGLEUF_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Scan FIFO Underflow Interrupt Flag"]
-    #[inline]
-    pub fn scanuf(&self) -> SCANUFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANUFR { bits }
+    #[inline(always)]
+    pub fn scanuf(&self) -> SCANUF_R {
+        SCANUF_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Single Result Compare Match Interrupt Flag"]
-    #[inline]
-    pub fn singlecmp(&self) -> SINGLECMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SINGLECMPR { bits }
+    #[inline(always)]
+    pub fn singlecmp(&self) -> SINGLECMP_R {
+        SINGLECMP_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Scan Result Compare Match Interrupt Flag"]
-    #[inline]
-    pub fn scancmp(&self) -> SCANCMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANCMPR { bits }
+    #[inline(always)]
+    pub fn scancmp(&self) -> SCANCMP_R {
+        SCANCMP_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 24 - VREF Over Voltage Interrupt Flag"]
-    #[inline]
-    pub fn vrefov(&self) -> VREFOVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VREFOVR { bits }
+    #[inline(always)]
+    pub fn vrefov(&self) -> VREFOV_R {
+        VREFOV_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Programming Error Interrupt Flag"]
-    #[inline]
-    pub fn progerr(&self) -> PROGERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PROGERRR { bits }
+    #[inline(always)]
+    pub fn progerr(&self) -> PROGERR_R {
+        PROGERR_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - External Scan Trigger Pending Flag"]
-    #[inline]
-    pub fn scanextpend(&self) -> SCANEXTPENDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANEXTPENDR { bits }
+    #[inline(always)]
+    pub fn scanextpend(&self) -> SCANEXTPEND_R {
+        SCANEXTPEND_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Scan Trigger Pending Flag"]
-    #[inline]
-    pub fn scanpend(&self) -> SCANPENDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANPENDR { bits }
+    #[inline(always)]
+    pub fn scanpend(&self) -> SCANPEND_R {
+        SCANPEND_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - PRS Timed Mode Error Flag"]
-    #[inline]
-    pub fn prstimederr(&self) -> PRSTIMEDERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PRSTIMEDERRR { bits }
+    #[inline(always)]
+    pub fn prstimederr(&self) -> PRSTIMEDERR_R {
+        PRSTIMEDERR_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - EM23 Entry Error Flag"]
-    #[inline]
-    pub fn em23err(&self) -> EM23ERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM23ERRR { bits }
+    #[inline(always)]
+    pub fn em23err(&self) -> EM23ERR_R {
+        EM23ERR_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }

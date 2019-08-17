@@ -1,162 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DCDCCLIMCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DCDCCLIMCTRL"]
+pub type R = crate::R<u32, super::DCDCCLIMCTRL>;
+#[doc = "Writer for register DCDCCLIMCTRL"]
+pub type W = crate::W<u32, super::DCDCCLIMCTRL>;
+#[doc = "Register DCDCCLIMCTRL `reset()`'s with value 0x0100"]
+impl crate::ResetValue for super::DCDCCLIMCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0100
     }
 }
-#[doc = r" Value of the field"]
-pub struct CLIMBLANKDLYR {
-    bits: u8,
-}
-impl CLIMBLANKDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BYPLIMENR {
-    bits: bool,
-}
-impl BYPLIMENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLIMBLANKDLYW<'a> {
+#[doc = "Reader of field `CLIMBLANKDLY`"]
+pub type CLIMBLANKDLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CLIMBLANKDLY`"]
+pub struct CLIMBLANKDLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLIMBLANKDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLIMBLANKDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _BYPLIMENW<'a> {
+#[doc = "Reader of field `BYPLIMEN`"]
+pub type BYPLIMEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BYPLIMEN`"]
+pub struct BYPLIMEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYPLIMENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> BYPLIMEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
-    #[inline]
-    pub fn climblankdly(&self) -> CLIMBLANKDLYR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLIMBLANKDLYR { bits }
+    #[inline(always)]
+    pub fn climblankdly(&self) -> CLIMBLANKDLY_R {
+        CLIMBLANKDLY_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bit 13 - Bypass Current Limit Enable"]
-    #[inline]
-    pub fn byplimen(&self) -> BYPLIMENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BYPLIMENR { bits }
+    #[inline(always)]
+    pub fn byplimen(&self) -> BYPLIMEN_R {
+        BYPLIMEN_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 256 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
-    #[inline]
-    pub fn climblankdly(&mut self) -> _CLIMBLANKDLYW {
-        _CLIMBLANKDLYW { w: self }
+    #[inline(always)]
+    pub fn climblankdly(&mut self) -> CLIMBLANKDLY_W {
+        CLIMBLANKDLY_W { w: self }
     }
     #[doc = "Bit 13 - Bypass Current Limit Enable"]
-    #[inline]
-    pub fn byplimen(&mut self) -> _BYPLIMENW {
-        _BYPLIMENW { w: self }
+    #[inline(always)]
+    pub fn byplimen(&mut self) -> BYPLIMEN_W {
+        BYPLIMEN_W { w: self }
     }
 }

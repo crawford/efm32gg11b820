@@ -1,247 +1,67 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMIDR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IMPVERR {
-    bits: u8,
-}
-impl IMPVERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ETMMINVERR {
-    bits: u8,
-}
-impl ETMMINVERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ETMMAJVERR {
-    bits: u8,
-}
-impl ETMMAJVERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PROCFAMR {
-    bits: u8,
-}
-impl PROCFAMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LPCFR {
-    bits: bool,
-}
-impl LPCFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct THUMBTR {
-    bits: bool,
-}
-impl THUMBTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SECEXTR {
-    bits: bool,
-}
-impl SECEXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BPER {
-    bits: bool,
-}
-impl BPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IMPCODER {
-    bits: u8,
-}
-impl IMPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ETMIDR"]
+pub type R = crate::R<u32, super::ETMIDR>;
+#[doc = "Reader of field `IMPVER`"]
+pub type IMPVER_R = crate::R<u8, u8>;
+#[doc = "Reader of field `ETMMINVER`"]
+pub type ETMMINVER_R = crate::R<u8, u8>;
+#[doc = "Reader of field `ETMMAJVER`"]
+pub type ETMMAJVER_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PROCFAM`"]
+pub type PROCFAM_R = crate::R<u8, u8>;
+#[doc = "Reader of field `LPCF`"]
+pub type LPCF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `THUMBT`"]
+pub type THUMBT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SECEXT`"]
+pub type SECEXT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BPE`"]
+pub type BPE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `IMPCODE`"]
+pub type IMPCODE_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Implementation Revision"]
-    #[inline]
-    pub fn impver(&self) -> IMPVERR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IMPVERR { bits }
+    #[inline(always)]
+    pub fn impver(&self) -> IMPVER_R {
+        IMPVER_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Minor ETM Architecture Version"]
-    #[inline]
-    pub fn etmminver(&self) -> ETMMINVERR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ETMMINVERR { bits }
+    #[inline(always)]
+    pub fn etmminver(&self) -> ETMMINVER_R {
+        ETMMINVER_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Major ETM Architecture Version"]
-    #[inline]
-    pub fn etmmajver(&self) -> ETMMAJVERR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ETMMAJVERR { bits }
+    #[inline(always)]
+    pub fn etmmajver(&self) -> ETMMAJVER_R {
+        ETMMAJVER_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Implementer Code"]
-    #[inline]
-    pub fn procfam(&self) -> PROCFAMR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PROCFAMR { bits }
+    #[inline(always)]
+    pub fn procfam(&self) -> PROCFAM_R {
+        PROCFAM_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bit 16 - Load PC First"]
-    #[inline]
-    pub fn lpcf(&self) -> LPCFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LPCFR { bits }
+    #[inline(always)]
+    pub fn lpcf(&self) -> LPCF_R {
+        LPCF_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 18 - 32-bit Thumb Instruction Tracing"]
-    #[inline]
-    pub fn thumbt(&self) -> THUMBTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        THUMBTR { bits }
+    #[inline(always)]
+    pub fn thumbt(&self) -> THUMBT_R {
+        THUMBT_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Security Extension Support"]
-    #[inline]
-    pub fn secext(&self) -> SECEXTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SECEXTR { bits }
+    #[inline(always)]
+    pub fn secext(&self) -> SECEXT_R {
+        SECEXT_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Branch Packet Encoding"]
-    #[inline]
-    pub fn bpe(&self) -> BPER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BPER { bits }
+    #[inline(always)]
+    pub fn bpe(&self) -> BPE_R {
+        BPE_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bits 24:31 - Implementer Code"]
-    #[inline]
-    pub fn impcode(&self) -> IMPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IMPCODER { bits }
+    #[inline(always)]
+    pub fn impcode(&self) -> IMPCODE_R {
+        IMPCODE_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

@@ -1,165 +1,95 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ROUTELOC1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ROUTELOC1"]
+pub type R = crate::R<u32, super::ROUTELOC1>;
+#[doc = "Writer for register ROUTELOC1"]
+pub type W = crate::W<u32, super::ROUTELOC1>;
+#[doc = "Register ROUTELOC1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::ROUTELOC1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `CMDLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMDLOCR {
+pub enum CMDLOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CMDLOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CMDLOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CMDLOCR::LOC0 => 0,
-            CMDLOCR::LOC1 => 1,
-            CMDLOCR::_Reserved(bits) => bits,
+            CMDLOC_A::LOC0 => 0,
+            CMDLOC_A::LOC1 => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CMDLOCR {
-        match value {
-            0 => CMDLOCR::LOC0,
-            1 => CMDLOCR::LOC1,
-            i => CMDLOCR::_Reserved(i),
+}
+#[doc = "Reader of field `CMDLOC`"]
+pub type CMDLOC_R = crate::R<u8, CMDLOC_A>;
+impl CMDLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CMDLOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CMDLOC_A::LOC0),
+            1 => Val(CMDLOC_A::LOC1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CMDLOCR::LOC0
+        *self == CMDLOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CMDLOCR::LOC1
+        *self == CMDLOC_A::LOC1
     }
 }
-#[doc = "Values that can be written to the field `CMDLOC`"]
-pub enum CMDLOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-}
-impl CMDLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CMDLOCW::LOC0 => 0,
-            CMDLOCW::LOC1 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CMDLOCW<'a> {
+#[doc = "Write proxy for field `CMDLOC`"]
+pub struct CMDLOC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CMDLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMDLOCW) -> &'a mut W {
+impl<'a> CMDLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMDLOC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Location 0"]
-    #[inline]
+    #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
-        self.variant(CMDLOCW::LOC0)
+        self.variant(CMDLOC_A::LOC0)
     }
     #[doc = "Location 1"]
-    #[inline]
+    #[inline(always)]
     pub fn loc1(self) -> &'a mut W {
-        self.variant(CMDLOCW::LOC1)
+        self.variant(CMDLOC_A::LOC1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - I/O Location for CMD Pin"]
-    #[inline]
-    pub fn cmdloc(&self) -> CMDLOCR {
-        CMDLOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cmdloc(&self) -> CMDLOC_R {
+        CMDLOC_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - I/O Location for CMD Pin"]
-    #[inline]
-    pub fn cmdloc(&mut self) -> _CMDLOCW {
-        _CMDLOCW { w: self }
+    #[inline(always)]
+    pub fn cmdloc(&mut self) -> CMDLOC_W {
+        CMDLOC_W { w: self }
     }
 }

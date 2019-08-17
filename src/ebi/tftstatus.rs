@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TFTSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HCNTR {
-    bits: u16,
-}
-impl HCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VCNTR {
-    bits: u16,
-}
-impl VCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TFTSTATUS"]
+pub type R = crate::R<u32, super::TFTSTATUS>;
+#[doc = "Reader of field `HCNT`"]
+pub type HCNT_R = crate::R<u16, u16>;
+#[doc = "Reader of field `VCNT`"]
+pub type VCNT_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:10 - Horizontal Count"]
-    #[inline]
-    pub fn hcnt(&self) -> HCNTR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        HCNTR { bits }
+    #[inline(always)]
+    pub fn hcnt(&self) -> HCNT_R {
+        HCNT_R::new((self.bits & 0x07ff) as u16)
     }
     #[doc = "Bits 16:30 - Vertical Count"]
-    #[inline]
-    pub fn vcnt(&self) -> VCNTR {
-        let bits = {
-            const MASK: u16 = 32767;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        VCNTR { bits }
+    #[inline(always)]
+    pub fn vcnt(&self) -> VCNT_R {
+        VCNT_R::new(((self.bits >> 16) & 0x7fff) as u16)
     }
 }

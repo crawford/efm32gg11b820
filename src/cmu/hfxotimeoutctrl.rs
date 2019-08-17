@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HFXOTIMEOUTCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HFXOTIMEOUTCTRL"]
+pub type R = crate::R<u32, super::HFXOTIMEOUTCTRL>;
+#[doc = "Writer for register HFXOTIMEOUTCTRL"]
+pub type W = crate::W<u32, super::HFXOTIMEOUTCTRL>;
+#[doc = "Register HFXOTIMEOUTCTRL `reset()`'s with value 0xd08e"]
+impl crate::ResetValue for super::HFXOTIMEOUTCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xd08e
     }
 }
 #[doc = "Possible values of the field `STARTUPTIMEOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STARTUPTIMEOUTR {
+pub enum STARTUPTIMEOUT_A {
     #[doc = "Timeout period of 2 cycles"]
     _2CYCLES,
     #[doc = "Timeout period of 4 cycles"]
@@ -73,134 +43,227 @@ pub enum STARTUPTIMEOUTR {
     _64KCYCLES,
     #[doc = "Timeout period of 131072 cycles"]
     _128KCYCLES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STARTUPTIMEOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for STARTUPTIMEOUT_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            STARTUPTIMEOUTR::_2CYCLES => 0,
-            STARTUPTIMEOUTR::_4CYCLES => 1,
-            STARTUPTIMEOUTR::_16CYCLES => 2,
-            STARTUPTIMEOUTR::_32CYCLES => 3,
-            STARTUPTIMEOUTR::_64CYCLES => 4,
-            STARTUPTIMEOUTR::_128CYCLES => 5,
-            STARTUPTIMEOUTR::_256CYCLES => 6,
-            STARTUPTIMEOUTR::_1KCYCLES => 7,
-            STARTUPTIMEOUTR::_2KCYCLES => 8,
-            STARTUPTIMEOUTR::_4KCYCLES => 9,
-            STARTUPTIMEOUTR::_8KCYCLES => 10,
-            STARTUPTIMEOUTR::_16KCYCLES => 11,
-            STARTUPTIMEOUTR::_32KCYCLES => 12,
-            STARTUPTIMEOUTR::_64KCYCLES => 13,
-            STARTUPTIMEOUTR::_128KCYCLES => 14,
-            STARTUPTIMEOUTR::_Reserved(bits) => bits,
+            STARTUPTIMEOUT_A::_2CYCLES => 0,
+            STARTUPTIMEOUT_A::_4CYCLES => 1,
+            STARTUPTIMEOUT_A::_16CYCLES => 2,
+            STARTUPTIMEOUT_A::_32CYCLES => 3,
+            STARTUPTIMEOUT_A::_64CYCLES => 4,
+            STARTUPTIMEOUT_A::_128CYCLES => 5,
+            STARTUPTIMEOUT_A::_256CYCLES => 6,
+            STARTUPTIMEOUT_A::_1KCYCLES => 7,
+            STARTUPTIMEOUT_A::_2KCYCLES => 8,
+            STARTUPTIMEOUT_A::_4KCYCLES => 9,
+            STARTUPTIMEOUT_A::_8KCYCLES => 10,
+            STARTUPTIMEOUT_A::_16KCYCLES => 11,
+            STARTUPTIMEOUT_A::_32KCYCLES => 12,
+            STARTUPTIMEOUT_A::_64KCYCLES => 13,
+            STARTUPTIMEOUT_A::_128KCYCLES => 14,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STARTUPTIMEOUTR {
-        match value {
-            0 => STARTUPTIMEOUTR::_2CYCLES,
-            1 => STARTUPTIMEOUTR::_4CYCLES,
-            2 => STARTUPTIMEOUTR::_16CYCLES,
-            3 => STARTUPTIMEOUTR::_32CYCLES,
-            4 => STARTUPTIMEOUTR::_64CYCLES,
-            5 => STARTUPTIMEOUTR::_128CYCLES,
-            6 => STARTUPTIMEOUTR::_256CYCLES,
-            7 => STARTUPTIMEOUTR::_1KCYCLES,
-            8 => STARTUPTIMEOUTR::_2KCYCLES,
-            9 => STARTUPTIMEOUTR::_4KCYCLES,
-            10 => STARTUPTIMEOUTR::_8KCYCLES,
-            11 => STARTUPTIMEOUTR::_16KCYCLES,
-            12 => STARTUPTIMEOUTR::_32KCYCLES,
-            13 => STARTUPTIMEOUTR::_64KCYCLES,
-            14 => STARTUPTIMEOUTR::_128KCYCLES,
-            i => STARTUPTIMEOUTR::_Reserved(i),
+}
+#[doc = "Reader of field `STARTUPTIMEOUT`"]
+pub type STARTUPTIMEOUT_R = crate::R<u8, STARTUPTIMEOUT_A>;
+impl STARTUPTIMEOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STARTUPTIMEOUT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STARTUPTIMEOUT_A::_2CYCLES),
+            1 => Val(STARTUPTIMEOUT_A::_4CYCLES),
+            2 => Val(STARTUPTIMEOUT_A::_16CYCLES),
+            3 => Val(STARTUPTIMEOUT_A::_32CYCLES),
+            4 => Val(STARTUPTIMEOUT_A::_64CYCLES),
+            5 => Val(STARTUPTIMEOUT_A::_128CYCLES),
+            6 => Val(STARTUPTIMEOUT_A::_256CYCLES),
+            7 => Val(STARTUPTIMEOUT_A::_1KCYCLES),
+            8 => Val(STARTUPTIMEOUT_A::_2KCYCLES),
+            9 => Val(STARTUPTIMEOUT_A::_4KCYCLES),
+            10 => Val(STARTUPTIMEOUT_A::_8KCYCLES),
+            11 => Val(STARTUPTIMEOUT_A::_16KCYCLES),
+            12 => Val(STARTUPTIMEOUT_A::_32KCYCLES),
+            13 => Val(STARTUPTIMEOUT_A::_64KCYCLES),
+            14 => Val(STARTUPTIMEOUT_A::_128KCYCLES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_2CYCLES
+        *self == STARTUPTIMEOUT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_4CYCLES
+        *self == STARTUPTIMEOUT_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_16CYCLES
+        *self == STARTUPTIMEOUT_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_32CYCLES
+        *self == STARTUPTIMEOUT_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_64CYCLES
+        *self == STARTUPTIMEOUT_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_128CYCLES
+        *self == STARTUPTIMEOUT_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_256CYCLES
+        *self == STARTUPTIMEOUT_A::_256CYCLES
     }
     #[doc = "Checks if the value of the field is `_1KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_1KCYCLES
+        *self == STARTUPTIMEOUT_A::_1KCYCLES
     }
     #[doc = "Checks if the value of the field is `_2KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_2KCYCLES
+        *self == STARTUPTIMEOUT_A::_2KCYCLES
     }
     #[doc = "Checks if the value of the field is `_4KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_4KCYCLES
+        *self == STARTUPTIMEOUT_A::_4KCYCLES
     }
     #[doc = "Checks if the value of the field is `_8KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_8KCYCLES
+        *self == STARTUPTIMEOUT_A::_8KCYCLES
     }
     #[doc = "Checks if the value of the field is `_16KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_16KCYCLES
+        *self == STARTUPTIMEOUT_A::_16KCYCLES
     }
     #[doc = "Checks if the value of the field is `_32KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_32KCYCLES
+        *self == STARTUPTIMEOUT_A::_32KCYCLES
     }
     #[doc = "Checks if the value of the field is `_64KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_64KCYCLES
+        *self == STARTUPTIMEOUT_A::_64KCYCLES
     }
     #[doc = "Checks if the value of the field is `_128KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128kcycles(&self) -> bool {
-        *self == STARTUPTIMEOUTR::_128KCYCLES
+        *self == STARTUPTIMEOUT_A::_128KCYCLES
+    }
+}
+#[doc = "Write proxy for field `STARTUPTIMEOUT`"]
+pub struct STARTUPTIMEOUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STARTUPTIMEOUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STARTUPTIMEOUT_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Timeout period of 2 cycles"]
+    #[inline(always)]
+    pub fn _2cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_2CYCLES)
+    }
+    #[doc = "Timeout period of 4 cycles"]
+    #[inline(always)]
+    pub fn _4cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_4CYCLES)
+    }
+    #[doc = "Timeout period of 16 cycles"]
+    #[inline(always)]
+    pub fn _16cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_16CYCLES)
+    }
+    #[doc = "Timeout period of 32 cycles"]
+    #[inline(always)]
+    pub fn _32cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_32CYCLES)
+    }
+    #[doc = "Timeout period of 64 cycles"]
+    #[inline(always)]
+    pub fn _64cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_64CYCLES)
+    }
+    #[doc = "Timeout period of 128 cycles"]
+    #[inline(always)]
+    pub fn _128cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_128CYCLES)
+    }
+    #[doc = "Timeout period of 256 cycles"]
+    #[inline(always)]
+    pub fn _256cycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_256CYCLES)
+    }
+    #[doc = "Timeout period of 1024 cycles"]
+    #[inline(always)]
+    pub fn _1kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_1KCYCLES)
+    }
+    #[doc = "Timeout period of 2048 cycles"]
+    #[inline(always)]
+    pub fn _2kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_2KCYCLES)
+    }
+    #[doc = "Timeout period of 4096 cycles"]
+    #[inline(always)]
+    pub fn _4kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_4KCYCLES)
+    }
+    #[doc = "Timeout period of 8192 cycles"]
+    #[inline(always)]
+    pub fn _8kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_8KCYCLES)
+    }
+    #[doc = "Timeout period of 16384 cycles"]
+    #[inline(always)]
+    pub fn _16kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_16KCYCLES)
+    }
+    #[doc = "Timeout period of 32768 cycles"]
+    #[inline(always)]
+    pub fn _32kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_32KCYCLES)
+    }
+    #[doc = "Timeout period of 65536 cycles"]
+    #[inline(always)]
+    pub fn _64kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_64KCYCLES)
+    }
+    #[doc = "Timeout period of 131072 cycles"]
+    #[inline(always)]
+    pub fn _128kcycles(self) -> &'a mut W {
+        self.variant(STARTUPTIMEOUT_A::_128KCYCLES)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `STEADYTIMEOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STEADYTIMEOUTR {
+pub enum STEADYTIMEOUT_A {
     #[doc = "Timeout period of 2 cycles"]
     _2CYCLES,
     #[doc = "Timeout period of 4 cycles"]
@@ -231,134 +294,227 @@ pub enum STEADYTIMEOUTR {
     _64KCYCLES,
     #[doc = "Timeout period of 131072 cycles"]
     _128KCYCLES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STEADYTIMEOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for STEADYTIMEOUT_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            STEADYTIMEOUTR::_2CYCLES => 0,
-            STEADYTIMEOUTR::_4CYCLES => 1,
-            STEADYTIMEOUTR::_16CYCLES => 2,
-            STEADYTIMEOUTR::_32CYCLES => 3,
-            STEADYTIMEOUTR::_64CYCLES => 4,
-            STEADYTIMEOUTR::_128CYCLES => 5,
-            STEADYTIMEOUTR::_256CYCLES => 6,
-            STEADYTIMEOUTR::_1KCYCLES => 7,
-            STEADYTIMEOUTR::_2KCYCLES => 8,
-            STEADYTIMEOUTR::_4KCYCLES => 9,
-            STEADYTIMEOUTR::_8KCYCLES => 10,
-            STEADYTIMEOUTR::_16KCYCLES => 11,
-            STEADYTIMEOUTR::_32KCYCLES => 12,
-            STEADYTIMEOUTR::_64KCYCLES => 13,
-            STEADYTIMEOUTR::_128KCYCLES => 14,
-            STEADYTIMEOUTR::_Reserved(bits) => bits,
+            STEADYTIMEOUT_A::_2CYCLES => 0,
+            STEADYTIMEOUT_A::_4CYCLES => 1,
+            STEADYTIMEOUT_A::_16CYCLES => 2,
+            STEADYTIMEOUT_A::_32CYCLES => 3,
+            STEADYTIMEOUT_A::_64CYCLES => 4,
+            STEADYTIMEOUT_A::_128CYCLES => 5,
+            STEADYTIMEOUT_A::_256CYCLES => 6,
+            STEADYTIMEOUT_A::_1KCYCLES => 7,
+            STEADYTIMEOUT_A::_2KCYCLES => 8,
+            STEADYTIMEOUT_A::_4KCYCLES => 9,
+            STEADYTIMEOUT_A::_8KCYCLES => 10,
+            STEADYTIMEOUT_A::_16KCYCLES => 11,
+            STEADYTIMEOUT_A::_32KCYCLES => 12,
+            STEADYTIMEOUT_A::_64KCYCLES => 13,
+            STEADYTIMEOUT_A::_128KCYCLES => 14,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STEADYTIMEOUTR {
-        match value {
-            0 => STEADYTIMEOUTR::_2CYCLES,
-            1 => STEADYTIMEOUTR::_4CYCLES,
-            2 => STEADYTIMEOUTR::_16CYCLES,
-            3 => STEADYTIMEOUTR::_32CYCLES,
-            4 => STEADYTIMEOUTR::_64CYCLES,
-            5 => STEADYTIMEOUTR::_128CYCLES,
-            6 => STEADYTIMEOUTR::_256CYCLES,
-            7 => STEADYTIMEOUTR::_1KCYCLES,
-            8 => STEADYTIMEOUTR::_2KCYCLES,
-            9 => STEADYTIMEOUTR::_4KCYCLES,
-            10 => STEADYTIMEOUTR::_8KCYCLES,
-            11 => STEADYTIMEOUTR::_16KCYCLES,
-            12 => STEADYTIMEOUTR::_32KCYCLES,
-            13 => STEADYTIMEOUTR::_64KCYCLES,
-            14 => STEADYTIMEOUTR::_128KCYCLES,
-            i => STEADYTIMEOUTR::_Reserved(i),
+}
+#[doc = "Reader of field `STEADYTIMEOUT`"]
+pub type STEADYTIMEOUT_R = crate::R<u8, STEADYTIMEOUT_A>;
+impl STEADYTIMEOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STEADYTIMEOUT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STEADYTIMEOUT_A::_2CYCLES),
+            1 => Val(STEADYTIMEOUT_A::_4CYCLES),
+            2 => Val(STEADYTIMEOUT_A::_16CYCLES),
+            3 => Val(STEADYTIMEOUT_A::_32CYCLES),
+            4 => Val(STEADYTIMEOUT_A::_64CYCLES),
+            5 => Val(STEADYTIMEOUT_A::_128CYCLES),
+            6 => Val(STEADYTIMEOUT_A::_256CYCLES),
+            7 => Val(STEADYTIMEOUT_A::_1KCYCLES),
+            8 => Val(STEADYTIMEOUT_A::_2KCYCLES),
+            9 => Val(STEADYTIMEOUT_A::_4KCYCLES),
+            10 => Val(STEADYTIMEOUT_A::_8KCYCLES),
+            11 => Val(STEADYTIMEOUT_A::_16KCYCLES),
+            12 => Val(STEADYTIMEOUT_A::_32KCYCLES),
+            13 => Val(STEADYTIMEOUT_A::_64KCYCLES),
+            14 => Val(STEADYTIMEOUT_A::_128KCYCLES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_2CYCLES
+        *self == STEADYTIMEOUT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_4CYCLES
+        *self == STEADYTIMEOUT_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_16CYCLES
+        *self == STEADYTIMEOUT_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_32CYCLES
+        *self == STEADYTIMEOUT_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_64CYCLES
+        *self == STEADYTIMEOUT_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_128CYCLES
+        *self == STEADYTIMEOUT_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_256CYCLES
+        *self == STEADYTIMEOUT_A::_256CYCLES
     }
     #[doc = "Checks if the value of the field is `_1KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_1KCYCLES
+        *self == STEADYTIMEOUT_A::_1KCYCLES
     }
     #[doc = "Checks if the value of the field is `_2KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_2KCYCLES
+        *self == STEADYTIMEOUT_A::_2KCYCLES
     }
     #[doc = "Checks if the value of the field is `_4KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_4KCYCLES
+        *self == STEADYTIMEOUT_A::_4KCYCLES
     }
     #[doc = "Checks if the value of the field is `_8KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_8KCYCLES
+        *self == STEADYTIMEOUT_A::_8KCYCLES
     }
     #[doc = "Checks if the value of the field is `_16KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_16KCYCLES
+        *self == STEADYTIMEOUT_A::_16KCYCLES
     }
     #[doc = "Checks if the value of the field is `_32KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_32KCYCLES
+        *self == STEADYTIMEOUT_A::_32KCYCLES
     }
     #[doc = "Checks if the value of the field is `_64KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_64KCYCLES
+        *self == STEADYTIMEOUT_A::_64KCYCLES
     }
     #[doc = "Checks if the value of the field is `_128KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128kcycles(&self) -> bool {
-        *self == STEADYTIMEOUTR::_128KCYCLES
+        *self == STEADYTIMEOUT_A::_128KCYCLES
+    }
+}
+#[doc = "Write proxy for field `STEADYTIMEOUT`"]
+pub struct STEADYTIMEOUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STEADYTIMEOUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STEADYTIMEOUT_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Timeout period of 2 cycles"]
+    #[inline(always)]
+    pub fn _2cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_2CYCLES)
+    }
+    #[doc = "Timeout period of 4 cycles"]
+    #[inline(always)]
+    pub fn _4cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_4CYCLES)
+    }
+    #[doc = "Timeout period of 16 cycles"]
+    #[inline(always)]
+    pub fn _16cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_16CYCLES)
+    }
+    #[doc = "Timeout period of 32 cycles"]
+    #[inline(always)]
+    pub fn _32cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_32CYCLES)
+    }
+    #[doc = "Timeout period of 64 cycles"]
+    #[inline(always)]
+    pub fn _64cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_64CYCLES)
+    }
+    #[doc = "Timeout period of 128 cycles"]
+    #[inline(always)]
+    pub fn _128cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_128CYCLES)
+    }
+    #[doc = "Timeout period of 256 cycles"]
+    #[inline(always)]
+    pub fn _256cycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_256CYCLES)
+    }
+    #[doc = "Timeout period of 1024 cycles"]
+    #[inline(always)]
+    pub fn _1kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_1KCYCLES)
+    }
+    #[doc = "Timeout period of 2048 cycles"]
+    #[inline(always)]
+    pub fn _2kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_2KCYCLES)
+    }
+    #[doc = "Timeout period of 4096 cycles"]
+    #[inline(always)]
+    pub fn _4kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_4KCYCLES)
+    }
+    #[doc = "Timeout period of 8192 cycles"]
+    #[inline(always)]
+    pub fn _8kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_8KCYCLES)
+    }
+    #[doc = "Timeout period of 16384 cycles"]
+    #[inline(always)]
+    pub fn _16kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_16KCYCLES)
+    }
+    #[doc = "Timeout period of 32768 cycles"]
+    #[inline(always)]
+    pub fn _32kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_32KCYCLES)
+    }
+    #[doc = "Timeout period of 65536 cycles"]
+    #[inline(always)]
+    pub fn _64kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_64KCYCLES)
+    }
+    #[doc = "Timeout period of 131072 cycles"]
+    #[inline(always)]
+    pub fn _128kcycles(self) -> &'a mut W {
+        self.variant(STEADYTIMEOUT_A::_128KCYCLES)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PEAKDETTIMEOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PEAKDETTIMEOUTR {
+pub enum PEAKDETTIMEOUT_A {
     #[doc = "Timeout period of 2 cycles"]
     _2CYCLES,
     #[doc = "Timeout period of 4 cycles"]
@@ -389,646 +545,255 @@ pub enum PEAKDETTIMEOUTR {
     _64KCYCLES,
     #[doc = "Timeout period of 131072 cycles"]
     _128KCYCLES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PEAKDETTIMEOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PEAKDETTIMEOUT_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PEAKDETTIMEOUTR::_2CYCLES => 0,
-            PEAKDETTIMEOUTR::_4CYCLES => 1,
-            PEAKDETTIMEOUTR::_16CYCLES => 2,
-            PEAKDETTIMEOUTR::_32CYCLES => 3,
-            PEAKDETTIMEOUTR::_64CYCLES => 4,
-            PEAKDETTIMEOUTR::_128CYCLES => 5,
-            PEAKDETTIMEOUTR::_256CYCLES => 6,
-            PEAKDETTIMEOUTR::_1KCYCLES => 7,
-            PEAKDETTIMEOUTR::_2KCYCLES => 8,
-            PEAKDETTIMEOUTR::_4KCYCLES => 9,
-            PEAKDETTIMEOUTR::_8KCYCLES => 10,
-            PEAKDETTIMEOUTR::_16KCYCLES => 11,
-            PEAKDETTIMEOUTR::_32KCYCLES => 12,
-            PEAKDETTIMEOUTR::_64KCYCLES => 13,
-            PEAKDETTIMEOUTR::_128KCYCLES => 14,
-            PEAKDETTIMEOUTR::_Reserved(bits) => bits,
+            PEAKDETTIMEOUT_A::_2CYCLES => 0,
+            PEAKDETTIMEOUT_A::_4CYCLES => 1,
+            PEAKDETTIMEOUT_A::_16CYCLES => 2,
+            PEAKDETTIMEOUT_A::_32CYCLES => 3,
+            PEAKDETTIMEOUT_A::_64CYCLES => 4,
+            PEAKDETTIMEOUT_A::_128CYCLES => 5,
+            PEAKDETTIMEOUT_A::_256CYCLES => 6,
+            PEAKDETTIMEOUT_A::_1KCYCLES => 7,
+            PEAKDETTIMEOUT_A::_2KCYCLES => 8,
+            PEAKDETTIMEOUT_A::_4KCYCLES => 9,
+            PEAKDETTIMEOUT_A::_8KCYCLES => 10,
+            PEAKDETTIMEOUT_A::_16KCYCLES => 11,
+            PEAKDETTIMEOUT_A::_32KCYCLES => 12,
+            PEAKDETTIMEOUT_A::_64KCYCLES => 13,
+            PEAKDETTIMEOUT_A::_128KCYCLES => 14,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PEAKDETTIMEOUTR {
-        match value {
-            0 => PEAKDETTIMEOUTR::_2CYCLES,
-            1 => PEAKDETTIMEOUTR::_4CYCLES,
-            2 => PEAKDETTIMEOUTR::_16CYCLES,
-            3 => PEAKDETTIMEOUTR::_32CYCLES,
-            4 => PEAKDETTIMEOUTR::_64CYCLES,
-            5 => PEAKDETTIMEOUTR::_128CYCLES,
-            6 => PEAKDETTIMEOUTR::_256CYCLES,
-            7 => PEAKDETTIMEOUTR::_1KCYCLES,
-            8 => PEAKDETTIMEOUTR::_2KCYCLES,
-            9 => PEAKDETTIMEOUTR::_4KCYCLES,
-            10 => PEAKDETTIMEOUTR::_8KCYCLES,
-            11 => PEAKDETTIMEOUTR::_16KCYCLES,
-            12 => PEAKDETTIMEOUTR::_32KCYCLES,
-            13 => PEAKDETTIMEOUTR::_64KCYCLES,
-            14 => PEAKDETTIMEOUTR::_128KCYCLES,
-            i => PEAKDETTIMEOUTR::_Reserved(i),
+}
+#[doc = "Reader of field `PEAKDETTIMEOUT`"]
+pub type PEAKDETTIMEOUT_R = crate::R<u8, PEAKDETTIMEOUT_A>;
+impl PEAKDETTIMEOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PEAKDETTIMEOUT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PEAKDETTIMEOUT_A::_2CYCLES),
+            1 => Val(PEAKDETTIMEOUT_A::_4CYCLES),
+            2 => Val(PEAKDETTIMEOUT_A::_16CYCLES),
+            3 => Val(PEAKDETTIMEOUT_A::_32CYCLES),
+            4 => Val(PEAKDETTIMEOUT_A::_64CYCLES),
+            5 => Val(PEAKDETTIMEOUT_A::_128CYCLES),
+            6 => Val(PEAKDETTIMEOUT_A::_256CYCLES),
+            7 => Val(PEAKDETTIMEOUT_A::_1KCYCLES),
+            8 => Val(PEAKDETTIMEOUT_A::_2KCYCLES),
+            9 => Val(PEAKDETTIMEOUT_A::_4KCYCLES),
+            10 => Val(PEAKDETTIMEOUT_A::_8KCYCLES),
+            11 => Val(PEAKDETTIMEOUT_A::_16KCYCLES),
+            12 => Val(PEAKDETTIMEOUT_A::_32KCYCLES),
+            13 => Val(PEAKDETTIMEOUT_A::_64KCYCLES),
+            14 => Val(PEAKDETTIMEOUT_A::_128KCYCLES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_2CYCLES
+        *self == PEAKDETTIMEOUT_A::_2CYCLES
     }
     #[doc = "Checks if the value of the field is `_4CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_4CYCLES
+        *self == PEAKDETTIMEOUT_A::_4CYCLES
     }
     #[doc = "Checks if the value of the field is `_16CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_16CYCLES
+        *self == PEAKDETTIMEOUT_A::_16CYCLES
     }
     #[doc = "Checks if the value of the field is `_32CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_32CYCLES
+        *self == PEAKDETTIMEOUT_A::_32CYCLES
     }
     #[doc = "Checks if the value of the field is `_64CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_64CYCLES
+        *self == PEAKDETTIMEOUT_A::_64CYCLES
     }
     #[doc = "Checks if the value of the field is `_128CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_128CYCLES
+        *self == PEAKDETTIMEOUT_A::_128CYCLES
     }
     #[doc = "Checks if the value of the field is `_256CYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_256CYCLES
+        *self == PEAKDETTIMEOUT_A::_256CYCLES
     }
     #[doc = "Checks if the value of the field is `_1KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_1KCYCLES
+        *self == PEAKDETTIMEOUT_A::_1KCYCLES
     }
     #[doc = "Checks if the value of the field is `_2KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_2KCYCLES
+        *self == PEAKDETTIMEOUT_A::_2KCYCLES
     }
     #[doc = "Checks if the value of the field is `_4KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_4kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_4KCYCLES
+        *self == PEAKDETTIMEOUT_A::_4KCYCLES
     }
     #[doc = "Checks if the value of the field is `_8KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_8KCYCLES
+        *self == PEAKDETTIMEOUT_A::_8KCYCLES
     }
     #[doc = "Checks if the value of the field is `_16KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_16KCYCLES
+        *self == PEAKDETTIMEOUT_A::_16KCYCLES
     }
     #[doc = "Checks if the value of the field is `_32KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_32KCYCLES
+        *self == PEAKDETTIMEOUT_A::_32KCYCLES
     }
     #[doc = "Checks if the value of the field is `_64KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_64KCYCLES
+        *self == PEAKDETTIMEOUT_A::_64KCYCLES
     }
     #[doc = "Checks if the value of the field is `_128KCYCLES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128kcycles(&self) -> bool {
-        *self == PEAKDETTIMEOUTR::_128KCYCLES
+        *self == PEAKDETTIMEOUT_A::_128KCYCLES
     }
 }
-#[doc = "Values that can be written to the field `STARTUPTIMEOUT`"]
-pub enum STARTUPTIMEOUTW {
-    #[doc = "Timeout period of 2 cycles"]
-    _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
-    _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
-    _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
-    _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
-    _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
-    _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
-    _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
-    _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
-    _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
-    _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
-    _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
-    _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
-    _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
-    _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
-    _128KCYCLES,
-}
-impl STARTUPTIMEOUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            STARTUPTIMEOUTW::_2CYCLES => 0,
-            STARTUPTIMEOUTW::_4CYCLES => 1,
-            STARTUPTIMEOUTW::_16CYCLES => 2,
-            STARTUPTIMEOUTW::_32CYCLES => 3,
-            STARTUPTIMEOUTW::_64CYCLES => 4,
-            STARTUPTIMEOUTW::_128CYCLES => 5,
-            STARTUPTIMEOUTW::_256CYCLES => 6,
-            STARTUPTIMEOUTW::_1KCYCLES => 7,
-            STARTUPTIMEOUTW::_2KCYCLES => 8,
-            STARTUPTIMEOUTW::_4KCYCLES => 9,
-            STARTUPTIMEOUTW::_8KCYCLES => 10,
-            STARTUPTIMEOUTW::_16KCYCLES => 11,
-            STARTUPTIMEOUTW::_32KCYCLES => 12,
-            STARTUPTIMEOUTW::_64KCYCLES => 13,
-            STARTUPTIMEOUTW::_128KCYCLES => 14,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STARTUPTIMEOUTW<'a> {
+#[doc = "Write proxy for field `PEAKDETTIMEOUT`"]
+pub struct PEAKDETTIMEOUT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STARTUPTIMEOUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STARTUPTIMEOUTW) -> &'a mut W {
+impl<'a> PEAKDETTIMEOUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PEAKDETTIMEOUT_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Timeout period of 2 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_2CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_2CYCLES)
     }
     #[doc = "Timeout period of 4 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _4cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_4CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_4CYCLES)
     }
     #[doc = "Timeout period of 16 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _16cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_16CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_16CYCLES)
     }
     #[doc = "Timeout period of 32 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _32cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_32CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_32CYCLES)
     }
     #[doc = "Timeout period of 64 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _64cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_64CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_64CYCLES)
     }
     #[doc = "Timeout period of 128 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _128cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_128CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_128CYCLES)
     }
     #[doc = "Timeout period of 256 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _256cycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_256CYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_256CYCLES)
     }
     #[doc = "Timeout period of 1024 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _1kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_1KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_1KCYCLES)
     }
     #[doc = "Timeout period of 2048 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _2kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_2KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_2KCYCLES)
     }
     #[doc = "Timeout period of 4096 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _4kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_4KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_4KCYCLES)
     }
     #[doc = "Timeout period of 8192 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _8kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_8KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_8KCYCLES)
     }
     #[doc = "Timeout period of 16384 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _16kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_16KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_16KCYCLES)
     }
     #[doc = "Timeout period of 32768 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _32kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_32KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_32KCYCLES)
     }
     #[doc = "Timeout period of 65536 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _64kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_64KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_64KCYCLES)
     }
     #[doc = "Timeout period of 131072 cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn _128kcycles(self) -> &'a mut W {
-        self.variant(STARTUPTIMEOUTW::_128KCYCLES)
+        self.variant(PEAKDETTIMEOUT_A::_128KCYCLES)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STEADYTIMEOUT`"]
-pub enum STEADYTIMEOUTW {
-    #[doc = "Timeout period of 2 cycles"]
-    _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
-    _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
-    _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
-    _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
-    _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
-    _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
-    _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
-    _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
-    _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
-    _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
-    _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
-    _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
-    _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
-    _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
-    _128KCYCLES,
-}
-impl STEADYTIMEOUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            STEADYTIMEOUTW::_2CYCLES => 0,
-            STEADYTIMEOUTW::_4CYCLES => 1,
-            STEADYTIMEOUTW::_16CYCLES => 2,
-            STEADYTIMEOUTW::_32CYCLES => 3,
-            STEADYTIMEOUTW::_64CYCLES => 4,
-            STEADYTIMEOUTW::_128CYCLES => 5,
-            STEADYTIMEOUTW::_256CYCLES => 6,
-            STEADYTIMEOUTW::_1KCYCLES => 7,
-            STEADYTIMEOUTW::_2KCYCLES => 8,
-            STEADYTIMEOUTW::_4KCYCLES => 9,
-            STEADYTIMEOUTW::_8KCYCLES => 10,
-            STEADYTIMEOUTW::_16KCYCLES => 11,
-            STEADYTIMEOUTW::_32KCYCLES => 12,
-            STEADYTIMEOUTW::_64KCYCLES => 13,
-            STEADYTIMEOUTW::_128KCYCLES => 14,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STEADYTIMEOUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STEADYTIMEOUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STEADYTIMEOUTW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Timeout period of 2 cycles"]
-    #[inline]
-    pub fn _2cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_2CYCLES)
-    }
-    #[doc = "Timeout period of 4 cycles"]
-    #[inline]
-    pub fn _4cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_4CYCLES)
-    }
-    #[doc = "Timeout period of 16 cycles"]
-    #[inline]
-    pub fn _16cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_16CYCLES)
-    }
-    #[doc = "Timeout period of 32 cycles"]
-    #[inline]
-    pub fn _32cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_32CYCLES)
-    }
-    #[doc = "Timeout period of 64 cycles"]
-    #[inline]
-    pub fn _64cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_64CYCLES)
-    }
-    #[doc = "Timeout period of 128 cycles"]
-    #[inline]
-    pub fn _128cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_128CYCLES)
-    }
-    #[doc = "Timeout period of 256 cycles"]
-    #[inline]
-    pub fn _256cycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_256CYCLES)
-    }
-    #[doc = "Timeout period of 1024 cycles"]
-    #[inline]
-    pub fn _1kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_1KCYCLES)
-    }
-    #[doc = "Timeout period of 2048 cycles"]
-    #[inline]
-    pub fn _2kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_2KCYCLES)
-    }
-    #[doc = "Timeout period of 4096 cycles"]
-    #[inline]
-    pub fn _4kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_4KCYCLES)
-    }
-    #[doc = "Timeout period of 8192 cycles"]
-    #[inline]
-    pub fn _8kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_8KCYCLES)
-    }
-    #[doc = "Timeout period of 16384 cycles"]
-    #[inline]
-    pub fn _16kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_16KCYCLES)
-    }
-    #[doc = "Timeout period of 32768 cycles"]
-    #[inline]
-    pub fn _32kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_32KCYCLES)
-    }
-    #[doc = "Timeout period of 65536 cycles"]
-    #[inline]
-    pub fn _64kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_64KCYCLES)
-    }
-    #[doc = "Timeout period of 131072 cycles"]
-    #[inline]
-    pub fn _128kcycles(self) -> &'a mut W {
-        self.variant(STEADYTIMEOUTW::_128KCYCLES)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PEAKDETTIMEOUT`"]
-pub enum PEAKDETTIMEOUTW {
-    #[doc = "Timeout period of 2 cycles"]
-    _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
-    _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
-    _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
-    _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
-    _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
-    _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
-    _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
-    _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
-    _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
-    _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
-    _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
-    _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
-    _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
-    _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
-    _128KCYCLES,
-}
-impl PEAKDETTIMEOUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PEAKDETTIMEOUTW::_2CYCLES => 0,
-            PEAKDETTIMEOUTW::_4CYCLES => 1,
-            PEAKDETTIMEOUTW::_16CYCLES => 2,
-            PEAKDETTIMEOUTW::_32CYCLES => 3,
-            PEAKDETTIMEOUTW::_64CYCLES => 4,
-            PEAKDETTIMEOUTW::_128CYCLES => 5,
-            PEAKDETTIMEOUTW::_256CYCLES => 6,
-            PEAKDETTIMEOUTW::_1KCYCLES => 7,
-            PEAKDETTIMEOUTW::_2KCYCLES => 8,
-            PEAKDETTIMEOUTW::_4KCYCLES => 9,
-            PEAKDETTIMEOUTW::_8KCYCLES => 10,
-            PEAKDETTIMEOUTW::_16KCYCLES => 11,
-            PEAKDETTIMEOUTW::_32KCYCLES => 12,
-            PEAKDETTIMEOUTW::_64KCYCLES => 13,
-            PEAKDETTIMEOUTW::_128KCYCLES => 14,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PEAKDETTIMEOUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PEAKDETTIMEOUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PEAKDETTIMEOUTW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Timeout period of 2 cycles"]
-    #[inline]
-    pub fn _2cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_2CYCLES)
-    }
-    #[doc = "Timeout period of 4 cycles"]
-    #[inline]
-    pub fn _4cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_4CYCLES)
-    }
-    #[doc = "Timeout period of 16 cycles"]
-    #[inline]
-    pub fn _16cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_16CYCLES)
-    }
-    #[doc = "Timeout period of 32 cycles"]
-    #[inline]
-    pub fn _32cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_32CYCLES)
-    }
-    #[doc = "Timeout period of 64 cycles"]
-    #[inline]
-    pub fn _64cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_64CYCLES)
-    }
-    #[doc = "Timeout period of 128 cycles"]
-    #[inline]
-    pub fn _128cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_128CYCLES)
-    }
-    #[doc = "Timeout period of 256 cycles"]
-    #[inline]
-    pub fn _256cycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_256CYCLES)
-    }
-    #[doc = "Timeout period of 1024 cycles"]
-    #[inline]
-    pub fn _1kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_1KCYCLES)
-    }
-    #[doc = "Timeout period of 2048 cycles"]
-    #[inline]
-    pub fn _2kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_2KCYCLES)
-    }
-    #[doc = "Timeout period of 4096 cycles"]
-    #[inline]
-    pub fn _4kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_4KCYCLES)
-    }
-    #[doc = "Timeout period of 8192 cycles"]
-    #[inline]
-    pub fn _8kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_8KCYCLES)
-    }
-    #[doc = "Timeout period of 16384 cycles"]
-    #[inline]
-    pub fn _16kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_16KCYCLES)
-    }
-    #[doc = "Timeout period of 32768 cycles"]
-    #[inline]
-    pub fn _32kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_32KCYCLES)
-    }
-    #[doc = "Timeout period of 65536 cycles"]
-    #[inline]
-    pub fn _64kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_64KCYCLES)
-    }
-    #[doc = "Timeout period of 131072 cycles"]
-    #[inline]
-    pub fn _128kcycles(self) -> &'a mut W {
-        self.variant(PEAKDETTIMEOUTW::_128KCYCLES)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
-    #[inline]
-    pub fn startuptimeout(&self) -> STARTUPTIMEOUTR {
-        STARTUPTIMEOUTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn startuptimeout(&self) -> STARTUPTIMEOUT_R {
+        STARTUPTIMEOUT_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State"]
-    #[inline]
-    pub fn steadytimeout(&self) -> STEADYTIMEOUTR {
-        STEADYTIMEOUTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn steadytimeout(&self) -> STEADYTIMEOUT_R {
+        STEADYTIMEOUT_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State"]
-    #[inline]
-    pub fn peakdettimeout(&self) -> PEAKDETTIMEOUTR {
-        PEAKDETTIMEOUTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn peakdettimeout(&self) -> PEAKDETTIMEOUT_R {
+        PEAKDETTIMEOUT_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 53390 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
-    #[inline]
-    pub fn startuptimeout(&mut self) -> _STARTUPTIMEOUTW {
-        _STARTUPTIMEOUTW { w: self }
+    #[inline(always)]
+    pub fn startuptimeout(&mut self) -> STARTUPTIMEOUT_W {
+        STARTUPTIMEOUT_W { w: self }
     }
     #[doc = "Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State"]
-    #[inline]
-    pub fn steadytimeout(&mut self) -> _STEADYTIMEOUTW {
-        _STEADYTIMEOUTW { w: self }
+    #[inline(always)]
+    pub fn steadytimeout(&mut self) -> STEADYTIMEOUT_W {
+        STEADYTIMEOUT_W { w: self }
     }
     #[doc = "Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State"]
-    #[inline]
-    pub fn peakdettimeout(&mut self) -> _PEAKDETTIMEOUTW {
-        _PEAKDETTIMEOUTW { w: self }
+    #[inline(always)]
+    pub fn peakdettimeout(&mut self) -> PEAKDETTIMEOUT_W {
+        PEAKDETTIMEOUT_W { w: self }
     }
 }

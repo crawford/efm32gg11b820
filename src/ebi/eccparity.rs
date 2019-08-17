@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ECCPARITY {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ECCPARITYR {
-    bits: u32,
-}
-impl ECCPARITYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ECCPARITY"]
+pub type R = crate::R<u32, super::ECCPARITY>;
+#[doc = "Reader of field `ECCPARITY`"]
+pub type ECCPARITY_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - ECC Parity Data"]
-    #[inline]
-    pub fn eccparity(&self) -> ECCPARITYR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        ECCPARITYR { bits }
+    #[inline(always)]
+    pub fn eccparity(&self) -> ECCPARITY_R {
+        ECCPARITY_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

@@ -1,80 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ETMIDR2 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RFER {
-    bits: bool,
-}
-impl RFER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SWPR {
-    bits: bool,
-}
-impl SWPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register ETMIDR2"]
+pub type R = crate::R<u32, super::ETMIDR2>;
+#[doc = "Reader of field `RFE`"]
+pub type RFE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SWP`"]
+pub type SWP_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - RFE Transfer Order"]
-    #[inline]
-    pub fn rfe(&self) -> RFER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RFER { bits }
+    #[inline(always)]
+    pub fn rfe(&self) -> RFE_R {
+        RFE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - SWP Transfer Order"]
-    #[inline]
-    pub fn swp(&self) -> SWPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SWPR { bits }
+    #[inline(always)]
+    pub fn swp(&self) -> SWP_R {
+        SWP_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

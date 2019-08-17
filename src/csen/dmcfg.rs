@@ -1,81 +1,60 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DMCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DMCFG"]
+pub type R = crate::R<u32, super::DMCFG>;
+#[doc = "Writer for register DMCFG"]
+pub type W = crate::W<u32, super::DMCFG>;
+#[doc = "Register DMCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::DMCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMGR {
-    bits: u8,
+#[doc = "Reader of field `DMG`"]
+pub type DMG_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DMG`"]
+pub struct DMG_W<'a> {
+    w: &'a mut W,
 }
-impl DMGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DMG_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMRR {
-    bits: u8,
+#[doc = "Reader of field `DMR`"]
+pub type DMR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DMR`"]
+pub struct DMR_W<'a> {
+    w: &'a mut W,
 }
-impl DMRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DMR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMCRR {
-    bits: u8,
+#[doc = "Reader of field `DMCR`"]
+pub type DMCR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DMCR`"]
+pub struct DMCR_W<'a> {
+    w: &'a mut W,
 }
-impl DMCRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DMCR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CRMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRMODER {
+pub enum CRMODE_A {
     #[doc = "10-bit delta modulator"]
     DM10,
     #[doc = "12-bit delta modulator"]
@@ -85,296 +64,167 @@ pub enum CRMODER {
     #[doc = "16-bit delta modulator"]
     DM16,
 }
-impl CRMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CRMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CRMODER::DM10 => 0,
-            CRMODER::DM12 => 1,
-            CRMODER::DM14 => 2,
-            CRMODER::DM16 => 3,
+            CRMODE_A::DM10 => 0,
+            CRMODE_A::DM12 => 1,
+            CRMODE_A::DM14 => 2,
+            CRMODE_A::DM16 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CRMODER {
-        match value {
-            0 => CRMODER::DM10,
-            1 => CRMODER::DM12,
-            2 => CRMODER::DM14,
-            3 => CRMODER::DM16,
+}
+#[doc = "Reader of field `CRMODE`"]
+pub type CRMODE_R = crate::R<u8, CRMODE_A>;
+impl CRMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRMODE_A {
+        match self.bits {
+            0 => CRMODE_A::DM10,
+            1 => CRMODE_A::DM12,
+            2 => CRMODE_A::DM14,
+            3 => CRMODE_A::DM16,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DM10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dm10(&self) -> bool {
-        *self == CRMODER::DM10
+        *self == CRMODE_A::DM10
     }
     #[doc = "Checks if the value of the field is `DM12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dm12(&self) -> bool {
-        *self == CRMODER::DM12
+        *self == CRMODE_A::DM12
     }
     #[doc = "Checks if the value of the field is `DM14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dm14(&self) -> bool {
-        *self == CRMODER::DM14
+        *self == CRMODE_A::DM14
     }
     #[doc = "Checks if the value of the field is `DM16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dm16(&self) -> bool {
-        *self == CRMODER::DM16
+        *self == CRMODE_A::DM16
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMGRDISR {
-    bits: bool,
-}
-impl DMGRDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMGW<'a> {
+#[doc = "Write proxy for field `CRMODE`"]
+pub struct CRMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMCRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMCRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CRMODE`"]
-pub enum CRMODEW {
-    #[doc = "10-bit delta modulator"]
-    DM10,
-    #[doc = "12-bit delta modulator"]
-    DM12,
-    #[doc = "14-bit delta modulator"]
-    DM14,
-    #[doc = "16-bit delta modulator"]
-    DM16,
-}
-impl CRMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CRMODEW::DM10 => 0,
-            CRMODEW::DM12 => 1,
-            CRMODEW::DM14 => 2,
-            CRMODEW::DM16 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CRMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CRMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRMODEW) -> &'a mut W {
+impl<'a> CRMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRMODE_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "10-bit delta modulator"]
-    #[inline]
+    #[inline(always)]
     pub fn dm10(self) -> &'a mut W {
-        self.variant(CRMODEW::DM10)
+        self.variant(CRMODE_A::DM10)
     }
     #[doc = "12-bit delta modulator"]
-    #[inline]
+    #[inline(always)]
     pub fn dm12(self) -> &'a mut W {
-        self.variant(CRMODEW::DM12)
+        self.variant(CRMODE_A::DM12)
     }
     #[doc = "14-bit delta modulator"]
-    #[inline]
+    #[inline(always)]
     pub fn dm14(self) -> &'a mut W {
-        self.variant(CRMODEW::DM14)
+        self.variant(CRMODE_A::DM14)
     }
     #[doc = "16-bit delta modulator"]
-    #[inline]
+    #[inline(always)]
     pub fn dm16(self) -> &'a mut W {
-        self.variant(CRMODEW::DM16)
+        self.variant(CRMODE_A::DM16)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMGRDISW<'a> {
+#[doc = "Reader of field `DMGRDIS`"]
+pub type DMGRDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DMGRDIS`"]
+pub struct DMGRDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMGRDISW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DMGRDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Delta Modulator Gain Step"]
-    #[inline]
-    pub fn dmg(&self) -> DMGR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMGR { bits }
+    #[inline(always)]
+    pub fn dmg(&self) -> DMG_R {
+        DMG_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:11 - Delta Modulator Gain Reduction Interval"]
-    #[inline]
-    pub fn dmr(&self) -> DMRR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMRR { bits }
+    #[inline(always)]
+    pub fn dmr(&self) -> DMR_R {
+        DMR_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Delta Modulator Conversion Rate"]
-    #[inline]
-    pub fn dmcr(&self) -> DMCRR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMCRR { bits }
+    #[inline(always)]
+    pub fn dmcr(&self) -> DMCR_R {
+        DMCR_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:21 - Delta Modulator Conversion Resolution."]
-    #[inline]
-    pub fn crmode(&self) -> CRMODER {
-        CRMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn crmode(&self) -> CRMODE_R {
+        CRMODE_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bit 28 - Delta Modulation Gain Step Reduction Disable"]
-    #[inline]
-    pub fn dmgrdis(&self) -> DMGRDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DMGRDISR { bits }
+    #[inline(always)]
+    pub fn dmgrdis(&self) -> DMGRDIS_R {
+        DMGRDIS_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Delta Modulator Gain Step"]
-    #[inline]
-    pub fn dmg(&mut self) -> _DMGW {
-        _DMGW { w: self }
+    #[inline(always)]
+    pub fn dmg(&mut self) -> DMG_W {
+        DMG_W { w: self }
     }
     #[doc = "Bits 8:11 - Delta Modulator Gain Reduction Interval"]
-    #[inline]
-    pub fn dmr(&mut self) -> _DMRW {
-        _DMRW { w: self }
+    #[inline(always)]
+    pub fn dmr(&mut self) -> DMR_W {
+        DMR_W { w: self }
     }
     #[doc = "Bits 16:19 - Delta Modulator Conversion Rate"]
-    #[inline]
-    pub fn dmcr(&mut self) -> _DMCRW {
-        _DMCRW { w: self }
+    #[inline(always)]
+    pub fn dmcr(&mut self) -> DMCR_W {
+        DMCR_W { w: self }
     }
     #[doc = "Bits 20:21 - Delta Modulator Conversion Resolution."]
-    #[inline]
-    pub fn crmode(&mut self) -> _CRMODEW {
-        _CRMODEW { w: self }
+    #[inline(always)]
+    pub fn crmode(&mut self) -> CRMODE_W {
+        CRMODE_W { w: self }
     }
     #[doc = "Bit 28 - Delta Modulation Gain Step Reduction Disable"]
-    #[inline]
-    pub fn dmgrdis(&mut self) -> _DMGRDISW {
-        _DMGRDISW { w: self }
+    #[inline(always)]
+    pub fn dmgrdis(&mut self) -> DMGRDIS_W {
+        DMGRDIS_W { w: self }
     }
 }

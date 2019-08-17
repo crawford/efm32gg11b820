@@ -1,359 +1,211 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::R5VCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register R5VCTRL"]
+pub type R = crate::R<u32, super::R5VCTRL>;
+#[doc = "Writer for register R5VCTRL"]
+pub type W = crate::W<u32, super::R5VCTRL>;
+#[doc = "Register R5VCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::R5VCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct BYPASSR {
-    bits: bool,
+#[doc = "Reader of field `BYPASS`"]
+pub type BYPASS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BYPASS`"]
+pub struct BYPASS_W<'a> {
+    w: &'a mut W,
 }
-impl BYPASSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> BYPASS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM4WUENR {
-    bits: bool,
-}
-impl EM4WUENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct IMONENR {
-    bits: bool,
+#[doc = "Reader of field `EM4WUEN`"]
+pub type EM4WUEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EM4WUEN`"]
+pub struct EM4WUEN_W<'a> {
+    w: &'a mut W,
 }
-impl IMONENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> EM4WUEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Reader of field `IMONEN`"]
+pub type IMONEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `IMONEN`"]
+pub struct IMONEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IMONEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `INPUTMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INPUTMODER {
+pub enum INPUTMODE_A {
     #[doc = "Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
     AUTO,
     #[doc = "Force VBUS pin as the regulator input"]
     VBUS,
     #[doc = "Force VREGI pin as the regulator input"]
     VREGI,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl INPUTMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for INPUTMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            INPUTMODER::AUTO => 0,
-            INPUTMODER::VBUS => 1,
-            INPUTMODER::VREGI => 2,
-            INPUTMODER::_Reserved(bits) => bits,
+            INPUTMODE_A::AUTO => 0,
+            INPUTMODE_A::VBUS => 1,
+            INPUTMODE_A::VREGI => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> INPUTMODER {
-        match value {
-            0 => INPUTMODER::AUTO,
-            1 => INPUTMODER::VBUS,
-            2 => INPUTMODER::VREGI,
-            i => INPUTMODER::_Reserved(i),
+}
+#[doc = "Reader of field `INPUTMODE`"]
+pub type INPUTMODE_R = crate::R<u8, INPUTMODE_A>;
+impl INPUTMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, INPUTMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(INPUTMODE_A::AUTO),
+            1 => Val(INPUTMODE_A::VBUS),
+            2 => Val(INPUTMODE_A::VREGI),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `AUTO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auto(&self) -> bool {
-        *self == INPUTMODER::AUTO
+        *self == INPUTMODE_A::AUTO
     }
     #[doc = "Checks if the value of the field is `VBUS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vbus(&self) -> bool {
-        *self == INPUTMODER::VBUS
+        *self == INPUTMODE_A::VBUS
     }
     #[doc = "Checks if the value of the field is `VREGI`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vregi(&self) -> bool {
-        *self == INPUTMODER::VREGI
+        *self == INPUTMODE_A::VREGI
     }
 }
-#[doc = r" Proxy"]
-pub struct _BYPASSW<'a> {
+#[doc = "Write proxy for field `INPUTMODE`"]
+pub struct INPUTMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYPASSW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EM4WUENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EM4WUENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IMONENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IMONENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INPUTMODE`"]
-pub enum INPUTMODEW {
-    #[doc = "Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
-    AUTO,
-    #[doc = "Force VBUS pin as the regulator input"]
-    VBUS,
-    #[doc = "Force VREGI pin as the regulator input"]
-    VREGI,
-}
-impl INPUTMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            INPUTMODEW::AUTO => 0,
-            INPUTMODEW::VBUS => 1,
-            INPUTMODEW::VREGI => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INPUTMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INPUTMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INPUTMODEW) -> &'a mut W {
+impl<'a> INPUTMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INPUTMODE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
-    #[inline]
+    #[inline(always)]
     pub fn auto(self) -> &'a mut W {
-        self.variant(INPUTMODEW::AUTO)
+        self.variant(INPUTMODE_A::AUTO)
     }
     #[doc = "Force VBUS pin as the regulator input"]
-    #[inline]
+    #[inline(always)]
     pub fn vbus(self) -> &'a mut W {
-        self.variant(INPUTMODEW::VBUS)
+        self.variant(INPUTMODE_A::VBUS)
     }
     #[doc = "Force VREGI pin as the regulator input"]
-    #[inline]
+    #[inline(always)]
     pub fn vregi(self) -> &'a mut W {
-        self.variant(INPUTMODEW::VREGI)
+        self.variant(INPUTMODE_A::VREGI)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - 5V Regulator Bypass"]
-    #[inline]
-    pub fn bypass(&self) -> BYPASSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BYPASSR { bits }
+    #[inline(always)]
+    pub fn bypass(&self) -> BYPASS_R {
+        BYPASS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable EM4 Wakeup Due to VBUS Detection"]
-    #[inline]
-    pub fn em4wuen(&self) -> EM4WUENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM4WUENR { bits }
+    #[inline(always)]
+    pub fn em4wuen(&self) -> EM4WUEN_R {
+        EM4WUEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable the Regulator Current Monitor for Selected Current Path to Either VREGI or VBUS"]
-    #[inline]
-    pub fn imonen(&self) -> IMONENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        IMONENR { bits }
+    #[inline(always)]
+    pub fn imonen(&self) -> IMONEN_R {
+        IMONEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 8:9 - 5V Input Mode"]
-    #[inline]
-    pub fn inputmode(&self) -> INPUTMODER {
-        INPUTMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn inputmode(&self) -> INPUTMODE_R {
+        INPUTMODE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - 5V Regulator Bypass"]
-    #[inline]
-    pub fn bypass(&mut self) -> _BYPASSW {
-        _BYPASSW { w: self }
+    #[inline(always)]
+    pub fn bypass(&mut self) -> BYPASS_W {
+        BYPASS_W { w: self }
     }
     #[doc = "Bit 1 - Enable EM4 Wakeup Due to VBUS Detection"]
-    #[inline]
-    pub fn em4wuen(&mut self) -> _EM4WUENW {
-        _EM4WUENW { w: self }
+    #[inline(always)]
+    pub fn em4wuen(&mut self) -> EM4WUEN_W {
+        EM4WUEN_W { w: self }
     }
     #[doc = "Bit 2 - Enable the Regulator Current Monitor for Selected Current Path to Either VREGI or VBUS"]
-    #[inline]
-    pub fn imonen(&mut self) -> _IMONENW {
-        _IMONENW { w: self }
+    #[inline(always)]
+    pub fn imonen(&mut self) -> IMONEN_W {
+        IMONEN_W { w: self }
     }
     #[doc = "Bits 8:9 - 5V Input Mode"]
-    #[inline]
-    pub fn inputmode(&mut self) -> _INPUTMODEW {
-        _INPUTMODEW { w: self }
+    #[inline(always)]
+    pub fn inputmode(&mut self) -> INPUTMODE_W {
+        INPUTMODE_W { w: self }
     }
 }

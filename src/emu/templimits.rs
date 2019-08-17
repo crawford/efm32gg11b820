@@ -1,203 +1,98 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TEMPLIMITS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TEMPLIMITS"]
+pub type R = crate::R<u32, super::TEMPLIMITS>;
+#[doc = "Writer for register TEMPLIMITS"]
+pub type W = crate::W<u32, super::TEMPLIMITS>;
+#[doc = "Register TEMPLIMITS `reset()`'s with value 0xff00"]
+impl crate::ResetValue for super::TEMPLIMITS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xff00
     }
 }
-#[doc = r" Value of the field"]
-pub struct TEMPLOWR {
-    bits: u8,
-}
-impl TEMPLOWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TEMPHIGHR {
-    bits: u8,
-}
-impl TEMPHIGHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM4WUENR {
-    bits: bool,
-}
-impl EM4WUENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TEMPLOWW<'a> {
+#[doc = "Reader of field `TEMPLOW`"]
+pub type TEMPLOW_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TEMPLOW`"]
+pub struct TEMPLOW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TEMPLOWW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TEMPLOW_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TEMPHIGHW<'a> {
+#[doc = "Reader of field `TEMPHIGH`"]
+pub type TEMPHIGH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TEMPHIGH`"]
+pub struct TEMPHIGH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TEMPHIGHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TEMPHIGH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EM4WUENW<'a> {
+#[doc = "Reader of field `EM4WUEN`"]
+pub type EM4WUEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EM4WUEN`"]
+pub struct EM4WUEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EM4WUENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EM4WUEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Temperature Low Limit"]
-    #[inline]
-    pub fn templow(&self) -> TEMPLOWR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TEMPLOWR { bits }
+    #[inline(always)]
+    pub fn templow(&self) -> TEMPLOW_R {
+        TEMPLOW_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Temperature High Limit"]
-    #[inline]
-    pub fn temphigh(&self) -> TEMPHIGHR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TEMPHIGHR { bits }
+    #[inline(always)]
+    pub fn temphigh(&self) -> TEMPHIGH_R {
+        TEMPHIGH_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
-    #[inline]
-    pub fn em4wuen(&self) -> EM4WUENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM4WUENR { bits }
+    #[inline(always)]
+    pub fn em4wuen(&self) -> EM4WUEN_R {
+        EM4WUEN_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65280 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Temperature Low Limit"]
-    #[inline]
-    pub fn templow(&mut self) -> _TEMPLOWW {
-        _TEMPLOWW { w: self }
+    #[inline(always)]
+    pub fn templow(&mut self) -> TEMPLOW_W {
+        TEMPLOW_W { w: self }
     }
     #[doc = "Bits 8:15 - Temperature High Limit"]
-    #[inline]
-    pub fn temphigh(&mut self) -> _TEMPHIGHW {
-        _TEMPHIGHW { w: self }
+    #[inline(always)]
+    pub fn temphigh(&mut self) -> TEMPHIGH_W {
+        TEMPHIGH_W { w: self }
     }
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
-    #[inline]
-    pub fn em4wuen(&mut self) -> _EM4WUENW {
-        _EM4WUENW { w: self }
+    #[inline(always)]
+    pub fn em4wuen(&mut self) -> EM4WUEN_W {
+        EM4WUEN_W { w: self }
     }
 }

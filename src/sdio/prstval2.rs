@@ -1,49 +1,12 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSTVAL2 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSPSDCLKFREQVALR {
-    bits: u16,
-}
-impl HSPSDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSPCLKGENVALR {
-    bits: bool,
-}
-impl HSPCLKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register PRSTVAL2"]
+pub type R = crate::R<u32, super::PRSTVAL2>;
+#[doc = "Reader of field `HSPSDCLKFREQVAL`"]
+pub type HSPSDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `HSPCLKGENVAL`"]
+pub type HSPCLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `HSPDRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HSPDRVSTVALR {
+pub enum HSPDRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -53,85 +16,59 @@ pub enum HSPDRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl HSPDRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for HSPDRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            HSPDRVSTVALR::TYPEB => 0,
-            HSPDRVSTVALR::TYPEA => 1,
-            HSPDRVSTVALR::TYPEC => 2,
-            HSPDRVSTVALR::TYPED => 3,
+            HSPDRVSTVAL_A::TYPEB => 0,
+            HSPDRVSTVAL_A::TYPEA => 1,
+            HSPDRVSTVAL_A::TYPEC => 2,
+            HSPDRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HSPDRVSTVALR {
-        match value {
-            0 => HSPDRVSTVALR::TYPEB,
-            1 => HSPDRVSTVALR::TYPEA,
-            2 => HSPDRVSTVALR::TYPEC,
-            3 => HSPDRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `HSPDRVSTVAL`"]
+pub type HSPDRVSTVAL_R = crate::R<u8, HSPDRVSTVAL_A>;
+impl HSPDRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HSPDRVSTVAL_A {
+        match self.bits {
+            0 => HSPDRVSTVAL_A::TYPEB,
+            1 => HSPDRVSTVAL_A::TYPEA,
+            2 => HSPDRVSTVAL_A::TYPEC,
+            3 => HSPDRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == HSPDRVSTVALR::TYPEB
+        *self == HSPDRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == HSPDRVSTVALR::TYPEA
+        *self == HSPDRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == HSPDRVSTVALR::TYPEC
+        *self == HSPDRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == HSPDRVSTVALR::TYPED
+        *self == HSPDRVSTVAL_A::TYPED
     }
 }
-#[doc = r" Value of the field"]
-pub struct SDR12SDCLKFREQVALR {
-    bits: u16,
-}
-impl SDR12SDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR12CLKGENVALR {
-    bits: bool,
-}
-impl SDR12CLKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `SDR12SDCLKFREQVAL`"]
+pub type SDR12SDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `SDR12CLKGENVAL`"]
+pub type SDR12CLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `SDR12DRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDR12DRVSTVALR {
+pub enum SDR12DRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -141,112 +78,81 @@ pub enum SDR12DRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl SDR12DRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SDR12DRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SDR12DRVSTVALR::TYPEB => 0,
-            SDR12DRVSTVALR::TYPEA => 1,
-            SDR12DRVSTVALR::TYPEC => 2,
-            SDR12DRVSTVALR::TYPED => 3,
+            SDR12DRVSTVAL_A::TYPEB => 0,
+            SDR12DRVSTVAL_A::TYPEA => 1,
+            SDR12DRVSTVAL_A::TYPEC => 2,
+            SDR12DRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SDR12DRVSTVALR {
-        match value {
-            0 => SDR12DRVSTVALR::TYPEB,
-            1 => SDR12DRVSTVALR::TYPEA,
-            2 => SDR12DRVSTVALR::TYPEC,
-            3 => SDR12DRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `SDR12DRVSTVAL`"]
+pub type SDR12DRVSTVAL_R = crate::R<u8, SDR12DRVSTVAL_A>;
+impl SDR12DRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDR12DRVSTVAL_A {
+        match self.bits {
+            0 => SDR12DRVSTVAL_A::TYPEB,
+            1 => SDR12DRVSTVAL_A::TYPEA,
+            2 => SDR12DRVSTVAL_A::TYPEC,
+            3 => SDR12DRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == SDR12DRVSTVALR::TYPEB
+        *self == SDR12DRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == SDR12DRVSTVALR::TYPEA
+        *self == SDR12DRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == SDR12DRVSTVALR::TYPEC
+        *self == SDR12DRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == SDR12DRVSTVALR::TYPED
+        *self == SDR12DRVSTVAL_A::TYPED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - SD_CLK Frequency Select Value for High Speed"]
-    #[inline]
-    pub fn hspsdclkfreqval(&self) -> HSPSDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        HSPSDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn hspsdclkfreqval(&self) -> HSPSDCLKFREQVAL_R {
+        HSPSDCLKFREQVAL_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 10 - Clock Generator Select Value for High Speed"]
-    #[inline]
-    pub fn hspclkgenval(&self) -> HSPCLKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HSPCLKGENVALR { bits }
+    #[inline(always)]
+    pub fn hspclkgenval(&self) -> HSPCLKGENVAL_R {
+        HSPCLKGENVAL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Driver Strength Select Value for High Speed"]
-    #[inline]
-    pub fn hspdrvstval(&self) -> HSPDRVSTVALR {
-        HSPDRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hspdrvstval(&self) -> HSPDRVSTVAL_R {
+        HSPDRVSTVAL_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - SD_CLK Frequency Select Value for SDR12"]
-    #[inline]
-    pub fn sdr12sdclkfreqval(&self) -> SDR12SDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SDR12SDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn sdr12sdclkfreqval(&self) -> SDR12SDCLKFREQVAL_R {
+        SDR12SDCLKFREQVAL_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 26 - Clock Generator Select Value for SDR12"]
-    #[inline]
-    pub fn sdr12clkgenval(&self) -> SDR12CLKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR12CLKGENVALR { bits }
+    #[inline(always)]
+    pub fn sdr12clkgenval(&self) -> SDR12CLKGENVAL_R {
+        SDR12CLKGENVAL_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 30:31 - Driver Strength Select Value for SDR12"]
-    #[inline]
-    pub fn sdr12drvstval(&self) -> SDR12DRVSTVALR {
-        SDR12DRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sdr12drvstval(&self) -> SDR12DRVSTVAL_R {
+        SDR12DRVSTVAL_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }

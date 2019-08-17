@@ -1,17 +1,8 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PPUFS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
+#[doc = "Reader of register PPUFS"]
+pub type R = crate::R<u32, super::PPUFS>;
 #[doc = "Possible values of the field `PERIPHID`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PERIPHIDR {
+pub enum PERIPHID_A {
     #[doc = "Analog Comparator 0"]
     ACMP0,
     #[doc = "Analog Comparator 1"]
@@ -140,487 +131,478 @@ pub enum PERIPHIDR {
     WTIMER2,
     #[doc = "Wide Timer 3"]
     WTIMER3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PERIPHIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for PERIPHID_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            PERIPHIDR::ACMP0 => 0,
-            PERIPHIDR::ACMP1 => 1,
-            PERIPHIDR::ACMP2 => 2,
-            PERIPHIDR::ACMP3 => 3,
-            PERIPHIDR::ADC0 => 4,
-            PERIPHIDR::ADC1 => 5,
-            PERIPHIDR::CAN0 => 6,
-            PERIPHIDR::CAN1 => 7,
-            PERIPHIDR::CMU => 8,
-            PERIPHIDR::CRYOTIMER => 9,
-            PERIPHIDR::CRYPTO0 => 10,
-            PERIPHIDR::CSEN => 11,
-            PERIPHIDR::VDAC0 => 12,
-            PERIPHIDR::PRS => 13,
-            PERIPHIDR::EBI => 14,
-            PERIPHIDR::EMU => 15,
-            PERIPHIDR::ETH => 16,
-            PERIPHIDR::FPUEH => 17,
-            PERIPHIDR::GPCRC => 18,
-            PERIPHIDR::GPIO => 19,
-            PERIPHIDR::I2C0 => 20,
-            PERIPHIDR::I2C1 => 21,
-            PERIPHIDR::I2C2 => 22,
-            PERIPHIDR::IDAC0 => 23,
-            PERIPHIDR::MSC => 24,
-            PERIPHIDR::LCD => 25,
-            PERIPHIDR::LDMA => 26,
-            PERIPHIDR::LESENSE => 27,
-            PERIPHIDR::LETIMER0 => 28,
-            PERIPHIDR::LETIMER1 => 29,
-            PERIPHIDR::LEUART0 => 30,
-            PERIPHIDR::LEUART1 => 31,
-            PERIPHIDR::PCNT0 => 32,
-            PERIPHIDR::PCNT1 => 33,
-            PERIPHIDR::PCNT2 => 34,
-            PERIPHIDR::QSPI0 => 35,
-            PERIPHIDR::RMU => 36,
-            PERIPHIDR::RTC => 37,
-            PERIPHIDR::RTCC => 38,
-            PERIPHIDR::SDIO => 39,
-            PERIPHIDR::SMU => 40,
-            PERIPHIDR::TIMER0 => 41,
-            PERIPHIDR::TIMER1 => 42,
-            PERIPHIDR::TIMER2 => 43,
-            PERIPHIDR::TIMER3 => 44,
-            PERIPHIDR::TIMER4 => 45,
-            PERIPHIDR::TIMER5 => 46,
-            PERIPHIDR::TIMER6 => 47,
-            PERIPHIDR::TRNG0 => 48,
-            PERIPHIDR::UART0 => 49,
-            PERIPHIDR::UART1 => 50,
-            PERIPHIDR::USART0 => 51,
-            PERIPHIDR::USART1 => 52,
-            PERIPHIDR::USART2 => 53,
-            PERIPHIDR::USART3 => 54,
-            PERIPHIDR::USART4 => 55,
-            PERIPHIDR::USART5 => 56,
-            PERIPHIDR::USB => 57,
-            PERIPHIDR::WDOG0 => 58,
-            PERIPHIDR::WDOG1 => 59,
-            PERIPHIDR::WTIMER0 => 60,
-            PERIPHIDR::WTIMER1 => 61,
-            PERIPHIDR::WTIMER2 => 62,
-            PERIPHIDR::WTIMER3 => 63,
-            PERIPHIDR::_Reserved(bits) => bits,
+            PERIPHID_A::ACMP0 => 0,
+            PERIPHID_A::ACMP1 => 1,
+            PERIPHID_A::ACMP2 => 2,
+            PERIPHID_A::ACMP3 => 3,
+            PERIPHID_A::ADC0 => 4,
+            PERIPHID_A::ADC1 => 5,
+            PERIPHID_A::CAN0 => 6,
+            PERIPHID_A::CAN1 => 7,
+            PERIPHID_A::CMU => 8,
+            PERIPHID_A::CRYOTIMER => 9,
+            PERIPHID_A::CRYPTO0 => 10,
+            PERIPHID_A::CSEN => 11,
+            PERIPHID_A::VDAC0 => 12,
+            PERIPHID_A::PRS => 13,
+            PERIPHID_A::EBI => 14,
+            PERIPHID_A::EMU => 15,
+            PERIPHID_A::ETH => 16,
+            PERIPHID_A::FPUEH => 17,
+            PERIPHID_A::GPCRC => 18,
+            PERIPHID_A::GPIO => 19,
+            PERIPHID_A::I2C0 => 20,
+            PERIPHID_A::I2C1 => 21,
+            PERIPHID_A::I2C2 => 22,
+            PERIPHID_A::IDAC0 => 23,
+            PERIPHID_A::MSC => 24,
+            PERIPHID_A::LCD => 25,
+            PERIPHID_A::LDMA => 26,
+            PERIPHID_A::LESENSE => 27,
+            PERIPHID_A::LETIMER0 => 28,
+            PERIPHID_A::LETIMER1 => 29,
+            PERIPHID_A::LEUART0 => 30,
+            PERIPHID_A::LEUART1 => 31,
+            PERIPHID_A::PCNT0 => 32,
+            PERIPHID_A::PCNT1 => 33,
+            PERIPHID_A::PCNT2 => 34,
+            PERIPHID_A::QSPI0 => 35,
+            PERIPHID_A::RMU => 36,
+            PERIPHID_A::RTC => 37,
+            PERIPHID_A::RTCC => 38,
+            PERIPHID_A::SDIO => 39,
+            PERIPHID_A::SMU => 40,
+            PERIPHID_A::TIMER0 => 41,
+            PERIPHID_A::TIMER1 => 42,
+            PERIPHID_A::TIMER2 => 43,
+            PERIPHID_A::TIMER3 => 44,
+            PERIPHID_A::TIMER4 => 45,
+            PERIPHID_A::TIMER5 => 46,
+            PERIPHID_A::TIMER6 => 47,
+            PERIPHID_A::TRNG0 => 48,
+            PERIPHID_A::UART0 => 49,
+            PERIPHID_A::UART1 => 50,
+            PERIPHID_A::USART0 => 51,
+            PERIPHID_A::USART1 => 52,
+            PERIPHID_A::USART2 => 53,
+            PERIPHID_A::USART3 => 54,
+            PERIPHID_A::USART4 => 55,
+            PERIPHID_A::USART5 => 56,
+            PERIPHID_A::USB => 57,
+            PERIPHID_A::WDOG0 => 58,
+            PERIPHID_A::WDOG1 => 59,
+            PERIPHID_A::WTIMER0 => 60,
+            PERIPHID_A::WTIMER1 => 61,
+            PERIPHID_A::WTIMER2 => 62,
+            PERIPHID_A::WTIMER3 => 63,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PERIPHIDR {
-        match value {
-            0 => PERIPHIDR::ACMP0,
-            1 => PERIPHIDR::ACMP1,
-            2 => PERIPHIDR::ACMP2,
-            3 => PERIPHIDR::ACMP3,
-            4 => PERIPHIDR::ADC0,
-            5 => PERIPHIDR::ADC1,
-            6 => PERIPHIDR::CAN0,
-            7 => PERIPHIDR::CAN1,
-            8 => PERIPHIDR::CMU,
-            9 => PERIPHIDR::CRYOTIMER,
-            10 => PERIPHIDR::CRYPTO0,
-            11 => PERIPHIDR::CSEN,
-            12 => PERIPHIDR::VDAC0,
-            13 => PERIPHIDR::PRS,
-            14 => PERIPHIDR::EBI,
-            15 => PERIPHIDR::EMU,
-            16 => PERIPHIDR::ETH,
-            17 => PERIPHIDR::FPUEH,
-            18 => PERIPHIDR::GPCRC,
-            19 => PERIPHIDR::GPIO,
-            20 => PERIPHIDR::I2C0,
-            21 => PERIPHIDR::I2C1,
-            22 => PERIPHIDR::I2C2,
-            23 => PERIPHIDR::IDAC0,
-            24 => PERIPHIDR::MSC,
-            25 => PERIPHIDR::LCD,
-            26 => PERIPHIDR::LDMA,
-            27 => PERIPHIDR::LESENSE,
-            28 => PERIPHIDR::LETIMER0,
-            29 => PERIPHIDR::LETIMER1,
-            30 => PERIPHIDR::LEUART0,
-            31 => PERIPHIDR::LEUART1,
-            32 => PERIPHIDR::PCNT0,
-            33 => PERIPHIDR::PCNT1,
-            34 => PERIPHIDR::PCNT2,
-            35 => PERIPHIDR::QSPI0,
-            36 => PERIPHIDR::RMU,
-            37 => PERIPHIDR::RTC,
-            38 => PERIPHIDR::RTCC,
-            39 => PERIPHIDR::SDIO,
-            40 => PERIPHIDR::SMU,
-            41 => PERIPHIDR::TIMER0,
-            42 => PERIPHIDR::TIMER1,
-            43 => PERIPHIDR::TIMER2,
-            44 => PERIPHIDR::TIMER3,
-            45 => PERIPHIDR::TIMER4,
-            46 => PERIPHIDR::TIMER5,
-            47 => PERIPHIDR::TIMER6,
-            48 => PERIPHIDR::TRNG0,
-            49 => PERIPHIDR::UART0,
-            50 => PERIPHIDR::UART1,
-            51 => PERIPHIDR::USART0,
-            52 => PERIPHIDR::USART1,
-            53 => PERIPHIDR::USART2,
-            54 => PERIPHIDR::USART3,
-            55 => PERIPHIDR::USART4,
-            56 => PERIPHIDR::USART5,
-            57 => PERIPHIDR::USB,
-            58 => PERIPHIDR::WDOG0,
-            59 => PERIPHIDR::WDOG1,
-            60 => PERIPHIDR::WTIMER0,
-            61 => PERIPHIDR::WTIMER1,
-            62 => PERIPHIDR::WTIMER2,
-            63 => PERIPHIDR::WTIMER3,
-            i => PERIPHIDR::_Reserved(i),
+}
+#[doc = "Reader of field `PERIPHID`"]
+pub type PERIPHID_R = crate::R<u8, PERIPHID_A>;
+impl PERIPHID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PERIPHID_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PERIPHID_A::ACMP0),
+            1 => Val(PERIPHID_A::ACMP1),
+            2 => Val(PERIPHID_A::ACMP2),
+            3 => Val(PERIPHID_A::ACMP3),
+            4 => Val(PERIPHID_A::ADC0),
+            5 => Val(PERIPHID_A::ADC1),
+            6 => Val(PERIPHID_A::CAN0),
+            7 => Val(PERIPHID_A::CAN1),
+            8 => Val(PERIPHID_A::CMU),
+            9 => Val(PERIPHID_A::CRYOTIMER),
+            10 => Val(PERIPHID_A::CRYPTO0),
+            11 => Val(PERIPHID_A::CSEN),
+            12 => Val(PERIPHID_A::VDAC0),
+            13 => Val(PERIPHID_A::PRS),
+            14 => Val(PERIPHID_A::EBI),
+            15 => Val(PERIPHID_A::EMU),
+            16 => Val(PERIPHID_A::ETH),
+            17 => Val(PERIPHID_A::FPUEH),
+            18 => Val(PERIPHID_A::GPCRC),
+            19 => Val(PERIPHID_A::GPIO),
+            20 => Val(PERIPHID_A::I2C0),
+            21 => Val(PERIPHID_A::I2C1),
+            22 => Val(PERIPHID_A::I2C2),
+            23 => Val(PERIPHID_A::IDAC0),
+            24 => Val(PERIPHID_A::MSC),
+            25 => Val(PERIPHID_A::LCD),
+            26 => Val(PERIPHID_A::LDMA),
+            27 => Val(PERIPHID_A::LESENSE),
+            28 => Val(PERIPHID_A::LETIMER0),
+            29 => Val(PERIPHID_A::LETIMER1),
+            30 => Val(PERIPHID_A::LEUART0),
+            31 => Val(PERIPHID_A::LEUART1),
+            32 => Val(PERIPHID_A::PCNT0),
+            33 => Val(PERIPHID_A::PCNT1),
+            34 => Val(PERIPHID_A::PCNT2),
+            35 => Val(PERIPHID_A::QSPI0),
+            36 => Val(PERIPHID_A::RMU),
+            37 => Val(PERIPHID_A::RTC),
+            38 => Val(PERIPHID_A::RTCC),
+            39 => Val(PERIPHID_A::SDIO),
+            40 => Val(PERIPHID_A::SMU),
+            41 => Val(PERIPHID_A::TIMER0),
+            42 => Val(PERIPHID_A::TIMER1),
+            43 => Val(PERIPHID_A::TIMER2),
+            44 => Val(PERIPHID_A::TIMER3),
+            45 => Val(PERIPHID_A::TIMER4),
+            46 => Val(PERIPHID_A::TIMER5),
+            47 => Val(PERIPHID_A::TIMER6),
+            48 => Val(PERIPHID_A::TRNG0),
+            49 => Val(PERIPHID_A::UART0),
+            50 => Val(PERIPHID_A::UART1),
+            51 => Val(PERIPHID_A::USART0),
+            52 => Val(PERIPHID_A::USART1),
+            53 => Val(PERIPHID_A::USART2),
+            54 => Val(PERIPHID_A::USART3),
+            55 => Val(PERIPHID_A::USART4),
+            56 => Val(PERIPHID_A::USART5),
+            57 => Val(PERIPHID_A::USB),
+            58 => Val(PERIPHID_A::WDOG0),
+            59 => Val(PERIPHID_A::WDOG1),
+            60 => Val(PERIPHID_A::WTIMER0),
+            61 => Val(PERIPHID_A::WTIMER1),
+            62 => Val(PERIPHID_A::WTIMER2),
+            63 => Val(PERIPHID_A::WTIMER3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `ACMP0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp0(&self) -> bool {
-        *self == PERIPHIDR::ACMP0
+        *self == PERIPHID_A::ACMP0
     }
     #[doc = "Checks if the value of the field is `ACMP1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp1(&self) -> bool {
-        *self == PERIPHIDR::ACMP1
+        *self == PERIPHID_A::ACMP1
     }
     #[doc = "Checks if the value of the field is `ACMP2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp2(&self) -> bool {
-        *self == PERIPHIDR::ACMP2
+        *self == PERIPHID_A::ACMP2
     }
     #[doc = "Checks if the value of the field is `ACMP3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp3(&self) -> bool {
-        *self == PERIPHIDR::ACMP3
+        *self == PERIPHID_A::ACMP3
     }
     #[doc = "Checks if the value of the field is `ADC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adc0(&self) -> bool {
-        *self == PERIPHIDR::ADC0
+        *self == PERIPHID_A::ADC0
     }
     #[doc = "Checks if the value of the field is `ADC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adc1(&self) -> bool {
-        *self == PERIPHIDR::ADC1
+        *self == PERIPHID_A::ADC1
     }
     #[doc = "Checks if the value of the field is `CAN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_can0(&self) -> bool {
-        *self == PERIPHIDR::CAN0
+        *self == PERIPHID_A::CAN0
     }
     #[doc = "Checks if the value of the field is `CAN1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_can1(&self) -> bool {
-        *self == PERIPHIDR::CAN1
+        *self == PERIPHID_A::CAN1
     }
     #[doc = "Checks if the value of the field is `CMU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmu(&self) -> bool {
-        *self == PERIPHIDR::CMU
+        *self == PERIPHID_A::CMU
     }
     #[doc = "Checks if the value of the field is `CRYOTIMER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cryotimer(&self) -> bool {
-        *self == PERIPHIDR::CRYOTIMER
+        *self == PERIPHID_A::CRYOTIMER
     }
     #[doc = "Checks if the value of the field is `CRYPTO0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crypto0(&self) -> bool {
-        *self == PERIPHIDR::CRYPTO0
+        *self == PERIPHID_A::CRYPTO0
     }
     #[doc = "Checks if the value of the field is `CSEN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_csen(&self) -> bool {
-        *self == PERIPHIDR::CSEN
+        *self == PERIPHID_A::CSEN
     }
     #[doc = "Checks if the value of the field is `VDAC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vdac0(&self) -> bool {
-        *self == PERIPHIDR::VDAC0
+        *self == PERIPHID_A::VDAC0
     }
     #[doc = "Checks if the value of the field is `PRS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prs(&self) -> bool {
-        *self == PERIPHIDR::PRS
+        *self == PERIPHID_A::PRS
     }
     #[doc = "Checks if the value of the field is `EBI`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ebi(&self) -> bool {
-        *self == PERIPHIDR::EBI
+        *self == PERIPHID_A::EBI
     }
     #[doc = "Checks if the value of the field is `EMU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_emu(&self) -> bool {
-        *self == PERIPHIDR::EMU
+        *self == PERIPHID_A::EMU
     }
     #[doc = "Checks if the value of the field is `ETH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_eth(&self) -> bool {
-        *self == PERIPHIDR::ETH
+        *self == PERIPHID_A::ETH
     }
     #[doc = "Checks if the value of the field is `FPUEH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fpueh(&self) -> bool {
-        *self == PERIPHIDR::FPUEH
+        *self == PERIPHID_A::FPUEH
     }
     #[doc = "Checks if the value of the field is `GPCRC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_gpcrc(&self) -> bool {
-        *self == PERIPHIDR::GPCRC
+        *self == PERIPHID_A::GPCRC
     }
     #[doc = "Checks if the value of the field is `GPIO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_gpio(&self) -> bool {
-        *self == PERIPHIDR::GPIO
+        *self == PERIPHID_A::GPIO
     }
     #[doc = "Checks if the value of the field is `I2C0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2c0(&self) -> bool {
-        *self == PERIPHIDR::I2C0
+        *self == PERIPHID_A::I2C0
     }
     #[doc = "Checks if the value of the field is `I2C1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2c1(&self) -> bool {
-        *self == PERIPHIDR::I2C1
+        *self == PERIPHID_A::I2C1
     }
     #[doc = "Checks if the value of the field is `I2C2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2c2(&self) -> bool {
-        *self == PERIPHIDR::I2C2
+        *self == PERIPHID_A::I2C2
     }
     #[doc = "Checks if the value of the field is `IDAC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_idac0(&self) -> bool {
-        *self == PERIPHIDR::IDAC0
+        *self == PERIPHID_A::IDAC0
     }
     #[doc = "Checks if the value of the field is `MSC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_msc(&self) -> bool {
-        *self == PERIPHIDR::MSC
+        *self == PERIPHID_A::MSC
     }
     #[doc = "Checks if the value of the field is `LCD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lcd(&self) -> bool {
-        *self == PERIPHIDR::LCD
+        *self == PERIPHID_A::LCD
     }
     #[doc = "Checks if the value of the field is `LDMA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ldma(&self) -> bool {
-        *self == PERIPHIDR::LDMA
+        *self == PERIPHID_A::LDMA
     }
     #[doc = "Checks if the value of the field is `LESENSE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lesense(&self) -> bool {
-        *self == PERIPHIDR::LESENSE
+        *self == PERIPHID_A::LESENSE
     }
     #[doc = "Checks if the value of the field is `LETIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_letimer0(&self) -> bool {
-        *self == PERIPHIDR::LETIMER0
+        *self == PERIPHID_A::LETIMER0
     }
     #[doc = "Checks if the value of the field is `LETIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_letimer1(&self) -> bool {
-        *self == PERIPHIDR::LETIMER1
+        *self == PERIPHID_A::LETIMER1
     }
     #[doc = "Checks if the value of the field is `LEUART0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_leuart0(&self) -> bool {
-        *self == PERIPHIDR::LEUART0
+        *self == PERIPHID_A::LEUART0
     }
     #[doc = "Checks if the value of the field is `LEUART1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_leuart1(&self) -> bool {
-        *self == PERIPHIDR::LEUART1
+        *self == PERIPHID_A::LEUART1
     }
     #[doc = "Checks if the value of the field is `PCNT0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt0(&self) -> bool {
-        *self == PERIPHIDR::PCNT0
+        *self == PERIPHID_A::PCNT0
     }
     #[doc = "Checks if the value of the field is `PCNT1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt1(&self) -> bool {
-        *self == PERIPHIDR::PCNT1
+        *self == PERIPHID_A::PCNT1
     }
     #[doc = "Checks if the value of the field is `PCNT2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt2(&self) -> bool {
-        *self == PERIPHIDR::PCNT2
+        *self == PERIPHID_A::PCNT2
     }
     #[doc = "Checks if the value of the field is `QSPI0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_qspi0(&self) -> bool {
-        *self == PERIPHIDR::QSPI0
+        *self == PERIPHID_A::QSPI0
     }
     #[doc = "Checks if the value of the field is `RMU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rmu(&self) -> bool {
-        *self == PERIPHIDR::RMU
+        *self == PERIPHID_A::RMU
     }
     #[doc = "Checks if the value of the field is `RTC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rtc(&self) -> bool {
-        *self == PERIPHIDR::RTC
+        *self == PERIPHID_A::RTC
     }
     #[doc = "Checks if the value of the field is `RTCC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rtcc(&self) -> bool {
-        *self == PERIPHIDR::RTCC
+        *self == PERIPHID_A::RTCC
     }
     #[doc = "Checks if the value of the field is `SDIO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sdio(&self) -> bool {
-        *self == PERIPHIDR::SDIO
+        *self == PERIPHID_A::SDIO
     }
     #[doc = "Checks if the value of the field is `SMU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_smu(&self) -> bool {
-        *self == PERIPHIDR::SMU
+        *self == PERIPHID_A::SMU
     }
     #[doc = "Checks if the value of the field is `TIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer0(&self) -> bool {
-        *self == PERIPHIDR::TIMER0
+        *self == PERIPHID_A::TIMER0
     }
     #[doc = "Checks if the value of the field is `TIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer1(&self) -> bool {
-        *self == PERIPHIDR::TIMER1
+        *self == PERIPHID_A::TIMER1
     }
     #[doc = "Checks if the value of the field is `TIMER2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer2(&self) -> bool {
-        *self == PERIPHIDR::TIMER2
+        *self == PERIPHID_A::TIMER2
     }
     #[doc = "Checks if the value of the field is `TIMER3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer3(&self) -> bool {
-        *self == PERIPHIDR::TIMER3
+        *self == PERIPHID_A::TIMER3
     }
     #[doc = "Checks if the value of the field is `TIMER4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer4(&self) -> bool {
-        *self == PERIPHIDR::TIMER4
+        *self == PERIPHID_A::TIMER4
     }
     #[doc = "Checks if the value of the field is `TIMER5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer5(&self) -> bool {
-        *self == PERIPHIDR::TIMER5
+        *self == PERIPHID_A::TIMER5
     }
     #[doc = "Checks if the value of the field is `TIMER6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer6(&self) -> bool {
-        *self == PERIPHIDR::TIMER6
+        *self == PERIPHID_A::TIMER6
     }
     #[doc = "Checks if the value of the field is `TRNG0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_trng0(&self) -> bool {
-        *self == PERIPHIDR::TRNG0
+        *self == PERIPHID_A::TRNG0
     }
     #[doc = "Checks if the value of the field is `UART0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_uart0(&self) -> bool {
-        *self == PERIPHIDR::UART0
+        *self == PERIPHID_A::UART0
     }
     #[doc = "Checks if the value of the field is `UART1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_uart1(&self) -> bool {
-        *self == PERIPHIDR::UART1
+        *self == PERIPHID_A::UART1
     }
     #[doc = "Checks if the value of the field is `USART0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart0(&self) -> bool {
-        *self == PERIPHIDR::USART0
+        *self == PERIPHID_A::USART0
     }
     #[doc = "Checks if the value of the field is `USART1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart1(&self) -> bool {
-        *self == PERIPHIDR::USART1
+        *self == PERIPHID_A::USART1
     }
     #[doc = "Checks if the value of the field is `USART2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart2(&self) -> bool {
-        *self == PERIPHIDR::USART2
+        *self == PERIPHID_A::USART2
     }
     #[doc = "Checks if the value of the field is `USART3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart3(&self) -> bool {
-        *self == PERIPHIDR::USART3
+        *self == PERIPHID_A::USART3
     }
     #[doc = "Checks if the value of the field is `USART4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart4(&self) -> bool {
-        *self == PERIPHIDR::USART4
+        *self == PERIPHID_A::USART4
     }
     #[doc = "Checks if the value of the field is `USART5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart5(&self) -> bool {
-        *self == PERIPHIDR::USART5
+        *self == PERIPHID_A::USART5
     }
     #[doc = "Checks if the value of the field is `USB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usb(&self) -> bool {
-        *self == PERIPHIDR::USB
+        *self == PERIPHID_A::USB
     }
     #[doc = "Checks if the value of the field is `WDOG0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wdog0(&self) -> bool {
-        *self == PERIPHIDR::WDOG0
+        *self == PERIPHID_A::WDOG0
     }
     #[doc = "Checks if the value of the field is `WDOG1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wdog1(&self) -> bool {
-        *self == PERIPHIDR::WDOG1
+        *self == PERIPHID_A::WDOG1
     }
     #[doc = "Checks if the value of the field is `WTIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer0(&self) -> bool {
-        *self == PERIPHIDR::WTIMER0
+        *self == PERIPHID_A::WTIMER0
     }
     #[doc = "Checks if the value of the field is `WTIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer1(&self) -> bool {
-        *self == PERIPHIDR::WTIMER1
+        *self == PERIPHID_A::WTIMER1
     }
     #[doc = "Checks if the value of the field is `WTIMER2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer2(&self) -> bool {
-        *self == PERIPHIDR::WTIMER2
+        *self == PERIPHID_A::WTIMER2
     }
     #[doc = "Checks if the value of the field is `WTIMER3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer3(&self) -> bool {
-        *self == PERIPHIDR::WTIMER3
+        *self == PERIPHID_A::WTIMER3
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:6"]
-    #[inline]
-    pub fn periphid(&self) -> PERIPHIDR {
-        PERIPHIDR::_from({
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn periphid(&self) -> PERIPHID_R {
+        PERIPHID_R::new((self.bits & 0x7f) as u8)
     }
 }

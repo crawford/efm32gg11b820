@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DCDCCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DCDCCTRL"]
+pub type R = crate::R<u32, super::DCDCCTRL>;
+#[doc = "Writer for register DCDCCTRL"]
+pub type W = crate::W<u32, super::DCDCCTRL>;
+#[doc = "Register DCDCCTRL `reset()`'s with value 0x33"]
+impl crate::ResetValue for super::DCDCCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x33
     }
 }
 #[doc = "Possible values of the field `DCDCMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DCDCMODER {
+pub enum DCDCMODE_A {
     #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
     BYPASS,
     #[doc = "DCDC regulator is operating in low noise mode."]
@@ -52,265 +22,171 @@ pub enum DCDCMODER {
     #[doc = "DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
     OFF,
 }
-impl DCDCMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DCDCMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DCDCMODER::BYPASS => 0,
-            DCDCMODER::LOWNOISE => 1,
-            DCDCMODER::LOWPOWER => 2,
-            DCDCMODER::OFF => 3,
+            DCDCMODE_A::BYPASS => 0,
+            DCDCMODE_A::LOWNOISE => 1,
+            DCDCMODE_A::LOWPOWER => 2,
+            DCDCMODE_A::OFF => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DCDCMODER {
-        match value {
-            0 => DCDCMODER::BYPASS,
-            1 => DCDCMODER::LOWNOISE,
-            2 => DCDCMODER::LOWPOWER,
-            3 => DCDCMODER::OFF,
+}
+#[doc = "Reader of field `DCDCMODE`"]
+pub type DCDCMODE_R = crate::R<u8, DCDCMODE_A>;
+impl DCDCMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DCDCMODE_A {
+        match self.bits {
+            0 => DCDCMODE_A::BYPASS,
+            1 => DCDCMODE_A::LOWNOISE,
+            2 => DCDCMODE_A::LOWPOWER,
+            3 => DCDCMODE_A::OFF,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == DCDCMODER::BYPASS
+        *self == DCDCMODE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `LOWNOISE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lownoise(&self) -> bool {
-        *self == DCDCMODER::LOWNOISE
+        *self == DCDCMODE_A::LOWNOISE
     }
     #[doc = "Checks if the value of the field is `LOWPOWER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lowpower(&self) -> bool {
-        *self == DCDCMODER::LOWPOWER
+        *self == DCDCMODE_A::LOWPOWER
     }
     #[doc = "Checks if the value of the field is `OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_off(&self) -> bool {
-        *self == DCDCMODER::OFF
+        *self == DCDCMODE_A::OFF
     }
 }
-#[doc = r" Value of the field"]
-pub struct DCDCMODEEM23R {
-    bits: bool,
-}
-impl DCDCMODEEM23R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCDCMODEEM4R {
-    bits: bool,
-}
-impl DCDCMODEEM4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `DCDCMODE`"]
-pub enum DCDCMODEW {
-    #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
-    BYPASS,
-    #[doc = "DCDC regulator is operating in low noise mode."]
-    LOWNOISE,
-    #[doc = "DCDC regulator is operating in low power mode."]
-    LOWPOWER,
-    #[doc = "DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
-    OFF,
-}
-impl DCDCMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DCDCMODEW::BYPASS => 0,
-            DCDCMODEW::LOWNOISE => 1,
-            DCDCMODEW::LOWPOWER => 2,
-            DCDCMODEW::OFF => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DCDCMODEW<'a> {
+#[doc = "Write proxy for field `DCDCMODE`"]
+pub struct DCDCMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DCDCMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DCDCMODEW) -> &'a mut W {
+impl<'a> DCDCMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DCDCMODE_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
-    #[inline]
+    #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(DCDCMODEW::BYPASS)
+        self.variant(DCDCMODE_A::BYPASS)
     }
     #[doc = "DCDC regulator is operating in low noise mode."]
-    #[inline]
+    #[inline(always)]
     pub fn lownoise(self) -> &'a mut W {
-        self.variant(DCDCMODEW::LOWNOISE)
+        self.variant(DCDCMODE_A::LOWNOISE)
     }
     #[doc = "DCDC regulator is operating in low power mode."]
-    #[inline]
+    #[inline(always)]
     pub fn lowpower(self) -> &'a mut W {
-        self.variant(DCDCMODEW::LOWPOWER)
+        self.variant(DCDCMODE_A::LOWPOWER)
     }
     #[doc = "DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
-    #[inline]
+    #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(DCDCMODEW::OFF)
+        self.variant(DCDCMODE_A::OFF)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DCDCMODEEM23W<'a> {
+#[doc = "Reader of field `DCDCMODEEM23`"]
+pub type DCDCMODEEM23_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DCDCMODEEM23`"]
+pub struct DCDCMODEEM23_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DCDCMODEEM23W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DCDCMODEEM23_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DCDCMODEEM4W<'a> {
+#[doc = "Reader of field `DCDCMODEEM4`"]
+pub type DCDCMODEEM4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DCDCMODEEM4`"]
+pub struct DCDCMODEEM4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DCDCMODEEM4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DCDCMODEEM4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Regulator Mode"]
-    #[inline]
-    pub fn dcdcmode(&self) -> DCDCMODER {
-        DCDCMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dcdcmode(&self) -> DCDCMODE_R {
+        DCDCMODE_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 4 - DCDC Mode EM23"]
-    #[inline]
-    pub fn dcdcmodeem23(&self) -> DCDCMODEEM23R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDCMODEEM23R { bits }
+    #[inline(always)]
+    pub fn dcdcmodeem23(&self) -> DCDCMODEEM23_R {
+        DCDCMODEEM23_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - DCDC Mode EM4H"]
-    #[inline]
-    pub fn dcdcmodeem4(&self) -> DCDCMODEEM4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDCMODEEM4R { bits }
+    #[inline(always)]
+    pub fn dcdcmodeem4(&self) -> DCDCMODEEM4_R {
+        DCDCMODEEM4_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 51 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Regulator Mode"]
-    #[inline]
-    pub fn dcdcmode(&mut self) -> _DCDCMODEW {
-        _DCDCMODEW { w: self }
+    #[inline(always)]
+    pub fn dcdcmode(&mut self) -> DCDCMODE_W {
+        DCDCMODE_W { w: self }
     }
     #[doc = "Bit 4 - DCDC Mode EM23"]
-    #[inline]
-    pub fn dcdcmodeem23(&mut self) -> _DCDCMODEEM23W {
-        _DCDCMODEEM23W { w: self }
+    #[inline(always)]
+    pub fn dcdcmodeem23(&mut self) -> DCDCMODEEM23_W {
+        DCDCMODEEM23_W { w: self }
     }
     #[doc = "Bit 5 - DCDC Mode EM4H"]
-    #[inline]
-    pub fn dcdcmodeem4(&mut self) -> _DCDCMODEEM4W {
-        _DCDCMODEEM4W { w: self }
+    #[inline(always)]
+    pub fn dcdcmodeem4(&mut self) -> DCDCMODEEM4_W {
+        DCDCMODEEM4_W { w: self }
     }
 }

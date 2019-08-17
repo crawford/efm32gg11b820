@@ -1,103 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::STARTFRAME {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register STARTFRAME"]
+pub type R = crate::R<u32, super::STARTFRAME>;
+#[doc = "Writer for register STARTFRAME"]
+pub type W = crate::W<u32, super::STARTFRAME>;
+#[doc = "Register STARTFRAME `reset()`'s with value 0"]
+impl crate::ResetValue for super::STARTFRAME {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct STARTFRAMER {
-    bits: u16,
-}
-impl STARTFRAMER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STARTFRAMEW<'a> {
+#[doc = "Reader of field `STARTFRAME`"]
+pub type STARTFRAME_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `STARTFRAME`"]
+pub struct STARTFRAME_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STARTFRAMEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> STARTFRAME_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01ff) | ((value as u32) & 0x01ff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:8 - Start Frame"]
-    #[inline]
-    pub fn startframe(&self) -> STARTFRAMER {
-        let bits = {
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        STARTFRAMER { bits }
+    #[inline(always)]
+    pub fn startframe(&self) -> STARTFRAME_R {
+        STARTFRAME_R::new((self.bits & 0x01ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:8 - Start Frame"]
-    #[inline]
-    pub fn startframe(&mut self) -> _STARTFRAMEW {
-        _STARTFRAMEW { w: self }
+    #[inline(always)]
+    pub fn startframe(&mut self) -> STARTFRAME_W {
+        STARTFRAME_W { w: self }
     }
 }

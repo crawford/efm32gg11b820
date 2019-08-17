@@ -1,242 +1,98 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ETMSR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ETMSR"]
+pub type R = crate::R<u32, super::ETMSR>;
+#[doc = "Writer for register ETMSR"]
+pub type W = crate::W<u32, super::ETMSR>;
+#[doc = "Register ETMSR `reset()`'s with value 0x02"]
+impl crate::ResetValue for super::ETMSR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x02
     }
 }
-#[doc = r" Value of the field"]
-pub struct ETHOFR {
-    bits: bool,
-}
-impl ETHOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ETMPROGBITR {
-    bits: bool,
-}
-impl ETMPROGBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRACESTATR {
-    bits: bool,
-}
-impl TRACESTATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIGBITR {
-    bits: bool,
-}
-impl TRIGBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TRACESTATW<'a> {
+#[doc = "Reader of field `ETHOF`"]
+pub type ETHOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ETMPROGBIT`"]
+pub type ETMPROGBIT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TRACESTAT`"]
+pub type TRACESTAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TRACESTAT`"]
+pub struct TRACESTAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRACESTATW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TRACESTAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGBITW<'a> {
+#[doc = "Reader of field `TRIGBIT`"]
+pub type TRIGBIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TRIGBIT`"]
+pub struct TRIGBIT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGBITW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TRIGBIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - ETM Overflow"]
-    #[inline]
-    pub fn ethof(&self) -> ETHOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ETHOFR { bits }
+    #[inline(always)]
+    pub fn ethof(&self) -> ETHOF_R {
+        ETHOF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - ETM Programming Bit Status"]
-    #[inline]
-    pub fn etmprogbit(&self) -> ETMPROGBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ETMPROGBITR { bits }
+    #[inline(always)]
+    pub fn etmprogbit(&self) -> ETMPROGBIT_R {
+        ETMPROGBIT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Trace Start/Stop Status"]
-    #[inline]
-    pub fn tracestat(&self) -> TRACESTATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TRACESTATR { bits }
+    #[inline(always)]
+    pub fn tracestat(&self) -> TRACESTAT_R {
+        TRACESTAT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Trigger Bit"]
-    #[inline]
-    pub fn trigbit(&self) -> TRIGBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TRIGBITR { bits }
+    #[inline(always)]
+    pub fn trigbit(&self) -> TRIGBIT_R {
+        TRIGBIT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Trace Start/Stop Status"]
-    #[inline]
-    pub fn tracestat(&mut self) -> _TRACESTATW {
-        _TRACESTATW { w: self }
+    #[inline(always)]
+    pub fn tracestat(&mut self) -> TRACESTAT_W {
+        TRACESTAT_W { w: self }
     }
     #[doc = "Bit 3 - Trigger Bit"]
-    #[inline]
-    pub fn trigbit(&mut self) -> _TRIGBITW {
-        _TRIGBITW { w: self }
+    #[inline(always)]
+    pub fn trigbit(&mut self) -> TRIGBIT_W {
+        TRIGBIT_W { w: self }
     }
 }

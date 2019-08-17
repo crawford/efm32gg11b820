@@ -1,235 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AHBACTR {
-    bits: bool,
-}
-impl AHBACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ECCACTR {
-    bits: bool,
-}
-impl ECCACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTPIXEL0EMPTYR {
-    bits: bool,
-}
-impl TFTPIXEL0EMPTYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTPIXEL1EMPTYR {
-    bits: bool,
-}
-impl TFTPIXEL1EMPTYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTPIXELFULLR {
-    bits: bool,
-}
-impl TFTPIXELFULLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDACTR {
-    bits: bool,
-}
-impl DDACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTDDEMPTYR {
-    bits: bool,
-}
-impl TFTDDEMPTYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `AHBACT`"]
+pub type AHBACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ECCACT`"]
+pub type ECCACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TFTPIXEL0EMPTY`"]
+pub type TFTPIXEL0EMPTY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TFTPIXEL1EMPTY`"]
+pub type TFTPIXEL1EMPTY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TFTPIXELFULL`"]
+pub type TFTPIXELFULL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DDACT`"]
+pub type DDACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TFTDDEMPTY`"]
+pub type TFTDDEMPTY_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - EBI Busy With AHB Transaction"]
-    #[inline]
-    pub fn ahbact(&self) -> AHBACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AHBACTR { bits }
+    #[inline(always)]
+    pub fn ahbact(&self) -> AHBACT_R {
+        AHBACT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 4 - EBI ECC Generation Active"]
-    #[inline]
-    pub fn eccact(&self) -> ECCACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ECCACTR { bits }
+    #[inline(always)]
+    pub fn eccact(&self) -> ECCACT_R {
+        ECCACT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - EBI_TFTPIXEL0 is Empty"]
-    #[inline]
-    pub fn tftpixel0empty(&self) -> TFTPIXEL0EMPTYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFTPIXEL0EMPTYR { bits }
+    #[inline(always)]
+    pub fn tftpixel0empty(&self) -> TFTPIXEL0EMPTY_R {
+        TFTPIXEL0EMPTY_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - EBI_TFTPIXEL1 is Empty"]
-    #[inline]
-    pub fn tftpixel1empty(&self) -> TFTPIXEL1EMPTYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFTPIXEL1EMPTYR { bits }
+    #[inline(always)]
+    pub fn tftpixel1empty(&self) -> TFTPIXEL1EMPTY_R {
+        TFTPIXEL1EMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - EBI_TFTPIXEL0 is Full"]
-    #[inline]
-    pub fn tftpixelfull(&self) -> TFTPIXELFULLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFTPIXELFULLR { bits }
+    #[inline(always)]
+    pub fn tftpixelfull(&self) -> TFTPIXELFULL_R {
+        TFTPIXELFULL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 12 - EBI Busy With Direct Drive Transactions"]
-    #[inline]
-    pub fn ddact(&self) -> DDACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DDACTR { bits }
+    #[inline(always)]
+    pub fn ddact(&self) -> DDACT_R {
+        DDACT_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - EBI_TFTDD Register is Empty"]
-    #[inline]
-    pub fn tftddempty(&self) -> TFTDDEMPTYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFTDDEMPTYR { bits }
+    #[inline(always)]
+    pub fn tftddempty(&self) -> TFTDDEMPTY_R {
+        TFTDDEMPTY_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }

@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DTTIME {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DTTIME"]
+pub type R = crate::R<u32, super::DTTIME>;
+#[doc = "Writer for register DTTIME"]
+pub type W = crate::W<u32, super::DTTIME>;
+#[doc = "Register DTTIME `reset()`'s with value 0"]
+impl crate::ResetValue for super::DTTIME {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `DTPRESC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DTPRESCR {
+pub enum DTPRESC_A {
     #[doc = "The HFPERCLK is undivided"]
     DIV1,
     #[doc = "The HFPERCLK is divided by 2"]
@@ -65,336 +35,235 @@ pub enum DTPRESCR {
     DIV512,
     #[doc = "The HFPERCLK is divided by 1024"]
     DIV1024,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DTPRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DTPRESC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DTPRESCR::DIV1 => 0,
-            DTPRESCR::DIV2 => 1,
-            DTPRESCR::DIV4 => 2,
-            DTPRESCR::DIV8 => 3,
-            DTPRESCR::DIV16 => 4,
-            DTPRESCR::DIV32 => 5,
-            DTPRESCR::DIV64 => 6,
-            DTPRESCR::DIV128 => 7,
-            DTPRESCR::DIV256 => 8,
-            DTPRESCR::DIV512 => 9,
-            DTPRESCR::DIV1024 => 10,
-            DTPRESCR::_Reserved(bits) => bits,
+            DTPRESC_A::DIV1 => 0,
+            DTPRESC_A::DIV2 => 1,
+            DTPRESC_A::DIV4 => 2,
+            DTPRESC_A::DIV8 => 3,
+            DTPRESC_A::DIV16 => 4,
+            DTPRESC_A::DIV32 => 5,
+            DTPRESC_A::DIV64 => 6,
+            DTPRESC_A::DIV128 => 7,
+            DTPRESC_A::DIV256 => 8,
+            DTPRESC_A::DIV512 => 9,
+            DTPRESC_A::DIV1024 => 10,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DTPRESCR {
-        match value {
-            0 => DTPRESCR::DIV1,
-            1 => DTPRESCR::DIV2,
-            2 => DTPRESCR::DIV4,
-            3 => DTPRESCR::DIV8,
-            4 => DTPRESCR::DIV16,
-            5 => DTPRESCR::DIV32,
-            6 => DTPRESCR::DIV64,
-            7 => DTPRESCR::DIV128,
-            8 => DTPRESCR::DIV256,
-            9 => DTPRESCR::DIV512,
-            10 => DTPRESCR::DIV1024,
-            i => DTPRESCR::_Reserved(i),
+}
+#[doc = "Reader of field `DTPRESC`"]
+pub type DTPRESC_R = crate::R<u8, DTPRESC_A>;
+impl DTPRESC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DTPRESC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DTPRESC_A::DIV1),
+            1 => Val(DTPRESC_A::DIV2),
+            2 => Val(DTPRESC_A::DIV4),
+            3 => Val(DTPRESC_A::DIV8),
+            4 => Val(DTPRESC_A::DIV16),
+            5 => Val(DTPRESC_A::DIV32),
+            6 => Val(DTPRESC_A::DIV64),
+            7 => Val(DTPRESC_A::DIV128),
+            8 => Val(DTPRESC_A::DIV256),
+            9 => Val(DTPRESC_A::DIV512),
+            10 => Val(DTPRESC_A::DIV1024),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == DTPRESCR::DIV1
+        *self == DTPRESC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == DTPRESCR::DIV2
+        *self == DTPRESC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == DTPRESCR::DIV4
+        *self == DTPRESC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == DTPRESCR::DIV8
+        *self == DTPRESC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == DTPRESCR::DIV16
+        *self == DTPRESC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == DTPRESCR::DIV32
+        *self == DTPRESC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == DTPRESCR::DIV64
+        *self == DTPRESC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == DTPRESCR::DIV128
+        *self == DTPRESC_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        *self == DTPRESCR::DIV256
+        *self == DTPRESC_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        *self == DTPRESCR::DIV512
+        *self == DTPRESC_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        *self == DTPRESCR::DIV1024
+        *self == DTPRESC_A::DIV1024
     }
 }
-#[doc = r" Value of the field"]
-pub struct DTRISETR {
-    bits: u8,
-}
-impl DTRISETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DTFALLTR {
-    bits: u8,
-}
-impl DTFALLTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `DTPRESC`"]
-pub enum DTPRESCW {
-    #[doc = "The HFPERCLK is undivided"]
-    DIV1,
-    #[doc = "The HFPERCLK is divided by 2"]
-    DIV2,
-    #[doc = "The HFPERCLK is divided by 4"]
-    DIV4,
-    #[doc = "The HFPERCLK is divided by 8"]
-    DIV8,
-    #[doc = "The HFPERCLK is divided by 16"]
-    DIV16,
-    #[doc = "The HFPERCLK is divided by 32"]
-    DIV32,
-    #[doc = "The HFPERCLK is divided by 64"]
-    DIV64,
-    #[doc = "The HFPERCLK is divided by 128"]
-    DIV128,
-    #[doc = "The HFPERCLK is divided by 256"]
-    DIV256,
-    #[doc = "The HFPERCLK is divided by 512"]
-    DIV512,
-    #[doc = "The HFPERCLK is divided by 1024"]
-    DIV1024,
-}
-impl DTPRESCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DTPRESCW::DIV1 => 0,
-            DTPRESCW::DIV2 => 1,
-            DTPRESCW::DIV4 => 2,
-            DTPRESCW::DIV8 => 3,
-            DTPRESCW::DIV16 => 4,
-            DTPRESCW::DIV32 => 5,
-            DTPRESCW::DIV64 => 6,
-            DTPRESCW::DIV128 => 7,
-            DTPRESCW::DIV256 => 8,
-            DTPRESCW::DIV512 => 9,
-            DTPRESCW::DIV1024 => 10,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DTPRESCW<'a> {
+#[doc = "Write proxy for field `DTPRESC`"]
+pub struct DTPRESC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTPRESCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DTPRESCW) -> &'a mut W {
+impl<'a> DTPRESC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DTPRESC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "The HFPERCLK is undivided"]
-    #[inline]
+    #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV1)
+        self.variant(DTPRESC_A::DIV1)
     }
     #[doc = "The HFPERCLK is divided by 2"]
-    #[inline]
+    #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV2)
+        self.variant(DTPRESC_A::DIV2)
     }
     #[doc = "The HFPERCLK is divided by 4"]
-    #[inline]
+    #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV4)
+        self.variant(DTPRESC_A::DIV4)
     }
     #[doc = "The HFPERCLK is divided by 8"]
-    #[inline]
+    #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV8)
+        self.variant(DTPRESC_A::DIV8)
     }
     #[doc = "The HFPERCLK is divided by 16"]
-    #[inline]
+    #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV16)
+        self.variant(DTPRESC_A::DIV16)
     }
     #[doc = "The HFPERCLK is divided by 32"]
-    #[inline]
+    #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV32)
+        self.variant(DTPRESC_A::DIV32)
     }
     #[doc = "The HFPERCLK is divided by 64"]
-    #[inline]
+    #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV64)
+        self.variant(DTPRESC_A::DIV64)
     }
     #[doc = "The HFPERCLK is divided by 128"]
-    #[inline]
+    #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV128)
+        self.variant(DTPRESC_A::DIV128)
     }
     #[doc = "The HFPERCLK is divided by 256"]
-    #[inline]
+    #[inline(always)]
     pub fn div256(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV256)
+        self.variant(DTPRESC_A::DIV256)
     }
     #[doc = "The HFPERCLK is divided by 512"]
-    #[inline]
+    #[inline(always)]
     pub fn div512(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV512)
+        self.variant(DTPRESC_A::DIV512)
     }
     #[doc = "The HFPERCLK is divided by 1024"]
-    #[inline]
+    #[inline(always)]
     pub fn div1024(self) -> &'a mut W {
-        self.variant(DTPRESCW::DIV1024)
+        self.variant(DTPRESC_A::DIV1024)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DTRISETW<'a> {
+#[doc = "Reader of field `DTRISET`"]
+pub type DTRISET_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DTRISET`"]
+pub struct DTRISET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTRISETW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DTRISET_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DTFALLTW<'a> {
+#[doc = "Reader of field `DTFALLT`"]
+pub type DTFALLT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DTFALLT`"]
+pub struct DTFALLT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTFALLTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DTFALLT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
-    #[inline]
-    pub fn dtpresc(&self) -> DTPRESCR {
-        DTPRESCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dtpresc(&self) -> DTPRESC_R {
+        DTPRESC_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:13 - DTI Rise-time"]
-    #[inline]
-    pub fn dtriset(&self) -> DTRISETR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DTRISETR { bits }
+    #[inline(always)]
+    pub fn dtriset(&self) -> DTRISET_R {
+        DTRISET_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - DTI Fall-time"]
-    #[inline]
-    pub fn dtfallt(&self) -> DTFALLTR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DTFALLTR { bits }
+    #[inline(always)]
+    pub fn dtfallt(&self) -> DTFALLT_R {
+        DTFALLT_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
-    #[inline]
-    pub fn dtpresc(&mut self) -> _DTPRESCW {
-        _DTPRESCW { w: self }
+    #[inline(always)]
+    pub fn dtpresc(&mut self) -> DTPRESC_W {
+        DTPRESC_W { w: self }
     }
     #[doc = "Bits 8:13 - DTI Rise-time"]
-    #[inline]
-    pub fn dtriset(&mut self) -> _DTRISETW {
-        _DTRISETW { w: self }
+    #[inline(always)]
+    pub fn dtriset(&mut self) -> DTRISET_W {
+        DTRISET_W { w: self }
     }
     #[doc = "Bits 16:21 - DTI Fall-time"]
-    #[inline]
-    pub fn dtfallt(&mut self) -> _DTFALLTW {
-        _DTFALLTW { w: self }
+    #[inline(always)]
+    pub fn dtfallt(&mut self) -> DTFALLT_W {
+        DTFALLT_W { w: self }
     }
 }

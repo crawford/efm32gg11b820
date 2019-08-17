@@ -1,385 +1,204 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DEVINSTRRDCONFIG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DEVINSTRRDCONFIG"]
+pub type R = crate::R<u32, super::DEVINSTRRDCONFIG>;
+#[doc = "Writer for register DEVINSTRRDCONFIG"]
+pub type W = crate::W<u32, super::DEVINSTRRDCONFIG>;
+#[doc = "Register DEVINSTRRDCONFIG `reset()`'s with value 0x03"]
+impl crate::ResetValue for super::DEVINSTRRDCONFIG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03
     }
 }
-#[doc = r" Value of the field"]
-pub struct RDOPCODENONXIPR {
-    bits: u8,
-}
-impl RDOPCODENONXIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTRTYPER {
-    bits: u8,
-}
-impl INSTRTYPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDRENR {
-    bits: bool,
-}
-impl DDRENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ADDRXFERTYPESTDMODER {
-    bits: u8,
-}
-impl ADDRXFERTYPESTDMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATAXFERTYPEEXTMODER {
-    bits: u8,
-}
-impl DATAXFERTYPEEXTMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MODEBITENABLER {
-    bits: bool,
-}
-impl MODEBITENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DUMMYRDCLKCYCLESR {
-    bits: u8,
-}
-impl DUMMYRDCLKCYCLESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RDOPCODENONXIPW<'a> {
+#[doc = "Reader of field `RDOPCODENONXIP`"]
+pub type RDOPCODENONXIP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RDOPCODENONXIP`"]
+pub struct RDOPCODENONXIP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDOPCODENONXIPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RDOPCODENONXIP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTRTYPEW<'a> {
+#[doc = "Reader of field `INSTRTYPE`"]
+pub type INSTRTYPE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTRTYPE`"]
+pub struct INSTRTYPE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTRTYPEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTRTYPE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DDRENW<'a> {
+#[doc = "Reader of field `DDREN`"]
+pub type DDREN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DDREN`"]
+pub struct DDREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDRENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DDREN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDRXFERTYPESTDMODEW<'a> {
+#[doc = "Reader of field `ADDRXFERTYPESTDMODE`"]
+pub type ADDRXFERTYPESTDMODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ADDRXFERTYPESTDMODE`"]
+pub struct ADDRXFERTYPESTDMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDRXFERTYPESTDMODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ADDRXFERTYPESTDMODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATAXFERTYPEEXTMODEW<'a> {
+#[doc = "Reader of field `DATAXFERTYPEEXTMODE`"]
+pub type DATAXFERTYPEEXTMODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATAXFERTYPEEXTMODE`"]
+pub struct DATAXFERTYPEEXTMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATAXFERTYPEEXTMODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATAXFERTYPEEXTMODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MODEBITENABLEW<'a> {
+#[doc = "Reader of field `MODEBITENABLE`"]
+pub type MODEBITENABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MODEBITENABLE`"]
+pub struct MODEBITENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEBITENABLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MODEBITENABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DUMMYRDCLKCYCLESW<'a> {
+#[doc = "Reader of field `DUMMYRDCLKCYCLES`"]
+pub type DUMMYRDCLKCYCLES_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DUMMYRDCLKCYCLES`"]
+pub struct DUMMYRDCLKCYCLES_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DUMMYRDCLKCYCLESW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DUMMYRDCLKCYCLES_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 24)) | (((value as u32) & 0x1f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Read Opcode in Non-XIP Mode"]
-    #[inline]
-    pub fn rdopcodenonxip(&self) -> RDOPCODENONXIPR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDOPCODENONXIPR { bits }
+    #[inline(always)]
+    pub fn rdopcodenonxip(&self) -> RDOPCODENONXIP_R {
+        RDOPCODENONXIP_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:9 - Instruction Type"]
-    #[inline]
-    pub fn instrtype(&self) -> INSTRTYPER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTRTYPER { bits }
+    #[inline(always)]
+    pub fn instrtype(&self) -> INSTRTYPE_R {
+        INSTRTYPE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bit 10 - DDR Enable"]
-    #[inline]
-    pub fn ddren(&self) -> DDRENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DDRENR { bits }
+    #[inline(always)]
+    pub fn ddren(&self) -> DDREN_R {
+        DDREN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 12:13 - Address Transfer Type for Standard SPI Modes"]
-    #[inline]
-    pub fn addrxfertypestdmode(&self) -> ADDRXFERTYPESTDMODER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ADDRXFERTYPESTDMODER { bits }
+    #[inline(always)]
+    pub fn addrxfertypestdmode(&self) -> ADDRXFERTYPESTDMODE_R {
+        ADDRXFERTYPESTDMODE_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 16:17 - Data Transfer Type for Standard SPI Modes"]
-    #[inline]
-    pub fn dataxfertypeextmode(&self) -> DATAXFERTYPEEXTMODER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATAXFERTYPEEXTMODER { bits }
+    #[inline(always)]
+    pub fn dataxfertypeextmode(&self) -> DATAXFERTYPEEXTMODE_R {
+        DATAXFERTYPEEXTMODE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bit 20 - Mode Bit Enable"]
-    #[inline]
-    pub fn modebitenable(&self) -> MODEBITENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MODEBITENABLER { bits }
+    #[inline(always)]
+    pub fn modebitenable(&self) -> MODEBITENABLE_R {
+        MODEBITENABLE_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bits 24:28 - Dummy Read Clock Cycles"]
-    #[inline]
-    pub fn dummyrdclkcycles(&self) -> DUMMYRDCLKCYCLESR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DUMMYRDCLKCYCLESR { bits }
+    #[inline(always)]
+    pub fn dummyrdclkcycles(&self) -> DUMMYRDCLKCYCLES_R {
+        DUMMYRDCLKCYCLES_R::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Read Opcode in Non-XIP Mode"]
-    #[inline]
-    pub fn rdopcodenonxip(&mut self) -> _RDOPCODENONXIPW {
-        _RDOPCODENONXIPW { w: self }
+    #[inline(always)]
+    pub fn rdopcodenonxip(&mut self) -> RDOPCODENONXIP_W {
+        RDOPCODENONXIP_W { w: self }
     }
     #[doc = "Bits 8:9 - Instruction Type"]
-    #[inline]
-    pub fn instrtype(&mut self) -> _INSTRTYPEW {
-        _INSTRTYPEW { w: self }
+    #[inline(always)]
+    pub fn instrtype(&mut self) -> INSTRTYPE_W {
+        INSTRTYPE_W { w: self }
     }
     #[doc = "Bit 10 - DDR Enable"]
-    #[inline]
-    pub fn ddren(&mut self) -> _DDRENW {
-        _DDRENW { w: self }
+    #[inline(always)]
+    pub fn ddren(&mut self) -> DDREN_W {
+        DDREN_W { w: self }
     }
     #[doc = "Bits 12:13 - Address Transfer Type for Standard SPI Modes"]
-    #[inline]
-    pub fn addrxfertypestdmode(&mut self) -> _ADDRXFERTYPESTDMODEW {
-        _ADDRXFERTYPESTDMODEW { w: self }
+    #[inline(always)]
+    pub fn addrxfertypestdmode(&mut self) -> ADDRXFERTYPESTDMODE_W {
+        ADDRXFERTYPESTDMODE_W { w: self }
     }
     #[doc = "Bits 16:17 - Data Transfer Type for Standard SPI Modes"]
-    #[inline]
-    pub fn dataxfertypeextmode(&mut self) -> _DATAXFERTYPEEXTMODEW {
-        _DATAXFERTYPEEXTMODEW { w: self }
+    #[inline(always)]
+    pub fn dataxfertypeextmode(&mut self) -> DATAXFERTYPEEXTMODE_W {
+        DATAXFERTYPEEXTMODE_W { w: self }
     }
     #[doc = "Bit 20 - Mode Bit Enable"]
-    #[inline]
-    pub fn modebitenable(&mut self) -> _MODEBITENABLEW {
-        _MODEBITENABLEW { w: self }
+    #[inline(always)]
+    pub fn modebitenable(&mut self) -> MODEBITENABLE_W {
+        MODEBITENABLE_W { w: self }
     }
     #[doc = "Bits 24:28 - Dummy Read Clock Cycles"]
-    #[inline]
-    pub fn dummyrdclkcycles(&mut self) -> _DUMMYRDCLKCYCLESW {
-        _DUMMYRDCLKCYCLESW { w: self }
+    #[inline(always)]
+    pub fn dummyrdclkcycles(&mut self) -> DUMMYRDCLKCYCLES_W {
+        DUMMYRDCLKCYCLES_W { w: self }
     }
 }

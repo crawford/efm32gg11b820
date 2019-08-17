@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LFAPRESC0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LFAPRESC0"]
+pub type R = crate::R<u32, super::LFAPRESC0>;
+#[doc = "Writer for register LFAPRESC0"]
+pub type W = crate::W<u32, super::LFAPRESC0>;
+#[doc = "Register LFAPRESC0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::LFAPRESC0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `LETIMER0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LETIMER0R {
+pub enum LETIMER0_A {
     #[doc = "LFACLKLETIMER0 = LFACLK"]
     DIV1,
     #[doc = "LFACLKLETIMER0 = LFACLK/2"]
@@ -76,137 +46,239 @@ pub enum LETIMER0R {
     #[doc = "LFACLKLETIMER0 = LFACLK/32768"]
     DIV32768,
 }
-impl LETIMER0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LETIMER0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LETIMER0R::DIV1 => 0,
-            LETIMER0R::DIV2 => 1,
-            LETIMER0R::DIV4 => 2,
-            LETIMER0R::DIV8 => 3,
-            LETIMER0R::DIV16 => 4,
-            LETIMER0R::DIV32 => 5,
-            LETIMER0R::DIV64 => 6,
-            LETIMER0R::DIV128 => 7,
-            LETIMER0R::DIV256 => 8,
-            LETIMER0R::DIV512 => 9,
-            LETIMER0R::DIV1024 => 10,
-            LETIMER0R::DIV2048 => 11,
-            LETIMER0R::DIV4096 => 12,
-            LETIMER0R::DIV8192 => 13,
-            LETIMER0R::DIV16384 => 14,
-            LETIMER0R::DIV32768 => 15,
+            LETIMER0_A::DIV1 => 0,
+            LETIMER0_A::DIV2 => 1,
+            LETIMER0_A::DIV4 => 2,
+            LETIMER0_A::DIV8 => 3,
+            LETIMER0_A::DIV16 => 4,
+            LETIMER0_A::DIV32 => 5,
+            LETIMER0_A::DIV64 => 6,
+            LETIMER0_A::DIV128 => 7,
+            LETIMER0_A::DIV256 => 8,
+            LETIMER0_A::DIV512 => 9,
+            LETIMER0_A::DIV1024 => 10,
+            LETIMER0_A::DIV2048 => 11,
+            LETIMER0_A::DIV4096 => 12,
+            LETIMER0_A::DIV8192 => 13,
+            LETIMER0_A::DIV16384 => 14,
+            LETIMER0_A::DIV32768 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LETIMER0R {
-        match value {
-            0 => LETIMER0R::DIV1,
-            1 => LETIMER0R::DIV2,
-            2 => LETIMER0R::DIV4,
-            3 => LETIMER0R::DIV8,
-            4 => LETIMER0R::DIV16,
-            5 => LETIMER0R::DIV32,
-            6 => LETIMER0R::DIV64,
-            7 => LETIMER0R::DIV128,
-            8 => LETIMER0R::DIV256,
-            9 => LETIMER0R::DIV512,
-            10 => LETIMER0R::DIV1024,
-            11 => LETIMER0R::DIV2048,
-            12 => LETIMER0R::DIV4096,
-            13 => LETIMER0R::DIV8192,
-            14 => LETIMER0R::DIV16384,
-            15 => LETIMER0R::DIV32768,
+}
+#[doc = "Reader of field `LETIMER0`"]
+pub type LETIMER0_R = crate::R<u8, LETIMER0_A>;
+impl LETIMER0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LETIMER0_A {
+        match self.bits {
+            0 => LETIMER0_A::DIV1,
+            1 => LETIMER0_A::DIV2,
+            2 => LETIMER0_A::DIV4,
+            3 => LETIMER0_A::DIV8,
+            4 => LETIMER0_A::DIV16,
+            5 => LETIMER0_A::DIV32,
+            6 => LETIMER0_A::DIV64,
+            7 => LETIMER0_A::DIV128,
+            8 => LETIMER0_A::DIV256,
+            9 => LETIMER0_A::DIV512,
+            10 => LETIMER0_A::DIV1024,
+            11 => LETIMER0_A::DIV2048,
+            12 => LETIMER0_A::DIV4096,
+            13 => LETIMER0_A::DIV8192,
+            14 => LETIMER0_A::DIV16384,
+            15 => LETIMER0_A::DIV32768,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == LETIMER0R::DIV1
+        *self == LETIMER0_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == LETIMER0R::DIV2
+        *self == LETIMER0_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == LETIMER0R::DIV4
+        *self == LETIMER0_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == LETIMER0R::DIV8
+        *self == LETIMER0_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == LETIMER0R::DIV16
+        *self == LETIMER0_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == LETIMER0R::DIV32
+        *self == LETIMER0_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == LETIMER0R::DIV64
+        *self == LETIMER0_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == LETIMER0R::DIV128
+        *self == LETIMER0_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        *self == LETIMER0R::DIV256
+        *self == LETIMER0_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        *self == LETIMER0R::DIV512
+        *self == LETIMER0_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        *self == LETIMER0R::DIV1024
+        *self == LETIMER0_A::DIV1024
     }
     #[doc = "Checks if the value of the field is `DIV2048`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2048(&self) -> bool {
-        *self == LETIMER0R::DIV2048
+        *self == LETIMER0_A::DIV2048
     }
     #[doc = "Checks if the value of the field is `DIV4096`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4096(&self) -> bool {
-        *self == LETIMER0R::DIV4096
+        *self == LETIMER0_A::DIV4096
     }
     #[doc = "Checks if the value of the field is `DIV8192`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8192(&self) -> bool {
-        *self == LETIMER0R::DIV8192
+        *self == LETIMER0_A::DIV8192
     }
     #[doc = "Checks if the value of the field is `DIV16384`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16384(&self) -> bool {
-        *self == LETIMER0R::DIV16384
+        *self == LETIMER0_A::DIV16384
     }
     #[doc = "Checks if the value of the field is `DIV32768`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32768(&self) -> bool {
-        *self == LETIMER0R::DIV32768
+        *self == LETIMER0_A::DIV32768
+    }
+}
+#[doc = "Write proxy for field `LETIMER0`"]
+pub struct LETIMER0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LETIMER0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LETIMER0_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV1)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV2)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV4)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV8)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/16"]
+    #[inline(always)]
+    pub fn div16(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV16)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/32"]
+    #[inline(always)]
+    pub fn div32(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV32)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/64"]
+    #[inline(always)]
+    pub fn div64(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV64)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/128"]
+    #[inline(always)]
+    pub fn div128(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV128)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/256"]
+    #[inline(always)]
+    pub fn div256(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV256)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/512"]
+    #[inline(always)]
+    pub fn div512(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV512)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/1024"]
+    #[inline(always)]
+    pub fn div1024(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV1024)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/2048"]
+    #[inline(always)]
+    pub fn div2048(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV2048)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/4096"]
+    #[inline(always)]
+    pub fn div4096(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV4096)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/8192"]
+    #[inline(always)]
+    pub fn div8192(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV8192)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/16384"]
+    #[inline(always)]
+    pub fn div16384(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV16384)
+    }
+    #[doc = "LFACLKLETIMER0 = LFACLK/32768"]
+    #[inline(always)]
+    pub fn div32768(self) -> &'a mut W {
+        self.variant(LETIMER0_A::DIV32768)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LETIMER1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LETIMER1R {
+pub enum LETIMER1_A {
     #[doc = "LFACLKLETIMER1 = LFACLK"]
     DIV1,
     #[doc = "LFACLKLETIMER1 = LFACLK/2"]
@@ -240,137 +312,239 @@ pub enum LETIMER1R {
     #[doc = "LFACLKLETIMER1 = LFACLK/32768"]
     DIV32768,
 }
-impl LETIMER1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LETIMER1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LETIMER1R::DIV1 => 0,
-            LETIMER1R::DIV2 => 1,
-            LETIMER1R::DIV4 => 2,
-            LETIMER1R::DIV8 => 3,
-            LETIMER1R::DIV16 => 4,
-            LETIMER1R::DIV32 => 5,
-            LETIMER1R::DIV64 => 6,
-            LETIMER1R::DIV128 => 7,
-            LETIMER1R::DIV256 => 8,
-            LETIMER1R::DIV512 => 9,
-            LETIMER1R::DIV1024 => 10,
-            LETIMER1R::DIV2048 => 11,
-            LETIMER1R::DIV4096 => 12,
-            LETIMER1R::DIV8192 => 13,
-            LETIMER1R::DIV16384 => 14,
-            LETIMER1R::DIV32768 => 15,
+            LETIMER1_A::DIV1 => 0,
+            LETIMER1_A::DIV2 => 1,
+            LETIMER1_A::DIV4 => 2,
+            LETIMER1_A::DIV8 => 3,
+            LETIMER1_A::DIV16 => 4,
+            LETIMER1_A::DIV32 => 5,
+            LETIMER1_A::DIV64 => 6,
+            LETIMER1_A::DIV128 => 7,
+            LETIMER1_A::DIV256 => 8,
+            LETIMER1_A::DIV512 => 9,
+            LETIMER1_A::DIV1024 => 10,
+            LETIMER1_A::DIV2048 => 11,
+            LETIMER1_A::DIV4096 => 12,
+            LETIMER1_A::DIV8192 => 13,
+            LETIMER1_A::DIV16384 => 14,
+            LETIMER1_A::DIV32768 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LETIMER1R {
-        match value {
-            0 => LETIMER1R::DIV1,
-            1 => LETIMER1R::DIV2,
-            2 => LETIMER1R::DIV4,
-            3 => LETIMER1R::DIV8,
-            4 => LETIMER1R::DIV16,
-            5 => LETIMER1R::DIV32,
-            6 => LETIMER1R::DIV64,
-            7 => LETIMER1R::DIV128,
-            8 => LETIMER1R::DIV256,
-            9 => LETIMER1R::DIV512,
-            10 => LETIMER1R::DIV1024,
-            11 => LETIMER1R::DIV2048,
-            12 => LETIMER1R::DIV4096,
-            13 => LETIMER1R::DIV8192,
-            14 => LETIMER1R::DIV16384,
-            15 => LETIMER1R::DIV32768,
+}
+#[doc = "Reader of field `LETIMER1`"]
+pub type LETIMER1_R = crate::R<u8, LETIMER1_A>;
+impl LETIMER1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LETIMER1_A {
+        match self.bits {
+            0 => LETIMER1_A::DIV1,
+            1 => LETIMER1_A::DIV2,
+            2 => LETIMER1_A::DIV4,
+            3 => LETIMER1_A::DIV8,
+            4 => LETIMER1_A::DIV16,
+            5 => LETIMER1_A::DIV32,
+            6 => LETIMER1_A::DIV64,
+            7 => LETIMER1_A::DIV128,
+            8 => LETIMER1_A::DIV256,
+            9 => LETIMER1_A::DIV512,
+            10 => LETIMER1_A::DIV1024,
+            11 => LETIMER1_A::DIV2048,
+            12 => LETIMER1_A::DIV4096,
+            13 => LETIMER1_A::DIV8192,
+            14 => LETIMER1_A::DIV16384,
+            15 => LETIMER1_A::DIV32768,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == LETIMER1R::DIV1
+        *self == LETIMER1_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == LETIMER1R::DIV2
+        *self == LETIMER1_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == LETIMER1R::DIV4
+        *self == LETIMER1_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == LETIMER1R::DIV8
+        *self == LETIMER1_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == LETIMER1R::DIV16
+        *self == LETIMER1_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == LETIMER1R::DIV32
+        *self == LETIMER1_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == LETIMER1R::DIV64
+        *self == LETIMER1_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == LETIMER1R::DIV128
+        *self == LETIMER1_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        *self == LETIMER1R::DIV256
+        *self == LETIMER1_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        *self == LETIMER1R::DIV512
+        *self == LETIMER1_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        *self == LETIMER1R::DIV1024
+        *self == LETIMER1_A::DIV1024
     }
     #[doc = "Checks if the value of the field is `DIV2048`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2048(&self) -> bool {
-        *self == LETIMER1R::DIV2048
+        *self == LETIMER1_A::DIV2048
     }
     #[doc = "Checks if the value of the field is `DIV4096`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4096(&self) -> bool {
-        *self == LETIMER1R::DIV4096
+        *self == LETIMER1_A::DIV4096
     }
     #[doc = "Checks if the value of the field is `DIV8192`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8192(&self) -> bool {
-        *self == LETIMER1R::DIV8192
+        *self == LETIMER1_A::DIV8192
     }
     #[doc = "Checks if the value of the field is `DIV16384`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16384(&self) -> bool {
-        *self == LETIMER1R::DIV16384
+        *self == LETIMER1_A::DIV16384
     }
     #[doc = "Checks if the value of the field is `DIV32768`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32768(&self) -> bool {
-        *self == LETIMER1R::DIV32768
+        *self == LETIMER1_A::DIV32768
+    }
+}
+#[doc = "Write proxy for field `LETIMER1`"]
+pub struct LETIMER1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LETIMER1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LETIMER1_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV1)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV2)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV4)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV8)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/16"]
+    #[inline(always)]
+    pub fn div16(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV16)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/32"]
+    #[inline(always)]
+    pub fn div32(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV32)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/64"]
+    #[inline(always)]
+    pub fn div64(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV64)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/128"]
+    #[inline(always)]
+    pub fn div128(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV128)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/256"]
+    #[inline(always)]
+    pub fn div256(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV256)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/512"]
+    #[inline(always)]
+    pub fn div512(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV512)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/1024"]
+    #[inline(always)]
+    pub fn div1024(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV1024)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/2048"]
+    #[inline(always)]
+    pub fn div2048(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV2048)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/4096"]
+    #[inline(always)]
+    pub fn div4096(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV4096)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/8192"]
+    #[inline(always)]
+    pub fn div8192(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV8192)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/16384"]
+    #[inline(always)]
+    pub fn div16384(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV16384)
+    }
+    #[doc = "LFACLKLETIMER1 = LFACLK/32768"]
+    #[inline(always)]
+    pub fn div32768(self) -> &'a mut W {
+        self.variant(LETIMER1_A::DIV32768)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LESENSE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LESENSER {
+pub enum LESENSE_A {
     #[doc = "LFACLKLESENSE = LFACLK"]
     DIV1,
     #[doc = "LFACLKLESENSE = LFACLK/2"]
@@ -380,53 +554,95 @@ pub enum LESENSER {
     #[doc = "LFACLKLESENSE = LFACLK/8"]
     DIV8,
 }
-impl LESENSER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LESENSE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LESENSER::DIV1 => 0,
-            LESENSER::DIV2 => 1,
-            LESENSER::DIV4 => 2,
-            LESENSER::DIV8 => 3,
+            LESENSE_A::DIV1 => 0,
+            LESENSE_A::DIV2 => 1,
+            LESENSE_A::DIV4 => 2,
+            LESENSE_A::DIV8 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LESENSER {
-        match value {
-            0 => LESENSER::DIV1,
-            1 => LESENSER::DIV2,
-            2 => LESENSER::DIV4,
-            3 => LESENSER::DIV8,
+}
+#[doc = "Reader of field `LESENSE`"]
+pub type LESENSE_R = crate::R<u8, LESENSE_A>;
+impl LESENSE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LESENSE_A {
+        match self.bits {
+            0 => LESENSE_A::DIV1,
+            1 => LESENSE_A::DIV2,
+            2 => LESENSE_A::DIV4,
+            3 => LESENSE_A::DIV8,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == LESENSER::DIV1
+        *self == LESENSE_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == LESENSER::DIV2
+        *self == LESENSE_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == LESENSER::DIV4
+        *self == LESENSE_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == LESENSER::DIV8
+        *self == LESENSE_A::DIV8
+    }
+}
+#[doc = "Write proxy for field `LESENSE`"]
+pub struct LESENSE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LESENSE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LESENSE_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "LFACLKLESENSE = LFACLK"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(LESENSE_A::DIV1)
+    }
+    #[doc = "LFACLKLESENSE = LFACLK/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(LESENSE_A::DIV2)
+    }
+    #[doc = "LFACLKLESENSE = LFACLK/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(LESENSE_A::DIV4)
+    }
+    #[doc = "LFACLKLESENSE = LFACLK/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(LESENSE_A::DIV8)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LCD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCDR {
+pub enum LCD_A {
     #[doc = "LFACLKLCD = LFACLK"]
     DIV1,
     #[doc = "LFACLKLCD = LFACLK/2"]
@@ -444,81 +660,143 @@ pub enum LCDR {
     #[doc = "LFACLKLCD = LFACLK/128"]
     DIV128,
 }
-impl LCDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LCD_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LCDR::DIV1 => 0,
-            LCDR::DIV2 => 1,
-            LCDR::DIV4 => 2,
-            LCDR::DIV8 => 3,
-            LCDR::DIV16 => 4,
-            LCDR::DIV32 => 5,
-            LCDR::DIV64 => 6,
-            LCDR::DIV128 => 7,
+            LCD_A::DIV1 => 0,
+            LCD_A::DIV2 => 1,
+            LCD_A::DIV4 => 2,
+            LCD_A::DIV8 => 3,
+            LCD_A::DIV16 => 4,
+            LCD_A::DIV32 => 5,
+            LCD_A::DIV64 => 6,
+            LCD_A::DIV128 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LCDR {
-        match value {
-            0 => LCDR::DIV1,
-            1 => LCDR::DIV2,
-            2 => LCDR::DIV4,
-            3 => LCDR::DIV8,
-            4 => LCDR::DIV16,
-            5 => LCDR::DIV32,
-            6 => LCDR::DIV64,
-            7 => LCDR::DIV128,
+}
+#[doc = "Reader of field `LCD`"]
+pub type LCD_R = crate::R<u8, LCD_A>;
+impl LCD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCD_A {
+        match self.bits {
+            0 => LCD_A::DIV1,
+            1 => LCD_A::DIV2,
+            2 => LCD_A::DIV4,
+            3 => LCD_A::DIV8,
+            4 => LCD_A::DIV16,
+            5 => LCD_A::DIV32,
+            6 => LCD_A::DIV64,
+            7 => LCD_A::DIV128,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == LCDR::DIV1
+        *self == LCD_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == LCDR::DIV2
+        *self == LCD_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == LCDR::DIV4
+        *self == LCD_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == LCDR::DIV8
+        *self == LCD_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == LCDR::DIV16
+        *self == LCD_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == LCDR::DIV32
+        *self == LCD_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == LCDR::DIV64
+        *self == LCD_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == LCDR::DIV128
+        *self == LCD_A::DIV128
+    }
+}
+#[doc = "Write proxy for field `LCD`"]
+pub struct LCD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LCD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LCD_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "LFACLKLCD = LFACLK"]
+    #[inline(always)]
+    pub fn div1(self) -> &'a mut W {
+        self.variant(LCD_A::DIV1)
+    }
+    #[doc = "LFACLKLCD = LFACLK/2"]
+    #[inline(always)]
+    pub fn div2(self) -> &'a mut W {
+        self.variant(LCD_A::DIV2)
+    }
+    #[doc = "LFACLKLCD = LFACLK/4"]
+    #[inline(always)]
+    pub fn div4(self) -> &'a mut W {
+        self.variant(LCD_A::DIV4)
+    }
+    #[doc = "LFACLKLCD = LFACLK/8"]
+    #[inline(always)]
+    pub fn div8(self) -> &'a mut W {
+        self.variant(LCD_A::DIV8)
+    }
+    #[doc = "LFACLKLCD = LFACLK/16"]
+    #[inline(always)]
+    pub fn div16(self) -> &'a mut W {
+        self.variant(LCD_A::DIV16)
+    }
+    #[doc = "LFACLKLCD = LFACLK/32"]
+    #[inline(always)]
+    pub fn div32(self) -> &'a mut W {
+        self.variant(LCD_A::DIV32)
+    }
+    #[doc = "LFACLKLCD = LFACLK/64"]
+    #[inline(always)]
+    pub fn div64(self) -> &'a mut W {
+        self.variant(LCD_A::DIV64)
+    }
+    #[doc = "LFACLKLCD = LFACLK/128"]
+    #[inline(always)]
+    pub fn div128(self) -> &'a mut W {
+        self.variant(LCD_A::DIV128)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RTC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTCR {
+pub enum RTC_A {
     #[doc = "LFACLKRTC = LFACLK"]
     DIV1,
     #[doc = "LFACLKRTC = LFACLK/2"]
@@ -552,871 +830,287 @@ pub enum RTCR {
     #[doc = "LFACLKRTC = LFACLK/32768"]
     DIV32768,
 }
-impl RTCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for RTC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            RTCR::DIV1 => 0,
-            RTCR::DIV2 => 1,
-            RTCR::DIV4 => 2,
-            RTCR::DIV8 => 3,
-            RTCR::DIV16 => 4,
-            RTCR::DIV32 => 5,
-            RTCR::DIV64 => 6,
-            RTCR::DIV128 => 7,
-            RTCR::DIV256 => 8,
-            RTCR::DIV512 => 9,
-            RTCR::DIV1024 => 10,
-            RTCR::DIV2048 => 11,
-            RTCR::DIV4096 => 12,
-            RTCR::DIV8192 => 13,
-            RTCR::DIV16384 => 14,
-            RTCR::DIV32768 => 15,
+            RTC_A::DIV1 => 0,
+            RTC_A::DIV2 => 1,
+            RTC_A::DIV4 => 2,
+            RTC_A::DIV8 => 3,
+            RTC_A::DIV16 => 4,
+            RTC_A::DIV32 => 5,
+            RTC_A::DIV64 => 6,
+            RTC_A::DIV128 => 7,
+            RTC_A::DIV256 => 8,
+            RTC_A::DIV512 => 9,
+            RTC_A::DIV1024 => 10,
+            RTC_A::DIV2048 => 11,
+            RTC_A::DIV4096 => 12,
+            RTC_A::DIV8192 => 13,
+            RTC_A::DIV16384 => 14,
+            RTC_A::DIV32768 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RTCR {
-        match value {
-            0 => RTCR::DIV1,
-            1 => RTCR::DIV2,
-            2 => RTCR::DIV4,
-            3 => RTCR::DIV8,
-            4 => RTCR::DIV16,
-            5 => RTCR::DIV32,
-            6 => RTCR::DIV64,
-            7 => RTCR::DIV128,
-            8 => RTCR::DIV256,
-            9 => RTCR::DIV512,
-            10 => RTCR::DIV1024,
-            11 => RTCR::DIV2048,
-            12 => RTCR::DIV4096,
-            13 => RTCR::DIV8192,
-            14 => RTCR::DIV16384,
-            15 => RTCR::DIV32768,
+}
+#[doc = "Reader of field `RTC`"]
+pub type RTC_R = crate::R<u8, RTC_A>;
+impl RTC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_A {
+        match self.bits {
+            0 => RTC_A::DIV1,
+            1 => RTC_A::DIV2,
+            2 => RTC_A::DIV4,
+            3 => RTC_A::DIV8,
+            4 => RTC_A::DIV16,
+            5 => RTC_A::DIV32,
+            6 => RTC_A::DIV64,
+            7 => RTC_A::DIV128,
+            8 => RTC_A::DIV256,
+            9 => RTC_A::DIV512,
+            10 => RTC_A::DIV1024,
+            11 => RTC_A::DIV2048,
+            12 => RTC_A::DIV4096,
+            13 => RTC_A::DIV8192,
+            14 => RTC_A::DIV16384,
+            15 => RTC_A::DIV32768,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        *self == RTCR::DIV1
+        *self == RTC_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        *self == RTCR::DIV2
+        *self == RTC_A::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        *self == RTCR::DIV4
+        *self == RTC_A::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        *self == RTCR::DIV8
+        *self == RTC_A::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        *self == RTCR::DIV16
+        *self == RTC_A::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        *self == RTCR::DIV32
+        *self == RTC_A::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        *self == RTCR::DIV64
+        *self == RTC_A::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        *self == RTCR::DIV128
+        *self == RTC_A::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        *self == RTCR::DIV256
+        *self == RTC_A::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        *self == RTCR::DIV512
+        *self == RTC_A::DIV512
     }
     #[doc = "Checks if the value of the field is `DIV1024`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div1024(&self) -> bool {
-        *self == RTCR::DIV1024
+        *self == RTC_A::DIV1024
     }
     #[doc = "Checks if the value of the field is `DIV2048`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div2048(&self) -> bool {
-        *self == RTCR::DIV2048
+        *self == RTC_A::DIV2048
     }
     #[doc = "Checks if the value of the field is `DIV4096`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div4096(&self) -> bool {
-        *self == RTCR::DIV4096
+        *self == RTC_A::DIV4096
     }
     #[doc = "Checks if the value of the field is `DIV8192`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div8192(&self) -> bool {
-        *self == RTCR::DIV8192
+        *self == RTC_A::DIV8192
     }
     #[doc = "Checks if the value of the field is `DIV16384`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div16384(&self) -> bool {
-        *self == RTCR::DIV16384
+        *self == RTC_A::DIV16384
     }
     #[doc = "Checks if the value of the field is `DIV32768`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_div32768(&self) -> bool {
-        *self == RTCR::DIV32768
+        *self == RTC_A::DIV32768
     }
 }
-#[doc = "Values that can be written to the field `LETIMER0`"]
-pub enum LETIMER0W {
-    #[doc = "LFACLKLETIMER0 = LFACLK"]
-    DIV1,
-    #[doc = "LFACLKLETIMER0 = LFACLK/2"]
-    DIV2,
-    #[doc = "LFACLKLETIMER0 = LFACLK/4"]
-    DIV4,
-    #[doc = "LFACLKLETIMER0 = LFACLK/8"]
-    DIV8,
-    #[doc = "LFACLKLETIMER0 = LFACLK/16"]
-    DIV16,
-    #[doc = "LFACLKLETIMER0 = LFACLK/32"]
-    DIV32,
-    #[doc = "LFACLKLETIMER0 = LFACLK/64"]
-    DIV64,
-    #[doc = "LFACLKLETIMER0 = LFACLK/128"]
-    DIV128,
-    #[doc = "LFACLKLETIMER0 = LFACLK/256"]
-    DIV256,
-    #[doc = "LFACLKLETIMER0 = LFACLK/512"]
-    DIV512,
-    #[doc = "LFACLKLETIMER0 = LFACLK/1024"]
-    DIV1024,
-    #[doc = "LFACLKLETIMER0 = LFACLK/2048"]
-    DIV2048,
-    #[doc = "LFACLKLETIMER0 = LFACLK/4096"]
-    DIV4096,
-    #[doc = "LFACLKLETIMER0 = LFACLK/8192"]
-    DIV8192,
-    #[doc = "LFACLKLETIMER0 = LFACLK/16384"]
-    DIV16384,
-    #[doc = "LFACLKLETIMER0 = LFACLK/32768"]
-    DIV32768,
-}
-impl LETIMER0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LETIMER0W::DIV1 => 0,
-            LETIMER0W::DIV2 => 1,
-            LETIMER0W::DIV4 => 2,
-            LETIMER0W::DIV8 => 3,
-            LETIMER0W::DIV16 => 4,
-            LETIMER0W::DIV32 => 5,
-            LETIMER0W::DIV64 => 6,
-            LETIMER0W::DIV128 => 7,
-            LETIMER0W::DIV256 => 8,
-            LETIMER0W::DIV512 => 9,
-            LETIMER0W::DIV1024 => 10,
-            LETIMER0W::DIV2048 => 11,
-            LETIMER0W::DIV4096 => 12,
-            LETIMER0W::DIV8192 => 13,
-            LETIMER0W::DIV16384 => 14,
-            LETIMER0W::DIV32768 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LETIMER0W<'a> {
+#[doc = "Write proxy for field `RTC`"]
+pub struct RTC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LETIMER0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LETIMER0W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV1)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV2)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV4)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV8)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/16"]
-    #[inline]
-    pub fn div16(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV16)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/32"]
-    #[inline]
-    pub fn div32(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV32)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/64"]
-    #[inline]
-    pub fn div64(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV64)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/128"]
-    #[inline]
-    pub fn div128(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV128)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/256"]
-    #[inline]
-    pub fn div256(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV256)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/512"]
-    #[inline]
-    pub fn div512(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV512)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/1024"]
-    #[inline]
-    pub fn div1024(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV1024)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/2048"]
-    #[inline]
-    pub fn div2048(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV2048)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/4096"]
-    #[inline]
-    pub fn div4096(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV4096)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/8192"]
-    #[inline]
-    pub fn div8192(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV8192)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/16384"]
-    #[inline]
-    pub fn div16384(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV16384)
-    }
-    #[doc = "LFACLKLETIMER0 = LFACLK/32768"]
-    #[inline]
-    pub fn div32768(self) -> &'a mut W {
-        self.variant(LETIMER0W::DIV32768)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LETIMER1`"]
-pub enum LETIMER1W {
-    #[doc = "LFACLKLETIMER1 = LFACLK"]
-    DIV1,
-    #[doc = "LFACLKLETIMER1 = LFACLK/2"]
-    DIV2,
-    #[doc = "LFACLKLETIMER1 = LFACLK/4"]
-    DIV4,
-    #[doc = "LFACLKLETIMER1 = LFACLK/8"]
-    DIV8,
-    #[doc = "LFACLKLETIMER1 = LFACLK/16"]
-    DIV16,
-    #[doc = "LFACLKLETIMER1 = LFACLK/32"]
-    DIV32,
-    #[doc = "LFACLKLETIMER1 = LFACLK/64"]
-    DIV64,
-    #[doc = "LFACLKLETIMER1 = LFACLK/128"]
-    DIV128,
-    #[doc = "LFACLKLETIMER1 = LFACLK/256"]
-    DIV256,
-    #[doc = "LFACLKLETIMER1 = LFACLK/512"]
-    DIV512,
-    #[doc = "LFACLKLETIMER1 = LFACLK/1024"]
-    DIV1024,
-    #[doc = "LFACLKLETIMER1 = LFACLK/2048"]
-    DIV2048,
-    #[doc = "LFACLKLETIMER1 = LFACLK/4096"]
-    DIV4096,
-    #[doc = "LFACLKLETIMER1 = LFACLK/8192"]
-    DIV8192,
-    #[doc = "LFACLKLETIMER1 = LFACLK/16384"]
-    DIV16384,
-    #[doc = "LFACLKLETIMER1 = LFACLK/32768"]
-    DIV32768,
-}
-impl LETIMER1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LETIMER1W::DIV1 => 0,
-            LETIMER1W::DIV2 => 1,
-            LETIMER1W::DIV4 => 2,
-            LETIMER1W::DIV8 => 3,
-            LETIMER1W::DIV16 => 4,
-            LETIMER1W::DIV32 => 5,
-            LETIMER1W::DIV64 => 6,
-            LETIMER1W::DIV128 => 7,
-            LETIMER1W::DIV256 => 8,
-            LETIMER1W::DIV512 => 9,
-            LETIMER1W::DIV1024 => 10,
-            LETIMER1W::DIV2048 => 11,
-            LETIMER1W::DIV4096 => 12,
-            LETIMER1W::DIV8192 => 13,
-            LETIMER1W::DIV16384 => 14,
-            LETIMER1W::DIV32768 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LETIMER1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LETIMER1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LETIMER1W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV1)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV2)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV4)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV8)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/16"]
-    #[inline]
-    pub fn div16(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV16)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/32"]
-    #[inline]
-    pub fn div32(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV32)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/64"]
-    #[inline]
-    pub fn div64(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV64)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/128"]
-    #[inline]
-    pub fn div128(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV128)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/256"]
-    #[inline]
-    pub fn div256(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV256)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/512"]
-    #[inline]
-    pub fn div512(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV512)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/1024"]
-    #[inline]
-    pub fn div1024(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV1024)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/2048"]
-    #[inline]
-    pub fn div2048(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV2048)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/4096"]
-    #[inline]
-    pub fn div4096(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV4096)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/8192"]
-    #[inline]
-    pub fn div8192(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV8192)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/16384"]
-    #[inline]
-    pub fn div16384(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV16384)
-    }
-    #[doc = "LFACLKLETIMER1 = LFACLK/32768"]
-    #[inline]
-    pub fn div32768(self) -> &'a mut W {
-        self.variant(LETIMER1W::DIV32768)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LESENSE`"]
-pub enum LESENSEW {
-    #[doc = "LFACLKLESENSE = LFACLK"]
-    DIV1,
-    #[doc = "LFACLKLESENSE = LFACLK/2"]
-    DIV2,
-    #[doc = "LFACLKLESENSE = LFACLK/4"]
-    DIV4,
-    #[doc = "LFACLKLESENSE = LFACLK/8"]
-    DIV8,
-}
-impl LESENSEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LESENSEW::DIV1 => 0,
-            LESENSEW::DIV2 => 1,
-            LESENSEW::DIV4 => 2,
-            LESENSEW::DIV8 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LESENSEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LESENSEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LESENSEW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "LFACLKLESENSE = LFACLK"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(LESENSEW::DIV1)
-    }
-    #[doc = "LFACLKLESENSE = LFACLK/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(LESENSEW::DIV2)
-    }
-    #[doc = "LFACLKLESENSE = LFACLK/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(LESENSEW::DIV4)
-    }
-    #[doc = "LFACLKLESENSE = LFACLK/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(LESENSEW::DIV8)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LCD`"]
-pub enum LCDW {
-    #[doc = "LFACLKLCD = LFACLK"]
-    DIV1,
-    #[doc = "LFACLKLCD = LFACLK/2"]
-    DIV2,
-    #[doc = "LFACLKLCD = LFACLK/4"]
-    DIV4,
-    #[doc = "LFACLKLCD = LFACLK/8"]
-    DIV8,
-    #[doc = "LFACLKLCD = LFACLK/16"]
-    DIV16,
-    #[doc = "LFACLKLCD = LFACLK/32"]
-    DIV32,
-    #[doc = "LFACLKLCD = LFACLK/64"]
-    DIV64,
-    #[doc = "LFACLKLCD = LFACLK/128"]
-    DIV128,
-}
-impl LCDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LCDW::DIV1 => 0,
-            LCDW::DIV2 => 1,
-            LCDW::DIV4 => 2,
-            LCDW::DIV8 => 3,
-            LCDW::DIV16 => 4,
-            LCDW::DIV32 => 5,
-            LCDW::DIV64 => 6,
-            LCDW::DIV128 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LCDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LCDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LCDW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "LFACLKLCD = LFACLK"]
-    #[inline]
-    pub fn div1(self) -> &'a mut W {
-        self.variant(LCDW::DIV1)
-    }
-    #[doc = "LFACLKLCD = LFACLK/2"]
-    #[inline]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(LCDW::DIV2)
-    }
-    #[doc = "LFACLKLCD = LFACLK/4"]
-    #[inline]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(LCDW::DIV4)
-    }
-    #[doc = "LFACLKLCD = LFACLK/8"]
-    #[inline]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(LCDW::DIV8)
-    }
-    #[doc = "LFACLKLCD = LFACLK/16"]
-    #[inline]
-    pub fn div16(self) -> &'a mut W {
-        self.variant(LCDW::DIV16)
-    }
-    #[doc = "LFACLKLCD = LFACLK/32"]
-    #[inline]
-    pub fn div32(self) -> &'a mut W {
-        self.variant(LCDW::DIV32)
-    }
-    #[doc = "LFACLKLCD = LFACLK/64"]
-    #[inline]
-    pub fn div64(self) -> &'a mut W {
-        self.variant(LCDW::DIV64)
-    }
-    #[doc = "LFACLKLCD = LFACLK/128"]
-    #[inline]
-    pub fn div128(self) -> &'a mut W {
-        self.variant(LCDW::DIV128)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RTC`"]
-pub enum RTCW {
-    #[doc = "LFACLKRTC = LFACLK"]
-    DIV1,
-    #[doc = "LFACLKRTC = LFACLK/2"]
-    DIV2,
-    #[doc = "LFACLKRTC = LFACLK/4"]
-    DIV4,
-    #[doc = "LFACLKRTC = LFACLK/8"]
-    DIV8,
-    #[doc = "LFACLKRTC = LFACLK/16"]
-    DIV16,
-    #[doc = "LFACLKRTC = LFACLK/32"]
-    DIV32,
-    #[doc = "LFACLKRTC = LFACLK/64"]
-    DIV64,
-    #[doc = "LFACLKRTC = LFACLK/128"]
-    DIV128,
-    #[doc = "LFACLKRTC = LFACLK/256"]
-    DIV256,
-    #[doc = "LFACLKRTC = LFACLK/512"]
-    DIV512,
-    #[doc = "LFACLKRTC = LFACLK/1024"]
-    DIV1024,
-    #[doc = "LFACLKRTC = LFACLK/2048"]
-    DIV2048,
-    #[doc = "LFACLKRTC = LFACLK/4096"]
-    DIV4096,
-    #[doc = "LFACLKRTC = LFACLK/8192"]
-    DIV8192,
-    #[doc = "LFACLKRTC = LFACLK/16384"]
-    DIV16384,
-    #[doc = "LFACLKRTC = LFACLK/32768"]
-    DIV32768,
-}
-impl RTCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RTCW::DIV1 => 0,
-            RTCW::DIV2 => 1,
-            RTCW::DIV4 => 2,
-            RTCW::DIV8 => 3,
-            RTCW::DIV16 => 4,
-            RTCW::DIV32 => 5,
-            RTCW::DIV64 => 6,
-            RTCW::DIV128 => 7,
-            RTCW::DIV256 => 8,
-            RTCW::DIV512 => 9,
-            RTCW::DIV1024 => 10,
-            RTCW::DIV2048 => 11,
-            RTCW::DIV4096 => 12,
-            RTCW::DIV8192 => 13,
-            RTCW::DIV16384 => 14,
-            RTCW::DIV32768 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RTCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RTCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RTCW) -> &'a mut W {
+impl<'a> RTC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RTC_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "LFACLKRTC = LFACLK"]
-    #[inline]
+    #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(RTCW::DIV1)
+        self.variant(RTC_A::DIV1)
     }
     #[doc = "LFACLKRTC = LFACLK/2"]
-    #[inline]
+    #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(RTCW::DIV2)
+        self.variant(RTC_A::DIV2)
     }
     #[doc = "LFACLKRTC = LFACLK/4"]
-    #[inline]
+    #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(RTCW::DIV4)
+        self.variant(RTC_A::DIV4)
     }
     #[doc = "LFACLKRTC = LFACLK/8"]
-    #[inline]
+    #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(RTCW::DIV8)
+        self.variant(RTC_A::DIV8)
     }
     #[doc = "LFACLKRTC = LFACLK/16"]
-    #[inline]
+    #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(RTCW::DIV16)
+        self.variant(RTC_A::DIV16)
     }
     #[doc = "LFACLKRTC = LFACLK/32"]
-    #[inline]
+    #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(RTCW::DIV32)
+        self.variant(RTC_A::DIV32)
     }
     #[doc = "LFACLKRTC = LFACLK/64"]
-    #[inline]
+    #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(RTCW::DIV64)
+        self.variant(RTC_A::DIV64)
     }
     #[doc = "LFACLKRTC = LFACLK/128"]
-    #[inline]
+    #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(RTCW::DIV128)
+        self.variant(RTC_A::DIV128)
     }
     #[doc = "LFACLKRTC = LFACLK/256"]
-    #[inline]
+    #[inline(always)]
     pub fn div256(self) -> &'a mut W {
-        self.variant(RTCW::DIV256)
+        self.variant(RTC_A::DIV256)
     }
     #[doc = "LFACLKRTC = LFACLK/512"]
-    #[inline]
+    #[inline(always)]
     pub fn div512(self) -> &'a mut W {
-        self.variant(RTCW::DIV512)
+        self.variant(RTC_A::DIV512)
     }
     #[doc = "LFACLKRTC = LFACLK/1024"]
-    #[inline]
+    #[inline(always)]
     pub fn div1024(self) -> &'a mut W {
-        self.variant(RTCW::DIV1024)
+        self.variant(RTC_A::DIV1024)
     }
     #[doc = "LFACLKRTC = LFACLK/2048"]
-    #[inline]
+    #[inline(always)]
     pub fn div2048(self) -> &'a mut W {
-        self.variant(RTCW::DIV2048)
+        self.variant(RTC_A::DIV2048)
     }
     #[doc = "LFACLKRTC = LFACLK/4096"]
-    #[inline]
+    #[inline(always)]
     pub fn div4096(self) -> &'a mut W {
-        self.variant(RTCW::DIV4096)
+        self.variant(RTC_A::DIV4096)
     }
     #[doc = "LFACLKRTC = LFACLK/8192"]
-    #[inline]
+    #[inline(always)]
     pub fn div8192(self) -> &'a mut W {
-        self.variant(RTCW::DIV8192)
+        self.variant(RTC_A::DIV8192)
     }
     #[doc = "LFACLKRTC = LFACLK/16384"]
-    #[inline]
+    #[inline(always)]
     pub fn div16384(self) -> &'a mut W {
-        self.variant(RTCW::DIV16384)
+        self.variant(RTC_A::DIV16384)
     }
     #[doc = "LFACLKRTC = LFACLK/32768"]
-    #[inline]
+    #[inline(always)]
     pub fn div32768(self) -> &'a mut W {
-        self.variant(RTCW::DIV32768)
+        self.variant(RTC_A::DIV32768)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
-    #[inline]
-    pub fn letimer0(&self) -> LETIMER0R {
-        LETIMER0R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn letimer0(&self) -> LETIMER0_R {
+        LETIMER0_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Low Energy Timer 1 Prescaler"]
-    #[inline]
-    pub fn letimer1(&self) -> LETIMER1R {
-        LETIMER1R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn letimer1(&self) -> LETIMER1_R {
+        LETIMER1_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:9 - Low Energy Sensor Interface Prescaler"]
-    #[inline]
-    pub fn lesense(&self) -> LESENSER {
-        LESENSER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lesense(&self) -> LESENSE_R {
+        LESENSE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 12:14 - Liquid Crystal Display Controller Prescaler"]
-    #[inline]
-    pub fn lcd(&self) -> LCDR {
-        LCDR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lcd(&self) -> LCD_R {
+        LCD_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 16:19 - Real-Time Counter Prescaler"]
-    #[inline]
-    pub fn rtc(&self) -> RTCR {
-        RTCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rtc(&self) -> RTC_R {
+        RTC_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
-    #[inline]
-    pub fn letimer0(&mut self) -> _LETIMER0W {
-        _LETIMER0W { w: self }
+    #[inline(always)]
+    pub fn letimer0(&mut self) -> LETIMER0_W {
+        LETIMER0_W { w: self }
     }
     #[doc = "Bits 4:7 - Low Energy Timer 1 Prescaler"]
-    #[inline]
-    pub fn letimer1(&mut self) -> _LETIMER1W {
-        _LETIMER1W { w: self }
+    #[inline(always)]
+    pub fn letimer1(&mut self) -> LETIMER1_W {
+        LETIMER1_W { w: self }
     }
     #[doc = "Bits 8:9 - Low Energy Sensor Interface Prescaler"]
-    #[inline]
-    pub fn lesense(&mut self) -> _LESENSEW {
-        _LESENSEW { w: self }
+    #[inline(always)]
+    pub fn lesense(&mut self) -> LESENSE_W {
+        LESENSE_W { w: self }
     }
     #[doc = "Bits 12:14 - Liquid Crystal Display Controller Prescaler"]
-    #[inline]
-    pub fn lcd(&mut self) -> _LCDW {
-        _LCDW { w: self }
+    #[inline(always)]
+    pub fn lcd(&mut self) -> LCD_W {
+        LCD_W { w: self }
     }
     #[doc = "Bits 16:19 - Real-Time Counter Prescaler"]
-    #[inline]
-    pub fn rtc(&mut self) -> _RTCW {
-        _RTCW { w: self }
+    #[inline(always)]
+    pub fn rtc(&mut self) -> RTC_W {
+        RTC_W { w: self }
     }
 }

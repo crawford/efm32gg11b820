@@ -1,204 +1,46 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFDATAVR {
-    bits: bool,
-}
-impl BUFDATAVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFHALFFULLR {
-    bits: bool,
-}
-impl BUFHALFFULLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFFULLR {
-    bits: bool,
-}
-impl BUFFULLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RUNNINGR {
-    bits: bool,
-}
-impl RUNNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SCANACTIVER {
-    bits: bool,
-}
-impl SCANACTIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DACACTIVER {
-    bits: bool,
-}
-impl DACACTIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `BUFDATAV`"]
+pub type BUFDATAV_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUFHALFFULL`"]
+pub type BUFHALFFULL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUFFULL`"]
+pub type BUFFULL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RUNNING`"]
+pub type RUNNING_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SCANACTIVE`"]
+pub type SCANACTIVE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DACACTIVE`"]
+pub type DACACTIVE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Result Data Valid"]
-    #[inline]
-    pub fn bufdatav(&self) -> BUFDATAVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFDATAVR { bits }
+    #[inline(always)]
+    pub fn bufdatav(&self) -> BUFDATAV_R {
+        BUFDATAV_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Result Buffer Half Full"]
-    #[inline]
-    pub fn bufhalffull(&self) -> BUFHALFFULLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFHALFFULLR { bits }
+    #[inline(always)]
+    pub fn bufhalffull(&self) -> BUFHALFFULL_R {
+        BUFHALFFULL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Result Buffer Full"]
-    #[inline]
-    pub fn buffull(&self) -> BUFFULLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFFULLR { bits }
+    #[inline(always)]
+    pub fn buffull(&self) -> BUFFULL_R {
+        BUFFULL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - LESENSE Periodic Counter Running"]
-    #[inline]
-    pub fn running(&self) -> RUNNINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RUNNINGR { bits }
+    #[inline(always)]
+    pub fn running(&self) -> RUNNING_R {
+        RUNNING_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - LESENSE Scan Active"]
-    #[inline]
-    pub fn scanactive(&self) -> SCANACTIVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANACTIVER { bits }
+    #[inline(always)]
+    pub fn scanactive(&self) -> SCANACTIVE_R {
+        SCANACTIVE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - LESENSE VDAC Interface is Active"]
-    #[inline]
-    pub fn dacactive(&self) -> DACACTIVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DACACTIVER { bits }
+    #[inline(always)]
+    pub fn dacactive(&self) -> DACACTIVE_R {
+        DACACTIVE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }

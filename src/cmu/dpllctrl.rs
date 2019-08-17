@@ -1,111 +1,90 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DPLLCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DPLLCTRL"]
+pub type R = crate::R<u32, super::DPLLCTRL>;
+#[doc = "Writer for register DPLLCTRL"]
+pub type W = crate::W<u32, super::DPLLCTRL>;
+#[doc = "Register DPLLCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::DPLLCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MODER {
-    bits: bool,
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
+    w: &'a mut W,
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> MODE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EDGESELR {
-    bits: bool,
-}
-impl EDGESELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct AUTORECOVERR {
-    bits: bool,
+#[doc = "Reader of field `EDGESEL`"]
+pub type EDGESEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EDGESEL`"]
+pub struct EDGESEL_W<'a> {
+    w: &'a mut W,
 }
-impl AUTORECOVERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> EDGESEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Reader of field `AUTORECOVER`"]
+pub type AUTORECOVER_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AUTORECOVER`"]
+pub struct AUTORECOVER_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AUTORECOVER_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `REFSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFSELR {
+pub enum REFSEL_A {
     #[doc = "HFXO selected"]
     HFXO,
     #[doc = "LFXO selected"]
@@ -115,320 +94,167 @@ pub enum REFSELR {
     #[doc = "CLKIN0 selected"]
     CLKIN0,
 }
-impl REFSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for REFSEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            REFSELR::HFXO => 0,
-            REFSELR::LFXO => 1,
-            REFSELR::USHFRCO => 2,
-            REFSELR::CLKIN0 => 3,
+            REFSEL_A::HFXO => 0,
+            REFSEL_A::LFXO => 1,
+            REFSEL_A::USHFRCO => 2,
+            REFSEL_A::CLKIN0 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> REFSELR {
-        match value {
-            0 => REFSELR::HFXO,
-            1 => REFSELR::LFXO,
-            2 => REFSELR::USHFRCO,
-            3 => REFSELR::CLKIN0,
+}
+#[doc = "Reader of field `REFSEL`"]
+pub type REFSEL_R = crate::R<u8, REFSEL_A>;
+impl REFSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REFSEL_A {
+        match self.bits {
+            0 => REFSEL_A::HFXO,
+            1 => REFSEL_A::LFXO,
+            2 => REFSEL_A::USHFRCO,
+            3 => REFSEL_A::CLKIN0,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == REFSELR::HFXO
+        *self == REFSEL_A::HFXO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == REFSELR::LFXO
+        *self == REFSEL_A::LFXO
     }
     #[doc = "Checks if the value of the field is `USHFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrco(&self) -> bool {
-        *self == REFSELR::USHFRCO
+        *self == REFSEL_A::USHFRCO
     }
     #[doc = "Checks if the value of the field is `CLKIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_clkin0(&self) -> bool {
-        *self == REFSELR::CLKIN0
+        *self == REFSEL_A::CLKIN0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DITHENR {
-    bits: bool,
-}
-impl DITHENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Write proxy for field `REFSEL`"]
+pub struct REFSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDGESELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDGESELW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AUTORECOVERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AUTORECOVERW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `REFSEL`"]
-pub enum REFSELW {
-    #[doc = "HFXO selected"]
-    HFXO,
-    #[doc = "LFXO selected"]
-    LFXO,
-    #[doc = "USHFRCO selected"]
-    USHFRCO,
-    #[doc = "CLKIN0 selected"]
-    CLKIN0,
-}
-impl REFSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            REFSELW::HFXO => 0,
-            REFSELW::LFXO => 1,
-            REFSELW::USHFRCO => 2,
-            REFSELW::CLKIN0 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REFSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _REFSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REFSELW) -> &'a mut W {
+impl<'a> REFSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "HFXO selected"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
-        self.variant(REFSELW::HFXO)
+        self.variant(REFSEL_A::HFXO)
     }
     #[doc = "LFXO selected"]
-    #[inline]
+    #[inline(always)]
     pub fn lfxo(self) -> &'a mut W {
-        self.variant(REFSELW::LFXO)
+        self.variant(REFSEL_A::LFXO)
     }
     #[doc = "USHFRCO selected"]
-    #[inline]
+    #[inline(always)]
     pub fn ushfrco(self) -> &'a mut W {
-        self.variant(REFSELW::USHFRCO)
+        self.variant(REFSEL_A::USHFRCO)
     }
     #[doc = "CLKIN0 selected"]
-    #[inline]
+    #[inline(always)]
     pub fn clkin0(self) -> &'a mut W {
-        self.variant(REFSELW::CLKIN0)
+        self.variant(REFSEL_A::CLKIN0)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u32) & 0x03) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DITHENW<'a> {
+#[doc = "Reader of field `DITHEN`"]
+pub type DITHEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DITHEN`"]
+pub struct DITHEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DITHENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DITHEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Operating Mode Control"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MODER { bits }
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Reference Edge Select"]
-    #[inline]
-    pub fn edgesel(&self) -> EDGESELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EDGESELR { bits }
+    #[inline(always)]
+    pub fn edgesel(&self) -> EDGESEL_R {
+        EDGESEL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Automatic Recovery Ctrl"]
-    #[inline]
-    pub fn autorecover(&self) -> AUTORECOVERR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUTORECOVERR { bits }
+    #[inline(always)]
+    pub fn autorecover(&self) -> AUTORECOVER_R {
+        AUTORECOVER_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 3:4 - Reference Clock Selection Control"]
-    #[inline]
-    pub fn refsel(&self) -> REFSELR {
-        REFSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn refsel(&self) -> REFSEL_R {
+        REFSEL_R::new(((self.bits >> 3) & 0x03) as u8)
     }
     #[doc = "Bit 6 - Dither Enable Control"]
-    #[inline]
-    pub fn dithen(&self) -> DITHENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DITHENR { bits }
+    #[inline(always)]
+    pub fn dithen(&self) -> DITHEN_R {
+        DITHEN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Operating Mode Control"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bit 1 - Reference Edge Select"]
-    #[inline]
-    pub fn edgesel(&mut self) -> _EDGESELW {
-        _EDGESELW { w: self }
+    #[inline(always)]
+    pub fn edgesel(&mut self) -> EDGESEL_W {
+        EDGESEL_W { w: self }
     }
     #[doc = "Bit 2 - Automatic Recovery Ctrl"]
-    #[inline]
-    pub fn autorecover(&mut self) -> _AUTORECOVERW {
-        _AUTORECOVERW { w: self }
+    #[inline(always)]
+    pub fn autorecover(&mut self) -> AUTORECOVER_W {
+        AUTORECOVER_W { w: self }
     }
     #[doc = "Bits 3:4 - Reference Clock Selection Control"]
-    #[inline]
-    pub fn refsel(&mut self) -> _REFSELW {
-        _REFSELW { w: self }
+    #[inline(always)]
+    pub fn refsel(&mut self) -> REFSEL_W {
+        REFSEL_W { w: self }
     }
     #[doc = "Bit 6 - Dither Enable Control"]
-    #[inline]
-    pub fn dithen(&mut self) -> _DITHENW {
-        _DITHENW { w: self }
+    #[inline(always)]
+    pub fn dithen(&mut self) -> DITHEN_W {
+        DITHEN_W { w: self }
     }
 }

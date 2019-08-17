@@ -1,362 +1,190 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ITAPDLYENR {
-    bits: bool,
-}
-impl ITAPDLYENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ITAPDLYSELR {
-    bits: u8,
-}
-impl ITAPDLYSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ITAPCHGWINR {
-    bits: bool,
-}
-impl ITAPCHGWINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OTAPDLYENR {
-    bits: bool,
-}
-impl OTAPDLYENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OTAPDLYSELR {
-    bits: u8,
-}
-impl OTAPDLYSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDLYMUXSELR {
-    bits: u8,
-}
-impl TXDLYMUXSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ITAPDLYENW<'a> {
+#[doc = "Reader of field `ITAPDLYEN`"]
+pub type ITAPDLYEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ITAPDLYEN`"]
+pub struct ITAPDLYEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ITAPDLYENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ITAPDLYEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ITAPDLYSELW<'a> {
+#[doc = "Reader of field `ITAPDLYSEL`"]
+pub type ITAPDLYSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ITAPDLYSEL`"]
+pub struct ITAPDLYSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ITAPDLYSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ITAPDLYSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 1)) | (((value as u32) & 0x1f) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ITAPCHGWINW<'a> {
+#[doc = "Reader of field `ITAPCHGWIN`"]
+pub type ITAPCHGWIN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ITAPCHGWIN`"]
+pub struct ITAPCHGWIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ITAPCHGWINW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ITAPCHGWIN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OTAPDLYENW<'a> {
+#[doc = "Reader of field `OTAPDLYEN`"]
+pub type OTAPDLYEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `OTAPDLYEN`"]
+pub struct OTAPDLYEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OTAPDLYENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> OTAPDLYEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OTAPDLYSELW<'a> {
+#[doc = "Reader of field `OTAPDLYSEL`"]
+pub type OTAPDLYSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OTAPDLYSEL`"]
+pub struct OTAPDLYSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OTAPDLYSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> OTAPDLYSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXDLYMUXSELW<'a> {
+#[doc = "Reader of field `TXDLYMUXSEL`"]
+pub type TXDLYMUXSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TXDLYMUXSEL`"]
+pub struct TXDLYMUXSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXDLYMUXSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TXDLYMUXSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Selective Tap Delay Line Enable on Rxclk_in"]
-    #[inline]
-    pub fn itapdlyen(&self) -> ITAPDLYENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ITAPDLYENR { bits }
+    #[inline(always)]
+    pub fn itapdlyen(&self) -> ITAPDLYEN_R {
+        ITAPDLYEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:5 - Selects One of 32 Taps on the Rxclk_in Line"]
-    #[inline]
-    pub fn itapdlysel(&self) -> ITAPDLYSELR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ITAPDLYSELR { bits }
+    #[inline(always)]
+    pub fn itapdlysel(&self) -> ITAPDLYSEL_R {
+        ITAPDLYSEL_R::new(((self.bits >> 1) & 0x1f) as u8)
     }
     #[doc = "Bit 6 - Gating Signal for Tap Delay Change"]
-    #[inline]
-    pub fn itapchgwin(&self) -> ITAPCHGWINR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ITAPCHGWINR { bits }
+    #[inline(always)]
+    pub fn itapchgwin(&self) -> ITAPCHGWIN_R {
+        ITAPCHGWIN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Selective Tap Delay Line Enable on SDIO_CLK Pin"]
-    #[inline]
-    pub fn otapdlyen(&self) -> OTAPDLYENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OTAPDLYENR { bits }
+    #[inline(always)]
+    pub fn otapdlyen(&self) -> OTAPDLYEN_R {
+        OTAPDLYEN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:11 - Selects One of 32 Taps on the SDIO_CLK Pin"]
-    #[inline]
-    pub fn otapdlysel(&self) -> OTAPDLYSELR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OTAPDLYSELR { bits }
+    #[inline(always)]
+    pub fn otapdlysel(&self) -> OTAPDLYSEL_R {
+        OTAPDLYSEL_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - TX Delay Mux Selection"]
-    #[inline]
-    pub fn txdlymuxsel(&self) -> TXDLYMUXSELR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TXDLYMUXSELR { bits }
+    #[inline(always)]
+    pub fn txdlymuxsel(&self) -> TXDLYMUXSEL_R {
+        TXDLYMUXSEL_R::new(((self.bits >> 16) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Selective Tap Delay Line Enable on Rxclk_in"]
-    #[inline]
-    pub fn itapdlyen(&mut self) -> _ITAPDLYENW {
-        _ITAPDLYENW { w: self }
+    #[inline(always)]
+    pub fn itapdlyen(&mut self) -> ITAPDLYEN_W {
+        ITAPDLYEN_W { w: self }
     }
     #[doc = "Bits 1:5 - Selects One of 32 Taps on the Rxclk_in Line"]
-    #[inline]
-    pub fn itapdlysel(&mut self) -> _ITAPDLYSELW {
-        _ITAPDLYSELW { w: self }
+    #[inline(always)]
+    pub fn itapdlysel(&mut self) -> ITAPDLYSEL_W {
+        ITAPDLYSEL_W { w: self }
     }
     #[doc = "Bit 6 - Gating Signal for Tap Delay Change"]
-    #[inline]
-    pub fn itapchgwin(&mut self) -> _ITAPCHGWINW {
-        _ITAPCHGWINW { w: self }
+    #[inline(always)]
+    pub fn itapchgwin(&mut self) -> ITAPCHGWIN_W {
+        ITAPCHGWIN_W { w: self }
     }
     #[doc = "Bit 7 - Selective Tap Delay Line Enable on SDIO_CLK Pin"]
-    #[inline]
-    pub fn otapdlyen(&mut self) -> _OTAPDLYENW {
-        _OTAPDLYENW { w: self }
+    #[inline(always)]
+    pub fn otapdlyen(&mut self) -> OTAPDLYEN_W {
+        OTAPDLYEN_W { w: self }
     }
     #[doc = "Bits 8:11 - Selects One of 32 Taps on the SDIO_CLK Pin"]
-    #[inline]
-    pub fn otapdlysel(&mut self) -> _OTAPDLYSELW {
-        _OTAPDLYSELW { w: self }
+    #[inline(always)]
+    pub fn otapdlysel(&mut self) -> OTAPDLYSEL_W {
+        OTAPDLYSEL_W { w: self }
     }
     #[doc = "Bits 16:17 - TX Delay Mux Selection"]
-    #[inline]
-    pub fn txdlymuxsel(&mut self) -> _TXDLYMUXSELW {
-        _TXDLYMUXSELW { w: self }
+    #[inline(always)]
+    pub fn txdlymuxsel(&mut self) -> TXDLYMUXSEL_W {
+        TXDLYMUXSEL_W { w: self }
     }
 }

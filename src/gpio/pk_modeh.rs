@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PK_MODEH {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PK_MODEH"]
+pub type R = crate::R<u32, super::PK_MODEH>;
+#[doc = "Writer for register PK_MODEH"]
+pub type W = crate::W<u32, super::PK_MODEH>;
+#[doc = "Register PK_MODEH `reset()`'s with value 0"]
+impl crate::ResetValue for super::PK_MODEH {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `MODE8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE8R {
+pub enum MODE8_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -76,137 +46,239 @@ pub enum MODE8R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE8_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE8R::DISABLED => 0,
-            MODE8R::INPUT => 1,
-            MODE8R::INPUTPULL => 2,
-            MODE8R::INPUTPULLFILTER => 3,
-            MODE8R::PUSHPULL => 4,
-            MODE8R::PUSHPULLALT => 5,
-            MODE8R::WIREDOR => 6,
-            MODE8R::WIREDORPULLDOWN => 7,
-            MODE8R::WIREDAND => 8,
-            MODE8R::WIREDANDFILTER => 9,
-            MODE8R::WIREDANDPULLUP => 10,
-            MODE8R::WIREDANDPULLUPFILTER => 11,
-            MODE8R::WIREDANDALT => 12,
-            MODE8R::WIREDANDALTFILTER => 13,
-            MODE8R::WIREDANDALTPULLUP => 14,
-            MODE8R::WIREDANDALTPULLUPFILTER => 15,
+            MODE8_A::DISABLED => 0,
+            MODE8_A::INPUT => 1,
+            MODE8_A::INPUTPULL => 2,
+            MODE8_A::INPUTPULLFILTER => 3,
+            MODE8_A::PUSHPULL => 4,
+            MODE8_A::PUSHPULLALT => 5,
+            MODE8_A::WIREDOR => 6,
+            MODE8_A::WIREDORPULLDOWN => 7,
+            MODE8_A::WIREDAND => 8,
+            MODE8_A::WIREDANDFILTER => 9,
+            MODE8_A::WIREDANDPULLUP => 10,
+            MODE8_A::WIREDANDPULLUPFILTER => 11,
+            MODE8_A::WIREDANDALT => 12,
+            MODE8_A::WIREDANDALTFILTER => 13,
+            MODE8_A::WIREDANDALTPULLUP => 14,
+            MODE8_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE8R {
-        match value {
-            0 => MODE8R::DISABLED,
-            1 => MODE8R::INPUT,
-            2 => MODE8R::INPUTPULL,
-            3 => MODE8R::INPUTPULLFILTER,
-            4 => MODE8R::PUSHPULL,
-            5 => MODE8R::PUSHPULLALT,
-            6 => MODE8R::WIREDOR,
-            7 => MODE8R::WIREDORPULLDOWN,
-            8 => MODE8R::WIREDAND,
-            9 => MODE8R::WIREDANDFILTER,
-            10 => MODE8R::WIREDANDPULLUP,
-            11 => MODE8R::WIREDANDPULLUPFILTER,
-            12 => MODE8R::WIREDANDALT,
-            13 => MODE8R::WIREDANDALTFILTER,
-            14 => MODE8R::WIREDANDALTPULLUP,
-            15 => MODE8R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE8`"]
+pub type MODE8_R = crate::R<u8, MODE8_A>;
+impl MODE8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE8_A {
+        match self.bits {
+            0 => MODE8_A::DISABLED,
+            1 => MODE8_A::INPUT,
+            2 => MODE8_A::INPUTPULL,
+            3 => MODE8_A::INPUTPULLFILTER,
+            4 => MODE8_A::PUSHPULL,
+            5 => MODE8_A::PUSHPULLALT,
+            6 => MODE8_A::WIREDOR,
+            7 => MODE8_A::WIREDORPULLDOWN,
+            8 => MODE8_A::WIREDAND,
+            9 => MODE8_A::WIREDANDFILTER,
+            10 => MODE8_A::WIREDANDPULLUP,
+            11 => MODE8_A::WIREDANDPULLUPFILTER,
+            12 => MODE8_A::WIREDANDALT,
+            13 => MODE8_A::WIREDANDALTFILTER,
+            14 => MODE8_A::WIREDANDALTPULLUP,
+            15 => MODE8_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE8R::DISABLED
+        *self == MODE8_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE8R::INPUT
+        *self == MODE8_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE8R::INPUTPULL
+        *self == MODE8_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE8R::INPUTPULLFILTER
+        *self == MODE8_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE8R::PUSHPULL
+        *self == MODE8_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE8R::PUSHPULLALT
+        *self == MODE8_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE8R::WIREDOR
+        *self == MODE8_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE8R::WIREDORPULLDOWN
+        *self == MODE8_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE8R::WIREDAND
+        *self == MODE8_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE8R::WIREDANDFILTER
+        *self == MODE8_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE8R::WIREDANDPULLUP
+        *self == MODE8_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE8R::WIREDANDPULLUPFILTER
+        *self == MODE8_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE8R::WIREDANDALT
+        *self == MODE8_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE8R::WIREDANDALTFILTER
+        *self == MODE8_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE8R::WIREDANDALTPULLUP
+        *self == MODE8_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE8R::WIREDANDALTPULLUPFILTER
+        *self == MODE8_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE8`"]
+pub struct MODE8_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE8_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE8_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE8_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE8_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE8_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE8_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE8_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE8_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE9R {
+pub enum MODE9_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -240,137 +312,239 @@ pub enum MODE9R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE9_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE9R::DISABLED => 0,
-            MODE9R::INPUT => 1,
-            MODE9R::INPUTPULL => 2,
-            MODE9R::INPUTPULLFILTER => 3,
-            MODE9R::PUSHPULL => 4,
-            MODE9R::PUSHPULLALT => 5,
-            MODE9R::WIREDOR => 6,
-            MODE9R::WIREDORPULLDOWN => 7,
-            MODE9R::WIREDAND => 8,
-            MODE9R::WIREDANDFILTER => 9,
-            MODE9R::WIREDANDPULLUP => 10,
-            MODE9R::WIREDANDPULLUPFILTER => 11,
-            MODE9R::WIREDANDALT => 12,
-            MODE9R::WIREDANDALTFILTER => 13,
-            MODE9R::WIREDANDALTPULLUP => 14,
-            MODE9R::WIREDANDALTPULLUPFILTER => 15,
+            MODE9_A::DISABLED => 0,
+            MODE9_A::INPUT => 1,
+            MODE9_A::INPUTPULL => 2,
+            MODE9_A::INPUTPULLFILTER => 3,
+            MODE9_A::PUSHPULL => 4,
+            MODE9_A::PUSHPULLALT => 5,
+            MODE9_A::WIREDOR => 6,
+            MODE9_A::WIREDORPULLDOWN => 7,
+            MODE9_A::WIREDAND => 8,
+            MODE9_A::WIREDANDFILTER => 9,
+            MODE9_A::WIREDANDPULLUP => 10,
+            MODE9_A::WIREDANDPULLUPFILTER => 11,
+            MODE9_A::WIREDANDALT => 12,
+            MODE9_A::WIREDANDALTFILTER => 13,
+            MODE9_A::WIREDANDALTPULLUP => 14,
+            MODE9_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE9R {
-        match value {
-            0 => MODE9R::DISABLED,
-            1 => MODE9R::INPUT,
-            2 => MODE9R::INPUTPULL,
-            3 => MODE9R::INPUTPULLFILTER,
-            4 => MODE9R::PUSHPULL,
-            5 => MODE9R::PUSHPULLALT,
-            6 => MODE9R::WIREDOR,
-            7 => MODE9R::WIREDORPULLDOWN,
-            8 => MODE9R::WIREDAND,
-            9 => MODE9R::WIREDANDFILTER,
-            10 => MODE9R::WIREDANDPULLUP,
-            11 => MODE9R::WIREDANDPULLUPFILTER,
-            12 => MODE9R::WIREDANDALT,
-            13 => MODE9R::WIREDANDALTFILTER,
-            14 => MODE9R::WIREDANDALTPULLUP,
-            15 => MODE9R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE9`"]
+pub type MODE9_R = crate::R<u8, MODE9_A>;
+impl MODE9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE9_A {
+        match self.bits {
+            0 => MODE9_A::DISABLED,
+            1 => MODE9_A::INPUT,
+            2 => MODE9_A::INPUTPULL,
+            3 => MODE9_A::INPUTPULLFILTER,
+            4 => MODE9_A::PUSHPULL,
+            5 => MODE9_A::PUSHPULLALT,
+            6 => MODE9_A::WIREDOR,
+            7 => MODE9_A::WIREDORPULLDOWN,
+            8 => MODE9_A::WIREDAND,
+            9 => MODE9_A::WIREDANDFILTER,
+            10 => MODE9_A::WIREDANDPULLUP,
+            11 => MODE9_A::WIREDANDPULLUPFILTER,
+            12 => MODE9_A::WIREDANDALT,
+            13 => MODE9_A::WIREDANDALTFILTER,
+            14 => MODE9_A::WIREDANDALTPULLUP,
+            15 => MODE9_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE9R::DISABLED
+        *self == MODE9_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE9R::INPUT
+        *self == MODE9_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE9R::INPUTPULL
+        *self == MODE9_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE9R::INPUTPULLFILTER
+        *self == MODE9_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE9R::PUSHPULL
+        *self == MODE9_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE9R::PUSHPULLALT
+        *self == MODE9_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE9R::WIREDOR
+        *self == MODE9_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE9R::WIREDORPULLDOWN
+        *self == MODE9_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE9R::WIREDAND
+        *self == MODE9_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE9R::WIREDANDFILTER
+        *self == MODE9_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE9R::WIREDANDPULLUP
+        *self == MODE9_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE9R::WIREDANDPULLUPFILTER
+        *self == MODE9_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE9R::WIREDANDALT
+        *self == MODE9_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE9R::WIREDANDALTFILTER
+        *self == MODE9_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE9R::WIREDANDALTPULLUP
+        *self == MODE9_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE9R::WIREDANDALTPULLUPFILTER
+        *self == MODE9_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE9`"]
+pub struct MODE9_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE9_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE9_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE9_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE9_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE9_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE9_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE9_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE9_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE10R {
+pub enum MODE10_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -404,137 +578,239 @@ pub enum MODE10R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE10_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE10R::DISABLED => 0,
-            MODE10R::INPUT => 1,
-            MODE10R::INPUTPULL => 2,
-            MODE10R::INPUTPULLFILTER => 3,
-            MODE10R::PUSHPULL => 4,
-            MODE10R::PUSHPULLALT => 5,
-            MODE10R::WIREDOR => 6,
-            MODE10R::WIREDORPULLDOWN => 7,
-            MODE10R::WIREDAND => 8,
-            MODE10R::WIREDANDFILTER => 9,
-            MODE10R::WIREDANDPULLUP => 10,
-            MODE10R::WIREDANDPULLUPFILTER => 11,
-            MODE10R::WIREDANDALT => 12,
-            MODE10R::WIREDANDALTFILTER => 13,
-            MODE10R::WIREDANDALTPULLUP => 14,
-            MODE10R::WIREDANDALTPULLUPFILTER => 15,
+            MODE10_A::DISABLED => 0,
+            MODE10_A::INPUT => 1,
+            MODE10_A::INPUTPULL => 2,
+            MODE10_A::INPUTPULLFILTER => 3,
+            MODE10_A::PUSHPULL => 4,
+            MODE10_A::PUSHPULLALT => 5,
+            MODE10_A::WIREDOR => 6,
+            MODE10_A::WIREDORPULLDOWN => 7,
+            MODE10_A::WIREDAND => 8,
+            MODE10_A::WIREDANDFILTER => 9,
+            MODE10_A::WIREDANDPULLUP => 10,
+            MODE10_A::WIREDANDPULLUPFILTER => 11,
+            MODE10_A::WIREDANDALT => 12,
+            MODE10_A::WIREDANDALTFILTER => 13,
+            MODE10_A::WIREDANDALTPULLUP => 14,
+            MODE10_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE10R {
-        match value {
-            0 => MODE10R::DISABLED,
-            1 => MODE10R::INPUT,
-            2 => MODE10R::INPUTPULL,
-            3 => MODE10R::INPUTPULLFILTER,
-            4 => MODE10R::PUSHPULL,
-            5 => MODE10R::PUSHPULLALT,
-            6 => MODE10R::WIREDOR,
-            7 => MODE10R::WIREDORPULLDOWN,
-            8 => MODE10R::WIREDAND,
-            9 => MODE10R::WIREDANDFILTER,
-            10 => MODE10R::WIREDANDPULLUP,
-            11 => MODE10R::WIREDANDPULLUPFILTER,
-            12 => MODE10R::WIREDANDALT,
-            13 => MODE10R::WIREDANDALTFILTER,
-            14 => MODE10R::WIREDANDALTPULLUP,
-            15 => MODE10R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE10`"]
+pub type MODE10_R = crate::R<u8, MODE10_A>;
+impl MODE10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE10_A {
+        match self.bits {
+            0 => MODE10_A::DISABLED,
+            1 => MODE10_A::INPUT,
+            2 => MODE10_A::INPUTPULL,
+            3 => MODE10_A::INPUTPULLFILTER,
+            4 => MODE10_A::PUSHPULL,
+            5 => MODE10_A::PUSHPULLALT,
+            6 => MODE10_A::WIREDOR,
+            7 => MODE10_A::WIREDORPULLDOWN,
+            8 => MODE10_A::WIREDAND,
+            9 => MODE10_A::WIREDANDFILTER,
+            10 => MODE10_A::WIREDANDPULLUP,
+            11 => MODE10_A::WIREDANDPULLUPFILTER,
+            12 => MODE10_A::WIREDANDALT,
+            13 => MODE10_A::WIREDANDALTFILTER,
+            14 => MODE10_A::WIREDANDALTPULLUP,
+            15 => MODE10_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE10R::DISABLED
+        *self == MODE10_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE10R::INPUT
+        *self == MODE10_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE10R::INPUTPULL
+        *self == MODE10_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE10R::INPUTPULLFILTER
+        *self == MODE10_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE10R::PUSHPULL
+        *self == MODE10_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE10R::PUSHPULLALT
+        *self == MODE10_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE10R::WIREDOR
+        *self == MODE10_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE10R::WIREDORPULLDOWN
+        *self == MODE10_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE10R::WIREDAND
+        *self == MODE10_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE10R::WIREDANDFILTER
+        *self == MODE10_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE10R::WIREDANDPULLUP
+        *self == MODE10_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE10R::WIREDANDPULLUPFILTER
+        *self == MODE10_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE10R::WIREDANDALT
+        *self == MODE10_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE10R::WIREDANDALTFILTER
+        *self == MODE10_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE10R::WIREDANDALTPULLUP
+        *self == MODE10_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE10R::WIREDANDALTPULLUPFILTER
+        *self == MODE10_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE10`"]
+pub struct MODE10_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE10_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE10_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE10_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE10_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE10_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE10_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE10_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE10_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE11R {
+pub enum MODE11_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -568,137 +844,239 @@ pub enum MODE11R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE11_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE11R::DISABLED => 0,
-            MODE11R::INPUT => 1,
-            MODE11R::INPUTPULL => 2,
-            MODE11R::INPUTPULLFILTER => 3,
-            MODE11R::PUSHPULL => 4,
-            MODE11R::PUSHPULLALT => 5,
-            MODE11R::WIREDOR => 6,
-            MODE11R::WIREDORPULLDOWN => 7,
-            MODE11R::WIREDAND => 8,
-            MODE11R::WIREDANDFILTER => 9,
-            MODE11R::WIREDANDPULLUP => 10,
-            MODE11R::WIREDANDPULLUPFILTER => 11,
-            MODE11R::WIREDANDALT => 12,
-            MODE11R::WIREDANDALTFILTER => 13,
-            MODE11R::WIREDANDALTPULLUP => 14,
-            MODE11R::WIREDANDALTPULLUPFILTER => 15,
+            MODE11_A::DISABLED => 0,
+            MODE11_A::INPUT => 1,
+            MODE11_A::INPUTPULL => 2,
+            MODE11_A::INPUTPULLFILTER => 3,
+            MODE11_A::PUSHPULL => 4,
+            MODE11_A::PUSHPULLALT => 5,
+            MODE11_A::WIREDOR => 6,
+            MODE11_A::WIREDORPULLDOWN => 7,
+            MODE11_A::WIREDAND => 8,
+            MODE11_A::WIREDANDFILTER => 9,
+            MODE11_A::WIREDANDPULLUP => 10,
+            MODE11_A::WIREDANDPULLUPFILTER => 11,
+            MODE11_A::WIREDANDALT => 12,
+            MODE11_A::WIREDANDALTFILTER => 13,
+            MODE11_A::WIREDANDALTPULLUP => 14,
+            MODE11_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE11R {
-        match value {
-            0 => MODE11R::DISABLED,
-            1 => MODE11R::INPUT,
-            2 => MODE11R::INPUTPULL,
-            3 => MODE11R::INPUTPULLFILTER,
-            4 => MODE11R::PUSHPULL,
-            5 => MODE11R::PUSHPULLALT,
-            6 => MODE11R::WIREDOR,
-            7 => MODE11R::WIREDORPULLDOWN,
-            8 => MODE11R::WIREDAND,
-            9 => MODE11R::WIREDANDFILTER,
-            10 => MODE11R::WIREDANDPULLUP,
-            11 => MODE11R::WIREDANDPULLUPFILTER,
-            12 => MODE11R::WIREDANDALT,
-            13 => MODE11R::WIREDANDALTFILTER,
-            14 => MODE11R::WIREDANDALTPULLUP,
-            15 => MODE11R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE11`"]
+pub type MODE11_R = crate::R<u8, MODE11_A>;
+impl MODE11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE11_A {
+        match self.bits {
+            0 => MODE11_A::DISABLED,
+            1 => MODE11_A::INPUT,
+            2 => MODE11_A::INPUTPULL,
+            3 => MODE11_A::INPUTPULLFILTER,
+            4 => MODE11_A::PUSHPULL,
+            5 => MODE11_A::PUSHPULLALT,
+            6 => MODE11_A::WIREDOR,
+            7 => MODE11_A::WIREDORPULLDOWN,
+            8 => MODE11_A::WIREDAND,
+            9 => MODE11_A::WIREDANDFILTER,
+            10 => MODE11_A::WIREDANDPULLUP,
+            11 => MODE11_A::WIREDANDPULLUPFILTER,
+            12 => MODE11_A::WIREDANDALT,
+            13 => MODE11_A::WIREDANDALTFILTER,
+            14 => MODE11_A::WIREDANDALTPULLUP,
+            15 => MODE11_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE11R::DISABLED
+        *self == MODE11_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE11R::INPUT
+        *self == MODE11_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE11R::INPUTPULL
+        *self == MODE11_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE11R::INPUTPULLFILTER
+        *self == MODE11_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE11R::PUSHPULL
+        *self == MODE11_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE11R::PUSHPULLALT
+        *self == MODE11_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE11R::WIREDOR
+        *self == MODE11_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE11R::WIREDORPULLDOWN
+        *self == MODE11_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE11R::WIREDAND
+        *self == MODE11_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE11R::WIREDANDFILTER
+        *self == MODE11_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE11R::WIREDANDPULLUP
+        *self == MODE11_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE11R::WIREDANDPULLUPFILTER
+        *self == MODE11_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE11R::WIREDANDALT
+        *self == MODE11_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE11R::WIREDANDALTFILTER
+        *self == MODE11_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE11R::WIREDANDALTPULLUP
+        *self == MODE11_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE11R::WIREDANDALTPULLUPFILTER
+        *self == MODE11_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE11`"]
+pub struct MODE11_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE11_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE11_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE11_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE11_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE11_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE11_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE11_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE11_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE12R {
+pub enum MODE12_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -732,137 +1110,239 @@ pub enum MODE12R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE12R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE12_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE12R::DISABLED => 0,
-            MODE12R::INPUT => 1,
-            MODE12R::INPUTPULL => 2,
-            MODE12R::INPUTPULLFILTER => 3,
-            MODE12R::PUSHPULL => 4,
-            MODE12R::PUSHPULLALT => 5,
-            MODE12R::WIREDOR => 6,
-            MODE12R::WIREDORPULLDOWN => 7,
-            MODE12R::WIREDAND => 8,
-            MODE12R::WIREDANDFILTER => 9,
-            MODE12R::WIREDANDPULLUP => 10,
-            MODE12R::WIREDANDPULLUPFILTER => 11,
-            MODE12R::WIREDANDALT => 12,
-            MODE12R::WIREDANDALTFILTER => 13,
-            MODE12R::WIREDANDALTPULLUP => 14,
-            MODE12R::WIREDANDALTPULLUPFILTER => 15,
+            MODE12_A::DISABLED => 0,
+            MODE12_A::INPUT => 1,
+            MODE12_A::INPUTPULL => 2,
+            MODE12_A::INPUTPULLFILTER => 3,
+            MODE12_A::PUSHPULL => 4,
+            MODE12_A::PUSHPULLALT => 5,
+            MODE12_A::WIREDOR => 6,
+            MODE12_A::WIREDORPULLDOWN => 7,
+            MODE12_A::WIREDAND => 8,
+            MODE12_A::WIREDANDFILTER => 9,
+            MODE12_A::WIREDANDPULLUP => 10,
+            MODE12_A::WIREDANDPULLUPFILTER => 11,
+            MODE12_A::WIREDANDALT => 12,
+            MODE12_A::WIREDANDALTFILTER => 13,
+            MODE12_A::WIREDANDALTPULLUP => 14,
+            MODE12_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE12R {
-        match value {
-            0 => MODE12R::DISABLED,
-            1 => MODE12R::INPUT,
-            2 => MODE12R::INPUTPULL,
-            3 => MODE12R::INPUTPULLFILTER,
-            4 => MODE12R::PUSHPULL,
-            5 => MODE12R::PUSHPULLALT,
-            6 => MODE12R::WIREDOR,
-            7 => MODE12R::WIREDORPULLDOWN,
-            8 => MODE12R::WIREDAND,
-            9 => MODE12R::WIREDANDFILTER,
-            10 => MODE12R::WIREDANDPULLUP,
-            11 => MODE12R::WIREDANDPULLUPFILTER,
-            12 => MODE12R::WIREDANDALT,
-            13 => MODE12R::WIREDANDALTFILTER,
-            14 => MODE12R::WIREDANDALTPULLUP,
-            15 => MODE12R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE12`"]
+pub type MODE12_R = crate::R<u8, MODE12_A>;
+impl MODE12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE12_A {
+        match self.bits {
+            0 => MODE12_A::DISABLED,
+            1 => MODE12_A::INPUT,
+            2 => MODE12_A::INPUTPULL,
+            3 => MODE12_A::INPUTPULLFILTER,
+            4 => MODE12_A::PUSHPULL,
+            5 => MODE12_A::PUSHPULLALT,
+            6 => MODE12_A::WIREDOR,
+            7 => MODE12_A::WIREDORPULLDOWN,
+            8 => MODE12_A::WIREDAND,
+            9 => MODE12_A::WIREDANDFILTER,
+            10 => MODE12_A::WIREDANDPULLUP,
+            11 => MODE12_A::WIREDANDPULLUPFILTER,
+            12 => MODE12_A::WIREDANDALT,
+            13 => MODE12_A::WIREDANDALTFILTER,
+            14 => MODE12_A::WIREDANDALTPULLUP,
+            15 => MODE12_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE12R::DISABLED
+        *self == MODE12_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE12R::INPUT
+        *self == MODE12_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE12R::INPUTPULL
+        *self == MODE12_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE12R::INPUTPULLFILTER
+        *self == MODE12_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE12R::PUSHPULL
+        *self == MODE12_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE12R::PUSHPULLALT
+        *self == MODE12_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE12R::WIREDOR
+        *self == MODE12_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE12R::WIREDORPULLDOWN
+        *self == MODE12_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE12R::WIREDAND
+        *self == MODE12_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE12R::WIREDANDFILTER
+        *self == MODE12_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE12R::WIREDANDPULLUP
+        *self == MODE12_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE12R::WIREDANDPULLUPFILTER
+        *self == MODE12_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE12R::WIREDANDALT
+        *self == MODE12_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE12R::WIREDANDALTFILTER
+        *self == MODE12_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE12R::WIREDANDALTPULLUP
+        *self == MODE12_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE12R::WIREDANDALTPULLUPFILTER
+        *self == MODE12_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE12`"]
+pub struct MODE12_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE12_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE12_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE12_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE12_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE12_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE12_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE12_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE12_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE13R {
+pub enum MODE13_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -896,137 +1376,239 @@ pub enum MODE13R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE13R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE13_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE13R::DISABLED => 0,
-            MODE13R::INPUT => 1,
-            MODE13R::INPUTPULL => 2,
-            MODE13R::INPUTPULLFILTER => 3,
-            MODE13R::PUSHPULL => 4,
-            MODE13R::PUSHPULLALT => 5,
-            MODE13R::WIREDOR => 6,
-            MODE13R::WIREDORPULLDOWN => 7,
-            MODE13R::WIREDAND => 8,
-            MODE13R::WIREDANDFILTER => 9,
-            MODE13R::WIREDANDPULLUP => 10,
-            MODE13R::WIREDANDPULLUPFILTER => 11,
-            MODE13R::WIREDANDALT => 12,
-            MODE13R::WIREDANDALTFILTER => 13,
-            MODE13R::WIREDANDALTPULLUP => 14,
-            MODE13R::WIREDANDALTPULLUPFILTER => 15,
+            MODE13_A::DISABLED => 0,
+            MODE13_A::INPUT => 1,
+            MODE13_A::INPUTPULL => 2,
+            MODE13_A::INPUTPULLFILTER => 3,
+            MODE13_A::PUSHPULL => 4,
+            MODE13_A::PUSHPULLALT => 5,
+            MODE13_A::WIREDOR => 6,
+            MODE13_A::WIREDORPULLDOWN => 7,
+            MODE13_A::WIREDAND => 8,
+            MODE13_A::WIREDANDFILTER => 9,
+            MODE13_A::WIREDANDPULLUP => 10,
+            MODE13_A::WIREDANDPULLUPFILTER => 11,
+            MODE13_A::WIREDANDALT => 12,
+            MODE13_A::WIREDANDALTFILTER => 13,
+            MODE13_A::WIREDANDALTPULLUP => 14,
+            MODE13_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE13R {
-        match value {
-            0 => MODE13R::DISABLED,
-            1 => MODE13R::INPUT,
-            2 => MODE13R::INPUTPULL,
-            3 => MODE13R::INPUTPULLFILTER,
-            4 => MODE13R::PUSHPULL,
-            5 => MODE13R::PUSHPULLALT,
-            6 => MODE13R::WIREDOR,
-            7 => MODE13R::WIREDORPULLDOWN,
-            8 => MODE13R::WIREDAND,
-            9 => MODE13R::WIREDANDFILTER,
-            10 => MODE13R::WIREDANDPULLUP,
-            11 => MODE13R::WIREDANDPULLUPFILTER,
-            12 => MODE13R::WIREDANDALT,
-            13 => MODE13R::WIREDANDALTFILTER,
-            14 => MODE13R::WIREDANDALTPULLUP,
-            15 => MODE13R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE13`"]
+pub type MODE13_R = crate::R<u8, MODE13_A>;
+impl MODE13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE13_A {
+        match self.bits {
+            0 => MODE13_A::DISABLED,
+            1 => MODE13_A::INPUT,
+            2 => MODE13_A::INPUTPULL,
+            3 => MODE13_A::INPUTPULLFILTER,
+            4 => MODE13_A::PUSHPULL,
+            5 => MODE13_A::PUSHPULLALT,
+            6 => MODE13_A::WIREDOR,
+            7 => MODE13_A::WIREDORPULLDOWN,
+            8 => MODE13_A::WIREDAND,
+            9 => MODE13_A::WIREDANDFILTER,
+            10 => MODE13_A::WIREDANDPULLUP,
+            11 => MODE13_A::WIREDANDPULLUPFILTER,
+            12 => MODE13_A::WIREDANDALT,
+            13 => MODE13_A::WIREDANDALTFILTER,
+            14 => MODE13_A::WIREDANDALTPULLUP,
+            15 => MODE13_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE13R::DISABLED
+        *self == MODE13_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE13R::INPUT
+        *self == MODE13_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE13R::INPUTPULL
+        *self == MODE13_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE13R::INPUTPULLFILTER
+        *self == MODE13_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE13R::PUSHPULL
+        *self == MODE13_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE13R::PUSHPULLALT
+        *self == MODE13_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE13R::WIREDOR
+        *self == MODE13_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE13R::WIREDORPULLDOWN
+        *self == MODE13_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE13R::WIREDAND
+        *self == MODE13_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE13R::WIREDANDFILTER
+        *self == MODE13_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE13R::WIREDANDPULLUP
+        *self == MODE13_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE13R::WIREDANDPULLUPFILTER
+        *self == MODE13_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE13R::WIREDANDALT
+        *self == MODE13_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE13R::WIREDANDALTFILTER
+        *self == MODE13_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE13R::WIREDANDALTPULLUP
+        *self == MODE13_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE13R::WIREDANDALTPULLUPFILTER
+        *self == MODE13_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE13`"]
+pub struct MODE13_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE13_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE13_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE13_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE13_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE13_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE13_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE13_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE13_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE14R {
+pub enum MODE14_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -1060,137 +1642,239 @@ pub enum MODE14R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE14R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE14_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE14R::DISABLED => 0,
-            MODE14R::INPUT => 1,
-            MODE14R::INPUTPULL => 2,
-            MODE14R::INPUTPULLFILTER => 3,
-            MODE14R::PUSHPULL => 4,
-            MODE14R::PUSHPULLALT => 5,
-            MODE14R::WIREDOR => 6,
-            MODE14R::WIREDORPULLDOWN => 7,
-            MODE14R::WIREDAND => 8,
-            MODE14R::WIREDANDFILTER => 9,
-            MODE14R::WIREDANDPULLUP => 10,
-            MODE14R::WIREDANDPULLUPFILTER => 11,
-            MODE14R::WIREDANDALT => 12,
-            MODE14R::WIREDANDALTFILTER => 13,
-            MODE14R::WIREDANDALTPULLUP => 14,
-            MODE14R::WIREDANDALTPULLUPFILTER => 15,
+            MODE14_A::DISABLED => 0,
+            MODE14_A::INPUT => 1,
+            MODE14_A::INPUTPULL => 2,
+            MODE14_A::INPUTPULLFILTER => 3,
+            MODE14_A::PUSHPULL => 4,
+            MODE14_A::PUSHPULLALT => 5,
+            MODE14_A::WIREDOR => 6,
+            MODE14_A::WIREDORPULLDOWN => 7,
+            MODE14_A::WIREDAND => 8,
+            MODE14_A::WIREDANDFILTER => 9,
+            MODE14_A::WIREDANDPULLUP => 10,
+            MODE14_A::WIREDANDPULLUPFILTER => 11,
+            MODE14_A::WIREDANDALT => 12,
+            MODE14_A::WIREDANDALTFILTER => 13,
+            MODE14_A::WIREDANDALTPULLUP => 14,
+            MODE14_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE14R {
-        match value {
-            0 => MODE14R::DISABLED,
-            1 => MODE14R::INPUT,
-            2 => MODE14R::INPUTPULL,
-            3 => MODE14R::INPUTPULLFILTER,
-            4 => MODE14R::PUSHPULL,
-            5 => MODE14R::PUSHPULLALT,
-            6 => MODE14R::WIREDOR,
-            7 => MODE14R::WIREDORPULLDOWN,
-            8 => MODE14R::WIREDAND,
-            9 => MODE14R::WIREDANDFILTER,
-            10 => MODE14R::WIREDANDPULLUP,
-            11 => MODE14R::WIREDANDPULLUPFILTER,
-            12 => MODE14R::WIREDANDALT,
-            13 => MODE14R::WIREDANDALTFILTER,
-            14 => MODE14R::WIREDANDALTPULLUP,
-            15 => MODE14R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE14`"]
+pub type MODE14_R = crate::R<u8, MODE14_A>;
+impl MODE14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE14_A {
+        match self.bits {
+            0 => MODE14_A::DISABLED,
+            1 => MODE14_A::INPUT,
+            2 => MODE14_A::INPUTPULL,
+            3 => MODE14_A::INPUTPULLFILTER,
+            4 => MODE14_A::PUSHPULL,
+            5 => MODE14_A::PUSHPULLALT,
+            6 => MODE14_A::WIREDOR,
+            7 => MODE14_A::WIREDORPULLDOWN,
+            8 => MODE14_A::WIREDAND,
+            9 => MODE14_A::WIREDANDFILTER,
+            10 => MODE14_A::WIREDANDPULLUP,
+            11 => MODE14_A::WIREDANDPULLUPFILTER,
+            12 => MODE14_A::WIREDANDALT,
+            13 => MODE14_A::WIREDANDALTFILTER,
+            14 => MODE14_A::WIREDANDALTPULLUP,
+            15 => MODE14_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE14R::DISABLED
+        *self == MODE14_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE14R::INPUT
+        *self == MODE14_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE14R::INPUTPULL
+        *self == MODE14_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE14R::INPUTPULLFILTER
+        *self == MODE14_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE14R::PUSHPULL
+        *self == MODE14_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE14R::PUSHPULLALT
+        *self == MODE14_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE14R::WIREDOR
+        *self == MODE14_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE14R::WIREDORPULLDOWN
+        *self == MODE14_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE14R::WIREDAND
+        *self == MODE14_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE14R::WIREDANDFILTER
+        *self == MODE14_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE14R::WIREDANDPULLUP
+        *self == MODE14_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE14R::WIREDANDPULLUPFILTER
+        *self == MODE14_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE14R::WIREDANDALT
+        *self == MODE14_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE14R::WIREDANDALTFILTER
+        *self == MODE14_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE14R::WIREDANDALTPULLUP
+        *self == MODE14_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE14R::WIREDANDALTPULLUPFILTER
+        *self == MODE14_A::WIREDANDALTPULLUPFILTER
+    }
+}
+#[doc = "Write proxy for field `MODE14`"]
+pub struct MODE14_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE14_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE14_A::DISABLED)
+    }
+    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(MODE14_A::INPUT)
+    }
+    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpull(self) -> &'a mut W {
+        self.variant(MODE14_A::INPUTPULL)
+    }
+    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[inline(always)]
+    pub fn inputpullfilter(self) -> &'a mut W {
+        self.variant(MODE14_A::INPUTPULLFILTER)
+    }
+    #[doc = "Push-pull output"]
+    #[inline(always)]
+    pub fn pushpull(self) -> &'a mut W {
+        self.variant(MODE14_A::PUSHPULL)
+    }
+    #[doc = "Push-pull using alternate control"]
+    #[inline(always)]
+    pub fn pushpullalt(self) -> &'a mut W {
+        self.variant(MODE14_A::PUSHPULLALT)
+    }
+    #[doc = "Wired-or output"]
+    #[inline(always)]
+    pub fn wiredor(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDOR)
+    }
+    #[doc = "Wired-or output with pull-down"]
+    #[inline(always)]
+    pub fn wiredorpulldown(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDORPULLDOWN)
+    }
+    #[doc = "Open-drain output"]
+    #[inline(always)]
+    pub fn wiredand(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDAND)
+    }
+    #[doc = "Open-drain output with filter"]
+    #[inline(always)]
+    pub fn wiredandfilter(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDFILTER)
+    }
+    #[doc = "Open-drain output with pullup"]
+    #[inline(always)]
+    pub fn wiredandpullup(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDPULLUP)
+    }
+    #[doc = "Open-drain output with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandpullupfilter(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDPULLUPFILTER)
+    }
+    #[doc = "Open-drain output using alternate control"]
+    #[inline(always)]
+    pub fn wiredandalt(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDALT)
+    }
+    #[doc = "Open-drain output using alternate control with filter"]
+    #[inline(always)]
+    pub fn wiredandaltfilter(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDALTFILTER)
+    }
+    #[doc = "Open-drain output using alternate control with pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullup(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDALTPULLUP)
+    }
+    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[inline(always)]
+    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
+        self.variant(MODE14_A::WIREDANDALTPULLUPFILTER)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE15R {
+pub enum MODE15_A {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     DISABLED,
     #[doc = "Input enabled. Filter if DOUT is set"]
@@ -1224,1559 +1908,317 @@ pub enum MODE15R {
     #[doc = "Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl MODE15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE15_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODE15R::DISABLED => 0,
-            MODE15R::INPUT => 1,
-            MODE15R::INPUTPULL => 2,
-            MODE15R::INPUTPULLFILTER => 3,
-            MODE15R::PUSHPULL => 4,
-            MODE15R::PUSHPULLALT => 5,
-            MODE15R::WIREDOR => 6,
-            MODE15R::WIREDORPULLDOWN => 7,
-            MODE15R::WIREDAND => 8,
-            MODE15R::WIREDANDFILTER => 9,
-            MODE15R::WIREDANDPULLUP => 10,
-            MODE15R::WIREDANDPULLUPFILTER => 11,
-            MODE15R::WIREDANDALT => 12,
-            MODE15R::WIREDANDALTFILTER => 13,
-            MODE15R::WIREDANDALTPULLUP => 14,
-            MODE15R::WIREDANDALTPULLUPFILTER => 15,
+            MODE15_A::DISABLED => 0,
+            MODE15_A::INPUT => 1,
+            MODE15_A::INPUTPULL => 2,
+            MODE15_A::INPUTPULLFILTER => 3,
+            MODE15_A::PUSHPULL => 4,
+            MODE15_A::PUSHPULLALT => 5,
+            MODE15_A::WIREDOR => 6,
+            MODE15_A::WIREDORPULLDOWN => 7,
+            MODE15_A::WIREDAND => 8,
+            MODE15_A::WIREDANDFILTER => 9,
+            MODE15_A::WIREDANDPULLUP => 10,
+            MODE15_A::WIREDANDPULLUPFILTER => 11,
+            MODE15_A::WIREDANDALT => 12,
+            MODE15_A::WIREDANDALTFILTER => 13,
+            MODE15_A::WIREDANDALTPULLUP => 14,
+            MODE15_A::WIREDANDALTPULLUPFILTER => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODE15R {
-        match value {
-            0 => MODE15R::DISABLED,
-            1 => MODE15R::INPUT,
-            2 => MODE15R::INPUTPULL,
-            3 => MODE15R::INPUTPULLFILTER,
-            4 => MODE15R::PUSHPULL,
-            5 => MODE15R::PUSHPULLALT,
-            6 => MODE15R::WIREDOR,
-            7 => MODE15R::WIREDORPULLDOWN,
-            8 => MODE15R::WIREDAND,
-            9 => MODE15R::WIREDANDFILTER,
-            10 => MODE15R::WIREDANDPULLUP,
-            11 => MODE15R::WIREDANDPULLUPFILTER,
-            12 => MODE15R::WIREDANDALT,
-            13 => MODE15R::WIREDANDALTFILTER,
-            14 => MODE15R::WIREDANDALTPULLUP,
-            15 => MODE15R::WIREDANDALTPULLUPFILTER,
+}
+#[doc = "Reader of field `MODE15`"]
+pub type MODE15_R = crate::R<u8, MODE15_A>;
+impl MODE15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE15_A {
+        match self.bits {
+            0 => MODE15_A::DISABLED,
+            1 => MODE15_A::INPUT,
+            2 => MODE15_A::INPUTPULL,
+            3 => MODE15_A::INPUTPULLFILTER,
+            4 => MODE15_A::PUSHPULL,
+            5 => MODE15_A::PUSHPULLALT,
+            6 => MODE15_A::WIREDOR,
+            7 => MODE15_A::WIREDORPULLDOWN,
+            8 => MODE15_A::WIREDAND,
+            9 => MODE15_A::WIREDANDFILTER,
+            10 => MODE15_A::WIREDANDPULLUP,
+            11 => MODE15_A::WIREDANDPULLUPFILTER,
+            12 => MODE15_A::WIREDANDALT,
+            13 => MODE15_A::WIREDANDALTFILTER,
+            14 => MODE15_A::WIREDANDALTPULLUP,
+            15 => MODE15_A::WIREDANDALTPULLUPFILTER,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODE15R::DISABLED
+        *self == MODE15_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == MODE15R::INPUT
+        *self == MODE15_A::INPUT
     }
     #[doc = "Checks if the value of the field is `INPUTPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpull(&self) -> bool {
-        *self == MODE15R::INPUTPULL
+        *self == MODE15_A::INPUTPULL
     }
     #[doc = "Checks if the value of the field is `INPUTPULLFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inputpullfilter(&self) -> bool {
-        *self == MODE15R::INPUTPULLFILTER
+        *self == MODE15_A::INPUTPULLFILTER
     }
     #[doc = "Checks if the value of the field is `PUSHPULL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpull(&self) -> bool {
-        *self == MODE15R::PUSHPULL
+        *self == MODE15_A::PUSHPULL
     }
     #[doc = "Checks if the value of the field is `PUSHPULLALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pushpullalt(&self) -> bool {
-        *self == MODE15R::PUSHPULLALT
+        *self == MODE15_A::PUSHPULLALT
     }
     #[doc = "Checks if the value of the field is `WIREDOR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredor(&self) -> bool {
-        *self == MODE15R::WIREDOR
+        *self == MODE15_A::WIREDOR
     }
     #[doc = "Checks if the value of the field is `WIREDORPULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredorpulldown(&self) -> bool {
-        *self == MODE15R::WIREDORPULLDOWN
+        *self == MODE15_A::WIREDORPULLDOWN
     }
     #[doc = "Checks if the value of the field is `WIREDAND`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredand(&self) -> bool {
-        *self == MODE15R::WIREDAND
+        *self == MODE15_A::WIREDAND
     }
     #[doc = "Checks if the value of the field is `WIREDANDFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandfilter(&self) -> bool {
-        *self == MODE15R::WIREDANDFILTER
+        *self == MODE15_A::WIREDANDFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullup(&self) -> bool {
-        *self == MODE15R::WIREDANDPULLUP
+        *self == MODE15_A::WIREDANDPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandpullupfilter(&self) -> bool {
-        *self == MODE15R::WIREDANDPULLUPFILTER
+        *self == MODE15_A::WIREDANDPULLUPFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandalt(&self) -> bool {
-        *self == MODE15R::WIREDANDALT
+        *self == MODE15_A::WIREDANDALT
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltfilter(&self) -> bool {
-        *self == MODE15R::WIREDANDALTFILTER
+        *self == MODE15_A::WIREDANDALTFILTER
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullup(&self) -> bool {
-        *self == MODE15R::WIREDANDALTPULLUP
+        *self == MODE15_A::WIREDANDALTPULLUP
     }
     #[doc = "Checks if the value of the field is `WIREDANDALTPULLUPFILTER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wiredandaltpullupfilter(&self) -> bool {
-        *self == MODE15R::WIREDANDALTPULLUPFILTER
+        *self == MODE15_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Values that can be written to the field `MODE8`"]
-pub enum MODE8W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE8W::DISABLED => 0,
-            MODE8W::INPUT => 1,
-            MODE8W::INPUTPULL => 2,
-            MODE8W::INPUTPULLFILTER => 3,
-            MODE8W::PUSHPULL => 4,
-            MODE8W::PUSHPULLALT => 5,
-            MODE8W::WIREDOR => 6,
-            MODE8W::WIREDORPULLDOWN => 7,
-            MODE8W::WIREDAND => 8,
-            MODE8W::WIREDANDFILTER => 9,
-            MODE8W::WIREDANDPULLUP => 10,
-            MODE8W::WIREDANDPULLUPFILTER => 11,
-            MODE8W::WIREDANDALT => 12,
-            MODE8W::WIREDANDALTFILTER => 13,
-            MODE8W::WIREDANDALTPULLUP => 14,
-            MODE8W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE8W<'a> {
+#[doc = "Write proxy for field `MODE15`"]
+pub struct MODE15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODE8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE8W) -> &'a mut W {
+impl<'a> MODE15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE15_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE8W::DISABLED)
+        self.variant(MODE15_A::DISABLED)
     }
     #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
+    #[inline(always)]
     pub fn input(self) -> &'a mut W {
-        self.variant(MODE8W::INPUT)
+        self.variant(MODE15_A::INPUT)
     }
     #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
+    #[inline(always)]
     pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE8W::INPUTPULL)
+        self.variant(MODE15_A::INPUTPULL)
     }
     #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
+    #[inline(always)]
     pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE8W::INPUTPULLFILTER)
+        self.variant(MODE15_A::INPUTPULLFILTER)
     }
     #[doc = "Push-pull output"]
-    #[inline]
+    #[inline(always)]
     pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE8W::PUSHPULL)
+        self.variant(MODE15_A::PUSHPULL)
     }
     #[doc = "Push-pull using alternate control"]
-    #[inline]
+    #[inline(always)]
     pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE8W::PUSHPULLALT)
+        self.variant(MODE15_A::PUSHPULLALT)
     }
     #[doc = "Wired-or output"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDOR)
+        self.variant(MODE15_A::WIREDOR)
     }
     #[doc = "Wired-or output with pull-down"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDORPULLDOWN)
+        self.variant(MODE15_A::WIREDORPULLDOWN)
     }
     #[doc = "Open-drain output"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDAND)
+        self.variant(MODE15_A::WIREDAND)
     }
     #[doc = "Open-drain output with filter"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDFILTER)
+        self.variant(MODE15_A::WIREDANDFILTER)
     }
     #[doc = "Open-drain output with pullup"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDPULLUP)
+        self.variant(MODE15_A::WIREDANDPULLUP)
     }
     #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDPULLUPFILTER)
+        self.variant(MODE15_A::WIREDANDPULLUPFILTER)
     }
     #[doc = "Open-drain output using alternate control"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDALT)
+        self.variant(MODE15_A::WIREDANDALT)
     }
     #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDALTFILTER)
+        self.variant(MODE15_A::WIREDANDALTFILTER)
     }
     #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDALTPULLUP)
+        self.variant(MODE15_A::WIREDANDALTPULLUP)
     }
     #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
+    #[inline(always)]
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE8W::WIREDANDALTPULLUPFILTER)
+        self.variant(MODE15_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE9`"]
-pub enum MODE9W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE9W::DISABLED => 0,
-            MODE9W::INPUT => 1,
-            MODE9W::INPUTPULL => 2,
-            MODE9W::INPUTPULLFILTER => 3,
-            MODE9W::PUSHPULL => 4,
-            MODE9W::PUSHPULLALT => 5,
-            MODE9W::WIREDOR => 6,
-            MODE9W::WIREDORPULLDOWN => 7,
-            MODE9W::WIREDAND => 8,
-            MODE9W::WIREDANDFILTER => 9,
-            MODE9W::WIREDANDPULLUP => 10,
-            MODE9W::WIREDANDPULLUPFILTER => 11,
-            MODE9W::WIREDANDALT => 12,
-            MODE9W::WIREDANDALTFILTER => 13,
-            MODE9W::WIREDANDALTPULLUP => 14,
-            MODE9W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE9W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE9W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE9W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE9W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE9W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE9W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE9W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE9W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE9W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE10`"]
-pub enum MODE10W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE10W::DISABLED => 0,
-            MODE10W::INPUT => 1,
-            MODE10W::INPUTPULL => 2,
-            MODE10W::INPUTPULLFILTER => 3,
-            MODE10W::PUSHPULL => 4,
-            MODE10W::PUSHPULLALT => 5,
-            MODE10W::WIREDOR => 6,
-            MODE10W::WIREDORPULLDOWN => 7,
-            MODE10W::WIREDAND => 8,
-            MODE10W::WIREDANDFILTER => 9,
-            MODE10W::WIREDANDPULLUP => 10,
-            MODE10W::WIREDANDPULLUPFILTER => 11,
-            MODE10W::WIREDANDALT => 12,
-            MODE10W::WIREDANDALTFILTER => 13,
-            MODE10W::WIREDANDALTPULLUP => 14,
-            MODE10W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE10W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE10W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE10W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE10W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE10W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE10W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE10W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE10W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE10W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE11`"]
-pub enum MODE11W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE11W::DISABLED => 0,
-            MODE11W::INPUT => 1,
-            MODE11W::INPUTPULL => 2,
-            MODE11W::INPUTPULLFILTER => 3,
-            MODE11W::PUSHPULL => 4,
-            MODE11W::PUSHPULLALT => 5,
-            MODE11W::WIREDOR => 6,
-            MODE11W::WIREDORPULLDOWN => 7,
-            MODE11W::WIREDAND => 8,
-            MODE11W::WIREDANDFILTER => 9,
-            MODE11W::WIREDANDPULLUP => 10,
-            MODE11W::WIREDANDPULLUPFILTER => 11,
-            MODE11W::WIREDANDALT => 12,
-            MODE11W::WIREDANDALTFILTER => 13,
-            MODE11W::WIREDANDALTPULLUP => 14,
-            MODE11W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE11W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE11W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE11W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE11W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE11W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE11W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE11W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE11W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE11W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE12`"]
-pub enum MODE12W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE12W::DISABLED => 0,
-            MODE12W::INPUT => 1,
-            MODE12W::INPUTPULL => 2,
-            MODE12W::INPUTPULLFILTER => 3,
-            MODE12W::PUSHPULL => 4,
-            MODE12W::PUSHPULLALT => 5,
-            MODE12W::WIREDOR => 6,
-            MODE12W::WIREDORPULLDOWN => 7,
-            MODE12W::WIREDAND => 8,
-            MODE12W::WIREDANDFILTER => 9,
-            MODE12W::WIREDANDPULLUP => 10,
-            MODE12W::WIREDANDPULLUPFILTER => 11,
-            MODE12W::WIREDANDALT => 12,
-            MODE12W::WIREDANDALTFILTER => 13,
-            MODE12W::WIREDANDALTPULLUP => 14,
-            MODE12W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE12W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE12W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE12W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE12W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE12W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE12W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE12W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE12W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE12W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE13`"]
-pub enum MODE13W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE13W::DISABLED => 0,
-            MODE13W::INPUT => 1,
-            MODE13W::INPUTPULL => 2,
-            MODE13W::INPUTPULLFILTER => 3,
-            MODE13W::PUSHPULL => 4,
-            MODE13W::PUSHPULLALT => 5,
-            MODE13W::WIREDOR => 6,
-            MODE13W::WIREDORPULLDOWN => 7,
-            MODE13W::WIREDAND => 8,
-            MODE13W::WIREDANDFILTER => 9,
-            MODE13W::WIREDANDPULLUP => 10,
-            MODE13W::WIREDANDPULLUPFILTER => 11,
-            MODE13W::WIREDANDALT => 12,
-            MODE13W::WIREDANDALTFILTER => 13,
-            MODE13W::WIREDANDALTPULLUP => 14,
-            MODE13W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE13W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE13W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE13W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE13W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE13W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE13W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE13W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE13W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE13W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE14`"]
-pub enum MODE14W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE14W::DISABLED => 0,
-            MODE14W::INPUT => 1,
-            MODE14W::INPUTPULL => 2,
-            MODE14W::INPUTPULLFILTER => 3,
-            MODE14W::PUSHPULL => 4,
-            MODE14W::PUSHPULLALT => 5,
-            MODE14W::WIREDOR => 6,
-            MODE14W::WIREDORPULLDOWN => 7,
-            MODE14W::WIREDAND => 8,
-            MODE14W::WIREDANDFILTER => 9,
-            MODE14W::WIREDANDPULLUP => 10,
-            MODE14W::WIREDANDPULLUPFILTER => 11,
-            MODE14W::WIREDANDALT => 12,
-            MODE14W::WIREDANDALTFILTER => 13,
-            MODE14W::WIREDANDALTPULLUP => 14,
-            MODE14W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE14W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE14W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE14W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE14W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE14W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE14W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE14W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE14W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE14W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE15`"]
-pub enum MODE15W {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
-    PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
-    PUSHPULLALT,
-    #[doc = "Wired-or output"]
-    WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
-    WIREDAND,
-    #[doc = "Open-drain output with filter"]
-    WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
-    WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
-    WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
-}
-impl MODE15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODE15W::DISABLED => 0,
-            MODE15W::INPUT => 1,
-            MODE15W::INPUTPULL => 2,
-            MODE15W::INPUTPULLFILTER => 3,
-            MODE15W::PUSHPULL => 4,
-            MODE15W::PUSHPULLALT => 5,
-            MODE15W::WIREDOR => 6,
-            MODE15W::WIREDORPULLDOWN => 7,
-            MODE15W::WIREDAND => 8,
-            MODE15W::WIREDANDFILTER => 9,
-            MODE15W::WIREDANDPULLUP => 10,
-            MODE15W::WIREDANDPULLUPFILTER => 11,
-            MODE15W::WIREDANDALT => 12,
-            MODE15W::WIREDANDALTFILTER => 13,
-            MODE15W::WIREDANDALTPULLUP => 14,
-            MODE15W::WIREDANDALTPULLUPFILTER => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODE15W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODE15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODE15W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Input disabled. Pullup if DOUT is set."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODE15W::DISABLED)
-    }
-    #[doc = "Input enabled. Filter if DOUT is set"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(MODE15W::INPUT)
-    }
-    #[doc = "Input enabled. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpull(self) -> &'a mut W {
-        self.variant(MODE15W::INPUTPULL)
-    }
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
-    #[inline]
-    pub fn inputpullfilter(self) -> &'a mut W {
-        self.variant(MODE15W::INPUTPULLFILTER)
-    }
-    #[doc = "Push-pull output"]
-    #[inline]
-    pub fn pushpull(self) -> &'a mut W {
-        self.variant(MODE15W::PUSHPULL)
-    }
-    #[doc = "Push-pull using alternate control"]
-    #[inline]
-    pub fn pushpullalt(self) -> &'a mut W {
-        self.variant(MODE15W::PUSHPULLALT)
-    }
-    #[doc = "Wired-or output"]
-    #[inline]
-    pub fn wiredor(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDOR)
-    }
-    #[doc = "Wired-or output with pull-down"]
-    #[inline]
-    pub fn wiredorpulldown(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDORPULLDOWN)
-    }
-    #[doc = "Open-drain output"]
-    #[inline]
-    pub fn wiredand(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDAND)
-    }
-    #[doc = "Open-drain output with filter"]
-    #[inline]
-    pub fn wiredandfilter(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDFILTER)
-    }
-    #[doc = "Open-drain output with pullup"]
-    #[inline]
-    pub fn wiredandpullup(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDPULLUP)
-    }
-    #[doc = "Open-drain output with filter and pullup"]
-    #[inline]
-    pub fn wiredandpullupfilter(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDPULLUPFILTER)
-    }
-    #[doc = "Open-drain output using alternate control"]
-    #[inline]
-    pub fn wiredandalt(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDALT)
-    }
-    #[doc = "Open-drain output using alternate control with filter"]
-    #[inline]
-    pub fn wiredandaltfilter(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDALTFILTER)
-    }
-    #[doc = "Open-drain output using alternate control with pullup"]
-    #[inline]
-    pub fn wiredandaltpullup(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDALTPULLUP)
-    }
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
-    #[inline]
-    pub fn wiredandaltpullupfilter(self) -> &'a mut W {
-        self.variant(MODE15W::WIREDANDALTPULLUPFILTER)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Pin 8 Mode"]
-    #[inline]
-    pub fn mode8(&self) -> MODE8R {
-        MODE8R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode8(&self) -> MODE8_R {
+        MODE8_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Pin 9 Mode"]
-    #[inline]
-    pub fn mode9(&self) -> MODE9R {
-        MODE9R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode9(&self) -> MODE9_R {
+        MODE9_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Pin 10 Mode"]
-    #[inline]
-    pub fn mode10(&self) -> MODE10R {
-        MODE10R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode10(&self) -> MODE10_R {
+        MODE10_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Pin 11 Mode"]
-    #[inline]
-    pub fn mode11(&self) -> MODE11R {
-        MODE11R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode11(&self) -> MODE11_R {
+        MODE11_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Pin 12 Mode"]
-    #[inline]
-    pub fn mode12(&self) -> MODE12R {
-        MODE12R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode12(&self) -> MODE12_R {
+        MODE12_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - Pin 13 Mode"]
-    #[inline]
-    pub fn mode13(&self) -> MODE13R {
-        MODE13R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode13(&self) -> MODE13_R {
+        MODE13_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Pin 14 Mode"]
-    #[inline]
-    pub fn mode14(&self) -> MODE14R {
-        MODE14R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode14(&self) -> MODE14_R {
+        MODE14_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - Pin 15 Mode"]
-    #[inline]
-    pub fn mode15(&self) -> MODE15R {
-        MODE15R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode15(&self) -> MODE15_R {
+        MODE15_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Pin 8 Mode"]
-    #[inline]
-    pub fn mode8(&mut self) -> _MODE8W {
-        _MODE8W { w: self }
+    #[inline(always)]
+    pub fn mode8(&mut self) -> MODE8_W {
+        MODE8_W { w: self }
     }
     #[doc = "Bits 4:7 - Pin 9 Mode"]
-    #[inline]
-    pub fn mode9(&mut self) -> _MODE9W {
-        _MODE9W { w: self }
+    #[inline(always)]
+    pub fn mode9(&mut self) -> MODE9_W {
+        MODE9_W { w: self }
     }
     #[doc = "Bits 8:11 - Pin 10 Mode"]
-    #[inline]
-    pub fn mode10(&mut self) -> _MODE10W {
-        _MODE10W { w: self }
+    #[inline(always)]
+    pub fn mode10(&mut self) -> MODE10_W {
+        MODE10_W { w: self }
     }
     #[doc = "Bits 12:15 - Pin 11 Mode"]
-    #[inline]
-    pub fn mode11(&mut self) -> _MODE11W {
-        _MODE11W { w: self }
+    #[inline(always)]
+    pub fn mode11(&mut self) -> MODE11_W {
+        MODE11_W { w: self }
     }
     #[doc = "Bits 16:19 - Pin 12 Mode"]
-    #[inline]
-    pub fn mode12(&mut self) -> _MODE12W {
-        _MODE12W { w: self }
+    #[inline(always)]
+    pub fn mode12(&mut self) -> MODE12_W {
+        MODE12_W { w: self }
     }
     #[doc = "Bits 20:23 - Pin 13 Mode"]
-    #[inline]
-    pub fn mode13(&mut self) -> _MODE13W {
-        _MODE13W { w: self }
+    #[inline(always)]
+    pub fn mode13(&mut self) -> MODE13_W {
+        MODE13_W { w: self }
     }
     #[doc = "Bits 24:27 - Pin 14 Mode"]
-    #[inline]
-    pub fn mode14(&mut self) -> _MODE14W {
-        _MODE14W { w: self }
+    #[inline(always)]
+    pub fn mode14(&mut self) -> MODE14_W {
+        MODE14_W { w: self }
     }
     #[doc = "Bits 28:31 - Pin 15 Mode"]
-    #[inline]
-    pub fn mode15(&mut self) -> _MODE15W {
-        _MODE15W { w: self }
+    #[inline(always)]
+    pub fn mode15(&mut self) -> MODE15_W {
+        MODE15_W { w: self }
     }
 }

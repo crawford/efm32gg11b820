@@ -1,307 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Writer for register STATUS"]
+pub type W = crate::W<u32, super::STATUS>;
+#[doc = "Register STATUS `reset()`'s with value 0"]
+impl crate::ResetValue for super::STATUS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TESTDATABUSYR {
-    bits: bool,
-}
-impl TESTDATABUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REPCOUNTIFR {
-    bits: bool,
-}
-impl REPCOUNTIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APT64IFR {
-    bits: bool,
-}
-impl APT64IFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APT4096IFR {
-    bits: bool,
-}
-impl APT4096IFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FULLIFR {
-    bits: bool,
-}
-impl FULLIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREIFR {
-    bits: bool,
-}
-impl PREIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALMIFR {
-    bits: bool,
-}
-impl ALMIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PREIFW<'a> {
+#[doc = "Reader of field `TESTDATABUSY`"]
+pub type TESTDATABUSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `REPCOUNTIF`"]
+pub type REPCOUNTIF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `APT64IF`"]
+pub type APT64IF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `APT4096IF`"]
+pub type APT4096IF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `FULLIF`"]
+pub type FULLIF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PREIF`"]
+pub type PREIF_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PREIF`"]
+pub struct PREIF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREIFW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PREIF_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
+#[doc = "Reader of field `ALMIF`"]
+pub type ALMIF_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Test Data Busy"]
-    #[inline]
-    pub fn testdatabusy(&self) -> TESTDATABUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TESTDATABUSYR { bits }
+    #[inline(always)]
+    pub fn testdatabusy(&self) -> TESTDATABUSY_R {
+        TESTDATABUSY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 4 - Repetition Count Test Interrupt Status"]
-    #[inline]
-    pub fn repcountif(&self) -> REPCOUNTIFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        REPCOUNTIFR { bits }
+    #[inline(always)]
+    pub fn repcountif(&self) -> REPCOUNTIF_R {
+        REPCOUNTIF_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Adaptive Proportion test failure (64-sample window) interrupt status"]
-    #[inline]
-    pub fn apt64if(&self) -> APT64IFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APT64IFR { bits }
+    #[inline(always)]
+    pub fn apt64if(&self) -> APT64IF_R {
+        APT64IF_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Adaptive Proportion test failure (4096-sample window) interrupt status"]
-    #[inline]
-    pub fn apt4096if(&self) -> APT4096IFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APT4096IFR { bits }
+    #[inline(always)]
+    pub fn apt4096if(&self) -> APT4096IF_R {
+        APT4096IF_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - FIFO Full Interrupt Status"]
-    #[inline]
-    pub fn fullif(&self) -> FULLIFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FULLIFR { bits }
+    #[inline(always)]
+    pub fn fullif(&self) -> FULLIF_R {
+        FULLIF_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - AIS31 Preliminary Noise Alarm interrupt status"]
-    #[inline]
-    pub fn preif(&self) -> PREIFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PREIFR { bits }
+    #[inline(always)]
+    pub fn preif(&self) -> PREIF_R {
+        PREIF_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - AIS31 Noise Alarm interrupt status"]
-    #[inline]
-    pub fn almif(&self) -> ALMIFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALMIFR { bits }
+    #[inline(always)]
+    pub fn almif(&self) -> ALMIF_R {
+        ALMIF_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 8 - AIS31 Preliminary Noise Alarm interrupt status"]
-    #[inline]
-    pub fn preif(&mut self) -> _PREIFW {
-        _PREIFW { w: self }
+    #[inline(always)]
+    pub fn preif(&mut self) -> PREIF_W {
+        PREIF_W { w: self }
     }
 }

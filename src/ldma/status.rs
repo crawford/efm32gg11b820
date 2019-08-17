@@ -1,164 +1,46 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ANYBUSYR {
-    bits: bool,
-}
-impl ANYBUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ANYREQR {
-    bits: bool,
-}
-impl ANYREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHGRANTR {
-    bits: u8,
-}
-impl CHGRANTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHERRORR {
-    bits: u8,
-}
-impl CHERRORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FIFOLEVELR {
-    bits: u8,
-}
-impl FIFOLEVELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHNUMR {
-    bits: u8,
-}
-impl CHNUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `ANYBUSY`"]
+pub type ANYBUSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ANYREQ`"]
+pub type ANYREQ_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CHGRANT`"]
+pub type CHGRANT_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CHERROR`"]
+pub type CHERROR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `FIFOLEVEL`"]
+pub type FIFOLEVEL_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CHNUM`"]
+pub type CHNUM_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Any DMA Channel Busy"]
-    #[inline]
-    pub fn anybusy(&self) -> ANYBUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ANYBUSYR { bits }
+    #[inline(always)]
+    pub fn anybusy(&self) -> ANYBUSY_R {
+        ANYBUSY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Any DMA Channel Request Pending"]
-    #[inline]
-    pub fn anyreq(&self) -> ANYREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ANYREQR { bits }
+    #[inline(always)]
+    pub fn anyreq(&self) -> ANYREQ_R {
+        ANYREQ_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 3:7 - Granted Channel Number"]
-    #[inline]
-    pub fn chgrant(&self) -> CHGRANTR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CHGRANTR { bits }
+    #[inline(always)]
+    pub fn chgrant(&self) -> CHGRANT_R {
+        CHGRANT_R::new(((self.bits >> 3) & 0x1f) as u8)
     }
     #[doc = "Bits 8:12 - Errant Channel Number"]
-    #[inline]
-    pub fn cherror(&self) -> CHERRORR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CHERRORR { bits }
+    #[inline(always)]
+    pub fn cherror(&self) -> CHERROR_R {
+        CHERROR_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
     #[doc = "Bits 16:20 - FIFO Level"]
-    #[inline]
-    pub fn fifolevel(&self) -> FIFOLEVELR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FIFOLEVELR { bits }
+    #[inline(always)]
+    pub fn fifolevel(&self) -> FIFOLEVEL_R {
+        FIFOLEVEL_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 24:28 - Number of Channels"]
-    #[inline]
-    pub fn chnum(&self) -> CHNUMR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CHNUMR { bits }
+    #[inline(always)]
+    pub fn chnum(&self) -> CHNUM_R {
+        CHNUM_R::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }

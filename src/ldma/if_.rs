@@ -1,70 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DONER {
-    bits: u32,
-}
-impl DONER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERRORR {
-    bits: bool,
-}
-impl ERRORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `DONE`"]
+pub type DONE_R = crate::R<u32, u32>;
+#[doc = "Reader of field `ERROR`"]
+pub type ERROR_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:23 - DMA Structure Operation Done Interrupt Flag"]
-    #[inline]
-    pub fn done(&self) -> DONER {
-        let bits = {
-            const MASK: u32 = 16777215;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        DONER { bits }
+    #[inline(always)]
+    pub fn done(&self) -> DONE_R {
+        DONE_R::new((self.bits & 0x00ff_ffff) as u32)
     }
     #[doc = "Bit 31 - Transfer Error Interrupt Flag"]
-    #[inline]
-    pub fn error(&self) -> ERRORR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERRORR { bits }
+    #[inline(always)]
+    pub fn error(&self) -> ERROR_R {
+        ERROR_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

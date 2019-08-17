@@ -1,204 +1,46 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UFR {
-    bits: bool,
-}
-impl UFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OFR {
-    bits: bool,
-}
-impl OFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIRCNGR {
-    bits: bool,
-}
-impl DIRCNGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUXOFR {
-    bits: bool,
-}
-impl AUXOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TCCR {
-    bits: bool,
-}
-impl TCCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OQSTERRR {
-    bits: bool,
-}
-impl OQSTERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `UF`"]
+pub type UF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OF`"]
+pub type OF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DIRCNG`"]
+pub type DIRCNG_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AUXOF`"]
+pub type AUXOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TCC`"]
+pub type TCC_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OQSTERR`"]
+pub type OQSTERR_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Underflow Interrupt Read Flag"]
-    #[inline]
-    pub fn uf(&self) -> UFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        UFR { bits }
+    #[inline(always)]
+    pub fn uf(&self) -> UF_R {
+        UF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Overflow Interrupt Read Flag"]
-    #[inline]
-    pub fn of(&self) -> OFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OFR { bits }
+    #[inline(always)]
+    pub fn of(&self) -> OF_R {
+        OF_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Flag"]
-    #[inline]
-    pub fn dircng(&self) -> DIRCNGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIRCNGR { bits }
+    #[inline(always)]
+    pub fn dircng(&self) -> DIRCNG_R {
+        DIRCNG_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Auxiliary Overflow Interrupt Read Flag"]
-    #[inline]
-    pub fn auxof(&self) -> AUXOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUXOFR { bits }
+    #[inline(always)]
+    pub fn auxof(&self) -> AUXOF_R {
+        AUXOF_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Triggered Compare Interrupt Read Flag"]
-    #[inline]
-    pub fn tcc(&self) -> TCCR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TCCR { bits }
+    #[inline(always)]
+    pub fn tcc(&self) -> TCC_R {
+        TCC_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Oversampling Quadrature State Error Interrupt"]
-    #[inline]
-    pub fn oqsterr(&self) -> OQSTERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OQSTERRR { bits }
+    #[inline(always)]
+    pub fn oqsterr(&self) -> OQSTERR_R {
+        OQSTERR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }

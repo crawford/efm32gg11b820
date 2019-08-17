@@ -1,49 +1,12 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSTVAL6 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR104SDCLKFREQVALR {
-    bits: u16,
-}
-impl SDR104SDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SDR104CLKGENVALR {
-    bits: bool,
-}
-impl SDR104CLKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register PRSTVAL6"]
+pub type R = crate::R<u32, super::PRSTVAL6>;
+#[doc = "Reader of field `SDR104SDCLKFREQVAL`"]
+pub type SDR104SDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `SDR104CLKGENVAL`"]
+pub type SDR104CLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `SDR104DRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDR104DRVSTVALR {
+pub enum SDR104DRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -53,85 +16,59 @@ pub enum SDR104DRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl SDR104DRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SDR104DRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SDR104DRVSTVALR::TYPEB => 0,
-            SDR104DRVSTVALR::TYPEA => 1,
-            SDR104DRVSTVALR::TYPEC => 2,
-            SDR104DRVSTVALR::TYPED => 3,
+            SDR104DRVSTVAL_A::TYPEB => 0,
+            SDR104DRVSTVAL_A::TYPEA => 1,
+            SDR104DRVSTVAL_A::TYPEC => 2,
+            SDR104DRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SDR104DRVSTVALR {
-        match value {
-            0 => SDR104DRVSTVALR::TYPEB,
-            1 => SDR104DRVSTVALR::TYPEA,
-            2 => SDR104DRVSTVALR::TYPEC,
-            3 => SDR104DRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `SDR104DRVSTVAL`"]
+pub type SDR104DRVSTVAL_R = crate::R<u8, SDR104DRVSTVAL_A>;
+impl SDR104DRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDR104DRVSTVAL_A {
+        match self.bits {
+            0 => SDR104DRVSTVAL_A::TYPEB,
+            1 => SDR104DRVSTVAL_A::TYPEA,
+            2 => SDR104DRVSTVAL_A::TYPEC,
+            3 => SDR104DRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == SDR104DRVSTVALR::TYPEB
+        *self == SDR104DRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == SDR104DRVSTVALR::TYPEA
+        *self == SDR104DRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == SDR104DRVSTVALR::TYPEC
+        *self == SDR104DRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == SDR104DRVSTVALR::TYPED
+        *self == SDR104DRVSTVAL_A::TYPED
     }
 }
-#[doc = r" Value of the field"]
-pub struct DDR50SDCLKFREQVALR {
-    bits: u16,
-}
-impl DDR50SDCLKFREQVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DDR50CLKGENVALR {
-    bits: bool,
-}
-impl DDR50CLKGENVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `DDR50SDCLKFREQVAL`"]
+pub type DDR50SDCLKFREQVAL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `DDR50CLKGENVAL`"]
+pub type DDR50CLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `DDR50DRVSTVAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DDR50DRVSTVALR {
+pub enum DDR50DRVSTVAL_A {
     #[doc = "Driver Type B is selected (Default)"]
     TYPEB,
     #[doc = "Driver Type A is selected"]
@@ -141,112 +78,81 @@ pub enum DDR50DRVSTVALR {
     #[doc = "Driver Type D is selected"]
     TYPED,
 }
-impl DDR50DRVSTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for DDR50DRVSTVAL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            DDR50DRVSTVALR::TYPEB => 0,
-            DDR50DRVSTVALR::TYPEA => 1,
-            DDR50DRVSTVALR::TYPEC => 2,
-            DDR50DRVSTVALR::TYPED => 3,
+            DDR50DRVSTVAL_A::TYPEB => 0,
+            DDR50DRVSTVAL_A::TYPEA => 1,
+            DDR50DRVSTVAL_A::TYPEC => 2,
+            DDR50DRVSTVAL_A::TYPED => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DDR50DRVSTVALR {
-        match value {
-            0 => DDR50DRVSTVALR::TYPEB,
-            1 => DDR50DRVSTVALR::TYPEA,
-            2 => DDR50DRVSTVALR::TYPEC,
-            3 => DDR50DRVSTVALR::TYPED,
+}
+#[doc = "Reader of field `DDR50DRVSTVAL`"]
+pub type DDR50DRVSTVAL_R = crate::R<u8, DDR50DRVSTVAL_A>;
+impl DDR50DRVSTVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DDR50DRVSTVAL_A {
+        match self.bits {
+            0 => DDR50DRVSTVAL_A::TYPEB,
+            1 => DDR50DRVSTVAL_A::TYPEA,
+            2 => DDR50DRVSTVAL_A::TYPEC,
+            3 => DDR50DRVSTVAL_A::TYPED,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TYPEB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typeb(&self) -> bool {
-        *self == DDR50DRVSTVALR::TYPEB
+        *self == DDR50DRVSTVAL_A::TYPEB
     }
     #[doc = "Checks if the value of the field is `TYPEA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typea(&self) -> bool {
-        *self == DDR50DRVSTVALR::TYPEA
+        *self == DDR50DRVSTVAL_A::TYPEA
     }
     #[doc = "Checks if the value of the field is `TYPEC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typec(&self) -> bool {
-        *self == DDR50DRVSTVALR::TYPEC
+        *self == DDR50DRVSTVAL_A::TYPEC
     }
     #[doc = "Checks if the value of the field is `TYPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_typed(&self) -> bool {
-        *self == DDR50DRVSTVALR::TYPED
+        *self == DDR50DRVSTVAL_A::TYPED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - SD_CLK Frequency Select Value for SDR104"]
-    #[inline]
-    pub fn sdr104sdclkfreqval(&self) -> SDR104SDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SDR104SDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn sdr104sdclkfreqval(&self) -> SDR104SDCLKFREQVAL_R {
+        SDR104SDCLKFREQVAL_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 10 - Clock Generator Select Value for SDR104"]
-    #[inline]
-    pub fn sdr104clkgenval(&self) -> SDR104CLKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDR104CLKGENVALR { bits }
+    #[inline(always)]
+    pub fn sdr104clkgenval(&self) -> SDR104CLKGENVAL_R {
+        SDR104CLKGENVAL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Driver Strength Select Value for SDR104"]
-    #[inline]
-    pub fn sdr104drvstval(&self) -> SDR104DRVSTVALR {
-        SDR104DRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sdr104drvstval(&self) -> SDR104DRVSTVAL_R {
+        SDR104DRVSTVAL_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - SD_CLK Frequency Select Value for DDR50"]
-    #[inline]
-    pub fn ddr50sdclkfreqval(&self) -> DDR50SDCLKFREQVALR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DDR50SDCLKFREQVALR { bits }
+    #[inline(always)]
+    pub fn ddr50sdclkfreqval(&self) -> DDR50SDCLKFREQVAL_R {
+        DDR50SDCLKFREQVAL_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 26 - Clock Generator Select Value for DDR50"]
-    #[inline]
-    pub fn ddr50clkgenval(&self) -> DDR50CLKGENVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DDR50CLKGENVALR { bits }
+    #[inline(always)]
+    pub fn ddr50clkgenval(&self) -> DDR50CLKGENVAL_R {
+        DDR50CLKGENVAL_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 30:31 - Driver Strength Select Value for DDR50"]
-    #[inline]
-    pub fn ddr50drvstval(&self) -> DDR50DRVSTVALR {
-        DDR50DRVSTVALR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ddr50drvstval(&self) -> DDR50DRVSTVAL_R {
+        DDR50DRVSTVAL_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }

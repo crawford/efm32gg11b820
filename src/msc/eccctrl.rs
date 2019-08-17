@@ -1,298 +1,152 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ECCCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ECCCTRL"]
+pub type R = crate::R<u32, super::ECCCTRL>;
+#[doc = "Writer for register ECCCTRL"]
+pub type W = crate::W<u32, super::ECCCTRL>;
+#[doc = "Register ECCCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::ECCCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct RAMECCEWENR {
-    bits: bool,
-}
-impl RAMECCEWENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RAMECCCHKENR {
-    bits: bool,
-}
-impl RAMECCCHKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RAM1ECCEWENR {
-    bits: bool,
-}
-impl RAM1ECCEWENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RAM1ECCCHKENR {
-    bits: bool,
-}
-impl RAM1ECCCHKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAMECCEWENW<'a> {
+#[doc = "Reader of field `RAMECCEWEN`"]
+pub type RAMECCEWEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RAMECCEWEN`"]
+pub struct RAMECCEWEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAMECCEWENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RAMECCEWEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RAMECCCHKENW<'a> {
+#[doc = "Reader of field `RAMECCCHKEN`"]
+pub type RAMECCCHKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RAMECCCHKEN`"]
+pub struct RAMECCCHKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAMECCCHKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RAMECCCHKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RAM1ECCEWENW<'a> {
+#[doc = "Reader of field `RAM1ECCEWEN`"]
+pub type RAM1ECCEWEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RAM1ECCEWEN`"]
+pub struct RAM1ECCEWEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAM1ECCEWENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RAM1ECCEWEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RAM1ECCCHKENW<'a> {
+#[doc = "Reader of field `RAM1ECCCHKEN`"]
+pub type RAM1ECCCHKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RAM1ECCCHKEN`"]
+pub struct RAM1ECCCHKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAM1ECCCHKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RAM1ECCCHKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - RAM ECC Write Enable"]
-    #[inline]
-    pub fn rameccewen(&self) -> RAMECCEWENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAMECCEWENR { bits }
+    #[inline(always)]
+    pub fn rameccewen(&self) -> RAMECCEWEN_R {
+        RAMECCEWEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - RAM ECC Check Enable"]
-    #[inline]
-    pub fn rameccchken(&self) -> RAMECCCHKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAMECCCHKENR { bits }
+    #[inline(always)]
+    pub fn rameccchken(&self) -> RAMECCCHKEN_R {
+        RAMECCCHKEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - RAM1 ECC Write Enable"]
-    #[inline]
-    pub fn ram1eccewen(&self) -> RAM1ECCEWENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAM1ECCEWENR { bits }
+    #[inline(always)]
+    pub fn ram1eccewen(&self) -> RAM1ECCEWEN_R {
+        RAM1ECCEWEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - RAM1 ECC Check Enable"]
-    #[inline]
-    pub fn ram1eccchken(&self) -> RAM1ECCCHKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RAM1ECCCHKENR { bits }
+    #[inline(always)]
+    pub fn ram1eccchken(&self) -> RAM1ECCCHKEN_R {
+        RAM1ECCCHKEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - RAM ECC Write Enable"]
-    #[inline]
-    pub fn rameccewen(&mut self) -> _RAMECCEWENW {
-        _RAMECCEWENW { w: self }
+    #[inline(always)]
+    pub fn rameccewen(&mut self) -> RAMECCEWEN_W {
+        RAMECCEWEN_W { w: self }
     }
     #[doc = "Bit 1 - RAM ECC Check Enable"]
-    #[inline]
-    pub fn rameccchken(&mut self) -> _RAMECCCHKENW {
-        _RAMECCCHKENW { w: self }
+    #[inline(always)]
+    pub fn rameccchken(&mut self) -> RAMECCCHKEN_W {
+        RAMECCCHKEN_W { w: self }
     }
     #[doc = "Bit 2 - RAM1 ECC Write Enable"]
-    #[inline]
-    pub fn ram1eccewen(&mut self) -> _RAM1ECCEWENW {
-        _RAM1ECCEWENW { w: self }
+    #[inline(always)]
+    pub fn ram1eccewen(&mut self) -> RAM1ECCEWEN_W {
+        RAM1ECCEWEN_W { w: self }
     }
     #[doc = "Bit 3 - RAM1 ECC Check Enable"]
-    #[inline]
-    pub fn ram1eccchken(&mut self) -> _RAM1ECCCHKENW {
-        _RAM1ECCCHKENW { w: self }
+    #[inline(always)]
+    pub fn ram1eccchken(&mut self) -> RAM1ECCCHKEN_W {
+        RAM1ECCCHKEN_W { w: self }
     }
 }

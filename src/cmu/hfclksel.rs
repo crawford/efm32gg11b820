@@ -1,21 +1,16 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HFCLKSEL {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register HFCLKSEL"]
+pub type W = crate::W<u32, super::HFCLKSEL>;
+#[doc = "Register HFCLKSEL `reset()`'s with value 0"]
+impl crate::ResetValue for super::HFCLKSEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `HF`"]
-pub enum HFW {
+#[doc = "Possible values of the field `HF`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HF_AW {
     #[doc = "Select HFRCO as HFCLK"]
     HFRCO,
     #[doc = "Select HFXO as HFCLK"]
@@ -31,92 +26,77 @@ pub enum HFW {
     #[doc = "Select CLKIN0 as HFCLK"]
     CLKIN0,
 }
-impl HFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
+impl crate::ToBits<u8> for HF_AW {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            HFW::HFRCO => 1,
-            HFW::HFXO => 2,
-            HFW::LFRCO => 3,
-            HFW::LFXO => 4,
-            HFW::HFRCODIV2 => 5,
-            HFW::USHFRCO => 6,
-            HFW::CLKIN0 => 7,
+            HF_AW::HFRCO => 1,
+            HF_AW::HFXO => 2,
+            HF_AW::LFRCO => 3,
+            HF_AW::LFXO => 4,
+            HF_AW::HFRCODIV2 => 5,
+            HF_AW::USHFRCO => 6,
+            HF_AW::CLKIN0 => 7,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _HFW<'a> {
+#[doc = "Write proxy for field `HF`"]
+pub struct HF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HFW) -> &'a mut W {
+impl<'a> HF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HF_AW) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Select HFRCO as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn hfrco(self) -> &'a mut W {
-        self.variant(HFW::HFRCO)
+        self.variant(HF_AW::HFRCO)
     }
     #[doc = "Select HFXO as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
-        self.variant(HFW::HFXO)
+        self.variant(HF_AW::HFXO)
     }
     #[doc = "Select LFRCO as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn lfrco(self) -> &'a mut W {
-        self.variant(HFW::LFRCO)
+        self.variant(HF_AW::LFRCO)
     }
     #[doc = "Select LFXO as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn lfxo(self) -> &'a mut W {
-        self.variant(HFW::LFXO)
+        self.variant(HF_AW::LFXO)
     }
     #[doc = "Select HFRCO divided by 2 as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn hfrcodiv2(self) -> &'a mut W {
-        self.variant(HFW::HFRCODIV2)
+        self.variant(HF_AW::HFRCODIV2)
     }
     #[doc = "Select USHFRCO as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn ushfrco(self) -> &'a mut W {
-        self.variant(HFW::USHFRCO)
+        self.variant(HF_AW::USHFRCO)
     }
     #[doc = "Select CLKIN0 as HFCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn clkin0(self) -> &'a mut W {
-        self.variant(HFW::CLKIN0)
+        self.variant(HF_AW::CLKIN0)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - HFCLK Select"]
-    #[inline]
-    pub fn hf(&mut self) -> _HFW {
-        _HFW { w: self }
+    #[inline(always)]
+    pub fn hf(&mut self) -> HF_W {
+        HF_W { w: self }
     }
 }

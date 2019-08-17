@@ -1,59 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TIMECMP1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TIMECMP1"]
+pub type R = crate::R<u32, super::TIMECMP1>;
+#[doc = "Writer for register TIMECMP1"]
+pub type W = crate::W<u32, super::TIMECMP1>;
+#[doc = "Register TIMECMP1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::TIMECMP1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TCMPVALR {
-    bits: u8,
+#[doc = "Reader of field `TCMPVAL`"]
+pub type TCMPVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TCMPVAL`"]
+pub struct TCMPVAL_W<'a> {
+    w: &'a mut W,
 }
-impl TCMPVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TCMPVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TSTART`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSTARTR {
+pub enum TSTART_A {
     #[doc = "Comparator 1 is disabled"]
     DISABLE,
     #[doc = "Comparator 1 and timer are started at TX end of frame"]
@@ -64,64 +37,107 @@ pub enum TSTARTR {
     RXACT,
     #[doc = "Comparator 1 and timer are started at RX end of frame"]
     RXEOF,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TSTARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for TSTART_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            TSTARTR::DISABLE => 0,
-            TSTARTR::TXEOF => 1,
-            TSTARTR::TXC => 2,
-            TSTARTR::RXACT => 3,
-            TSTARTR::RXEOF => 4,
-            TSTARTR::_Reserved(bits) => bits,
+            TSTART_A::DISABLE => 0,
+            TSTART_A::TXEOF => 1,
+            TSTART_A::TXC => 2,
+            TSTART_A::RXACT => 3,
+            TSTART_A::RXEOF => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSTARTR {
-        match value {
-            0 => TSTARTR::DISABLE,
-            1 => TSTARTR::TXEOF,
-            2 => TSTARTR::TXC,
-            3 => TSTARTR::RXACT,
-            4 => TSTARTR::RXEOF,
-            i => TSTARTR::_Reserved(i),
+}
+#[doc = "Reader of field `TSTART`"]
+pub type TSTART_R = crate::R<u8, TSTART_A>;
+impl TSTART_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TSTART_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TSTART_A::DISABLE),
+            1 => Val(TSTART_A::TXEOF),
+            2 => Val(TSTART_A::TXC),
+            3 => Val(TSTART_A::RXACT),
+            4 => Val(TSTART_A::RXEOF),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == TSTARTR::DISABLE
+        *self == TSTART_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `TXEOF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_txeof(&self) -> bool {
-        *self == TSTARTR::TXEOF
+        *self == TSTART_A::TXEOF
     }
     #[doc = "Checks if the value of the field is `TXC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_txc(&self) -> bool {
-        *self == TSTARTR::TXC
+        *self == TSTART_A::TXC
     }
     #[doc = "Checks if the value of the field is `RXACT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxact(&self) -> bool {
-        *self == TSTARTR::RXACT
+        *self == TSTART_A::RXACT
     }
     #[doc = "Checks if the value of the field is `RXEOF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxeof(&self) -> bool {
-        *self == TSTARTR::RXEOF
+        *self == TSTART_A::RXEOF
+    }
+}
+#[doc = "Write proxy for field `TSTART`"]
+pub struct TSTART_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TSTART_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSTART_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Comparator 1 is disabled"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TSTART_A::DISABLE)
+    }
+    #[doc = "Comparator 1 and timer are started at TX end of frame"]
+    #[inline(always)]
+    pub fn txeof(self) -> &'a mut W {
+        self.variant(TSTART_A::TXEOF)
+    }
+    #[doc = "Comparator 1 and timer are started at TX Complete"]
+    #[inline(always)]
+    pub fn txc(self) -> &'a mut W {
+        self.variant(TSTART_A::TXC)
+    }
+    #[doc = "Comparator 1 and timer are started at RX going going Active (default: low)"]
+    #[inline(always)]
+    pub fn rxact(self) -> &'a mut W {
+        self.variant(TSTART_A::RXACT)
+    }
+    #[doc = "Comparator 1 and timer are started at RX end of frame"]
+    #[inline(always)]
+    pub fn rxeof(self) -> &'a mut W {
+        self.variant(TSTART_A::RXEOF)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TSTOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSTOPR {
+pub enum TSTOP_A {
     #[doc = "Comparator 1 is disabled when the counter equals TCMPVAL and triggers a TCMP1 event"]
     TCMP1,
     #[doc = "Comparator 1 is disabled at TX start TX Engine"]
@@ -130,324 +146,157 @@ pub enum TSTOPR {
     RXACT,
     #[doc = "Comparator 1 is disabled on RX going Inactive"]
     RXACTN,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TSTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for TSTOP_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            TSTOPR::TCMP1 => 0,
-            TSTOPR::TXST => 1,
-            TSTOPR::RXACT => 2,
-            TSTOPR::RXACTN => 3,
-            TSTOPR::_Reserved(bits) => bits,
+            TSTOP_A::TCMP1 => 0,
+            TSTOP_A::TXST => 1,
+            TSTOP_A::RXACT => 2,
+            TSTOP_A::RXACTN => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSTOPR {
-        match value {
-            0 => TSTOPR::TCMP1,
-            1 => TSTOPR::TXST,
-            2 => TSTOPR::RXACT,
-            3 => TSTOPR::RXACTN,
-            i => TSTOPR::_Reserved(i),
+}
+#[doc = "Reader of field `TSTOP`"]
+pub type TSTOP_R = crate::R<u8, TSTOP_A>;
+impl TSTOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TSTOP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TSTOP_A::TCMP1),
+            1 => Val(TSTOP_A::TXST),
+            2 => Val(TSTOP_A::RXACT),
+            3 => Val(TSTOP_A::RXACTN),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `TCMP1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tcmp1(&self) -> bool {
-        *self == TSTOPR::TCMP1
+        *self == TSTOP_A::TCMP1
     }
     #[doc = "Checks if the value of the field is `TXST`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_txst(&self) -> bool {
-        *self == TSTOPR::TXST
+        *self == TSTOP_A::TXST
     }
     #[doc = "Checks if the value of the field is `RXACT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxact(&self) -> bool {
-        *self == TSTOPR::RXACT
+        *self == TSTOP_A::RXACT
     }
     #[doc = "Checks if the value of the field is `RXACTN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxactn(&self) -> bool {
-        *self == TSTOPR::RXACTN
+        *self == TSTOP_A::RXACTN
     }
 }
-#[doc = r" Value of the field"]
-pub struct RESTARTENR {
-    bits: bool,
-}
-impl RESTARTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TCMPVALW<'a> {
+#[doc = "Write proxy for field `TSTOP`"]
+pub struct TSTOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TCMPVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TSTART`"]
-pub enum TSTARTW {
-    #[doc = "Comparator 1 is disabled"]
-    DISABLE,
-    #[doc = "Comparator 1 and timer are started at TX end of frame"]
-    TXEOF,
-    #[doc = "Comparator 1 and timer are started at TX Complete"]
-    TXC,
-    #[doc = "Comparator 1 and timer are started at RX going going Active (default: low)"]
-    RXACT,
-    #[doc = "Comparator 1 and timer are started at RX end of frame"]
-    RXEOF,
-}
-impl TSTARTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TSTARTW::DISABLE => 0,
-            TSTARTW::TXEOF => 1,
-            TSTARTW::TXC => 2,
-            TSTARTW::RXACT => 3,
-            TSTARTW::RXEOF => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSTARTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TSTARTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSTARTW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Comparator 1 is disabled"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TSTARTW::DISABLE)
-    }
-    #[doc = "Comparator 1 and timer are started at TX end of frame"]
-    #[inline]
-    pub fn txeof(self) -> &'a mut W {
-        self.variant(TSTARTW::TXEOF)
-    }
-    #[doc = "Comparator 1 and timer are started at TX Complete"]
-    #[inline]
-    pub fn txc(self) -> &'a mut W {
-        self.variant(TSTARTW::TXC)
-    }
-    #[doc = "Comparator 1 and timer are started at RX going going Active (default: low)"]
-    #[inline]
-    pub fn rxact(self) -> &'a mut W {
-        self.variant(TSTARTW::RXACT)
-    }
-    #[doc = "Comparator 1 and timer are started at RX end of frame"]
-    #[inline]
-    pub fn rxeof(self) -> &'a mut W {
-        self.variant(TSTARTW::RXEOF)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TSTOP`"]
-pub enum TSTOPW {
-    #[doc = "Comparator 1 is disabled when the counter equals TCMPVAL and triggers a TCMP1 event"]
-    TCMP1,
-    #[doc = "Comparator 1 is disabled at TX start TX Engine"]
-    TXST,
-    #[doc = "Comparator 1 is disabled on RX going going Active (default: low)"]
-    RXACT,
-    #[doc = "Comparator 1 is disabled on RX going Inactive"]
-    RXACTN,
-}
-impl TSTOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TSTOPW::TCMP1 => 0,
-            TSTOPW::TXST => 1,
-            TSTOPW::RXACT => 2,
-            TSTOPW::RXACTN => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSTOPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TSTOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSTOPW) -> &'a mut W {
+impl<'a> TSTOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSTOP_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Comparator 1 is disabled when the counter equals TCMPVAL and triggers a TCMP1 event"]
-    #[inline]
+    #[inline(always)]
     pub fn tcmp1(self) -> &'a mut W {
-        self.variant(TSTOPW::TCMP1)
+        self.variant(TSTOP_A::TCMP1)
     }
     #[doc = "Comparator 1 is disabled at TX start TX Engine"]
-    #[inline]
+    #[inline(always)]
     pub fn txst(self) -> &'a mut W {
-        self.variant(TSTOPW::TXST)
+        self.variant(TSTOP_A::TXST)
     }
     #[doc = "Comparator 1 is disabled on RX going going Active (default: low)"]
-    #[inline]
+    #[inline(always)]
     pub fn rxact(self) -> &'a mut W {
-        self.variant(TSTOPW::RXACT)
+        self.variant(TSTOP_A::RXACT)
     }
     #[doc = "Comparator 1 is disabled on RX going Inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn rxactn(self) -> &'a mut W {
-        self.variant(TSTOPW::RXACTN)
+        self.variant(TSTOP_A::RXACTN)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RESTARTENW<'a> {
+#[doc = "Reader of field `RESTARTEN`"]
+pub type RESTARTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RESTARTEN`"]
+pub struct RESTARTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESTARTENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RESTARTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Timer Comparator 1"]
-    #[inline]
-    pub fn tcmpval(&self) -> TCMPVALR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TCMPVALR { bits }
+    #[inline(always)]
+    pub fn tcmpval(&self) -> TCMPVAL_R {
+        TCMPVAL_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 16:18 - Timer Start Source"]
-    #[inline]
-    pub fn tstart(&self) -> TSTARTR {
-        TSTARTR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tstart(&self) -> TSTART_R {
+        TSTART_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 20:22 - Source Used to Disable Comparator 1"]
-    #[inline]
-    pub fn tstop(&self) -> TSTOPR {
-        TSTOPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tstop(&self) -> TSTOP_R {
+        TSTOP_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bit 24 - Restart Timer on TCMP1"]
-    #[inline]
-    pub fn restarten(&self) -> RESTARTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RESTARTENR { bits }
+    #[inline(always)]
+    pub fn restarten(&self) -> RESTARTEN_R {
+        RESTARTEN_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Timer Comparator 1"]
-    #[inline]
-    pub fn tcmpval(&mut self) -> _TCMPVALW {
-        _TCMPVALW { w: self }
+    #[inline(always)]
+    pub fn tcmpval(&mut self) -> TCMPVAL_W {
+        TCMPVAL_W { w: self }
     }
     #[doc = "Bits 16:18 - Timer Start Source"]
-    #[inline]
-    pub fn tstart(&mut self) -> _TSTARTW {
-        _TSTARTW { w: self }
+    #[inline(always)]
+    pub fn tstart(&mut self) -> TSTART_W {
+        TSTART_W { w: self }
     }
     #[doc = "Bits 20:22 - Source Used to Disable Comparator 1"]
-    #[inline]
-    pub fn tstop(&mut self) -> _TSTOPW {
-        _TSTOPW { w: self }
+    #[inline(always)]
+    pub fn tstop(&mut self) -> TSTOP_W {
+        TSTOP_W { w: self }
     }
     #[doc = "Bit 24 - Restart Timer on TCMP1"]
-    #[inline]
-    pub fn restarten(&mut self) -> _RESTARTENW {
-        _RESTARTENW { w: self }
+    #[inline(always)]
+    pub fn restarten(&mut self) -> RESTARTEN_W {
+        RESTARTEN_W { w: self }
     }
 }

@@ -1,385 +1,204 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PHYMNGMNT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PHYMNGMNT"]
+pub type R = crate::R<u32, super::PHYMNGMNT>;
+#[doc = "Writer for register PHYMNGMNT"]
+pub type W = crate::W<u32, super::PHYMNGMNT>;
+#[doc = "Register PHYMNGMNT `reset()`'s with value 0"]
+impl crate::ResetValue for super::PHYMNGMNT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PHYRWDATAR {
-    bits: u16,
-}
-impl PHYRWDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WRITE10R {
-    bits: u8,
-}
-impl WRITE10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REGADDRR {
-    bits: u8,
-}
-impl REGADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHYADDRR {
-    bits: u8,
-}
-impl PHYADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPERATIONR {
-    bits: u8,
-}
-impl OPERATIONR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WRITE1R {
-    bits: bool,
-}
-impl WRITE1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WRITE0R {
-    bits: bool,
-}
-impl WRITE0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PHYRWDATAW<'a> {
+#[doc = "Reader of field `PHYRWDATA`"]
+pub type PHYRWDATA_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `PHYRWDATA`"]
+pub struct PHYRWDATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHYRWDATAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHYRWDATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WRITE10W<'a> {
+#[doc = "Reader of field `WRITE10`"]
+pub type WRITE10_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `WRITE10`"]
+pub struct WRITE10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WRITE10W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> WRITE10_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGADDRW<'a> {
+#[doc = "Reader of field `REGADDR`"]
+pub type REGADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `REGADDR`"]
+pub struct REGADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> REGADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 18)) | (((value as u32) & 0x1f) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHYADDRW<'a> {
+#[doc = "Reader of field `PHYADDR`"]
+pub type PHYADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PHYADDR`"]
+pub struct PHYADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHYADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHYADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 23)) | (((value as u32) & 0x1f) << 23);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OPERATIONW<'a> {
+#[doc = "Reader of field `OPERATION`"]
+pub type OPERATION_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OPERATION`"]
+pub struct OPERATION_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OPERATIONW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> OPERATION_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WRITE1W<'a> {
+#[doc = "Reader of field `WRITE1`"]
+pub type WRITE1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WRITE1`"]
+pub struct WRITE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WRITE1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WRITE1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WRITE0W<'a> {
+#[doc = "Reader of field `WRITE0`"]
+pub type WRITE0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WRITE0`"]
+pub struct WRITE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WRITE0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WRITE0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - PHY read write data"]
-    #[inline]
-    pub fn phyrwdata(&self) -> PHYRWDATAR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PHYRWDATAR { bits }
+    #[inline(always)]
+    pub fn phyrwdata(&self) -> PHYRWDATA_R {
+        PHYRWDATA_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:17 - Must be written with 10."]
-    #[inline]
-    pub fn write10(&self) -> WRITE10R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WRITE10R { bits }
+    #[inline(always)]
+    pub fn write10(&self) -> WRITE10_R {
+        WRITE10_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:22 - Register address - specifies the register in the PHY to access."]
-    #[inline]
-    pub fn regaddr(&self) -> REGADDRR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REGADDRR { bits }
+    #[inline(always)]
+    pub fn regaddr(&self) -> REGADDR_R {
+        REGADDR_R::new(((self.bits >> 18) & 0x1f) as u8)
     }
     #[doc = "Bits 23:27 - PHY address."]
-    #[inline]
-    pub fn phyaddr(&self) -> PHYADDRR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PHYADDRR { bits }
+    #[inline(always)]
+    pub fn phyaddr(&self) -> PHYADDR_R {
+        PHYADDR_R::new(((self.bits >> 23) & 0x1f) as u8)
     }
     #[doc = "Bits 28:29 - Operation. For a Clause 45 frame: 00 is an addr, 01 is a write, 10 is a post read increment, 11 is a read frame. For a Clause 22 frame: 10 is a read, 01 is a write."]
-    #[inline]
-    pub fn operation(&self) -> OPERATIONR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OPERATIONR { bits }
+    #[inline(always)]
+    pub fn operation(&self) -> OPERATION_R {
+        OPERATION_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bit 30 - Must be written to 1 for a valid Clause 22 frame and to 0 for a valid Clause 45 frame."]
-    #[inline]
-    pub fn write1(&self) -> WRITE1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WRITE1R { bits }
+    #[inline(always)]
+    pub fn write1(&self) -> WRITE1_R {
+        WRITE1_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Must be written with 0."]
-    #[inline]
-    pub fn write0(&self) -> WRITE0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WRITE0R { bits }
+    #[inline(always)]
+    pub fn write0(&self) -> WRITE0_R {
+        WRITE0_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - PHY read write data"]
-    #[inline]
-    pub fn phyrwdata(&mut self) -> _PHYRWDATAW {
-        _PHYRWDATAW { w: self }
+    #[inline(always)]
+    pub fn phyrwdata(&mut self) -> PHYRWDATA_W {
+        PHYRWDATA_W { w: self }
     }
     #[doc = "Bits 16:17 - Must be written with 10."]
-    #[inline]
-    pub fn write10(&mut self) -> _WRITE10W {
-        _WRITE10W { w: self }
+    #[inline(always)]
+    pub fn write10(&mut self) -> WRITE10_W {
+        WRITE10_W { w: self }
     }
     #[doc = "Bits 18:22 - Register address - specifies the register in the PHY to access."]
-    #[inline]
-    pub fn regaddr(&mut self) -> _REGADDRW {
-        _REGADDRW { w: self }
+    #[inline(always)]
+    pub fn regaddr(&mut self) -> REGADDR_W {
+        REGADDR_W { w: self }
     }
     #[doc = "Bits 23:27 - PHY address."]
-    #[inline]
-    pub fn phyaddr(&mut self) -> _PHYADDRW {
-        _PHYADDRW { w: self }
+    #[inline(always)]
+    pub fn phyaddr(&mut self) -> PHYADDR_W {
+        PHYADDR_W { w: self }
     }
     #[doc = "Bits 28:29 - Operation. For a Clause 45 frame: 00 is an addr, 01 is a write, 10 is a post read increment, 11 is a read frame. For a Clause 22 frame: 10 is a read, 01 is a write."]
-    #[inline]
-    pub fn operation(&mut self) -> _OPERATIONW {
-        _OPERATIONW { w: self }
+    #[inline(always)]
+    pub fn operation(&mut self) -> OPERATION_W {
+        OPERATION_W { w: self }
     }
     #[doc = "Bit 30 - Must be written to 1 for a valid Clause 22 frame and to 0 for a valid Clause 45 frame."]
-    #[inline]
-    pub fn write1(&mut self) -> _WRITE1W {
-        _WRITE1W { w: self }
+    #[inline(always)]
+    pub fn write1(&mut self) -> WRITE1_W {
+        WRITE1_W { w: self }
     }
     #[doc = "Bit 31 - Must be written with 0."]
-    #[inline]
-    pub fn write0(&mut self) -> _WRITE0W {
-        _WRITE0W { w: self }
+    #[inline(always)]
+    pub fn write0(&mut self) -> WRITE0_W {
+        WRITE0_W { w: self }
     }
 }

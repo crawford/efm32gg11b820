@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LFCCLKSEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LFCCLKSEL"]
+pub type R = crate::R<u32, super::LFCCLKSEL>;
+#[doc = "Writer for register LFCCLKSEL"]
+pub type W = crate::W<u32, super::LFCCLKSEL>;
+#[doc = "Register LFCCLKSEL `reset()`'s with value 0"]
+impl crate::ResetValue for super::LFCCLKSEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `LFC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LFCR {
+pub enum LFC_A {
     #[doc = "LFCCLK is disabled"]
     DISABLED,
     #[doc = "LFRCO selected as LFCCLK"]
@@ -51,149 +21,103 @@ pub enum LFCR {
     LFXO,
     #[doc = "ULFRCO selected as LFCCLK"]
     ULFRCO,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LFCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for LFC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            LFCR::DISABLED => 0,
-            LFCR::LFRCO => 1,
-            LFCR::LFXO => 2,
-            LFCR::ULFRCO => 4,
-            LFCR::_Reserved(bits) => bits,
+            LFC_A::DISABLED => 0,
+            LFC_A::LFRCO => 1,
+            LFC_A::LFXO => 2,
+            LFC_A::ULFRCO => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LFCR {
-        match value {
-            0 => LFCR::DISABLED,
-            1 => LFCR::LFRCO,
-            2 => LFCR::LFXO,
-            4 => LFCR::ULFRCO,
-            i => LFCR::_Reserved(i),
+}
+#[doc = "Reader of field `LFC`"]
+pub type LFC_R = crate::R<u8, LFC_A>;
+impl LFC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LFC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LFC_A::DISABLED),
+            1 => Val(LFC_A::LFRCO),
+            2 => Val(LFC_A::LFXO),
+            4 => Val(LFC_A::ULFRCO),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == LFCR::DISABLED
+        *self == LFC_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        *self == LFCR::LFRCO
+        *self == LFC_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == LFCR::LFXO
+        *self == LFC_A::LFXO
     }
     #[doc = "Checks if the value of the field is `ULFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
-        *self == LFCR::ULFRCO
+        *self == LFC_A::ULFRCO
     }
 }
-#[doc = "Values that can be written to the field `LFC`"]
-pub enum LFCW {
-    #[doc = "LFCCLK is disabled"]
-    DISABLED,
-    #[doc = "LFRCO selected as LFCCLK"]
-    LFRCO,
-    #[doc = "LFXO selected as LFCCLK"]
-    LFXO,
-    #[doc = "ULFRCO selected as LFCCLK"]
-    ULFRCO,
-}
-impl LFCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LFCW::DISABLED => 0,
-            LFCW::LFRCO => 1,
-            LFCW::LFXO => 2,
-            LFCW::ULFRCO => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LFCW<'a> {
+#[doc = "Write proxy for field `LFC`"]
+pub struct LFC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LFCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LFCW) -> &'a mut W {
+impl<'a> LFC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LFC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "LFCCLK is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LFCW::DISABLED)
+        self.variant(LFC_A::DISABLED)
     }
     #[doc = "LFRCO selected as LFCCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn lfrco(self) -> &'a mut W {
-        self.variant(LFCW::LFRCO)
+        self.variant(LFC_A::LFRCO)
     }
     #[doc = "LFXO selected as LFCCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn lfxo(self) -> &'a mut W {
-        self.variant(LFCW::LFXO)
+        self.variant(LFC_A::LFXO)
     }
     #[doc = "ULFRCO selected as LFCCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn ulfrco(self) -> &'a mut W {
-        self.variant(LFCW::ULFRCO)
+        self.variant(LFC_A::ULFRCO)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Clock Select for LFC"]
-    #[inline]
-    pub fn lfc(&self) -> LFCR {
-        LFCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lfc(&self) -> LFC_R {
+        LFC_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Clock Select for LFC"]
-    #[inline]
-    pub fn lfc(&mut self) -> _LFCW {
-        _LFCW { w: self }
+    #[inline(always)]
+    pub fn lfc(&mut self) -> LFC_W {
+        LFC_W { w: self }
     }
 }

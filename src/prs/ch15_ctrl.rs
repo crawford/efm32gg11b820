@@ -1,59 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CH15_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH15_CTRL"]
+pub type R = crate::R<u32, super::CH15_CTRL>;
+#[doc = "Writer for register CH15_CTRL"]
+pub type W = crate::W<u32, super::CH15_CTRL>;
+#[doc = "Register CH15_CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CH15_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct SIGSELR {
-    bits: u8,
+#[doc = "Reader of field `SIGSEL`"]
+pub type SIGSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SIGSEL`"]
+pub struct SIGSEL_W<'a> {
+    w: &'a mut W,
 }
-impl SIGSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SIGSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SOURCESEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOURCESELR {
+pub enum SOURCESEL_A {
     #[doc = "No source selected"]
     NONE,
     #[doc = "Peripheral Reflex System"]
@@ -130,7 +103,7 @@ pub enum SOURCESELR {
     TIMER2,
     #[doc = "Universal Serial Bus Interface"]
     USB,
-    #[doc = "undocumented"]
+    #[doc = "`1000011`"]
     CM4,
     #[doc = "Timer 3"]
     TIMER3,
@@ -148,358 +121,611 @@ pub enum SOURCESELR {
     TIMER5,
     #[doc = "Timer 6"]
     TIMER6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SOURCESELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SOURCESEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SOURCESELR::NONE => 0,
-            SOURCESELR::PRSL => 1,
-            SOURCESELR::PRS => 2,
-            SOURCESELR::PRSH => 3,
-            SOURCESELR::ACMP0 => 4,
-            SOURCESELR::ACMP1 => 5,
-            SOURCESELR::ADC0 => 6,
-            SOURCESELR::RTC => 7,
-            SOURCESELR::RTCC => 8,
-            SOURCESELR::GPIOL => 9,
-            SOURCESELR::GPIOH => 10,
-            SOURCESELR::LETIMER0 => 11,
-            SOURCESELR::LETIMER1 => 12,
-            SOURCESELR::PCNT0 => 13,
-            SOURCESELR::PCNT1 => 14,
-            SOURCESELR::PCNT2 => 15,
-            SOURCESELR::CRYOTIMER => 16,
-            SOURCESELR::CMU => 17,
-            SOURCESELR::VDAC0 => 23,
-            SOURCESELR::LESENSEL => 24,
-            SOURCESELR::LESENSEH => 25,
-            SOURCESELR::LESENSED => 26,
-            SOURCESELR::LESENSE => 27,
-            SOURCESELR::ACMP2 => 28,
-            SOURCESELR::ACMP3 => 29,
-            SOURCESELR::ADC1 => 30,
-            SOURCESELR::USART0 => 48,
-            SOURCESELR::USART1 => 49,
-            SOURCESELR::USART2 => 50,
-            SOURCESELR::USART3 => 51,
-            SOURCESELR::USART4 => 52,
-            SOURCESELR::USART5 => 53,
-            SOURCESELR::UART0 => 54,
-            SOURCESELR::UART1 => 55,
-            SOURCESELR::TIMER0 => 60,
-            SOURCESELR::TIMER1 => 61,
-            SOURCESELR::TIMER2 => 62,
-            SOURCESELR::USB => 64,
-            SOURCESELR::CM4 => 67,
-            SOURCESELR::TIMER3 => 80,
-            SOURCESELR::WTIMER0 => 82,
-            SOURCESELR::WTIMER1 => 83,
-            SOURCESELR::WTIMER2 => 84,
-            SOURCESELR::WTIMER3 => 85,
-            SOURCESELR::TIMER4 => 98,
-            SOURCESELR::TIMER5 => 99,
-            SOURCESELR::TIMER6 => 100,
-            SOURCESELR::_Reserved(bits) => bits,
+            SOURCESEL_A::NONE => 0,
+            SOURCESEL_A::PRSL => 1,
+            SOURCESEL_A::PRS => 2,
+            SOURCESEL_A::PRSH => 3,
+            SOURCESEL_A::ACMP0 => 4,
+            SOURCESEL_A::ACMP1 => 5,
+            SOURCESEL_A::ADC0 => 6,
+            SOURCESEL_A::RTC => 7,
+            SOURCESEL_A::RTCC => 8,
+            SOURCESEL_A::GPIOL => 9,
+            SOURCESEL_A::GPIOH => 10,
+            SOURCESEL_A::LETIMER0 => 11,
+            SOURCESEL_A::LETIMER1 => 12,
+            SOURCESEL_A::PCNT0 => 13,
+            SOURCESEL_A::PCNT1 => 14,
+            SOURCESEL_A::PCNT2 => 15,
+            SOURCESEL_A::CRYOTIMER => 16,
+            SOURCESEL_A::CMU => 17,
+            SOURCESEL_A::VDAC0 => 23,
+            SOURCESEL_A::LESENSEL => 24,
+            SOURCESEL_A::LESENSEH => 25,
+            SOURCESEL_A::LESENSED => 26,
+            SOURCESEL_A::LESENSE => 27,
+            SOURCESEL_A::ACMP2 => 28,
+            SOURCESEL_A::ACMP3 => 29,
+            SOURCESEL_A::ADC1 => 30,
+            SOURCESEL_A::USART0 => 48,
+            SOURCESEL_A::USART1 => 49,
+            SOURCESEL_A::USART2 => 50,
+            SOURCESEL_A::USART3 => 51,
+            SOURCESEL_A::USART4 => 52,
+            SOURCESEL_A::USART5 => 53,
+            SOURCESEL_A::UART0 => 54,
+            SOURCESEL_A::UART1 => 55,
+            SOURCESEL_A::TIMER0 => 60,
+            SOURCESEL_A::TIMER1 => 61,
+            SOURCESEL_A::TIMER2 => 62,
+            SOURCESEL_A::USB => 64,
+            SOURCESEL_A::CM4 => 67,
+            SOURCESEL_A::TIMER3 => 80,
+            SOURCESEL_A::WTIMER0 => 82,
+            SOURCESEL_A::WTIMER1 => 83,
+            SOURCESEL_A::WTIMER2 => 84,
+            SOURCESEL_A::WTIMER3 => 85,
+            SOURCESEL_A::TIMER4 => 98,
+            SOURCESEL_A::TIMER5 => 99,
+            SOURCESEL_A::TIMER6 => 100,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SOURCESELR {
-        match value {
-            0 => SOURCESELR::NONE,
-            1 => SOURCESELR::PRSL,
-            2 => SOURCESELR::PRS,
-            3 => SOURCESELR::PRSH,
-            4 => SOURCESELR::ACMP0,
-            5 => SOURCESELR::ACMP1,
-            6 => SOURCESELR::ADC0,
-            7 => SOURCESELR::RTC,
-            8 => SOURCESELR::RTCC,
-            9 => SOURCESELR::GPIOL,
-            10 => SOURCESELR::GPIOH,
-            11 => SOURCESELR::LETIMER0,
-            12 => SOURCESELR::LETIMER1,
-            13 => SOURCESELR::PCNT0,
-            14 => SOURCESELR::PCNT1,
-            15 => SOURCESELR::PCNT2,
-            16 => SOURCESELR::CRYOTIMER,
-            17 => SOURCESELR::CMU,
-            23 => SOURCESELR::VDAC0,
-            24 => SOURCESELR::LESENSEL,
-            25 => SOURCESELR::LESENSEH,
-            26 => SOURCESELR::LESENSED,
-            27 => SOURCESELR::LESENSE,
-            28 => SOURCESELR::ACMP2,
-            29 => SOURCESELR::ACMP3,
-            30 => SOURCESELR::ADC1,
-            48 => SOURCESELR::USART0,
-            49 => SOURCESELR::USART1,
-            50 => SOURCESELR::USART2,
-            51 => SOURCESELR::USART3,
-            52 => SOURCESELR::USART4,
-            53 => SOURCESELR::USART5,
-            54 => SOURCESELR::UART0,
-            55 => SOURCESELR::UART1,
-            60 => SOURCESELR::TIMER0,
-            61 => SOURCESELR::TIMER1,
-            62 => SOURCESELR::TIMER2,
-            64 => SOURCESELR::USB,
-            67 => SOURCESELR::CM4,
-            80 => SOURCESELR::TIMER3,
-            82 => SOURCESELR::WTIMER0,
-            83 => SOURCESELR::WTIMER1,
-            84 => SOURCESELR::WTIMER2,
-            85 => SOURCESELR::WTIMER3,
-            98 => SOURCESELR::TIMER4,
-            99 => SOURCESELR::TIMER5,
-            100 => SOURCESELR::TIMER6,
-            i => SOURCESELR::_Reserved(i),
+}
+#[doc = "Reader of field `SOURCESEL`"]
+pub type SOURCESEL_R = crate::R<u8, SOURCESEL_A>;
+impl SOURCESEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SOURCESEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SOURCESEL_A::NONE),
+            1 => Val(SOURCESEL_A::PRSL),
+            2 => Val(SOURCESEL_A::PRS),
+            3 => Val(SOURCESEL_A::PRSH),
+            4 => Val(SOURCESEL_A::ACMP0),
+            5 => Val(SOURCESEL_A::ACMP1),
+            6 => Val(SOURCESEL_A::ADC0),
+            7 => Val(SOURCESEL_A::RTC),
+            8 => Val(SOURCESEL_A::RTCC),
+            9 => Val(SOURCESEL_A::GPIOL),
+            10 => Val(SOURCESEL_A::GPIOH),
+            11 => Val(SOURCESEL_A::LETIMER0),
+            12 => Val(SOURCESEL_A::LETIMER1),
+            13 => Val(SOURCESEL_A::PCNT0),
+            14 => Val(SOURCESEL_A::PCNT1),
+            15 => Val(SOURCESEL_A::PCNT2),
+            16 => Val(SOURCESEL_A::CRYOTIMER),
+            17 => Val(SOURCESEL_A::CMU),
+            23 => Val(SOURCESEL_A::VDAC0),
+            24 => Val(SOURCESEL_A::LESENSEL),
+            25 => Val(SOURCESEL_A::LESENSEH),
+            26 => Val(SOURCESEL_A::LESENSED),
+            27 => Val(SOURCESEL_A::LESENSE),
+            28 => Val(SOURCESEL_A::ACMP2),
+            29 => Val(SOURCESEL_A::ACMP3),
+            30 => Val(SOURCESEL_A::ADC1),
+            48 => Val(SOURCESEL_A::USART0),
+            49 => Val(SOURCESEL_A::USART1),
+            50 => Val(SOURCESEL_A::USART2),
+            51 => Val(SOURCESEL_A::USART3),
+            52 => Val(SOURCESEL_A::USART4),
+            53 => Val(SOURCESEL_A::USART5),
+            54 => Val(SOURCESEL_A::UART0),
+            55 => Val(SOURCESEL_A::UART1),
+            60 => Val(SOURCESEL_A::TIMER0),
+            61 => Val(SOURCESEL_A::TIMER1),
+            62 => Val(SOURCESEL_A::TIMER2),
+            64 => Val(SOURCESEL_A::USB),
+            67 => Val(SOURCESEL_A::CM4),
+            80 => Val(SOURCESEL_A::TIMER3),
+            82 => Val(SOURCESEL_A::WTIMER0),
+            83 => Val(SOURCESEL_A::WTIMER1),
+            84 => Val(SOURCESEL_A::WTIMER2),
+            85 => Val(SOURCESEL_A::WTIMER3),
+            98 => Val(SOURCESEL_A::TIMER4),
+            99 => Val(SOURCESEL_A::TIMER5),
+            100 => Val(SOURCESEL_A::TIMER6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SOURCESELR::NONE
+        *self == SOURCESEL_A::NONE
     }
     #[doc = "Checks if the value of the field is `PRSL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsl(&self) -> bool {
-        *self == SOURCESELR::PRSL
+        *self == SOURCESEL_A::PRSL
     }
     #[doc = "Checks if the value of the field is `PRS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prs(&self) -> bool {
-        *self == SOURCESELR::PRS
+        *self == SOURCESEL_A::PRS
     }
     #[doc = "Checks if the value of the field is `PRSH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_prsh(&self) -> bool {
-        *self == SOURCESELR::PRSH
+        *self == SOURCESEL_A::PRSH
     }
     #[doc = "Checks if the value of the field is `ACMP0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp0(&self) -> bool {
-        *self == SOURCESELR::ACMP0
+        *self == SOURCESEL_A::ACMP0
     }
     #[doc = "Checks if the value of the field is `ACMP1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp1(&self) -> bool {
-        *self == SOURCESELR::ACMP1
+        *self == SOURCESEL_A::ACMP1
     }
     #[doc = "Checks if the value of the field is `ADC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adc0(&self) -> bool {
-        *self == SOURCESELR::ADC0
+        *self == SOURCESEL_A::ADC0
     }
     #[doc = "Checks if the value of the field is `RTC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rtc(&self) -> bool {
-        *self == SOURCESELR::RTC
+        *self == SOURCESEL_A::RTC
     }
     #[doc = "Checks if the value of the field is `RTCC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rtcc(&self) -> bool {
-        *self == SOURCESELR::RTCC
+        *self == SOURCESEL_A::RTCC
     }
     #[doc = "Checks if the value of the field is `GPIOL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_gpiol(&self) -> bool {
-        *self == SOURCESELR::GPIOL
+        *self == SOURCESEL_A::GPIOL
     }
     #[doc = "Checks if the value of the field is `GPIOH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_gpioh(&self) -> bool {
-        *self == SOURCESELR::GPIOH
+        *self == SOURCESEL_A::GPIOH
     }
     #[doc = "Checks if the value of the field is `LETIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_letimer0(&self) -> bool {
-        *self == SOURCESELR::LETIMER0
+        *self == SOURCESEL_A::LETIMER0
     }
     #[doc = "Checks if the value of the field is `LETIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_letimer1(&self) -> bool {
-        *self == SOURCESELR::LETIMER1
+        *self == SOURCESEL_A::LETIMER1
     }
     #[doc = "Checks if the value of the field is `PCNT0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt0(&self) -> bool {
-        *self == SOURCESELR::PCNT0
+        *self == SOURCESEL_A::PCNT0
     }
     #[doc = "Checks if the value of the field is `PCNT1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt1(&self) -> bool {
-        *self == SOURCESELR::PCNT1
+        *self == SOURCESEL_A::PCNT1
     }
     #[doc = "Checks if the value of the field is `PCNT2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pcnt2(&self) -> bool {
-        *self == SOURCESELR::PCNT2
+        *self == SOURCESEL_A::PCNT2
     }
     #[doc = "Checks if the value of the field is `CRYOTIMER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cryotimer(&self) -> bool {
-        *self == SOURCESELR::CRYOTIMER
+        *self == SOURCESEL_A::CRYOTIMER
     }
     #[doc = "Checks if the value of the field is `CMU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmu(&self) -> bool {
-        *self == SOURCESELR::CMU
+        *self == SOURCESEL_A::CMU
     }
     #[doc = "Checks if the value of the field is `VDAC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vdac0(&self) -> bool {
-        *self == SOURCESELR::VDAC0
+        *self == SOURCESEL_A::VDAC0
     }
     #[doc = "Checks if the value of the field is `LESENSEL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lesensel(&self) -> bool {
-        *self == SOURCESELR::LESENSEL
+        *self == SOURCESEL_A::LESENSEL
     }
     #[doc = "Checks if the value of the field is `LESENSEH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lesenseh(&self) -> bool {
-        *self == SOURCESELR::LESENSEH
+        *self == SOURCESEL_A::LESENSEH
     }
     #[doc = "Checks if the value of the field is `LESENSED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lesensed(&self) -> bool {
-        *self == SOURCESELR::LESENSED
+        *self == SOURCESEL_A::LESENSED
     }
     #[doc = "Checks if the value of the field is `LESENSE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lesense(&self) -> bool {
-        *self == SOURCESELR::LESENSE
+        *self == SOURCESEL_A::LESENSE
     }
     #[doc = "Checks if the value of the field is `ACMP2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp2(&self) -> bool {
-        *self == SOURCESELR::ACMP2
+        *self == SOURCESEL_A::ACMP2
     }
     #[doc = "Checks if the value of the field is `ACMP3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp3(&self) -> bool {
-        *self == SOURCESELR::ACMP3
+        *self == SOURCESEL_A::ACMP3
     }
     #[doc = "Checks if the value of the field is `ADC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adc1(&self) -> bool {
-        *self == SOURCESELR::ADC1
+        *self == SOURCESEL_A::ADC1
     }
     #[doc = "Checks if the value of the field is `USART0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart0(&self) -> bool {
-        *self == SOURCESELR::USART0
+        *self == SOURCESEL_A::USART0
     }
     #[doc = "Checks if the value of the field is `USART1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart1(&self) -> bool {
-        *self == SOURCESELR::USART1
+        *self == SOURCESEL_A::USART1
     }
     #[doc = "Checks if the value of the field is `USART2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart2(&self) -> bool {
-        *self == SOURCESELR::USART2
+        *self == SOURCESEL_A::USART2
     }
     #[doc = "Checks if the value of the field is `USART3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart3(&self) -> bool {
-        *self == SOURCESELR::USART3
+        *self == SOURCESEL_A::USART3
     }
     #[doc = "Checks if the value of the field is `USART4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart4(&self) -> bool {
-        *self == SOURCESELR::USART4
+        *self == SOURCESEL_A::USART4
     }
     #[doc = "Checks if the value of the field is `USART5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usart5(&self) -> bool {
-        *self == SOURCESELR::USART5
+        *self == SOURCESEL_A::USART5
     }
     #[doc = "Checks if the value of the field is `UART0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_uart0(&self) -> bool {
-        *self == SOURCESELR::UART0
+        *self == SOURCESEL_A::UART0
     }
     #[doc = "Checks if the value of the field is `UART1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_uart1(&self) -> bool {
-        *self == SOURCESELR::UART1
+        *self == SOURCESEL_A::UART1
     }
     #[doc = "Checks if the value of the field is `TIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer0(&self) -> bool {
-        *self == SOURCESELR::TIMER0
+        *self == SOURCESEL_A::TIMER0
     }
     #[doc = "Checks if the value of the field is `TIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer1(&self) -> bool {
-        *self == SOURCESELR::TIMER1
+        *self == SOURCESEL_A::TIMER1
     }
     #[doc = "Checks if the value of the field is `TIMER2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer2(&self) -> bool {
-        *self == SOURCESELR::TIMER2
+        *self == SOURCESEL_A::TIMER2
     }
     #[doc = "Checks if the value of the field is `USB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_usb(&self) -> bool {
-        *self == SOURCESELR::USB
+        *self == SOURCESEL_A::USB
     }
     #[doc = "Checks if the value of the field is `CM4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cm4(&self) -> bool {
-        *self == SOURCESELR::CM4
+        *self == SOURCESEL_A::CM4
     }
     #[doc = "Checks if the value of the field is `TIMER3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer3(&self) -> bool {
-        *self == SOURCESELR::TIMER3
+        *self == SOURCESEL_A::TIMER3
     }
     #[doc = "Checks if the value of the field is `WTIMER0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer0(&self) -> bool {
-        *self == SOURCESELR::WTIMER0
+        *self == SOURCESEL_A::WTIMER0
     }
     #[doc = "Checks if the value of the field is `WTIMER1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer1(&self) -> bool {
-        *self == SOURCESELR::WTIMER1
+        *self == SOURCESEL_A::WTIMER1
     }
     #[doc = "Checks if the value of the field is `WTIMER2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer2(&self) -> bool {
-        *self == SOURCESELR::WTIMER2
+        *self == SOURCESEL_A::WTIMER2
     }
     #[doc = "Checks if the value of the field is `WTIMER3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wtimer3(&self) -> bool {
-        *self == SOURCESELR::WTIMER3
+        *self == SOURCESEL_A::WTIMER3
     }
     #[doc = "Checks if the value of the field is `TIMER4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer4(&self) -> bool {
-        *self == SOURCESELR::TIMER4
+        *self == SOURCESEL_A::TIMER4
     }
     #[doc = "Checks if the value of the field is `TIMER5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer5(&self) -> bool {
-        *self == SOURCESELR::TIMER5
+        *self == SOURCESEL_A::TIMER5
     }
     #[doc = "Checks if the value of the field is `TIMER6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer6(&self) -> bool {
-        *self == SOURCESELR::TIMER6
+        *self == SOURCESEL_A::TIMER6
+    }
+}
+#[doc = "Write proxy for field `SOURCESEL`"]
+pub struct SOURCESEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SOURCESEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "No source selected"]
+    #[inline(always)]
+    pub fn none(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::NONE)
+    }
+    #[doc = "Peripheral Reflex System"]
+    #[inline(always)]
+    pub fn prsl(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PRSL)
+    }
+    #[doc = "Peripheral Reflex System"]
+    #[inline(always)]
+    pub fn prs(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PRS)
+    }
+    #[doc = "Peripheral Reflex System"]
+    #[inline(always)]
+    pub fn prsh(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PRSH)
+    }
+    #[doc = "Analog Comparator 0"]
+    #[inline(always)]
+    pub fn acmp0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ACMP0)
+    }
+    #[doc = "Analog Comparator 1"]
+    #[inline(always)]
+    pub fn acmp1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ACMP1)
+    }
+    #[doc = "Analog to Digital Converter 0"]
+    #[inline(always)]
+    pub fn adc0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ADC0)
+    }
+    #[doc = "Real-Time Counter"]
+    #[inline(always)]
+    pub fn rtc(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::RTC)
+    }
+    #[doc = "Real-Time Counter and Calendar"]
+    #[inline(always)]
+    pub fn rtcc(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::RTCC)
+    }
+    #[doc = "General purpose Input/Output"]
+    #[inline(always)]
+    pub fn gpiol(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::GPIOL)
+    }
+    #[doc = "General purpose Input/Output"]
+    #[inline(always)]
+    pub fn gpioh(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::GPIOH)
+    }
+    #[doc = "Low Energy Timer 0"]
+    #[inline(always)]
+    pub fn letimer0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LETIMER0)
+    }
+    #[doc = "Low Energy Timer 1"]
+    #[inline(always)]
+    pub fn letimer1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LETIMER1)
+    }
+    #[doc = "Pulse Counter 0"]
+    #[inline(always)]
+    pub fn pcnt0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PCNT0)
+    }
+    #[doc = "Pulse Counter 1"]
+    #[inline(always)]
+    pub fn pcnt1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PCNT1)
+    }
+    #[doc = "Pulse Counter 2"]
+    #[inline(always)]
+    pub fn pcnt2(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::PCNT2)
+    }
+    #[doc = "CryoTimer"]
+    #[inline(always)]
+    pub fn cryotimer(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::CRYOTIMER)
+    }
+    #[doc = "Clock Management Unit"]
+    #[inline(always)]
+    pub fn cmu(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::CMU)
+    }
+    #[doc = "Digital to Analog Converter 0"]
+    #[inline(always)]
+    pub fn vdac0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::VDAC0)
+    }
+    #[doc = "Low Energy Sensor Interface"]
+    #[inline(always)]
+    pub fn lesensel(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LESENSEL)
+    }
+    #[doc = "Low Energy Sensor Interface"]
+    #[inline(always)]
+    pub fn lesenseh(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LESENSEH)
+    }
+    #[doc = "Low Energy Sensor Interface"]
+    #[inline(always)]
+    pub fn lesensed(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LESENSED)
+    }
+    #[doc = "Low Energy Sensor Interface"]
+    #[inline(always)]
+    pub fn lesense(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::LESENSE)
+    }
+    #[doc = "Analog Comparator 1"]
+    #[inline(always)]
+    pub fn acmp2(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ACMP2)
+    }
+    #[doc = "Analog Comparator 3"]
+    #[inline(always)]
+    pub fn acmp3(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ACMP3)
+    }
+    #[doc = "Analog to Digital Converter 0"]
+    #[inline(always)]
+    pub fn adc1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::ADC1)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
+    #[inline(always)]
+    pub fn usart0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART0)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
+    #[inline(always)]
+    pub fn usart1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART1)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
+    #[inline(always)]
+    pub fn usart2(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART2)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
+    #[inline(always)]
+    pub fn usart3(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART3)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
+    #[inline(always)]
+    pub fn usart4(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART4)
+    }
+    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
+    #[inline(always)]
+    pub fn usart5(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USART5)
+    }
+    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
+    #[inline(always)]
+    pub fn uart0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::UART0)
+    }
+    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
+    #[inline(always)]
+    pub fn uart1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::UART1)
+    }
+    #[doc = "Timer 0"]
+    #[inline(always)]
+    pub fn timer0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER0)
+    }
+    #[doc = "Timer 1"]
+    #[inline(always)]
+    pub fn timer1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER1)
+    }
+    #[doc = "Timer 2"]
+    #[inline(always)]
+    pub fn timer2(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER2)
+    }
+    #[doc = "Universal Serial Bus Interface"]
+    #[inline(always)]
+    pub fn usb(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::USB)
+    }
+    #[doc = "`1000011`"]
+    #[inline(always)]
+    pub fn cm4(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::CM4)
+    }
+    #[doc = "Timer 3"]
+    #[inline(always)]
+    pub fn timer3(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER3)
+    }
+    #[doc = "Wide Timer 0"]
+    #[inline(always)]
+    pub fn wtimer0(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::WTIMER0)
+    }
+    #[doc = "Wide Timer 0"]
+    #[inline(always)]
+    pub fn wtimer1(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::WTIMER1)
+    }
+    #[doc = "Wide Timer 2"]
+    #[inline(always)]
+    pub fn wtimer2(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::WTIMER2)
+    }
+    #[doc = "Wide Timer 3"]
+    #[inline(always)]
+    pub fn wtimer3(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::WTIMER3)
+    }
+    #[doc = "Timer 4"]
+    #[inline(always)]
+    pub fn timer4(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER4)
+    }
+    #[doc = "Timer 5"]
+    #[inline(always)]
+    pub fn timer5(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER5)
+    }
+    #[doc = "Timer 6"]
+    #[inline(always)]
+    pub fn timer6(self) -> &'a mut W {
+        self.variant(SOURCESEL_A::TIMER6)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EDSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDSELR {
+pub enum EDSEL_A {
     #[doc = "Signal is left as it is"]
     OFF,
     #[doc = "A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
@@ -509,894 +735,293 @@ pub enum EDSELR {
     #[doc = "A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
     BOTHEDGES,
 }
-impl EDSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EDSEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EDSELR::OFF => 0,
-            EDSELR::POSEDGE => 1,
-            EDSELR::NEGEDGE => 2,
-            EDSELR::BOTHEDGES => 3,
+            EDSEL_A::OFF => 0,
+            EDSEL_A::POSEDGE => 1,
+            EDSEL_A::NEGEDGE => 2,
+            EDSEL_A::BOTHEDGES => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EDSELR {
-        match value {
-            0 => EDSELR::OFF,
-            1 => EDSELR::POSEDGE,
-            2 => EDSELR::NEGEDGE,
-            3 => EDSELR::BOTHEDGES,
+}
+#[doc = "Reader of field `EDSEL`"]
+pub type EDSEL_R = crate::R<u8, EDSEL_A>;
+impl EDSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDSEL_A {
+        match self.bits {
+            0 => EDSEL_A::OFF,
+            1 => EDSEL_A::POSEDGE,
+            2 => EDSEL_A::NEGEDGE,
+            3 => EDSEL_A::BOTHEDGES,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_off(&self) -> bool {
-        *self == EDSELR::OFF
+        *self == EDSEL_A::OFF
     }
     #[doc = "Checks if the value of the field is `POSEDGE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_posedge(&self) -> bool {
-        *self == EDSELR::POSEDGE
+        *self == EDSEL_A::POSEDGE
     }
     #[doc = "Checks if the value of the field is `NEGEDGE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_negedge(&self) -> bool {
-        *self == EDSELR::NEGEDGE
+        *self == EDSEL_A::NEGEDGE
     }
     #[doc = "Checks if the value of the field is `BOTHEDGES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bothedges(&self) -> bool {
-        *self == EDSELR::BOTHEDGES
+        *self == EDSEL_A::BOTHEDGES
     }
 }
-#[doc = r" Value of the field"]
-pub struct STRETCHR {
-    bits: bool,
-}
-impl STRETCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INVR {
-    bits: bool,
-}
-impl INVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ORPREVR {
-    bits: bool,
-}
-impl ORPREVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ANDNEXTR {
-    bits: bool,
-}
-impl ANDNEXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ASYNCR {
-    bits: bool,
-}
-impl ASYNCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIGSELW<'a> {
+#[doc = "Write proxy for field `EDSEL`"]
+pub struct EDSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIGSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SOURCESEL`"]
-pub enum SOURCESELW {
-    #[doc = "No source selected"]
-    NONE,
-    #[doc = "Peripheral Reflex System"]
-    PRSL,
-    #[doc = "Peripheral Reflex System"]
-    PRS,
-    #[doc = "Peripheral Reflex System"]
-    PRSH,
-    #[doc = "Analog Comparator 0"]
-    ACMP0,
-    #[doc = "Analog Comparator 1"]
-    ACMP1,
-    #[doc = "Analog to Digital Converter 0"]
-    ADC0,
-    #[doc = "Real-Time Counter"]
-    RTC,
-    #[doc = "Real-Time Counter and Calendar"]
-    RTCC,
-    #[doc = "General purpose Input/Output"]
-    GPIOL,
-    #[doc = "General purpose Input/Output"]
-    GPIOH,
-    #[doc = "Low Energy Timer 0"]
-    LETIMER0,
-    #[doc = "Low Energy Timer 1"]
-    LETIMER1,
-    #[doc = "Pulse Counter 0"]
-    PCNT0,
-    #[doc = "Pulse Counter 1"]
-    PCNT1,
-    #[doc = "Pulse Counter 2"]
-    PCNT2,
-    #[doc = "CryoTimer"]
-    CRYOTIMER,
-    #[doc = "Clock Management Unit"]
-    CMU,
-    #[doc = "Digital to Analog Converter 0"]
-    VDAC0,
-    #[doc = "Low Energy Sensor Interface"]
-    LESENSEL,
-    #[doc = "Low Energy Sensor Interface"]
-    LESENSEH,
-    #[doc = "Low Energy Sensor Interface"]
-    LESENSED,
-    #[doc = "Low Energy Sensor Interface"]
-    LESENSE,
-    #[doc = "Analog Comparator 1"]
-    ACMP2,
-    #[doc = "Analog Comparator 3"]
-    ACMP3,
-    #[doc = "Analog to Digital Converter 0"]
-    ADC1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
-    USART2,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
-    USART3,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
-    USART4,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
-    USART5,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
-    UART0,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
-    UART1,
-    #[doc = "Timer 0"]
-    TIMER0,
-    #[doc = "Timer 1"]
-    TIMER1,
-    #[doc = "Timer 2"]
-    TIMER2,
-    #[doc = "Universal Serial Bus Interface"]
-    USB,
-    #[doc = "`1000011`"]
-    CM4,
-    #[doc = "Timer 3"]
-    TIMER3,
-    #[doc = "Wide Timer 0"]
-    WTIMER0,
-    #[doc = "Wide Timer 0"]
-    WTIMER1,
-    #[doc = "Wide Timer 2"]
-    WTIMER2,
-    #[doc = "Wide Timer 3"]
-    WTIMER3,
-    #[doc = "Timer 4"]
-    TIMER4,
-    #[doc = "Timer 5"]
-    TIMER5,
-    #[doc = "Timer 6"]
-    TIMER6,
-}
-impl SOURCESELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SOURCESELW::NONE => 0,
-            SOURCESELW::PRSL => 1,
-            SOURCESELW::PRS => 2,
-            SOURCESELW::PRSH => 3,
-            SOURCESELW::ACMP0 => 4,
-            SOURCESELW::ACMP1 => 5,
-            SOURCESELW::ADC0 => 6,
-            SOURCESELW::RTC => 7,
-            SOURCESELW::RTCC => 8,
-            SOURCESELW::GPIOL => 9,
-            SOURCESELW::GPIOH => 10,
-            SOURCESELW::LETIMER0 => 11,
-            SOURCESELW::LETIMER1 => 12,
-            SOURCESELW::PCNT0 => 13,
-            SOURCESELW::PCNT1 => 14,
-            SOURCESELW::PCNT2 => 15,
-            SOURCESELW::CRYOTIMER => 16,
-            SOURCESELW::CMU => 17,
-            SOURCESELW::VDAC0 => 23,
-            SOURCESELW::LESENSEL => 24,
-            SOURCESELW::LESENSEH => 25,
-            SOURCESELW::LESENSED => 26,
-            SOURCESELW::LESENSE => 27,
-            SOURCESELW::ACMP2 => 28,
-            SOURCESELW::ACMP3 => 29,
-            SOURCESELW::ADC1 => 30,
-            SOURCESELW::USART0 => 48,
-            SOURCESELW::USART1 => 49,
-            SOURCESELW::USART2 => 50,
-            SOURCESELW::USART3 => 51,
-            SOURCESELW::USART4 => 52,
-            SOURCESELW::USART5 => 53,
-            SOURCESELW::UART0 => 54,
-            SOURCESELW::UART1 => 55,
-            SOURCESELW::TIMER0 => 60,
-            SOURCESELW::TIMER1 => 61,
-            SOURCESELW::TIMER2 => 62,
-            SOURCESELW::USB => 64,
-            SOURCESELW::CM4 => 67,
-            SOURCESELW::TIMER3 => 80,
-            SOURCESELW::WTIMER0 => 82,
-            SOURCESELW::WTIMER1 => 83,
-            SOURCESELW::WTIMER2 => 84,
-            SOURCESELW::WTIMER3 => 85,
-            SOURCESELW::TIMER4 => 98,
-            SOURCESELW::TIMER5 => 99,
-            SOURCESELW::TIMER6 => 100,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SOURCESELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SOURCESELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SOURCESELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No source selected"]
-    #[inline]
-    pub fn none(self) -> &'a mut W {
-        self.variant(SOURCESELW::NONE)
-    }
-    #[doc = "Peripheral Reflex System"]
-    #[inline]
-    pub fn prsl(self) -> &'a mut W {
-        self.variant(SOURCESELW::PRSL)
-    }
-    #[doc = "Peripheral Reflex System"]
-    #[inline]
-    pub fn prs(self) -> &'a mut W {
-        self.variant(SOURCESELW::PRS)
-    }
-    #[doc = "Peripheral Reflex System"]
-    #[inline]
-    pub fn prsh(self) -> &'a mut W {
-        self.variant(SOURCESELW::PRSH)
-    }
-    #[doc = "Analog Comparator 0"]
-    #[inline]
-    pub fn acmp0(self) -> &'a mut W {
-        self.variant(SOURCESELW::ACMP0)
-    }
-    #[doc = "Analog Comparator 1"]
-    #[inline]
-    pub fn acmp1(self) -> &'a mut W {
-        self.variant(SOURCESELW::ACMP1)
-    }
-    #[doc = "Analog to Digital Converter 0"]
-    #[inline]
-    pub fn adc0(self) -> &'a mut W {
-        self.variant(SOURCESELW::ADC0)
-    }
-    #[doc = "Real-Time Counter"]
-    #[inline]
-    pub fn rtc(self) -> &'a mut W {
-        self.variant(SOURCESELW::RTC)
-    }
-    #[doc = "Real-Time Counter and Calendar"]
-    #[inline]
-    pub fn rtcc(self) -> &'a mut W {
-        self.variant(SOURCESELW::RTCC)
-    }
-    #[doc = "General purpose Input/Output"]
-    #[inline]
-    pub fn gpiol(self) -> &'a mut W {
-        self.variant(SOURCESELW::GPIOL)
-    }
-    #[doc = "General purpose Input/Output"]
-    #[inline]
-    pub fn gpioh(self) -> &'a mut W {
-        self.variant(SOURCESELW::GPIOH)
-    }
-    #[doc = "Low Energy Timer 0"]
-    #[inline]
-    pub fn letimer0(self) -> &'a mut W {
-        self.variant(SOURCESELW::LETIMER0)
-    }
-    #[doc = "Low Energy Timer 1"]
-    #[inline]
-    pub fn letimer1(self) -> &'a mut W {
-        self.variant(SOURCESELW::LETIMER1)
-    }
-    #[doc = "Pulse Counter 0"]
-    #[inline]
-    pub fn pcnt0(self) -> &'a mut W {
-        self.variant(SOURCESELW::PCNT0)
-    }
-    #[doc = "Pulse Counter 1"]
-    #[inline]
-    pub fn pcnt1(self) -> &'a mut W {
-        self.variant(SOURCESELW::PCNT1)
-    }
-    #[doc = "Pulse Counter 2"]
-    #[inline]
-    pub fn pcnt2(self) -> &'a mut W {
-        self.variant(SOURCESELW::PCNT2)
-    }
-    #[doc = "CryoTimer"]
-    #[inline]
-    pub fn cryotimer(self) -> &'a mut W {
-        self.variant(SOURCESELW::CRYOTIMER)
-    }
-    #[doc = "Clock Management Unit"]
-    #[inline]
-    pub fn cmu(self) -> &'a mut W {
-        self.variant(SOURCESELW::CMU)
-    }
-    #[doc = "Digital to Analog Converter 0"]
-    #[inline]
-    pub fn vdac0(self) -> &'a mut W {
-        self.variant(SOURCESELW::VDAC0)
-    }
-    #[doc = "Low Energy Sensor Interface"]
-    #[inline]
-    pub fn lesensel(self) -> &'a mut W {
-        self.variant(SOURCESELW::LESENSEL)
-    }
-    #[doc = "Low Energy Sensor Interface"]
-    #[inline]
-    pub fn lesenseh(self) -> &'a mut W {
-        self.variant(SOURCESELW::LESENSEH)
-    }
-    #[doc = "Low Energy Sensor Interface"]
-    #[inline]
-    pub fn lesensed(self) -> &'a mut W {
-        self.variant(SOURCESELW::LESENSED)
-    }
-    #[doc = "Low Energy Sensor Interface"]
-    #[inline]
-    pub fn lesense(self) -> &'a mut W {
-        self.variant(SOURCESELW::LESENSE)
-    }
-    #[doc = "Analog Comparator 1"]
-    #[inline]
-    pub fn acmp2(self) -> &'a mut W {
-        self.variant(SOURCESELW::ACMP2)
-    }
-    #[doc = "Analog Comparator 3"]
-    #[inline]
-    pub fn acmp3(self) -> &'a mut W {
-        self.variant(SOURCESELW::ACMP3)
-    }
-    #[doc = "Analog to Digital Converter 0"]
-    #[inline]
-    pub fn adc1(self) -> &'a mut W {
-        self.variant(SOURCESELW::ADC1)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    #[inline]
-    pub fn usart0(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART0)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    #[inline]
-    pub fn usart1(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART1)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
-    #[inline]
-    pub fn usart2(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART2)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
-    #[inline]
-    pub fn usart3(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART3)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
-    #[inline]
-    pub fn usart4(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART4)
-    }
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
-    #[inline]
-    pub fn usart5(self) -> &'a mut W {
-        self.variant(SOURCESELW::USART5)
-    }
-    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
-    #[inline]
-    pub fn uart0(self) -> &'a mut W {
-        self.variant(SOURCESELW::UART0)
-    }
-    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
-    #[inline]
-    pub fn uart1(self) -> &'a mut W {
-        self.variant(SOURCESELW::UART1)
-    }
-    #[doc = "Timer 0"]
-    #[inline]
-    pub fn timer0(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER0)
-    }
-    #[doc = "Timer 1"]
-    #[inline]
-    pub fn timer1(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER1)
-    }
-    #[doc = "Timer 2"]
-    #[inline]
-    pub fn timer2(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER2)
-    }
-    #[doc = "Universal Serial Bus Interface"]
-    #[inline]
-    pub fn usb(self) -> &'a mut W {
-        self.variant(SOURCESELW::USB)
-    }
-    #[doc = "`1000011`"]
-    #[inline]
-    pub fn cm4(self) -> &'a mut W {
-        self.variant(SOURCESELW::CM4)
-    }
-    #[doc = "Timer 3"]
-    #[inline]
-    pub fn timer3(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER3)
-    }
-    #[doc = "Wide Timer 0"]
-    #[inline]
-    pub fn wtimer0(self) -> &'a mut W {
-        self.variant(SOURCESELW::WTIMER0)
-    }
-    #[doc = "Wide Timer 0"]
-    #[inline]
-    pub fn wtimer1(self) -> &'a mut W {
-        self.variant(SOURCESELW::WTIMER1)
-    }
-    #[doc = "Wide Timer 2"]
-    #[inline]
-    pub fn wtimer2(self) -> &'a mut W {
-        self.variant(SOURCESELW::WTIMER2)
-    }
-    #[doc = "Wide Timer 3"]
-    #[inline]
-    pub fn wtimer3(self) -> &'a mut W {
-        self.variant(SOURCESELW::WTIMER3)
-    }
-    #[doc = "Timer 4"]
-    #[inline]
-    pub fn timer4(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER4)
-    }
-    #[doc = "Timer 5"]
-    #[inline]
-    pub fn timer5(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER5)
-    }
-    #[doc = "Timer 6"]
-    #[inline]
-    pub fn timer6(self) -> &'a mut W {
-        self.variant(SOURCESELW::TIMER6)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EDSEL`"]
-pub enum EDSELW {
-    #[doc = "Signal is left as it is"]
-    OFF,
-    #[doc = "A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
-    POSEDGE,
-    #[doc = "A one HFCLK clock cycle pulse is generated for every negative edge of the incoming signal"]
-    NEGEDGE,
-    #[doc = "A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
-    BOTHEDGES,
-}
-impl EDSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EDSELW::OFF => 0,
-            EDSELW::POSEDGE => 1,
-            EDSELW::NEGEDGE => 2,
-            EDSELW::BOTHEDGES => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDSELW) -> &'a mut W {
+impl<'a> EDSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDSEL_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Signal is left as it is"]
-    #[inline]
+    #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(EDSELW::OFF)
+        self.variant(EDSEL_A::OFF)
     }
     #[doc = "A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
-    #[inline]
+    #[inline(always)]
     pub fn posedge(self) -> &'a mut W {
-        self.variant(EDSELW::POSEDGE)
+        self.variant(EDSEL_A::POSEDGE)
     }
     #[doc = "A one HFCLK clock cycle pulse is generated for every negative edge of the incoming signal"]
-    #[inline]
+    #[inline(always)]
     pub fn negedge(self) -> &'a mut W {
-        self.variant(EDSELW::NEGEDGE)
+        self.variant(EDSEL_A::NEGEDGE)
     }
     #[doc = "A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
-    #[inline]
+    #[inline(always)]
     pub fn bothedges(self) -> &'a mut W {
-        self.variant(EDSELW::BOTHEDGES)
+        self.variant(EDSEL_A::BOTHEDGES)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _STRETCHW<'a> {
+#[doc = "Reader of field `STRETCH`"]
+pub type STRETCH_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `STRETCH`"]
+pub struct STRETCH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STRETCHW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> STRETCH_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INVW<'a> {
+#[doc = "Reader of field `INV`"]
+pub type INV_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INV`"]
+pub struct INV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INVW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INV_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ORPREVW<'a> {
+#[doc = "Reader of field `ORPREV`"]
+pub type ORPREV_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ORPREV`"]
+pub struct ORPREV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ORPREVW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ORPREV_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ANDNEXTW<'a> {
+#[doc = "Reader of field `ANDNEXT`"]
+pub type ANDNEXT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ANDNEXT`"]
+pub struct ANDNEXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ANDNEXTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ANDNEXT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASYNCW<'a> {
+#[doc = "Reader of field `ASYNC`"]
+pub type ASYNC_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ASYNC`"]
+pub struct ASYNC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASYNCW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ASYNC_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Signal Select"]
-    #[inline]
-    pub fn sigsel(&self) -> SIGSELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SIGSELR { bits }
+    #[inline(always)]
+    pub fn sigsel(&self) -> SIGSEL_R {
+        SIGSEL_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 8:14 - Source Select"]
-    #[inline]
-    pub fn sourcesel(&self) -> SOURCESELR {
-        SOURCESELR::_from({
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sourcesel(&self) -> SOURCESEL_R {
+        SOURCESEL_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
     #[doc = "Bits 20:21 - Edge Detect Select"]
-    #[inline]
-    pub fn edsel(&self) -> EDSELR {
-        EDSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn edsel(&self) -> EDSEL_R {
+        EDSEL_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
-    #[inline]
-    pub fn stretch(&self) -> STRETCHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        STRETCHR { bits }
+    #[inline(always)]
+    pub fn stretch(&self) -> STRETCH_R {
+        STRETCH_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Invert Channel"]
-    #[inline]
-    pub fn inv(&self) -> INVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INVR { bits }
+    #[inline(always)]
+    pub fn inv(&self) -> INV_R {
+        INV_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Or Previous"]
-    #[inline]
-    pub fn orprev(&self) -> ORPREVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ORPREVR { bits }
+    #[inline(always)]
+    pub fn orprev(&self) -> ORPREV_R {
+        ORPREV_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - And Next"]
-    #[inline]
-    pub fn andnext(&self) -> ANDNEXTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ANDNEXTR { bits }
+    #[inline(always)]
+    pub fn andnext(&self) -> ANDNEXT_R {
+        ANDNEXT_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
-    #[inline]
-    pub fn async_(&self) -> ASYNCR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ASYNCR { bits }
+    #[inline(always)]
+    pub fn async(&self) -> ASYNC_R {
+        ASYNC_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Signal Select"]
-    #[inline]
-    pub fn sigsel(&mut self) -> _SIGSELW {
-        _SIGSELW { w: self }
+    #[inline(always)]
+    pub fn sigsel(&mut self) -> SIGSEL_W {
+        SIGSEL_W { w: self }
     }
     #[doc = "Bits 8:14 - Source Select"]
-    #[inline]
-    pub fn sourcesel(&mut self) -> _SOURCESELW {
-        _SOURCESELW { w: self }
+    #[inline(always)]
+    pub fn sourcesel(&mut self) -> SOURCESEL_W {
+        SOURCESEL_W { w: self }
     }
     #[doc = "Bits 20:21 - Edge Detect Select"]
-    #[inline]
-    pub fn edsel(&mut self) -> _EDSELW {
-        _EDSELW { w: self }
+    #[inline(always)]
+    pub fn edsel(&mut self) -> EDSEL_W {
+        EDSEL_W { w: self }
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
-    #[inline]
-    pub fn stretch(&mut self) -> _STRETCHW {
-        _STRETCHW { w: self }
+    #[inline(always)]
+    pub fn stretch(&mut self) -> STRETCH_W {
+        STRETCH_W { w: self }
     }
     #[doc = "Bit 26 - Invert Channel"]
-    #[inline]
-    pub fn inv(&mut self) -> _INVW {
-        _INVW { w: self }
+    #[inline(always)]
+    pub fn inv(&mut self) -> INV_W {
+        INV_W { w: self }
     }
     #[doc = "Bit 27 - Or Previous"]
-    #[inline]
-    pub fn orprev(&mut self) -> _ORPREVW {
-        _ORPREVW { w: self }
+    #[inline(always)]
+    pub fn orprev(&mut self) -> ORPREV_W {
+        ORPREV_W { w: self }
     }
     #[doc = "Bit 28 - And Next"]
-    #[inline]
-    pub fn andnext(&mut self) -> _ANDNEXTW {
-        _ANDNEXTW { w: self }
+    #[inline(always)]
+    pub fn andnext(&mut self) -> ANDNEXT_W {
+        ANDNEXT_W { w: self }
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
-    #[inline]
-    pub fn async_(&mut self) -> _ASYNCW {
-        _ASYNCW { w: self }
+    #[inline(always)]
+    pub fn async(&mut self) -> ASYNC_W {
+        ASYNC_W { w: self }
     }
 }

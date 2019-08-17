@@ -1,418 +1,136 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONRDYR {
-    bits: bool,
-}
-impl VMONRDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONAVDDR {
-    bits: bool,
-}
-impl VMONAVDDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONALTAVDDR {
-    bits: bool,
-}
-impl VMONALTAVDDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONDVDDR {
-    bits: bool,
-}
-impl VMONDVDDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO0R {
-    bits: bool,
-}
-impl VMONIO0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO1R {
-    bits: bool,
-}
-impl VMONIO1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONBUVDDR {
-    bits: bool,
-}
-impl VMONBUVDDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BURDYR {
-    bits: bool,
-}
-impl BURDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `VMONRDY`"]
+pub type VMONRDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONAVDD`"]
+pub type VMONAVDD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONALTAVDD`"]
+pub type VMONALTAVDD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONDVDD`"]
+pub type VMONDVDD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO0`"]
+pub type VMONIO0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO1`"]
+pub type VMONIO1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONBUVDD`"]
+pub type VMONBUVDD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BURDY`"]
+pub type BURDY_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `VSCALE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VSCALER {
+pub enum VSCALE_A {
     #[doc = "Voltage Scale Level 2"]
     VSCALE2,
     #[doc = "Voltage Scale Level 0"]
     VSCALE0,
     #[doc = "RESV"]
     RESV,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl VSCALER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for VSCALE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            VSCALER::VSCALE2 => 0,
-            VSCALER::VSCALE0 => 2,
-            VSCALER::RESV => 3,
-            VSCALER::_Reserved(bits) => bits,
+            VSCALE_A::VSCALE2 => 0,
+            VSCALE_A::VSCALE0 => 2,
+            VSCALE_A::RESV => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> VSCALER {
-        match value {
-            0 => VSCALER::VSCALE2,
-            2 => VSCALER::VSCALE0,
-            3 => VSCALER::RESV,
-            i => VSCALER::_Reserved(i),
+}
+#[doc = "Reader of field `VSCALE`"]
+pub type VSCALE_R = crate::R<u8, VSCALE_A>;
+impl VSCALE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, VSCALE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(VSCALE_A::VSCALE2),
+            2 => Val(VSCALE_A::VSCALE0),
+            3 => Val(VSCALE_A::RESV),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VSCALE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vscale2(&self) -> bool {
-        *self == VSCALER::VSCALE2
+        *self == VSCALE_A::VSCALE2
     }
     #[doc = "Checks if the value of the field is `VSCALE0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vscale0(&self) -> bool {
-        *self == VSCALER::VSCALE0
+        *self == VSCALE_A::VSCALE0
     }
     #[doc = "Checks if the value of the field is `RESV`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_resv(&self) -> bool {
-        *self == VSCALER::RESV
+        *self == VSCALE_A::RESV
     }
 }
-#[doc = r" Value of the field"]
-pub struct VSCALEBUSYR {
-    bits: bool,
-}
-impl VSCALEBUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM4IORETR {
-    bits: bool,
-}
-impl EM4IORETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TEMPACTIVER {
-    bits: bool,
-}
-impl TEMPACTIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `VSCALEBUSY`"]
+pub type VSCALEBUSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EM4IORET`"]
+pub type EM4IORET_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TEMPACTIVE`"]
+pub type TEMPACTIVE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VMON Ready"]
-    #[inline]
-    pub fn vmonrdy(&self) -> VMONRDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONRDYR { bits }
+    #[inline(always)]
+    pub fn vmonrdy(&self) -> VMONRDY_R {
+        VMONRDY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - VMON AVDD Channel"]
-    #[inline]
-    pub fn vmonavdd(&self) -> VMONAVDDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONAVDDR { bits }
+    #[inline(always)]
+    pub fn vmonavdd(&self) -> VMONAVDD_R {
+        VMONAVDD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Alternate VMON AVDD Channel"]
-    #[inline]
-    pub fn vmonaltavdd(&self) -> VMONALTAVDDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONALTAVDDR { bits }
+    #[inline(always)]
+    pub fn vmonaltavdd(&self) -> VMONALTAVDD_R {
+        VMONALTAVDD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - VMON DVDD Channel"]
-    #[inline]
-    pub fn vmondvdd(&self) -> VMONDVDDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONDVDDR { bits }
+    #[inline(always)]
+    pub fn vmondvdd(&self) -> VMONDVDD_R {
+        VMONDVDD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - VMON IOVDD0 Channel"]
-    #[inline]
-    pub fn vmonio0(&self) -> VMONIO0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO0R { bits }
+    #[inline(always)]
+    pub fn vmonio0(&self) -> VMONIO0_R {
+        VMONIO0_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - VMON IOVDD1 Channel"]
-    #[inline]
-    pub fn vmonio1(&self) -> VMONIO1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO1R { bits }
+    #[inline(always)]
+    pub fn vmonio1(&self) -> VMONIO1_R {
+        VMONIO1_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 7 - VMON BUVDD Channel"]
-    #[inline]
-    pub fn vmonbuvdd(&self) -> VMONBUVDDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONBUVDDR { bits }
+    #[inline(always)]
+    pub fn vmonbuvdd(&self) -> VMONBUVDD_R {
+        VMONBUVDD_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Backup Mode Ready"]
-    #[inline]
-    pub fn burdy(&self) -> BURDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BURDYR { bits }
+    #[inline(always)]
+    pub fn burdy(&self) -> BURDY_R {
+        BURDY_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bits 16:17 - Current Voltage Scale Value"]
-    #[inline]
-    pub fn vscale(&self) -> VSCALER {
-        VSCALER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn vscale(&self) -> VSCALE_R {
+        VSCALE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bit 18 - System is Busy Scaling Voltage"]
-    #[inline]
-    pub fn vscalebusy(&self) -> VSCALEBUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VSCALEBUSYR { bits }
+    #[inline(always)]
+    pub fn vscalebusy(&self) -> VSCALEBUSY_R {
+        VSCALEBUSY_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 20 - IO Retention Status"]
-    #[inline]
-    pub fn em4ioret(&self) -> EM4IORETR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM4IORETR { bits }
+    #[inline(always)]
+    pub fn em4ioret(&self) -> EM4IORET_R {
+        EM4IORET_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Temperature Measurement Active"]
-    #[inline]
-    pub fn tempactive(&self) -> TEMPACTIVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TEMPACTIVER { bits }
+    #[inline(always)]
+    pub fn tempactive(&self) -> TEMPACTIVE_R {
+        TEMPACTIVE_R::new(((self.bits >> 26) & 0x01) != 0)
     }
 }

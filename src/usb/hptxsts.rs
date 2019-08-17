@@ -1,81 +1,25 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::HPTXSTS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PTXFSPCAVAILR {
-    bits: u16,
-}
-impl PTXFSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PTXQSPCAVAILR {
-    bits: u8,
-}
-impl PTXQSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PTXQTOPR {
-    bits: u8,
-}
-impl PTXQTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register HPTXSTS"]
+pub type R = crate::R<u32, super::HPTXSTS>;
+#[doc = "Reader of field `PTXFSPCAVAIL`"]
+pub type PTXFSPCAVAIL_R = crate::R<u16, u16>;
+#[doc = "Reader of field `PTXQSPCAVAIL`"]
+pub type PTXQSPCAVAIL_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PTXQTOP`"]
+pub type PTXQTOP_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
-    #[inline]
-    pub fn ptxfspcavail(&self) -> PTXFSPCAVAILR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PTXFSPCAVAILR { bits }
+    #[inline(always)]
+    pub fn ptxfspcavail(&self) -> PTXFSPCAVAIL_R {
+        PTXFSPCAVAIL_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - Periodic Transmit Request Queue Space Available"]
-    #[inline]
-    pub fn ptxqspcavail(&self) -> PTXQSPCAVAILR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PTXQSPCAVAILR { bits }
+    #[inline(always)]
+    pub fn ptxqspcavail(&self) -> PTXQSPCAVAIL_R {
+        PTXQSPCAVAIL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Top of the Periodic Transmit Request Queue"]
-    #[inline]
-    pub fn ptxqtop(&self) -> PTXQTOPR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PTXQTOPR { bits }
+    #[inline(always)]
+    pub fn ptxqtop(&self) -> PTXQTOP_R {
+        PTXQTOP_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

@@ -1,403 +1,214 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::WRITECOMPLETIONCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register WRITECOMPLETIONCTRL"]
+pub type R = crate::R<u32, super::WRITECOMPLETIONCTRL>;
+#[doc = "Writer for register WRITECOMPLETIONCTRL"]
+pub type W = crate::W<u32, super::WRITECOMPLETIONCTRL>;
+#[doc = "Register WRITECOMPLETIONCTRL `reset()`'s with value 0x0001_0005"]
+impl crate::ResetValue for super::WRITECOMPLETIONCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0001_0005
     }
 }
-#[doc = r" Value of the field"]
-pub struct OPCODER {
-    bits: u8,
-}
-impl OPCODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POLLINGBITINDEXR {
-    bits: u8,
-}
-impl POLLINGBITINDEXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POLLINGPOLARITYR {
-    bits: bool,
-}
-impl POLLINGPOLARITYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DISABLEPOLLINGR {
-    bits: bool,
-}
-impl DISABLEPOLLINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ENABLEPOLLINGEXPR {
-    bits: bool,
-}
-impl ENABLEPOLLINGEXPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POLLCOUNTR {
-    bits: u8,
-}
-impl POLLCOUNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POLLREPDELAYR {
-    bits: u8,
-}
-impl POLLREPDELAYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OPCODEW<'a> {
+#[doc = "Reader of field `OPCODE`"]
+pub type OPCODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OPCODE`"]
+pub struct OPCODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OPCODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> OPCODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POLLINGBITINDEXW<'a> {
+#[doc = "Reader of field `POLLINGBITINDEX`"]
+pub type POLLINGBITINDEX_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `POLLINGBITINDEX`"]
+pub struct POLLINGBITINDEX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POLLINGBITINDEXW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> POLLINGBITINDEX_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POLLINGPOLARITYW<'a> {
+#[doc = "Reader of field `POLLINGPOLARITY`"]
+pub type POLLINGPOLARITY_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `POLLINGPOLARITY`"]
+pub struct POLLINGPOLARITY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POLLINGPOLARITYW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> POLLINGPOLARITY_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DISABLEPOLLINGW<'a> {
+#[doc = "Reader of field `DISABLEPOLLING`"]
+pub type DISABLEPOLLING_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DISABLEPOLLING`"]
+pub struct DISABLEPOLLING_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DISABLEPOLLINGW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DISABLEPOLLING_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENABLEPOLLINGEXPW<'a> {
+#[doc = "Reader of field `ENABLEPOLLINGEXP`"]
+pub type ENABLEPOLLINGEXP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ENABLEPOLLINGEXP`"]
+pub struct ENABLEPOLLINGEXP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENABLEPOLLINGEXPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ENABLEPOLLINGEXP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POLLCOUNTW<'a> {
+#[doc = "Reader of field `POLLCOUNT`"]
+pub type POLLCOUNT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `POLLCOUNT`"]
+pub struct POLLCOUNT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POLLCOUNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> POLLCOUNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POLLREPDELAYW<'a> {
+#[doc = "Reader of field `POLLREPDELAY`"]
+pub type POLLREPDELAY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `POLLREPDELAY`"]
+pub struct POLLREPDELAY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POLLREPDELAYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> POLLREPDELAY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Opcode"]
-    #[inline]
-    pub fn opcode(&self) -> OPCODER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OPCODER { bits }
+    #[inline(always)]
+    pub fn opcode(&self) -> OPCODE_R {
+        OPCODE_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:10 - Polling Bit Index"]
-    #[inline]
-    pub fn pollingbitindex(&self) -> POLLINGBITINDEXR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        POLLINGBITINDEXR { bits }
+    #[inline(always)]
+    pub fn pollingbitindex(&self) -> POLLINGBITINDEX_R {
+        POLLINGBITINDEX_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bit 13 - Polling Polarity"]
-    #[inline]
-    pub fn pollingpolarity(&self) -> POLLINGPOLARITYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        POLLINGPOLARITYR { bits }
+    #[inline(always)]
+    pub fn pollingpolarity(&self) -> POLLINGPOLARITY_R {
+        POLLINGPOLARITY_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Disable Polling"]
-    #[inline]
-    pub fn disablepolling(&self) -> DISABLEPOLLINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DISABLEPOLLINGR { bits }
+    #[inline(always)]
+    pub fn disablepolling(&self) -> DISABLEPOLLING_R {
+        DISABLEPOLLING_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Enable Polling Expiration"]
-    #[inline]
-    pub fn enablepollingexp(&self) -> ENABLEPOLLINGEXPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENABLEPOLLINGEXPR { bits }
+    #[inline(always)]
+    pub fn enablepollingexp(&self) -> ENABLEPOLLINGEXP_R {
+        ENABLEPOLLINGEXP_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - Poll Count"]
-    #[inline]
-    pub fn pollcount(&self) -> POLLCOUNTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        POLLCOUNTR { bits }
+    #[inline(always)]
+    pub fn pollcount(&self) -> POLLCOUNT_R {
+        POLLCOUNT_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Poll Repetition Delay"]
-    #[inline]
-    pub fn pollrepdelay(&self) -> POLLREPDELAYR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        POLLREPDELAYR { bits }
+    #[inline(always)]
+    pub fn pollrepdelay(&self) -> POLLREPDELAY_R {
+        POLLREPDELAY_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65541 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Opcode"]
-    #[inline]
-    pub fn opcode(&mut self) -> _OPCODEW {
-        _OPCODEW { w: self }
+    #[inline(always)]
+    pub fn opcode(&mut self) -> OPCODE_W {
+        OPCODE_W { w: self }
     }
     #[doc = "Bits 8:10 - Polling Bit Index"]
-    #[inline]
-    pub fn pollingbitindex(&mut self) -> _POLLINGBITINDEXW {
-        _POLLINGBITINDEXW { w: self }
+    #[inline(always)]
+    pub fn pollingbitindex(&mut self) -> POLLINGBITINDEX_W {
+        POLLINGBITINDEX_W { w: self }
     }
     #[doc = "Bit 13 - Polling Polarity"]
-    #[inline]
-    pub fn pollingpolarity(&mut self) -> _POLLINGPOLARITYW {
-        _POLLINGPOLARITYW { w: self }
+    #[inline(always)]
+    pub fn pollingpolarity(&mut self) -> POLLINGPOLARITY_W {
+        POLLINGPOLARITY_W { w: self }
     }
     #[doc = "Bit 14 - Disable Polling"]
-    #[inline]
-    pub fn disablepolling(&mut self) -> _DISABLEPOLLINGW {
-        _DISABLEPOLLINGW { w: self }
+    #[inline(always)]
+    pub fn disablepolling(&mut self) -> DISABLEPOLLING_W {
+        DISABLEPOLLING_W { w: self }
     }
     #[doc = "Bit 15 - Enable Polling Expiration"]
-    #[inline]
-    pub fn enablepollingexp(&mut self) -> _ENABLEPOLLINGEXPW {
-        _ENABLEPOLLINGEXPW { w: self }
+    #[inline(always)]
+    pub fn enablepollingexp(&mut self) -> ENABLEPOLLINGEXP_W {
+        ENABLEPOLLINGEXP_W { w: self }
     }
     #[doc = "Bits 16:23 - Poll Count"]
-    #[inline]
-    pub fn pollcount(&mut self) -> _POLLCOUNTW {
-        _POLLCOUNTW { w: self }
+    #[inline(always)]
+    pub fn pollcount(&mut self) -> POLLCOUNT_W {
+        POLLCOUNT_W { w: self }
     }
     #[doc = "Bits 24:31 - Poll Repetition Delay"]
-    #[inline]
-    pub fn pollrepdelay(&mut self) -> _POLLREPDELAYW {
-        _POLLREPDELAYW { w: self }
+    #[inline(always)]
+    pub fn pollrepdelay(&mut self) -> POLLREPDELAY_W {
+        POLLREPDELAY_W { w: self }
     }
 }

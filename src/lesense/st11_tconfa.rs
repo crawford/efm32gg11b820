@@ -1,344 +1,180 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ST11_TCONFA {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ST11_TCONFA"]
+pub type R = crate::R<u32, super::ST11_TCONFA>;
+#[doc = "Writer for register ST11_TCONFA"]
+pub type W = crate::W<u32, super::ST11_TCONFA>;
+#[doc = "Register ST11_TCONFA `reset()`'s with value 0"]
+impl crate::ResetValue for super::ST11_TCONFA {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct COMPR {
-    bits: u8,
-}
-impl COMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MASKR {
-    bits: u8,
-}
-impl MASKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NEXTSTATER {
-    bits: u8,
-}
-impl NEXTSTATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHAINR {
-    bits: bool,
-}
-impl CHAINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SETIFR {
-    bits: bool,
-}
-impl SETIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PRSACTR {
-    bits: u8,
-}
-impl PRSACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _COMPW<'a> {
+#[doc = "Reader of field `COMP`"]
+pub type COMP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COMP`"]
+pub struct COMP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> COMP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MASKW<'a> {
+#[doc = "Reader of field `MASK`"]
+pub type MASK_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MASK`"]
+pub struct MASK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MASKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MASK_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NEXTSTATEW<'a> {
+#[doc = "Reader of field `NEXTSTATE`"]
+pub type NEXTSTATE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NEXTSTATE`"]
+pub struct NEXTSTATE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NEXTSTATEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NEXTSTATE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHAINW<'a> {
+#[doc = "Reader of field `CHAIN`"]
+pub type CHAIN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHAIN`"]
+pub struct CHAIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHAINW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHAIN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SETIFW<'a> {
+#[doc = "Reader of field `SETIF`"]
+pub type SETIF_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SETIF`"]
+pub struct SETIF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SETIFW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SETIF_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRSACTW<'a> {
+#[doc = "Reader of field `PRSACT`"]
+pub type PRSACT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PRSACT`"]
+pub struct PRSACT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRSACTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PRSACT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Sensor Compare Value"]
-    #[inline]
-    pub fn comp(&self) -> COMPR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COMPR { bits }
+    #[inline(always)]
+    pub fn comp(&self) -> COMP_R {
+        COMP_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Sensor Mask"]
-    #[inline]
-    pub fn mask(&self) -> MASKR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MASKR { bits }
+    #[inline(always)]
+    pub fn mask(&self) -> MASK_R {
+        MASK_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:12 - Next State Index"]
-    #[inline]
-    pub fn nextstate(&self) -> NEXTSTATER {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NEXTSTATER { bits }
+    #[inline(always)]
+    pub fn nextstate(&self) -> NEXTSTATE_R {
+        NEXTSTATE_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
     #[doc = "Bit 14 - Enable State Descriptor Chaining"]
-    #[inline]
-    pub fn chain(&self) -> CHAINR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHAINR { bits }
+    #[inline(always)]
+    pub fn chain(&self) -> CHAIN_R {
+        CHAIN_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Set Interrupt Flag Enable"]
-    #[inline]
-    pub fn setif(&self) -> SETIFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SETIFR { bits }
+    #[inline(always)]
+    pub fn setif(&self) -> SETIF_R {
+        SETIF_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Configure Transition Action"]
-    #[inline]
-    pub fn prsact(&self) -> PRSACTR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PRSACTR { bits }
+    #[inline(always)]
+    pub fn prsact(&self) -> PRSACT_R {
+        PRSACT_R::new(((self.bits >> 16) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Sensor Compare Value"]
-    #[inline]
-    pub fn comp(&mut self) -> _COMPW {
-        _COMPW { w: self }
+    #[inline(always)]
+    pub fn comp(&mut self) -> COMP_W {
+        COMP_W { w: self }
     }
     #[doc = "Bits 4:7 - Sensor Mask"]
-    #[inline]
-    pub fn mask(&mut self) -> _MASKW {
-        _MASKW { w: self }
+    #[inline(always)]
+    pub fn mask(&mut self) -> MASK_W {
+        MASK_W { w: self }
     }
     #[doc = "Bits 8:12 - Next State Index"]
-    #[inline]
-    pub fn nextstate(&mut self) -> _NEXTSTATEW {
-        _NEXTSTATEW { w: self }
+    #[inline(always)]
+    pub fn nextstate(&mut self) -> NEXTSTATE_W {
+        NEXTSTATE_W { w: self }
     }
     #[doc = "Bit 14 - Enable State Descriptor Chaining"]
-    #[inline]
-    pub fn chain(&mut self) -> _CHAINW {
-        _CHAINW { w: self }
+    #[inline(always)]
+    pub fn chain(&mut self) -> CHAIN_W {
+        CHAIN_W { w: self }
     }
     #[doc = "Bit 15 - Set Interrupt Flag Enable"]
-    #[inline]
-    pub fn setif(&mut self) -> _SETIFW {
-        _SETIFW { w: self }
+    #[inline(always)]
+    pub fn setif(&mut self) -> SETIF_W {
+        SETIF_W { w: self }
     }
     #[doc = "Bits 16:18 - Configure Transition Action"]
-    #[inline]
-    pub fn prsact(&mut self) -> _PRSACTW {
-        _PRSACTW { w: self }
+    #[inline(always)]
+    pub fn prsact(&mut self) -> PRSACT_W {
+        PRSACT_W { w: self }
     }
 }

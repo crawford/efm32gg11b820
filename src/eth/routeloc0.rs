@@ -1,525 +1,374 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ROUTELOC0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ROUTELOC0"]
+pub type R = crate::R<u32, super::ROUTELOC0>;
+#[doc = "Writer for register ROUTELOC0"]
+pub type W = crate::W<u32, super::ROUTELOC0>;
+#[doc = "Register ROUTELOC0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::ROUTELOC0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `MIITXLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIITXLOCR {
+pub enum MIITXLOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MIITXLOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MIITXLOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MIITXLOCR::LOC0 => 0,
-            MIITXLOCR::LOC1 => 1,
-            MIITXLOCR::_Reserved(bits) => bits,
+            MIITXLOC_A::LOC0 => 0,
+            MIITXLOC_A::LOC1 => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MIITXLOCR {
-        match value {
-            0 => MIITXLOCR::LOC0,
-            1 => MIITXLOCR::LOC1,
-            i => MIITXLOCR::_Reserved(i),
+}
+#[doc = "Reader of field `MIITXLOC`"]
+pub type MIITXLOC_R = crate::R<u8, MIITXLOC_A>;
+impl MIITXLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MIITXLOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MIITXLOC_A::LOC0),
+            1 => Val(MIITXLOC_A::LOC1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == MIITXLOCR::LOC0
+        *self == MIITXLOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == MIITXLOCR::LOC1
+        *self == MIITXLOC_A::LOC1
+    }
+}
+#[doc = "Write proxy for field `MIITXLOC`"]
+pub struct MIITXLOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MIITXLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MIITXLOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(MIITXLOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(MIITXLOC_A::LOC1)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MIIRXLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIIRXLOCR {
+pub enum MIIRXLOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MIIRXLOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MIIRXLOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MIIRXLOCR::LOC0 => 0,
-            MIIRXLOCR::LOC1 => 1,
-            MIIRXLOCR::LOC2 => 2,
-            MIIRXLOCR::_Reserved(bits) => bits,
+            MIIRXLOC_A::LOC0 => 0,
+            MIIRXLOC_A::LOC1 => 1,
+            MIIRXLOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MIIRXLOCR {
-        match value {
-            0 => MIIRXLOCR::LOC0,
-            1 => MIIRXLOCR::LOC1,
-            2 => MIIRXLOCR::LOC2,
-            i => MIIRXLOCR::_Reserved(i),
+}
+#[doc = "Reader of field `MIIRXLOC`"]
+pub type MIIRXLOC_R = crate::R<u8, MIIRXLOC_A>;
+impl MIIRXLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MIIRXLOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MIIRXLOC_A::LOC0),
+            1 => Val(MIIRXLOC_A::LOC1),
+            2 => Val(MIIRXLOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == MIIRXLOCR::LOC0
+        *self == MIIRXLOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == MIIRXLOCR::LOC1
+        *self == MIIRXLOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == MIIRXLOCR::LOC2
+        *self == MIIRXLOC_A::LOC2
+    }
+}
+#[doc = "Write proxy for field `MIIRXLOC`"]
+pub struct MIIRXLOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MIIRXLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MIIRXLOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(MIIRXLOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(MIIRXLOC_A::LOC1)
+    }
+    #[doc = "Location 2"]
+    #[inline(always)]
+    pub fn loc2(self) -> &'a mut W {
+        self.variant(MIIRXLOC_A::LOC2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MIICRSLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIICRSLOCR {
+pub enum MIICRSLOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MIICRSLOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MIICRSLOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MIICRSLOCR::LOC0 => 0,
-            MIICRSLOCR::LOC1 => 1,
-            MIICRSLOCR::LOC2 => 2,
-            MIICRSLOCR::_Reserved(bits) => bits,
+            MIICRSLOC_A::LOC0 => 0,
+            MIICRSLOC_A::LOC1 => 1,
+            MIICRSLOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MIICRSLOCR {
-        match value {
-            0 => MIICRSLOCR::LOC0,
-            1 => MIICRSLOCR::LOC1,
-            2 => MIICRSLOCR::LOC2,
-            i => MIICRSLOCR::_Reserved(i),
+}
+#[doc = "Reader of field `MIICRSLOC`"]
+pub type MIICRSLOC_R = crate::R<u8, MIICRSLOC_A>;
+impl MIICRSLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MIICRSLOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MIICRSLOC_A::LOC0),
+            1 => Val(MIICRSLOC_A::LOC1),
+            2 => Val(MIICRSLOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == MIICRSLOCR::LOC0
+        *self == MIICRSLOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == MIICRSLOCR::LOC1
+        *self == MIICRSLOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == MIICRSLOCR::LOC2
+        *self == MIICRSLOC_A::LOC2
+    }
+}
+#[doc = "Write proxy for field `MIICRSLOC`"]
+pub struct MIICRSLOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MIICRSLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MIICRSLOC_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Location 0"]
+    #[inline(always)]
+    pub fn loc0(self) -> &'a mut W {
+        self.variant(MIICRSLOC_A::LOC0)
+    }
+    #[doc = "Location 1"]
+    #[inline(always)]
+    pub fn loc1(self) -> &'a mut W {
+        self.variant(MIICRSLOC_A::LOC1)
+    }
+    #[doc = "Location 2"]
+    #[inline(always)]
+    pub fn loc2(self) -> &'a mut W {
+        self.variant(MIICRSLOC_A::LOC2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MIICOLLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIICOLLOCR {
+pub enum MIICOLLOC_A {
     #[doc = "Location 0"]
     LOC0,
     #[doc = "Location 1"]
     LOC1,
     #[doc = "Location 2"]
     LOC2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MIICOLLOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MIICOLLOC_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MIICOLLOCR::LOC0 => 0,
-            MIICOLLOCR::LOC1 => 1,
-            MIICOLLOCR::LOC2 => 2,
-            MIICOLLOCR::_Reserved(bits) => bits,
+            MIICOLLOC_A::LOC0 => 0,
+            MIICOLLOC_A::LOC1 => 1,
+            MIICOLLOC_A::LOC2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MIICOLLOCR {
-        match value {
-            0 => MIICOLLOCR::LOC0,
-            1 => MIICOLLOCR::LOC1,
-            2 => MIICOLLOCR::LOC2,
-            i => MIICOLLOCR::_Reserved(i),
+}
+#[doc = "Reader of field `MIICOLLOC`"]
+pub type MIICOLLOC_R = crate::R<u8, MIICOLLOC_A>;
+impl MIICOLLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MIICOLLOC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MIICOLLOC_A::LOC0),
+            1 => Val(MIICOLLOC_A::LOC1),
+            2 => Val(MIICOLLOC_A::LOC2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == MIICOLLOCR::LOC0
+        *self == MIICOLLOC_A::LOC0
     }
     #[doc = "Checks if the value of the field is `LOC1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == MIICOLLOCR::LOC1
+        *self == MIICOLLOC_A::LOC1
     }
     #[doc = "Checks if the value of the field is `LOC2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == MIICOLLOCR::LOC2
+        *self == MIICOLLOC_A::LOC2
     }
 }
-#[doc = "Values that can be written to the field `MIITXLOC`"]
-pub enum MIITXLOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-}
-impl MIITXLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MIITXLOCW::LOC0 => 0,
-            MIITXLOCW::LOC1 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MIITXLOCW<'a> {
+#[doc = "Write proxy for field `MIICOLLOC`"]
+pub struct MIICOLLOC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MIITXLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MIITXLOCW) -> &'a mut W {
+impl<'a> MIICOLLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MIICOLLOC_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Location 0"]
-    #[inline]
+    #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
-        self.variant(MIITXLOCW::LOC0)
+        self.variant(MIICOLLOC_A::LOC0)
     }
     #[doc = "Location 1"]
-    #[inline]
+    #[inline(always)]
     pub fn loc1(self) -> &'a mut W {
-        self.variant(MIITXLOCW::LOC1)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MIIRXLOC`"]
-pub enum MIIRXLOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl MIIRXLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MIIRXLOCW::LOC0 => 0,
-            MIIRXLOCW::LOC1 => 1,
-            MIIRXLOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MIIRXLOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MIIRXLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MIIRXLOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(MIIRXLOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(MIIRXLOCW::LOC1)
+        self.variant(MIICOLLOC_A::LOC1)
     }
     #[doc = "Location 2"]
-    #[inline]
+    #[inline(always)]
     pub fn loc2(self) -> &'a mut W {
-        self.variant(MIIRXLOCW::LOC2)
+        self.variant(MIICOLLOC_A::LOC2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MIICRSLOC`"]
-pub enum MIICRSLOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl MIICRSLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MIICRSLOCW::LOC0 => 0,
-            MIICRSLOCW::LOC1 => 1,
-            MIICRSLOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MIICRSLOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MIICRSLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MIICRSLOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(MIICRSLOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(MIICRSLOCW::LOC1)
-    }
-    #[doc = "Location 2"]
-    #[inline]
-    pub fn loc2(self) -> &'a mut W {
-        self.variant(MIICRSLOCW::LOC2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MIICOLLOC`"]
-pub enum MIICOLLOCW {
-    #[doc = "Location 0"]
-    LOC0,
-    #[doc = "Location 1"]
-    LOC1,
-    #[doc = "Location 2"]
-    LOC2,
-}
-impl MIICOLLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MIICOLLOCW::LOC0 => 0,
-            MIICOLLOCW::LOC1 => 1,
-            MIICOLLOCW::LOC2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MIICOLLOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MIICOLLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MIICOLLOCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Location 0"]
-    #[inline]
-    pub fn loc0(self) -> &'a mut W {
-        self.variant(MIICOLLOCW::LOC0)
-    }
-    #[doc = "Location 1"]
-    #[inline]
-    pub fn loc1(self) -> &'a mut W {
-        self.variant(MIICOLLOCW::LOC1)
-    }
-    #[doc = "Location 2"]
-    #[inline]
-    pub fn loc2(self) -> &'a mut W {
-        self.variant(MIICOLLOCW::LOC2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - I/O Location"]
-    #[inline]
-    pub fn miitxloc(&self) -> MIITXLOCR {
-        MIITXLOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn miitxloc(&self) -> MIITXLOC_R {
+        MIITXLOC_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - I/O Location"]
-    #[inline]
-    pub fn miirxloc(&self) -> MIIRXLOCR {
-        MIIRXLOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn miirxloc(&self) -> MIIRXLOC_R {
+        MIIRXLOC_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
-    #[inline]
-    pub fn miicrsloc(&self) -> MIICRSLOCR {
-        MIICRSLOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn miicrsloc(&self) -> MIICRSLOC_R {
+        MIICRSLOC_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - I/O Location"]
-    #[inline]
-    pub fn miicolloc(&self) -> MIICOLLOCR {
-        MIICOLLOCR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn miicolloc(&self) -> MIICOLLOC_R {
+        MIICOLLOC_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - I/O Location"]
-    #[inline]
-    pub fn miitxloc(&mut self) -> _MIITXLOCW {
-        _MIITXLOCW { w: self }
+    #[inline(always)]
+    pub fn miitxloc(&mut self) -> MIITXLOC_W {
+        MIITXLOC_W { w: self }
     }
     #[doc = "Bits 8:13 - I/O Location"]
-    #[inline]
-    pub fn miirxloc(&mut self) -> _MIIRXLOCW {
-        _MIIRXLOCW { w: self }
+    #[inline(always)]
+    pub fn miirxloc(&mut self) -> MIIRXLOC_W {
+        MIIRXLOC_W { w: self }
     }
     #[doc = "Bits 16:21 - I/O Location"]
-    #[inline]
-    pub fn miicrsloc(&mut self) -> _MIICRSLOCW {
-        _MIICRSLOCW { w: self }
+    #[inline(always)]
+    pub fn miicrsloc(&mut self) -> MIICRSLOC_W {
+        MIICRSLOC_W { w: self }
     }
     #[doc = "Bits 24:29 - I/O Location"]
-    #[inline]
-    pub fn miicolloc(&mut self) -> _MIICOLLOCW {
-        _MIICOLLOCW { w: self }
+    #[inline(always)]
+    pub fn miicolloc(&mut self) -> MIICOLLOC_W {
+        MIICOLLOC_W { w: self }
     }
 }

@@ -1,416 +1,220 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCNTCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCNTCTRL"]
+pub type R = crate::R<u32, super::PCNTCTRL>;
+#[doc = "Writer for register PCNTCTRL"]
+pub type W = crate::W<u32, super::PCNTCTRL>;
+#[doc = "Register PCNTCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::PCNTCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PCNT0CLKENR {
-    bits: bool,
-}
-impl PCNT0CLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCNT0CLKSELR {
-    bits: bool,
-}
-impl PCNT0CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCNT1CLKENR {
-    bits: bool,
-}
-impl PCNT1CLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCNT1CLKSELR {
-    bits: bool,
-}
-impl PCNT1CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCNT2CLKENR {
-    bits: bool,
-}
-impl PCNT2CLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCNT2CLKSELR {
-    bits: bool,
-}
-impl PCNT2CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PCNT0CLKENW<'a> {
+#[doc = "Reader of field `PCNT0CLKEN`"]
+pub type PCNT0CLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT0CLKEN`"]
+pub struct PCNT0CLKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT0CLKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT0CLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCNT0CLKSELW<'a> {
+#[doc = "Reader of field `PCNT0CLKSEL`"]
+pub type PCNT0CLKSEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT0CLKSEL`"]
+pub struct PCNT0CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT0CLKSELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT0CLKSEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCNT1CLKENW<'a> {
+#[doc = "Reader of field `PCNT1CLKEN`"]
+pub type PCNT1CLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT1CLKEN`"]
+pub struct PCNT1CLKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT1CLKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT1CLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCNT1CLKSELW<'a> {
+#[doc = "Reader of field `PCNT1CLKSEL`"]
+pub type PCNT1CLKSEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT1CLKSEL`"]
+pub struct PCNT1CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT1CLKSELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT1CLKSEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCNT2CLKENW<'a> {
+#[doc = "Reader of field `PCNT2CLKEN`"]
+pub type PCNT2CLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT2CLKEN`"]
+pub struct PCNT2CLKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT2CLKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT2CLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCNT2CLKSELW<'a> {
+#[doc = "Reader of field `PCNT2CLKSEL`"]
+pub type PCNT2CLKSEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCNT2CLKSEL`"]
+pub struct PCNT2CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCNT2CLKSELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCNT2CLKSEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
-    #[inline]
-    pub fn pcnt0clken(&self) -> PCNT0CLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT0CLKENR { bits }
+    #[inline(always)]
+    pub fn pcnt0clken(&self) -> PCNT0CLKEN_R {
+        PCNT0CLKEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
-    #[inline]
-    pub fn pcnt0clksel(&self) -> PCNT0CLKSELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT0CLKSELR { bits }
+    #[inline(always)]
+    pub fn pcnt0clksel(&self) -> PCNT0CLKSEL_R {
+        PCNT0CLKSEL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PCNT1 Clock Enable"]
-    #[inline]
-    pub fn pcnt1clken(&self) -> PCNT1CLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT1CLKENR { bits }
+    #[inline(always)]
+    pub fn pcnt1clken(&self) -> PCNT1CLKEN_R {
+        PCNT1CLKEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PCNT1 Clock Select"]
-    #[inline]
-    pub fn pcnt1clksel(&self) -> PCNT1CLKSELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT1CLKSELR { bits }
+    #[inline(always)]
+    pub fn pcnt1clksel(&self) -> PCNT1CLKSEL_R {
+        PCNT1CLKSEL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - PCNT2 Clock Enable"]
-    #[inline]
-    pub fn pcnt2clken(&self) -> PCNT2CLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT2CLKENR { bits }
+    #[inline(always)]
+    pub fn pcnt2clken(&self) -> PCNT2CLKEN_R {
+        PCNT2CLKEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - PCNT2 Clock Select"]
-    #[inline]
-    pub fn pcnt2clksel(&self) -> PCNT2CLKSELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCNT2CLKSELR { bits }
+    #[inline(always)]
+    pub fn pcnt2clksel(&self) -> PCNT2CLKSEL_R {
+        PCNT2CLKSEL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
-    #[inline]
-    pub fn pcnt0clken(&mut self) -> _PCNT0CLKENW {
-        _PCNT0CLKENW { w: self }
+    #[inline(always)]
+    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W {
+        PCNT0CLKEN_W { w: self }
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
-    #[inline]
-    pub fn pcnt0clksel(&mut self) -> _PCNT0CLKSELW {
-        _PCNT0CLKSELW { w: self }
+    #[inline(always)]
+    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W {
+        PCNT0CLKSEL_W { w: self }
     }
     #[doc = "Bit 2 - PCNT1 Clock Enable"]
-    #[inline]
-    pub fn pcnt1clken(&mut self) -> _PCNT1CLKENW {
-        _PCNT1CLKENW { w: self }
+    #[inline(always)]
+    pub fn pcnt1clken(&mut self) -> PCNT1CLKEN_W {
+        PCNT1CLKEN_W { w: self }
     }
     #[doc = "Bit 3 - PCNT1 Clock Select"]
-    #[inline]
-    pub fn pcnt1clksel(&mut self) -> _PCNT1CLKSELW {
-        _PCNT1CLKSELW { w: self }
+    #[inline(always)]
+    pub fn pcnt1clksel(&mut self) -> PCNT1CLKSEL_W {
+        PCNT1CLKSEL_W { w: self }
     }
     #[doc = "Bit 4 - PCNT2 Clock Enable"]
-    #[inline]
-    pub fn pcnt2clken(&mut self) -> _PCNT2CLKENW {
-        _PCNT2CLKENW { w: self }
+    #[inline(always)]
+    pub fn pcnt2clken(&mut self) -> PCNT2CLKEN_W {
+        PCNT2CLKEN_W { w: self }
     }
     #[doc = "Bit 5 - PCNT2 Clock Select"]
-    #[inline]
-    pub fn pcnt2clksel(&mut self) -> _PCNT2CLKSELW {
-        _PCNT2CLKSELW { w: self }
+    #[inline(always)]
+    pub fn pcnt2clksel(&mut self) -> PCNT2CLKSEL_W {
+        PCNT2CLKSEL_W { w: self }
     }
 }

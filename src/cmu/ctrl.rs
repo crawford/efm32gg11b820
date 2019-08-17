@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0x0010_0000"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0010_0000
     }
 }
 #[doc = "Possible values of the field `CLKOUTSEL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKOUTSEL0R {
+pub enum CLKOUTSEL0_A {
     #[doc = "Disabled"]
     DISABLED,
     #[doc = "ULFRCO (directly from oscillator)"]
@@ -71,127 +41,215 @@ pub enum CLKOUTSEL0R {
     HFSRCCLK,
     #[doc = "USHFRCO (qualified)"]
     USHFRCOQ,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKOUTSEL0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CLKOUTSEL0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CLKOUTSEL0R::DISABLED => 0,
-            CLKOUTSEL0R::ULFRCO => 1,
-            CLKOUTSEL0R::LFRCO => 2,
-            CLKOUTSEL0R::LFXO => 3,
-            CLKOUTSEL0R::HFXO => 6,
-            CLKOUTSEL0R::HFEXPCLK => 7,
-            CLKOUTSEL0R::ULFRCOQ => 9,
-            CLKOUTSEL0R::LFRCOQ => 10,
-            CLKOUTSEL0R::LFXOQ => 11,
-            CLKOUTSEL0R::HFRCOQ => 12,
-            CLKOUTSEL0R::AUXHFRCOQ => 13,
-            CLKOUTSEL0R::HFXOQ => 14,
-            CLKOUTSEL0R::HFSRCCLK => 15,
-            CLKOUTSEL0R::USHFRCOQ => 18,
-            CLKOUTSEL0R::_Reserved(bits) => bits,
+            CLKOUTSEL0_A::DISABLED => 0,
+            CLKOUTSEL0_A::ULFRCO => 1,
+            CLKOUTSEL0_A::LFRCO => 2,
+            CLKOUTSEL0_A::LFXO => 3,
+            CLKOUTSEL0_A::HFXO => 6,
+            CLKOUTSEL0_A::HFEXPCLK => 7,
+            CLKOUTSEL0_A::ULFRCOQ => 9,
+            CLKOUTSEL0_A::LFRCOQ => 10,
+            CLKOUTSEL0_A::LFXOQ => 11,
+            CLKOUTSEL0_A::HFRCOQ => 12,
+            CLKOUTSEL0_A::AUXHFRCOQ => 13,
+            CLKOUTSEL0_A::HFXOQ => 14,
+            CLKOUTSEL0_A::HFSRCCLK => 15,
+            CLKOUTSEL0_A::USHFRCOQ => 18,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKOUTSEL0R {
-        match value {
-            0 => CLKOUTSEL0R::DISABLED,
-            1 => CLKOUTSEL0R::ULFRCO,
-            2 => CLKOUTSEL0R::LFRCO,
-            3 => CLKOUTSEL0R::LFXO,
-            6 => CLKOUTSEL0R::HFXO,
-            7 => CLKOUTSEL0R::HFEXPCLK,
-            9 => CLKOUTSEL0R::ULFRCOQ,
-            10 => CLKOUTSEL0R::LFRCOQ,
-            11 => CLKOUTSEL0R::LFXOQ,
-            12 => CLKOUTSEL0R::HFRCOQ,
-            13 => CLKOUTSEL0R::AUXHFRCOQ,
-            14 => CLKOUTSEL0R::HFXOQ,
-            15 => CLKOUTSEL0R::HFSRCCLK,
-            18 => CLKOUTSEL0R::USHFRCOQ,
-            i => CLKOUTSEL0R::_Reserved(i),
+}
+#[doc = "Reader of field `CLKOUTSEL0`"]
+pub type CLKOUTSEL0_R = crate::R<u8, CLKOUTSEL0_A>;
+impl CLKOUTSEL0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKOUTSEL0_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKOUTSEL0_A::DISABLED),
+            1 => Val(CLKOUTSEL0_A::ULFRCO),
+            2 => Val(CLKOUTSEL0_A::LFRCO),
+            3 => Val(CLKOUTSEL0_A::LFXO),
+            6 => Val(CLKOUTSEL0_A::HFXO),
+            7 => Val(CLKOUTSEL0_A::HFEXPCLK),
+            9 => Val(CLKOUTSEL0_A::ULFRCOQ),
+            10 => Val(CLKOUTSEL0_A::LFRCOQ),
+            11 => Val(CLKOUTSEL0_A::LFXOQ),
+            12 => Val(CLKOUTSEL0_A::HFRCOQ),
+            13 => Val(CLKOUTSEL0_A::AUXHFRCOQ),
+            14 => Val(CLKOUTSEL0_A::HFXOQ),
+            15 => Val(CLKOUTSEL0_A::HFSRCCLK),
+            18 => Val(CLKOUTSEL0_A::USHFRCOQ),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == CLKOUTSEL0R::DISABLED
+        *self == CLKOUTSEL0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ULFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
-        *self == CLKOUTSEL0R::ULFRCO
+        *self == CLKOUTSEL0_A::ULFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        *self == CLKOUTSEL0R::LFRCO
+        *self == CLKOUTSEL0_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == CLKOUTSEL0R::LFXO
+        *self == CLKOUTSEL0_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == CLKOUTSEL0R::HFXO
+        *self == CLKOUTSEL0_A::HFXO
     }
     #[doc = "Checks if the value of the field is `HFEXPCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfexpclk(&self) -> bool {
-        *self == CLKOUTSEL0R::HFEXPCLK
+        *self == CLKOUTSEL0_A::HFEXPCLK
     }
     #[doc = "Checks if the value of the field is `ULFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrcoq(&self) -> bool {
-        *self == CLKOUTSEL0R::ULFRCOQ
+        *self == CLKOUTSEL0_A::ULFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrcoq(&self) -> bool {
-        *self == CLKOUTSEL0R::LFRCOQ
+        *self == CLKOUTSEL0_A::LFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxoq(&self) -> bool {
-        *self == CLKOUTSEL0R::LFXOQ
+        *self == CLKOUTSEL0_A::LFXOQ
     }
     #[doc = "Checks if the value of the field is `HFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrcoq(&self) -> bool {
-        *self == CLKOUTSEL0R::HFRCOQ
+        *self == CLKOUTSEL0_A::HFRCOQ
     }
     #[doc = "Checks if the value of the field is `AUXHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auxhfrcoq(&self) -> bool {
-        *self == CLKOUTSEL0R::AUXHFRCOQ
+        *self == CLKOUTSEL0_A::AUXHFRCOQ
     }
     #[doc = "Checks if the value of the field is `HFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxoq(&self) -> bool {
-        *self == CLKOUTSEL0R::HFXOQ
+        *self == CLKOUTSEL0_A::HFXOQ
     }
     #[doc = "Checks if the value of the field is `HFSRCCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfsrcclk(&self) -> bool {
-        *self == CLKOUTSEL0R::HFSRCCLK
+        *self == CLKOUTSEL0_A::HFSRCCLK
     }
     #[doc = "Checks if the value of the field is `USHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrcoq(&self) -> bool {
-        *self == CLKOUTSEL0R::USHFRCOQ
+        *self == CLKOUTSEL0_A::USHFRCOQ
+    }
+}
+#[doc = "Write proxy for field `CLKOUTSEL0`"]
+pub struct CLKOUTSEL0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CLKOUTSEL0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKOUTSEL0_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::DISABLED)
+    }
+    #[doc = "ULFRCO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn ulfrco(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::ULFRCO)
+    }
+    #[doc = "LFRCO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn lfrco(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::LFRCO)
+    }
+    #[doc = "LFXO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn lfxo(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::LFXO)
+    }
+    #[doc = "HFXO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn hfxo(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::HFXO)
+    }
+    #[doc = "HFEXPCLK"]
+    #[inline(always)]
+    pub fn hfexpclk(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::HFEXPCLK)
+    }
+    #[doc = "ULFRCO (qualified)"]
+    #[inline(always)]
+    pub fn ulfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::ULFRCOQ)
+    }
+    #[doc = "LFRCO (qualified)"]
+    #[inline(always)]
+    pub fn lfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::LFRCOQ)
+    }
+    #[doc = "LFXO (qualified)"]
+    #[inline(always)]
+    pub fn lfxoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::LFXOQ)
+    }
+    #[doc = "HFRCO (qualified)"]
+    #[inline(always)]
+    pub fn hfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::HFRCOQ)
+    }
+    #[doc = "AUXHFRCO (qualified)"]
+    #[inline(always)]
+    pub fn auxhfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::AUXHFRCOQ)
+    }
+    #[doc = "HFXO (qualified)"]
+    #[inline(always)]
+    pub fn hfxoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::HFXOQ)
+    }
+    #[doc = "HFSRCCLK"]
+    #[inline(always)]
+    pub fn hfsrcclk(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::HFSRCCLK)
+    }
+    #[doc = "USHFRCO (qualified)"]
+    #[inline(always)]
+    pub fn ushfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL0_A::USHFRCOQ)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CLKOUTSEL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKOUTSEL1R {
+pub enum CLKOUTSEL1_A {
     #[doc = "Disabled"]
     DISABLED,
     #[doc = "ULFRCO (directly from oscillator)"]
@@ -220,127 +278,215 @@ pub enum CLKOUTSEL1R {
     HFSRCCLK,
     #[doc = "USHFRCO (qualified)"]
     USHFRCOQ,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKOUTSEL1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CLKOUTSEL1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CLKOUTSEL1R::DISABLED => 0,
-            CLKOUTSEL1R::ULFRCO => 1,
-            CLKOUTSEL1R::LFRCO => 2,
-            CLKOUTSEL1R::LFXO => 3,
-            CLKOUTSEL1R::HFXO => 6,
-            CLKOUTSEL1R::HFEXPCLK => 7,
-            CLKOUTSEL1R::ULFRCOQ => 9,
-            CLKOUTSEL1R::LFRCOQ => 10,
-            CLKOUTSEL1R::LFXOQ => 11,
-            CLKOUTSEL1R::HFRCOQ => 12,
-            CLKOUTSEL1R::AUXHFRCOQ => 13,
-            CLKOUTSEL1R::HFXOQ => 14,
-            CLKOUTSEL1R::HFSRCCLK => 15,
-            CLKOUTSEL1R::USHFRCOQ => 18,
-            CLKOUTSEL1R::_Reserved(bits) => bits,
+            CLKOUTSEL1_A::DISABLED => 0,
+            CLKOUTSEL1_A::ULFRCO => 1,
+            CLKOUTSEL1_A::LFRCO => 2,
+            CLKOUTSEL1_A::LFXO => 3,
+            CLKOUTSEL1_A::HFXO => 6,
+            CLKOUTSEL1_A::HFEXPCLK => 7,
+            CLKOUTSEL1_A::ULFRCOQ => 9,
+            CLKOUTSEL1_A::LFRCOQ => 10,
+            CLKOUTSEL1_A::LFXOQ => 11,
+            CLKOUTSEL1_A::HFRCOQ => 12,
+            CLKOUTSEL1_A::AUXHFRCOQ => 13,
+            CLKOUTSEL1_A::HFXOQ => 14,
+            CLKOUTSEL1_A::HFSRCCLK => 15,
+            CLKOUTSEL1_A::USHFRCOQ => 18,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKOUTSEL1R {
-        match value {
-            0 => CLKOUTSEL1R::DISABLED,
-            1 => CLKOUTSEL1R::ULFRCO,
-            2 => CLKOUTSEL1R::LFRCO,
-            3 => CLKOUTSEL1R::LFXO,
-            6 => CLKOUTSEL1R::HFXO,
-            7 => CLKOUTSEL1R::HFEXPCLK,
-            9 => CLKOUTSEL1R::ULFRCOQ,
-            10 => CLKOUTSEL1R::LFRCOQ,
-            11 => CLKOUTSEL1R::LFXOQ,
-            12 => CLKOUTSEL1R::HFRCOQ,
-            13 => CLKOUTSEL1R::AUXHFRCOQ,
-            14 => CLKOUTSEL1R::HFXOQ,
-            15 => CLKOUTSEL1R::HFSRCCLK,
-            18 => CLKOUTSEL1R::USHFRCOQ,
-            i => CLKOUTSEL1R::_Reserved(i),
+}
+#[doc = "Reader of field `CLKOUTSEL1`"]
+pub type CLKOUTSEL1_R = crate::R<u8, CLKOUTSEL1_A>;
+impl CLKOUTSEL1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKOUTSEL1_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKOUTSEL1_A::DISABLED),
+            1 => Val(CLKOUTSEL1_A::ULFRCO),
+            2 => Val(CLKOUTSEL1_A::LFRCO),
+            3 => Val(CLKOUTSEL1_A::LFXO),
+            6 => Val(CLKOUTSEL1_A::HFXO),
+            7 => Val(CLKOUTSEL1_A::HFEXPCLK),
+            9 => Val(CLKOUTSEL1_A::ULFRCOQ),
+            10 => Val(CLKOUTSEL1_A::LFRCOQ),
+            11 => Val(CLKOUTSEL1_A::LFXOQ),
+            12 => Val(CLKOUTSEL1_A::HFRCOQ),
+            13 => Val(CLKOUTSEL1_A::AUXHFRCOQ),
+            14 => Val(CLKOUTSEL1_A::HFXOQ),
+            15 => Val(CLKOUTSEL1_A::HFSRCCLK),
+            18 => Val(CLKOUTSEL1_A::USHFRCOQ),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == CLKOUTSEL1R::DISABLED
+        *self == CLKOUTSEL1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ULFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
-        *self == CLKOUTSEL1R::ULFRCO
+        *self == CLKOUTSEL1_A::ULFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        *self == CLKOUTSEL1R::LFRCO
+        *self == CLKOUTSEL1_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == CLKOUTSEL1R::LFXO
+        *self == CLKOUTSEL1_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == CLKOUTSEL1R::HFXO
+        *self == CLKOUTSEL1_A::HFXO
     }
     #[doc = "Checks if the value of the field is `HFEXPCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfexpclk(&self) -> bool {
-        *self == CLKOUTSEL1R::HFEXPCLK
+        *self == CLKOUTSEL1_A::HFEXPCLK
     }
     #[doc = "Checks if the value of the field is `ULFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrcoq(&self) -> bool {
-        *self == CLKOUTSEL1R::ULFRCOQ
+        *self == CLKOUTSEL1_A::ULFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrcoq(&self) -> bool {
-        *self == CLKOUTSEL1R::LFRCOQ
+        *self == CLKOUTSEL1_A::LFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxoq(&self) -> bool {
-        *self == CLKOUTSEL1R::LFXOQ
+        *self == CLKOUTSEL1_A::LFXOQ
     }
     #[doc = "Checks if the value of the field is `HFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrcoq(&self) -> bool {
-        *self == CLKOUTSEL1R::HFRCOQ
+        *self == CLKOUTSEL1_A::HFRCOQ
     }
     #[doc = "Checks if the value of the field is `AUXHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auxhfrcoq(&self) -> bool {
-        *self == CLKOUTSEL1R::AUXHFRCOQ
+        *self == CLKOUTSEL1_A::AUXHFRCOQ
     }
     #[doc = "Checks if the value of the field is `HFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxoq(&self) -> bool {
-        *self == CLKOUTSEL1R::HFXOQ
+        *self == CLKOUTSEL1_A::HFXOQ
     }
     #[doc = "Checks if the value of the field is `HFSRCCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfsrcclk(&self) -> bool {
-        *self == CLKOUTSEL1R::HFSRCCLK
+        *self == CLKOUTSEL1_A::HFSRCCLK
     }
     #[doc = "Checks if the value of the field is `USHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrcoq(&self) -> bool {
-        *self == CLKOUTSEL1R::USHFRCOQ
+        *self == CLKOUTSEL1_A::USHFRCOQ
+    }
+}
+#[doc = "Write proxy for field `CLKOUTSEL1`"]
+pub struct CLKOUTSEL1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CLKOUTSEL1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKOUTSEL1_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::DISABLED)
+    }
+    #[doc = "ULFRCO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn ulfrco(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::ULFRCO)
+    }
+    #[doc = "LFRCO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn lfrco(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::LFRCO)
+    }
+    #[doc = "LFXO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn lfxo(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::LFXO)
+    }
+    #[doc = "HFXO (directly from oscillator)"]
+    #[inline(always)]
+    pub fn hfxo(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::HFXO)
+    }
+    #[doc = "HFEXPCLK"]
+    #[inline(always)]
+    pub fn hfexpclk(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::HFEXPCLK)
+    }
+    #[doc = "ULFRCO (qualified)"]
+    #[inline(always)]
+    pub fn ulfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::ULFRCOQ)
+    }
+    #[doc = "LFRCO (qualified)"]
+    #[inline(always)]
+    pub fn lfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::LFRCOQ)
+    }
+    #[doc = "LFXO (qualified)"]
+    #[inline(always)]
+    pub fn lfxoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::LFXOQ)
+    }
+    #[doc = "HFRCO (qualified)"]
+    #[inline(always)]
+    pub fn hfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::HFRCOQ)
+    }
+    #[doc = "AUXHFRCO (qualified)"]
+    #[inline(always)]
+    pub fn auxhfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::AUXHFRCOQ)
+    }
+    #[doc = "HFXO (qualified)"]
+    #[inline(always)]
+    pub fn hfxoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::HFXOQ)
+    }
+    #[doc = "HFSRCCLK"]
+    #[inline(always)]
+    pub fn hfsrcclk(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::HFSRCCLK)
+    }
+    #[doc = "USHFRCO (qualified)"]
+    #[inline(always)]
+    pub fn ushfrcoq(self) -> &'a mut W {
+        self.variant(CLKOUTSEL1_A::USHFRCOQ)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 5)) | (((value as u32) & 0x1f) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CLKOUTSEL2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKOUTSEL2R {
+pub enum CLKOUTSEL2_A {
     #[doc = "Disabled"]
     DISABLED,
     #[doc = "ULFRCO (directly from oscillator)"]
@@ -373,763 +519,335 @@ pub enum CLKOUTSEL2R {
     HFSRCCLK,
     #[doc = "USHFRCO (qualified)"]
     USHFRCOQ,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKOUTSEL2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CLKOUTSEL2_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CLKOUTSEL2R::DISABLED => 0,
-            CLKOUTSEL2R::ULFRCO => 1,
-            CLKOUTSEL2R::LFRCO => 2,
-            CLKOUTSEL2R::LFXO => 3,
-            CLKOUTSEL2R::HFXODIV2Q => 5,
-            CLKOUTSEL2R::HFXO => 6,
-            CLKOUTSEL2R::HFEXPCLK => 7,
-            CLKOUTSEL2R::HFXOX2Q => 8,
-            CLKOUTSEL2R::ULFRCOQ => 9,
-            CLKOUTSEL2R::LFRCOQ => 10,
-            CLKOUTSEL2R::LFXOQ => 11,
-            CLKOUTSEL2R::HFRCOQ => 12,
-            CLKOUTSEL2R::AUXHFRCOQ => 13,
-            CLKOUTSEL2R::HFXOQ => 14,
-            CLKOUTSEL2R::HFSRCCLK => 15,
-            CLKOUTSEL2R::USHFRCOQ => 18,
-            CLKOUTSEL2R::_Reserved(bits) => bits,
+            CLKOUTSEL2_A::DISABLED => 0,
+            CLKOUTSEL2_A::ULFRCO => 1,
+            CLKOUTSEL2_A::LFRCO => 2,
+            CLKOUTSEL2_A::LFXO => 3,
+            CLKOUTSEL2_A::HFXODIV2Q => 5,
+            CLKOUTSEL2_A::HFXO => 6,
+            CLKOUTSEL2_A::HFEXPCLK => 7,
+            CLKOUTSEL2_A::HFXOX2Q => 8,
+            CLKOUTSEL2_A::ULFRCOQ => 9,
+            CLKOUTSEL2_A::LFRCOQ => 10,
+            CLKOUTSEL2_A::LFXOQ => 11,
+            CLKOUTSEL2_A::HFRCOQ => 12,
+            CLKOUTSEL2_A::AUXHFRCOQ => 13,
+            CLKOUTSEL2_A::HFXOQ => 14,
+            CLKOUTSEL2_A::HFSRCCLK => 15,
+            CLKOUTSEL2_A::USHFRCOQ => 18,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKOUTSEL2R {
-        match value {
-            0 => CLKOUTSEL2R::DISABLED,
-            1 => CLKOUTSEL2R::ULFRCO,
-            2 => CLKOUTSEL2R::LFRCO,
-            3 => CLKOUTSEL2R::LFXO,
-            5 => CLKOUTSEL2R::HFXODIV2Q,
-            6 => CLKOUTSEL2R::HFXO,
-            7 => CLKOUTSEL2R::HFEXPCLK,
-            8 => CLKOUTSEL2R::HFXOX2Q,
-            9 => CLKOUTSEL2R::ULFRCOQ,
-            10 => CLKOUTSEL2R::LFRCOQ,
-            11 => CLKOUTSEL2R::LFXOQ,
-            12 => CLKOUTSEL2R::HFRCOQ,
-            13 => CLKOUTSEL2R::AUXHFRCOQ,
-            14 => CLKOUTSEL2R::HFXOQ,
-            15 => CLKOUTSEL2R::HFSRCCLK,
-            18 => CLKOUTSEL2R::USHFRCOQ,
-            i => CLKOUTSEL2R::_Reserved(i),
+}
+#[doc = "Reader of field `CLKOUTSEL2`"]
+pub type CLKOUTSEL2_R = crate::R<u8, CLKOUTSEL2_A>;
+impl CLKOUTSEL2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKOUTSEL2_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKOUTSEL2_A::DISABLED),
+            1 => Val(CLKOUTSEL2_A::ULFRCO),
+            2 => Val(CLKOUTSEL2_A::LFRCO),
+            3 => Val(CLKOUTSEL2_A::LFXO),
+            5 => Val(CLKOUTSEL2_A::HFXODIV2Q),
+            6 => Val(CLKOUTSEL2_A::HFXO),
+            7 => Val(CLKOUTSEL2_A::HFEXPCLK),
+            8 => Val(CLKOUTSEL2_A::HFXOX2Q),
+            9 => Val(CLKOUTSEL2_A::ULFRCOQ),
+            10 => Val(CLKOUTSEL2_A::LFRCOQ),
+            11 => Val(CLKOUTSEL2_A::LFXOQ),
+            12 => Val(CLKOUTSEL2_A::HFRCOQ),
+            13 => Val(CLKOUTSEL2_A::AUXHFRCOQ),
+            14 => Val(CLKOUTSEL2_A::HFXOQ),
+            15 => Val(CLKOUTSEL2_A::HFSRCCLK),
+            18 => Val(CLKOUTSEL2_A::USHFRCOQ),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == CLKOUTSEL2R::DISABLED
+        *self == CLKOUTSEL2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ULFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
-        *self == CLKOUTSEL2R::ULFRCO
+        *self == CLKOUTSEL2_A::ULFRCO
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
-        *self == CLKOUTSEL2R::LFRCO
+        *self == CLKOUTSEL2_A::LFRCO
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        *self == CLKOUTSEL2R::LFXO
+        *self == CLKOUTSEL2_A::LFXO
     }
     #[doc = "Checks if the value of the field is `HFXODIV2Q`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxodiv2q(&self) -> bool {
-        *self == CLKOUTSEL2R::HFXODIV2Q
+        *self == CLKOUTSEL2_A::HFXODIV2Q
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == CLKOUTSEL2R::HFXO
+        *self == CLKOUTSEL2_A::HFXO
     }
     #[doc = "Checks if the value of the field is `HFEXPCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfexpclk(&self) -> bool {
-        *self == CLKOUTSEL2R::HFEXPCLK
+        *self == CLKOUTSEL2_A::HFEXPCLK
     }
     #[doc = "Checks if the value of the field is `HFXOX2Q`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxox2q(&self) -> bool {
-        *self == CLKOUTSEL2R::HFXOX2Q
+        *self == CLKOUTSEL2_A::HFXOX2Q
     }
     #[doc = "Checks if the value of the field is `ULFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ulfrcoq(&self) -> bool {
-        *self == CLKOUTSEL2R::ULFRCOQ
+        *self == CLKOUTSEL2_A::ULFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfrcoq(&self) -> bool {
-        *self == CLKOUTSEL2R::LFRCOQ
+        *self == CLKOUTSEL2_A::LFRCOQ
     }
     #[doc = "Checks if the value of the field is `LFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lfxoq(&self) -> bool {
-        *self == CLKOUTSEL2R::LFXOQ
+        *self == CLKOUTSEL2_A::LFXOQ
     }
     #[doc = "Checks if the value of the field is `HFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrcoq(&self) -> bool {
-        *self == CLKOUTSEL2R::HFRCOQ
+        *self == CLKOUTSEL2_A::HFRCOQ
     }
     #[doc = "Checks if the value of the field is `AUXHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auxhfrcoq(&self) -> bool {
-        *self == CLKOUTSEL2R::AUXHFRCOQ
+        *self == CLKOUTSEL2_A::AUXHFRCOQ
     }
     #[doc = "Checks if the value of the field is `HFXOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxoq(&self) -> bool {
-        *self == CLKOUTSEL2R::HFXOQ
+        *self == CLKOUTSEL2_A::HFXOQ
     }
     #[doc = "Checks if the value of the field is `HFSRCCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfsrcclk(&self) -> bool {
-        *self == CLKOUTSEL2R::HFSRCCLK
+        *self == CLKOUTSEL2_A::HFSRCCLK
     }
     #[doc = "Checks if the value of the field is `USHFRCOQ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrcoq(&self) -> bool {
-        *self == CLKOUTSEL2R::USHFRCOQ
+        *self == CLKOUTSEL2_A::USHFRCOQ
     }
 }
-#[doc = r" Value of the field"]
-pub struct WSHFLER {
-    bits: bool,
-}
-impl WSHFLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HFPERCLKENR {
-    bits: bool,
-}
-impl HFPERCLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `CLKOUTSEL0`"]
-pub enum CLKOUTSEL0W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
-    ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
-    LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
-    LFXO,
-    #[doc = "HFXO (directly from oscillator)"]
-    HFXO,
-    #[doc = "HFEXPCLK"]
-    HFEXPCLK,
-    #[doc = "ULFRCO (qualified)"]
-    ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
-    LFRCOQ,
-    #[doc = "LFXO (qualified)"]
-    LFXOQ,
-    #[doc = "HFRCO (qualified)"]
-    HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
-    AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
-    HFXOQ,
-    #[doc = "HFSRCCLK"]
-    HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
-    USHFRCOQ,
-}
-impl CLKOUTSEL0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKOUTSEL0W::DISABLED => 0,
-            CLKOUTSEL0W::ULFRCO => 1,
-            CLKOUTSEL0W::LFRCO => 2,
-            CLKOUTSEL0W::LFXO => 3,
-            CLKOUTSEL0W::HFXO => 6,
-            CLKOUTSEL0W::HFEXPCLK => 7,
-            CLKOUTSEL0W::ULFRCOQ => 9,
-            CLKOUTSEL0W::LFRCOQ => 10,
-            CLKOUTSEL0W::LFXOQ => 11,
-            CLKOUTSEL0W::HFRCOQ => 12,
-            CLKOUTSEL0W::AUXHFRCOQ => 13,
-            CLKOUTSEL0W::HFXOQ => 14,
-            CLKOUTSEL0W::HFSRCCLK => 15,
-            CLKOUTSEL0W::USHFRCOQ => 18,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKOUTSEL0W<'a> {
+#[doc = "Write proxy for field `CLKOUTSEL2`"]
+pub struct CLKOUTSEL2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLKOUTSEL0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKOUTSEL0W) -> &'a mut W {
+impl<'a> CLKOUTSEL2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKOUTSEL2_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::DISABLED)
+        self.variant(CLKOUTSEL2_A::DISABLED)
     }
     #[doc = "ULFRCO (directly from oscillator)"]
-    #[inline]
+    #[inline(always)]
     pub fn ulfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::ULFRCO)
+        self.variant(CLKOUTSEL2_A::ULFRCO)
     }
     #[doc = "LFRCO (directly from oscillator)"]
-    #[inline]
+    #[inline(always)]
     pub fn lfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::LFRCO)
+        self.variant(CLKOUTSEL2_A::LFRCO)
     }
     #[doc = "LFXO (directly from oscillator)"]
-    #[inline]
+    #[inline(always)]
     pub fn lfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::LFXO)
-    }
-    #[doc = "HFXO (directly from oscillator)"]
-    #[inline]
-    pub fn hfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::HFXO)
-    }
-    #[doc = "HFEXPCLK"]
-    #[inline]
-    pub fn hfexpclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::HFEXPCLK)
-    }
-    #[doc = "ULFRCO (qualified)"]
-    #[inline]
-    pub fn ulfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::ULFRCOQ)
-    }
-    #[doc = "LFRCO (qualified)"]
-    #[inline]
-    pub fn lfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::LFRCOQ)
-    }
-    #[doc = "LFXO (qualified)"]
-    #[inline]
-    pub fn lfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::LFXOQ)
-    }
-    #[doc = "HFRCO (qualified)"]
-    #[inline]
-    pub fn hfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::HFRCOQ)
-    }
-    #[doc = "AUXHFRCO (qualified)"]
-    #[inline]
-    pub fn auxhfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::AUXHFRCOQ)
-    }
-    #[doc = "HFXO (qualified)"]
-    #[inline]
-    pub fn hfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::HFXOQ)
-    }
-    #[doc = "HFSRCCLK"]
-    #[inline]
-    pub fn hfsrcclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::HFSRCCLK)
-    }
-    #[doc = "USHFRCO (qualified)"]
-    #[inline]
-    pub fn ushfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL0W::USHFRCOQ)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CLKOUTSEL1`"]
-pub enum CLKOUTSEL1W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
-    ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
-    LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
-    LFXO,
-    #[doc = "HFXO (directly from oscillator)"]
-    HFXO,
-    #[doc = "HFEXPCLK"]
-    HFEXPCLK,
-    #[doc = "ULFRCO (qualified)"]
-    ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
-    LFRCOQ,
-    #[doc = "LFXO (qualified)"]
-    LFXOQ,
-    #[doc = "HFRCO (qualified)"]
-    HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
-    AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
-    HFXOQ,
-    #[doc = "HFSRCCLK"]
-    HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
-    USHFRCOQ,
-}
-impl CLKOUTSEL1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKOUTSEL1W::DISABLED => 0,
-            CLKOUTSEL1W::ULFRCO => 1,
-            CLKOUTSEL1W::LFRCO => 2,
-            CLKOUTSEL1W::LFXO => 3,
-            CLKOUTSEL1W::HFXO => 6,
-            CLKOUTSEL1W::HFEXPCLK => 7,
-            CLKOUTSEL1W::ULFRCOQ => 9,
-            CLKOUTSEL1W::LFRCOQ => 10,
-            CLKOUTSEL1W::LFXOQ => 11,
-            CLKOUTSEL1W::HFRCOQ => 12,
-            CLKOUTSEL1W::AUXHFRCOQ => 13,
-            CLKOUTSEL1W::HFXOQ => 14,
-            CLKOUTSEL1W::HFSRCCLK => 15,
-            CLKOUTSEL1W::USHFRCOQ => 18,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKOUTSEL1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLKOUTSEL1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKOUTSEL1W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::DISABLED)
-    }
-    #[doc = "ULFRCO (directly from oscillator)"]
-    #[inline]
-    pub fn ulfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::ULFRCO)
-    }
-    #[doc = "LFRCO (directly from oscillator)"]
-    #[inline]
-    pub fn lfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::LFRCO)
-    }
-    #[doc = "LFXO (directly from oscillator)"]
-    #[inline]
-    pub fn lfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::LFXO)
-    }
-    #[doc = "HFXO (directly from oscillator)"]
-    #[inline]
-    pub fn hfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::HFXO)
-    }
-    #[doc = "HFEXPCLK"]
-    #[inline]
-    pub fn hfexpclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::HFEXPCLK)
-    }
-    #[doc = "ULFRCO (qualified)"]
-    #[inline]
-    pub fn ulfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::ULFRCOQ)
-    }
-    #[doc = "LFRCO (qualified)"]
-    #[inline]
-    pub fn lfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::LFRCOQ)
-    }
-    #[doc = "LFXO (qualified)"]
-    #[inline]
-    pub fn lfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::LFXOQ)
-    }
-    #[doc = "HFRCO (qualified)"]
-    #[inline]
-    pub fn hfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::HFRCOQ)
-    }
-    #[doc = "AUXHFRCO (qualified)"]
-    #[inline]
-    pub fn auxhfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::AUXHFRCOQ)
-    }
-    #[doc = "HFXO (qualified)"]
-    #[inline]
-    pub fn hfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::HFXOQ)
-    }
-    #[doc = "HFSRCCLK"]
-    #[inline]
-    pub fn hfsrcclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::HFSRCCLK)
-    }
-    #[doc = "USHFRCO (qualified)"]
-    #[inline]
-    pub fn ushfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL1W::USHFRCOQ)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CLKOUTSEL2`"]
-pub enum CLKOUTSEL2W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
-    ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
-    LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
-    LFXO,
-    #[doc = "HFXO divided by two (qualified)"]
-    HFXODIV2Q,
-    #[doc = "HFXO (directly from oscillator)"]
-    HFXO,
-    #[doc = "HFEXPCLK"]
-    HFEXPCLK,
-    #[doc = "HFXO doubler (qualified) (doubling activated by HFXOX2EN=1)"]
-    HFXOX2Q,
-    #[doc = "ULFRCO (qualified)"]
-    ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
-    LFRCOQ,
-    #[doc = "LFXO (qualified)"]
-    LFXOQ,
-    #[doc = "HFRCO (qualified)"]
-    HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
-    AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
-    HFXOQ,
-    #[doc = "HFSRCCLK"]
-    HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
-    USHFRCOQ,
-}
-impl CLKOUTSEL2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKOUTSEL2W::DISABLED => 0,
-            CLKOUTSEL2W::ULFRCO => 1,
-            CLKOUTSEL2W::LFRCO => 2,
-            CLKOUTSEL2W::LFXO => 3,
-            CLKOUTSEL2W::HFXODIV2Q => 5,
-            CLKOUTSEL2W::HFXO => 6,
-            CLKOUTSEL2W::HFEXPCLK => 7,
-            CLKOUTSEL2W::HFXOX2Q => 8,
-            CLKOUTSEL2W::ULFRCOQ => 9,
-            CLKOUTSEL2W::LFRCOQ => 10,
-            CLKOUTSEL2W::LFXOQ => 11,
-            CLKOUTSEL2W::HFRCOQ => 12,
-            CLKOUTSEL2W::AUXHFRCOQ => 13,
-            CLKOUTSEL2W::HFXOQ => 14,
-            CLKOUTSEL2W::HFSRCCLK => 15,
-            CLKOUTSEL2W::USHFRCOQ => 18,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKOUTSEL2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLKOUTSEL2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKOUTSEL2W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::DISABLED)
-    }
-    #[doc = "ULFRCO (directly from oscillator)"]
-    #[inline]
-    pub fn ulfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::ULFRCO)
-    }
-    #[doc = "LFRCO (directly from oscillator)"]
-    #[inline]
-    pub fn lfrco(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::LFRCO)
-    }
-    #[doc = "LFXO (directly from oscillator)"]
-    #[inline]
-    pub fn lfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::LFXO)
+        self.variant(CLKOUTSEL2_A::LFXO)
     }
     #[doc = "HFXO divided by two (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxodiv2q(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFXODIV2Q)
+        self.variant(CLKOUTSEL2_A::HFXODIV2Q)
     }
     #[doc = "HFXO (directly from oscillator)"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFXO)
+        self.variant(CLKOUTSEL2_A::HFXO)
     }
     #[doc = "HFEXPCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn hfexpclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFEXPCLK)
+        self.variant(CLKOUTSEL2_A::HFEXPCLK)
     }
     #[doc = "HFXO doubler (qualified) (doubling activated by HFXOX2EN=1)"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxox2q(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFXOX2Q)
+        self.variant(CLKOUTSEL2_A::HFXOX2Q)
     }
     #[doc = "ULFRCO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn ulfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::ULFRCOQ)
+        self.variant(CLKOUTSEL2_A::ULFRCOQ)
     }
     #[doc = "LFRCO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn lfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::LFRCOQ)
+        self.variant(CLKOUTSEL2_A::LFRCOQ)
     }
     #[doc = "LFXO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn lfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::LFXOQ)
+        self.variant(CLKOUTSEL2_A::LFXOQ)
     }
     #[doc = "HFRCO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn hfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFRCOQ)
+        self.variant(CLKOUTSEL2_A::HFRCOQ)
     }
     #[doc = "AUXHFRCO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn auxhfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::AUXHFRCOQ)
+        self.variant(CLKOUTSEL2_A::AUXHFRCOQ)
     }
     #[doc = "HFXO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFXOQ)
+        self.variant(CLKOUTSEL2_A::HFXOQ)
     }
     #[doc = "HFSRCCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn hfsrcclk(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::HFSRCCLK)
+        self.variant(CLKOUTSEL2_A::HFSRCCLK)
     }
     #[doc = "USHFRCO (qualified)"]
-    #[inline]
+    #[inline(always)]
     pub fn ushfrcoq(self) -> &'a mut W {
-        self.variant(CLKOUTSEL2W::USHFRCOQ)
+        self.variant(CLKOUTSEL2_A::USHFRCOQ)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WSHFLEW<'a> {
+#[doc = "Reader of field `WSHFLE`"]
+pub type WSHFLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WSHFLE`"]
+pub struct WSHFLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WSHFLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WSHFLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HFPERCLKENW<'a> {
+#[doc = "Reader of field `HFPERCLKEN`"]
+pub type HFPERCLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HFPERCLKEN`"]
+pub struct HFPERCLKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HFPERCLKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> HFPERCLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - Clock Output Select 0"]
-    #[inline]
-    pub fn clkoutsel0(&self) -> CLKOUTSEL0R {
-        CLKOUTSEL0R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clkoutsel0(&self) -> CLKOUTSEL0_R {
+        CLKOUTSEL0_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 5:9 - Clock Output Select 1"]
-    #[inline]
-    pub fn clkoutsel1(&self) -> CLKOUTSEL1R {
-        CLKOUTSEL1R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clkoutsel1(&self) -> CLKOUTSEL1_R {
+        CLKOUTSEL1_R::new(((self.bits >> 5) & 0x1f) as u8)
     }
     #[doc = "Bits 10:14 - Clock Output Select 2"]
-    #[inline]
-    pub fn clkoutsel2(&self) -> CLKOUTSEL2R {
-        CLKOUTSEL2R::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clkoutsel2(&self) -> CLKOUTSEL2_R {
+        CLKOUTSEL2_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bit 16 - Wait State for High-Frequency LE Interface"]
-    #[inline]
-    pub fn wshfle(&self) -> WSHFLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WSHFLER { bits }
+    #[inline(always)]
+    pub fn wshfle(&self) -> WSHFLE_R {
+        WSHFLE_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 20 - HFPERCLK Enable"]
-    #[inline]
-    pub fn hfperclken(&self) -> HFPERCLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HFPERCLKENR { bits }
+    #[inline(always)]
+    pub fn hfperclken(&self) -> HFPERCLKEN_R {
+        HFPERCLKEN_R::new(((self.bits >> 20) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1048576 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Clock Output Select 0"]
-    #[inline]
-    pub fn clkoutsel0(&mut self) -> _CLKOUTSEL0W {
-        _CLKOUTSEL0W { w: self }
+    #[inline(always)]
+    pub fn clkoutsel0(&mut self) -> CLKOUTSEL0_W {
+        CLKOUTSEL0_W { w: self }
     }
     #[doc = "Bits 5:9 - Clock Output Select 1"]
-    #[inline]
-    pub fn clkoutsel1(&mut self) -> _CLKOUTSEL1W {
-        _CLKOUTSEL1W { w: self }
+    #[inline(always)]
+    pub fn clkoutsel1(&mut self) -> CLKOUTSEL1_W {
+        CLKOUTSEL1_W { w: self }
     }
     #[doc = "Bits 10:14 - Clock Output Select 2"]
-    #[inline]
-    pub fn clkoutsel2(&mut self) -> _CLKOUTSEL2W {
-        _CLKOUTSEL2W { w: self }
+    #[inline(always)]
+    pub fn clkoutsel2(&mut self) -> CLKOUTSEL2_W {
+        CLKOUTSEL2_W { w: self }
     }
     #[doc = "Bit 16 - Wait State for High-Frequency LE Interface"]
-    #[inline]
-    pub fn wshfle(&mut self) -> _WSHFLEW {
-        _WSHFLEW { w: self }
+    #[inline(always)]
+    pub fn wshfle(&mut self) -> WSHFLE_W {
+        WSHFLE_W { w: self }
     }
     #[doc = "Bit 20 - HFPERCLK Enable"]
-    #[inline]
-    pub fn hfperclken(&mut self) -> _HFPERCLKENW {
-        _HFPERCLKENW { w: self }
+    #[inline(always)]
+    pub fn hfperclken(&mut self) -> HFPERCLKEN_W {
+        HFPERCLKEN_W { w: self }
     }
 }

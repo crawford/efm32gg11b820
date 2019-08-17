@@ -1,700 +1,158 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH0ENSR {
-    bits: bool,
-}
-impl CH0ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH1ENSR {
-    bits: bool,
-}
-impl CH1ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH0BLR {
-    bits: bool,
-}
-impl CH0BLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH1BLR {
-    bits: bool,
-}
-impl CH1BLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH0WARMR {
-    bits: bool,
-}
-impl CH0WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH1WARMR {
-    bits: bool,
-}
-impl CH1WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA0APORTCONFLICTR {
-    bits: bool,
-}
-impl OPA0APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA1APORTCONFLICTR {
-    bits: bool,
-}
-impl OPA1APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA2APORTCONFLICTR {
-    bits: bool,
-}
-impl OPA2APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA3APORTCONFLICTR {
-    bits: bool,
-}
-impl OPA3APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA0ENSR {
-    bits: bool,
-}
-impl OPA0ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA1ENSR {
-    bits: bool,
-}
-impl OPA1ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA2ENSR {
-    bits: bool,
-}
-impl OPA2ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA3ENSR {
-    bits: bool,
-}
-impl OPA3ENSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA0WARMR {
-    bits: bool,
-}
-impl OPA0WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA1WARMR {
-    bits: bool,
-}
-impl OPA1WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA2WARMR {
-    bits: bool,
-}
-impl OPA2WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA3WARMR {
-    bits: bool,
-}
-impl OPA3WARMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA0OUTVALIDR {
-    bits: bool,
-}
-impl OPA0OUTVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA1OUTVALIDR {
-    bits: bool,
-}
-impl OPA1OUTVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA2OUTVALIDR {
-    bits: bool,
-}
-impl OPA2OUTVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OPA3OUTVALIDR {
-    bits: bool,
-}
-impl OPA3OUTVALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Reader of field `CH0ENS`"]
+pub type CH0ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CH1ENS`"]
+pub type CH1ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CH0BL`"]
+pub type CH0BL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CH1BL`"]
+pub type CH1BL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CH0WARM`"]
+pub type CH0WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CH1WARM`"]
+pub type CH1WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA0APORTCONFLICT`"]
+pub type OPA0APORTCONFLICT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA1APORTCONFLICT`"]
+pub type OPA1APORTCONFLICT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA2APORTCONFLICT`"]
+pub type OPA2APORTCONFLICT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA3APORTCONFLICT`"]
+pub type OPA3APORTCONFLICT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA0ENS`"]
+pub type OPA0ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA1ENS`"]
+pub type OPA1ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA2ENS`"]
+pub type OPA2ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA3ENS`"]
+pub type OPA3ENS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA0WARM`"]
+pub type OPA0WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA1WARM`"]
+pub type OPA1WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA2WARM`"]
+pub type OPA2WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA3WARM`"]
+pub type OPA3WARM_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA0OUTVALID`"]
+pub type OPA0OUTVALID_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA1OUTVALID`"]
+pub type OPA1OUTVALID_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA2OUTVALID`"]
+pub type OPA2OUTVALID_R = crate::R<bool, bool>;
+#[doc = "Reader of field `OPA3OUTVALID`"]
+pub type OPA3OUTVALID_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Channel 0 Enabled Status"]
-    #[inline]
-    pub fn ch0ens(&self) -> CH0ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH0ENSR { bits }
+    #[inline(always)]
+    pub fn ch0ens(&self) -> CH0ENS_R {
+        CH0ENS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Enabled Status"]
-    #[inline]
-    pub fn ch1ens(&self) -> CH1ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH1ENSR { bits }
+    #[inline(always)]
+    pub fn ch1ens(&self) -> CH1ENS_R {
+        CH1ENS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Channel 0 Buffer Level"]
-    #[inline]
-    pub fn ch0bl(&self) -> CH0BLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH0BLR { bits }
+    #[inline(always)]
+    pub fn ch0bl(&self) -> CH0BL_R {
+        CH0BL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Channel 1 Buffer Level"]
-    #[inline]
-    pub fn ch1bl(&self) -> CH1BLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH1BLR { bits }
+    #[inline(always)]
+    pub fn ch1bl(&self) -> CH1BL_R {
+        CH1BL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Channel 0 Warm"]
-    #[inline]
-    pub fn ch0warm(&self) -> CH0WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH0WARMR { bits }
+    #[inline(always)]
+    pub fn ch0warm(&self) -> CH0WARM_R {
+        CH0WARM_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Channel 1 Warm"]
-    #[inline]
-    pub fn ch1warm(&self) -> CH1WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CH1WARMR { bits }
+    #[inline(always)]
+    pub fn ch1warm(&self) -> CH1WARM_R {
+        CH1WARM_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 16 - OPA0 Bus Conflict Output"]
-    #[inline]
-    pub fn opa0aportconflict(&self) -> OPA0APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA0APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn opa0aportconflict(&self) -> OPA0APORTCONFLICT_R {
+        OPA0APORTCONFLICT_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - OPA1 Bus Conflict Output"]
-    #[inline]
-    pub fn opa1aportconflict(&self) -> OPA1APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA1APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn opa1aportconflict(&self) -> OPA1APORTCONFLICT_R {
+        OPA1APORTCONFLICT_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - OPA2 Bus Conflict Output"]
-    #[inline]
-    pub fn opa2aportconflict(&self) -> OPA2APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA2APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn opa2aportconflict(&self) -> OPA2APORTCONFLICT_R {
+        OPA2APORTCONFLICT_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - OPA3 Bus Conflict Output"]
-    #[inline]
-    pub fn opa3aportconflict(&self) -> OPA3APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA3APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn opa3aportconflict(&self) -> OPA3APORTCONFLICT_R {
+        OPA3APORTCONFLICT_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - OPA0 Enabled Status"]
-    #[inline]
-    pub fn opa0ens(&self) -> OPA0ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA0ENSR { bits }
+    #[inline(always)]
+    pub fn opa0ens(&self) -> OPA0ENS_R {
+        OPA0ENS_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - OPA1 Enabled Status"]
-    #[inline]
-    pub fn opa1ens(&self) -> OPA1ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA1ENSR { bits }
+    #[inline(always)]
+    pub fn opa1ens(&self) -> OPA1ENS_R {
+        OPA1ENS_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - OPA2 Enabled Status"]
-    #[inline]
-    pub fn opa2ens(&self) -> OPA2ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA2ENSR { bits }
+    #[inline(always)]
+    pub fn opa2ens(&self) -> OPA2ENS_R {
+        OPA2ENS_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - OPA3 Enabled Status"]
-    #[inline]
-    pub fn opa3ens(&self) -> OPA3ENSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA3ENSR { bits }
+    #[inline(always)]
+    pub fn opa3ens(&self) -> OPA3ENS_R {
+        OPA3ENS_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - OPA0 Warm Status"]
-    #[inline]
-    pub fn opa0warm(&self) -> OPA0WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA0WARMR { bits }
+    #[inline(always)]
+    pub fn opa0warm(&self) -> OPA0WARM_R {
+        OPA0WARM_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - OPA1 Warm Status"]
-    #[inline]
-    pub fn opa1warm(&self) -> OPA1WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA1WARMR { bits }
+    #[inline(always)]
+    pub fn opa1warm(&self) -> OPA1WARM_R {
+        OPA1WARM_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - OPA2 Warm Status"]
-    #[inline]
-    pub fn opa2warm(&self) -> OPA2WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA2WARMR { bits }
+    #[inline(always)]
+    pub fn opa2warm(&self) -> OPA2WARM_R {
+        OPA2WARM_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - OPA3 Warm Status"]
-    #[inline]
-    pub fn opa3warm(&self) -> OPA3WARMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA3WARMR { bits }
+    #[inline(always)]
+    pub fn opa3warm(&self) -> OPA3WARM_R {
+        OPA3WARM_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - OPA0 Output Valid Status"]
-    #[inline]
-    pub fn opa0outvalid(&self) -> OPA0OUTVALIDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA0OUTVALIDR { bits }
+    #[inline(always)]
+    pub fn opa0outvalid(&self) -> OPA0OUTVALID_R {
+        OPA0OUTVALID_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - OPA1 Output Valid Status"]
-    #[inline]
-    pub fn opa1outvalid(&self) -> OPA1OUTVALIDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA1OUTVALIDR { bits }
+    #[inline(always)]
+    pub fn opa1outvalid(&self) -> OPA1OUTVALID_R {
+        OPA1OUTVALID_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - OPA2 Output Valid Status"]
-    #[inline]
-    pub fn opa2outvalid(&self) -> OPA2OUTVALIDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA2OUTVALIDR { bits }
+    #[inline(always)]
+    pub fn opa2outvalid(&self) -> OPA2OUTVALID_R {
+        OPA2OUTVALID_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - OPA3 Output Valid Status"]
-    #[inline]
-    pub fn opa3outvalid(&self) -> OPA3OUTVALIDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OPA3OUTVALIDR { bits }
+    #[inline(always)]
+    pub fn opa3outvalid(&self) -> OPA3OUTVALID_R {
+        OPA3OUTVALID_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

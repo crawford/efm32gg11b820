@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `TSUCLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSUCLKSELR {
+pub enum TSUCLKSEL_A {
     #[doc = "No TSU clock source selected"]
     NOCLOCK,
     #[doc = "Select system clock as TSU Clock"]
@@ -53,382 +23,241 @@ pub enum TSUCLKSELR {
     REFCLK,
     #[doc = "Select tsu external pin as TSU Clock"]
     TSUEXTCLK,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TSUCLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for TSUCLKSEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            TSUCLKSELR::NOCLOCK => 0,
-            TSUCLKSELR::PLL => 1,
-            TSUCLKSELR::RXCLK => 2,
-            TSUCLKSELR::REFCLK => 3,
-            TSUCLKSELR::TSUEXTCLK => 4,
-            TSUCLKSELR::_Reserved(bits) => bits,
+            TSUCLKSEL_A::NOCLOCK => 0,
+            TSUCLKSEL_A::PLL => 1,
+            TSUCLKSEL_A::RXCLK => 2,
+            TSUCLKSEL_A::REFCLK => 3,
+            TSUCLKSEL_A::TSUEXTCLK => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSUCLKSELR {
-        match value {
-            0 => TSUCLKSELR::NOCLOCK,
-            1 => TSUCLKSELR::PLL,
-            2 => TSUCLKSELR::RXCLK,
-            3 => TSUCLKSELR::REFCLK,
-            4 => TSUCLKSELR::TSUEXTCLK,
-            i => TSUCLKSELR::_Reserved(i),
+}
+#[doc = "Reader of field `TSUCLKSEL`"]
+pub type TSUCLKSEL_R = crate::R<u8, TSUCLKSEL_A>;
+impl TSUCLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TSUCLKSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TSUCLKSEL_A::NOCLOCK),
+            1 => Val(TSUCLKSEL_A::PLL),
+            2 => Val(TSUCLKSEL_A::RXCLK),
+            3 => Val(TSUCLKSEL_A::REFCLK),
+            4 => Val(TSUCLKSEL_A::TSUEXTCLK),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOCLOCK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noclock(&self) -> bool {
-        *self == TSUCLKSELR::NOCLOCK
+        *self == TSUCLKSEL_A::NOCLOCK
     }
     #[doc = "Checks if the value of the field is `PLL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pll(&self) -> bool {
-        *self == TSUCLKSELR::PLL
+        *self == TSUCLKSEL_A::PLL
     }
     #[doc = "Checks if the value of the field is `RXCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxclk(&self) -> bool {
-        *self == TSUCLKSELR::RXCLK
+        *self == TSUCLKSEL_A::RXCLK
     }
     #[doc = "Checks if the value of the field is `REFCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_refclk(&self) -> bool {
-        *self == TSUCLKSELR::REFCLK
+        *self == TSUCLKSEL_A::REFCLK
     }
     #[doc = "Checks if the value of the field is `TSUEXTCLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsuextclk(&self) -> bool {
-        *self == TSUCLKSELR::TSUEXTCLK
+        *self == TSUCLKSEL_A::TSUEXTCLK
     }
 }
-#[doc = r" Value of the field"]
-pub struct TSUPRESCR {
-    bits: u8,
-}
-impl TSUPRESCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MIISELR {
-    bits: bool,
-}
-impl MIISELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GBLCLKENR {
-    bits: bool,
-}
-impl GBLCLKENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXREFCLKSELR {
-    bits: bool,
-}
-impl TXREFCLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `TSUCLKSEL`"]
-pub enum TSUCLKSELW {
-    #[doc = "No TSU clock source selected"]
-    NOCLOCK,
-    #[doc = "Select system clock as TSU Clock"]
-    PLL,
-    #[doc = "Select ethernet RX Clock as TSU Clock"]
-    RXCLK,
-    #[doc = "Select ref clock as TSU Clock"]
-    REFCLK,
-    #[doc = "Select tsu external pin as TSU Clock"]
-    TSUEXTCLK,
-}
-impl TSUCLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TSUCLKSELW::NOCLOCK => 0,
-            TSUCLKSELW::PLL => 1,
-            TSUCLKSELW::RXCLK => 2,
-            TSUCLKSELW::REFCLK => 3,
-            TSUCLKSELW::TSUEXTCLK => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSUCLKSELW<'a> {
+#[doc = "Write proxy for field `TSUCLKSEL`"]
+pub struct TSUCLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TSUCLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSUCLKSELW) -> &'a mut W {
+impl<'a> TSUCLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSUCLKSEL_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "No TSU clock source selected"]
-    #[inline]
+    #[inline(always)]
     pub fn noclock(self) -> &'a mut W {
-        self.variant(TSUCLKSELW::NOCLOCK)
+        self.variant(TSUCLKSEL_A::NOCLOCK)
     }
     #[doc = "Select system clock as TSU Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn pll(self) -> &'a mut W {
-        self.variant(TSUCLKSELW::PLL)
+        self.variant(TSUCLKSEL_A::PLL)
     }
     #[doc = "Select ethernet RX Clock as TSU Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn rxclk(self) -> &'a mut W {
-        self.variant(TSUCLKSELW::RXCLK)
+        self.variant(TSUCLKSEL_A::RXCLK)
     }
     #[doc = "Select ref clock as TSU Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn refclk(self) -> &'a mut W {
-        self.variant(TSUCLKSELW::REFCLK)
+        self.variant(TSUCLKSEL_A::REFCLK)
     }
     #[doc = "Select tsu external pin as TSU Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn tsuextclk(self) -> &'a mut W {
-        self.variant(TSUCLKSELW::TSUEXTCLK)
+        self.variant(TSUCLKSEL_A::TSUEXTCLK)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TSUPRESCW<'a> {
+#[doc = "Reader of field `TSUPRESC`"]
+pub type TSUPRESC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TSUPRESC`"]
+pub struct TSUPRESC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TSUPRESCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TSUPRESC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MIISELW<'a> {
+#[doc = "Reader of field `MIISEL`"]
+pub type MIISEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MIISEL`"]
+pub struct MIISEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MIISELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MIISEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _GBLCLKENW<'a> {
+#[doc = "Reader of field `GBLCLKEN`"]
+pub type GBLCLKEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `GBLCLKEN`"]
+pub struct GBLCLKEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GBLCLKENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> GBLCLKEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXREFCLKSELW<'a> {
+#[doc = "Reader of field `TXREFCLKSEL`"]
+pub type TXREFCLKSEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXREFCLKSEL`"]
+pub struct TXREFCLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXREFCLKSELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXREFCLKSEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - TSU Clock selection value"]
-    #[inline]
-    pub fn tsuclksel(&self) -> TSUCLKSELR {
-        TSUCLKSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tsuclksel(&self) -> TSUCLKSEL_R {
+        TSUCLKSEL_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:7 - Clock division factor of TSUPRESC+1"]
-    #[inline]
-    pub fn tsupresc(&self) -> TSUPRESCR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TSUPRESCR { bits }
+    #[inline(always)]
+    pub fn tsupresc(&self) -> TSUPRESC_R {
+        TSUPRESC_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bit 8 - MII select signal"]
-    #[inline]
-    pub fn miisel(&self) -> MIISELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MIISELR { bits }
+    #[inline(always)]
+    pub fn miisel(&self) -> MIISEL_R {
+        MIISEL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Global Clock Enable signal for Ethernet clocks tsu_clk, tx_clk, rx_clk and ref_clk"]
-    #[inline]
-    pub fn gblclken(&self) -> GBLCLKENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        GBLCLKENR { bits }
+    #[inline(always)]
+    pub fn gblclken(&self) -> GBLCLKEN_R {
+        GBLCLKEN_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - REFCLK source select for RMII_TXD and RMII_TX_EN"]
-    #[inline]
-    pub fn txrefclksel(&self) -> TXREFCLKSELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXREFCLKSELR { bits }
+    #[inline(always)]
+    pub fn txrefclksel(&self) -> TXREFCLKSEL_R {
+        TXREFCLKSEL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - TSU Clock selection value"]
-    #[inline]
-    pub fn tsuclksel(&mut self) -> _TSUCLKSELW {
-        _TSUCLKSELW { w: self }
+    #[inline(always)]
+    pub fn tsuclksel(&mut self) -> TSUCLKSEL_W {
+        TSUCLKSEL_W { w: self }
     }
     #[doc = "Bits 4:7 - Clock division factor of TSUPRESC+1"]
-    #[inline]
-    pub fn tsupresc(&mut self) -> _TSUPRESCW {
-        _TSUPRESCW { w: self }
+    #[inline(always)]
+    pub fn tsupresc(&mut self) -> TSUPRESC_W {
+        TSUPRESC_W { w: self }
     }
     #[doc = "Bit 8 - MII select signal"]
-    #[inline]
-    pub fn miisel(&mut self) -> _MIISELW {
-        _MIISELW { w: self }
+    #[inline(always)]
+    pub fn miisel(&mut self) -> MIISEL_W {
+        MIISEL_W { w: self }
     }
     #[doc = "Bit 9 - Global Clock Enable signal for Ethernet clocks tsu_clk, tx_clk, rx_clk and ref_clk"]
-    #[inline]
-    pub fn gblclken(&mut self) -> _GBLCLKENW {
-        _GBLCLKENW { w: self }
+    #[inline(always)]
+    pub fn gblclken(&mut self) -> GBLCLKEN_W {
+        GBLCLKEN_W { w: self }
     }
     #[doc = "Bit 10 - REFCLK source select for RMII_TXD and RMII_TX_EN"]
-    #[inline]
-    pub fn txrefclksel(&mut self) -> _TXREFCLKSELW {
-        _TXREFCLKSELW { w: self }
+    #[inline(always)]
+    pub fn txrefclksel(&mut self) -> TXREFCLKSEL_W {
+        TXREFCLKSEL_W { w: self }
     }
 }

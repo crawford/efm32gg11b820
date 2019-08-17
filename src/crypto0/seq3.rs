@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEQ3 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SEQ3"]
+pub type R = crate::R<u32, super::SEQ3>;
+#[doc = "Writer for register SEQ3"]
+pub type W = crate::W<u32, super::SEQ3>;
+#[doc = "Register SEQ3 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEQ3 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INSTR12R {
-    bits: u8,
-}
-impl INSTR12R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR13R {
-    bits: u8,
-}
-impl INSTR13R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR14R {
-    bits: u8,
-}
-impl INSTR14R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INSTR15R {
-    bits: u8,
-}
-impl INSTR15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INSTR12W<'a> {
+#[doc = "Reader of field `INSTR12`"]
+pub type INSTR12_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR12`"]
+pub struct INSTR12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR12W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR12_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR13W<'a> {
+#[doc = "Reader of field `INSTR13`"]
+pub type INSTR13_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR13`"]
+pub struct INSTR13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR13W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR13_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR14W<'a> {
+#[doc = "Reader of field `INSTR14`"]
+pub type INSTR14_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR14`"]
+pub struct INSTR14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR14W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR14_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INSTR15W<'a> {
+#[doc = "Reader of field `INSTR15`"]
+pub type INSTR15_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INSTR15`"]
+pub struct INSTR15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INSTR15W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INSTR15_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Sequence Instruction 12"]
-    #[inline]
-    pub fn instr12(&self) -> INSTR12R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR12R { bits }
+    #[inline(always)]
+    pub fn instr12(&self) -> INSTR12_R {
+        INSTR12_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Sequence Instruction 13"]
-    #[inline]
-    pub fn instr13(&self) -> INSTR13R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR13R { bits }
+    #[inline(always)]
+    pub fn instr13(&self) -> INSTR13_R {
+        INSTR13_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Sequence Instruction 14"]
-    #[inline]
-    pub fn instr14(&self) -> INSTR14R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR14R { bits }
+    #[inline(always)]
+    pub fn instr14(&self) -> INSTR14_R {
+        INSTR14_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Sequence Instruction 15"]
-    #[inline]
-    pub fn instr15(&self) -> INSTR15R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INSTR15R { bits }
+    #[inline(always)]
+    pub fn instr15(&self) -> INSTR15_R {
+        INSTR15_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Sequence Instruction 12"]
-    #[inline]
-    pub fn instr12(&mut self) -> _INSTR12W {
-        _INSTR12W { w: self }
+    #[inline(always)]
+    pub fn instr12(&mut self) -> INSTR12_W {
+        INSTR12_W { w: self }
     }
     #[doc = "Bits 8:15 - Sequence Instruction 13"]
-    #[inline]
-    pub fn instr13(&mut self) -> _INSTR13W {
-        _INSTR13W { w: self }
+    #[inline(always)]
+    pub fn instr13(&mut self) -> INSTR13_W {
+        INSTR13_W { w: self }
     }
     #[doc = "Bits 16:23 - Sequence Instruction 14"]
-    #[inline]
-    pub fn instr14(&mut self) -> _INSTR14W {
-        _INSTR14W { w: self }
+    #[inline(always)]
+    pub fn instr14(&mut self) -> INSTR14_W {
+        INSTR14_W { w: self }
     }
     #[doc = "Bits 24:31 - Sequence Instruction 15"]
-    #[inline]
-    pub fn instr15(&mut self) -> _INSTR15W {
-        _INSTR15W { w: self }
+    #[inline(always)]
+    pub fn instr15(&mut self) -> INSTR15_W {
+        INSTR15_W { w: self }
     }
 }

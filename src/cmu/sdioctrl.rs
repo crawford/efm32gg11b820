@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SDIOCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SDIOCTRL"]
+pub type R = crate::R<u32, super::SDIOCTRL>;
+#[doc = "Writer for register SDIOCTRL"]
+pub type W = crate::W<u32, super::SDIOCTRL>;
+#[doc = "Register SDIOCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::SDIOCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `SDIOCLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDIOCLKSELR {
+pub enum SDIOCLKSEL_A {
     #[doc = "HFRCO clock is used to clock SDIO"]
     HFRCO,
     #[doc = "HFXO clock is used to clock SDIO"]
@@ -52,206 +22,137 @@ pub enum SDIOCLKSELR {
     #[doc = "USHFRCO is used to clock SDIO"]
     USHFRCO,
 }
-impl SDIOCLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SDIOCLKSEL_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SDIOCLKSELR::HFRCO => 0,
-            SDIOCLKSELR::HFXO => 1,
-            SDIOCLKSELR::AUXHFRCO => 2,
-            SDIOCLKSELR::USHFRCO => 3,
+            SDIOCLKSEL_A::HFRCO => 0,
+            SDIOCLKSEL_A::HFXO => 1,
+            SDIOCLKSEL_A::AUXHFRCO => 2,
+            SDIOCLKSEL_A::USHFRCO => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SDIOCLKSELR {
-        match value {
-            0 => SDIOCLKSELR::HFRCO,
-            1 => SDIOCLKSELR::HFXO,
-            2 => SDIOCLKSELR::AUXHFRCO,
-            3 => SDIOCLKSELR::USHFRCO,
+}
+#[doc = "Reader of field `SDIOCLKSEL`"]
+pub type SDIOCLKSEL_R = crate::R<u8, SDIOCLKSEL_A>;
+impl SDIOCLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDIOCLKSEL_A {
+        match self.bits {
+            0 => SDIOCLKSEL_A::HFRCO,
+            1 => SDIOCLKSEL_A::HFXO,
+            2 => SDIOCLKSEL_A::AUXHFRCO,
+            3 => SDIOCLKSEL_A::USHFRCO,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `HFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfrco(&self) -> bool {
-        *self == SDIOCLKSELR::HFRCO
+        *self == SDIOCLKSEL_A::HFRCO
     }
     #[doc = "Checks if the value of the field is `HFXO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
-        *self == SDIOCLKSELR::HFXO
+        *self == SDIOCLKSEL_A::HFXO
     }
     #[doc = "Checks if the value of the field is `AUXHFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_auxhfrco(&self) -> bool {
-        *self == SDIOCLKSELR::AUXHFRCO
+        *self == SDIOCLKSEL_A::AUXHFRCO
     }
     #[doc = "Checks if the value of the field is `USHFRCO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ushfrco(&self) -> bool {
-        *self == SDIOCLKSELR::USHFRCO
+        *self == SDIOCLKSEL_A::USHFRCO
     }
 }
-#[doc = r" Value of the field"]
-pub struct SDIOCLKDISR {
-    bits: bool,
-}
-impl SDIOCLKDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `SDIOCLKSEL`"]
-pub enum SDIOCLKSELW {
-    #[doc = "HFRCO clock is used to clock SDIO"]
-    HFRCO,
-    #[doc = "HFXO clock is used to clock SDIO"]
-    HFXO,
-    #[doc = "AUXHFRCO is used to clock SDIO"]
-    AUXHFRCO,
-    #[doc = "USHFRCO is used to clock SDIO"]
-    USHFRCO,
-}
-impl SDIOCLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SDIOCLKSELW::HFRCO => 0,
-            SDIOCLKSELW::HFXO => 1,
-            SDIOCLKSELW::AUXHFRCO => 2,
-            SDIOCLKSELW::USHFRCO => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDIOCLKSELW<'a> {
+#[doc = "Write proxy for field `SDIOCLKSEL`"]
+pub struct SDIOCLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDIOCLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SDIOCLKSELW) -> &'a mut W {
+impl<'a> SDIOCLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SDIOCLKSEL_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "HFRCO clock is used to clock SDIO"]
-    #[inline]
+    #[inline(always)]
     pub fn hfrco(self) -> &'a mut W {
-        self.variant(SDIOCLKSELW::HFRCO)
+        self.variant(SDIOCLKSEL_A::HFRCO)
     }
     #[doc = "HFXO clock is used to clock SDIO"]
-    #[inline]
+    #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
-        self.variant(SDIOCLKSELW::HFXO)
+        self.variant(SDIOCLKSEL_A::HFXO)
     }
     #[doc = "AUXHFRCO is used to clock SDIO"]
-    #[inline]
+    #[inline(always)]
     pub fn auxhfrco(self) -> &'a mut W {
-        self.variant(SDIOCLKSELW::AUXHFRCO)
+        self.variant(SDIOCLKSEL_A::AUXHFRCO)
     }
     #[doc = "USHFRCO is used to clock SDIO"]
-    #[inline]
+    #[inline(always)]
     pub fn ushfrco(self) -> &'a mut W {
-        self.variant(SDIOCLKSELW::USHFRCO)
+        self.variant(SDIOCLKSEL_A::USHFRCO)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SDIOCLKDISW<'a> {
+#[doc = "Reader of field `SDIOCLKDIS`"]
+pub type SDIOCLKDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SDIOCLKDIS`"]
+pub struct SDIOCLKDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDIOCLKDISW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SDIOCLKDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - SDIO Reference Clock Select"]
-    #[inline]
-    pub fn sdioclksel(&self) -> SDIOCLKSELR {
-        SDIOCLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sdioclksel(&self) -> SDIOCLKSEL_R {
+        SDIOCLKSEL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 7 - SDIO Reference Clock Disable"]
-    #[inline]
-    pub fn sdioclkdis(&self) -> SDIOCLKDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SDIOCLKDISR { bits }
+    #[inline(always)]
+    pub fn sdioclkdis(&self) -> SDIOCLKDIS_R {
+        SDIOCLKDIS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - SDIO Reference Clock Select"]
-    #[inline]
-    pub fn sdioclksel(&mut self) -> _SDIOCLKSELW {
-        _SDIOCLKSELW { w: self }
+    #[inline(always)]
+    pub fn sdioclksel(&mut self) -> SDIOCLKSEL_W {
+        SDIOCLKSEL_W { w: self }
     }
     #[doc = "Bit 7 - SDIO Reference Clock Disable"]
-    #[inline]
-    pub fn sdioclkdis(&mut self) -> _SDIOCLKDISW {
-        _SDIOCLKDISW { w: self }
+    #[inline(always)]
+    pub fn sdioclkdis(&mut self) -> SDIOCLKDIS_W {
+        SDIOCLKDIS_W { w: self }
     }
 }

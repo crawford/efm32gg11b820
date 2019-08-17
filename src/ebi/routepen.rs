@@ -1,237 +1,234 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ROUTEPEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ROUTEPEN"]
+pub type R = crate::R<u32, super::ROUTEPEN>;
+#[doc = "Writer for register ROUTEPEN"]
+pub type W = crate::W<u32, super::ROUTEPEN>;
+#[doc = "Register ROUTEPEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::ROUTEPEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct EBIPENR {
-    bits: bool,
+#[doc = "Reader of field `EBIPEN`"]
+pub type EBIPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EBIPEN`"]
+pub struct EBIPEN_W<'a> {
+    w: &'a mut W,
 }
-impl EBIPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> EBIPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CS0PENR {
-    bits: bool,
-}
-impl CS0PENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct CS1PENR {
-    bits: bool,
+#[doc = "Reader of field `CS0PEN`"]
+pub type CS0PEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CS0PEN`"]
+pub struct CS0PEN_W<'a> {
+    w: &'a mut W,
 }
-impl CS1PENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> CS0PEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CS2PENR {
-    bits: bool,
-}
-impl CS2PENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct CS3PENR {
-    bits: bool,
+#[doc = "Reader of field `CS1PEN`"]
+pub type CS1PEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CS1PEN`"]
+pub struct CS1PEN_W<'a> {
+    w: &'a mut W,
 }
-impl CS3PENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> CS1PEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALEPENR {
-    bits: bool,
-}
-impl ALEPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct ARDYPENR {
-    bits: bool,
+#[doc = "Reader of field `CS2PEN`"]
+pub type CS2PEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CS2PEN`"]
+pub struct CS2PEN_W<'a> {
+    w: &'a mut W,
 }
-impl ARDYPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> CS2PEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BLPENR {
-    bits: bool,
-}
-impl BLPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct NANDPENR {
-    bits: bool,
+#[doc = "Reader of field `CS3PEN`"]
+pub type CS3PEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CS3PEN`"]
+pub struct CS3PEN_W<'a> {
+    w: &'a mut W,
 }
-impl NANDPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> CS3PEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Reader of field `ALEPEN`"]
+pub type ALEPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ALEPEN`"]
+pub struct ALEPEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ALEPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Reader of field `ARDYPEN`"]
+pub type ARDYPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ARDYPEN`"]
+pub struct ARDYPEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ARDYPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
+    }
+}
+#[doc = "Reader of field `BLPEN`"]
+pub type BLPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `BLPEN`"]
+pub struct BLPEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BLPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
+#[doc = "Reader of field `NANDPEN`"]
+pub type NANDPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `NANDPEN`"]
+pub struct NANDPEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> NANDPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ALB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALBR {
+pub enum ALB_A {
     #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
     A0,
     #[doc = "Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
@@ -241,636 +238,95 @@ pub enum ALBR {
     #[doc = "Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
     A24,
 }
-impl ALBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for ALB_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            ALBR::A0 => 0,
-            ALBR::A8 => 1,
-            ALBR::A16 => 2,
-            ALBR::A24 => 3,
+            ALB_A::A0 => 0,
+            ALB_A::A8 => 1,
+            ALB_A::A16 => 2,
+            ALB_A::A24 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ALBR {
-        match value {
-            0 => ALBR::A0,
-            1 => ALBR::A8,
-            2 => ALBR::A16,
-            3 => ALBR::A24,
+}
+#[doc = "Reader of field `ALB`"]
+pub type ALB_R = crate::R<u8, ALB_A>;
+impl ALB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALB_A {
+        match self.bits {
+            0 => ALB_A::A0,
+            1 => ALB_A::A8,
+            2 => ALB_A::A16,
+            3 => ALB_A::A24,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `A0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_a0(&self) -> bool {
-        *self == ALBR::A0
+        *self == ALB_A::A0
     }
     #[doc = "Checks if the value of the field is `A8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_a8(&self) -> bool {
-        *self == ALBR::A8
+        *self == ALB_A::A8
     }
     #[doc = "Checks if the value of the field is `A16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_a16(&self) -> bool {
-        *self == ALBR::A16
+        *self == ALB_A::A16
     }
     #[doc = "Checks if the value of the field is `A24`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_a24(&self) -> bool {
-        *self == ALBR::A24
+        *self == ALB_A::A24
     }
 }
-#[doc = "Possible values of the field `APEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum APENR {
-    #[doc = "All EBI_A pins are disabled."]
-    A0,
-    #[doc = "EBI_A\\[4:L\\] pins enabled."]
-    A5,
-    #[doc = "EBI_A\\[5:L\\] pins enabled."]
-    A6,
-    #[doc = "EBI_A\\[6:L\\] pins enabled."]
-    A7,
-    #[doc = "EBI_A\\[7:L\\] pins enabled."]
-    A8,
-    #[doc = "EBI_A\\[8:L\\] pins enabled."]
-    A9,
-    #[doc = "EBI_A\\[9:L\\] pins enabled."]
-    A10,
-    #[doc = "EBI_A\\[10:L\\] pins enabled."]
-    A11,
-    #[doc = "EBI_A\\[11:L\\] pins enabled."]
-    A12,
-    #[doc = "EBI_A\\[12:L\\] pins enabled."]
-    A13,
-    #[doc = "EBI_A\\[13:L\\] pins enabled."]
-    A14,
-    #[doc = "EBI_A\\[14:L\\] pins enabled."]
-    A15,
-    #[doc = "EBI_A\\[15:L\\] pins enabled."]
-    A16,
-    #[doc = "EBI_A\\[16:L\\] pins enabled."]
-    A17,
-    #[doc = "EBI_A\\[17:L\\] pins enabled."]
-    A18,
-    #[doc = "EBI_A\\[18:L\\] pins enabled."]
-    A19,
-    #[doc = "EBI_A\\[19:L\\] pins enabled."]
-    A20,
-    #[doc = "EBI_A\\[20:L\\] pins enabled."]
-    A21,
-    #[doc = "EBI_A\\[21:L\\] pins enabled."]
-    A22,
-    #[doc = "EBI_A\\[22:L\\] pins enabled."]
-    A23,
-    #[doc = "EBI_A\\[23:L\\] pins enabled."]
-    A24,
-    #[doc = "EBI_A\\[24:L\\] pins enabled."]
-    A25,
-    #[doc = "EBI_A\\[25:L\\] pins enabled."]
-    A26,
-    #[doc = "EBI_A\\[26:L\\] pins enabled."]
-    A27,
-    #[doc = "EBI_A\\[27:L\\] pins enabled."]
-    A28,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl APENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            APENR::A0 => 0,
-            APENR::A5 => 5,
-            APENR::A6 => 6,
-            APENR::A7 => 7,
-            APENR::A8 => 8,
-            APENR::A9 => 9,
-            APENR::A10 => 10,
-            APENR::A11 => 11,
-            APENR::A12 => 12,
-            APENR::A13 => 13,
-            APENR::A14 => 14,
-            APENR::A15 => 15,
-            APENR::A16 => 16,
-            APENR::A17 => 17,
-            APENR::A18 => 18,
-            APENR::A19 => 19,
-            APENR::A20 => 20,
-            APENR::A21 => 21,
-            APENR::A22 => 22,
-            APENR::A23 => 23,
-            APENR::A24 => 24,
-            APENR::A25 => 25,
-            APENR::A26 => 26,
-            APENR::A27 => 27,
-            APENR::A28 => 28,
-            APENR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> APENR {
-        match value {
-            0 => APENR::A0,
-            5 => APENR::A5,
-            6 => APENR::A6,
-            7 => APENR::A7,
-            8 => APENR::A8,
-            9 => APENR::A9,
-            10 => APENR::A10,
-            11 => APENR::A11,
-            12 => APENR::A12,
-            13 => APENR::A13,
-            14 => APENR::A14,
-            15 => APENR::A15,
-            16 => APENR::A16,
-            17 => APENR::A17,
-            18 => APENR::A18,
-            19 => APENR::A19,
-            20 => APENR::A20,
-            21 => APENR::A21,
-            22 => APENR::A22,
-            23 => APENR::A23,
-            24 => APENR::A24,
-            25 => APENR::A25,
-            26 => APENR::A26,
-            27 => APENR::A27,
-            28 => APENR::A28,
-            i => APENR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `A0`"]
-    #[inline]
-    pub fn is_a0(&self) -> bool {
-        *self == APENR::A0
-    }
-    #[doc = "Checks if the value of the field is `A5`"]
-    #[inline]
-    pub fn is_a5(&self) -> bool {
-        *self == APENR::A5
-    }
-    #[doc = "Checks if the value of the field is `A6`"]
-    #[inline]
-    pub fn is_a6(&self) -> bool {
-        *self == APENR::A6
-    }
-    #[doc = "Checks if the value of the field is `A7`"]
-    #[inline]
-    pub fn is_a7(&self) -> bool {
-        *self == APENR::A7
-    }
-    #[doc = "Checks if the value of the field is `A8`"]
-    #[inline]
-    pub fn is_a8(&self) -> bool {
-        *self == APENR::A8
-    }
-    #[doc = "Checks if the value of the field is `A9`"]
-    #[inline]
-    pub fn is_a9(&self) -> bool {
-        *self == APENR::A9
-    }
-    #[doc = "Checks if the value of the field is `A10`"]
-    #[inline]
-    pub fn is_a10(&self) -> bool {
-        *self == APENR::A10
-    }
-    #[doc = "Checks if the value of the field is `A11`"]
-    #[inline]
-    pub fn is_a11(&self) -> bool {
-        *self == APENR::A11
-    }
-    #[doc = "Checks if the value of the field is `A12`"]
-    #[inline]
-    pub fn is_a12(&self) -> bool {
-        *self == APENR::A12
-    }
-    #[doc = "Checks if the value of the field is `A13`"]
-    #[inline]
-    pub fn is_a13(&self) -> bool {
-        *self == APENR::A13
-    }
-    #[doc = "Checks if the value of the field is `A14`"]
-    #[inline]
-    pub fn is_a14(&self) -> bool {
-        *self == APENR::A14
-    }
-    #[doc = "Checks if the value of the field is `A15`"]
-    #[inline]
-    pub fn is_a15(&self) -> bool {
-        *self == APENR::A15
-    }
-    #[doc = "Checks if the value of the field is `A16`"]
-    #[inline]
-    pub fn is_a16(&self) -> bool {
-        *self == APENR::A16
-    }
-    #[doc = "Checks if the value of the field is `A17`"]
-    #[inline]
-    pub fn is_a17(&self) -> bool {
-        *self == APENR::A17
-    }
-    #[doc = "Checks if the value of the field is `A18`"]
-    #[inline]
-    pub fn is_a18(&self) -> bool {
-        *self == APENR::A18
-    }
-    #[doc = "Checks if the value of the field is `A19`"]
-    #[inline]
-    pub fn is_a19(&self) -> bool {
-        *self == APENR::A19
-    }
-    #[doc = "Checks if the value of the field is `A20`"]
-    #[inline]
-    pub fn is_a20(&self) -> bool {
-        *self == APENR::A20
-    }
-    #[doc = "Checks if the value of the field is `A21`"]
-    #[inline]
-    pub fn is_a21(&self) -> bool {
-        *self == APENR::A21
-    }
-    #[doc = "Checks if the value of the field is `A22`"]
-    #[inline]
-    pub fn is_a22(&self) -> bool {
-        *self == APENR::A22
-    }
-    #[doc = "Checks if the value of the field is `A23`"]
-    #[inline]
-    pub fn is_a23(&self) -> bool {
-        *self == APENR::A23
-    }
-    #[doc = "Checks if the value of the field is `A24`"]
-    #[inline]
-    pub fn is_a24(&self) -> bool {
-        *self == APENR::A24
-    }
-    #[doc = "Checks if the value of the field is `A25`"]
-    #[inline]
-    pub fn is_a25(&self) -> bool {
-        *self == APENR::A25
-    }
-    #[doc = "Checks if the value of the field is `A26`"]
-    #[inline]
-    pub fn is_a26(&self) -> bool {
-        *self == APENR::A26
-    }
-    #[doc = "Checks if the value of the field is `A27`"]
-    #[inline]
-    pub fn is_a27(&self) -> bool {
-        *self == APENR::A27
-    }
-    #[doc = "Checks if the value of the field is `A28`"]
-    #[inline]
-    pub fn is_a28(&self) -> bool {
-        *self == APENR::A28
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFTPENR {
-    bits: bool,
-}
-impl TFTPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATAENPENR {
-    bits: bool,
-}
-impl DATAENPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CSTFTPENR {
-    bits: bool,
-}
-impl CSTFTPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EBIPENW<'a> {
+#[doc = "Write proxy for field `ALB`"]
+pub struct ALB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EBIPENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CS0PENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CS0PENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CS1PENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CS1PENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CS2PENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CS2PENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CS3PENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CS3PENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ALEPENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ALEPENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ARDYPENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ARDYPENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BLPENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BLPENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NANDPENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NANDPENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ALB`"]
-pub enum ALBW {
-    #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
-    A0,
-    #[doc = "Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
-    A8,
-    #[doc = "Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
-    A16,
-    #[doc = "Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
-    A24,
-}
-impl ALBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ALBW::A0 => 0,
-            ALBW::A8 => 1,
-            ALBW::A16 => 2,
-            ALBW::A24 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ALBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ALBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALBW) -> &'a mut W {
+impl<'a> ALB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALB_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
-    #[inline]
+    #[inline(always)]
     pub fn a0(self) -> &'a mut W {
-        self.variant(ALBW::A0)
+        self.variant(ALB_A::A0)
     }
     #[doc = "Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
-    #[inline]
+    #[inline(always)]
     pub fn a8(self) -> &'a mut W {
-        self.variant(ALBW::A8)
+        self.variant(ALB_A::A8)
     }
     #[doc = "Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
-    #[inline]
+    #[inline(always)]
     pub fn a16(self) -> &'a mut W {
-        self.variant(ALBW::A16)
+        self.variant(ALB_A::A16)
     }
     #[doc = "Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
-    #[inline]
+    #[inline(always)]
     pub fn a24(self) -> &'a mut W {
-        self.variant(ALBW::A24)
+        self.variant(ALB_A::A24)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `APEN`"]
-pub enum APENW {
+#[doc = "Possible values of the field `APEN`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum APEN_A {
     #[doc = "All EBI_A pins are disabled."]
     A0,
     #[doc = "EBI_A\\[4:L\\] pins enabled."]
@@ -922,479 +378,556 @@ pub enum APENW {
     #[doc = "EBI_A\\[27:L\\] pins enabled."]
     A28,
 }
-impl APENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
+impl crate::ToBits<u8> for APEN_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            APENW::A0 => 0,
-            APENW::A5 => 5,
-            APENW::A6 => 6,
-            APENW::A7 => 7,
-            APENW::A8 => 8,
-            APENW::A9 => 9,
-            APENW::A10 => 10,
-            APENW::A11 => 11,
-            APENW::A12 => 12,
-            APENW::A13 => 13,
-            APENW::A14 => 14,
-            APENW::A15 => 15,
-            APENW::A16 => 16,
-            APENW::A17 => 17,
-            APENW::A18 => 18,
-            APENW::A19 => 19,
-            APENW::A20 => 20,
-            APENW::A21 => 21,
-            APENW::A22 => 22,
-            APENW::A23 => 23,
-            APENW::A24 => 24,
-            APENW::A25 => 25,
-            APENW::A26 => 26,
-            APENW::A27 => 27,
-            APENW::A28 => 28,
+            APEN_A::A0 => 0,
+            APEN_A::A5 => 5,
+            APEN_A::A6 => 6,
+            APEN_A::A7 => 7,
+            APEN_A::A8 => 8,
+            APEN_A::A9 => 9,
+            APEN_A::A10 => 10,
+            APEN_A::A11 => 11,
+            APEN_A::A12 => 12,
+            APEN_A::A13 => 13,
+            APEN_A::A14 => 14,
+            APEN_A::A15 => 15,
+            APEN_A::A16 => 16,
+            APEN_A::A17 => 17,
+            APEN_A::A18 => 18,
+            APEN_A::A19 => 19,
+            APEN_A::A20 => 20,
+            APEN_A::A21 => 21,
+            APEN_A::A22 => 22,
+            APEN_A::A23 => 23,
+            APEN_A::A24 => 24,
+            APEN_A::A25 => 25,
+            APEN_A::A26 => 26,
+            APEN_A::A27 => 27,
+            APEN_A::A28 => 28,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _APENW<'a> {
+#[doc = "Reader of field `APEN`"]
+pub type APEN_R = crate::R<u8, APEN_A>;
+impl APEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, APEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(APEN_A::A0),
+            5 => Val(APEN_A::A5),
+            6 => Val(APEN_A::A6),
+            7 => Val(APEN_A::A7),
+            8 => Val(APEN_A::A8),
+            9 => Val(APEN_A::A9),
+            10 => Val(APEN_A::A10),
+            11 => Val(APEN_A::A11),
+            12 => Val(APEN_A::A12),
+            13 => Val(APEN_A::A13),
+            14 => Val(APEN_A::A14),
+            15 => Val(APEN_A::A15),
+            16 => Val(APEN_A::A16),
+            17 => Val(APEN_A::A17),
+            18 => Val(APEN_A::A18),
+            19 => Val(APEN_A::A19),
+            20 => Val(APEN_A::A20),
+            21 => Val(APEN_A::A21),
+            22 => Val(APEN_A::A22),
+            23 => Val(APEN_A::A23),
+            24 => Val(APEN_A::A24),
+            25 => Val(APEN_A::A25),
+            26 => Val(APEN_A::A26),
+            27 => Val(APEN_A::A27),
+            28 => Val(APEN_A::A28),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `A0`"]
+    #[inline(always)]
+    pub fn is_a0(&self) -> bool {
+        *self == APEN_A::A0
+    }
+    #[doc = "Checks if the value of the field is `A5`"]
+    #[inline(always)]
+    pub fn is_a5(&self) -> bool {
+        *self == APEN_A::A5
+    }
+    #[doc = "Checks if the value of the field is `A6`"]
+    #[inline(always)]
+    pub fn is_a6(&self) -> bool {
+        *self == APEN_A::A6
+    }
+    #[doc = "Checks if the value of the field is `A7`"]
+    #[inline(always)]
+    pub fn is_a7(&self) -> bool {
+        *self == APEN_A::A7
+    }
+    #[doc = "Checks if the value of the field is `A8`"]
+    #[inline(always)]
+    pub fn is_a8(&self) -> bool {
+        *self == APEN_A::A8
+    }
+    #[doc = "Checks if the value of the field is `A9`"]
+    #[inline(always)]
+    pub fn is_a9(&self) -> bool {
+        *self == APEN_A::A9
+    }
+    #[doc = "Checks if the value of the field is `A10`"]
+    #[inline(always)]
+    pub fn is_a10(&self) -> bool {
+        *self == APEN_A::A10
+    }
+    #[doc = "Checks if the value of the field is `A11`"]
+    #[inline(always)]
+    pub fn is_a11(&self) -> bool {
+        *self == APEN_A::A11
+    }
+    #[doc = "Checks if the value of the field is `A12`"]
+    #[inline(always)]
+    pub fn is_a12(&self) -> bool {
+        *self == APEN_A::A12
+    }
+    #[doc = "Checks if the value of the field is `A13`"]
+    #[inline(always)]
+    pub fn is_a13(&self) -> bool {
+        *self == APEN_A::A13
+    }
+    #[doc = "Checks if the value of the field is `A14`"]
+    #[inline(always)]
+    pub fn is_a14(&self) -> bool {
+        *self == APEN_A::A14
+    }
+    #[doc = "Checks if the value of the field is `A15`"]
+    #[inline(always)]
+    pub fn is_a15(&self) -> bool {
+        *self == APEN_A::A15
+    }
+    #[doc = "Checks if the value of the field is `A16`"]
+    #[inline(always)]
+    pub fn is_a16(&self) -> bool {
+        *self == APEN_A::A16
+    }
+    #[doc = "Checks if the value of the field is `A17`"]
+    #[inline(always)]
+    pub fn is_a17(&self) -> bool {
+        *self == APEN_A::A17
+    }
+    #[doc = "Checks if the value of the field is `A18`"]
+    #[inline(always)]
+    pub fn is_a18(&self) -> bool {
+        *self == APEN_A::A18
+    }
+    #[doc = "Checks if the value of the field is `A19`"]
+    #[inline(always)]
+    pub fn is_a19(&self) -> bool {
+        *self == APEN_A::A19
+    }
+    #[doc = "Checks if the value of the field is `A20`"]
+    #[inline(always)]
+    pub fn is_a20(&self) -> bool {
+        *self == APEN_A::A20
+    }
+    #[doc = "Checks if the value of the field is `A21`"]
+    #[inline(always)]
+    pub fn is_a21(&self) -> bool {
+        *self == APEN_A::A21
+    }
+    #[doc = "Checks if the value of the field is `A22`"]
+    #[inline(always)]
+    pub fn is_a22(&self) -> bool {
+        *self == APEN_A::A22
+    }
+    #[doc = "Checks if the value of the field is `A23`"]
+    #[inline(always)]
+    pub fn is_a23(&self) -> bool {
+        *self == APEN_A::A23
+    }
+    #[doc = "Checks if the value of the field is `A24`"]
+    #[inline(always)]
+    pub fn is_a24(&self) -> bool {
+        *self == APEN_A::A24
+    }
+    #[doc = "Checks if the value of the field is `A25`"]
+    #[inline(always)]
+    pub fn is_a25(&self) -> bool {
+        *self == APEN_A::A25
+    }
+    #[doc = "Checks if the value of the field is `A26`"]
+    #[inline(always)]
+    pub fn is_a26(&self) -> bool {
+        *self == APEN_A::A26
+    }
+    #[doc = "Checks if the value of the field is `A27`"]
+    #[inline(always)]
+    pub fn is_a27(&self) -> bool {
+        *self == APEN_A::A27
+    }
+    #[doc = "Checks if the value of the field is `A28`"]
+    #[inline(always)]
+    pub fn is_a28(&self) -> bool {
+        *self == APEN_A::A28
+    }
+}
+#[doc = "Write proxy for field `APEN`"]
+pub struct APEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: APENW) -> &'a mut W {
+impl<'a> APEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: APEN_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "All EBI_A pins are disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a0(self) -> &'a mut W {
-        self.variant(APENW::A0)
+        self.variant(APEN_A::A0)
     }
     #[doc = "EBI_A\\[4:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a5(self) -> &'a mut W {
-        self.variant(APENW::A5)
+        self.variant(APEN_A::A5)
     }
     #[doc = "EBI_A\\[5:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a6(self) -> &'a mut W {
-        self.variant(APENW::A6)
+        self.variant(APEN_A::A6)
     }
     #[doc = "EBI_A\\[6:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a7(self) -> &'a mut W {
-        self.variant(APENW::A7)
+        self.variant(APEN_A::A7)
     }
     #[doc = "EBI_A\\[7:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a8(self) -> &'a mut W {
-        self.variant(APENW::A8)
+        self.variant(APEN_A::A8)
     }
     #[doc = "EBI_A\\[8:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a9(self) -> &'a mut W {
-        self.variant(APENW::A9)
+        self.variant(APEN_A::A9)
     }
     #[doc = "EBI_A\\[9:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a10(self) -> &'a mut W {
-        self.variant(APENW::A10)
+        self.variant(APEN_A::A10)
     }
     #[doc = "EBI_A\\[10:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a11(self) -> &'a mut W {
-        self.variant(APENW::A11)
+        self.variant(APEN_A::A11)
     }
     #[doc = "EBI_A\\[11:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a12(self) -> &'a mut W {
-        self.variant(APENW::A12)
+        self.variant(APEN_A::A12)
     }
     #[doc = "EBI_A\\[12:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a13(self) -> &'a mut W {
-        self.variant(APENW::A13)
+        self.variant(APEN_A::A13)
     }
     #[doc = "EBI_A\\[13:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a14(self) -> &'a mut W {
-        self.variant(APENW::A14)
+        self.variant(APEN_A::A14)
     }
     #[doc = "EBI_A\\[14:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a15(self) -> &'a mut W {
-        self.variant(APENW::A15)
+        self.variant(APEN_A::A15)
     }
     #[doc = "EBI_A\\[15:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a16(self) -> &'a mut W {
-        self.variant(APENW::A16)
+        self.variant(APEN_A::A16)
     }
     #[doc = "EBI_A\\[16:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a17(self) -> &'a mut W {
-        self.variant(APENW::A17)
+        self.variant(APEN_A::A17)
     }
     #[doc = "EBI_A\\[17:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a18(self) -> &'a mut W {
-        self.variant(APENW::A18)
+        self.variant(APEN_A::A18)
     }
     #[doc = "EBI_A\\[18:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a19(self) -> &'a mut W {
-        self.variant(APENW::A19)
+        self.variant(APEN_A::A19)
     }
     #[doc = "EBI_A\\[19:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a20(self) -> &'a mut W {
-        self.variant(APENW::A20)
+        self.variant(APEN_A::A20)
     }
     #[doc = "EBI_A\\[20:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a21(self) -> &'a mut W {
-        self.variant(APENW::A21)
+        self.variant(APEN_A::A21)
     }
     #[doc = "EBI_A\\[21:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a22(self) -> &'a mut W {
-        self.variant(APENW::A22)
+        self.variant(APEN_A::A22)
     }
     #[doc = "EBI_A\\[22:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a23(self) -> &'a mut W {
-        self.variant(APENW::A23)
+        self.variant(APEN_A::A23)
     }
     #[doc = "EBI_A\\[23:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a24(self) -> &'a mut W {
-        self.variant(APENW::A24)
+        self.variant(APEN_A::A24)
     }
     #[doc = "EBI_A\\[24:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a25(self) -> &'a mut W {
-        self.variant(APENW::A25)
+        self.variant(APEN_A::A25)
     }
     #[doc = "EBI_A\\[25:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a26(self) -> &'a mut W {
-        self.variant(APENW::A26)
+        self.variant(APEN_A::A26)
     }
     #[doc = "EBI_A\\[26:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a27(self) -> &'a mut W {
-        self.variant(APENW::A27)
+        self.variant(APEN_A::A27)
     }
     #[doc = "EBI_A\\[27:L\\] pins enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn a28(self) -> &'a mut W {
-        self.variant(APENW::A28)
+        self.variant(APEN_A::A28)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 18)) | (((value as u32) & 0x1f) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TFTPENW<'a> {
+#[doc = "Reader of field `TFTPEN`"]
+pub type TFTPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TFTPEN`"]
+pub struct TFTPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TFTPENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TFTPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATAENPENW<'a> {
+#[doc = "Reader of field `DATAENPEN`"]
+pub type DATAENPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DATAENPEN`"]
+pub struct DATAENPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATAENPENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DATAENPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CSTFTPENW<'a> {
+#[doc = "Reader of field `CSTFTPEN`"]
+pub type CSTFTPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CSTFTPEN`"]
+pub struct CSTFTPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CSTFTPENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CSTFTPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - EBI Pin Enable"]
-    #[inline]
-    pub fn ebipen(&self) -> EBIPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EBIPENR { bits }
+    #[inline(always)]
+    pub fn ebipen(&self) -> EBIPEN_R {
+        EBIPEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - EBI_CS0 Pin Enable"]
-    #[inline]
-    pub fn cs0pen(&self) -> CS0PENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CS0PENR { bits }
+    #[inline(always)]
+    pub fn cs0pen(&self) -> CS0PEN_R {
+        CS0PEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - EBI_CS1 Pin Enable"]
-    #[inline]
-    pub fn cs1pen(&self) -> CS1PENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CS1PENR { bits }
+    #[inline(always)]
+    pub fn cs1pen(&self) -> CS1PEN_R {
+        CS1PEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - EBI_CS2 Pin Enable"]
-    #[inline]
-    pub fn cs2pen(&self) -> CS2PENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CS2PENR { bits }
+    #[inline(always)]
+    pub fn cs2pen(&self) -> CS2PEN_R {
+        CS2PEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - EBI_CS3 Pin Enable"]
-    #[inline]
-    pub fn cs3pen(&self) -> CS3PENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CS3PENR { bits }
+    #[inline(always)]
+    pub fn cs3pen(&self) -> CS3PEN_R {
+        CS3PEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - EBI_ALE Pin Enable"]
-    #[inline]
-    pub fn alepen(&self) -> ALEPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALEPENR { bits }
+    #[inline(always)]
+    pub fn alepen(&self) -> ALEPEN_R {
+        ALEPEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - EBI_ARDY Pin Enable"]
-    #[inline]
-    pub fn ardypen(&self) -> ARDYPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ARDYPENR { bits }
+    #[inline(always)]
+    pub fn ardypen(&self) -> ARDYPEN_R {
+        ARDYPEN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - EBI_BL\\[1:0\\] Pin Enable"]
-    #[inline]
-    pub fn blpen(&self) -> BLPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BLPENR { bits }
+    #[inline(always)]
+    pub fn blpen(&self) -> BLPEN_R {
+        BLPEN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 12 - NANDRE and NANDWE Pin Enable"]
-    #[inline]
-    pub fn nandpen(&self) -> NANDPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NANDPENR { bits }
+    #[inline(always)]
+    pub fn nandpen(&self) -> NANDPEN_R {
+        NANDPEN_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bits 16:17 - Sets the Lower Bound for EBI_A Enabling"]
-    #[inline]
-    pub fn alb(&self) -> ALBR {
-        ALBR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn alb(&self) -> ALB_R {
+        ALB_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:22 - EBI_A Pin Enable"]
-    #[inline]
-    pub fn apen(&self) -> APENR {
-        APENR::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn apen(&self) -> APEN_R {
+        APEN_R::new(((self.bits >> 18) & 0x1f) as u8)
     }
     #[doc = "Bit 24 - EBI_TFT Pin Enable"]
-    #[inline]
-    pub fn tftpen(&self) -> TFTPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFTPENR { bits }
+    #[inline(always)]
+    pub fn tftpen(&self) -> TFTPEN_R {
+        TFTPEN_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - EBI_DATA Pin Enable"]
-    #[inline]
-    pub fn dataenpen(&self) -> DATAENPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DATAENPENR { bits }
+    #[inline(always)]
+    pub fn dataenpen(&self) -> DATAENPEN_R {
+        DATAENPEN_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - EBI_CSTFT Pin Enable"]
-    #[inline]
-    pub fn cstftpen(&self) -> CSTFTPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CSTFTPENR { bits }
+    #[inline(always)]
+    pub fn cstftpen(&self) -> CSTFTPEN_R {
+        CSTFTPEN_R::new(((self.bits >> 26) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - EBI Pin Enable"]
-    #[inline]
-    pub fn ebipen(&mut self) -> _EBIPENW {
-        _EBIPENW { w: self }
+    #[inline(always)]
+    pub fn ebipen(&mut self) -> EBIPEN_W {
+        EBIPEN_W { w: self }
     }
     #[doc = "Bit 1 - EBI_CS0 Pin Enable"]
-    #[inline]
-    pub fn cs0pen(&mut self) -> _CS0PENW {
-        _CS0PENW { w: self }
+    #[inline(always)]
+    pub fn cs0pen(&mut self) -> CS0PEN_W {
+        CS0PEN_W { w: self }
     }
     #[doc = "Bit 2 - EBI_CS1 Pin Enable"]
-    #[inline]
-    pub fn cs1pen(&mut self) -> _CS1PENW {
-        _CS1PENW { w: self }
+    #[inline(always)]
+    pub fn cs1pen(&mut self) -> CS1PEN_W {
+        CS1PEN_W { w: self }
     }
     #[doc = "Bit 3 - EBI_CS2 Pin Enable"]
-    #[inline]
-    pub fn cs2pen(&mut self) -> _CS2PENW {
-        _CS2PENW { w: self }
+    #[inline(always)]
+    pub fn cs2pen(&mut self) -> CS2PEN_W {
+        CS2PEN_W { w: self }
     }
     #[doc = "Bit 4 - EBI_CS3 Pin Enable"]
-    #[inline]
-    pub fn cs3pen(&mut self) -> _CS3PENW {
-        _CS3PENW { w: self }
+    #[inline(always)]
+    pub fn cs3pen(&mut self) -> CS3PEN_W {
+        CS3PEN_W { w: self }
     }
     #[doc = "Bit 5 - EBI_ALE Pin Enable"]
-    #[inline]
-    pub fn alepen(&mut self) -> _ALEPENW {
-        _ALEPENW { w: self }
+    #[inline(always)]
+    pub fn alepen(&mut self) -> ALEPEN_W {
+        ALEPEN_W { w: self }
     }
     #[doc = "Bit 6 - EBI_ARDY Pin Enable"]
-    #[inline]
-    pub fn ardypen(&mut self) -> _ARDYPENW {
-        _ARDYPENW { w: self }
+    #[inline(always)]
+    pub fn ardypen(&mut self) -> ARDYPEN_W {
+        ARDYPEN_W { w: self }
     }
     #[doc = "Bit 7 - EBI_BL\\[1:0\\] Pin Enable"]
-    #[inline]
-    pub fn blpen(&mut self) -> _BLPENW {
-        _BLPENW { w: self }
+    #[inline(always)]
+    pub fn blpen(&mut self) -> BLPEN_W {
+        BLPEN_W { w: self }
     }
     #[doc = "Bit 12 - NANDRE and NANDWE Pin Enable"]
-    #[inline]
-    pub fn nandpen(&mut self) -> _NANDPENW {
-        _NANDPENW { w: self }
+    #[inline(always)]
+    pub fn nandpen(&mut self) -> NANDPEN_W {
+        NANDPEN_W { w: self }
     }
     #[doc = "Bits 16:17 - Sets the Lower Bound for EBI_A Enabling"]
-    #[inline]
-    pub fn alb(&mut self) -> _ALBW {
-        _ALBW { w: self }
+    #[inline(always)]
+    pub fn alb(&mut self) -> ALB_W {
+        ALB_W { w: self }
     }
     #[doc = "Bits 18:22 - EBI_A Pin Enable"]
-    #[inline]
-    pub fn apen(&mut self) -> _APENW {
-        _APENW { w: self }
+    #[inline(always)]
+    pub fn apen(&mut self) -> APEN_W {
+        APEN_W { w: self }
     }
     #[doc = "Bit 24 - EBI_TFT Pin Enable"]
-    #[inline]
-    pub fn tftpen(&mut self) -> _TFTPENW {
-        _TFTPENW { w: self }
+    #[inline(always)]
+    pub fn tftpen(&mut self) -> TFTPEN_W {
+        TFTPEN_W { w: self }
     }
     #[doc = "Bit 25 - EBI_DATA Pin Enable"]
-    #[inline]
-    pub fn dataenpen(&mut self) -> _DATAENPENW {
-        _DATAENPENW { w: self }
+    #[inline(always)]
+    pub fn dataenpen(&mut self) -> DATAENPEN_W {
+        DATAENPEN_W { w: self }
     }
     #[doc = "Bit 26 - EBI_CSTFT Pin Enable"]
-    #[inline]
-    pub fn cstftpen(&mut self) -> _CSTFTPENW {
-        _CSTFTPENW { w: self }
+    #[inline(always)]
+    pub fn cstftpen(&mut self) -> CSTFTPEN_W {
+        CSTFTPEN_W { w: self }
     }
 }

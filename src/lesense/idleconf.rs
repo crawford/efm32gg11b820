@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IDLECONF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IDLECONF"]
+pub type R = crate::R<u32, super::IDLECONF>;
+#[doc = "Writer for register IDLECONF"]
+pub type W = crate::W<u32, super::IDLECONF>;
+#[doc = "Register IDLECONF `reset()`'s with value 0"]
+impl crate::ResetValue for super::IDLECONF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `CH0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH0R {
+pub enum CH0_A {
     #[doc = "CH0 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH0 output is high in idle phase"]
@@ -52,53 +22,95 @@ pub enum CH0R {
     #[doc = "CH0 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH0R::DISABLE => 0,
-            CH0R::HIGH => 1,
-            CH0R::LOW => 2,
-            CH0R::DAC => 3,
+            CH0_A::DISABLE => 0,
+            CH0_A::HIGH => 1,
+            CH0_A::LOW => 2,
+            CH0_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH0R {
-        match value {
-            0 => CH0R::DISABLE,
-            1 => CH0R::HIGH,
-            2 => CH0R::LOW,
-            3 => CH0R::DAC,
+}
+#[doc = "Reader of field `CH0`"]
+pub type CH0_R = crate::R<u8, CH0_A>;
+impl CH0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH0_A {
+        match self.bits {
+            0 => CH0_A::DISABLE,
+            1 => CH0_A::HIGH,
+            2 => CH0_A::LOW,
+            3 => CH0_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH0R::DISABLE
+        *self == CH0_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH0R::HIGH
+        *self == CH0_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH0R::LOW
+        *self == CH0_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH0R::DAC
+        *self == CH0_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH0`"]
+pub struct CH0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH0_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH0 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH0_A::DISABLE)
+    }
+    #[doc = "CH0 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH0_A::HIGH)
+    }
+    #[doc = "CH0 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH0_A::LOW)
+    }
+    #[doc = "CH0 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH0_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH1R {
+pub enum CH1_A {
     #[doc = "CH1 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH1 output is high in idle phase"]
@@ -108,53 +120,95 @@ pub enum CH1R {
     #[doc = "CH1 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH1R::DISABLE => 0,
-            CH1R::HIGH => 1,
-            CH1R::LOW => 2,
-            CH1R::DAC => 3,
+            CH1_A::DISABLE => 0,
+            CH1_A::HIGH => 1,
+            CH1_A::LOW => 2,
+            CH1_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH1R {
-        match value {
-            0 => CH1R::DISABLE,
-            1 => CH1R::HIGH,
-            2 => CH1R::LOW,
-            3 => CH1R::DAC,
+}
+#[doc = "Reader of field `CH1`"]
+pub type CH1_R = crate::R<u8, CH1_A>;
+impl CH1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH1_A {
+        match self.bits {
+            0 => CH1_A::DISABLE,
+            1 => CH1_A::HIGH,
+            2 => CH1_A::LOW,
+            3 => CH1_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH1R::DISABLE
+        *self == CH1_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH1R::HIGH
+        *self == CH1_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH1R::LOW
+        *self == CH1_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH1R::DAC
+        *self == CH1_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH1`"]
+pub struct CH1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH1_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH1 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH1_A::DISABLE)
+    }
+    #[doc = "CH1 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH1_A::HIGH)
+    }
+    #[doc = "CH1 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH1_A::LOW)
+    }
+    #[doc = "CH1 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH1_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH2R {
+pub enum CH2_A {
     #[doc = "CH2 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH2 output is high in idle phase"]
@@ -164,53 +218,95 @@ pub enum CH2R {
     #[doc = "CH2 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH2_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH2R::DISABLE => 0,
-            CH2R::HIGH => 1,
-            CH2R::LOW => 2,
-            CH2R::DAC => 3,
+            CH2_A::DISABLE => 0,
+            CH2_A::HIGH => 1,
+            CH2_A::LOW => 2,
+            CH2_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH2R {
-        match value {
-            0 => CH2R::DISABLE,
-            1 => CH2R::HIGH,
-            2 => CH2R::LOW,
-            3 => CH2R::DAC,
+}
+#[doc = "Reader of field `CH2`"]
+pub type CH2_R = crate::R<u8, CH2_A>;
+impl CH2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH2_A {
+        match self.bits {
+            0 => CH2_A::DISABLE,
+            1 => CH2_A::HIGH,
+            2 => CH2_A::LOW,
+            3 => CH2_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH2R::DISABLE
+        *self == CH2_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH2R::HIGH
+        *self == CH2_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH2R::LOW
+        *self == CH2_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH2R::DAC
+        *self == CH2_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH2`"]
+pub struct CH2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH2_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH2 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH2_A::DISABLE)
+    }
+    #[doc = "CH2 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH2_A::HIGH)
+    }
+    #[doc = "CH2 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH2_A::LOW)
+    }
+    #[doc = "CH2 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH2_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH3R {
+pub enum CH3_A {
     #[doc = "CH3 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH3 output is high in idle phase"]
@@ -220,53 +316,95 @@ pub enum CH3R {
     #[doc = "CH3 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH3_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH3R::DISABLE => 0,
-            CH3R::HIGH => 1,
-            CH3R::LOW => 2,
-            CH3R::DAC => 3,
+            CH3_A::DISABLE => 0,
+            CH3_A::HIGH => 1,
+            CH3_A::LOW => 2,
+            CH3_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH3R {
-        match value {
-            0 => CH3R::DISABLE,
-            1 => CH3R::HIGH,
-            2 => CH3R::LOW,
-            3 => CH3R::DAC,
+}
+#[doc = "Reader of field `CH3`"]
+pub type CH3_R = crate::R<u8, CH3_A>;
+impl CH3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH3_A {
+        match self.bits {
+            0 => CH3_A::DISABLE,
+            1 => CH3_A::HIGH,
+            2 => CH3_A::LOW,
+            3 => CH3_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH3R::DISABLE
+        *self == CH3_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH3R::HIGH
+        *self == CH3_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH3R::LOW
+        *self == CH3_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH3R::DAC
+        *self == CH3_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH3`"]
+pub struct CH3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH3_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH3 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH3_A::DISABLE)
+    }
+    #[doc = "CH3 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH3_A::HIGH)
+    }
+    #[doc = "CH3 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH3_A::LOW)
+    }
+    #[doc = "CH3 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH3_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH4R {
+pub enum CH4_A {
     #[doc = "CH4 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH4 output is high in idle phase"]
@@ -276,53 +414,95 @@ pub enum CH4R {
     #[doc = "CH4 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH4_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH4R::DISABLE => 0,
-            CH4R::HIGH => 1,
-            CH4R::LOW => 2,
-            CH4R::DAC => 3,
+            CH4_A::DISABLE => 0,
+            CH4_A::HIGH => 1,
+            CH4_A::LOW => 2,
+            CH4_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH4R {
-        match value {
-            0 => CH4R::DISABLE,
-            1 => CH4R::HIGH,
-            2 => CH4R::LOW,
-            3 => CH4R::DAC,
+}
+#[doc = "Reader of field `CH4`"]
+pub type CH4_R = crate::R<u8, CH4_A>;
+impl CH4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH4_A {
+        match self.bits {
+            0 => CH4_A::DISABLE,
+            1 => CH4_A::HIGH,
+            2 => CH4_A::LOW,
+            3 => CH4_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH4R::DISABLE
+        *self == CH4_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH4R::HIGH
+        *self == CH4_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH4R::LOW
+        *self == CH4_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH4R::DAC
+        *self == CH4_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH4`"]
+pub struct CH4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH4_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH4 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH4_A::DISABLE)
+    }
+    #[doc = "CH4 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH4_A::HIGH)
+    }
+    #[doc = "CH4 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH4_A::LOW)
+    }
+    #[doc = "CH4 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH4_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH5R {
+pub enum CH5_A {
     #[doc = "CH5 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH5 output is high in idle phase"]
@@ -332,53 +512,95 @@ pub enum CH5R {
     #[doc = "CH5 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH5_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH5R::DISABLE => 0,
-            CH5R::HIGH => 1,
-            CH5R::LOW => 2,
-            CH5R::DAC => 3,
+            CH5_A::DISABLE => 0,
+            CH5_A::HIGH => 1,
+            CH5_A::LOW => 2,
+            CH5_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH5R {
-        match value {
-            0 => CH5R::DISABLE,
-            1 => CH5R::HIGH,
-            2 => CH5R::LOW,
-            3 => CH5R::DAC,
+}
+#[doc = "Reader of field `CH5`"]
+pub type CH5_R = crate::R<u8, CH5_A>;
+impl CH5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH5_A {
+        match self.bits {
+            0 => CH5_A::DISABLE,
+            1 => CH5_A::HIGH,
+            2 => CH5_A::LOW,
+            3 => CH5_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH5R::DISABLE
+        *self == CH5_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH5R::HIGH
+        *self == CH5_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH5R::LOW
+        *self == CH5_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH5R::DAC
+        *self == CH5_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH5`"]
+pub struct CH5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH5_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH5 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH5_A::DISABLE)
+    }
+    #[doc = "CH5 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH5_A::HIGH)
+    }
+    #[doc = "CH5 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH5_A::LOW)
+    }
+    #[doc = "CH5 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH5_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH6R {
+pub enum CH6_A {
     #[doc = "CH6 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH6 output is high in idle phase"]
@@ -388,53 +610,95 @@ pub enum CH6R {
     #[doc = "CH6 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH6_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH6R::DISABLE => 0,
-            CH6R::HIGH => 1,
-            CH6R::LOW => 2,
-            CH6R::DAC => 3,
+            CH6_A::DISABLE => 0,
+            CH6_A::HIGH => 1,
+            CH6_A::LOW => 2,
+            CH6_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH6R {
-        match value {
-            0 => CH6R::DISABLE,
-            1 => CH6R::HIGH,
-            2 => CH6R::LOW,
-            3 => CH6R::DAC,
+}
+#[doc = "Reader of field `CH6`"]
+pub type CH6_R = crate::R<u8, CH6_A>;
+impl CH6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH6_A {
+        match self.bits {
+            0 => CH6_A::DISABLE,
+            1 => CH6_A::HIGH,
+            2 => CH6_A::LOW,
+            3 => CH6_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH6R::DISABLE
+        *self == CH6_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH6R::HIGH
+        *self == CH6_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH6R::LOW
+        *self == CH6_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH6R::DAC
+        *self == CH6_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH6`"]
+pub struct CH6_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH6_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH6 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH6_A::DISABLE)
+    }
+    #[doc = "CH6 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH6_A::HIGH)
+    }
+    #[doc = "CH6 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH6_A::LOW)
+    }
+    #[doc = "CH6 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH6_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH7R {
+pub enum CH7_A {
     #[doc = "CH7 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH7 output is high in idle phase"]
@@ -444,53 +708,95 @@ pub enum CH7R {
     #[doc = "CH7 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH7_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH7R::DISABLE => 0,
-            CH7R::HIGH => 1,
-            CH7R::LOW => 2,
-            CH7R::DAC => 3,
+            CH7_A::DISABLE => 0,
+            CH7_A::HIGH => 1,
+            CH7_A::LOW => 2,
+            CH7_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH7R {
-        match value {
-            0 => CH7R::DISABLE,
-            1 => CH7R::HIGH,
-            2 => CH7R::LOW,
-            3 => CH7R::DAC,
+}
+#[doc = "Reader of field `CH7`"]
+pub type CH7_R = crate::R<u8, CH7_A>;
+impl CH7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH7_A {
+        match self.bits {
+            0 => CH7_A::DISABLE,
+            1 => CH7_A::HIGH,
+            2 => CH7_A::LOW,
+            3 => CH7_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH7R::DISABLE
+        *self == CH7_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH7R::HIGH
+        *self == CH7_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH7R::LOW
+        *self == CH7_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH7R::DAC
+        *self == CH7_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH7`"]
+pub struct CH7_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH7_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH7 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH7_A::DISABLE)
+    }
+    #[doc = "CH7 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH7_A::HIGH)
+    }
+    #[doc = "CH7 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH7_A::LOW)
+    }
+    #[doc = "CH7 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH7_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH8R {
+pub enum CH8_A {
     #[doc = "CH8 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH8 output is high in idle phase"]
@@ -500,53 +806,95 @@ pub enum CH8R {
     #[doc = "CH8 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH8_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH8R::DISABLE => 0,
-            CH8R::HIGH => 1,
-            CH8R::LOW => 2,
-            CH8R::DAC => 3,
+            CH8_A::DISABLE => 0,
+            CH8_A::HIGH => 1,
+            CH8_A::LOW => 2,
+            CH8_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH8R {
-        match value {
-            0 => CH8R::DISABLE,
-            1 => CH8R::HIGH,
-            2 => CH8R::LOW,
-            3 => CH8R::DAC,
+}
+#[doc = "Reader of field `CH8`"]
+pub type CH8_R = crate::R<u8, CH8_A>;
+impl CH8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH8_A {
+        match self.bits {
+            0 => CH8_A::DISABLE,
+            1 => CH8_A::HIGH,
+            2 => CH8_A::LOW,
+            3 => CH8_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH8R::DISABLE
+        *self == CH8_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH8R::HIGH
+        *self == CH8_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH8R::LOW
+        *self == CH8_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH8R::DAC
+        *self == CH8_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH8`"]
+pub struct CH8_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH8_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH8 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH8_A::DISABLE)
+    }
+    #[doc = "CH8 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH8_A::HIGH)
+    }
+    #[doc = "CH8 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH8_A::LOW)
+    }
+    #[doc = "CH8 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH8_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH9R {
+pub enum CH9_A {
     #[doc = "CH9 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH9 output is high in idle phase"]
@@ -556,53 +904,95 @@ pub enum CH9R {
     #[doc = "CH9 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH9_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH9R::DISABLE => 0,
-            CH9R::HIGH => 1,
-            CH9R::LOW => 2,
-            CH9R::DAC => 3,
+            CH9_A::DISABLE => 0,
+            CH9_A::HIGH => 1,
+            CH9_A::LOW => 2,
+            CH9_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH9R {
-        match value {
-            0 => CH9R::DISABLE,
-            1 => CH9R::HIGH,
-            2 => CH9R::LOW,
-            3 => CH9R::DAC,
+}
+#[doc = "Reader of field `CH9`"]
+pub type CH9_R = crate::R<u8, CH9_A>;
+impl CH9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH9_A {
+        match self.bits {
+            0 => CH9_A::DISABLE,
+            1 => CH9_A::HIGH,
+            2 => CH9_A::LOW,
+            3 => CH9_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH9R::DISABLE
+        *self == CH9_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH9R::HIGH
+        *self == CH9_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH9R::LOW
+        *self == CH9_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH9R::DAC
+        *self == CH9_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH9`"]
+pub struct CH9_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH9_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH9 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH9_A::DISABLE)
+    }
+    #[doc = "CH9 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH9_A::HIGH)
+    }
+    #[doc = "CH9 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH9_A::LOW)
+    }
+    #[doc = "CH9 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH9_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH10R {
+pub enum CH10_A {
     #[doc = "CH10 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH10 output is high in idle phase"]
@@ -612,53 +1002,95 @@ pub enum CH10R {
     #[doc = "CH10 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH10_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH10R::DISABLE => 0,
-            CH10R::HIGH => 1,
-            CH10R::LOW => 2,
-            CH10R::DAC => 3,
+            CH10_A::DISABLE => 0,
+            CH10_A::HIGH => 1,
+            CH10_A::LOW => 2,
+            CH10_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH10R {
-        match value {
-            0 => CH10R::DISABLE,
-            1 => CH10R::HIGH,
-            2 => CH10R::LOW,
-            3 => CH10R::DAC,
+}
+#[doc = "Reader of field `CH10`"]
+pub type CH10_R = crate::R<u8, CH10_A>;
+impl CH10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH10_A {
+        match self.bits {
+            0 => CH10_A::DISABLE,
+            1 => CH10_A::HIGH,
+            2 => CH10_A::LOW,
+            3 => CH10_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH10R::DISABLE
+        *self == CH10_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH10R::HIGH
+        *self == CH10_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH10R::LOW
+        *self == CH10_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH10R::DAC
+        *self == CH10_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH10`"]
+pub struct CH10_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH10_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH10 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH10_A::DISABLE)
+    }
+    #[doc = "CH10 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH10_A::HIGH)
+    }
+    #[doc = "CH10 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH10_A::LOW)
+    }
+    #[doc = "CH10 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH10_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH11R {
+pub enum CH11_A {
     #[doc = "CH11 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH11 output is high in idle phase"]
@@ -668,53 +1100,95 @@ pub enum CH11R {
     #[doc = "CH11 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH11_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH11R::DISABLE => 0,
-            CH11R::HIGH => 1,
-            CH11R::LOW => 2,
-            CH11R::DAC => 3,
+            CH11_A::DISABLE => 0,
+            CH11_A::HIGH => 1,
+            CH11_A::LOW => 2,
+            CH11_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH11R {
-        match value {
-            0 => CH11R::DISABLE,
-            1 => CH11R::HIGH,
-            2 => CH11R::LOW,
-            3 => CH11R::DAC,
+}
+#[doc = "Reader of field `CH11`"]
+pub type CH11_R = crate::R<u8, CH11_A>;
+impl CH11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH11_A {
+        match self.bits {
+            0 => CH11_A::DISABLE,
+            1 => CH11_A::HIGH,
+            2 => CH11_A::LOW,
+            3 => CH11_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH11R::DISABLE
+        *self == CH11_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH11R::HIGH
+        *self == CH11_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH11R::LOW
+        *self == CH11_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH11R::DAC
+        *self == CH11_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH11`"]
+pub struct CH11_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH11_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH11 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH11_A::DISABLE)
+    }
+    #[doc = "CH11 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH11_A::HIGH)
+    }
+    #[doc = "CH11 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH11_A::LOW)
+    }
+    #[doc = "CH11 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH11_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH12R {
+pub enum CH12_A {
     #[doc = "CH12 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH12 output is high in idle phase"]
@@ -724,53 +1198,95 @@ pub enum CH12R {
     #[doc = "CH12 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH12R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH12_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH12R::DISABLE => 0,
-            CH12R::HIGH => 1,
-            CH12R::LOW => 2,
-            CH12R::DAC => 3,
+            CH12_A::DISABLE => 0,
+            CH12_A::HIGH => 1,
+            CH12_A::LOW => 2,
+            CH12_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH12R {
-        match value {
-            0 => CH12R::DISABLE,
-            1 => CH12R::HIGH,
-            2 => CH12R::LOW,
-            3 => CH12R::DAC,
+}
+#[doc = "Reader of field `CH12`"]
+pub type CH12_R = crate::R<u8, CH12_A>;
+impl CH12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH12_A {
+        match self.bits {
+            0 => CH12_A::DISABLE,
+            1 => CH12_A::HIGH,
+            2 => CH12_A::LOW,
+            3 => CH12_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH12R::DISABLE
+        *self == CH12_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH12R::HIGH
+        *self == CH12_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH12R::LOW
+        *self == CH12_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH12R::DAC
+        *self == CH12_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH12`"]
+pub struct CH12_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH12_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH12 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH12_A::DISABLE)
+    }
+    #[doc = "CH12 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH12_A::HIGH)
+    }
+    #[doc = "CH12 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH12_A::LOW)
+    }
+    #[doc = "CH12 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH12_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH13R {
+pub enum CH13_A {
     #[doc = "CH13 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH13 output is high in idle phase"]
@@ -780,53 +1296,95 @@ pub enum CH13R {
     #[doc = "CH13 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH13R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH13_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH13R::DISABLE => 0,
-            CH13R::HIGH => 1,
-            CH13R::LOW => 2,
-            CH13R::DAC => 3,
+            CH13_A::DISABLE => 0,
+            CH13_A::HIGH => 1,
+            CH13_A::LOW => 2,
+            CH13_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH13R {
-        match value {
-            0 => CH13R::DISABLE,
-            1 => CH13R::HIGH,
-            2 => CH13R::LOW,
-            3 => CH13R::DAC,
+}
+#[doc = "Reader of field `CH13`"]
+pub type CH13_R = crate::R<u8, CH13_A>;
+impl CH13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH13_A {
+        match self.bits {
+            0 => CH13_A::DISABLE,
+            1 => CH13_A::HIGH,
+            2 => CH13_A::LOW,
+            3 => CH13_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH13R::DISABLE
+        *self == CH13_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH13R::HIGH
+        *self == CH13_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH13R::LOW
+        *self == CH13_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH13R::DAC
+        *self == CH13_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH13`"]
+pub struct CH13_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH13_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH13 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH13_A::DISABLE)
+    }
+    #[doc = "CH13 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH13_A::HIGH)
+    }
+    #[doc = "CH13 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH13_A::LOW)
+    }
+    #[doc = "CH13 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH13_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH14R {
+pub enum CH14_A {
     #[doc = "CH14 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH14 output is high in idle phase"]
@@ -836,53 +1394,95 @@ pub enum CH14R {
     #[doc = "CH14 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH14R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH14_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH14R::DISABLE => 0,
-            CH14R::HIGH => 1,
-            CH14R::LOW => 2,
-            CH14R::DAC => 3,
+            CH14_A::DISABLE => 0,
+            CH14_A::HIGH => 1,
+            CH14_A::LOW => 2,
+            CH14_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH14R {
-        match value {
-            0 => CH14R::DISABLE,
-            1 => CH14R::HIGH,
-            2 => CH14R::LOW,
-            3 => CH14R::DAC,
+}
+#[doc = "Reader of field `CH14`"]
+pub type CH14_R = crate::R<u8, CH14_A>;
+impl CH14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH14_A {
+        match self.bits {
+            0 => CH14_A::DISABLE,
+            1 => CH14_A::HIGH,
+            2 => CH14_A::LOW,
+            3 => CH14_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH14R::DISABLE
+        *self == CH14_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH14R::HIGH
+        *self == CH14_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH14R::LOW
+        *self == CH14_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH14R::DAC
+        *self == CH14_A::DAC
+    }
+}
+#[doc = "Write proxy for field `CH14`"]
+pub struct CH14_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CH14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH14_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "CH14 output is disabled in idle phase"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH14_A::DISABLE)
+    }
+    #[doc = "CH14 output is high in idle phase"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(CH14_A::HIGH)
+    }
+    #[doc = "CH14 output is low in idle phase"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(CH14_A::LOW)
+    }
+    #[doc = "CH14 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
+    #[inline(always)]
+    pub fn dac(self) -> &'a mut W {
+        self.variant(CH14_A::DAC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CH15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH15R {
+pub enum CH15_A {
     #[doc = "CH15 output is disabled in idle phase"]
     DISABLE,
     #[doc = "CH15 output is high in idle phase"]
@@ -892,1347 +1492,253 @@ pub enum CH15R {
     #[doc = "CH15 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
     DAC,
 }
-impl CH15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for CH15_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            CH15R::DISABLE => 0,
-            CH15R::HIGH => 1,
-            CH15R::LOW => 2,
-            CH15R::DAC => 3,
+            CH15_A::DISABLE => 0,
+            CH15_A::HIGH => 1,
+            CH15_A::LOW => 2,
+            CH15_A::DAC => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CH15R {
-        match value {
-            0 => CH15R::DISABLE,
-            1 => CH15R::HIGH,
-            2 => CH15R::LOW,
-            3 => CH15R::DAC,
+}
+#[doc = "Reader of field `CH15`"]
+pub type CH15_R = crate::R<u8, CH15_A>;
+impl CH15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH15_A {
+        match self.bits {
+            0 => CH15_A::DISABLE,
+            1 => CH15_A::HIGH,
+            2 => CH15_A::LOW,
+            3 => CH15_A::DAC,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CH15R::DISABLE
+        *self == CH15_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == CH15R::HIGH
+        *self == CH15_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == CH15R::LOW
+        *self == CH15_A::LOW
     }
     #[doc = "Checks if the value of the field is `DAC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dac(&self) -> bool {
-        *self == CH15R::DAC
+        *self == CH15_A::DAC
     }
 }
-#[doc = "Values that can be written to the field `CH0`"]
-pub enum CH0W {
-    #[doc = "CH0 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH0 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH0 output is low in idle phase"]
-    LOW,
-    #[doc = "CH0 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH0W::DISABLE => 0,
-            CH0W::HIGH => 1,
-            CH0W::LOW => 2,
-            CH0W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH0W<'a> {
+#[doc = "Write proxy for field `CH15`"]
+pub struct CH15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH0W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH0 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH0W::DISABLE)
-    }
-    #[doc = "CH0 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH0W::HIGH)
-    }
-    #[doc = "CH0 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH0W::LOW)
-    }
-    #[doc = "CH0 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH0W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH1`"]
-pub enum CH1W {
-    #[doc = "CH1 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH1 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH1 output is low in idle phase"]
-    LOW,
-    #[doc = "CH1 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH1W::DISABLE => 0,
-            CH1W::HIGH => 1,
-            CH1W::LOW => 2,
-            CH1W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH1W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH1 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH1W::DISABLE)
-    }
-    #[doc = "CH1 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH1W::HIGH)
-    }
-    #[doc = "CH1 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH1W::LOW)
-    }
-    #[doc = "CH1 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH1W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH2`"]
-pub enum CH2W {
-    #[doc = "CH2 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH2 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH2 output is low in idle phase"]
-    LOW,
-    #[doc = "CH2 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH2W::DISABLE => 0,
-            CH2W::HIGH => 1,
-            CH2W::LOW => 2,
-            CH2W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH2W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH2 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH2W::DISABLE)
-    }
-    #[doc = "CH2 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH2W::HIGH)
-    }
-    #[doc = "CH2 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH2W::LOW)
-    }
-    #[doc = "CH2 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH2W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH3`"]
-pub enum CH3W {
-    #[doc = "CH3 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH3 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH3 output is low in idle phase"]
-    LOW,
-    #[doc = "CH3 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH3W::DISABLE => 0,
-            CH3W::HIGH => 1,
-            CH3W::LOW => 2,
-            CH3W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH3W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH3 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH3W::DISABLE)
-    }
-    #[doc = "CH3 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH3W::HIGH)
-    }
-    #[doc = "CH3 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH3W::LOW)
-    }
-    #[doc = "CH3 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH3W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH4`"]
-pub enum CH4W {
-    #[doc = "CH4 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH4 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH4 output is low in idle phase"]
-    LOW,
-    #[doc = "CH4 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH4W::DISABLE => 0,
-            CH4W::HIGH => 1,
-            CH4W::LOW => 2,
-            CH4W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH4W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH4 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH4W::DISABLE)
-    }
-    #[doc = "CH4 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH4W::HIGH)
-    }
-    #[doc = "CH4 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH4W::LOW)
-    }
-    #[doc = "CH4 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH4W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH5`"]
-pub enum CH5W {
-    #[doc = "CH5 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH5 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH5 output is low in idle phase"]
-    LOW,
-    #[doc = "CH5 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH5W::DISABLE => 0,
-            CH5W::HIGH => 1,
-            CH5W::LOW => 2,
-            CH5W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH5W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH5 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH5W::DISABLE)
-    }
-    #[doc = "CH5 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH5W::HIGH)
-    }
-    #[doc = "CH5 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH5W::LOW)
-    }
-    #[doc = "CH5 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH5W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH6`"]
-pub enum CH6W {
-    #[doc = "CH6 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH6 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH6 output is low in idle phase"]
-    LOW,
-    #[doc = "CH6 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH6W::DISABLE => 0,
-            CH6W::HIGH => 1,
-            CH6W::LOW => 2,
-            CH6W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH6W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH6 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH6W::DISABLE)
-    }
-    #[doc = "CH6 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH6W::HIGH)
-    }
-    #[doc = "CH6 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH6W::LOW)
-    }
-    #[doc = "CH6 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH6W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH7`"]
-pub enum CH7W {
-    #[doc = "CH7 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH7 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH7 output is low in idle phase"]
-    LOW,
-    #[doc = "CH7 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH7W::DISABLE => 0,
-            CH7W::HIGH => 1,
-            CH7W::LOW => 2,
-            CH7W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH7W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH7 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH7W::DISABLE)
-    }
-    #[doc = "CH7 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH7W::HIGH)
-    }
-    #[doc = "CH7 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH7W::LOW)
-    }
-    #[doc = "CH7 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH7W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH8`"]
-pub enum CH8W {
-    #[doc = "CH8 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH8 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH8 output is low in idle phase"]
-    LOW,
-    #[doc = "CH8 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH8W::DISABLE => 0,
-            CH8W::HIGH => 1,
-            CH8W::LOW => 2,
-            CH8W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH8W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH8W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH8 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH8W::DISABLE)
-    }
-    #[doc = "CH8 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH8W::HIGH)
-    }
-    #[doc = "CH8 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH8W::LOW)
-    }
-    #[doc = "CH8 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH8W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH9`"]
-pub enum CH9W {
-    #[doc = "CH9 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH9 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH9 output is low in idle phase"]
-    LOW,
-    #[doc = "CH9 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH9W::DISABLE => 0,
-            CH9W::HIGH => 1,
-            CH9W::LOW => 2,
-            CH9W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH9W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH9W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH9 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH9W::DISABLE)
-    }
-    #[doc = "CH9 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH9W::HIGH)
-    }
-    #[doc = "CH9 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH9W::LOW)
-    }
-    #[doc = "CH9 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH9W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH10`"]
-pub enum CH10W {
-    #[doc = "CH10 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH10 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH10 output is low in idle phase"]
-    LOW,
-    #[doc = "CH10 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH10W::DISABLE => 0,
-            CH10W::HIGH => 1,
-            CH10W::LOW => 2,
-            CH10W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH10W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH10W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH10 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH10W::DISABLE)
-    }
-    #[doc = "CH10 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH10W::HIGH)
-    }
-    #[doc = "CH10 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH10W::LOW)
-    }
-    #[doc = "CH10 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH10W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH11`"]
-pub enum CH11W {
-    #[doc = "CH11 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH11 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH11 output is low in idle phase"]
-    LOW,
-    #[doc = "CH11 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH11W::DISABLE => 0,
-            CH11W::HIGH => 1,
-            CH11W::LOW => 2,
-            CH11W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH11W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH11W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH11 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH11W::DISABLE)
-    }
-    #[doc = "CH11 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH11W::HIGH)
-    }
-    #[doc = "CH11 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH11W::LOW)
-    }
-    #[doc = "CH11 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH11W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH12`"]
-pub enum CH12W {
-    #[doc = "CH12 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH12 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH12 output is low in idle phase"]
-    LOW,
-    #[doc = "CH12 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH12W::DISABLE => 0,
-            CH12W::HIGH => 1,
-            CH12W::LOW => 2,
-            CH12W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH12W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH12W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH12 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH12W::DISABLE)
-    }
-    #[doc = "CH12 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH12W::HIGH)
-    }
-    #[doc = "CH12 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH12W::LOW)
-    }
-    #[doc = "CH12 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH12W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH13`"]
-pub enum CH13W {
-    #[doc = "CH13 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH13 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH13 output is low in idle phase"]
-    LOW,
-    #[doc = "CH13 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH13W::DISABLE => 0,
-            CH13W::HIGH => 1,
-            CH13W::LOW => 2,
-            CH13W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH13W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH13W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH13 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH13W::DISABLE)
-    }
-    #[doc = "CH13 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH13W::HIGH)
-    }
-    #[doc = "CH13 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH13W::LOW)
-    }
-    #[doc = "CH13 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH13W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH14`"]
-pub enum CH14W {
-    #[doc = "CH14 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH14 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH14 output is low in idle phase"]
-    LOW,
-    #[doc = "CH14 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH14W::DISABLE => 0,
-            CH14W::HIGH => 1,
-            CH14W::LOW => 2,
-            CH14W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH14W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH14W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CH14 output is disabled in idle phase"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CH14W::DISABLE)
-    }
-    #[doc = "CH14 output is high in idle phase"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(CH14W::HIGH)
-    }
-    #[doc = "CH14 output is low in idle phase"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(CH14W::LOW)
-    }
-    #[doc = "CH14 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
-    pub fn dac(self) -> &'a mut W {
-        self.variant(CH14W::DAC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CH15`"]
-pub enum CH15W {
-    #[doc = "CH15 output is disabled in idle phase"]
-    DISABLE,
-    #[doc = "CH15 output is high in idle phase"]
-    HIGH,
-    #[doc = "CH15 output is low in idle phase"]
-    LOW,
-    #[doc = "CH15 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
-}
-impl CH15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CH15W::DISABLE => 0,
-            CH15W::HIGH => 1,
-            CH15W::LOW => 2,
-            CH15W::DAC => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH15W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CH15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH15W) -> &'a mut W {
+impl<'a> CH15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH15_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "CH15 output is disabled in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(CH15W::DISABLE)
+        self.variant(CH15_A::DISABLE)
     }
     #[doc = "CH15 output is high in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(CH15W::HIGH)
+        self.variant(CH15_A::HIGH)
     }
     #[doc = "CH15 output is low in idle phase"]
-    #[inline]
+    #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(CH15W::LOW)
+        self.variant(CH15_A::LOW)
     }
     #[doc = "CH15 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    #[inline]
+    #[inline(always)]
     pub fn dac(self) -> &'a mut W {
-        self.variant(CH15W::DAC)
+        self.variant(CH15_A::DAC)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Channel 0 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch0(&self) -> CH0R {
-        CH0R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch0(&self) -> CH0_R {
+        CH0_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Channel 1 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch1(&self) -> CH1R {
-        CH1R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch1(&self) -> CH1_R {
+        CH1_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Channel 2 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch2(&self) -> CH2R {
-        CH2R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch2(&self) -> CH2_R {
+        CH2_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Channel 3 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch3(&self) -> CH3R {
-        CH3R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch3(&self) -> CH3_R {
+        CH3_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Channel 4 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch4(&self) -> CH4R {
-        CH4R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch4(&self) -> CH4_R {
+        CH4_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - Channel 5 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch5(&self) -> CH5R {
-        CH5R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch5(&self) -> CH5_R {
+        CH5_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - Channel 6 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch6(&self) -> CH6R {
-        CH6R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch6(&self) -> CH6_R {
+        CH6_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:15 - Channel 7 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch7(&self) -> CH7R {
-        CH7R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch7(&self) -> CH7_R {
+        CH7_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:17 - Channel 8 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch8(&self) -> CH8R {
-        CH8R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch8(&self) -> CH8_R {
+        CH8_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:19 - Channel 9 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch9(&self) -> CH9R {
-        CH9R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch9(&self) -> CH9_R {
+        CH9_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bits 20:21 - Channel 10 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch10(&self) -> CH10R {
-        CH10R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch10(&self) -> CH10_R {
+        CH10_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 22:23 - Channel 11 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch11(&self) -> CH11R {
-        CH11R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch11(&self) -> CH11_R {
+        CH11_R::new(((self.bits >> 22) & 0x03) as u8)
     }
     #[doc = "Bits 24:25 - Channel 12 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch12(&self) -> CH12R {
-        CH12R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch12(&self) -> CH12_R {
+        CH12_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 26:27 - Channel 13 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch13(&self) -> CH13R {
-        CH13R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch13(&self) -> CH13_R {
+        CH13_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - Channel 14 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch14(&self) -> CH14R {
-        CH14R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch14(&self) -> CH14_R {
+        CH14_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bits 30:31 - Channel 15 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch15(&self) -> CH15R {
-        CH15R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ch15(&self) -> CH15_R {
+        CH15_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Channel 0 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch0(&mut self) -> _CH0W {
-        _CH0W { w: self }
+    #[inline(always)]
+    pub fn ch0(&mut self) -> CH0_W {
+        CH0_W { w: self }
     }
     #[doc = "Bits 2:3 - Channel 1 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch1(&mut self) -> _CH1W {
-        _CH1W { w: self }
+    #[inline(always)]
+    pub fn ch1(&mut self) -> CH1_W {
+        CH1_W { w: self }
     }
     #[doc = "Bits 4:5 - Channel 2 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch2(&mut self) -> _CH2W {
-        _CH2W { w: self }
+    #[inline(always)]
+    pub fn ch2(&mut self) -> CH2_W {
+        CH2_W { w: self }
     }
     #[doc = "Bits 6:7 - Channel 3 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch3(&mut self) -> _CH3W {
-        _CH3W { w: self }
+    #[inline(always)]
+    pub fn ch3(&mut self) -> CH3_W {
+        CH3_W { w: self }
     }
     #[doc = "Bits 8:9 - Channel 4 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch4(&mut self) -> _CH4W {
-        _CH4W { w: self }
+    #[inline(always)]
+    pub fn ch4(&mut self) -> CH4_W {
+        CH4_W { w: self }
     }
     #[doc = "Bits 10:11 - Channel 5 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch5(&mut self) -> _CH5W {
-        _CH5W { w: self }
+    #[inline(always)]
+    pub fn ch5(&mut self) -> CH5_W {
+        CH5_W { w: self }
     }
     #[doc = "Bits 12:13 - Channel 6 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch6(&mut self) -> _CH6W {
-        _CH6W { w: self }
+    #[inline(always)]
+    pub fn ch6(&mut self) -> CH6_W {
+        CH6_W { w: self }
     }
     #[doc = "Bits 14:15 - Channel 7 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch7(&mut self) -> _CH7W {
-        _CH7W { w: self }
+    #[inline(always)]
+    pub fn ch7(&mut self) -> CH7_W {
+        CH7_W { w: self }
     }
     #[doc = "Bits 16:17 - Channel 8 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch8(&mut self) -> _CH8W {
-        _CH8W { w: self }
+    #[inline(always)]
+    pub fn ch8(&mut self) -> CH8_W {
+        CH8_W { w: self }
     }
     #[doc = "Bits 18:19 - Channel 9 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch9(&mut self) -> _CH9W {
-        _CH9W { w: self }
+    #[inline(always)]
+    pub fn ch9(&mut self) -> CH9_W {
+        CH9_W { w: self }
     }
     #[doc = "Bits 20:21 - Channel 10 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch10(&mut self) -> _CH10W {
-        _CH10W { w: self }
+    #[inline(always)]
+    pub fn ch10(&mut self) -> CH10_W {
+        CH10_W { w: self }
     }
     #[doc = "Bits 22:23 - Channel 11 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch11(&mut self) -> _CH11W {
-        _CH11W { w: self }
+    #[inline(always)]
+    pub fn ch11(&mut self) -> CH11_W {
+        CH11_W { w: self }
     }
     #[doc = "Bits 24:25 - Channel 12 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch12(&mut self) -> _CH12W {
-        _CH12W { w: self }
+    #[inline(always)]
+    pub fn ch12(&mut self) -> CH12_W {
+        CH12_W { w: self }
     }
     #[doc = "Bits 26:27 - Channel 13 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch13(&mut self) -> _CH13W {
-        _CH13W { w: self }
+    #[inline(always)]
+    pub fn ch13(&mut self) -> CH13_W {
+        CH13_W { w: self }
     }
     #[doc = "Bits 28:29 - Channel 14 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch14(&mut self) -> _CH14W {
-        _CH14W { w: self }
+    #[inline(always)]
+    pub fn ch14(&mut self) -> CH14_W {
+        CH14_W { w: self }
     }
     #[doc = "Bits 30:31 - Channel 15 Idle Phase Configuration"]
-    #[inline]
-    pub fn ch15(&mut self) -> _CH15W {
-        _CH15W { w: self }
+    #[inline(always)]
+    pub fn ch15(&mut self) -> CH15_W {
+        CH15_W { w: self }
     }
 }

@@ -1,144 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::COMBDATA {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register COMBDATA"]
+pub type R = crate::R<u32, super::COMBDATA>;
+#[doc = "Writer for register COMBDATA"]
+pub type W = crate::W<u32, super::COMBDATA>;
+#[doc = "Register COMBDATA `reset()`'s with value 0x0800_0800"]
+impl crate::ResetValue for super::COMBDATA {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0800_0800
     }
 }
-#[doc = r" Value of the field"]
-pub struct CH0DATAR {
-    bits: u16,
-}
-impl CH0DATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH1DATAR {
-    bits: u16,
-}
-impl CH1DATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH0DATAW<'a> {
+#[doc = "Reader of field `CH0DATA`"]
+pub type CH0DATA_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CH0DATA`"]
+pub struct CH0DATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH0DATAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH0DATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH1DATAW<'a> {
+#[doc = "Reader of field `CH1DATA`"]
+pub type CH1DATA_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CH1DATA`"]
+pub struct CH1DATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH1DATAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH1DATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0fff << 16)) | (((value as u32) & 0x0fff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:11 - Channel 0 Data"]
-    #[inline]
-    pub fn ch0data(&self) -> CH0DATAR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CH0DATAR { bits }
+    #[inline(always)]
+    pub fn ch0data(&self) -> CH0DATA_R {
+        CH0DATA_R::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bits 16:27 - Channel 1 Data"]
-    #[inline]
-    pub fn ch1data(&self) -> CH1DATAR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CH1DATAR { bits }
+    #[inline(always)]
+    pub fn ch1data(&self) -> CH1DATA_R {
+        CH1DATA_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 134219776 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:11 - Channel 0 Data"]
-    #[inline]
-    pub fn ch0data(&mut self) -> _CH0DATAW {
-        _CH0DATAW { w: self }
+    #[inline(always)]
+    pub fn ch0data(&mut self) -> CH0DATA_W {
+        CH0DATA_W { w: self }
     }
     #[doc = "Bits 16:27 - Channel 1 Data"]
-    #[inline]
-    pub fn ch1data(&mut self) -> _CH1DATAW {
-        _CH1DATAW { w: self }
+    #[inline(always)]
+    pub fn ch1data(&mut self) -> CH1DATA_W {
+        CH1DATA_W { w: self }
     }
 }

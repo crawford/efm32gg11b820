@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::BUFDATA {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFDATAR {
-    bits: u16,
-}
-impl BUFDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFDATASRCR {
-    bits: u8,
-}
-impl BUFDATASRCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register BUFDATA"]
+pub type R = crate::R<u32, super::BUFDATA>;
+#[doc = "Reader of field `BUFDATA`"]
+pub type BUFDATA_R = crate::R<u16, u16>;
+#[doc = "Reader of field `BUFDATASRC`"]
+pub type BUFDATASRC_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Result Data"]
-    #[inline]
-    pub fn bufdata(&self) -> BUFDATAR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        BUFDATAR { bits }
+    #[inline(always)]
+    pub fn bufdata(&self) -> BUFDATA_R {
+        BUFDATA_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - Result Data Source"]
-    #[inline]
-    pub fn bufdatasrc(&self) -> BUFDATASRCR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BUFDATASRCR { bits }
+    #[inline(always)]
+    pub fn bufdatasrc(&self) -> BUFDATASRC_R {
+        BUFDATASRC_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }

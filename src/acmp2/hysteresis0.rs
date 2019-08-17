@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HYSTERESIS0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HYSTERESIS0"]
+pub type R = crate::R<u32, super::HYSTERESIS0>;
+#[doc = "Writer for register HYSTERESIS0"]
+pub type W = crate::W<u32, super::HYSTERESIS0>;
+#[doc = "Register HYSTERESIS0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::HYSTERESIS0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `HYST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HYSTR {
+pub enum HYST_A {
     #[doc = "No hysteresis"]
     HYST0,
     #[doc = "14 mV hysteresis"]
@@ -76,409 +46,295 @@ pub enum HYSTR {
     #[doc = "-45 mV hysteresis"]
     HYST15,
 }
-impl HYSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for HYST_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            HYSTR::HYST0 => 0,
-            HYSTR::HYST1 => 1,
-            HYSTR::HYST2 => 2,
-            HYSTR::HYST3 => 3,
-            HYSTR::HYST4 => 4,
-            HYSTR::HYST5 => 5,
-            HYSTR::HYST6 => 6,
-            HYSTR::HYST7 => 7,
-            HYSTR::HYST8 => 8,
-            HYSTR::HYST9 => 9,
-            HYSTR::HYST10 => 10,
-            HYSTR::HYST11 => 11,
-            HYSTR::HYST12 => 12,
-            HYSTR::HYST13 => 13,
-            HYSTR::HYST14 => 14,
-            HYSTR::HYST15 => 15,
+            HYST_A::HYST0 => 0,
+            HYST_A::HYST1 => 1,
+            HYST_A::HYST2 => 2,
+            HYST_A::HYST3 => 3,
+            HYST_A::HYST4 => 4,
+            HYST_A::HYST5 => 5,
+            HYST_A::HYST6 => 6,
+            HYST_A::HYST7 => 7,
+            HYST_A::HYST8 => 8,
+            HYST_A::HYST9 => 9,
+            HYST_A::HYST10 => 10,
+            HYST_A::HYST11 => 11,
+            HYST_A::HYST12 => 12,
+            HYST_A::HYST13 => 13,
+            HYST_A::HYST14 => 14,
+            HYST_A::HYST15 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HYSTR {
-        match value {
-            0 => HYSTR::HYST0,
-            1 => HYSTR::HYST1,
-            2 => HYSTR::HYST2,
-            3 => HYSTR::HYST3,
-            4 => HYSTR::HYST4,
-            5 => HYSTR::HYST5,
-            6 => HYSTR::HYST6,
-            7 => HYSTR::HYST7,
-            8 => HYSTR::HYST8,
-            9 => HYSTR::HYST9,
-            10 => HYSTR::HYST10,
-            11 => HYSTR::HYST11,
-            12 => HYSTR::HYST12,
-            13 => HYSTR::HYST13,
-            14 => HYSTR::HYST14,
-            15 => HYSTR::HYST15,
+}
+#[doc = "Reader of field `HYST`"]
+pub type HYST_R = crate::R<u8, HYST_A>;
+impl HYST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HYST_A {
+        match self.bits {
+            0 => HYST_A::HYST0,
+            1 => HYST_A::HYST1,
+            2 => HYST_A::HYST2,
+            3 => HYST_A::HYST3,
+            4 => HYST_A::HYST4,
+            5 => HYST_A::HYST5,
+            6 => HYST_A::HYST6,
+            7 => HYST_A::HYST7,
+            8 => HYST_A::HYST8,
+            9 => HYST_A::HYST9,
+            10 => HYST_A::HYST10,
+            11 => HYST_A::HYST11,
+            12 => HYST_A::HYST12,
+            13 => HYST_A::HYST13,
+            14 => HYST_A::HYST14,
+            15 => HYST_A::HYST15,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `HYST0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst0(&self) -> bool {
-        *self == HYSTR::HYST0
+        *self == HYST_A::HYST0
     }
     #[doc = "Checks if the value of the field is `HYST1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst1(&self) -> bool {
-        *self == HYSTR::HYST1
+        *self == HYST_A::HYST1
     }
     #[doc = "Checks if the value of the field is `HYST2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst2(&self) -> bool {
-        *self == HYSTR::HYST2
+        *self == HYST_A::HYST2
     }
     #[doc = "Checks if the value of the field is `HYST3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst3(&self) -> bool {
-        *self == HYSTR::HYST3
+        *self == HYST_A::HYST3
     }
     #[doc = "Checks if the value of the field is `HYST4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst4(&self) -> bool {
-        *self == HYSTR::HYST4
+        *self == HYST_A::HYST4
     }
     #[doc = "Checks if the value of the field is `HYST5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst5(&self) -> bool {
-        *self == HYSTR::HYST5
+        *self == HYST_A::HYST5
     }
     #[doc = "Checks if the value of the field is `HYST6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst6(&self) -> bool {
-        *self == HYSTR::HYST6
+        *self == HYST_A::HYST6
     }
     #[doc = "Checks if the value of the field is `HYST7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst7(&self) -> bool {
-        *self == HYSTR::HYST7
+        *self == HYST_A::HYST7
     }
     #[doc = "Checks if the value of the field is `HYST8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst8(&self) -> bool {
-        *self == HYSTR::HYST8
+        *self == HYST_A::HYST8
     }
     #[doc = "Checks if the value of the field is `HYST9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst9(&self) -> bool {
-        *self == HYSTR::HYST9
+        *self == HYST_A::HYST9
     }
     #[doc = "Checks if the value of the field is `HYST10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst10(&self) -> bool {
-        *self == HYSTR::HYST10
+        *self == HYST_A::HYST10
     }
     #[doc = "Checks if the value of the field is `HYST11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst11(&self) -> bool {
-        *self == HYSTR::HYST11
+        *self == HYST_A::HYST11
     }
     #[doc = "Checks if the value of the field is `HYST12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst12(&self) -> bool {
-        *self == HYSTR::HYST12
+        *self == HYST_A::HYST12
     }
     #[doc = "Checks if the value of the field is `HYST13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst13(&self) -> bool {
-        *self == HYSTR::HYST13
+        *self == HYST_A::HYST13
     }
     #[doc = "Checks if the value of the field is `HYST14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst14(&self) -> bool {
-        *self == HYSTR::HYST14
+        *self == HYST_A::HYST14
     }
     #[doc = "Checks if the value of the field is `HYST15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hyst15(&self) -> bool {
-        *self == HYSTR::HYST15
+        *self == HYST_A::HYST15
     }
 }
-#[doc = r" Value of the field"]
-pub struct DIVVAR {
-    bits: u8,
-}
-impl DIVVAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIVVBR {
-    bits: u8,
-}
-impl DIVVBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `HYST`"]
-pub enum HYSTW {
-    #[doc = "No hysteresis"]
-    HYST0,
-    #[doc = "14 mV hysteresis"]
-    HYST1,
-    #[doc = "25 mV hysteresis"]
-    HYST2,
-    #[doc = "30 mV hysteresis"]
-    HYST3,
-    #[doc = "35 mV hysteresis"]
-    HYST4,
-    #[doc = "39 mV hysteresis"]
-    HYST5,
-    #[doc = "42 mV hysteresis"]
-    HYST6,
-    #[doc = "45 mV hysteresis"]
-    HYST7,
-    #[doc = "No hysteresis"]
-    HYST8,
-    #[doc = "-14 mV hysteresis"]
-    HYST9,
-    #[doc = "-25 mV hysteresis"]
-    HYST10,
-    #[doc = "-30 mV hysteresis"]
-    HYST11,
-    #[doc = "-35 mV hysteresis"]
-    HYST12,
-    #[doc = "-39 mV hysteresis"]
-    HYST13,
-    #[doc = "-42 mV hysteresis"]
-    HYST14,
-    #[doc = "-45 mV hysteresis"]
-    HYST15,
-}
-impl HYSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            HYSTW::HYST0 => 0,
-            HYSTW::HYST1 => 1,
-            HYSTW::HYST2 => 2,
-            HYSTW::HYST3 => 3,
-            HYSTW::HYST4 => 4,
-            HYSTW::HYST5 => 5,
-            HYSTW::HYST6 => 6,
-            HYSTW::HYST7 => 7,
-            HYSTW::HYST8 => 8,
-            HYSTW::HYST9 => 9,
-            HYSTW::HYST10 => 10,
-            HYSTW::HYST11 => 11,
-            HYSTW::HYST12 => 12,
-            HYSTW::HYST13 => 13,
-            HYSTW::HYST14 => 14,
-            HYSTW::HYST15 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTW<'a> {
+#[doc = "Write proxy for field `HYST`"]
+pub struct HYST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HYSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HYSTW) -> &'a mut W {
+impl<'a> HYST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HYST_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "No hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst0(self) -> &'a mut W {
-        self.variant(HYSTW::HYST0)
+        self.variant(HYST_A::HYST0)
     }
     #[doc = "14 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst1(self) -> &'a mut W {
-        self.variant(HYSTW::HYST1)
+        self.variant(HYST_A::HYST1)
     }
     #[doc = "25 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst2(self) -> &'a mut W {
-        self.variant(HYSTW::HYST2)
+        self.variant(HYST_A::HYST2)
     }
     #[doc = "30 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst3(self) -> &'a mut W {
-        self.variant(HYSTW::HYST3)
+        self.variant(HYST_A::HYST3)
     }
     #[doc = "35 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst4(self) -> &'a mut W {
-        self.variant(HYSTW::HYST4)
+        self.variant(HYST_A::HYST4)
     }
     #[doc = "39 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst5(self) -> &'a mut W {
-        self.variant(HYSTW::HYST5)
+        self.variant(HYST_A::HYST5)
     }
     #[doc = "42 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst6(self) -> &'a mut W {
-        self.variant(HYSTW::HYST6)
+        self.variant(HYST_A::HYST6)
     }
     #[doc = "45 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst7(self) -> &'a mut W {
-        self.variant(HYSTW::HYST7)
+        self.variant(HYST_A::HYST7)
     }
     #[doc = "No hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst8(self) -> &'a mut W {
-        self.variant(HYSTW::HYST8)
+        self.variant(HYST_A::HYST8)
     }
     #[doc = "-14 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst9(self) -> &'a mut W {
-        self.variant(HYSTW::HYST9)
+        self.variant(HYST_A::HYST9)
     }
     #[doc = "-25 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst10(self) -> &'a mut W {
-        self.variant(HYSTW::HYST10)
+        self.variant(HYST_A::HYST10)
     }
     #[doc = "-30 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst11(self) -> &'a mut W {
-        self.variant(HYSTW::HYST11)
+        self.variant(HYST_A::HYST11)
     }
     #[doc = "-35 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst12(self) -> &'a mut W {
-        self.variant(HYSTW::HYST12)
+        self.variant(HYST_A::HYST12)
     }
     #[doc = "-39 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst13(self) -> &'a mut W {
-        self.variant(HYSTW::HYST13)
+        self.variant(HYST_A::HYST13)
     }
     #[doc = "-42 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst14(self) -> &'a mut W {
-        self.variant(HYSTW::HYST14)
+        self.variant(HYST_A::HYST14)
     }
     #[doc = "-45 mV hysteresis"]
-    #[inline]
+    #[inline(always)]
     pub fn hyst15(self) -> &'a mut W {
-        self.variant(HYSTW::HYST15)
+        self.variant(HYST_A::HYST15)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DIVVAW<'a> {
+#[doc = "Reader of field `DIVVA`"]
+pub type DIVVA_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DIVVA`"]
+pub struct DIVVA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIVVAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DIVVA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DIVVBW<'a> {
+#[doc = "Reader of field `DIVVB`"]
+pub type DIVVB_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DIVVB`"]
+pub struct DIVVB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIVVBW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DIVVB_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=0"]
-    #[inline]
-    pub fn hyst(&self) -> HYSTR {
-        HYSTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hyst(&self) -> HYST_R {
+        HYST_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=0"]
-    #[inline]
-    pub fn divva(&self) -> DIVVAR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DIVVAR { bits }
+    #[inline(always)]
+    pub fn divva(&self) -> DIVVA_R {
+        DIVVA_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=0"]
-    #[inline]
-    pub fn divvb(&self) -> DIVVBR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DIVVBR { bits }
+    #[inline(always)]
+    pub fn divvb(&self) -> DIVVB_R {
+        DIVVB_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=0"]
-    #[inline]
-    pub fn hyst(&mut self) -> _HYSTW {
-        _HYSTW { w: self }
+    #[inline(always)]
+    pub fn hyst(&mut self) -> HYST_W {
+        HYST_W { w: self }
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=0"]
-    #[inline]
-    pub fn divva(&mut self) -> _DIVVAW {
-        _DIVVAW { w: self }
+    #[inline(always)]
+    pub fn divva(&mut self) -> DIVVA_W {
+        DIVVA_W { w: self }
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=0"]
-    #[inline]
-    pub fn divvb(&mut self) -> _DIVVBW {
-        _DIVVBW { w: self }
+    #[inline(always)]
+    pub fn divvb(&mut self) -> DIVVB_W {
+        DIVVB_W { w: self }
     }
 }

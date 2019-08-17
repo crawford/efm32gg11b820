@@ -1,793 +1,179 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONAVDDFALLR {
-    bits: bool,
-}
-impl VMONAVDDFALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONAVDDRISER {
-    bits: bool,
-}
-impl VMONAVDDRISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONALTAVDDFALLR {
-    bits: bool,
-}
-impl VMONALTAVDDFALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONALTAVDDRISER {
-    bits: bool,
-}
-impl VMONALTAVDDRISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONDVDDFALLR {
-    bits: bool,
-}
-impl VMONDVDDFALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONDVDDRISER {
-    bits: bool,
-}
-impl VMONDVDDRISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO0FALLR {
-    bits: bool,
-}
-impl VMONIO0FALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO0RISER {
-    bits: bool,
-}
-impl VMONIO0RISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO1FALLR {
-    bits: bool,
-}
-impl VMONIO1FALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONIO1RISER {
-    bits: bool,
-}
-impl VMONIO1RISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct R5VREADYR {
-    bits: bool,
-}
-impl R5VREADYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONBUVDDFALLR {
-    bits: bool,
-}
-impl VMONBUVDDFALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VMONBUVDDRISER {
-    bits: bool,
-}
-impl VMONBUVDDRISER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PFETOVERCURRENTLIMITR {
-    bits: bool,
-}
-impl PFETOVERCURRENTLIMITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NFETOVERCURRENTLIMITR {
-    bits: bool,
-}
-impl NFETOVERCURRENTLIMITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCDCLPRUNNINGR {
-    bits: bool,
-}
-impl DCDCLPRUNNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCDCLNRUNNINGR {
-    bits: bool,
-}
-impl DCDCLNRUNNINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCDCINBYPASSR {
-    bits: bool,
-}
-impl DCDCINBYPASSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BURDYR {
-    bits: bool,
-}
-impl BURDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct R5VVSINTR {
-    bits: bool,
-}
-impl R5VVSINTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EM23WAKEUPR {
-    bits: bool,
-}
-impl EM23WAKEUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VSCALEDONER {
-    bits: bool,
-}
-impl VSCALEDONER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TEMPR {
-    bits: bool,
-}
-impl TEMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TEMPLOWR {
-    bits: bool,
-}
-impl TEMPLOWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TEMPHIGHR {
-    bits: bool,
-}
-impl TEMPHIGHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `VMONAVDDFALL`"]
+pub type VMONAVDDFALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONAVDDRISE`"]
+pub type VMONAVDDRISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONALTAVDDFALL`"]
+pub type VMONALTAVDDFALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONALTAVDDRISE`"]
+pub type VMONALTAVDDRISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONDVDDFALL`"]
+pub type VMONDVDDFALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONDVDDRISE`"]
+pub type VMONDVDDRISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO0FALL`"]
+pub type VMONIO0FALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO0RISE`"]
+pub type VMONIO0RISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO1FALL`"]
+pub type VMONIO1FALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONIO1RISE`"]
+pub type VMONIO1RISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `R5VREADY`"]
+pub type R5VREADY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONBUVDDFALL`"]
+pub type VMONBUVDDFALL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VMONBUVDDRISE`"]
+pub type VMONBUVDDRISE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PFETOVERCURRENTLIMIT`"]
+pub type PFETOVERCURRENTLIMIT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `NFETOVERCURRENTLIMIT`"]
+pub type NFETOVERCURRENTLIMIT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DCDCLPRUNNING`"]
+pub type DCDCLPRUNNING_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DCDCLNRUNNING`"]
+pub type DCDCLNRUNNING_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DCDCINBYPASS`"]
+pub type DCDCINBYPASS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BURDY`"]
+pub type BURDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `R5VVSINT`"]
+pub type R5VVSINT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EM23WAKEUP`"]
+pub type EM23WAKEUP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `VSCALEDONE`"]
+pub type VSCALEDONE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TEMP`"]
+pub type TEMP_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TEMPLOW`"]
+pub type TEMPLOW_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TEMPHIGH`"]
+pub type TEMPHIGH_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VMON AVDD Channel Fall"]
-    #[inline]
-    pub fn vmonavddfall(&self) -> VMONAVDDFALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONAVDDFALLR { bits }
+    #[inline(always)]
+    pub fn vmonavddfall(&self) -> VMONAVDDFALL_R {
+        VMONAVDDFALL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - VMON AVDD Channel Rise"]
-    #[inline]
-    pub fn vmonavddrise(&self) -> VMONAVDDRISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONAVDDRISER { bits }
+    #[inline(always)]
+    pub fn vmonavddrise(&self) -> VMONAVDDRISE_R {
+        VMONAVDDRISE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Alternate VMON AVDD Channel Fall"]
-    #[inline]
-    pub fn vmonaltavddfall(&self) -> VMONALTAVDDFALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONALTAVDDFALLR { bits }
+    #[inline(always)]
+    pub fn vmonaltavddfall(&self) -> VMONALTAVDDFALL_R {
+        VMONALTAVDDFALL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Alternate VMON AVDD Channel Rise"]
-    #[inline]
-    pub fn vmonaltavddrise(&self) -> VMONALTAVDDRISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONALTAVDDRISER { bits }
+    #[inline(always)]
+    pub fn vmonaltavddrise(&self) -> VMONALTAVDDRISE_R {
+        VMONALTAVDDRISE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - VMON DVDD Channel Fall"]
-    #[inline]
-    pub fn vmondvddfall(&self) -> VMONDVDDFALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONDVDDFALLR { bits }
+    #[inline(always)]
+    pub fn vmondvddfall(&self) -> VMONDVDDFALL_R {
+        VMONDVDDFALL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - VMON DVDD Channel Rise"]
-    #[inline]
-    pub fn vmondvddrise(&self) -> VMONDVDDRISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONDVDDRISER { bits }
+    #[inline(always)]
+    pub fn vmondvddrise(&self) -> VMONDVDDRISE_R {
+        VMONDVDDRISE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - VMON IOVDD0 Channel Fall"]
-    #[inline]
-    pub fn vmonio0fall(&self) -> VMONIO0FALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO0FALLR { bits }
+    #[inline(always)]
+    pub fn vmonio0fall(&self) -> VMONIO0FALL_R {
+        VMONIO0FALL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - VMON IOVDD0 Channel Rise"]
-    #[inline]
-    pub fn vmonio0rise(&self) -> VMONIO0RISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO0RISER { bits }
+    #[inline(always)]
+    pub fn vmonio0rise(&self) -> VMONIO0RISE_R {
+        VMONIO0RISE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - VMON IOVDD1 Channel Fall"]
-    #[inline]
-    pub fn vmonio1fall(&self) -> VMONIO1FALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO1FALLR { bits }
+    #[inline(always)]
+    pub fn vmonio1fall(&self) -> VMONIO1FALL_R {
+        VMONIO1FALL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - VMON IOVDD1 Channel Rise"]
-    #[inline]
-    pub fn vmonio1rise(&self) -> VMONIO1RISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONIO1RISER { bits }
+    #[inline(always)]
+    pub fn vmonio1rise(&self) -> VMONIO1RISE_R {
+        VMONIO1RISE_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - 5V Regulator is Ready to Use"]
-    #[inline]
-    pub fn r5vready(&self) -> R5VREADYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        R5VREADYR { bits }
+    #[inline(always)]
+    pub fn r5vready(&self) -> R5VREADY_R {
+        R5VREADY_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 12 - VMON BACKUP Channel Fall"]
-    #[inline]
-    pub fn vmonbuvddfall(&self) -> VMONBUVDDFALLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONBUVDDFALLR { bits }
+    #[inline(always)]
+    pub fn vmonbuvddfall(&self) -> VMONBUVDDFALL_R {
+        VMONBUVDDFALL_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - VMON BUVDD Channel Rise"]
-    #[inline]
-    pub fn vmonbuvddrise(&self) -> VMONBUVDDRISER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VMONBUVDDRISER { bits }
+    #[inline(always)]
+    pub fn vmonbuvddrise(&self) -> VMONBUVDDRISE_R {
+        VMONBUVDDRISE_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 16 - PFET Current Limit Hit"]
-    #[inline]
-    pub fn pfetovercurrentlimit(&self) -> PFETOVERCURRENTLIMITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PFETOVERCURRENTLIMITR { bits }
+    #[inline(always)]
+    pub fn pfetovercurrentlimit(&self) -> PFETOVERCURRENTLIMIT_R {
+        PFETOVERCURRENTLIMIT_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - NFET Current Limit Hit"]
-    #[inline]
-    pub fn nfetovercurrentlimit(&self) -> NFETOVERCURRENTLIMITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NFETOVERCURRENTLIMITR { bits }
+    #[inline(always)]
+    pub fn nfetovercurrentlimit(&self) -> NFETOVERCURRENTLIMIT_R {
+        NFETOVERCURRENTLIMIT_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - LP Mode is Running"]
-    #[inline]
-    pub fn dcdclprunning(&self) -> DCDCLPRUNNINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDCLPRUNNINGR { bits }
+    #[inline(always)]
+    pub fn dcdclprunning(&self) -> DCDCLPRUNNING_R {
+        DCDCLPRUNNING_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - LN Mode is Running"]
-    #[inline]
-    pub fn dcdclnrunning(&self) -> DCDCLNRUNNINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDCLNRUNNINGR { bits }
+    #[inline(always)]
+    pub fn dcdclnrunning(&self) -> DCDCLNRUNNING_R {
+        DCDCLNRUNNING_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - DCDC is in Bypass"]
-    #[inline]
-    pub fn dcdcinbypass(&self) -> DCDCINBYPASSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DCDCINBYPASSR { bits }
+    #[inline(always)]
+    pub fn dcdcinbypass(&self) -> DCDCINBYPASS_R {
+        DCDCINBYPASS_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Backup Functionality Ready Interrupt Flag"]
-    #[inline]
-    pub fn burdy(&self) -> BURDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BURDYR { bits }
+    #[inline(always)]
+    pub fn burdy(&self) -> BURDY_R {
+        BURDY_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - 5V Regulator Voltage Update Done"]
-    #[inline]
-    pub fn r5vvsint(&self) -> R5VVSINTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        R5VVSINTR { bits }
+    #[inline(always)]
+    pub fn r5vvsint(&self) -> R5VVSINT_R {
+        R5VVSINT_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Wakeup IRQ From EM2 and EM3"]
-    #[inline]
-    pub fn em23wakeup(&self) -> EM23WAKEUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EM23WAKEUPR { bits }
+    #[inline(always)]
+    pub fn em23wakeup(&self) -> EM23WAKEUP_R {
+        EM23WAKEUP_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Voltage Scale Steps Done IRQ"]
-    #[inline]
-    pub fn vscaledone(&self) -> VSCALEDONER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VSCALEDONER { bits }
+    #[inline(always)]
+    pub fn vscaledone(&self) -> VSCALEDONE_R {
+        VSCALEDONE_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 29 - New Temperature Measurement Valid"]
-    #[inline]
-    pub fn temp(&self) -> TEMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TEMPR { bits }
+    #[inline(always)]
+    pub fn temp(&self) -> TEMP_R {
+        TEMP_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Temperature Low Limit Reached"]
-    #[inline]
-    pub fn templow(&self) -> TEMPLOWR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TEMPLOWR { bits }
+    #[inline(always)]
+    pub fn templow(&self) -> TEMPLOW_R {
+        TEMPLOW_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Temperature High Limit Reached"]
-    #[inline]
-    pub fn temphigh(&self) -> TEMPHIGHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TEMPHIGHR { bits }
+    #[inline(always)]
+    pub fn temphigh(&self) -> TEMPHIGH_R {
+        TEMPHIGH_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

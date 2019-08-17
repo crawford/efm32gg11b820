@@ -1,49 +1,29 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PE_DOUTTGL {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register PE_DOUTTGL"]
+pub type W = crate::W<u32, super::PE_DOUTTGL>;
+#[doc = "Register PE_DOUTTGL `reset()`'s with value 0"]
+impl crate::ResetValue for super::PE_DOUTTGL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _DOUTTGLW<'a> {
+#[doc = "Write proxy for field `DOUTTGL`"]
+pub struct DOUTTGL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DOUTTGLW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DOUTTGL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Data Out Toggle"]
-    #[inline]
-    pub fn douttgl(&mut self) -> _DOUTTGLW {
-        _DOUTTGLW { w: self }
+    #[inline(always)]
+    pub fn douttgl(&mut self) -> DOUTTGL_W {
+        DOUTTGL_W { w: self }
     }
 }

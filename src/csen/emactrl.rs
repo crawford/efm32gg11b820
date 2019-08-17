@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EMACTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EMACTRL"]
+pub type R = crate::R<u32, super::EMACTRL>;
+#[doc = "Writer for register EMACTRL"]
+pub type W = crate::W<u32, super::EMACTRL>;
+#[doc = "Register EMACTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::EMACTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `EMASAMPLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMASAMPLER {
+pub enum EMASAMPLE_A {
     #[doc = "EMA weight (N) is 1."]
     W1,
     #[doc = "EMA weight (N) is 2."]
@@ -57,194 +27,139 @@ pub enum EMASAMPLER {
     W32,
     #[doc = "EMA weight (N) is 64."]
     W64,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl EMASAMPLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EMASAMPLE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EMASAMPLER::W1 => 0,
-            EMASAMPLER::W2 => 1,
-            EMASAMPLER::W4 => 2,
-            EMASAMPLER::W8 => 3,
-            EMASAMPLER::W16 => 4,
-            EMASAMPLER::W32 => 5,
-            EMASAMPLER::W64 => 6,
-            EMASAMPLER::_Reserved(bits) => bits,
+            EMASAMPLE_A::W1 => 0,
+            EMASAMPLE_A::W2 => 1,
+            EMASAMPLE_A::W4 => 2,
+            EMASAMPLE_A::W8 => 3,
+            EMASAMPLE_A::W16 => 4,
+            EMASAMPLE_A::W32 => 5,
+            EMASAMPLE_A::W64 => 6,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EMASAMPLER {
-        match value {
-            0 => EMASAMPLER::W1,
-            1 => EMASAMPLER::W2,
-            2 => EMASAMPLER::W4,
-            3 => EMASAMPLER::W8,
-            4 => EMASAMPLER::W16,
-            5 => EMASAMPLER::W32,
-            6 => EMASAMPLER::W64,
-            i => EMASAMPLER::_Reserved(i),
+}
+#[doc = "Reader of field `EMASAMPLE`"]
+pub type EMASAMPLE_R = crate::R<u8, EMASAMPLE_A>;
+impl EMASAMPLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, EMASAMPLE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(EMASAMPLE_A::W1),
+            1 => Val(EMASAMPLE_A::W2),
+            2 => Val(EMASAMPLE_A::W4),
+            3 => Val(EMASAMPLE_A::W8),
+            4 => Val(EMASAMPLE_A::W16),
+            5 => Val(EMASAMPLE_A::W32),
+            6 => Val(EMASAMPLE_A::W64),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `W1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w1(&self) -> bool {
-        *self == EMASAMPLER::W1
+        *self == EMASAMPLE_A::W1
     }
     #[doc = "Checks if the value of the field is `W2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w2(&self) -> bool {
-        *self == EMASAMPLER::W2
+        *self == EMASAMPLE_A::W2
     }
     #[doc = "Checks if the value of the field is `W4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w4(&self) -> bool {
-        *self == EMASAMPLER::W4
+        *self == EMASAMPLE_A::W4
     }
     #[doc = "Checks if the value of the field is `W8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w8(&self) -> bool {
-        *self == EMASAMPLER::W8
+        *self == EMASAMPLE_A::W8
     }
     #[doc = "Checks if the value of the field is `W16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w16(&self) -> bool {
-        *self == EMASAMPLER::W16
+        *self == EMASAMPLE_A::W16
     }
     #[doc = "Checks if the value of the field is `W32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w32(&self) -> bool {
-        *self == EMASAMPLER::W32
+        *self == EMASAMPLE_A::W32
     }
     #[doc = "Checks if the value of the field is `W64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_w64(&self) -> bool {
-        *self == EMASAMPLER::W64
+        *self == EMASAMPLE_A::W64
     }
 }
-#[doc = "Values that can be written to the field `EMASAMPLE`"]
-pub enum EMASAMPLEW {
-    #[doc = "EMA weight (N) is 1."]
-    W1,
-    #[doc = "EMA weight (N) is 2."]
-    W2,
-    #[doc = "EMA weight (N) is 4."]
-    W4,
-    #[doc = "EMA weight (N) is 8."]
-    W8,
-    #[doc = "EMA weight (N) is 16."]
-    W16,
-    #[doc = "EMA weight (N) is 32."]
-    W32,
-    #[doc = "EMA weight (N) is 64."]
-    W64,
-}
-impl EMASAMPLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EMASAMPLEW::W1 => 0,
-            EMASAMPLEW::W2 => 1,
-            EMASAMPLEW::W4 => 2,
-            EMASAMPLEW::W8 => 3,
-            EMASAMPLEW::W16 => 4,
-            EMASAMPLEW::W32 => 5,
-            EMASAMPLEW::W64 => 6,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMASAMPLEW<'a> {
+#[doc = "Write proxy for field `EMASAMPLE`"]
+pub struct EMASAMPLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EMASAMPLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMASAMPLEW) -> &'a mut W {
+impl<'a> EMASAMPLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMASAMPLE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "EMA weight (N) is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn w1(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W1)
+        self.variant(EMASAMPLE_A::W1)
     }
     #[doc = "EMA weight (N) is 2."]
-    #[inline]
+    #[inline(always)]
     pub fn w2(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W2)
+        self.variant(EMASAMPLE_A::W2)
     }
     #[doc = "EMA weight (N) is 4."]
-    #[inline]
+    #[inline(always)]
     pub fn w4(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W4)
+        self.variant(EMASAMPLE_A::W4)
     }
     #[doc = "EMA weight (N) is 8."]
-    #[inline]
+    #[inline(always)]
     pub fn w8(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W8)
+        self.variant(EMASAMPLE_A::W8)
     }
     #[doc = "EMA weight (N) is 16."]
-    #[inline]
+    #[inline(always)]
     pub fn w16(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W16)
+        self.variant(EMASAMPLE_A::W16)
     }
     #[doc = "EMA weight (N) is 32."]
-    #[inline]
+    #[inline(always)]
     pub fn w32(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W32)
+        self.variant(EMASAMPLE_A::W32)
     }
     #[doc = "EMA weight (N) is 64."]
-    #[inline]
+    #[inline(always)]
     pub fn w64(self) -> &'a mut W {
-        self.variant(EMASAMPLEW::W64)
+        self.variant(EMASAMPLE_A::W64)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - EMA Sample Weight"]
-    #[inline]
-    pub fn emasample(&self) -> EMASAMPLER {
-        EMASAMPLER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn emasample(&self) -> EMASAMPLE_R {
+        EMASAMPLE_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - EMA Sample Weight"]
-    #[inline]
-    pub fn emasample(&mut self) -> _EMASAMPLEW {
-        _EMASAMPLEW { w: self }
+    #[inline(always)]
+    pub fn emasample(&mut self) -> EMASAMPLE_W {
+        EMASAMPLE_W { w: self }
     }
 }

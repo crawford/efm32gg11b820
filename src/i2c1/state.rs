@@ -1,122 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUSYR {
-    bits: bool,
-}
-impl BUSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MASTERR {
-    bits: bool,
-}
-impl MASTERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRANSMITTERR {
-    bits: bool,
-}
-impl TRANSMITTERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NACKEDR {
-    bits: bool,
-}
-impl NACKEDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUSHOLDR {
-    bits: bool,
-}
-impl BUSHOLDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STATE"]
+pub type R = crate::R<u32, super::STATE>;
+#[doc = "Reader of field `BUSY`"]
+pub type BUSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MASTER`"]
+pub type MASTER_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TRANSMITTER`"]
+pub type TRANSMITTER_R = crate::R<bool, bool>;
+#[doc = "Reader of field `NACKED`"]
+pub type NACKED_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUSHOLD`"]
+pub type BUSHOLD_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `STATE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STATER {
+pub enum STATE_A {
     #[doc = "No transmission is being performed."]
     IDLE,
     #[doc = "Waiting for idle. Will send a start condition as soon as the bus is idle."]
@@ -131,138 +27,104 @@ pub enum STATER {
     DATA,
     #[doc = "Data ack/nack transmitted or received"]
     DATAACK,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for STATE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            STATER::IDLE => 0,
-            STATER::WAIT => 1,
-            STATER::START => 2,
-            STATER::ADDR => 3,
-            STATER::ADDRACK => 4,
-            STATER::DATA => 5,
-            STATER::DATAACK => 6,
-            STATER::_Reserved(bits) => bits,
+            STATE_A::IDLE => 0,
+            STATE_A::WAIT => 1,
+            STATE_A::START => 2,
+            STATE_A::ADDR => 3,
+            STATE_A::ADDRACK => 4,
+            STATE_A::DATA => 5,
+            STATE_A::DATAACK => 6,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STATER {
-        match value {
-            0 => STATER::IDLE,
-            1 => STATER::WAIT,
-            2 => STATER::START,
-            3 => STATER::ADDR,
-            4 => STATER::ADDRACK,
-            5 => STATER::DATA,
-            6 => STATER::DATAACK,
-            i => STATER::_Reserved(i),
+}
+#[doc = "Reader of field `STATE`"]
+pub type STATE_R = crate::R<u8, STATE_A>;
+impl STATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STATE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STATE_A::IDLE),
+            1 => Val(STATE_A::WAIT),
+            2 => Val(STATE_A::START),
+            3 => Val(STATE_A::ADDR),
+            4 => Val(STATE_A::ADDRACK),
+            5 => Val(STATE_A::DATA),
+            6 => Val(STATE_A::DATAACK),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `IDLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == STATER::IDLE
+        *self == STATE_A::IDLE
     }
     #[doc = "Checks if the value of the field is `WAIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wait(&self) -> bool {
-        *self == STATER::WAIT
+        *self == STATE_A::WAIT
     }
     #[doc = "Checks if the value of the field is `START`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_start(&self) -> bool {
-        *self == STATER::START
+        *self == STATE_A::START
     }
     #[doc = "Checks if the value of the field is `ADDR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_addr(&self) -> bool {
-        *self == STATER::ADDR
+        *self == STATE_A::ADDR
     }
     #[doc = "Checks if the value of the field is `ADDRACK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_addrack(&self) -> bool {
-        *self == STATER::ADDRACK
+        *self == STATE_A::ADDRACK
     }
     #[doc = "Checks if the value of the field is `DATA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == STATER::DATA
+        *self == STATE_A::DATA
     }
     #[doc = "Checks if the value of the field is `DATAACK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dataack(&self) -> bool {
-        *self == STATER::DATAACK
+        *self == STATE_A::DATAACK
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Bus Busy"]
-    #[inline]
-    pub fn busy(&self) -> BUSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUSYR { bits }
+    #[inline(always)]
+    pub fn busy(&self) -> BUSY_R {
+        BUSY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Master"]
-    #[inline]
-    pub fn master(&self) -> MASTERR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MASTERR { bits }
+    #[inline(always)]
+    pub fn master(&self) -> MASTER_R {
+        MASTER_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Transmitter"]
-    #[inline]
-    pub fn transmitter(&self) -> TRANSMITTERR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TRANSMITTERR { bits }
+    #[inline(always)]
+    pub fn transmitter(&self) -> TRANSMITTER_R {
+        TRANSMITTER_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Nack Received"]
-    #[inline]
-    pub fn nacked(&self) -> NACKEDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NACKEDR { bits }
+    #[inline(always)]
+    pub fn nacked(&self) -> NACKED_R {
+        NACKED_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Bus Held"]
-    #[inline]
-    pub fn bushold(&self) -> BUSHOLDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUSHOLDR { bits }
+    #[inline(always)]
+    pub fn bushold(&self) -> BUSHOLD_R {
+        BUSHOLD_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:7 - Transmission State"]
-    #[inline]
-    pub fn state(&self) -> STATER {
-        STATER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn state(&self) -> STATE_R {
+        STATE_R::new(((self.bits >> 5) & 0x07) as u8)
     }
 }

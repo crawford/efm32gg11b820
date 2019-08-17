@@ -1,48 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EXTIPINSELL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EXTIPINSELL"]
+pub type R = crate::R<u32, super::EXTIPINSELL>;
+#[doc = "Writer for register EXTIPINSELL"]
+pub type W = crate::W<u32, super::EXTIPINSELL>;
+#[doc = "Register EXTIPINSELL `reset()`'s with value 0x3210_3210"]
+impl crate::ResetValue for super::EXTIPINSELL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3210_3210
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL0R {
+pub enum EXTIPINSEL0_A {
     #[doc = "Pin 0"]
     PIN0,
     #[doc = "Pin 1"]
@@ -52,53 +22,95 @@ pub enum EXTIPINSEL0R {
     #[doc = "Pin 3"]
     PIN3,
 }
-impl EXTIPINSEL0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL0_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL0R::PIN0 => 0,
-            EXTIPINSEL0R::PIN1 => 1,
-            EXTIPINSEL0R::PIN2 => 2,
-            EXTIPINSEL0R::PIN3 => 3,
+            EXTIPINSEL0_A::PIN0 => 0,
+            EXTIPINSEL0_A::PIN1 => 1,
+            EXTIPINSEL0_A::PIN2 => 2,
+            EXTIPINSEL0_A::PIN3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL0R {
-        match value {
-            0 => EXTIPINSEL0R::PIN0,
-            1 => EXTIPINSEL0R::PIN1,
-            2 => EXTIPINSEL0R::PIN2,
-            3 => EXTIPINSEL0R::PIN3,
+}
+#[doc = "Reader of field `EXTIPINSEL0`"]
+pub type EXTIPINSEL0_R = crate::R<u8, EXTIPINSEL0_A>;
+impl EXTIPINSEL0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL0_A {
+        match self.bits {
+            0 => EXTIPINSEL0_A::PIN0,
+            1 => EXTIPINSEL0_A::PIN1,
+            2 => EXTIPINSEL0_A::PIN2,
+            3 => EXTIPINSEL0_A::PIN3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin0(&self) -> bool {
-        *self == EXTIPINSEL0R::PIN0
+        *self == EXTIPINSEL0_A::PIN0
     }
     #[doc = "Checks if the value of the field is `PIN1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin1(&self) -> bool {
-        *self == EXTIPINSEL0R::PIN1
+        *self == EXTIPINSEL0_A::PIN1
     }
     #[doc = "Checks if the value of the field is `PIN2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin2(&self) -> bool {
-        *self == EXTIPINSEL0R::PIN2
+        *self == EXTIPINSEL0_A::PIN2
     }
     #[doc = "Checks if the value of the field is `PIN3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin3(&self) -> bool {
-        *self == EXTIPINSEL0R::PIN3
+        *self == EXTIPINSEL0_A::PIN3
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL0`"]
+pub struct EXTIPINSEL0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL0_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 0"]
+    #[inline(always)]
+    pub fn pin0(self) -> &'a mut W {
+        self.variant(EXTIPINSEL0_A::PIN0)
+    }
+    #[doc = "Pin 1"]
+    #[inline(always)]
+    pub fn pin1(self) -> &'a mut W {
+        self.variant(EXTIPINSEL0_A::PIN1)
+    }
+    #[doc = "Pin 2"]
+    #[inline(always)]
+    pub fn pin2(self) -> &'a mut W {
+        self.variant(EXTIPINSEL0_A::PIN2)
+    }
+    #[doc = "Pin 3"]
+    #[inline(always)]
+    pub fn pin3(self) -> &'a mut W {
+        self.variant(EXTIPINSEL0_A::PIN3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL1R {
+pub enum EXTIPINSEL1_A {
     #[doc = "Pin 0"]
     PIN0,
     #[doc = "Pin 1"]
@@ -108,53 +120,95 @@ pub enum EXTIPINSEL1R {
     #[doc = "Pin 3"]
     PIN3,
 }
-impl EXTIPINSEL1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL1_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL1R::PIN0 => 0,
-            EXTIPINSEL1R::PIN1 => 1,
-            EXTIPINSEL1R::PIN2 => 2,
-            EXTIPINSEL1R::PIN3 => 3,
+            EXTIPINSEL1_A::PIN0 => 0,
+            EXTIPINSEL1_A::PIN1 => 1,
+            EXTIPINSEL1_A::PIN2 => 2,
+            EXTIPINSEL1_A::PIN3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL1R {
-        match value {
-            0 => EXTIPINSEL1R::PIN0,
-            1 => EXTIPINSEL1R::PIN1,
-            2 => EXTIPINSEL1R::PIN2,
-            3 => EXTIPINSEL1R::PIN3,
+}
+#[doc = "Reader of field `EXTIPINSEL1`"]
+pub type EXTIPINSEL1_R = crate::R<u8, EXTIPINSEL1_A>;
+impl EXTIPINSEL1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL1_A {
+        match self.bits {
+            0 => EXTIPINSEL1_A::PIN0,
+            1 => EXTIPINSEL1_A::PIN1,
+            2 => EXTIPINSEL1_A::PIN2,
+            3 => EXTIPINSEL1_A::PIN3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin0(&self) -> bool {
-        *self == EXTIPINSEL1R::PIN0
+        *self == EXTIPINSEL1_A::PIN0
     }
     #[doc = "Checks if the value of the field is `PIN1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin1(&self) -> bool {
-        *self == EXTIPINSEL1R::PIN1
+        *self == EXTIPINSEL1_A::PIN1
     }
     #[doc = "Checks if the value of the field is `PIN2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin2(&self) -> bool {
-        *self == EXTIPINSEL1R::PIN2
+        *self == EXTIPINSEL1_A::PIN2
     }
     #[doc = "Checks if the value of the field is `PIN3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin3(&self) -> bool {
-        *self == EXTIPINSEL1R::PIN3
+        *self == EXTIPINSEL1_A::PIN3
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL1`"]
+pub struct EXTIPINSEL1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL1_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 0"]
+    #[inline(always)]
+    pub fn pin0(self) -> &'a mut W {
+        self.variant(EXTIPINSEL1_A::PIN0)
+    }
+    #[doc = "Pin 1"]
+    #[inline(always)]
+    pub fn pin1(self) -> &'a mut W {
+        self.variant(EXTIPINSEL1_A::PIN1)
+    }
+    #[doc = "Pin 2"]
+    #[inline(always)]
+    pub fn pin2(self) -> &'a mut W {
+        self.variant(EXTIPINSEL1_A::PIN2)
+    }
+    #[doc = "Pin 3"]
+    #[inline(always)]
+    pub fn pin3(self) -> &'a mut W {
+        self.variant(EXTIPINSEL1_A::PIN3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL2R {
+pub enum EXTIPINSEL2_A {
     #[doc = "Pin 0"]
     PIN0,
     #[doc = "Pin 1"]
@@ -164,53 +218,95 @@ pub enum EXTIPINSEL2R {
     #[doc = "Pin 3"]
     PIN3,
 }
-impl EXTIPINSEL2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL2_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL2R::PIN0 => 0,
-            EXTIPINSEL2R::PIN1 => 1,
-            EXTIPINSEL2R::PIN2 => 2,
-            EXTIPINSEL2R::PIN3 => 3,
+            EXTIPINSEL2_A::PIN0 => 0,
+            EXTIPINSEL2_A::PIN1 => 1,
+            EXTIPINSEL2_A::PIN2 => 2,
+            EXTIPINSEL2_A::PIN3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL2R {
-        match value {
-            0 => EXTIPINSEL2R::PIN0,
-            1 => EXTIPINSEL2R::PIN1,
-            2 => EXTIPINSEL2R::PIN2,
-            3 => EXTIPINSEL2R::PIN3,
+}
+#[doc = "Reader of field `EXTIPINSEL2`"]
+pub type EXTIPINSEL2_R = crate::R<u8, EXTIPINSEL2_A>;
+impl EXTIPINSEL2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL2_A {
+        match self.bits {
+            0 => EXTIPINSEL2_A::PIN0,
+            1 => EXTIPINSEL2_A::PIN1,
+            2 => EXTIPINSEL2_A::PIN2,
+            3 => EXTIPINSEL2_A::PIN3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin0(&self) -> bool {
-        *self == EXTIPINSEL2R::PIN0
+        *self == EXTIPINSEL2_A::PIN0
     }
     #[doc = "Checks if the value of the field is `PIN1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin1(&self) -> bool {
-        *self == EXTIPINSEL2R::PIN1
+        *self == EXTIPINSEL2_A::PIN1
     }
     #[doc = "Checks if the value of the field is `PIN2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin2(&self) -> bool {
-        *self == EXTIPINSEL2R::PIN2
+        *self == EXTIPINSEL2_A::PIN2
     }
     #[doc = "Checks if the value of the field is `PIN3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin3(&self) -> bool {
-        *self == EXTIPINSEL2R::PIN3
+        *self == EXTIPINSEL2_A::PIN3
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL2`"]
+pub struct EXTIPINSEL2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL2_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 0"]
+    #[inline(always)]
+    pub fn pin0(self) -> &'a mut W {
+        self.variant(EXTIPINSEL2_A::PIN0)
+    }
+    #[doc = "Pin 1"]
+    #[inline(always)]
+    pub fn pin1(self) -> &'a mut W {
+        self.variant(EXTIPINSEL2_A::PIN1)
+    }
+    #[doc = "Pin 2"]
+    #[inline(always)]
+    pub fn pin2(self) -> &'a mut W {
+        self.variant(EXTIPINSEL2_A::PIN2)
+    }
+    #[doc = "Pin 3"]
+    #[inline(always)]
+    pub fn pin3(self) -> &'a mut W {
+        self.variant(EXTIPINSEL2_A::PIN3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL3R {
+pub enum EXTIPINSEL3_A {
     #[doc = "Pin 0"]
     PIN0,
     #[doc = "Pin 1"]
@@ -220,53 +316,95 @@ pub enum EXTIPINSEL3R {
     #[doc = "Pin 3"]
     PIN3,
 }
-impl EXTIPINSEL3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL3_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL3R::PIN0 => 0,
-            EXTIPINSEL3R::PIN1 => 1,
-            EXTIPINSEL3R::PIN2 => 2,
-            EXTIPINSEL3R::PIN3 => 3,
+            EXTIPINSEL3_A::PIN0 => 0,
+            EXTIPINSEL3_A::PIN1 => 1,
+            EXTIPINSEL3_A::PIN2 => 2,
+            EXTIPINSEL3_A::PIN3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL3R {
-        match value {
-            0 => EXTIPINSEL3R::PIN0,
-            1 => EXTIPINSEL3R::PIN1,
-            2 => EXTIPINSEL3R::PIN2,
-            3 => EXTIPINSEL3R::PIN3,
+}
+#[doc = "Reader of field `EXTIPINSEL3`"]
+pub type EXTIPINSEL3_R = crate::R<u8, EXTIPINSEL3_A>;
+impl EXTIPINSEL3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL3_A {
+        match self.bits {
+            0 => EXTIPINSEL3_A::PIN0,
+            1 => EXTIPINSEL3_A::PIN1,
+            2 => EXTIPINSEL3_A::PIN2,
+            3 => EXTIPINSEL3_A::PIN3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin0(&self) -> bool {
-        *self == EXTIPINSEL3R::PIN0
+        *self == EXTIPINSEL3_A::PIN0
     }
     #[doc = "Checks if the value of the field is `PIN1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin1(&self) -> bool {
-        *self == EXTIPINSEL3R::PIN1
+        *self == EXTIPINSEL3_A::PIN1
     }
     #[doc = "Checks if the value of the field is `PIN2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin2(&self) -> bool {
-        *self == EXTIPINSEL3R::PIN2
+        *self == EXTIPINSEL3_A::PIN2
     }
     #[doc = "Checks if the value of the field is `PIN3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin3(&self) -> bool {
-        *self == EXTIPINSEL3R::PIN3
+        *self == EXTIPINSEL3_A::PIN3
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL3`"]
+pub struct EXTIPINSEL3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL3_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 0"]
+    #[inline(always)]
+    pub fn pin0(self) -> &'a mut W {
+        self.variant(EXTIPINSEL3_A::PIN0)
+    }
+    #[doc = "Pin 1"]
+    #[inline(always)]
+    pub fn pin1(self) -> &'a mut W {
+        self.variant(EXTIPINSEL3_A::PIN1)
+    }
+    #[doc = "Pin 2"]
+    #[inline(always)]
+    pub fn pin2(self) -> &'a mut W {
+        self.variant(EXTIPINSEL3_A::PIN2)
+    }
+    #[doc = "Pin 3"]
+    #[inline(always)]
+    pub fn pin3(self) -> &'a mut W {
+        self.variant(EXTIPINSEL3_A::PIN3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL4R {
+pub enum EXTIPINSEL4_A {
     #[doc = "Pin 4"]
     PIN4,
     #[doc = "Pin 5"]
@@ -276,53 +414,95 @@ pub enum EXTIPINSEL4R {
     #[doc = "Pin 7"]
     PIN7,
 }
-impl EXTIPINSEL4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL4_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL4R::PIN4 => 0,
-            EXTIPINSEL4R::PIN5 => 1,
-            EXTIPINSEL4R::PIN6 => 2,
-            EXTIPINSEL4R::PIN7 => 3,
+            EXTIPINSEL4_A::PIN4 => 0,
+            EXTIPINSEL4_A::PIN5 => 1,
+            EXTIPINSEL4_A::PIN6 => 2,
+            EXTIPINSEL4_A::PIN7 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL4R {
-        match value {
-            0 => EXTIPINSEL4R::PIN4,
-            1 => EXTIPINSEL4R::PIN5,
-            2 => EXTIPINSEL4R::PIN6,
-            3 => EXTIPINSEL4R::PIN7,
+}
+#[doc = "Reader of field `EXTIPINSEL4`"]
+pub type EXTIPINSEL4_R = crate::R<u8, EXTIPINSEL4_A>;
+impl EXTIPINSEL4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL4_A {
+        match self.bits {
+            0 => EXTIPINSEL4_A::PIN4,
+            1 => EXTIPINSEL4_A::PIN5,
+            2 => EXTIPINSEL4_A::PIN6,
+            3 => EXTIPINSEL4_A::PIN7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin4(&self) -> bool {
-        *self == EXTIPINSEL4R::PIN4
+        *self == EXTIPINSEL4_A::PIN4
     }
     #[doc = "Checks if the value of the field is `PIN5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin5(&self) -> bool {
-        *self == EXTIPINSEL4R::PIN5
+        *self == EXTIPINSEL4_A::PIN5
     }
     #[doc = "Checks if the value of the field is `PIN6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin6(&self) -> bool {
-        *self == EXTIPINSEL4R::PIN6
+        *self == EXTIPINSEL4_A::PIN6
     }
     #[doc = "Checks if the value of the field is `PIN7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin7(&self) -> bool {
-        *self == EXTIPINSEL4R::PIN7
+        *self == EXTIPINSEL4_A::PIN7
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL4`"]
+pub struct EXTIPINSEL4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL4_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 4"]
+    #[inline(always)]
+    pub fn pin4(self) -> &'a mut W {
+        self.variant(EXTIPINSEL4_A::PIN4)
+    }
+    #[doc = "Pin 5"]
+    #[inline(always)]
+    pub fn pin5(self) -> &'a mut W {
+        self.variant(EXTIPINSEL4_A::PIN5)
+    }
+    #[doc = "Pin 6"]
+    #[inline(always)]
+    pub fn pin6(self) -> &'a mut W {
+        self.variant(EXTIPINSEL4_A::PIN6)
+    }
+    #[doc = "Pin 7"]
+    #[inline(always)]
+    pub fn pin7(self) -> &'a mut W {
+        self.variant(EXTIPINSEL4_A::PIN7)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL5R {
+pub enum EXTIPINSEL5_A {
     #[doc = "Pin 4"]
     PIN4,
     #[doc = "Pin 5"]
@@ -332,53 +512,95 @@ pub enum EXTIPINSEL5R {
     #[doc = "Pin 7"]
     PIN7,
 }
-impl EXTIPINSEL5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL5_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL5R::PIN4 => 0,
-            EXTIPINSEL5R::PIN5 => 1,
-            EXTIPINSEL5R::PIN6 => 2,
-            EXTIPINSEL5R::PIN7 => 3,
+            EXTIPINSEL5_A::PIN4 => 0,
+            EXTIPINSEL5_A::PIN5 => 1,
+            EXTIPINSEL5_A::PIN6 => 2,
+            EXTIPINSEL5_A::PIN7 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL5R {
-        match value {
-            0 => EXTIPINSEL5R::PIN4,
-            1 => EXTIPINSEL5R::PIN5,
-            2 => EXTIPINSEL5R::PIN6,
-            3 => EXTIPINSEL5R::PIN7,
+}
+#[doc = "Reader of field `EXTIPINSEL5`"]
+pub type EXTIPINSEL5_R = crate::R<u8, EXTIPINSEL5_A>;
+impl EXTIPINSEL5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL5_A {
+        match self.bits {
+            0 => EXTIPINSEL5_A::PIN4,
+            1 => EXTIPINSEL5_A::PIN5,
+            2 => EXTIPINSEL5_A::PIN6,
+            3 => EXTIPINSEL5_A::PIN7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin4(&self) -> bool {
-        *self == EXTIPINSEL5R::PIN4
+        *self == EXTIPINSEL5_A::PIN4
     }
     #[doc = "Checks if the value of the field is `PIN5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin5(&self) -> bool {
-        *self == EXTIPINSEL5R::PIN5
+        *self == EXTIPINSEL5_A::PIN5
     }
     #[doc = "Checks if the value of the field is `PIN6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin6(&self) -> bool {
-        *self == EXTIPINSEL5R::PIN6
+        *self == EXTIPINSEL5_A::PIN6
     }
     #[doc = "Checks if the value of the field is `PIN7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin7(&self) -> bool {
-        *self == EXTIPINSEL5R::PIN7
+        *self == EXTIPINSEL5_A::PIN7
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL5`"]
+pub struct EXTIPINSEL5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL5_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 4"]
+    #[inline(always)]
+    pub fn pin4(self) -> &'a mut W {
+        self.variant(EXTIPINSEL5_A::PIN4)
+    }
+    #[doc = "Pin 5"]
+    #[inline(always)]
+    pub fn pin5(self) -> &'a mut W {
+        self.variant(EXTIPINSEL5_A::PIN5)
+    }
+    #[doc = "Pin 6"]
+    #[inline(always)]
+    pub fn pin6(self) -> &'a mut W {
+        self.variant(EXTIPINSEL5_A::PIN6)
+    }
+    #[doc = "Pin 7"]
+    #[inline(always)]
+    pub fn pin7(self) -> &'a mut W {
+        self.variant(EXTIPINSEL5_A::PIN7)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL6R {
+pub enum EXTIPINSEL6_A {
     #[doc = "Pin 4"]
     PIN4,
     #[doc = "Pin 5"]
@@ -388,53 +610,95 @@ pub enum EXTIPINSEL6R {
     #[doc = "Pin 7"]
     PIN7,
 }
-impl EXTIPINSEL6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL6_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL6R::PIN4 => 0,
-            EXTIPINSEL6R::PIN5 => 1,
-            EXTIPINSEL6R::PIN6 => 2,
-            EXTIPINSEL6R::PIN7 => 3,
+            EXTIPINSEL6_A::PIN4 => 0,
+            EXTIPINSEL6_A::PIN5 => 1,
+            EXTIPINSEL6_A::PIN6 => 2,
+            EXTIPINSEL6_A::PIN7 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL6R {
-        match value {
-            0 => EXTIPINSEL6R::PIN4,
-            1 => EXTIPINSEL6R::PIN5,
-            2 => EXTIPINSEL6R::PIN6,
-            3 => EXTIPINSEL6R::PIN7,
+}
+#[doc = "Reader of field `EXTIPINSEL6`"]
+pub type EXTIPINSEL6_R = crate::R<u8, EXTIPINSEL6_A>;
+impl EXTIPINSEL6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL6_A {
+        match self.bits {
+            0 => EXTIPINSEL6_A::PIN4,
+            1 => EXTIPINSEL6_A::PIN5,
+            2 => EXTIPINSEL6_A::PIN6,
+            3 => EXTIPINSEL6_A::PIN7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin4(&self) -> bool {
-        *self == EXTIPINSEL6R::PIN4
+        *self == EXTIPINSEL6_A::PIN4
     }
     #[doc = "Checks if the value of the field is `PIN5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin5(&self) -> bool {
-        *self == EXTIPINSEL6R::PIN5
+        *self == EXTIPINSEL6_A::PIN5
     }
     #[doc = "Checks if the value of the field is `PIN6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin6(&self) -> bool {
-        *self == EXTIPINSEL6R::PIN6
+        *self == EXTIPINSEL6_A::PIN6
     }
     #[doc = "Checks if the value of the field is `PIN7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin7(&self) -> bool {
-        *self == EXTIPINSEL6R::PIN7
+        *self == EXTIPINSEL6_A::PIN7
+    }
+}
+#[doc = "Write proxy for field `EXTIPINSEL6`"]
+pub struct EXTIPINSEL6_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXTIPINSEL6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL6_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Pin 4"]
+    #[inline(always)]
+    pub fn pin4(self) -> &'a mut W {
+        self.variant(EXTIPINSEL6_A::PIN4)
+    }
+    #[doc = "Pin 5"]
+    #[inline(always)]
+    pub fn pin5(self) -> &'a mut W {
+        self.variant(EXTIPINSEL6_A::PIN5)
+    }
+    #[doc = "Pin 6"]
+    #[inline(always)]
+    pub fn pin6(self) -> &'a mut W {
+        self.variant(EXTIPINSEL6_A::PIN6)
+    }
+    #[doc = "Pin 7"]
+    #[inline(always)]
+    pub fn pin7(self) -> &'a mut W {
+        self.variant(EXTIPINSEL6_A::PIN7)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXTIPINSEL7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTIPINSEL7R {
+pub enum EXTIPINSEL7_A {
     #[doc = "Pin 4"]
     PIN4,
     #[doc = "Pin 5"]
@@ -444,707 +708,173 @@ pub enum EXTIPINSEL7R {
     #[doc = "Pin 7"]
     PIN7,
 }
-impl EXTIPINSEL7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXTIPINSEL7_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXTIPINSEL7R::PIN4 => 0,
-            EXTIPINSEL7R::PIN5 => 1,
-            EXTIPINSEL7R::PIN6 => 2,
-            EXTIPINSEL7R::PIN7 => 3,
+            EXTIPINSEL7_A::PIN4 => 0,
+            EXTIPINSEL7_A::PIN5 => 1,
+            EXTIPINSEL7_A::PIN6 => 2,
+            EXTIPINSEL7_A::PIN7 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTIPINSEL7R {
-        match value {
-            0 => EXTIPINSEL7R::PIN4,
-            1 => EXTIPINSEL7R::PIN5,
-            2 => EXTIPINSEL7R::PIN6,
-            3 => EXTIPINSEL7R::PIN7,
+}
+#[doc = "Reader of field `EXTIPINSEL7`"]
+pub type EXTIPINSEL7_R = crate::R<u8, EXTIPINSEL7_A>;
+impl EXTIPINSEL7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTIPINSEL7_A {
+        match self.bits {
+            0 => EXTIPINSEL7_A::PIN4,
+            1 => EXTIPINSEL7_A::PIN5,
+            2 => EXTIPINSEL7_A::PIN6,
+            3 => EXTIPINSEL7_A::PIN7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PIN4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin4(&self) -> bool {
-        *self == EXTIPINSEL7R::PIN4
+        *self == EXTIPINSEL7_A::PIN4
     }
     #[doc = "Checks if the value of the field is `PIN5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin5(&self) -> bool {
-        *self == EXTIPINSEL7R::PIN5
+        *self == EXTIPINSEL7_A::PIN5
     }
     #[doc = "Checks if the value of the field is `PIN6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin6(&self) -> bool {
-        *self == EXTIPINSEL7R::PIN6
+        *self == EXTIPINSEL7_A::PIN6
     }
     #[doc = "Checks if the value of the field is `PIN7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pin7(&self) -> bool {
-        *self == EXTIPINSEL7R::PIN7
+        *self == EXTIPINSEL7_A::PIN7
     }
 }
-#[doc = "Values that can be written to the field `EXTIPINSEL0`"]
-pub enum EXTIPINSEL0W {
-    #[doc = "Pin 0"]
-    PIN0,
-    #[doc = "Pin 1"]
-    PIN1,
-    #[doc = "Pin 2"]
-    PIN2,
-    #[doc = "Pin 3"]
-    PIN3,
-}
-impl EXTIPINSEL0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL0W::PIN0 => 0,
-            EXTIPINSEL0W::PIN1 => 1,
-            EXTIPINSEL0W::PIN2 => 2,
-            EXTIPINSEL0W::PIN3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL0W<'a> {
+#[doc = "Write proxy for field `EXTIPINSEL7`"]
+pub struct EXTIPINSEL7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTIPINSEL0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL0W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 0"]
-    #[inline]
-    pub fn pin0(self) -> &'a mut W {
-        self.variant(EXTIPINSEL0W::PIN0)
-    }
-    #[doc = "Pin 1"]
-    #[inline]
-    pub fn pin1(self) -> &'a mut W {
-        self.variant(EXTIPINSEL0W::PIN1)
-    }
-    #[doc = "Pin 2"]
-    #[inline]
-    pub fn pin2(self) -> &'a mut W {
-        self.variant(EXTIPINSEL0W::PIN2)
-    }
-    #[doc = "Pin 3"]
-    #[inline]
-    pub fn pin3(self) -> &'a mut W {
-        self.variant(EXTIPINSEL0W::PIN3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL1`"]
-pub enum EXTIPINSEL1W {
-    #[doc = "Pin 0"]
-    PIN0,
-    #[doc = "Pin 1"]
-    PIN1,
-    #[doc = "Pin 2"]
-    PIN2,
-    #[doc = "Pin 3"]
-    PIN3,
-}
-impl EXTIPINSEL1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL1W::PIN0 => 0,
-            EXTIPINSEL1W::PIN1 => 1,
-            EXTIPINSEL1W::PIN2 => 2,
-            EXTIPINSEL1W::PIN3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL1W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 0"]
-    #[inline]
-    pub fn pin0(self) -> &'a mut W {
-        self.variant(EXTIPINSEL1W::PIN0)
-    }
-    #[doc = "Pin 1"]
-    #[inline]
-    pub fn pin1(self) -> &'a mut W {
-        self.variant(EXTIPINSEL1W::PIN1)
-    }
-    #[doc = "Pin 2"]
-    #[inline]
-    pub fn pin2(self) -> &'a mut W {
-        self.variant(EXTIPINSEL1W::PIN2)
-    }
-    #[doc = "Pin 3"]
-    #[inline]
-    pub fn pin3(self) -> &'a mut W {
-        self.variant(EXTIPINSEL1W::PIN3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL2`"]
-pub enum EXTIPINSEL2W {
-    #[doc = "Pin 0"]
-    PIN0,
-    #[doc = "Pin 1"]
-    PIN1,
-    #[doc = "Pin 2"]
-    PIN2,
-    #[doc = "Pin 3"]
-    PIN3,
-}
-impl EXTIPINSEL2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL2W::PIN0 => 0,
-            EXTIPINSEL2W::PIN1 => 1,
-            EXTIPINSEL2W::PIN2 => 2,
-            EXTIPINSEL2W::PIN3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL2W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 0"]
-    #[inline]
-    pub fn pin0(self) -> &'a mut W {
-        self.variant(EXTIPINSEL2W::PIN0)
-    }
-    #[doc = "Pin 1"]
-    #[inline]
-    pub fn pin1(self) -> &'a mut W {
-        self.variant(EXTIPINSEL2W::PIN1)
-    }
-    #[doc = "Pin 2"]
-    #[inline]
-    pub fn pin2(self) -> &'a mut W {
-        self.variant(EXTIPINSEL2W::PIN2)
-    }
-    #[doc = "Pin 3"]
-    #[inline]
-    pub fn pin3(self) -> &'a mut W {
-        self.variant(EXTIPINSEL2W::PIN3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL3`"]
-pub enum EXTIPINSEL3W {
-    #[doc = "Pin 0"]
-    PIN0,
-    #[doc = "Pin 1"]
-    PIN1,
-    #[doc = "Pin 2"]
-    PIN2,
-    #[doc = "Pin 3"]
-    PIN3,
-}
-impl EXTIPINSEL3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL3W::PIN0 => 0,
-            EXTIPINSEL3W::PIN1 => 1,
-            EXTIPINSEL3W::PIN2 => 2,
-            EXTIPINSEL3W::PIN3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL3W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 0"]
-    #[inline]
-    pub fn pin0(self) -> &'a mut W {
-        self.variant(EXTIPINSEL3W::PIN0)
-    }
-    #[doc = "Pin 1"]
-    #[inline]
-    pub fn pin1(self) -> &'a mut W {
-        self.variant(EXTIPINSEL3W::PIN1)
-    }
-    #[doc = "Pin 2"]
-    #[inline]
-    pub fn pin2(self) -> &'a mut W {
-        self.variant(EXTIPINSEL3W::PIN2)
-    }
-    #[doc = "Pin 3"]
-    #[inline]
-    pub fn pin3(self) -> &'a mut W {
-        self.variant(EXTIPINSEL3W::PIN3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL4`"]
-pub enum EXTIPINSEL4W {
-    #[doc = "Pin 4"]
-    PIN4,
-    #[doc = "Pin 5"]
-    PIN5,
-    #[doc = "Pin 6"]
-    PIN6,
-    #[doc = "Pin 7"]
-    PIN7,
-}
-impl EXTIPINSEL4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL4W::PIN4 => 0,
-            EXTIPINSEL4W::PIN5 => 1,
-            EXTIPINSEL4W::PIN6 => 2,
-            EXTIPINSEL4W::PIN7 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL4W) -> &'a mut W {
+impl<'a> EXTIPINSEL7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTIPINSEL7_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Pin 4"]
-    #[inline]
+    #[inline(always)]
     pub fn pin4(self) -> &'a mut W {
-        self.variant(EXTIPINSEL4W::PIN4)
+        self.variant(EXTIPINSEL7_A::PIN4)
     }
     #[doc = "Pin 5"]
-    #[inline]
+    #[inline(always)]
     pub fn pin5(self) -> &'a mut W {
-        self.variant(EXTIPINSEL4W::PIN5)
+        self.variant(EXTIPINSEL7_A::PIN5)
     }
     #[doc = "Pin 6"]
-    #[inline]
+    #[inline(always)]
     pub fn pin6(self) -> &'a mut W {
-        self.variant(EXTIPINSEL4W::PIN6)
+        self.variant(EXTIPINSEL7_A::PIN6)
     }
     #[doc = "Pin 7"]
-    #[inline]
+    #[inline(always)]
     pub fn pin7(self) -> &'a mut W {
-        self.variant(EXTIPINSEL4W::PIN7)
+        self.variant(EXTIPINSEL7_A::PIN7)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL5`"]
-pub enum EXTIPINSEL5W {
-    #[doc = "Pin 4"]
-    PIN4,
-    #[doc = "Pin 5"]
-    PIN5,
-    #[doc = "Pin 6"]
-    PIN6,
-    #[doc = "Pin 7"]
-    PIN7,
-}
-impl EXTIPINSEL5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL5W::PIN4 => 0,
-            EXTIPINSEL5W::PIN5 => 1,
-            EXTIPINSEL5W::PIN6 => 2,
-            EXTIPINSEL5W::PIN7 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL5W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 4"]
-    #[inline]
-    pub fn pin4(self) -> &'a mut W {
-        self.variant(EXTIPINSEL5W::PIN4)
-    }
-    #[doc = "Pin 5"]
-    #[inline]
-    pub fn pin5(self) -> &'a mut W {
-        self.variant(EXTIPINSEL5W::PIN5)
-    }
-    #[doc = "Pin 6"]
-    #[inline]
-    pub fn pin6(self) -> &'a mut W {
-        self.variant(EXTIPINSEL5W::PIN6)
-    }
-    #[doc = "Pin 7"]
-    #[inline]
-    pub fn pin7(self) -> &'a mut W {
-        self.variant(EXTIPINSEL5W::PIN7)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL6`"]
-pub enum EXTIPINSEL6W {
-    #[doc = "Pin 4"]
-    PIN4,
-    #[doc = "Pin 5"]
-    PIN5,
-    #[doc = "Pin 6"]
-    PIN6,
-    #[doc = "Pin 7"]
-    PIN7,
-}
-impl EXTIPINSEL6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL6W::PIN4 => 0,
-            EXTIPINSEL6W::PIN5 => 1,
-            EXTIPINSEL6W::PIN6 => 2,
-            EXTIPINSEL6W::PIN7 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL6W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 4"]
-    #[inline]
-    pub fn pin4(self) -> &'a mut W {
-        self.variant(EXTIPINSEL6W::PIN4)
-    }
-    #[doc = "Pin 5"]
-    #[inline]
-    pub fn pin5(self) -> &'a mut W {
-        self.variant(EXTIPINSEL6W::PIN5)
-    }
-    #[doc = "Pin 6"]
-    #[inline]
-    pub fn pin6(self) -> &'a mut W {
-        self.variant(EXTIPINSEL6W::PIN6)
-    }
-    #[doc = "Pin 7"]
-    #[inline]
-    pub fn pin7(self) -> &'a mut W {
-        self.variant(EXTIPINSEL6W::PIN7)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXTIPINSEL7`"]
-pub enum EXTIPINSEL7W {
-    #[doc = "Pin 4"]
-    PIN4,
-    #[doc = "Pin 5"]
-    PIN5,
-    #[doc = "Pin 6"]
-    PIN6,
-    #[doc = "Pin 7"]
-    PIN7,
-}
-impl EXTIPINSEL7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTIPINSEL7W::PIN4 => 0,
-            EXTIPINSEL7W::PIN5 => 1,
-            EXTIPINSEL7W::PIN6 => 2,
-            EXTIPINSEL7W::PIN7 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXTIPINSEL7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXTIPINSEL7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTIPINSEL7W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Pin 4"]
-    #[inline]
-    pub fn pin4(self) -> &'a mut W {
-        self.variant(EXTIPINSEL7W::PIN4)
-    }
-    #[doc = "Pin 5"]
-    #[inline]
-    pub fn pin5(self) -> &'a mut W {
-        self.variant(EXTIPINSEL7W::PIN5)
-    }
-    #[doc = "Pin 6"]
-    #[inline]
-    pub fn pin6(self) -> &'a mut W {
-        self.variant(EXTIPINSEL7W::PIN6)
-    }
-    #[doc = "Pin 7"]
-    #[inline]
-    pub fn pin7(self) -> &'a mut W {
-        self.variant(EXTIPINSEL7W::PIN7)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - External Interrupt 0 Pin Select"]
-    #[inline]
-    pub fn extipinsel0(&self) -> EXTIPINSEL0R {
-        EXTIPINSEL0R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel0(&self) -> EXTIPINSEL0_R {
+        EXTIPINSEL0_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - External Interrupt 1 Pin Select"]
-    #[inline]
-    pub fn extipinsel1(&self) -> EXTIPINSEL1R {
-        EXTIPINSEL1R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel1(&self) -> EXTIPINSEL1_R {
+        EXTIPINSEL1_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - External Interrupt 2 Pin Select"]
-    #[inline]
-    pub fn extipinsel2(&self) -> EXTIPINSEL2R {
-        EXTIPINSEL2R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel2(&self) -> EXTIPINSEL2_R {
+        EXTIPINSEL2_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - External Interrupt 3 Pin Select"]
-    #[inline]
-    pub fn extipinsel3(&self) -> EXTIPINSEL3R {
-        EXTIPINSEL3R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel3(&self) -> EXTIPINSEL3_R {
+        EXTIPINSEL3_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 16:17 - External Interrupt 4 Pin Select"]
-    #[inline]
-    pub fn extipinsel4(&self) -> EXTIPINSEL4R {
-        EXTIPINSEL4R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel4(&self) -> EXTIPINSEL4_R {
+        EXTIPINSEL4_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 20:21 - External Interrupt 5 Pin Select"]
-    #[inline]
-    pub fn extipinsel5(&self) -> EXTIPINSEL5R {
-        EXTIPINSEL5R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel5(&self) -> EXTIPINSEL5_R {
+        EXTIPINSEL5_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 24:25 - External Interrupt 6 Pin Select"]
-    #[inline]
-    pub fn extipinsel6(&self) -> EXTIPINSEL6R {
-        EXTIPINSEL6R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel6(&self) -> EXTIPINSEL6_R {
+        EXTIPINSEL6_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - External Interrupt 7 Pin Select"]
-    #[inline]
-    pub fn extipinsel7(&self) -> EXTIPINSEL7R {
-        EXTIPINSEL7R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extipinsel7(&self) -> EXTIPINSEL7_R {
+        EXTIPINSEL7_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 839922192 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - External Interrupt 0 Pin Select"]
-    #[inline]
-    pub fn extipinsel0(&mut self) -> _EXTIPINSEL0W {
-        _EXTIPINSEL0W { w: self }
+    #[inline(always)]
+    pub fn extipinsel0(&mut self) -> EXTIPINSEL0_W {
+        EXTIPINSEL0_W { w: self }
     }
     #[doc = "Bits 4:5 - External Interrupt 1 Pin Select"]
-    #[inline]
-    pub fn extipinsel1(&mut self) -> _EXTIPINSEL1W {
-        _EXTIPINSEL1W { w: self }
+    #[inline(always)]
+    pub fn extipinsel1(&mut self) -> EXTIPINSEL1_W {
+        EXTIPINSEL1_W { w: self }
     }
     #[doc = "Bits 8:9 - External Interrupt 2 Pin Select"]
-    #[inline]
-    pub fn extipinsel2(&mut self) -> _EXTIPINSEL2W {
-        _EXTIPINSEL2W { w: self }
+    #[inline(always)]
+    pub fn extipinsel2(&mut self) -> EXTIPINSEL2_W {
+        EXTIPINSEL2_W { w: self }
     }
     #[doc = "Bits 12:13 - External Interrupt 3 Pin Select"]
-    #[inline]
-    pub fn extipinsel3(&mut self) -> _EXTIPINSEL3W {
-        _EXTIPINSEL3W { w: self }
+    #[inline(always)]
+    pub fn extipinsel3(&mut self) -> EXTIPINSEL3_W {
+        EXTIPINSEL3_W { w: self }
     }
     #[doc = "Bits 16:17 - External Interrupt 4 Pin Select"]
-    #[inline]
-    pub fn extipinsel4(&mut self) -> _EXTIPINSEL4W {
-        _EXTIPINSEL4W { w: self }
+    #[inline(always)]
+    pub fn extipinsel4(&mut self) -> EXTIPINSEL4_W {
+        EXTIPINSEL4_W { w: self }
     }
     #[doc = "Bits 20:21 - External Interrupt 5 Pin Select"]
-    #[inline]
-    pub fn extipinsel5(&mut self) -> _EXTIPINSEL5W {
-        _EXTIPINSEL5W { w: self }
+    #[inline(always)]
+    pub fn extipinsel5(&mut self) -> EXTIPINSEL5_W {
+        EXTIPINSEL5_W { w: self }
     }
     #[doc = "Bits 24:25 - External Interrupt 6 Pin Select"]
-    #[inline]
-    pub fn extipinsel6(&mut self) -> _EXTIPINSEL6W {
-        _EXTIPINSEL6W { w: self }
+    #[inline(always)]
+    pub fn extipinsel6(&mut self) -> EXTIPINSEL6_W {
+        EXTIPINSEL6_W { w: self }
     }
     #[doc = "Bits 28:29 - External Interrupt 7 Pin Select"]
-    #[inline]
-    pub fn extipinsel7(&mut self) -> _EXTIPINSEL7W {
-        _EXTIPINSEL7W { w: self }
+    #[inline(always)]
+    pub fn extipinsel7(&mut self) -> EXTIPINSEL7_W {
+        EXTIPINSEL7_W { w: self }
     }
 }

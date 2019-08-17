@@ -1,463 +1,109 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMDINHIBITCMDR {
-    bits: bool,
-}
-impl CMDINHIBITCMDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMDINHIBITDATR {
-    bits: bool,
-}
-impl CMDINHIBITDATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATLINEACTIVER {
-    bits: bool,
-}
-impl DATLINEACTIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RETUNINGREQR {
-    bits: bool,
-}
-impl RETUNINGREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WRTRANACTR {
-    bits: bool,
-}
-impl WRTRANACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDTRANACTR {
-    bits: bool,
-}
-impl RDTRANACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFFERWRITEENABLER {
-    bits: bool,
-}
-impl BUFFERWRITEENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUFRDENR {
-    bits: bool,
-}
-impl BUFRDENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CARDINSR {
-    bits: bool,
-}
-impl CARDINSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CARDSTATESTABLER {
-    bits: bool,
-}
-impl CARDSTATESTABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CARDDETPINLVLR {
-    bits: bool,
-}
-impl CARDDETPINLVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WRPROTSWPINLVLR {
-    bits: bool,
-}
-impl WRPROTSWPINLVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DAT3TO0SIGLVLR {
-    bits: u8,
-}
-impl DAT3TO0SIGLVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMDSIGLVLR {
-    bits: bool,
-}
-impl CMDSIGLVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DAT7TO4SIGLVLR {
-    bits: u8,
-}
-impl DAT7TO4SIGLVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register PRSSTAT"]
+pub type R = crate::R<u32, super::PRSSTAT>;
+#[doc = "Reader of field `CMDINHIBITCMD`"]
+pub type CMDINHIBITCMD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CMDINHIBITDAT`"]
+pub type CMDINHIBITDAT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DATLINEACTIVE`"]
+pub type DATLINEACTIVE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RETUNINGREQ`"]
+pub type RETUNINGREQ_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WRTRANACT`"]
+pub type WRTRANACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RDTRANACT`"]
+pub type RDTRANACT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUFFERWRITEENABLE`"]
+pub type BUFFERWRITEENABLE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BUFRDEN`"]
+pub type BUFRDEN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CARDINS`"]
+pub type CARDINS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CARDSTATESTABLE`"]
+pub type CARDSTATESTABLE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `CARDDETPINLVL`"]
+pub type CARDDETPINLVL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WRPROTSWPINLVL`"]
+pub type WRPROTSWPINLVL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DAT3TO0SIGLVL`"]
+pub type DAT3TO0SIGLVL_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CMDSIGLVL`"]
+pub type CMDSIGLVL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DAT7TO4SIGLVL`"]
+pub type DAT7TO4SIGLVL_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Command Inhibit (CMD)"]
-    #[inline]
-    pub fn cmdinhibitcmd(&self) -> CMDINHIBITCMDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMDINHIBITCMDR { bits }
+    #[inline(always)]
+    pub fn cmdinhibitcmd(&self) -> CMDINHIBITCMD_R {
+        CMDINHIBITCMD_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Command Inhibit (DAT)"]
-    #[inline]
-    pub fn cmdinhibitdat(&self) -> CMDINHIBITDATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMDINHIBITDATR { bits }
+    #[inline(always)]
+    pub fn cmdinhibitdat(&self) -> CMDINHIBITDAT_R {
+        CMDINHIBITDAT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - DAT Line Active"]
-    #[inline]
-    pub fn datlineactive(&self) -> DATLINEACTIVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DATLINEACTIVER { bits }
+    #[inline(always)]
+    pub fn datlineactive(&self) -> DATLINEACTIVE_R {
+        DATLINEACTIVE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Re-Tuning Request"]
-    #[inline]
-    pub fn retuningreq(&self) -> RETUNINGREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RETUNINGREQR { bits }
+    #[inline(always)]
+    pub fn retuningreq(&self) -> RETUNINGREQ_R {
+        RETUNINGREQ_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Write Transfer Active"]
-    #[inline]
-    pub fn wrtranact(&self) -> WRTRANACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WRTRANACTR { bits }
+    #[inline(always)]
+    pub fn wrtranact(&self) -> WRTRANACT_R {
+        WRTRANACT_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Read Transfer Active"]
-    #[inline]
-    pub fn rdtranact(&self) -> RDTRANACTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RDTRANACTR { bits }
+    #[inline(always)]
+    pub fn rdtranact(&self) -> RDTRANACT_R {
+        RDTRANACT_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Buffer Write Enable"]
-    #[inline]
-    pub fn bufferwriteenable(&self) -> BUFFERWRITEENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFFERWRITEENABLER { bits }
+    #[inline(always)]
+    pub fn bufferwriteenable(&self) -> BUFFERWRITEENABLE_R {
+        BUFFERWRITEENABLE_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Buffer Read Enable"]
-    #[inline]
-    pub fn bufrden(&self) -> BUFRDENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        BUFRDENR { bits }
+    #[inline(always)]
+    pub fn bufrden(&self) -> BUFRDEN_R {
+        BUFRDEN_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Card Inserted Status"]
-    #[inline]
-    pub fn cardins(&self) -> CARDINSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CARDINSR { bits }
+    #[inline(always)]
+    pub fn cardins(&self) -> CARDINS_R {
+        CARDINS_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Card State Stable Status"]
-    #[inline]
-    pub fn cardstatestable(&self) -> CARDSTATESTABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CARDSTATESTABLER { bits }
+    #[inline(always)]
+    pub fn cardstatestable(&self) -> CARDSTATESTABLE_R {
+        CARDSTATESTABLE_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Card Detect Pin Level"]
-    #[inline]
-    pub fn carddetpinlvl(&self) -> CARDDETPINLVLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CARDDETPINLVLR { bits }
+    #[inline(always)]
+    pub fn carddetpinlvl(&self) -> CARDDETPINLVL_R {
+        CARDDETPINLVL_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Write Protect Switch Pin Level"]
-    #[inline]
-    pub fn wrprotswpinlvl(&self) -> WRPROTSWPINLVLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WRPROTSWPINLVLR { bits }
+    #[inline(always)]
+    pub fn wrprotswpinlvl(&self) -> WRPROTSWPINLVL_R {
+        WRPROTSWPINLVL_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bits 20:23 - DAT\\[3:0\\] Line Signal Level"]
-    #[inline]
-    pub fn dat3to0siglvl(&self) -> DAT3TO0SIGLVLR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DAT3TO0SIGLVLR { bits }
+    #[inline(always)]
+    pub fn dat3to0siglvl(&self) -> DAT3TO0SIGLVL_R {
+        DAT3TO0SIGLVL_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bit 24 - Command Line Signal Level"]
-    #[inline]
-    pub fn cmdsiglvl(&self) -> CMDSIGLVLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CMDSIGLVLR { bits }
+    #[inline(always)]
+    pub fn cmdsiglvl(&self) -> CMDSIGLVL_R {
+        CMDSIGLVL_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bits 25:28 - DAT\\[7:4\\] Line Signal Level"]
-    #[inline]
-    pub fn dat7to4siglvl(&self) -> DAT7TO4SIGLVLR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DAT7TO4SIGLVLR { bits }
+    #[inline(always)]
+    pub fn dat7to4siglvl(&self) -> DAT7TO4SIGLVL_R {
+        DAT7TO4SIGLVL_R::new(((self.bits >> 25) & 0x0f) as u8)
     }
 }

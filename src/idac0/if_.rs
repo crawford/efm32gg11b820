@@ -1,80 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CURSTABLER {
-    bits: bool,
-}
-impl CURSTABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APORTCONFLICTR {
-    bits: bool,
-}
-impl APORTCONFLICTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register IF"]
+pub type R = crate::R<u32, super::IF>;
+#[doc = "Reader of field `CURSTABLE`"]
+pub type CURSTABLE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `APORTCONFLICT`"]
+pub type APORTCONFLICT_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Edge Triggered Interrupt Flag"]
-    #[inline]
-    pub fn curstable(&self) -> CURSTABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CURSTABLER { bits }
+    #[inline(always)]
+    pub fn curstable(&self) -> CURSTABLE_R {
+        CURSTABLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - APORT Conflict Interrupt Flag"]
-    #[inline]
-    pub fn aportconflict(&self) -> APORTCONFLICTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APORTCONFLICTR { bits }
+    #[inline(always)]
+    pub fn aportconflict(&self) -> APORTCONFLICT_R {
+        APORTCONFLICT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

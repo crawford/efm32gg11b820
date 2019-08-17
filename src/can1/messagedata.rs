@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MESSAGEDATA {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VALIDR {
-    bits: u32,
-}
-impl VALIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register MESSAGEDATA"]
+pub type R = crate::R<u32, super::MESSAGEDATA>;
+#[doc = "Reader of field `VALID`"]
+pub type VALID_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - DATAVALID Bits (of All Message Objects)"]
-    #[inline]
-    pub fn valid(&self) -> VALIDR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        VALIDR { bits }
+    #[inline(always)]
+    pub fn valid(&self) -> VALID_R {
+        VALID_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

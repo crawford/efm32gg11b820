@@ -1,59 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CH4_INTERACT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH4_INTERACT"]
+pub type R = crate::R<u32, super::CH4_INTERACT>;
+#[doc = "Writer for register CH4_INTERACT"]
+pub type W = crate::W<u32, super::CH4_INTERACT>;
+#[doc = "Register CH4_INTERACT `reset()`'s with value 0"]
+impl crate::ResetValue for super::CH4_INTERACT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct THRESR {
-    bits: u16,
+#[doc = "Reader of field `THRES`"]
+pub type THRES_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `THRES`"]
+pub struct THRES_W<'a> {
+    w: &'a mut W,
 }
-impl THRESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> THRES_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SAMPLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SAMPLER {
+pub enum SAMPLE_A {
     #[doc = "Counter output will be used in evaluation"]
     ACMPCOUNT,
     #[doc = "ACMP output will be used in evaluation"]
@@ -63,53 +36,95 @@ pub enum SAMPLER {
     #[doc = "Differential ADC output will be used in evaluation"]
     ADCDIFF,
 }
-impl SAMPLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SAMPLE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SAMPLER::ACMPCOUNT => 0,
-            SAMPLER::ACMP => 1,
-            SAMPLER::ADC => 2,
-            SAMPLER::ADCDIFF => 3,
+            SAMPLE_A::ACMPCOUNT => 0,
+            SAMPLE_A::ACMP => 1,
+            SAMPLE_A::ADC => 2,
+            SAMPLE_A::ADCDIFF => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SAMPLER {
-        match value {
-            0 => SAMPLER::ACMPCOUNT,
-            1 => SAMPLER::ACMP,
-            2 => SAMPLER::ADC,
-            3 => SAMPLER::ADCDIFF,
+}
+#[doc = "Reader of field `SAMPLE`"]
+pub type SAMPLE_R = crate::R<u8, SAMPLE_A>;
+impl SAMPLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SAMPLE_A {
+        match self.bits {
+            0 => SAMPLE_A::ACMPCOUNT,
+            1 => SAMPLE_A::ACMP,
+            2 => SAMPLE_A::ADC,
+            3 => SAMPLE_A::ADCDIFF,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ACMPCOUNT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmpcount(&self) -> bool {
-        *self == SAMPLER::ACMPCOUNT
+        *self == SAMPLE_A::ACMPCOUNT
     }
     #[doc = "Checks if the value of the field is `ACMP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acmp(&self) -> bool {
-        *self == SAMPLER::ACMP
+        *self == SAMPLE_A::ACMP
     }
     #[doc = "Checks if the value of the field is `ADC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adc(&self) -> bool {
-        *self == SAMPLER::ADC
+        *self == SAMPLE_A::ADC
     }
     #[doc = "Checks if the value of the field is `ADCDIFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adcdiff(&self) -> bool {
-        *self == SAMPLER::ADCDIFF
+        *self == SAMPLE_A::ADCDIFF
+    }
+}
+#[doc = "Write proxy for field `SAMPLE`"]
+pub struct SAMPLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SAMPLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SAMPLE_A) -> &'a mut W {
+        use crate::ToBits;
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Counter output will be used in evaluation"]
+    #[inline(always)]
+    pub fn acmpcount(self) -> &'a mut W {
+        self.variant(SAMPLE_A::ACMPCOUNT)
+    }
+    #[doc = "ACMP output will be used in evaluation"]
+    #[inline(always)]
+    pub fn acmp(self) -> &'a mut W {
+        self.variant(SAMPLE_A::ACMP)
+    }
+    #[doc = "ADC output will be used in evaluation"]
+    #[inline(always)]
+    pub fn adc(self) -> &'a mut W {
+        self.variant(SAMPLE_A::ADC)
+    }
+    #[doc = "Differential ADC output will be used in evaluation"]
+    #[inline(always)]
+    pub fn adcdiff(self) -> &'a mut W {
+        self.variant(SAMPLE_A::ADCDIFF)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SETIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SETIFR {
+pub enum SETIF_A {
     #[doc = "No interrupt is generated"]
     NONE,
     #[doc = "Set interrupt flag if the sensor triggers."]
@@ -120,64 +135,107 @@ pub enum SETIFR {
     NEGEDGE,
     #[doc = "Set interrupt flag on both edges of the sensor state"]
     BOTHEDGES,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SETIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for SETIF_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            SETIFR::NONE => 0,
-            SETIFR::LEVEL => 1,
-            SETIFR::POSEDGE => 2,
-            SETIFR::NEGEDGE => 3,
-            SETIFR::BOTHEDGES => 4,
-            SETIFR::_Reserved(bits) => bits,
+            SETIF_A::NONE => 0,
+            SETIF_A::LEVEL => 1,
+            SETIF_A::POSEDGE => 2,
+            SETIF_A::NEGEDGE => 3,
+            SETIF_A::BOTHEDGES => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SETIFR {
-        match value {
-            0 => SETIFR::NONE,
-            1 => SETIFR::LEVEL,
-            2 => SETIFR::POSEDGE,
-            3 => SETIFR::NEGEDGE,
-            4 => SETIFR::BOTHEDGES,
-            i => SETIFR::_Reserved(i),
+}
+#[doc = "Reader of field `SETIF`"]
+pub type SETIF_R = crate::R<u8, SETIF_A>;
+impl SETIF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SETIF_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SETIF_A::NONE),
+            1 => Val(SETIF_A::LEVEL),
+            2 => Val(SETIF_A::POSEDGE),
+            3 => Val(SETIF_A::NEGEDGE),
+            4 => Val(SETIF_A::BOTHEDGES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SETIFR::NONE
+        *self == SETIF_A::NONE
     }
     #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_level(&self) -> bool {
-        *self == SETIFR::LEVEL
+        *self == SETIF_A::LEVEL
     }
     #[doc = "Checks if the value of the field is `POSEDGE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_posedge(&self) -> bool {
-        *self == SETIFR::POSEDGE
+        *self == SETIF_A::POSEDGE
     }
     #[doc = "Checks if the value of the field is `NEGEDGE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_negedge(&self) -> bool {
-        *self == SETIFR::NEGEDGE
+        *self == SETIF_A::NEGEDGE
     }
     #[doc = "Checks if the value of the field is `BOTHEDGES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bothedges(&self) -> bool {
-        *self == SETIFR::BOTHEDGES
+        *self == SETIF_A::BOTHEDGES
+    }
+}
+#[doc = "Write proxy for field `SETIF`"]
+pub struct SETIF_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SETIF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SETIF_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "No interrupt is generated"]
+    #[inline(always)]
+    pub fn none(self) -> &'a mut W {
+        self.variant(SETIF_A::NONE)
+    }
+    #[doc = "Set interrupt flag if the sensor triggers."]
+    #[inline(always)]
+    pub fn level(self) -> &'a mut W {
+        self.variant(SETIF_A::LEVEL)
+    }
+    #[doc = "Set interrupt flag on positive edge of the sensor state"]
+    #[inline(always)]
+    pub fn posedge(self) -> &'a mut W {
+        self.variant(SETIF_A::POSEDGE)
+    }
+    #[doc = "Set interrupt flag on negative edge of the sensor state"]
+    #[inline(always)]
+    pub fn negedge(self) -> &'a mut W {
+        self.variant(SETIF_A::NEGEDGE)
+    }
+    #[doc = "Set interrupt flag on both edges of the sensor state"]
+    #[inline(always)]
+    pub fn bothedges(self) -> &'a mut W {
+        self.variant(SETIF_A::BOTHEDGES)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 14)) | (((value as u32) & 0x07) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `EXMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXMODER {
+pub enum EXMODE_A {
     #[doc = "Disabled"]
     DISABLE,
     #[doc = "Push Pull, GPIO is driven high"]
@@ -187,520 +245,235 @@ pub enum EXMODER {
     #[doc = "VDAC output"]
     DACOUT,
 }
-impl EXMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for EXMODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            EXMODER::DISABLE => 0,
-            EXMODER::HIGH => 1,
-            EXMODER::LOW => 2,
-            EXMODER::DACOUT => 3,
+            EXMODE_A::DISABLE => 0,
+            EXMODE_A::HIGH => 1,
+            EXMODE_A::LOW => 2,
+            EXMODE_A::DACOUT => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXMODER {
-        match value {
-            0 => EXMODER::DISABLE,
-            1 => EXMODER::HIGH,
-            2 => EXMODER::LOW,
-            3 => EXMODER::DACOUT,
+}
+#[doc = "Reader of field `EXMODE`"]
+pub type EXMODE_R = crate::R<u8, EXMODE_A>;
+impl EXMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXMODE_A {
+        match self.bits {
+            0 => EXMODE_A::DISABLE,
+            1 => EXMODE_A::HIGH,
+            2 => EXMODE_A::LOW,
+            3 => EXMODE_A::DACOUT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == EXMODER::DISABLE
+        *self == EXMODE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == EXMODER::HIGH
+        *self == EXMODE_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == EXMODER::LOW
+        *self == EXMODE_A::LOW
     }
     #[doc = "Checks if the value of the field is `DACOUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dacout(&self) -> bool {
-        *self == EXMODER::DACOUT
+        *self == EXMODE_A::DACOUT
     }
 }
-#[doc = r" Value of the field"]
-pub struct EXCLKR {
-    bits: bool,
-}
-impl EXCLKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SAMPLECLKR {
-    bits: bool,
-}
-impl SAMPLECLKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALTEXR {
-    bits: bool,
-}
-impl ALTEXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _THRESW<'a> {
+#[doc = "Write proxy for field `EXMODE`"]
+pub struct EXMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _THRESW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SAMPLE`"]
-pub enum SAMPLEW {
-    #[doc = "Counter output will be used in evaluation"]
-    ACMPCOUNT,
-    #[doc = "ACMP output will be used in evaluation"]
-    ACMP,
-    #[doc = "ADC output will be used in evaluation"]
-    ADC,
-    #[doc = "Differential ADC output will be used in evaluation"]
-    ADCDIFF,
-}
-impl SAMPLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SAMPLEW::ACMPCOUNT => 0,
-            SAMPLEW::ACMP => 1,
-            SAMPLEW::ADC => 2,
-            SAMPLEW::ADCDIFF => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SAMPLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SAMPLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SAMPLEW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Counter output will be used in evaluation"]
-    #[inline]
-    pub fn acmpcount(self) -> &'a mut W {
-        self.variant(SAMPLEW::ACMPCOUNT)
-    }
-    #[doc = "ACMP output will be used in evaluation"]
-    #[inline]
-    pub fn acmp(self) -> &'a mut W {
-        self.variant(SAMPLEW::ACMP)
-    }
-    #[doc = "ADC output will be used in evaluation"]
-    #[inline]
-    pub fn adc(self) -> &'a mut W {
-        self.variant(SAMPLEW::ADC)
-    }
-    #[doc = "Differential ADC output will be used in evaluation"]
-    #[inline]
-    pub fn adcdiff(self) -> &'a mut W {
-        self.variant(SAMPLEW::ADCDIFF)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SETIF`"]
-pub enum SETIFW {
-    #[doc = "No interrupt is generated"]
-    NONE,
-    #[doc = "Set interrupt flag if the sensor triggers."]
-    LEVEL,
-    #[doc = "Set interrupt flag on positive edge of the sensor state"]
-    POSEDGE,
-    #[doc = "Set interrupt flag on negative edge of the sensor state"]
-    NEGEDGE,
-    #[doc = "Set interrupt flag on both edges of the sensor state"]
-    BOTHEDGES,
-}
-impl SETIFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SETIFW::NONE => 0,
-            SETIFW::LEVEL => 1,
-            SETIFW::POSEDGE => 2,
-            SETIFW::NEGEDGE => 3,
-            SETIFW::BOTHEDGES => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SETIFW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SETIFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SETIFW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No interrupt is generated"]
-    #[inline]
-    pub fn none(self) -> &'a mut W {
-        self.variant(SETIFW::NONE)
-    }
-    #[doc = "Set interrupt flag if the sensor triggers."]
-    #[inline]
-    pub fn level(self) -> &'a mut W {
-        self.variant(SETIFW::LEVEL)
-    }
-    #[doc = "Set interrupt flag on positive edge of the sensor state"]
-    #[inline]
-    pub fn posedge(self) -> &'a mut W {
-        self.variant(SETIFW::POSEDGE)
-    }
-    #[doc = "Set interrupt flag on negative edge of the sensor state"]
-    #[inline]
-    pub fn negedge(self) -> &'a mut W {
-        self.variant(SETIFW::NEGEDGE)
-    }
-    #[doc = "Set interrupt flag on both edges of the sensor state"]
-    #[inline]
-    pub fn bothedges(self) -> &'a mut W {
-        self.variant(SETIFW::BOTHEDGES)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EXMODE`"]
-pub enum EXMODEW {
-    #[doc = "Disabled"]
-    DISABLE,
-    #[doc = "Push Pull, GPIO is driven high"]
-    HIGH,
-    #[doc = "Push Pull, GPIO is driven low"]
-    LOW,
-    #[doc = "VDAC output"]
-    DACOUT,
-}
-impl EXMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXMODEW::DISABLE => 0,
-            EXMODEW::HIGH => 1,
-            EXMODEW::LOW => 2,
-            EXMODEW::DACOUT => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EXMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EXMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXMODEW) -> &'a mut W {
+impl<'a> EXMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXMODE_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(EXMODEW::DISABLE)
+        self.variant(EXMODE_A::DISABLE)
     }
     #[doc = "Push Pull, GPIO is driven high"]
-    #[inline]
+    #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(EXMODEW::HIGH)
+        self.variant(EXMODE_A::HIGH)
     }
     #[doc = "Push Pull, GPIO is driven low"]
-    #[inline]
+    #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(EXMODEW::LOW)
+        self.variant(EXMODE_A::LOW)
     }
     #[doc = "VDAC output"]
-    #[inline]
+    #[inline(always)]
     pub fn dacout(self) -> &'a mut W {
-        self.variant(EXMODEW::DACOUT)
+        self.variant(EXMODE_A::DACOUT)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 17)) | (((value as u32) & 0x03) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXCLKW<'a> {
+#[doc = "Reader of field `EXCLK`"]
+pub type EXCLK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EXCLK`"]
+pub struct EXCLK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXCLKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EXCLK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SAMPLECLKW<'a> {
+#[doc = "Reader of field `SAMPLECLK`"]
+pub type SAMPLECLK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SAMPLECLK`"]
+pub struct SAMPLECLK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SAMPLECLKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SAMPLECLK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALTEXW<'a> {
+#[doc = "Reader of field `ALTEX`"]
+pub type ALTEX_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ALTEX`"]
+pub struct ALTEX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALTEXW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ALTEX_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:11 - ACMP Threshold or VDAC Data"]
-    #[inline]
-    pub fn thres(&self) -> THRESR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        THRESR { bits }
+    #[inline(always)]
+    pub fn thres(&self) -> THRES_R {
+        THRES_R::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bits 12:13 - Select Sample Mode"]
-    #[inline]
-    pub fn sample(&self) -> SAMPLER {
-        SAMPLER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sample(&self) -> SAMPLE_R {
+        SAMPLE_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:16 - Enable Interrupt Generation"]
-    #[inline]
-    pub fn setif(&self) -> SETIFR {
-        SETIFR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn setif(&self) -> SETIF_R {
+        SETIF_R::new(((self.bits >> 14) & 0x07) as u8)
     }
     #[doc = "Bits 17:18 - Set GPIO Mode"]
-    #[inline]
-    pub fn exmode(&self) -> EXMODER {
-        EXMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn exmode(&self) -> EXMODE_R {
+        EXMODE_R::new(((self.bits >> 17) & 0x03) as u8)
     }
     #[doc = "Bit 19 - Select Clock Used for Excitation Timing"]
-    #[inline]
-    pub fn exclk(&self) -> EXCLKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EXCLKR { bits }
+    #[inline(always)]
+    pub fn exclk(&self) -> EXCLK_R {
+        EXCLK_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Select Clock Used for Timing of Sample Delay"]
-    #[inline]
-    pub fn sampleclk(&self) -> SAMPLECLKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SAMPLECLKR { bits }
+    #[inline(always)]
+    pub fn sampleclk(&self) -> SAMPLECLK_R {
+        SAMPLECLK_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - Use Alternative Excite Pin"]
-    #[inline]
-    pub fn altex(&self) -> ALTEXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALTEXR { bits }
+    #[inline(always)]
+    pub fn altex(&self) -> ALTEX_R {
+        ALTEX_R::new(((self.bits >> 21) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:11 - ACMP Threshold or VDAC Data"]
-    #[inline]
-    pub fn thres(&mut self) -> _THRESW {
-        _THRESW { w: self }
+    #[inline(always)]
+    pub fn thres(&mut self) -> THRES_W {
+        THRES_W { w: self }
     }
     #[doc = "Bits 12:13 - Select Sample Mode"]
-    #[inline]
-    pub fn sample(&mut self) -> _SAMPLEW {
-        _SAMPLEW { w: self }
+    #[inline(always)]
+    pub fn sample(&mut self) -> SAMPLE_W {
+        SAMPLE_W { w: self }
     }
     #[doc = "Bits 14:16 - Enable Interrupt Generation"]
-    #[inline]
-    pub fn setif(&mut self) -> _SETIFW {
-        _SETIFW { w: self }
+    #[inline(always)]
+    pub fn setif(&mut self) -> SETIF_W {
+        SETIF_W { w: self }
     }
     #[doc = "Bits 17:18 - Set GPIO Mode"]
-    #[inline]
-    pub fn exmode(&mut self) -> _EXMODEW {
-        _EXMODEW { w: self }
+    #[inline(always)]
+    pub fn exmode(&mut self) -> EXMODE_W {
+        EXMODE_W { w: self }
     }
     #[doc = "Bit 19 - Select Clock Used for Excitation Timing"]
-    #[inline]
-    pub fn exclk(&mut self) -> _EXCLKW {
-        _EXCLKW { w: self }
+    #[inline(always)]
+    pub fn exclk(&mut self) -> EXCLK_W {
+        EXCLK_W { w: self }
     }
     #[doc = "Bit 20 - Select Clock Used for Timing of Sample Delay"]
-    #[inline]
-    pub fn sampleclk(&mut self) -> _SAMPLECLKW {
-        _SAMPLECLKW { w: self }
+    #[inline(always)]
+    pub fn sampleclk(&mut self) -> SAMPLECLK_W {
+        SAMPLECLK_W { w: self }
     }
     #[doc = "Bit 21 - Use Alternative Excite Pin"]
-    #[inline]
-    pub fn altex(&mut self) -> _ALTEXW {
-        _ALTEXW { w: self }
+    #[inline(always)]
+    pub fn altex(&mut self) -> ALTEX_W {
+        ALTEX_W { w: self }
     }
 }

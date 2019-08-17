@@ -1,80 +1,56 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DMACFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DMACFG"]
+pub type R = crate::R<u32, super::DMACFG>;
+#[doc = "Writer for register DMACFG"]
+pub type W = crate::W<u32, super::DMACFG>;
+#[doc = "Register DMACFG `reset()`'s with value 0x0002_0704"]
+impl crate::ResetValue for super::DMACFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0002_0704
     }
 }
-#[doc = r" Value of the field"]
-pub struct AMBABRSTLENR {
-    bits: u8,
+#[doc = "Reader of field `AMBABRSTLEN`"]
+pub type AMBABRSTLEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `AMBABRSTLEN`"]
+pub struct AMBABRSTLEN_W<'a> {
+    w: &'a mut W,
 }
-impl AMBABRSTLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> AMBABRSTLEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct HDRDATASPLITENR {
-    bits: bool,
+#[doc = "Reader of field `HDRDATASPLITEN`"]
+pub type HDRDATASPLITEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HDRDATASPLITEN`"]
+pub struct HDRDATASPLITEN_W<'a> {
+    w: &'a mut W,
 }
-impl HDRDATASPLITENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> HDRDATASPLITEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RXPBUFSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXPBUFSIZER {
+pub enum RXPBUFSIZE_A {
     #[doc = "Do not use top three address bits (0.5 Kb)"]
     SIZE0,
     #[doc = "Do not use top two address bits (1 Kb)"]
@@ -84,728 +60,419 @@ pub enum RXPBUFSIZER {
     #[doc = "Use full configured addressable space (4 Kb)"]
     SIZE3,
 }
-impl RXPBUFSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for RXPBUFSIZE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            RXPBUFSIZER::SIZE0 => 0,
-            RXPBUFSIZER::SIZE1 => 1,
-            RXPBUFSIZER::SIZE2 => 2,
-            RXPBUFSIZER::SIZE3 => 3,
+            RXPBUFSIZE_A::SIZE0 => 0,
+            RXPBUFSIZE_A::SIZE1 => 1,
+            RXPBUFSIZE_A::SIZE2 => 2,
+            RXPBUFSIZE_A::SIZE3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXPBUFSIZER {
-        match value {
-            0 => RXPBUFSIZER::SIZE0,
-            1 => RXPBUFSIZER::SIZE1,
-            2 => RXPBUFSIZER::SIZE2,
-            3 => RXPBUFSIZER::SIZE3,
+}
+#[doc = "Reader of field `RXPBUFSIZE`"]
+pub type RXPBUFSIZE_R = crate::R<u8, RXPBUFSIZE_A>;
+impl RXPBUFSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXPBUFSIZE_A {
+        match self.bits {
+            0 => RXPBUFSIZE_A::SIZE0,
+            1 => RXPBUFSIZE_A::SIZE1,
+            2 => RXPBUFSIZE_A::SIZE2,
+            3 => RXPBUFSIZE_A::SIZE3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SIZE0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size0(&self) -> bool {
-        *self == RXPBUFSIZER::SIZE0
+        *self == RXPBUFSIZE_A::SIZE0
     }
     #[doc = "Checks if the value of the field is `SIZE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size1(&self) -> bool {
-        *self == RXPBUFSIZER::SIZE1
+        *self == RXPBUFSIZE_A::SIZE1
     }
     #[doc = "Checks if the value of the field is `SIZE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size2(&self) -> bool {
-        *self == RXPBUFSIZER::SIZE2
+        *self == RXPBUFSIZE_A::SIZE2
     }
     #[doc = "Checks if the value of the field is `SIZE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_size3(&self) -> bool {
-        *self == RXPBUFSIZER::SIZE3
+        *self == RXPBUFSIZE_A::SIZE3
     }
 }
-#[doc = r" Value of the field"]
-pub struct TXPBUFSIZER {
-    bits: bool,
-}
-impl TXPBUFSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXPBUFTCPENR {
-    bits: bool,
-}
-impl TXPBUFTCPENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INFLASTDBUFSIZEENR {
-    bits: bool,
-}
-impl INFLASTDBUFSIZEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXBUFSIZER {
-    bits: u8,
-}
-impl RXBUFSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRCDISCARDONERRR {
-    bits: bool,
-}
-impl FRCDISCARDONERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRCMAXAMBABRSTRXR {
-    bits: bool,
-}
-impl FRCMAXAMBABRSTRXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRCMAXAMBABRSTTXR {
-    bits: bool,
-}
-impl FRCMAXAMBABRSTTXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXBDEXTNDMODEENR {
-    bits: bool,
-}
-impl RXBDEXTNDMODEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXBDEXTENDMODEENR {
-    bits: bool,
-}
-impl TXBDEXTENDMODEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AMBABRSTLENW<'a> {
+#[doc = "Write proxy for field `RXPBUFSIZE`"]
+pub struct RXPBUFSIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AMBABRSTLENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HDRDATASPLITENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HDRDATASPLITENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RXPBUFSIZE`"]
-pub enum RXPBUFSIZEW {
-    #[doc = "Do not use top three address bits (0.5 Kb)"]
-    SIZE0,
-    #[doc = "Do not use top two address bits (1 Kb)"]
-    SIZE1,
-    #[doc = "Do not use top address bit (2 Kb)"]
-    SIZE2,
-    #[doc = "Use full configured addressable space (4 Kb)"]
-    SIZE3,
-}
-impl RXPBUFSIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXPBUFSIZEW::SIZE0 => 0,
-            RXPBUFSIZEW::SIZE1 => 1,
-            RXPBUFSIZEW::SIZE2 => 2,
-            RXPBUFSIZEW::SIZE3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXPBUFSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXPBUFSIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXPBUFSIZEW) -> &'a mut W {
+impl<'a> RXPBUFSIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXPBUFSIZE_A) -> &'a mut W {
+        use crate::ToBits;
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Do not use top three address bits (0.5 Kb)"]
-    #[inline]
+    #[inline(always)]
     pub fn size0(self) -> &'a mut W {
-        self.variant(RXPBUFSIZEW::SIZE0)
+        self.variant(RXPBUFSIZE_A::SIZE0)
     }
     #[doc = "Do not use top two address bits (1 Kb)"]
-    #[inline]
+    #[inline(always)]
     pub fn size1(self) -> &'a mut W {
-        self.variant(RXPBUFSIZEW::SIZE1)
+        self.variant(RXPBUFSIZE_A::SIZE1)
     }
     #[doc = "Do not use top address bit (2 Kb)"]
-    #[inline]
+    #[inline(always)]
     pub fn size2(self) -> &'a mut W {
-        self.variant(RXPBUFSIZEW::SIZE2)
+        self.variant(RXPBUFSIZE_A::SIZE2)
     }
     #[doc = "Use full configured addressable space (4 Kb)"]
-    #[inline]
+    #[inline(always)]
     pub fn size3(self) -> &'a mut W {
-        self.variant(RXPBUFSIZEW::SIZE3)
+        self.variant(RXPBUFSIZE_A::SIZE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXPBUFSIZEW<'a> {
+#[doc = "Reader of field `TXPBUFSIZE`"]
+pub type TXPBUFSIZE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXPBUFSIZE`"]
+pub struct TXPBUFSIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXPBUFSIZEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXPBUFSIZE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXPBUFTCPENW<'a> {
+#[doc = "Reader of field `TXPBUFTCPEN`"]
+pub type TXPBUFTCPEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXPBUFTCPEN`"]
+pub struct TXPBUFTCPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXPBUFTCPENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXPBUFTCPEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INFLASTDBUFSIZEENW<'a> {
+#[doc = "Reader of field `INFLASTDBUFSIZEEN`"]
+pub type INFLASTDBUFSIZEEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INFLASTDBUFSIZEEN`"]
+pub struct INFLASTDBUFSIZEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INFLASTDBUFSIZEENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INFLASTDBUFSIZEEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXBUFSIZEW<'a> {
+#[doc = "Reader of field `RXBUFSIZE`"]
+pub type RXBUFSIZE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RXBUFSIZE`"]
+pub struct RXBUFSIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXBUFSIZEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RXBUFSIZE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRCDISCARDONERRW<'a> {
+#[doc = "Reader of field `FRCDISCARDONERR`"]
+pub type FRCDISCARDONERR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FRCDISCARDONERR`"]
+pub struct FRCDISCARDONERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRCDISCARDONERRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FRCDISCARDONERR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRCMAXAMBABRSTRXW<'a> {
+#[doc = "Reader of field `FRCMAXAMBABRSTRX`"]
+pub type FRCMAXAMBABRSTRX_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FRCMAXAMBABRSTRX`"]
+pub struct FRCMAXAMBABRSTRX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRCMAXAMBABRSTRXW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FRCMAXAMBABRSTRX_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRCMAXAMBABRSTTXW<'a> {
+#[doc = "Reader of field `FRCMAXAMBABRSTTX`"]
+pub type FRCMAXAMBABRSTTX_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FRCMAXAMBABRSTTX`"]
+pub struct FRCMAXAMBABRSTTX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRCMAXAMBABRSTTXW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FRCMAXAMBABRSTTX_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXBDEXTNDMODEENW<'a> {
+#[doc = "Reader of field `RXBDEXTNDMODEEN`"]
+pub type RXBDEXTNDMODEEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RXBDEXTNDMODEEN`"]
+pub struct RXBDEXTNDMODEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXBDEXTNDMODEENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RXBDEXTNDMODEEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXBDEXTENDMODEENW<'a> {
+#[doc = "Reader of field `TXBDEXTENDMODEEN`"]
+pub type TXBDEXTENDMODEEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXBDEXTENDMODEEN`"]
+pub struct TXBDEXTENDMODEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXBDEXTENDMODEENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXBDEXTENDMODEEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - Selects the burst length to use on the AMBA (AHB) when transferring frame data."]
-    #[inline]
-    pub fn ambabrstlen(&self) -> AMBABRSTLENR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        AMBABRSTLENR { bits }
+    #[inline(always)]
+    pub fn ambabrstlen(&self) -> AMBABRSTLEN_R {
+        AMBABRSTLEN_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 5 - Enable header data Splitting."]
-    #[inline]
-    pub fn hdrdataspliten(&self) -> HDRDATASPLITENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HDRDATASPLITENR { bits }
+    #[inline(always)]
+    pub fn hdrdataspliten(&self) -> HDRDATASPLITEN_R {
+        HDRDATASPLITEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bits 8:9 - Receiver packet buffer memory size select."]
-    #[inline]
-    pub fn rxpbufsize(&self) -> RXPBUFSIZER {
-        RXPBUFSIZER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxpbufsize(&self) -> RXPBUFSIZE_R {
+        RXPBUFSIZE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bit 10 - Transmitter packet buffer memory size select."]
-    #[inline]
-    pub fn txpbufsize(&self) -> TXPBUFSIZER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXPBUFSIZER { bits }
+    #[inline(always)]
+    pub fn txpbufsize(&self) -> TXPBUFSIZE_R {
+        TXPBUFSIZE_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Transmitter IP, TCP and UDP checksum generation offload enable"]
-    #[inline]
-    pub fn txpbuftcpen(&self) -> TXPBUFTCPENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXPBUFTCPENR { bits }
+    #[inline(always)]
+    pub fn txpbuftcpen(&self) -> TXPBUFTCPEN_R {
+        TXPBUFTCPEN_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Forces the DMA"]
-    #[inline]
-    pub fn inflastdbufsizeen(&self) -> INFLASTDBUFSIZEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INFLASTDBUFSIZEENR { bits }
+    #[inline(always)]
+    pub fn inflastdbufsizeen(&self) -> INFLASTDBUFSIZEEN_R {
+        INFLASTDBUFSIZEEN_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - DMA receive buffer size in external AMBA (AHB) system memory."]
-    #[inline]
-    pub fn rxbufsize(&self) -> RXBUFSIZER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RXBUFSIZER { bits }
+    #[inline(always)]
+    pub fn rxbufsize(&self) -> RXBUFSIZE_R {
+        RXBUFSIZE_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bit 24 - Auto Discard RX pkts during lack of resource."]
-    #[inline]
-    pub fn frcdiscardonerr(&self) -> FRCDISCARDONERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FRCDISCARDONERRR { bits }
+    #[inline(always)]
+    pub fn frcdiscardonerr(&self) -> FRCDISCARDONERR_R {
+        FRCDISCARDONERR_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Force max length bursts on RX."]
-    #[inline]
-    pub fn frcmaxambabrstrx(&self) -> FRCMAXAMBABRSTRXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FRCMAXAMBABRSTRXR { bits }
+    #[inline(always)]
+    pub fn frcmaxambabrstrx(&self) -> FRCMAXAMBABRSTRX_R {
+        FRCMAXAMBABRSTRX_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Force max length bursts on TX."]
-    #[inline]
-    pub fn frcmaxambabrsttx(&self) -> FRCMAXAMBABRSTTXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FRCMAXAMBABRSTTXR { bits }
+    #[inline(always)]
+    pub fn frcmaxambabrsttx(&self) -> FRCMAXAMBABRSTTX_R {
+        FRCMAXAMBABRSTTX_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Enable RX extended BD mode."]
-    #[inline]
-    pub fn rxbdextndmodeen(&self) -> RXBDEXTNDMODEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXBDEXTNDMODEENR { bits }
+    #[inline(always)]
+    pub fn rxbdextndmodeen(&self) -> RXBDEXTNDMODEEN_R {
+        RXBDEXTNDMODEEN_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Enable TX extended BD mode."]
-    #[inline]
-    pub fn txbdextendmodeen(&self) -> TXBDEXTENDMODEENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXBDEXTENDMODEENR { bits }
+    #[inline(always)]
+    pub fn txbdextendmodeen(&self) -> TXBDEXTENDMODEEN_R {
+        TXBDEXTENDMODEEN_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 132868 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Selects the burst length to use on the AMBA (AHB) when transferring frame data."]
-    #[inline]
-    pub fn ambabrstlen(&mut self) -> _AMBABRSTLENW {
-        _AMBABRSTLENW { w: self }
+    #[inline(always)]
+    pub fn ambabrstlen(&mut self) -> AMBABRSTLEN_W {
+        AMBABRSTLEN_W { w: self }
     }
     #[doc = "Bit 5 - Enable header data Splitting."]
-    #[inline]
-    pub fn hdrdataspliten(&mut self) -> _HDRDATASPLITENW {
-        _HDRDATASPLITENW { w: self }
+    #[inline(always)]
+    pub fn hdrdataspliten(&mut self) -> HDRDATASPLITEN_W {
+        HDRDATASPLITEN_W { w: self }
     }
     #[doc = "Bits 8:9 - Receiver packet buffer memory size select."]
-    #[inline]
-    pub fn rxpbufsize(&mut self) -> _RXPBUFSIZEW {
-        _RXPBUFSIZEW { w: self }
+    #[inline(always)]
+    pub fn rxpbufsize(&mut self) -> RXPBUFSIZE_W {
+        RXPBUFSIZE_W { w: self }
     }
     #[doc = "Bit 10 - Transmitter packet buffer memory size select."]
-    #[inline]
-    pub fn txpbufsize(&mut self) -> _TXPBUFSIZEW {
-        _TXPBUFSIZEW { w: self }
+    #[inline(always)]
+    pub fn txpbufsize(&mut self) -> TXPBUFSIZE_W {
+        TXPBUFSIZE_W { w: self }
     }
     #[doc = "Bit 11 - Transmitter IP, TCP and UDP checksum generation offload enable"]
-    #[inline]
-    pub fn txpbuftcpen(&mut self) -> _TXPBUFTCPENW {
-        _TXPBUFTCPENW { w: self }
+    #[inline(always)]
+    pub fn txpbuftcpen(&mut self) -> TXPBUFTCPEN_W {
+        TXPBUFTCPEN_W { w: self }
     }
     #[doc = "Bit 12 - Forces the DMA"]
-    #[inline]
-    pub fn inflastdbufsizeen(&mut self) -> _INFLASTDBUFSIZEENW {
-        _INFLASTDBUFSIZEENW { w: self }
+    #[inline(always)]
+    pub fn inflastdbufsizeen(&mut self) -> INFLASTDBUFSIZEEN_W {
+        INFLASTDBUFSIZEEN_W { w: self }
     }
     #[doc = "Bits 16:23 - DMA receive buffer size in external AMBA (AHB) system memory."]
-    #[inline]
-    pub fn rxbufsize(&mut self) -> _RXBUFSIZEW {
-        _RXBUFSIZEW { w: self }
+    #[inline(always)]
+    pub fn rxbufsize(&mut self) -> RXBUFSIZE_W {
+        RXBUFSIZE_W { w: self }
     }
     #[doc = "Bit 24 - Auto Discard RX pkts during lack of resource."]
-    #[inline]
-    pub fn frcdiscardonerr(&mut self) -> _FRCDISCARDONERRW {
-        _FRCDISCARDONERRW { w: self }
+    #[inline(always)]
+    pub fn frcdiscardonerr(&mut self) -> FRCDISCARDONERR_W {
+        FRCDISCARDONERR_W { w: self }
     }
     #[doc = "Bit 25 - Force max length bursts on RX."]
-    #[inline]
-    pub fn frcmaxambabrstrx(&mut self) -> _FRCMAXAMBABRSTRXW {
-        _FRCMAXAMBABRSTRXW { w: self }
+    #[inline(always)]
+    pub fn frcmaxambabrstrx(&mut self) -> FRCMAXAMBABRSTRX_W {
+        FRCMAXAMBABRSTRX_W { w: self }
     }
     #[doc = "Bit 26 - Force max length bursts on TX."]
-    #[inline]
-    pub fn frcmaxambabrsttx(&mut self) -> _FRCMAXAMBABRSTTXW {
-        _FRCMAXAMBABRSTTXW { w: self }
+    #[inline(always)]
+    pub fn frcmaxambabrsttx(&mut self) -> FRCMAXAMBABRSTTX_W {
+        FRCMAXAMBABRSTTX_W { w: self }
     }
     #[doc = "Bit 28 - Enable RX extended BD mode."]
-    #[inline]
-    pub fn rxbdextndmodeen(&mut self) -> _RXBDEXTNDMODEENW {
-        _RXBDEXTNDMODEENW { w: self }
+    #[inline(always)]
+    pub fn rxbdextndmodeen(&mut self) -> RXBDEXTNDMODEEN_W {
+        RXBDEXTNDMODEEN_W { w: self }
     }
     #[doc = "Bit 29 - Enable TX extended BD mode."]
-    #[inline]
-    pub fn txbdextendmodeen(&mut self) -> _TXBDEXTENDMODEENW {
-        _TXBDEXTENDMODEENW { w: self }
+    #[inline(always)]
+    pub fn txbdextendmodeen(&mut self) -> TXBDEXTENDMODEEN_W {
+        TXBDEXTENDMODEEN_W { w: self }
     }
 }

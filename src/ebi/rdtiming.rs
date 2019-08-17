@@ -1,362 +1,190 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RDTIMING {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RDTIMING"]
+pub type R = crate::R<u32, super::RDTIMING>;
+#[doc = "Writer for register RDTIMING"]
+pub type W = crate::W<u32, super::RDTIMING>;
+#[doc = "Register RDTIMING `reset()`'s with value 0x0007_7f07"]
+impl crate::ResetValue for super::RDTIMING {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0007_7f07
     }
 }
-#[doc = r" Value of the field"]
-pub struct RDSETUPR {
-    bits: u8,
-}
-impl RDSETUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDSTRBR {
-    bits: u8,
-}
-impl RDSTRBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDHOLDR {
-    bits: u8,
-}
-impl RDHOLDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HALFRER {
-    bits: bool,
-}
-impl HALFRER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREFETCHR {
-    bits: bool,
-}
-impl PREFETCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAGEMODER {
-    bits: bool,
-}
-impl PAGEMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RDSETUPW<'a> {
+#[doc = "Reader of field `RDSETUP`"]
+pub type RDSETUP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RDSETUP`"]
+pub struct RDSETUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDSETUPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RDSETUP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RDSTRBW<'a> {
+#[doc = "Reader of field `RDSTRB`"]
+pub type RDSTRB_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RDSTRB`"]
+pub struct RDSTRB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDSTRBW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RDSTRB_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RDHOLDW<'a> {
+#[doc = "Reader of field `RDHOLD`"]
+pub type RDHOLD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RDHOLD`"]
+pub struct RDHOLD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDHOLDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RDHOLD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HALFREW<'a> {
+#[doc = "Reader of field `HALFRE`"]
+pub type HALFRE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HALFRE`"]
+pub struct HALFRE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HALFREW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> HALFRE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREFETCHW<'a> {
+#[doc = "Reader of field `PREFETCH`"]
+pub type PREFETCH_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PREFETCH`"]
+pub struct PREFETCH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREFETCHW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PREFETCH_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAGEMODEW<'a> {
+#[doc = "Reader of field `PAGEMODE`"]
+pub type PAGEMODE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PAGEMODE`"]
+pub struct PAGEMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAGEMODEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PAGEMODE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Read Setup Time"]
-    #[inline]
-    pub fn rdsetup(&self) -> RDSETUPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDSETUPR { bits }
+    #[inline(always)]
+    pub fn rdsetup(&self) -> RDSETUP_R {
+        RDSETUP_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 8:14 - Read Strobe Time"]
-    #[inline]
-    pub fn rdstrb(&self) -> RDSTRBR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDSTRBR { bits }
+    #[inline(always)]
+    pub fn rdstrb(&self) -> RDSTRB_R {
+        RDSTRB_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
     #[doc = "Bits 16:18 - Read Hold Time"]
-    #[inline]
-    pub fn rdhold(&self) -> RDHOLDR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDHOLDR { bits }
+    #[inline(always)]
+    pub fn rdhold(&self) -> RDHOLD_R {
+        RDHOLD_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bit 28 - Half Cycle REn Strobe Duration Enable"]
-    #[inline]
-    pub fn halfre(&self) -> HALFRER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HALFRER { bits }
+    #[inline(always)]
+    pub fn halfre(&self) -> HALFRE_R {
+        HALFRE_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Prefetch Enable"]
-    #[inline]
-    pub fn prefetch(&self) -> PREFETCHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PREFETCHR { bits }
+    #[inline(always)]
+    pub fn prefetch(&self) -> PREFETCH_R {
+        PREFETCH_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Page Mode Access Enable"]
-    #[inline]
-    pub fn pagemode(&self) -> PAGEMODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PAGEMODER { bits }
+    #[inline(always)]
+    pub fn pagemode(&self) -> PAGEMODE_R {
+        PAGEMODE_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 491271 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Read Setup Time"]
-    #[inline]
-    pub fn rdsetup(&mut self) -> _RDSETUPW {
-        _RDSETUPW { w: self }
+    #[inline(always)]
+    pub fn rdsetup(&mut self) -> RDSETUP_W {
+        RDSETUP_W { w: self }
     }
     #[doc = "Bits 8:14 - Read Strobe Time"]
-    #[inline]
-    pub fn rdstrb(&mut self) -> _RDSTRBW {
-        _RDSTRBW { w: self }
+    #[inline(always)]
+    pub fn rdstrb(&mut self) -> RDSTRB_W {
+        RDSTRB_W { w: self }
     }
     #[doc = "Bits 16:18 - Read Hold Time"]
-    #[inline]
-    pub fn rdhold(&mut self) -> _RDHOLDW {
-        _RDHOLDW { w: self }
+    #[inline(always)]
+    pub fn rdhold(&mut self) -> RDHOLD_W {
+        RDHOLD_W { w: self }
     }
     #[doc = "Bit 28 - Half Cycle REn Strobe Duration Enable"]
-    #[inline]
-    pub fn halfre(&mut self) -> _HALFREW {
-        _HALFREW { w: self }
+    #[inline(always)]
+    pub fn halfre(&mut self) -> HALFRE_W {
+        HALFRE_W { w: self }
     }
     #[doc = "Bit 29 - Prefetch Enable"]
-    #[inline]
-    pub fn prefetch(&mut self) -> _PREFETCHW {
-        _PREFETCHW { w: self }
+    #[inline(always)]
+    pub fn prefetch(&mut self) -> PREFETCH_W {
+        PREFETCH_W { w: self }
     }
     #[doc = "Bit 30 - Page Mode Access Enable"]
-    #[inline]
-    pub fn pagemode(&mut self) -> _PAGEMODEW {
-        _PAGEMODEW { w: self }
+    #[inline(always)]
+    pub fn pagemode(&mut self) -> PAGEMODE_W {
+        PAGEMODE_W { w: self }
     }
 }

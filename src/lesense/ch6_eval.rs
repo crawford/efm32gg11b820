@@ -1,520 +1,328 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CH6_EVAL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH6_EVAL"]
+pub type R = crate::R<u32, super::CH6_EVAL>;
+#[doc = "Writer for register CH6_EVAL"]
+pub type W = crate::W<u32, super::CH6_EVAL>;
+#[doc = "Register CH6_EVAL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CH6_EVAL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct COMPTHRESR {
-    bits: u16,
+#[doc = "Reader of field `COMPTHRES`"]
+pub type COMPTHRES_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `COMPTHRES`"]
+pub struct COMPTHRES_W<'a> {
+    w: &'a mut W,
 }
-impl COMPTHRESR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct COMPR {
-    bits: bool,
-}
-impl COMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+impl<'a> COMPTHRES_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct DECODER {
-    bits: bool,
+#[doc = "Reader of field `COMP`"]
+pub type COMP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `COMP`"]
+pub struct COMP_W<'a> {
+    w: &'a mut W,
 }
-impl DECODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> COMP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w
+    }
+}
+#[doc = "Reader of field `DECODE`"]
+pub type DECODE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DECODE`"]
+pub struct DECODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DECODE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w
     }
 }
 #[doc = "Possible values of the field `STRSAMPLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STRSAMPLER {
+pub enum STRSAMPLE_A {
     #[doc = "Nothing will be stored in the result buffer."]
     DISABLE,
     #[doc = "The sensor sample data will be stored in the result buffer."]
     DATA,
     #[doc = "The data source (i.e., the channel) will be stored alongside the sensor sample data."]
     DATASRC,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STRSAMPLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for STRSAMPLE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            STRSAMPLER::DISABLE => 0,
-            STRSAMPLER::DATA => 1,
-            STRSAMPLER::DATASRC => 2,
-            STRSAMPLER::_Reserved(bits) => bits,
+            STRSAMPLE_A::DISABLE => 0,
+            STRSAMPLE_A::DATA => 1,
+            STRSAMPLE_A::DATASRC => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STRSAMPLER {
-        match value {
-            0 => STRSAMPLER::DISABLE,
-            1 => STRSAMPLER::DATA,
-            2 => STRSAMPLER::DATASRC,
-            i => STRSAMPLER::_Reserved(i),
+}
+#[doc = "Reader of field `STRSAMPLE`"]
+pub type STRSAMPLE_R = crate::R<u8, STRSAMPLE_A>;
+impl STRSAMPLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STRSAMPLE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STRSAMPLE_A::DISABLE),
+            1 => Val(STRSAMPLE_A::DATA),
+            2 => Val(STRSAMPLE_A::DATASRC),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == STRSAMPLER::DISABLE
+        *self == STRSAMPLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `DATA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == STRSAMPLER::DATA
+        *self == STRSAMPLE_A::DATA
     }
     #[doc = "Checks if the value of the field is `DATASRC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_datasrc(&self) -> bool {
-        *self == STRSAMPLER::DATASRC
+        *self == STRSAMPLE_A::DATASRC
     }
 }
-#[doc = r" Value of the field"]
-pub struct SCANRESINVR {
-    bits: bool,
+#[doc = "Write proxy for field `STRSAMPLE`"]
+pub struct STRSAMPLE_W<'a> {
+    w: &'a mut W,
 }
-impl SCANRESINVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> STRSAMPLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STRSAMPLE_A) -> &'a mut W {
+        use crate::ToBits;
+        unsafe { self.bits(variant._bits()) }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "Nothing will be stored in the result buffer."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(STRSAMPLE_A::DISABLE)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "The sensor sample data will be stored in the result buffer."]
+    #[inline(always)]
+    pub fn data(self) -> &'a mut W {
+        self.variant(STRSAMPLE_A::DATA)
+    }
+    #[doc = "The data source (i.e., the channel) will be stored alongside the sensor sample data."]
+    #[inline(always)]
+    pub fn datasrc(self) -> &'a mut W {
+        self.variant(STRSAMPLE_A::DATASRC)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w
+    }
+}
+#[doc = "Reader of field `SCANRESINV`"]
+pub type SCANRESINV_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SCANRESINV`"]
+pub struct SCANRESINV_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SCANRESINV_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
+pub enum MODE_A {
     #[doc = "Threshold comparison is used to evaluate sensor result"]
     THRES,
     #[doc = "Sliding window is used to evaluate sensor result"]
     SLIDINGWIN,
     #[doc = "Step detection is used to evaluate sensor result"]
     STEPDET,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
+impl crate::ToBits<u8> for MODE_A {
+    #[inline(always)]
+    fn _bits(&self) -> u8 {
         match *self {
-            MODER::THRES => 0,
-            MODER::SLIDINGWIN => 1,
-            MODER::STEPDET => 2,
-            MODER::_Reserved(bits) => bits,
+            MODE_A::THRES => 0,
+            MODE_A::SLIDINGWIN => 1,
+            MODE_A::STEPDET => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::THRES,
-            1 => MODER::SLIDINGWIN,
-            2 => MODER::STEPDET,
-            i => MODER::_Reserved(i),
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MODE_A::THRES),
+            1 => Val(MODE_A::SLIDINGWIN),
+            2 => Val(MODE_A::STEPDET),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `THRES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_thres(&self) -> bool {
-        *self == MODER::THRES
+        *self == MODE_A::THRES
     }
     #[doc = "Checks if the value of the field is `SLIDINGWIN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_slidingwin(&self) -> bool {
-        *self == MODER::SLIDINGWIN
+        *self == MODE_A::SLIDINGWIN
     }
     #[doc = "Checks if the value of the field is `STEPDET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_stepdet(&self) -> bool {
-        *self == MODER::STEPDET
+        *self == MODE_A::STEPDET
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPTHRESW<'a> {
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPTHRESW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _COMPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _COMPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DECODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DECODEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STRSAMPLE`"]
-pub enum STRSAMPLEW {
-    #[doc = "Nothing will be stored in the result buffer."]
-    DISABLE,
-    #[doc = "The sensor sample data will be stored in the result buffer."]
-    DATA,
-    #[doc = "The data source (i.e., the channel) will be stored alongside the sensor sample data."]
-    DATASRC,
-}
-impl STRSAMPLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            STRSAMPLEW::DISABLE => 0,
-            STRSAMPLEW::DATA => 1,
-            STRSAMPLEW::DATASRC => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STRSAMPLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STRSAMPLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STRSAMPLEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Nothing will be stored in the result buffer."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(STRSAMPLEW::DISABLE)
-    }
-    #[doc = "The sensor sample data will be stored in the result buffer."]
-    #[inline]
-    pub fn data(self) -> &'a mut W {
-        self.variant(STRSAMPLEW::DATA)
-    }
-    #[doc = "The data source (i.e., the channel) will be stored alongside the sensor sample data."]
-    #[inline]
-    pub fn datasrc(self) -> &'a mut W {
-        self.variant(STRSAMPLEW::DATASRC)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SCANRESINVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SCANRESINVW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "Threshold comparison is used to evaluate sensor result"]
-    THRES,
-    #[doc = "Sliding window is used to evaluate sensor result"]
-    SLIDINGWIN,
-    #[doc = "Step detection is used to evaluate sensor result"]
-    STEPDET,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::THRES => 0,
-            MODEW::SLIDINGWIN => 1,
-            MODEW::STEPDET => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        use crate::ToBits;
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Threshold comparison is used to evaluate sensor result"]
-    #[inline]
+    #[inline(always)]
     pub fn thres(self) -> &'a mut W {
-        self.variant(MODEW::THRES)
+        self.variant(MODE_A::THRES)
     }
     #[doc = "Sliding window is used to evaluate sensor result"]
-    #[inline]
+    #[inline(always)]
     pub fn slidingwin(self) -> &'a mut W {
-        self.variant(MODEW::SLIDINGWIN)
+        self.variant(MODE_A::SLIDINGWIN)
     }
     #[doc = "Step detection is used to evaluate sensor result"]
-    #[inline]
+    #[inline(always)]
     pub fn stepdet(self) -> &'a mut W {
-        self.variant(MODEW::STEPDET)
+        self.variant(MODE_A::STEPDET)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 21)) | (((value as u32) & 0x03) << 21);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Decision Threshold for Sensor Data"]
-    #[inline]
-    pub fn compthres(&self) -> COMPTHRESR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        COMPTHRESR { bits }
+    #[inline(always)]
+    pub fn compthres(&self) -> COMPTHRES_R {
+        COMPTHRES_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bit 16 - Select Mode for Threshold Comparison"]
-    #[inline]
-    pub fn comp(&self) -> COMPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        COMPR { bits }
+    #[inline(always)]
+    pub fn comp(&self) -> COMP_R {
+        COMP_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Send Result to Decoder"]
-    #[inline]
-    pub fn decode(&self) -> DECODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DECODER { bits }
+    #[inline(always)]
+    pub fn decode(&self) -> DECODE_R {
+        DECODE_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bits 18:19 - Enable Storing of Sensor Sample in Result Buffer"]
-    #[inline]
-    pub fn strsample(&self) -> STRSAMPLER {
-        STRSAMPLER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn strsample(&self) -> STRSAMPLE_R {
+        STRSAMPLE_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bit 20 - Enable Inversion of Result"]
-    #[inline]
-    pub fn scanresinv(&self) -> SCANRESINVR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SCANRESINVR { bits }
+    #[inline(always)]
+    pub fn scanresinv(&self) -> SCANRESINV_R {
+        SCANRESINV_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bits 21:22 - Configure Evaluation Mode"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 21) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Decision Threshold for Sensor Data"]
-    #[inline]
-    pub fn compthres(&mut self) -> _COMPTHRESW {
-        _COMPTHRESW { w: self }
+    #[inline(always)]
+    pub fn compthres(&mut self) -> COMPTHRES_W {
+        COMPTHRES_W { w: self }
     }
     #[doc = "Bit 16 - Select Mode for Threshold Comparison"]
-    #[inline]
-    pub fn comp(&mut self) -> _COMPW {
-        _COMPW { w: self }
+    #[inline(always)]
+    pub fn comp(&mut self) -> COMP_W {
+        COMP_W { w: self }
     }
     #[doc = "Bit 17 - Send Result to Decoder"]
-    #[inline]
-    pub fn decode(&mut self) -> _DECODEW {
-        _DECODEW { w: self }
+    #[inline(always)]
+    pub fn decode(&mut self) -> DECODE_W {
+        DECODE_W { w: self }
     }
     #[doc = "Bits 18:19 - Enable Storing of Sensor Sample in Result Buffer"]
-    #[inline]
-    pub fn strsample(&mut self) -> _STRSAMPLEW {
-        _STRSAMPLEW { w: self }
+    #[inline(always)]
+    pub fn strsample(&mut self) -> STRSAMPLE_W {
+        STRSAMPLE_W { w: self }
     }
     #[doc = "Bit 20 - Enable Inversion of Result"]
-    #[inline]
-    pub fn scanresinv(&mut self) -> _SCANRESINVW {
-        _SCANRESINVW { w: self }
+    #[inline(always)]
+    pub fn scanresinv(&mut self) -> SCANRESINV_W {
+        SCANRESINV_W { w: self }
     }
     #[doc = "Bits 21:22 - Configure Evaluation Mode"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
 }
