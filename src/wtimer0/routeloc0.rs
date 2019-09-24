@@ -10,30 +10,30 @@ impl crate::ResetValue for super::ROUTELOC0 {
         0
     }
 }
-#[doc = "Possible values of the field `CC0LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC0LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
-    #[doc = "Location 6"]
+    #[doc = "6: Location 6"]
     LOC6,
-    #[doc = "Location 7"]
+    #[doc = "7: Location 7"]
     LOC7,
 }
-impl crate::ToBits<u8> for CC0LOC_A {
+impl From<CC0LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CC0LOC_A) -> Self {
+        match variant {
             CC0LOC_A::LOC0 => 0,
             CC0LOC_A::LOC1 => 1,
             CC0LOC_A::LOC2 => 2,
@@ -113,8 +113,7 @@ impl<'a> CC0LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CC0LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -163,30 +162,30 @@ impl<'a> CC0LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CC1LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
-    #[doc = "Location 6"]
+    #[doc = "6: Location 6"]
     LOC6,
-    #[doc = "Location 7"]
+    #[doc = "7: Location 7"]
     LOC7,
 }
-impl crate::ToBits<u8> for CC1LOC_A {
+impl From<CC1LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CC1LOC_A) -> Self {
+        match variant {
             CC1LOC_A::LOC0 => 0,
             CC1LOC_A::LOC1 => 1,
             CC1LOC_A::LOC2 => 2,
@@ -266,8 +265,7 @@ impl<'a> CC1LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CC1LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -316,30 +314,30 @@ impl<'a> CC1LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CC2LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
-    #[doc = "Location 6"]
+    #[doc = "6: Location 6"]
     LOC6,
-    #[doc = "Location 7"]
+    #[doc = "7: Location 7"]
     LOC7,
 }
-impl crate::ToBits<u8> for CC2LOC_A {
+impl From<CC2LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CC2LOC_A) -> Self {
+        match variant {
             CC2LOC_A::LOC0 => 0,
             CC2LOC_A::LOC1 => 1,
             CC2LOC_A::LOC2 => 2,
@@ -419,8 +417,7 @@ impl<'a> CC2LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CC2LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -469,30 +466,30 @@ impl<'a> CC2LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CC3LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
-    #[doc = "Location 6"]
+    #[doc = "6: Location 6"]
     LOC6,
-    #[doc = "Location 7"]
+    #[doc = "7: Location 7"]
     LOC7,
 }
-impl crate::ToBits<u8> for CC3LOC_A {
+impl From<CC3LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CC3LOC_A) -> Self {
+        match variant {
             CC3LOC_A::LOC0 => 0,
             CC3LOC_A::LOC1 => 1,
             CC3LOC_A::LOC2 => 2,
@@ -572,8 +569,7 @@ impl<'a> CC3LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CC3LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

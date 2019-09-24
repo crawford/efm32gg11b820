@@ -10,62 +10,62 @@ impl crate::ResetValue for super::PRSSEL {
         0
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS Channel 0 selected as the start trigger"]
+    #[doc = "0: PRS Channel 0 selected as the start trigger"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as the start trigger"]
+    #[doc = "1: PRS Channel 1 selected as the start trigger"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as the start trigger"]
+    #[doc = "2: PRS Channel 2 selected as the start trigger"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as the start trigger"]
+    #[doc = "3: PRS Channel 3 selected as the start trigger"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as the start trigger"]
+    #[doc = "4: PRS Channel 4 selected as the start trigger"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as the start trigger"]
+    #[doc = "5: PRS Channel 5 selected as the start trigger"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as the start trigger"]
+    #[doc = "6: PRS Channel 6 selected as the start trigger"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as the start trigger"]
+    #[doc = "7: PRS Channel 7 selected as the start trigger"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as the start trigger"]
+    #[doc = "8: PRS Channel 8 selected as the start trigger"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as the start trigger"]
+    #[doc = "9: PRS Channel 9 selected as the start trigger"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as the start trigger"]
+    #[doc = "10: PRS Channel 10 selected as the start trigger"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as the start trigger"]
+    #[doc = "11: PRS Channel 11 selected as the start trigger"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as the start trigger"]
+    #[doc = "12: PRS Channel 12 selected as the start trigger"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as the start trigger"]
+    #[doc = "13: PRS Channel 13 selected as the start trigger"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as the start trigger"]
+    #[doc = "14: PRS Channel 14 selected as the start trigger"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as the start trigger"]
+    #[doc = "15: PRS Channel 15 selected as the start trigger"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as the start trigger"]
+    #[doc = "16: PRS Channel 16 selected as the start trigger"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as the start trigger"]
+    #[doc = "17: PRS Channel 17 selected as the start trigger"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as the start trigger"]
+    #[doc = "18: PRS Channel 18 selected as the start trigger"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as the start trigger"]
+    #[doc = "19: PRS Channel 19 selected as the start trigger"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as the start trigger"]
+    #[doc = "20: PRS Channel 20 selected as the start trigger"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as the start trigger"]
+    #[doc = "21: PRS Channel 21 selected as the start trigger"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as the start trigger"]
+    #[doc = "22: PRS Channel 22 selected as the start trigger"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as the start trigger"]
+    #[doc = "23: PRS Channel 23 selected as the start trigger"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -257,8 +257,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as the start trigger"]
     #[inline(always)]

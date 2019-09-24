@@ -10,32 +10,32 @@ impl crate::ResetValue for super::RAM1CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `RAMPOWERDOWN`"]
+#[doc = "RAM1 Blockset Power-down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMPOWERDOWN_A {
-    #[doc = "None of the RAM blocks powered down"]
+    #[doc = "0: None of the RAM blocks powered down"]
     NONE,
-    #[doc = "Power down RAM block 7 (address range 0x2003C000-0x2003FFFF)"]
+    #[doc = "128: Power down RAM block 7 (address range 0x2003C000-0x2003FFFF)"]
     BLK7,
-    #[doc = "Power down RAM blocks 6-7 (address range 0x20038000-0x2003FFFF)"]
+    #[doc = "192: Power down RAM blocks 6-7 (address range 0x20038000-0x2003FFFF)"]
     BLK6TO7,
-    #[doc = "Power down RAM blocks 5-7 (address range 0x20034000-0x2003FFFF)"]
+    #[doc = "224: Power down RAM blocks 5-7 (address range 0x20034000-0x2003FFFF)"]
     BLK5TO7,
-    #[doc = "Power down RAM blocks 4-7 (address range 0x20030000-0x2003FFFF)"]
+    #[doc = "240: Power down RAM blocks 4-7 (address range 0x20030000-0x2003FFFF)"]
     BLK4TO7,
-    #[doc = "Power down RAM blocks 3-7 (address range 0x2002C000-0x2003FFFF)"]
+    #[doc = "248: Power down RAM blocks 3-7 (address range 0x2002C000-0x2003FFFF)"]
     BLK3TO7,
-    #[doc = "Power down RAM blocks 2-7 (address range 0x20028000-0x2003FFFF)"]
+    #[doc = "252: Power down RAM blocks 2-7 (address range 0x20028000-0x2003FFFF)"]
     BLK2TO7,
-    #[doc = "Power down RAM blocks 1-7 (address range 0x20024000-0x2003FFFF)"]
+    #[doc = "254: Power down RAM blocks 1-7 (address range 0x20024000-0x2003FFFF)"]
     BLK1TO7,
-    #[doc = "Power down RAM blocks 0-7 (address range 0x20020000-0x2003FFFF)"]
+    #[doc = "255: Power down RAM blocks 0-7 (address range 0x20020000-0x2003FFFF)"]
     BLK0TO7,
 }
-impl crate::ToBits<u8> for RAMPOWERDOWN_A {
+impl From<RAMPOWERDOWN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RAMPOWERDOWN_A) -> Self {
+        match variant {
             RAMPOWERDOWN_A::NONE => 0,
             RAMPOWERDOWN_A::BLK7 => 128,
             RAMPOWERDOWN_A::BLK6TO7 => 192,
@@ -122,8 +122,7 @@ impl<'a> RAMPOWERDOWN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RAMPOWERDOWN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "None of the RAM blocks powered down"]
     #[inline(always)]

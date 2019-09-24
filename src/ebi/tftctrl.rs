@@ -10,20 +10,20 @@ impl crate::ResetValue for super::TFTCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `DD`"]
+#[doc = "TFT Direct Drive Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DD_A {
-    #[doc = "Direct Drive is disabled."]
+    #[doc = "0: Direct Drive is disabled."]
     DISABLED,
-    #[doc = "Direct Drive from internal memory enabled and started."]
+    #[doc = "1: Direct Drive from internal memory enabled and started."]
     INTERNAL,
-    #[doc = "Direct Drive from external memory enabled and started."]
+    #[doc = "2: Direct Drive from external memory enabled and started."]
     EXTERNAL,
 }
-impl crate::ToBits<u8> for DD_A {
+impl From<DD_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DD_A) -> Self {
+        match variant {
             DD_A::DISABLED => 0,
             DD_A::INTERNAL => 1,
             DD_A::EXTERNAL => 2,
@@ -68,8 +68,7 @@ impl<'a> DD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DD_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Direct Drive is disabled."]
     #[inline(always)]
@@ -93,34 +92,34 @@ impl<'a> DD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MASKBLEND`"]
+#[doc = "TFT Mask and Blend Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MASKBLEND_A {
-    #[doc = "Masking and Blending are disabled."]
+    #[doc = "0: Masking and Blending are disabled."]
     DISABLED,
-    #[doc = "Internal Masking is enabled."]
+    #[doc = "1: Internal Masking is enabled."]
     IMASK,
-    #[doc = "Internal Alpha Blending is enabled."]
+    #[doc = "2: Internal Alpha Blending is enabled."]
     IALPHA,
-    #[doc = "Internal Masking and Alpha Blending are enabled."]
+    #[doc = "3: Internal Masking and Alpha Blending are enabled."]
     IMASKALPHA,
-    #[doc = "External Frame Buffer Masking is enabled."]
+    #[doc = "4: External Frame Buffer Masking is enabled."]
     EFBMASK,
-    #[doc = "External Frame Buffer Alpha Blending is enabled."]
+    #[doc = "5: External Frame Buffer Alpha Blending is enabled."]
     EFBALPHA,
-    #[doc = "External Frame Buffer Masking and Alpha Blending are enabled."]
+    #[doc = "6: External Frame Buffer Masking and Alpha Blending are enabled."]
     EFBMASKALPHA,
-    #[doc = "Internal Frame Buffer Masking is enabled."]
+    #[doc = "7: Internal Frame Buffer Masking is enabled."]
     IFBMASK,
-    #[doc = "Internal Frame Buffer Alpha Blending is enabled."]
+    #[doc = "8: Internal Frame Buffer Alpha Blending is enabled."]
     IFBALPHA,
-    #[doc = "Internal Frame Buffer Masking and Alpha Blending are enabled."]
+    #[doc = "9: Internal Frame Buffer Masking and Alpha Blending are enabled."]
     IFBMASKALPHA,
 }
-impl crate::ToBits<u8> for MASKBLEND_A {
+impl From<MASKBLEND_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MASKBLEND_A) -> Self {
+        match variant {
             MASKBLEND_A::DISABLED => 0,
             MASKBLEND_A::IMASK => 1,
             MASKBLEND_A::IALPHA => 2,
@@ -214,8 +213,7 @@ impl<'a> MASKBLEND_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MASKBLEND_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Masking and Blending are disabled."]
     #[inline(always)]
@@ -322,20 +320,20 @@ impl<'a> FBCTRIG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INTERLEAVE`"]
+#[doc = "Interleave Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTERLEAVE_A {
-    #[doc = "Allow unlimited interleaved EBI accesses per EBI_DCLK period. This can cause jitter on the EBI_DCLK"]
+    #[doc = "0: Allow unlimited interleaved EBI accesses per EBI_DCLK period. This can cause jitter on the EBI_DCLK"]
     UNLIMITED,
-    #[doc = "Allow 1 interleaved EBI access per EBI_DCLK period."]
+    #[doc = "1: Allow 1 interleaved EBI access per EBI_DCLK period."]
     ONEPERDCLK,
-    #[doc = "Only allow EBI accesses during TFT porches."]
+    #[doc = "2: Only allow EBI accesses during TFT porches."]
     PORCH,
 }
-impl crate::ToBits<u8> for INTERLEAVE_A {
+impl From<INTERLEAVE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INTERLEAVE_A) -> Self {
+        match variant {
             INTERLEAVE_A::UNLIMITED => 0,
             INTERLEAVE_A::ONEPERDCLK => 1,
             INTERLEAVE_A::PORCH => 2,
@@ -380,8 +378,7 @@ impl<'a> INTERLEAVE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INTERLEAVE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Allow unlimited interleaved EBI accesses per EBI_DCLK period. This can cause jitter on the EBI_DCLK"]
     #[inline(always)]
@@ -429,18 +426,18 @@ impl<'a> COLOR1SRC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WIDTH`"]
+#[doc = "TFT Transaction Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WIDTH_A {
-    #[doc = "TFT Data is 8 bit wide."]
+    #[doc = "0: TFT Data is 8 bit wide."]
     BYTE,
-    #[doc = "TFT Data is 16 bit wide."]
+    #[doc = "1: TFT Data is 16 bit wide."]
     HALFWORD,
 }
-impl crate::ToBits<u8> for WIDTH_A {
+impl From<WIDTH_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: WIDTH_A) -> Self {
+        match variant {
             WIDTH_A::BYTE => 0,
             WIDTH_A::HALFWORD => 1,
         }
@@ -478,8 +475,7 @@ impl<'a> WIDTH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WIDTH_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "TFT Data is 8 bit wide."]
     #[inline(always)]
@@ -522,22 +518,22 @@ impl<'a> ALIASBANKEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BANKSEL`"]
+#[doc = "Graphics Bank\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BANKSEL_A {
-    #[doc = "Memory bank 0 is used for Direct Drive, Masking, and Alpha Blending."]
+    #[doc = "0: Memory bank 0 is used for Direct Drive, Masking, and Alpha Blending."]
     BANK0,
-    #[doc = "Memory bank 1 is used for Direct Drive, Masking, and Alpha Blending."]
+    #[doc = "1: Memory bank 1 is used for Direct Drive, Masking, and Alpha Blending."]
     BANK1,
-    #[doc = "Memory bank 2 is used for Direct Drive, Masking, and Alpha Blending."]
+    #[doc = "2: Memory bank 2 is used for Direct Drive, Masking, and Alpha Blending."]
     BANK2,
-    #[doc = "Memory bank 3 is used for Direct Drive, Masking, and Alpha Blending."]
+    #[doc = "3: Memory bank 3 is used for Direct Drive, Masking, and Alpha Blending."]
     BANK3,
 }
-impl crate::ToBits<u8> for BANKSEL_A {
+impl From<BANKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BANKSEL_A) -> Self {
+        match variant {
             BANKSEL_A::BANK0 => 0,
             BANKSEL_A::BANK1 => 1,
             BANKSEL_A::BANK2 => 2,
@@ -588,9 +584,8 @@ impl<'a> BANKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BANKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Memory bank 0 is used for Direct Drive, Masking, and Alpha Blending."]
@@ -620,22 +615,22 @@ impl<'a> BANKSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALIASBANK`"]
+#[doc = "Graphic Bank Select Aliasing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIASBANK_A {
-    #[doc = "Graphic Bank Select is alias to Bank Select 0"]
+    #[doc = "0: Graphic Bank Select is alias to Bank Select 0"]
     ALIASBANK0,
-    #[doc = "Graphic Bank Select is alias to Bank Select 1"]
+    #[doc = "1: Graphic Bank Select is alias to Bank Select 1"]
     ALIASBANK1,
-    #[doc = "Graphic Bank Select is alias to Bank Select 2"]
+    #[doc = "2: Graphic Bank Select is alias to Bank Select 2"]
     ALIASBANK2,
-    #[doc = "Graphic Bank Select is alias to Bank Select 3"]
+    #[doc = "3: Graphic Bank Select is alias to Bank Select 3"]
     ALIASBANK3,
 }
-impl crate::ToBits<u8> for ALIASBANK_A {
+impl From<ALIASBANK_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ALIASBANK_A) -> Self {
+        match variant {
             ALIASBANK_A::ALIASBANK0 => 0,
             ALIASBANK_A::ALIASBANK1 => 1,
             ALIASBANK_A::ALIASBANK2 => 2,
@@ -686,9 +681,8 @@ impl<'a> ALIASBANK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ALIASBANK_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Graphic Bank Select is alias to Bank Select 0"]

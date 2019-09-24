@@ -10,20 +10,20 @@ impl crate::ResetValue for super::CACHECONFIG0 {
         0x03
     }
 }
-#[doc = "Possible values of the field `CACHELPLEVEL`"]
+#[doc = "Instruction Cache Low-Power Level\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CACHELPLEVEL_A {
-    #[doc = "Base instruction cache functionality."]
+    #[doc = "0: Base instruction cache functionality."]
     BASE,
-    #[doc = "Advanced buffering mode, where the cache uses the fetch pattern to predict highly accessed data and store it in low-energy memory."]
+    #[doc = "1: Advanced buffering mode, where the cache uses the fetch pattern to predict highly accessed data and store it in low-energy memory."]
     ADVANCED,
-    #[doc = "Minimum activity mode, which allows the cache to minimize activity in logic that it predicts has a low probability being used. This mode can introduce wait-states into the instruction fetch stream when the cache exits one of its low-activity states. The number of wait-states introduced is small, but users running with 0-wait-state memory and wishing to reduce the variability that the cache might introduce with additional wait-states may wish to lower the cache low-power level. Note, this mode includes the advanced buffering mode functionality."]
+    #[doc = "3: Minimum activity mode, which allows the cache to minimize activity in logic that it predicts has a low probability being used. This mode can introduce wait-states into the instruction fetch stream when the cache exits one of its low-activity states. The number of wait-states introduced is small, but users running with 0-wait-state memory and wishing to reduce the variability that the cache might introduce with additional wait-states may wish to lower the cache low-power level. Note, this mode includes the advanced buffering mode functionality."]
     MINACTIVITY,
 }
-impl crate::ToBits<u8> for CACHELPLEVEL_A {
+impl From<CACHELPLEVEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CACHELPLEVEL_A) -> Self {
+        match variant {
             CACHELPLEVEL_A::BASE => 0,
             CACHELPLEVEL_A::ADVANCED => 1,
             CACHELPLEVEL_A::MINACTIVITY => 3,
@@ -68,8 +68,7 @@ impl<'a> CACHELPLEVEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CACHELPLEVEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Base instruction cache functionality."]
     #[inline(always)]

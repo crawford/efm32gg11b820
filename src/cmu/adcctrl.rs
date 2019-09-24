@@ -10,16 +10,16 @@ impl crate::ResetValue for super::ADCCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `ADC0CLKDIV`"]
+#[doc = "ADC0 Clock Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0CLKDIV_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u8> for ADC0CLKDIV_A {
+impl From<ADC0CLKDIV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADC0CLKDIV_A) -> Self {
+        match variant {
             ADC0CLKDIV_A::NODIVISION => 0,
         }
     }
@@ -50,8 +50,7 @@ impl<'a> ADC0CLKDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADC0CLKDIV_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -65,22 +64,22 @@ impl<'a> ADC0CLKDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ADC0CLKSEL`"]
+#[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0CLKSEL_A {
-    #[doc = "ADC0 is not clocked"]
+    #[doc = "0: ADC0 is not clocked"]
     DISABLED,
-    #[doc = "AUXHFRCO is clocking ADC0"]
+    #[doc = "1: AUXHFRCO is clocking ADC0"]
     AUXHFRCO,
-    #[doc = "HFXO is clocking ADC0"]
+    #[doc = "2: HFXO is clocking ADC0"]
     HFXO,
-    #[doc = "HFSRCCLK is clocking ADC0"]
+    #[doc = "3: HFSRCCLK is clocking ADC0"]
     HFSRCCLK,
 }
-impl crate::ToBits<u8> for ADC0CLKSEL_A {
+impl From<ADC0CLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADC0CLKSEL_A) -> Self {
+        match variant {
             ADC0CLKSEL_A::DISABLED => 0,
             ADC0CLKSEL_A::AUXHFRCO => 1,
             ADC0CLKSEL_A::HFXO => 2,
@@ -131,9 +130,8 @@ impl<'a> ADC0CLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADC0CLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ADC0 is not clocked"]
@@ -187,16 +185,16 @@ impl<'a> ADC0CLKINV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ADC1CLKDIV`"]
+#[doc = "ADC1 Clock Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1CLKDIV_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u8> for ADC1CLKDIV_A {
+impl From<ADC1CLKDIV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADC1CLKDIV_A) -> Self {
+        match variant {
             ADC1CLKDIV_A::NODIVISION => 0,
         }
     }
@@ -227,8 +225,7 @@ impl<'a> ADC1CLKDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADC1CLKDIV_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -242,22 +239,22 @@ impl<'a> ADC1CLKDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ADC1CLKSEL`"]
+#[doc = "ADC1 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1CLKSEL_A {
-    #[doc = "ADC1 is not clocked"]
+    #[doc = "0: ADC1 is not clocked"]
     DISABLED,
-    #[doc = "AUXHFRCO is clocking ADC1"]
+    #[doc = "1: AUXHFRCO is clocking ADC1"]
     AUXHFRCO,
-    #[doc = "HFXO is clocking ADC1"]
+    #[doc = "2: HFXO is clocking ADC1"]
     HFXO,
-    #[doc = "HFSRCCLK is clocking ADC1"]
+    #[doc = "3: HFSRCCLK is clocking ADC1"]
     HFSRCCLK,
 }
-impl crate::ToBits<u8> for ADC1CLKSEL_A {
+impl From<ADC1CLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADC1CLKSEL_A) -> Self {
+        match variant {
             ADC1CLKSEL_A::DISABLED => 0,
             ADC1CLKSEL_A::AUXHFRCO => 1,
             ADC1CLKSEL_A::HFXO => 2,
@@ -308,9 +305,8 @@ impl<'a> ADC1CLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADC1CLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ADC1 is not clocked"]

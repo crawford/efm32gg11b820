@@ -10,18 +10,18 @@ impl crate::ResetValue for super::LOCK {
         0
     }
 }
-#[doc = "Possible values of the field `LOCKKEY`"]
+#[doc = "Configuration Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKKEY_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     UNLOCKED,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     LOCKED,
 }
-impl crate::ToBits<u16> for LOCKKEY_A {
+impl From<LOCKKEY_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: LOCKKEY_A) -> Self {
+        match variant {
             LOCKKEY_A::UNLOCKED => 0,
             LOCKKEY_A::LOCKED => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> LOCKKEY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LOCKKEY_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

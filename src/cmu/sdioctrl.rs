@@ -10,22 +10,22 @@ impl crate::ResetValue for super::SDIOCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `SDIOCLKSEL`"]
+#[doc = "SDIO Reference Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDIOCLKSEL_A {
-    #[doc = "HFRCO clock is used to clock SDIO"]
+    #[doc = "0: HFRCO clock is used to clock SDIO"]
     HFRCO,
-    #[doc = "HFXO clock is used to clock SDIO"]
+    #[doc = "1: HFXO clock is used to clock SDIO"]
     HFXO,
-    #[doc = "AUXHFRCO is used to clock SDIO"]
+    #[doc = "2: AUXHFRCO is used to clock SDIO"]
     AUXHFRCO,
-    #[doc = "USHFRCO is used to clock SDIO"]
+    #[doc = "3: USHFRCO is used to clock SDIO"]
     USHFRCO,
 }
-impl crate::ToBits<u8> for SDIOCLKSEL_A {
+impl From<SDIOCLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDIOCLKSEL_A) -> Self {
+        match variant {
             SDIOCLKSEL_A::HFRCO => 0,
             SDIOCLKSEL_A::HFXO => 1,
             SDIOCLKSEL_A::AUXHFRCO => 2,
@@ -76,9 +76,8 @@ impl<'a> SDIOCLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDIOCLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "HFRCO clock is used to clock SDIO"]

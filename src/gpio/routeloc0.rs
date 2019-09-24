@@ -10,22 +10,22 @@ impl crate::ResetValue for super::ROUTELOC0 {
         0
     }
 }
-#[doc = "Possible values of the field `SWVLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWVLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
 }
-impl crate::ToBits<u8> for SWVLOC_A {
+impl From<SWVLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SWVLOC_A) -> Self {
+        match variant {
             SWVLOC_A::LOC0 => 0,
             SWVLOC_A::LOC1 => 1,
             SWVLOC_A::LOC2 => 2,
@@ -77,8 +77,7 @@ impl<'a> SWVLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SWVLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -107,26 +106,26 @@ impl<'a> SWVLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ETMLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETMLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
 }
-impl crate::ToBits<u8> for ETMLOC_A {
+impl From<ETMLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ETMLOC_A) -> Self {
+        match variant {
             ETMLOC_A::LOC0 => 0,
             ETMLOC_A::LOC1 => 1,
             ETMLOC_A::LOC2 => 2,
@@ -192,8 +191,7 @@ impl<'a> ETMLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ETMLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

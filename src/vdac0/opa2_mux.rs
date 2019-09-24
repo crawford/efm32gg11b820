@@ -38,28 +38,28 @@ impl<'a> NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESINMUX`"]
+#[doc = "OPAx Resistor Ladder Input Mux\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESINMUX_A {
-    #[doc = "Set for Unity Gain"]
+    #[doc = "0: Set for Unity Gain"]
     DISABLE,
-    #[doc = "Set for NEXTOUT(x-1) input"]
+    #[doc = "1: Set for NEXTOUT(x-1) input"]
     OPANEXT,
-    #[doc = "NEG pad connected"]
+    #[doc = "2: NEG pad connected"]
     NEGPAD,
-    #[doc = "POS pad connected"]
+    #[doc = "3: POS pad connected"]
     POSPAD,
-    #[doc = "Neg pad of OPA0 connected. Direct input to support common reference."]
+    #[doc = "4: Neg pad of OPA0 connected. Direct input to support common reference."]
     COMPAD,
-    #[doc = "OPA0 and OPA1 Resmux connected to form fully differential instrumentation amplifier."]
+    #[doc = "5: OPA0 and OPA1 Resmux connected to form fully differential instrumentation amplifier."]
     CENTER,
-    #[doc = "VSS connected"]
+    #[doc = "6: VSS connected"]
     VSS,
 }
-impl crate::ToBits<u8> for RESINMUX_A {
+impl From<RESINMUX_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RESINMUX_A) -> Self {
+        match variant {
             RESINMUX_A::DISABLE => 0,
             RESINMUX_A::OPANEXT => 1,
             RESINMUX_A::NEGPAD => 2,
@@ -132,8 +132,7 @@ impl<'a> RESINMUX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESINMUX_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Set for Unity Gain"]
     #[inline(always)]
@@ -201,30 +200,30 @@ impl<'a> GAIN3X_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESSEL`"]
+#[doc = "OPAx Resistor Ladder Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESSEL_A {
-    #[doc = "Gain of 1/3"]
+    #[doc = "0: Gain of 1/3"]
     RES0,
-    #[doc = "Gain of 1"]
+    #[doc = "1: Gain of 1"]
     RES1,
-    #[doc = "Gain of 1 2/3"]
+    #[doc = "2: Gain of 1 2/3"]
     RES2,
-    #[doc = "Gain of 2 1/5"]
+    #[doc = "3: Gain of 2 1/5"]
     RES3,
-    #[doc = "Gain of 3"]
+    #[doc = "4: Gain of 3"]
     RES4,
-    #[doc = "Gain of 4 1/3"]
+    #[doc = "5: Gain of 4 1/3"]
     RES5,
-    #[doc = "Gain of 7"]
+    #[doc = "6: Gain of 7"]
     RES6,
-    #[doc = "Gain of 15"]
+    #[doc = "7: Gain of 15"]
     RES7,
 }
-impl crate::ToBits<u8> for RESSEL_A {
+impl From<RESSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RESSEL_A) -> Self {
+        match variant {
             RESSEL_A::RES0 => 0,
             RESSEL_A::RES1 => 1,
             RESSEL_A::RES2 => 2,
@@ -303,9 +302,8 @@ impl<'a> RESSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Gain of 1/3"]

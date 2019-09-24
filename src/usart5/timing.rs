@@ -10,30 +10,30 @@ impl crate::ResetValue for super::TIMING {
         0
     }
 }
-#[doc = "Possible values of the field `TXDELAY`"]
+#[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDELAY_A {
-    #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
+    #[doc = "0: Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
     DISABLE,
-    #[doc = "Start of transmission is delayed for 1 baud-times"]
+    #[doc = "1: Start of transmission is delayed for 1 baud-times"]
     ONE,
-    #[doc = "Start of transmission is delayed for 2 baud-times"]
+    #[doc = "2: Start of transmission is delayed for 2 baud-times"]
     TWO,
-    #[doc = "Start of transmission is delayed for 3 baud-times"]
+    #[doc = "3: Start of transmission is delayed for 3 baud-times"]
     THREE,
-    #[doc = "Start of transmission is delayed for 7 baud-times"]
+    #[doc = "4: Start of transmission is delayed for 7 baud-times"]
     SEVEN,
-    #[doc = "Start of transmission is delayed for TCMPVAL0 baud-times"]
+    #[doc = "5: Start of transmission is delayed for TCMPVAL0 baud-times"]
     TCMP0,
-    #[doc = "Start of transmission is delayed for TCMPVAL1 baud-times"]
+    #[doc = "6: Start of transmission is delayed for TCMPVAL1 baud-times"]
     TCMP1,
-    #[doc = "Start of transmission is delayed for TCMPVAL2 baud-times"]
+    #[doc = "7: Start of transmission is delayed for TCMPVAL2 baud-times"]
     TCMP2,
 }
-impl crate::ToBits<u8> for TXDELAY_A {
+impl From<TXDELAY_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TXDELAY_A) -> Self {
+        match variant {
             TXDELAY_A::DISABLE => 0,
             TXDELAY_A::ONE => 1,
             TXDELAY_A::TWO => 2,
@@ -112,9 +112,8 @@ impl<'a> TXDELAY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TXDELAY_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
@@ -164,30 +163,30 @@ impl<'a> TXDELAY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CSSETUP`"]
+#[doc = "Chip Select Setup\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSSETUP_A {
-    #[doc = "CS is not asserted before start of transmission"]
+    #[doc = "0: CS is not asserted before start of transmission"]
     ZERO,
-    #[doc = "CS is asserted for 1 baud-times before start of transmission"]
+    #[doc = "1: CS is asserted for 1 baud-times before start of transmission"]
     ONE,
-    #[doc = "CS is asserted for 2 baud-times before start of transmission"]
+    #[doc = "2: CS is asserted for 2 baud-times before start of transmission"]
     TWO,
-    #[doc = "CS is asserted for 3 baud-times before start of transmission"]
+    #[doc = "3: CS is asserted for 3 baud-times before start of transmission"]
     THREE,
-    #[doc = "CS is asserted for 7 baud-times before start of transmission"]
+    #[doc = "4: CS is asserted for 7 baud-times before start of transmission"]
     SEVEN,
-    #[doc = "CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
+    #[doc = "5: CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
     TCMP0,
-    #[doc = "CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
+    #[doc = "6: CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
     TCMP1,
-    #[doc = "CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
+    #[doc = "7: CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
     TCMP2,
 }
-impl crate::ToBits<u8> for CSSETUP_A {
+impl From<CSSETUP_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CSSETUP_A) -> Self {
+        match variant {
             CSSETUP_A::ZERO => 0,
             CSSETUP_A::ONE => 1,
             CSSETUP_A::TWO => 2,
@@ -266,9 +265,8 @@ impl<'a> CSSETUP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CSSETUP_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "CS is not asserted before start of transmission"]
@@ -318,30 +316,30 @@ impl<'a> CSSETUP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ICS`"]
+#[doc = "Inter-character Spacing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICS_A {
-    #[doc = "There is no space between charcters"]
+    #[doc = "0: There is no space between charcters"]
     ZERO,
-    #[doc = "Create a space of 1 baud-times before start of transmission "]
+    #[doc = "1: Create a space of 1 baud-times before start of transmission "]
     ONE,
-    #[doc = "Create a space of 2 baud-times before start of transmission"]
+    #[doc = "2: Create a space of 2 baud-times before start of transmission"]
     TWO,
-    #[doc = "Create a space of 3 baud-times before start of transmission"]
+    #[doc = "3: Create a space of 3 baud-times before start of transmission"]
     THREE,
-    #[doc = "Create a space of 7 baud-times before start of transmission"]
+    #[doc = "4: Create a space of 7 baud-times before start of transmission"]
     SEVEN,
-    #[doc = "Create a space of before the start of transmission for TCMPVAL0 baud-times"]
+    #[doc = "5: Create a space of before the start of transmission for TCMPVAL0 baud-times"]
     TCMP0,
-    #[doc = "Create a space of before the start of transmission for TCMPVAL1 baud-times"]
+    #[doc = "6: Create a space of before the start of transmission for TCMPVAL1 baud-times"]
     TCMP1,
-    #[doc = "Create a space of before the start of transmission for TCMPVAL2 baud-times"]
+    #[doc = "7: Create a space of before the start of transmission for TCMPVAL2 baud-times"]
     TCMP2,
 }
-impl crate::ToBits<u8> for ICS_A {
+impl From<ICS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ICS_A) -> Self {
+        match variant {
             ICS_A::ZERO => 0,
             ICS_A::ONE => 1,
             ICS_A::TWO => 2,
@@ -420,9 +418,8 @@ impl<'a> ICS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ICS_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "There is no space between charcters"]
@@ -472,30 +469,30 @@ impl<'a> ICS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CSHOLD`"]
+#[doc = "Chip Select Hold\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSHOLD_A {
-    #[doc = "Disable CS being asserted after the end of transmission"]
+    #[doc = "0: Disable CS being asserted after the end of transmission"]
     ZERO,
-    #[doc = "CS is asserted for 1 baud-times after the end of transmission"]
+    #[doc = "1: CS is asserted for 1 baud-times after the end of transmission"]
     ONE,
-    #[doc = "CS is asserted for 2 baud-times after the end of transmission"]
+    #[doc = "2: CS is asserted for 2 baud-times after the end of transmission"]
     TWO,
-    #[doc = "CS is asserted for 3 baud-times after the end of transmission"]
+    #[doc = "3: CS is asserted for 3 baud-times after the end of transmission"]
     THREE,
-    #[doc = "CS is asserted for 7 baud-times after the end of transmission"]
+    #[doc = "4: CS is asserted for 7 baud-times after the end of transmission"]
     SEVEN,
-    #[doc = "CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
+    #[doc = "5: CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
     TCMP0,
-    #[doc = "CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
+    #[doc = "6: CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
     TCMP1,
-    #[doc = "CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
+    #[doc = "7: CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
     TCMP2,
 }
-impl crate::ToBits<u8> for CSHOLD_A {
+impl From<CSHOLD_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CSHOLD_A) -> Self {
+        match variant {
             CSHOLD_A::ZERO => 0,
             CSHOLD_A::ONE => 1,
             CSHOLD_A::TWO => 2,
@@ -574,9 +571,8 @@ impl<'a> CSHOLD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CSHOLD_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Disable CS being asserted after the end of transmission"]

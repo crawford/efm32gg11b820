@@ -4,22 +4,22 @@ pub type R = crate::R<u32, super::PRSTVAL6>;
 pub type SDR104SDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `SDR104CLKGENVAL`"]
 pub type SDR104CLKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `SDR104DRVSTVAL`"]
+#[doc = "Driver Strength Select Value for SDR104\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR104DRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for SDR104DRVSTVAL_A {
+impl From<SDR104DRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDR104DRVSTVAL_A) -> Self {
+        match variant {
             SDR104DRVSTVAL_A::TYPEB => 0,
             SDR104DRVSTVAL_A::TYPEA => 1,
             SDR104DRVSTVAL_A::TYPEC => 2,
@@ -66,22 +66,22 @@ impl SDR104DRVSTVAL_R {
 pub type DDR50SDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `DDR50CLKGENVAL`"]
 pub type DDR50CLKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `DDR50DRVSTVAL`"]
+#[doc = "Driver Strength Select Value for DDR50\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDR50DRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for DDR50DRVSTVAL_A {
+impl From<DDR50DRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DDR50DRVSTVAL_A) -> Self {
+        match variant {
             DDR50DRVSTVAL_A::TYPEB => 0,
             DDR50DRVSTVAL_A::TYPEA => 1,
             DDR50DRVSTVAL_A::TYPEC => 2,

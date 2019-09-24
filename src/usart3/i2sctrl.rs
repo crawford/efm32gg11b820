@@ -130,30 +130,30 @@ impl<'a> DELAY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FORMAT`"]
+#[doc = "I2S Word Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORMAT_A {
-    #[doc = "32-bit word, 32-bit data"]
+    #[doc = "0: 32-bit word, 32-bit data"]
     W32D32,
-    #[doc = "32-bit word, 32-bit data with 8 lsb masked"]
+    #[doc = "1: 32-bit word, 32-bit data with 8 lsb masked"]
     W32D24M,
-    #[doc = "32-bit word, 24-bit data"]
+    #[doc = "2: 32-bit word, 24-bit data"]
     W32D24,
-    #[doc = "32-bit word, 16-bit data"]
+    #[doc = "3: 32-bit word, 16-bit data"]
     W32D16,
-    #[doc = "32-bit word, 8-bit data"]
+    #[doc = "4: 32-bit word, 8-bit data"]
     W32D8,
-    #[doc = "16-bit word, 16-bit data"]
+    #[doc = "5: 16-bit word, 16-bit data"]
     W16D16,
-    #[doc = "16-bit word, 8-bit data"]
+    #[doc = "6: 16-bit word, 8-bit data"]
     W16D8,
-    #[doc = "8-bit word, 8-bit data"]
+    #[doc = "7: 8-bit word, 8-bit data"]
     W8D8,
 }
-impl crate::ToBits<u8> for FORMAT_A {
+impl From<FORMAT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: FORMAT_A) -> Self {
+        match variant {
             FORMAT_A::W32D32 => 0,
             FORMAT_A::W32D24M => 1,
             FORMAT_A::W32D24 => 2,
@@ -232,9 +232,8 @@ impl<'a> FORMAT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FORMAT_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "32-bit word, 32-bit data"]

@@ -96,22 +96,22 @@ impl<'a> ENDEM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VREFUPDATE`"]
+#[doc = "Control Vref Update Rate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VREFUPDATE_A {
-    #[doc = "32 clocks."]
+    #[doc = "0: 32 clocks."]
     _32CYCLES,
-    #[doc = "64 clocks."]
+    #[doc = "1: 64 clocks."]
     _64CYCLES,
-    #[doc = "128 clocks."]
+    #[doc = "2: 128 clocks."]
     _128CYCLES,
-    #[doc = "256 clocks."]
+    #[doc = "3: 256 clocks."]
     _256CYCLES,
 }
-impl crate::ToBits<u8> for VREFUPDATE_A {
+impl From<VREFUPDATE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: VREFUPDATE_A) -> Self {
+        match variant {
             VREFUPDATE_A::_32CYCLES => 0,
             VREFUPDATE_A::_64CYCLES => 1,
             VREFUPDATE_A::_128CYCLES => 2,
@@ -162,9 +162,8 @@ impl<'a> VREFUPDATE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VREFUPDATE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "32 clocks."]
@@ -194,20 +193,20 @@ impl<'a> VREFUPDATE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TIMEOUT`"]
+#[doc = "LFRCO Timeout\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUT_A {
-    #[doc = "Timeout period of 2 cycles"]
+    #[doc = "0: Timeout period of 2 cycles"]
     _2CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
+    #[doc = "1: Timeout period of 16 cycles"]
     _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
+    #[doc = "2: Timeout period of 32 cycles"]
     _32CYCLES,
 }
-impl crate::ToBits<u8> for TIMEOUT_A {
+impl From<TIMEOUT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TIMEOUT_A) -> Self {
+        match variant {
             TIMEOUT_A::_2CYCLES => 0,
             TIMEOUT_A::_16CYCLES => 1,
             TIMEOUT_A::_32CYCLES => 2,
@@ -252,8 +251,7 @@ impl<'a> TIMEOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TIMEOUT_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]

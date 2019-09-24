@@ -82,22 +82,22 @@ impl<'a> LBACK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TX`"]
+#[doc = "Control of CAN_TX Pin\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_A {
-    #[doc = "Reset value, CAN_TX is controlled by the CAN Core."]
+    #[doc = "0: Reset value, CAN_TX is controlled by the CAN Core."]
     CORE,
-    #[doc = "Sample Point can be monitored at CAN_TX pin."]
+    #[doc = "1: Sample Point can be monitored at CAN_TX pin."]
     SAMPT,
-    #[doc = "CAN_TX pin drives a dominant bit (0) value."]
+    #[doc = "2: CAN_TX pin drives a dominant bit (0) value."]
     LOW,
-    #[doc = "CAN_TX pin drives a recessive bit (1) value."]
+    #[doc = "3: CAN_TX pin drives a recessive bit (1) value."]
     HIGH,
 }
-impl crate::ToBits<u8> for TX_A {
+impl From<TX_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TX_A) -> Self {
+        match variant {
             TX_A::CORE => 0,
             TX_A::SAMPT => 1,
             TX_A::LOW => 2,
@@ -148,9 +148,8 @@ impl<'a> TX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TX_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Reset value, CAN_TX is controlled by the CAN Core."]

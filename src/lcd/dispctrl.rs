@@ -10,26 +10,26 @@ impl crate::ResetValue for super::DISPCTRL {
         0x0010_3f00
     }
 }
-#[doc = "Possible values of the field `MUX`"]
+#[doc = "Mux Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUX_A {
-    #[doc = "Static"]
+    #[doc = "0: Static"]
     STATIC,
-    #[doc = "Duplex"]
+    #[doc = "1: Duplex"]
     DUPLEX,
-    #[doc = "Triplex"]
+    #[doc = "2: Triplex"]
     TRIPLEX,
-    #[doc = "Quadruplex"]
+    #[doc = "3: Quadruplex"]
     QUADRUPLEX,
-    #[doc = "Sextaplex"]
+    #[doc = "5: Sextaplex"]
     SEXTAPLEX,
-    #[doc = "Octaplex"]
+    #[doc = "7: Octaplex"]
     OCTAPLEX,
 }
-impl crate::ToBits<u8> for MUX_A {
+impl From<MUX_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MUX_A) -> Self {
+        match variant {
             MUX_A::STATIC => 0,
             MUX_A::DUPLEX => 1,
             MUX_A::TRIPLEX => 2,
@@ -95,8 +95,7 @@ impl<'a> MUX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MUX_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Static"]
     #[inline(always)]
@@ -173,24 +172,24 @@ impl<'a> CONTRAST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CHGRDST`"]
+#[doc = "Charge Redistribution Cycles\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHGRDST_A {
-    #[doc = "Disable charge redistribution."]
+    #[doc = "0: Disable charge redistribution."]
     DISABLE,
-    #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
+    #[doc = "1: Use 1 prescaled low frequency clock cycle for charge redistribution."]
     ONE,
-    #[doc = "Use 2 prescaled low frequency clock cycles for charge redistribution."]
+    #[doc = "2: Use 2 prescaled low frequency clock cycles for charge redistribution."]
     TWO,
-    #[doc = "Use 3 prescaled low frequency clock cycles for charge redistribution."]
+    #[doc = "3: Use 3 prescaled low frequency clock cycles for charge redistribution."]
     THREE,
-    #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
+    #[doc = "4: Use 4 prescaled low frequency clock cycles for charge redistribution."]
     FOUR,
 }
-impl crate::ToBits<u8> for CHGRDST_A {
+impl From<CHGRDST_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CHGRDST_A) -> Self {
+        match variant {
             CHGRDST_A::DISABLE => 0,
             CHGRDST_A::ONE => 1,
             CHGRDST_A::TWO => 2,
@@ -249,8 +248,7 @@ impl<'a> CHGRDST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHGRDST_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disable charge redistribution."]
     #[inline(always)]
@@ -284,22 +282,22 @@ impl<'a> CHGRDST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BIAS`"]
+#[doc = "Bias Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIAS_A {
-    #[doc = "Static"]
+    #[doc = "0: Static"]
     STATIC,
-    #[doc = "1/2 Bias"]
+    #[doc = "1: 1/2 Bias"]
     ONEHALF,
-    #[doc = "1/3 Bias"]
+    #[doc = "2: 1/3 Bias"]
     ONETHIRD,
-    #[doc = "1/4 Bias"]
+    #[doc = "3: 1/4 Bias"]
     ONEFOURTH,
 }
-impl crate::ToBits<u8> for BIAS_A {
+impl From<BIAS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BIAS_A) -> Self {
+        match variant {
             BIAS_A::STATIC => 0,
             BIAS_A::ONEHALF => 1,
             BIAS_A::ONETHIRD => 2,
@@ -350,9 +348,8 @@ impl<'a> BIAS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BIAS_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Static"]
@@ -382,20 +379,20 @@ impl<'a> BIAS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Mode Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
+    #[doc = "0: No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
     NOEXTCAP,
-    #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
+    #[doc = "1: Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
     STEPDOWN,
-    #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
+    #[doc = "2: Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
     CPINTOSC,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::NOEXTCAP => 0,
             MODE_A::STEPDOWN => 1,
             MODE_A::CPINTOSC => 2,
@@ -440,8 +437,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
     #[inline(always)]

@@ -10,18 +10,18 @@ impl crate::ResetValue for super::BANKSWITCHLOCK {
         0x01
     }
 }
-#[doc = "Possible values of the field `BANKSWITCHLOCKKEY`"]
+#[doc = "Bank Switching Lock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BANKSWITCHLOCKKEY_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     UNLOCKED,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     LOCKED,
 }
-impl crate::ToBits<u16> for BANKSWITCHLOCKKEY_A {
+impl From<BANKSWITCHLOCKKEY_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: BANKSWITCHLOCKKEY_A) -> Self {
+        match variant {
             BANKSWITCHLOCKKEY_A::UNLOCKED => 0,
             BANKSWITCHLOCKKEY_A::LOCKED => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> BANKSWITCHLOCKKEY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BANKSWITCHLOCKKEY_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

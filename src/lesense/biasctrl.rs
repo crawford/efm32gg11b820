@@ -10,20 +10,20 @@ impl crate::ResetValue for super::BIASCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `BIASMODE`"]
+#[doc = "Select Bias Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIASMODE_A {
-    #[doc = "Bias module is controlled by the EMU and is not affected by LESENSE"]
+    #[doc = "0: Bias module is controlled by the EMU and is not affected by LESENSE"]
     DONTTOUCH,
-    #[doc = "Bias module duty cycled between low power and high accuracy mode"]
+    #[doc = "1: Bias module duty cycled between low power and high accuracy mode"]
     DUTYCYCLE,
-    #[doc = "Bias module always in high accuracy mode"]
+    #[doc = "2: Bias module always in high accuracy mode"]
     HIGHACC,
 }
-impl crate::ToBits<u8> for BIASMODE_A {
+impl From<BIASMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BIASMODE_A) -> Self {
+        match variant {
             BIASMODE_A::DONTTOUCH => 0,
             BIASMODE_A::DUTYCYCLE => 1,
             BIASMODE_A::HIGHACC => 2,
@@ -68,8 +68,7 @@ impl<'a> BIASMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BIASMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Bias module is controlled by the EMU and is not affected by LESENSE"]
     #[inline(always)]

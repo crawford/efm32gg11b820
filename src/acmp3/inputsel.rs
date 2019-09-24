@@ -38,112 +38,112 @@ impl<'a> NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VASEL`"]
+#[doc = "VA Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VASEL_A {
-    #[doc = "ACMPVDD"]
+    #[doc = "0: ACMPVDD"]
     VDD,
-    #[doc = "APORT2Y Channel 0"]
+    #[doc = "1: APORT2Y Channel 0"]
     APORT2YCH0,
-    #[doc = "APORT2Y Channel 2"]
+    #[doc = "3: APORT2Y Channel 2"]
     APORT2YCH2,
-    #[doc = "APORT2Y Channel 4"]
+    #[doc = "5: APORT2Y Channel 4"]
     APORT2YCH4,
-    #[doc = "APORT2Y Channel 6"]
+    #[doc = "7: APORT2Y Channel 6"]
     APORT2YCH6,
-    #[doc = "APORT2Y Channel 8"]
+    #[doc = "9: APORT2Y Channel 8"]
     APORT2YCH8,
-    #[doc = "APORT2Y Channel 10"]
+    #[doc = "11: APORT2Y Channel 10"]
     APORT2YCH10,
-    #[doc = "APORT2Y Channel 12"]
+    #[doc = "13: APORT2Y Channel 12"]
     APORT2YCH12,
-    #[doc = "APORT2Y Channel 14"]
+    #[doc = "15: APORT2Y Channel 14"]
     APORT2YCH14,
-    #[doc = "APORT2Y Channel 16"]
+    #[doc = "17: APORT2Y Channel 16"]
     APORT2YCH16,
-    #[doc = "APORT2Y Channel 18"]
+    #[doc = "19: APORT2Y Channel 18"]
     APORT2YCH18,
-    #[doc = "APORT2Y Channel 20"]
+    #[doc = "21: APORT2Y Channel 20"]
     APORT2YCH20,
-    #[doc = "APORT2Y Channel 22"]
+    #[doc = "23: APORT2Y Channel 22"]
     APORT2YCH22,
-    #[doc = "APORT2Y Channel 24"]
+    #[doc = "25: APORT2Y Channel 24"]
     APORT2YCH24,
-    #[doc = "APORT2Y Channel 26"]
+    #[doc = "27: APORT2Y Channel 26"]
     APORT2YCH26,
-    #[doc = "APORT2Y Channel 28"]
+    #[doc = "29: APORT2Y Channel 28"]
     APORT2YCH28,
-    #[doc = "APORT2Y Channel 30"]
+    #[doc = "31: APORT2Y Channel 30"]
     APORT2YCH30,
-    #[doc = "APORT1X Channel 0"]
+    #[doc = "32: APORT1X Channel 0"]
     APORT1XCH0,
-    #[doc = "APORT1Y Channel 1"]
+    #[doc = "33: APORT1Y Channel 1"]
     APORT1YCH1,
-    #[doc = "APORT1X Channel 2"]
+    #[doc = "34: APORT1X Channel 2"]
     APORT1XCH2,
-    #[doc = "APORT1Y Channel 3"]
+    #[doc = "35: APORT1Y Channel 3"]
     APORT1YCH3,
-    #[doc = "APORT1X Channel 4"]
+    #[doc = "36: APORT1X Channel 4"]
     APORT1XCH4,
-    #[doc = "APORT1Y Channel 5"]
+    #[doc = "37: APORT1Y Channel 5"]
     APORT1YCH5,
-    #[doc = "APORT1X Channel 6"]
+    #[doc = "38: APORT1X Channel 6"]
     APORT1XCH6,
-    #[doc = "APORT1Y Channel 7"]
+    #[doc = "39: APORT1Y Channel 7"]
     APORT1YCH7,
-    #[doc = "APORT1X Channel 8"]
+    #[doc = "40: APORT1X Channel 8"]
     APORT1XCH8,
-    #[doc = "APORT1Y Channel 9"]
+    #[doc = "41: APORT1Y Channel 9"]
     APORT1YCH9,
-    #[doc = "APORT1X Channel 10"]
+    #[doc = "42: APORT1X Channel 10"]
     APORT1XCH10,
-    #[doc = "APORT1Y Channel 11"]
+    #[doc = "43: APORT1Y Channel 11"]
     APORT1YCH11,
-    #[doc = "APORT1X Channel 12"]
+    #[doc = "44: APORT1X Channel 12"]
     APORT1XCH12,
-    #[doc = "APORT1Y Channel 13"]
+    #[doc = "45: APORT1Y Channel 13"]
     APORT1YCH13,
-    #[doc = "APORT1X Channel 14"]
+    #[doc = "46: APORT1X Channel 14"]
     APORT1XCH14,
-    #[doc = "APORT1Y Channel 15"]
+    #[doc = "47: APORT1Y Channel 15"]
     APORT1YCH15,
-    #[doc = "APORT1X Channel 16"]
+    #[doc = "48: APORT1X Channel 16"]
     APORT1XCH16,
-    #[doc = "APORT1Y Channel 17"]
+    #[doc = "49: APORT1Y Channel 17"]
     APORT1YCH17,
-    #[doc = "APORT1X Channel 18"]
+    #[doc = "50: APORT1X Channel 18"]
     APORT1XCH18,
-    #[doc = "APORT1Y Channel 19"]
+    #[doc = "51: APORT1Y Channel 19"]
     APORT1YCH19,
-    #[doc = "APORT1X Channel 20"]
+    #[doc = "52: APORT1X Channel 20"]
     APORT1XCH20,
-    #[doc = "APORT1Y Channel 21"]
+    #[doc = "53: APORT1Y Channel 21"]
     APORT1YCH21,
-    #[doc = "APORT1X Channel 22"]
+    #[doc = "54: APORT1X Channel 22"]
     APORT1XCH22,
-    #[doc = "APORT1Y Channel 23"]
+    #[doc = "55: APORT1Y Channel 23"]
     APORT1YCH23,
-    #[doc = "APORT1X Channel 24"]
+    #[doc = "56: APORT1X Channel 24"]
     APORT1XCH24,
-    #[doc = "APORT1Y Channel 25"]
+    #[doc = "57: APORT1Y Channel 25"]
     APORT1YCH25,
-    #[doc = "APORT1X Channel 26"]
+    #[doc = "58: APORT1X Channel 26"]
     APORT1XCH26,
-    #[doc = "APORT1Y Channel 27"]
+    #[doc = "59: APORT1Y Channel 27"]
     APORT1YCH27,
-    #[doc = "APORT1X Channel 28"]
+    #[doc = "60: APORT1X Channel 28"]
     APORT1XCH28,
-    #[doc = "APORT1Y Channel 29"]
+    #[doc = "61: APORT1Y Channel 29"]
     APORT1YCH29,
-    #[doc = "APORT1X Channel 30"]
+    #[doc = "62: APORT1X Channel 30"]
     APORT1XCH30,
-    #[doc = "APORT1Y Channel 31"]
+    #[doc = "63: APORT1Y Channel 31"]
     APORT1YCH31,
 }
-impl crate::ToBits<u8> for VASEL_A {
+impl From<VASEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: VASEL_A) -> Self {
+        match variant {
             VASEL_A::VDD => 0,
             VASEL_A::APORT2YCH0 => 1,
             VASEL_A::APORT2YCH2 => 3,
@@ -510,8 +510,7 @@ impl<'a> VASEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VASEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ACMPVDD"]
     #[inline(always)]
@@ -837,30 +836,30 @@ impl<'a> CSRESEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CSRESSEL`"]
+#[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSRESSEL_A {
-    #[doc = "Internal capacitive sense resistor value 0"]
+    #[doc = "0: Internal capacitive sense resistor value 0"]
     RES0,
-    #[doc = "Internal capacitive sense resistor value 1"]
+    #[doc = "1: Internal capacitive sense resistor value 1"]
     RES1,
-    #[doc = "Internal capacitive sense resistor value 2"]
+    #[doc = "2: Internal capacitive sense resistor value 2"]
     RES2,
-    #[doc = "Internal capacitive sense resistor value 3"]
+    #[doc = "3: Internal capacitive sense resistor value 3"]
     RES3,
-    #[doc = "Internal capacitive sense resistor value 4"]
+    #[doc = "4: Internal capacitive sense resistor value 4"]
     RES4,
-    #[doc = "Internal capacitive sense resistor value 5"]
+    #[doc = "5: Internal capacitive sense resistor value 5"]
     RES5,
-    #[doc = "Internal capacitive sense resistor value 6"]
+    #[doc = "6: Internal capacitive sense resistor value 6"]
     RES6,
-    #[doc = "Internal capacitive sense resistor value 7"]
+    #[doc = "7: Internal capacitive sense resistor value 7"]
     RES7,
 }
-impl crate::ToBits<u8> for CSRESSEL_A {
+impl From<CSRESSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CSRESSEL_A) -> Self {
+        match variant {
             CSRESSEL_A::RES0 => 0,
             CSRESSEL_A::RES1 => 1,
             CSRESSEL_A::RES2 => 2,
@@ -939,9 +938,8 @@ impl<'a> CSRESSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CSRESSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Internal capacitive sense resistor value 0"]

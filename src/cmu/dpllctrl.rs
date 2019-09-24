@@ -82,22 +82,22 @@ impl<'a> AUTORECOVER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REFSEL`"]
+#[doc = "Reference Clock Selection Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFSEL_A {
-    #[doc = "HFXO selected"]
+    #[doc = "0: HFXO selected"]
     HFXO,
-    #[doc = "LFXO selected"]
+    #[doc = "1: LFXO selected"]
     LFXO,
-    #[doc = "USHFRCO selected"]
+    #[doc = "2: USHFRCO selected"]
     USHFRCO,
-    #[doc = "CLKIN0 selected"]
+    #[doc = "3: CLKIN0 selected"]
     CLKIN0,
 }
-impl crate::ToBits<u8> for REFSEL_A {
+impl From<REFSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: REFSEL_A) -> Self {
+        match variant {
             REFSEL_A::HFXO => 0,
             REFSEL_A::LFXO => 1,
             REFSEL_A::USHFRCO => 2,
@@ -148,9 +148,8 @@ impl<'a> REFSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "HFXO selected"]

@@ -1,141 +1,141 @@
 #[doc = "Reader of register PPUFS"]
 pub type R = crate::R<u32, super::PPUFS>;
-#[doc = "Possible values of the field `PERIPHID`"]
+#[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PERIPHID_A {
-    #[doc = "Analog Comparator 0"]
+    #[doc = "0: Analog Comparator 0"]
     ACMP0,
-    #[doc = "Analog Comparator 1"]
+    #[doc = "1: Analog Comparator 1"]
     ACMP1,
-    #[doc = "Analog Comparator 1"]
+    #[doc = "2: Analog Comparator 1"]
     ACMP2,
-    #[doc = "Analog Comparator 3"]
+    #[doc = "3: Analog Comparator 3"]
     ACMP3,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "4: Analog to Digital Converter 0"]
     ADC0,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "5: Analog to Digital Converter 0"]
     ADC1,
-    #[doc = "CAN 0"]
+    #[doc = "6: CAN 0"]
     CAN0,
-    #[doc = "CAN 1"]
+    #[doc = "7: CAN 1"]
     CAN1,
-    #[doc = "Clock Management Unit"]
+    #[doc = "8: Clock Management Unit"]
     CMU,
-    #[doc = "CryoTimer"]
+    #[doc = "9: CryoTimer"]
     CRYOTIMER,
-    #[doc = "Advanced Encryption Standard Accelerator"]
+    #[doc = "10: Advanced Encryption Standard Accelerator"]
     CRYPTO0,
-    #[doc = "Capacitive touch sense module"]
+    #[doc = "11: Capacitive touch sense module"]
     CSEN,
-    #[doc = "Digital to Analog Converter 0"]
+    #[doc = "12: Digital to Analog Converter 0"]
     VDAC0,
-    #[doc = "Peripheral Reflex System"]
+    #[doc = "13: Peripheral Reflex System"]
     PRS,
-    #[doc = "External Bus Interface"]
+    #[doc = "14: External Bus Interface"]
     EBI,
-    #[doc = "Energy Management Unit"]
+    #[doc = "15: Energy Management Unit"]
     EMU,
-    #[doc = "Ethernet Controller"]
+    #[doc = "16: Ethernet Controller"]
     ETH,
-    #[doc = "FPU Exception Handler"]
+    #[doc = "17: FPU Exception Handler"]
     FPUEH,
-    #[doc = "General Purpose CRC"]
+    #[doc = "18: General Purpose CRC"]
     GPCRC,
-    #[doc = "General purpose Input/Output"]
+    #[doc = "19: General purpose Input/Output"]
     GPIO,
-    #[doc = "I2C 0"]
+    #[doc = "20: I2C 0"]
     I2C0,
-    #[doc = "I2C 1"]
+    #[doc = "21: I2C 1"]
     I2C1,
-    #[doc = "I2C 2"]
+    #[doc = "22: I2C 2"]
     I2C2,
-    #[doc = "Current Digital to Analog Converter 0"]
+    #[doc = "23: Current Digital to Analog Converter 0"]
     IDAC0,
-    #[doc = "Memory System Controller"]
+    #[doc = "24: Memory System Controller"]
     MSC,
-    #[doc = "Liquid Crystal Display Controller"]
+    #[doc = "25: Liquid Crystal Display Controller"]
     LCD,
-    #[doc = "Linked Direct Memory Access Controller"]
+    #[doc = "26: Linked Direct Memory Access Controller"]
     LDMA,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "27: Low Energy Sensor Interface"]
     LESENSE,
-    #[doc = "Low Energy Timer 0"]
+    #[doc = "28: Low Energy Timer 0"]
     LETIMER0,
-    #[doc = "Low Energy Timer 1"]
+    #[doc = "29: Low Energy Timer 1"]
     LETIMER1,
-    #[doc = "Low Energy UART 0"]
+    #[doc = "30: Low Energy UART 0"]
     LEUART0,
-    #[doc = "Low Energy UART 1"]
+    #[doc = "31: Low Energy UART 1"]
     LEUART1,
-    #[doc = "Pulse Counter 0"]
+    #[doc = "32: Pulse Counter 0"]
     PCNT0,
-    #[doc = "Pulse Counter 1"]
+    #[doc = "33: Pulse Counter 1"]
     PCNT1,
-    #[doc = "Pulse Counter 2"]
+    #[doc = "34: Pulse Counter 2"]
     PCNT2,
-    #[doc = "Quad-SPI"]
+    #[doc = "35: Quad-SPI"]
     QSPI0,
-    #[doc = "Reset Management Unit"]
+    #[doc = "36: Reset Management Unit"]
     RMU,
-    #[doc = "Real-Time Counter"]
+    #[doc = "37: Real-Time Counter"]
     RTC,
-    #[doc = "Real-Time Counter and Calendar"]
+    #[doc = "38: Real-Time Counter and Calendar"]
     RTCC,
-    #[doc = "SDIO Controller"]
+    #[doc = "39: SDIO Controller"]
     SDIO,
-    #[doc = "Security Management Unit"]
+    #[doc = "40: Security Management Unit"]
     SMU,
-    #[doc = "Timer 0"]
+    #[doc = "41: Timer 0"]
     TIMER0,
-    #[doc = "Timer 1"]
+    #[doc = "42: Timer 1"]
     TIMER1,
-    #[doc = "Timer 2"]
+    #[doc = "43: Timer 2"]
     TIMER2,
-    #[doc = "Timer 3"]
+    #[doc = "44: Timer 3"]
     TIMER3,
-    #[doc = "Timer 4"]
+    #[doc = "45: Timer 4"]
     TIMER4,
-    #[doc = "Timer 5"]
+    #[doc = "46: Timer 5"]
     TIMER5,
-    #[doc = "Timer 6"]
+    #[doc = "47: Timer 6"]
     TIMER6,
-    #[doc = "True Random Number Generator 0"]
+    #[doc = "48: True Random Number Generator 0"]
     TRNG0,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
+    #[doc = "49: Universal Asynchronous Receiver/Transmitter 0"]
     UART0,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
+    #[doc = "50: Universal Asynchronous Receiver/Transmitter 1"]
     UART1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
+    #[doc = "51: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
     USART0,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
+    #[doc = "52: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
     USART1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
+    #[doc = "53: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
     USART2,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
+    #[doc = "54: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
     USART3,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
+    #[doc = "55: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
     USART4,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
+    #[doc = "56: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
     USART5,
-    #[doc = "Universal Serial Bus Interface"]
+    #[doc = "57: Universal Serial Bus Interface"]
     USB,
-    #[doc = "Watchdog"]
+    #[doc = "58: Watchdog"]
     WDOG0,
-    #[doc = "Watchdog"]
+    #[doc = "59: Watchdog"]
     WDOG1,
-    #[doc = "Wide Timer 0"]
+    #[doc = "60: Wide Timer 0"]
     WTIMER0,
-    #[doc = "Wide Timer 0"]
+    #[doc = "61: Wide Timer 0"]
     WTIMER1,
-    #[doc = "Wide Timer 2"]
+    #[doc = "62: Wide Timer 2"]
     WTIMER2,
-    #[doc = "Wide Timer 3"]
+    #[doc = "63: Wide Timer 3"]
     WTIMER3,
 }
-impl crate::ToBits<u8> for PERIPHID_A {
+impl From<PERIPHID_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PERIPHID_A) -> Self {
+        match variant {
             PERIPHID_A::ACMP0 => 0,
             PERIPHID_A::ACMP1 => 1,
             PERIPHID_A::ACMP2 => 2,

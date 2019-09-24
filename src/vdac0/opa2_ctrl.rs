@@ -10,22 +10,22 @@ impl crate::ResetValue for super::OPA2_CTRL {
         0x0e
     }
 }
-#[doc = "Possible values of the field `DRIVESTRENGTH`"]
+#[doc = "OPAx Operation Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRIVESTRENGTH_A {
-    #[doc = "Lower accuracy with Low drive strength."]
+    #[doc = "0: Lower accuracy with Low drive strength."]
     _0,
-    #[doc = "Low accuracy with Low drive strength."]
+    #[doc = "1: Low accuracy with Low drive strength."]
     _1,
-    #[doc = "High accuracy with High drive strength."]
+    #[doc = "2: High accuracy with High drive strength."]
     _2,
-    #[doc = "Higher accuracy with High drive strength."]
+    #[doc = "3: Higher accuracy with High drive strength."]
     _3,
 }
-impl crate::ToBits<u8> for DRIVESTRENGTH_A {
+impl From<DRIVESTRENGTH_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DRIVESTRENGTH_A) -> Self {
+        match variant {
             DRIVESTRENGTH_A::_0 => 0,
             DRIVESTRENGTH_A::_1 => 1,
             DRIVESTRENGTH_A::_2 => 2,
@@ -76,9 +76,8 @@ impl<'a> DRIVESTRENGTH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DRIVESTRENGTH_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Lower accuracy with Low drive strength."]
@@ -228,62 +227,62 @@ impl<'a> PRSMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "OPAx PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS ch 0 triggers OPA."]
+    #[doc = "0: PRS ch 0 triggers OPA."]
     PRSCH0,
-    #[doc = "PRS ch 1 triggers OPA."]
+    #[doc = "1: PRS ch 1 triggers OPA."]
     PRSCH1,
-    #[doc = "PRS ch 2 triggers OPA."]
+    #[doc = "2: PRS ch 2 triggers OPA."]
     PRSCH2,
-    #[doc = "PRS ch 3 triggers OPA."]
+    #[doc = "3: PRS ch 3 triggers OPA."]
     PRSCH3,
-    #[doc = "PRS ch 4 triggers OPA."]
+    #[doc = "4: PRS ch 4 triggers OPA."]
     PRSCH4,
-    #[doc = "PRS ch 5 triggers OPA."]
+    #[doc = "5: PRS ch 5 triggers OPA."]
     PRSCH5,
-    #[doc = "PRS ch 6 triggers OPA."]
+    #[doc = "6: PRS ch 6 triggers OPA."]
     PRSCH6,
-    #[doc = "PRS ch 7 triggers OPA."]
+    #[doc = "7: PRS ch 7 triggers OPA."]
     PRSCH7,
-    #[doc = "PRS ch 8 triggers OPA."]
+    #[doc = "8: PRS ch 8 triggers OPA."]
     PRSCH8,
-    #[doc = "PRS ch 9 triggers OPA."]
+    #[doc = "9: PRS ch 9 triggers OPA."]
     PRSCH9,
-    #[doc = "PRS ch 10 triggers OPA."]
+    #[doc = "10: PRS ch 10 triggers OPA."]
     PRSCH10,
-    #[doc = "PRS ch 11 triggers OPA."]
+    #[doc = "11: PRS ch 11 triggers OPA."]
     PRSCH11,
-    #[doc = "PRS ch 12 triggers OPA."]
+    #[doc = "12: PRS ch 12 triggers OPA."]
     PRSCH12,
-    #[doc = "PRS ch 13 triggers OPA."]
+    #[doc = "13: PRS ch 13 triggers OPA."]
     PRSCH13,
-    #[doc = "PRS ch 14 triggers OPA."]
+    #[doc = "14: PRS ch 14 triggers OPA."]
     PRSCH14,
-    #[doc = "PRS ch 15 triggers OPA."]
+    #[doc = "15: PRS ch 15 triggers OPA."]
     PRSCH15,
-    #[doc = "PRS ch 16 triggers OPA."]
+    #[doc = "16: PRS ch 16 triggers OPA."]
     PRSCH16,
-    #[doc = "PRS ch 17 triggers OPA."]
+    #[doc = "17: PRS ch 17 triggers OPA."]
     PRSCH17,
-    #[doc = "PRS ch 18 triggers OPA."]
+    #[doc = "18: PRS ch 18 triggers OPA."]
     PRSCH18,
-    #[doc = "PRS ch 19 triggers OPA."]
+    #[doc = "19: PRS ch 19 triggers OPA."]
     PRSCH19,
-    #[doc = "PRS ch 20 triggers OPA."]
+    #[doc = "20: PRS ch 20 triggers OPA."]
     PRSCH20,
-    #[doc = "PRS ch 21 triggers OPA."]
+    #[doc = "21: PRS ch 21 triggers OPA."]
     PRSCH21,
-    #[doc = "PRS ch 22 triggers OPA."]
+    #[doc = "22: PRS ch 22 triggers OPA."]
     PRSCH22,
-    #[doc = "PRS ch 23 triggers OPA."]
+    #[doc = "23: PRS ch 23 triggers OPA."]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -475,8 +474,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS ch 0 triggers OPA."]
     #[inline(always)]

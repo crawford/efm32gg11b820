@@ -24,22 +24,22 @@ impl<'a> THRES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SAMPLE`"]
+#[doc = "Select Sample Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLE_A {
-    #[doc = "Counter output will be used in evaluation"]
+    #[doc = "0: Counter output will be used in evaluation"]
     ACMPCOUNT,
-    #[doc = "ACMP output will be used in evaluation"]
+    #[doc = "1: ACMP output will be used in evaluation"]
     ACMP,
-    #[doc = "ADC output will be used in evaluation"]
+    #[doc = "2: ADC output will be used in evaluation"]
     ADC,
-    #[doc = "Differential ADC output will be used in evaluation"]
+    #[doc = "3: Differential ADC output will be used in evaluation"]
     ADCDIFF,
 }
-impl crate::ToBits<u8> for SAMPLE_A {
+impl From<SAMPLE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SAMPLE_A) -> Self {
+        match variant {
             SAMPLE_A::ACMPCOUNT => 0,
             SAMPLE_A::ACMP => 1,
             SAMPLE_A::ADC => 2,
@@ -90,9 +90,8 @@ impl<'a> SAMPLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SAMPLE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Counter output will be used in evaluation"]
@@ -122,24 +121,24 @@ impl<'a> SAMPLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETIF`"]
+#[doc = "Enable Interrupt Generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SETIF_A {
-    #[doc = "No interrupt is generated"]
+    #[doc = "0: No interrupt is generated"]
     NONE,
-    #[doc = "Set interrupt flag if the sensor triggers."]
+    #[doc = "1: Set interrupt flag if the sensor triggers."]
     LEVEL,
-    #[doc = "Set interrupt flag on positive edge of the sensor state"]
+    #[doc = "2: Set interrupt flag on positive edge of the sensor state"]
     POSEDGE,
-    #[doc = "Set interrupt flag on negative edge of the sensor state"]
+    #[doc = "3: Set interrupt flag on negative edge of the sensor state"]
     NEGEDGE,
-    #[doc = "Set interrupt flag on both edges of the sensor state"]
+    #[doc = "4: Set interrupt flag on both edges of the sensor state"]
     BOTHEDGES,
 }
-impl crate::ToBits<u8> for SETIF_A {
+impl From<SETIF_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SETIF_A) -> Self {
+        match variant {
             SETIF_A::NONE => 0,
             SETIF_A::LEVEL => 1,
             SETIF_A::POSEDGE => 2,
@@ -198,8 +197,7 @@ impl<'a> SETIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SETIF_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No interrupt is generated"]
     #[inline(always)]
@@ -233,22 +231,22 @@ impl<'a> SETIF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXMODE`"]
+#[doc = "Set GPIO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXMODE_A {
-    #[doc = "Disabled"]
+    #[doc = "0: Disabled"]
     DISABLE,
-    #[doc = "Push Pull, GPIO is driven high"]
+    #[doc = "1: Push Pull, GPIO is driven high"]
     HIGH,
-    #[doc = "Push Pull, GPIO is driven low"]
+    #[doc = "2: Push Pull, GPIO is driven low"]
     LOW,
-    #[doc = "VDAC output"]
+    #[doc = "3: VDAC output"]
     DACOUT,
 }
-impl crate::ToBits<u8> for EXMODE_A {
+impl From<EXMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXMODE_A) -> Self {
+        match variant {
             EXMODE_A::DISABLE => 0,
             EXMODE_A::HIGH => 1,
             EXMODE_A::LOW => 2,
@@ -299,9 +297,8 @@ impl<'a> EXMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Disabled"]

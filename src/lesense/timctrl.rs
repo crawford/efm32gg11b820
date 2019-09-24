@@ -10,22 +10,22 @@ impl crate::ResetValue for super::TIMCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `AUXPRESC`"]
+#[doc = "Prescaling Factor for High Frequency Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUXPRESC_A {
-    #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
+    #[doc = "0: High frequency timer is clocked with AUXHFRCO/1"]
     DIV1,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/2"]
+    #[doc = "1: High frequency timer is clocked with AUXHFRCO/2"]
     DIV2,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/4"]
+    #[doc = "2: High frequency timer is clocked with AUXHFRCO/4"]
     DIV4,
-    #[doc = "High frequency timer is clocked with AUXHFRCO/8"]
+    #[doc = "3: High frequency timer is clocked with AUXHFRCO/8"]
     DIV8,
 }
-impl crate::ToBits<u8> for AUXPRESC_A {
+impl From<AUXPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AUXPRESC_A) -> Self {
+        match variant {
             AUXPRESC_A::DIV1 => 0,
             AUXPRESC_A::DIV2 => 1,
             AUXPRESC_A::DIV4 => 2,
@@ -76,9 +76,8 @@ impl<'a> AUXPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AUXPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "High frequency timer is clocked with AUXHFRCO/1"]
@@ -108,30 +107,30 @@ impl<'a> AUXPRESC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LFPRESC`"]
+#[doc = "Prescaling Factor for Low Frequency Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFPRESC_A {
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
+    #[doc = "0: Low frequency timer is clocked with LFACLKLESENSE/1"]
     DIV1,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/2"]
+    #[doc = "1: Low frequency timer is clocked with LFACLKLESENSE/2"]
     DIV2,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/4"]
+    #[doc = "2: Low frequency timer is clocked with LFACLKLESENSE/4"]
     DIV4,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/8"]
+    #[doc = "3: Low frequency timer is clocked with LFACLKLESENSE/8"]
     DIV8,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/16"]
+    #[doc = "4: Low frequency timer is clocked with LFACLKLESENSE/16"]
     DIV16,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/32"]
+    #[doc = "5: Low frequency timer is clocked with LFACLKLESENSE/32"]
     DIV32,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/64"]
+    #[doc = "6: Low frequency timer is clocked with LFACLKLESENSE/64"]
     DIV64,
-    #[doc = "Low frequency timer is clocked with LFACLKLESENSE/128"]
+    #[doc = "7: Low frequency timer is clocked with LFACLKLESENSE/128"]
     DIV128,
 }
-impl crate::ToBits<u8> for LFPRESC_A {
+impl From<LFPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LFPRESC_A) -> Self {
+        match variant {
             LFPRESC_A::DIV1 => 0,
             LFPRESC_A::DIV2 => 1,
             LFPRESC_A::DIV4 => 2,
@@ -210,9 +209,8 @@ impl<'a> LFPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Low frequency timer is clocked with LFACLKLESENSE/1"]
@@ -262,30 +260,30 @@ impl<'a> LFPRESC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PCPRESC`"]
+#[doc = "Period Counter Prescaling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCPRESC_A {
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/1"]
+    #[doc = "0: The period counter clock frequency is LFACLKLESENSE/1"]
     DIV1,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/2"]
+    #[doc = "1: The period counter clock frequency is LFACLKLESENSE/2"]
     DIV2,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/4"]
+    #[doc = "2: The period counter clock frequency is LFACLKLESENSE/4"]
     DIV4,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/8"]
+    #[doc = "3: The period counter clock frequency is LFACLKLESENSE/8"]
     DIV8,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/16"]
+    #[doc = "4: The period counter clock frequency is LFACLKLESENSE/16"]
     DIV16,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/32"]
+    #[doc = "5: The period counter clock frequency is LFACLKLESENSE/32"]
     DIV32,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/64"]
+    #[doc = "6: The period counter clock frequency is LFACLKLESENSE/64"]
     DIV64,
-    #[doc = "The period counter clock frequency is LFACLKLESENSE/128"]
+    #[doc = "7: The period counter clock frequency is LFACLKLESENSE/128"]
     DIV128,
 }
-impl crate::ToBits<u8> for PCPRESC_A {
+impl From<PCPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PCPRESC_A) -> Self {
+        match variant {
             PCPRESC_A::DIV1 => 0,
             PCPRESC_A::DIV2 => 1,
             PCPRESC_A::DIV4 => 2,
@@ -364,9 +362,8 @@ impl<'a> PCPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PCPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The period counter clock frequency is LFACLKLESENSE/1"]

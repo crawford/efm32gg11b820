@@ -10,30 +10,30 @@ impl crate::ResetValue for super::TFTCOLORFORMAT {
         0
     }
 }
-#[doc = "Possible values of the field `PIXEL0FORMAT`"]
+#[doc = "Sprite Pixel Color Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIXEL0FORMAT_A {
-    #[doc = "ARGB data is 0555"]
+    #[doc = "0: ARGB data is 0555"]
     ARGB0555,
-    #[doc = "ARGB data is 0565"]
+    #[doc = "1: ARGB data is 0565"]
     ARGB0565,
-    #[doc = "ARGB data is 0666"]
+    #[doc = "2: ARGB data is 0666"]
     ARGB0666,
-    #[doc = "ARGB data is 0888"]
+    #[doc = "3: ARGB data is 0888"]
     ARGB0888,
-    #[doc = "ARGB data is 5555"]
+    #[doc = "4: ARGB data is 5555"]
     ARGB5555,
-    #[doc = "ARGB data is 6565"]
+    #[doc = "5: ARGB data is 6565"]
     ARGB6565,
-    #[doc = "ARGB data is 6666"]
+    #[doc = "6: ARGB data is 6666"]
     ARGB6666,
-    #[doc = "ARGB data is 8888"]
+    #[doc = "7: ARGB data is 8888"]
     ARGB8888,
 }
-impl crate::ToBits<u8> for PIXEL0FORMAT_A {
+impl From<PIXEL0FORMAT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PIXEL0FORMAT_A) -> Self {
+        match variant {
             PIXEL0FORMAT_A::ARGB0555 => 0,
             PIXEL0FORMAT_A::ARGB0565 => 1,
             PIXEL0FORMAT_A::ARGB0666 => 2,
@@ -112,9 +112,8 @@ impl<'a> PIXEL0FORMAT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIXEL0FORMAT_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ARGB data is 0555"]
@@ -164,22 +163,22 @@ impl<'a> PIXEL0FORMAT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIXEL1FORMAT`"]
+#[doc = "Source and Destination Pixel Color Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIXEL1FORMAT_A {
-    #[doc = "RGB data is 555"]
+    #[doc = "0: RGB data is 555"]
     RGB555,
-    #[doc = "RGB data is 565"]
+    #[doc = "1: RGB data is 565"]
     RGB565,
-    #[doc = "RGB data is 666"]
+    #[doc = "2: RGB data is 666"]
     RGB666,
-    #[doc = "RGB data is 888"]
+    #[doc = "3: RGB data is 888"]
     RGB888,
 }
-impl crate::ToBits<u8> for PIXEL1FORMAT_A {
+impl From<PIXEL1FORMAT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PIXEL1FORMAT_A) -> Self {
+        match variant {
             PIXEL1FORMAT_A::RGB555 => 0,
             PIXEL1FORMAT_A::RGB565 => 1,
             PIXEL1FORMAT_A::RGB666 => 2,
@@ -230,9 +229,8 @@ impl<'a> PIXEL1FORMAT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIXEL1FORMAT_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "RGB data is 555"]

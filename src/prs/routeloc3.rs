@@ -10,20 +10,20 @@ impl crate::ResetValue for super::ROUTELOC3 {
         0
     }
 }
-#[doc = "Possible values of the field `CH12LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH12LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for CH12LOC_A {
+impl From<CH12LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CH12LOC_A) -> Self {
+        match variant {
             CH12LOC_A::LOC0 => 0,
             CH12LOC_A::LOC1 => 1,
             CH12LOC_A::LOC2 => 2,
@@ -68,8 +68,7 @@ impl<'a> CH12LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH12LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -93,20 +92,20 @@ impl<'a> CH12LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CH13LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH13LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for CH13LOC_A {
+impl From<CH13LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CH13LOC_A) -> Self {
+        match variant {
             CH13LOC_A::LOC0 => 0,
             CH13LOC_A::LOC1 => 1,
             CH13LOC_A::LOC2 => 2,
@@ -151,8 +150,7 @@ impl<'a> CH13LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH13LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -176,20 +174,20 @@ impl<'a> CH13LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CH14LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH14LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for CH14LOC_A {
+impl From<CH14LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CH14LOC_A) -> Self {
+        match variant {
             CH14LOC_A::LOC0 => 0,
             CH14LOC_A::LOC1 => 1,
             CH14LOC_A::LOC2 => 2,
@@ -234,8 +232,7 @@ impl<'a> CH14LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH14LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -259,20 +256,20 @@ impl<'a> CH14LOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CH15LOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH15LOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for CH15LOC_A {
+impl From<CH15LOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CH15LOC_A) -> Self {
+        match variant {
             CH15LOC_A::LOC0 => 0,
             CH15LOC_A::LOC1 => 1,
             CH15LOC_A::LOC2 => 2,
@@ -317,8 +314,7 @@ impl<'a> CH15LOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH15LOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

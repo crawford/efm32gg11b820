@@ -10,24 +10,24 @@ impl crate::ResetValue for super::LFBCLKSEL {
         0
     }
 }
-#[doc = "Possible values of the field `LFB`"]
+#[doc = "Clock Select for LFB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFB_A {
-    #[doc = "LFBCLK is disabled"]
+    #[doc = "0: LFBCLK is disabled"]
     DISABLED,
-    #[doc = "LFRCO selected as LFBCLK"]
+    #[doc = "1: LFRCO selected as LFBCLK"]
     LFRCO,
-    #[doc = "LFXO selected as LFBCLK"]
+    #[doc = "2: LFXO selected as LFBCLK"]
     LFXO,
-    #[doc = "HFCLK divided by two/four is selected as LFBCLK"]
+    #[doc = "3: HFCLK divided by two/four is selected as LFBCLK"]
     HFCLKLE,
-    #[doc = "ULFRCO selected as LFBCLK"]
+    #[doc = "4: ULFRCO selected as LFBCLK"]
     ULFRCO,
 }
-impl crate::ToBits<u8> for LFB_A {
+impl From<LFB_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LFB_A) -> Self {
+        match variant {
             LFB_A::DISABLED => 0,
             LFB_A::LFRCO => 1,
             LFB_A::LFXO => 2,
@@ -86,8 +86,7 @@ impl<'a> LFB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFB_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LFBCLK is disabled"]
     #[inline(always)]

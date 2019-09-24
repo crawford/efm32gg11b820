@@ -10,22 +10,22 @@ impl crate::ResetValue for super::HFXOCTRL {
         0x08
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "HFXO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "4 MHz - 50 MHz crystal oscillator"]
+    #[doc = "0: 4 MHz - 50 MHz crystal oscillator"]
     XTAL,
-    #[doc = "An AC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
+    #[doc = "1: An AC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
     ACBUFEXTCLK,
-    #[doc = "A DC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
+    #[doc = "2: A DC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
     DCBUFEXTCLK,
-    #[doc = "Digital external clock can be supplied on HFXTAL_N pin."]
+    #[doc = "3: Digital external clock can be supplied on HFXTAL_N pin."]
     DIGEXTCLK,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::XTAL => 0,
             MODE_A::ACBUFEXTCLK => 1,
             MODE_A::DCBUFEXTCLK => 2,
@@ -76,9 +76,8 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "4 MHz - 50 MHz crystal oscillator"]
@@ -132,22 +131,22 @@ impl<'a> HFXOX2EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PEAKDETMODE`"]
+#[doc = "HFXO Automatic Peak Detection Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEAKDETMODE_A {
-    #[doc = "Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
+    #[doc = "0: Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
     ONCECMD,
-    #[doc = "Automatic control of HFXO peak detection sequence. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
+    #[doc = "1: Automatic control of HFXO peak detection sequence. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
     AUTOCMD,
-    #[doc = "CMU_CMD HFXOPEAKDETSTART can be used to trigger the peak detection sequence after HFXORDY=1."]
+    #[doc = "2: CMU_CMD HFXOPEAKDETSTART can be used to trigger the peak detection sequence after HFXORDY=1."]
     CMD,
-    #[doc = "CMU_HFXOSTEADYSTATECTRL IBTRIMXOCORE and PEAKDETEN are under full software control and are allowed to be changed once HFXO is ready."]
+    #[doc = "3: CMU_HFXOSTEADYSTATECTRL IBTRIMXOCORE and PEAKDETEN are under full software control and are allowed to be changed once HFXO is ready."]
     MANUAL,
 }
-impl crate::ToBits<u8> for PEAKDETMODE_A {
+impl From<PEAKDETMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PEAKDETMODE_A) -> Self {
+        match variant {
             PEAKDETMODE_A::ONCECMD => 0,
             PEAKDETMODE_A::AUTOCMD => 1,
             PEAKDETMODE_A::CMD => 2,
@@ -198,9 +197,8 @@ impl<'a> PEAKDETMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEAKDETMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
@@ -230,30 +228,30 @@ impl<'a> PEAKDETMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LFTIMEOUT`"]
+#[doc = "HFXO Low Frequency Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFTIMEOUT_A {
-    #[doc = "Timeout period of 0 cycles (disabled)"]
+    #[doc = "0: Timeout period of 0 cycles (disabled)"]
     _0CYCLES,
-    #[doc = "Timeout period of 2 cycles"]
+    #[doc = "1: Timeout period of 2 cycles"]
     _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
+    #[doc = "2: Timeout period of 4 cycles"]
     _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
+    #[doc = "3: Timeout period of 16 cycles"]
     _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
+    #[doc = "4: Timeout period of 32 cycles"]
     _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
+    #[doc = "5: Timeout period of 64 cycles"]
     _64CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
+    #[doc = "6: Timeout period of 1024 cycles"]
     _1KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
+    #[doc = "7: Timeout period of 4096 cycles"]
     _4KCYCLES,
 }
-impl crate::ToBits<u8> for LFTIMEOUT_A {
+impl From<LFTIMEOUT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LFTIMEOUT_A) -> Self {
+        match variant {
             LFTIMEOUT_A::_0CYCLES => 0,
             LFTIMEOUT_A::_2CYCLES => 1,
             LFTIMEOUT_A::_4CYCLES => 2,
@@ -332,9 +330,8 @@ impl<'a> LFTIMEOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFTIMEOUT_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Timeout period of 0 cycles (disabled)"]

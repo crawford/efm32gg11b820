@@ -10,18 +10,18 @@ impl crate::ResetValue for super::ROUTELOC0 {
         0
     }
 }
-#[doc = "Possible values of the field `MIITXLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIITXLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
 }
-impl crate::ToBits<u8> for MIITXLOC_A {
+impl From<MIITXLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MIITXLOC_A) -> Self {
+        match variant {
             MIITXLOC_A::LOC0 => 0,
             MIITXLOC_A::LOC1 => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> MIITXLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MIITXLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -79,20 +78,20 @@ impl<'a> MIITXLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MIIRXLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIIRXLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for MIIRXLOC_A {
+impl From<MIIRXLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MIIRXLOC_A) -> Self {
+        match variant {
             MIIRXLOC_A::LOC0 => 0,
             MIIRXLOC_A::LOC1 => 1,
             MIIRXLOC_A::LOC2 => 2,
@@ -137,8 +136,7 @@ impl<'a> MIIRXLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MIIRXLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -162,20 +160,20 @@ impl<'a> MIIRXLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MIICRSLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIICRSLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for MIICRSLOC_A {
+impl From<MIICRSLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MIICRSLOC_A) -> Self {
+        match variant {
             MIICRSLOC_A::LOC0 => 0,
             MIICRSLOC_A::LOC1 => 1,
             MIICRSLOC_A::LOC2 => 2,
@@ -220,8 +218,7 @@ impl<'a> MIICRSLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MIICRSLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -245,20 +242,20 @@ impl<'a> MIICRSLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MIICOLLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIICOLLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for MIICOLLOC_A {
+impl From<MIICOLLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MIICOLLOC_A) -> Self {
+        match variant {
             MIICOLLOC_A::LOC0 => 0,
             MIICOLLOC_A::LOC1 => 1,
             MIICOLLOC_A::LOC2 => 2,
@@ -303,8 +300,7 @@ impl<'a> MIICOLLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MIICOLLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

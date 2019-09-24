@@ -10,42 +10,42 @@ impl crate::ResetValue for super::CTRL {
         0x0010_0000
     }
 }
-#[doc = "Possible values of the field `CLKOUTSEL0`"]
+#[doc = "Clock Output Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTSEL0_A {
-    #[doc = "Disabled"]
+    #[doc = "0: Disabled"]
     DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
+    #[doc = "1: ULFRCO (directly from oscillator)"]
     ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
+    #[doc = "2: LFRCO (directly from oscillator)"]
     LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
+    #[doc = "3: LFXO (directly from oscillator)"]
     LFXO,
-    #[doc = "HFXO (directly from oscillator)"]
+    #[doc = "6: HFXO (directly from oscillator)"]
     HFXO,
-    #[doc = "HFEXPCLK"]
+    #[doc = "7: HFEXPCLK"]
     HFEXPCLK,
-    #[doc = "ULFRCO (qualified)"]
+    #[doc = "9: ULFRCO (qualified)"]
     ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
+    #[doc = "10: LFRCO (qualified)"]
     LFRCOQ,
-    #[doc = "LFXO (qualified)"]
+    #[doc = "11: LFXO (qualified)"]
     LFXOQ,
-    #[doc = "HFRCO (qualified)"]
+    #[doc = "12: HFRCO (qualified)"]
     HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
+    #[doc = "13: AUXHFRCO (qualified)"]
     AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
+    #[doc = "14: HFXO (qualified)"]
     HFXOQ,
-    #[doc = "HFSRCCLK"]
+    #[doc = "15: HFSRCCLK"]
     HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
+    #[doc = "18: USHFRCO (qualified)"]
     USHFRCOQ,
 }
-impl crate::ToBits<u8> for CLKOUTSEL0_A {
+impl From<CLKOUTSEL0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKOUTSEL0_A) -> Self {
+        match variant {
             CLKOUTSEL0_A::DISABLED => 0,
             CLKOUTSEL0_A::ULFRCO => 1,
             CLKOUTSEL0_A::LFRCO => 2,
@@ -167,8 +167,7 @@ impl<'a> CLKOUTSEL0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKOUTSEL0_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -247,42 +246,42 @@ impl<'a> CLKOUTSEL0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKOUTSEL1`"]
+#[doc = "Clock Output Select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTSEL1_A {
-    #[doc = "Disabled"]
+    #[doc = "0: Disabled"]
     DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
+    #[doc = "1: ULFRCO (directly from oscillator)"]
     ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
+    #[doc = "2: LFRCO (directly from oscillator)"]
     LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
+    #[doc = "3: LFXO (directly from oscillator)"]
     LFXO,
-    #[doc = "HFXO (directly from oscillator)"]
+    #[doc = "6: HFXO (directly from oscillator)"]
     HFXO,
-    #[doc = "HFEXPCLK"]
+    #[doc = "7: HFEXPCLK"]
     HFEXPCLK,
-    #[doc = "ULFRCO (qualified)"]
+    #[doc = "9: ULFRCO (qualified)"]
     ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
+    #[doc = "10: LFRCO (qualified)"]
     LFRCOQ,
-    #[doc = "LFXO (qualified)"]
+    #[doc = "11: LFXO (qualified)"]
     LFXOQ,
-    #[doc = "HFRCO (qualified)"]
+    #[doc = "12: HFRCO (qualified)"]
     HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
+    #[doc = "13: AUXHFRCO (qualified)"]
     AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
+    #[doc = "14: HFXO (qualified)"]
     HFXOQ,
-    #[doc = "HFSRCCLK"]
+    #[doc = "15: HFSRCCLK"]
     HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
+    #[doc = "18: USHFRCO (qualified)"]
     USHFRCOQ,
 }
-impl crate::ToBits<u8> for CLKOUTSEL1_A {
+impl From<CLKOUTSEL1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKOUTSEL1_A) -> Self {
+        match variant {
             CLKOUTSEL1_A::DISABLED => 0,
             CLKOUTSEL1_A::ULFRCO => 1,
             CLKOUTSEL1_A::LFRCO => 2,
@@ -404,8 +403,7 @@ impl<'a> CLKOUTSEL1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKOUTSEL1_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -484,46 +482,46 @@ impl<'a> CLKOUTSEL1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKOUTSEL2`"]
+#[doc = "Clock Output Select 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTSEL2_A {
-    #[doc = "Disabled"]
+    #[doc = "0: Disabled"]
     DISABLED,
-    #[doc = "ULFRCO (directly from oscillator)"]
+    #[doc = "1: ULFRCO (directly from oscillator)"]
     ULFRCO,
-    #[doc = "LFRCO (directly from oscillator)"]
+    #[doc = "2: LFRCO (directly from oscillator)"]
     LFRCO,
-    #[doc = "LFXO (directly from oscillator)"]
+    #[doc = "3: LFXO (directly from oscillator)"]
     LFXO,
-    #[doc = "HFXO divided by two (qualified)"]
+    #[doc = "5: HFXO divided by two (qualified)"]
     HFXODIV2Q,
-    #[doc = "HFXO (directly from oscillator)"]
+    #[doc = "6: HFXO (directly from oscillator)"]
     HFXO,
-    #[doc = "HFEXPCLK"]
+    #[doc = "7: HFEXPCLK"]
     HFEXPCLK,
-    #[doc = "HFXO doubler (qualified) (doubling activated by HFXOX2EN=1)"]
+    #[doc = "8: HFXO doubler (qualified) (doubling activated by HFXOX2EN=1)"]
     HFXOX2Q,
-    #[doc = "ULFRCO (qualified)"]
+    #[doc = "9: ULFRCO (qualified)"]
     ULFRCOQ,
-    #[doc = "LFRCO (qualified)"]
+    #[doc = "10: LFRCO (qualified)"]
     LFRCOQ,
-    #[doc = "LFXO (qualified)"]
+    #[doc = "11: LFXO (qualified)"]
     LFXOQ,
-    #[doc = "HFRCO (qualified)"]
+    #[doc = "12: HFRCO (qualified)"]
     HFRCOQ,
-    #[doc = "AUXHFRCO (qualified)"]
+    #[doc = "13: AUXHFRCO (qualified)"]
     AUXHFRCOQ,
-    #[doc = "HFXO (qualified)"]
+    #[doc = "14: HFXO (qualified)"]
     HFXOQ,
-    #[doc = "HFSRCCLK"]
+    #[doc = "15: HFSRCCLK"]
     HFSRCCLK,
-    #[doc = "USHFRCO (qualified)"]
+    #[doc = "18: USHFRCO (qualified)"]
     USHFRCOQ,
 }
-impl crate::ToBits<u8> for CLKOUTSEL2_A {
+impl From<CLKOUTSEL2_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKOUTSEL2_A) -> Self {
+        match variant {
             CLKOUTSEL2_A::DISABLED => 0,
             CLKOUTSEL2_A::ULFRCO => 1,
             CLKOUTSEL2_A::LFRCO => 2,
@@ -659,8 +657,7 @@ impl<'a> CLKOUTSEL2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKOUTSEL2_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disabled"]
     #[inline(always)]

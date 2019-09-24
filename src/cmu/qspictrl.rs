@@ -10,22 +10,22 @@ impl crate::ResetValue for super::QSPICTRL {
         0
     }
 }
-#[doc = "Possible values of the field `QSPI0CLKSEL`"]
+#[doc = "QSPI0 Reference Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum QSPI0CLKSEL_A {
-    #[doc = "HFRCO clock is used to clock QSPI0"]
+    #[doc = "0: HFRCO clock is used to clock QSPI0"]
     HFRCO,
-    #[doc = "HFXO clock is used to clock QSPI0"]
+    #[doc = "1: HFXO clock is used to clock QSPI0"]
     HFXO,
-    #[doc = "AUXHFRCO is used to clock QSPI0"]
+    #[doc = "2: AUXHFRCO is used to clock QSPI0"]
     AUXHFRCO,
-    #[doc = "USHFRCO is used to clock QSPI0"]
+    #[doc = "3: USHFRCO is used to clock QSPI0"]
     USHFRCO,
 }
-impl crate::ToBits<u8> for QSPI0CLKSEL_A {
+impl From<QSPI0CLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: QSPI0CLKSEL_A) -> Self {
+        match variant {
             QSPI0CLKSEL_A::HFRCO => 0,
             QSPI0CLKSEL_A::HFXO => 1,
             QSPI0CLKSEL_A::AUXHFRCO => 2,
@@ -76,9 +76,8 @@ impl<'a> QSPI0CLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: QSPI0CLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "HFRCO clock is used to clock QSPI0"]

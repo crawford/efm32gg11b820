@@ -10,18 +10,18 @@ impl crate::ResetValue for super::ROUTELOC0 {
         0
     }
 }
-#[doc = "Possible values of the field `DATLOC`"]
+#[doc = "I/O Location for D0-7 Pins\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
 }
-impl crate::ToBits<u8> for DATLOC_A {
+impl From<DATLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DATLOC_A) -> Self {
+        match variant {
             DATLOC_A::LOC0 => 0,
             DATLOC_A::LOC1 => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> DATLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DATLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -79,22 +78,22 @@ impl<'a> DATLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CDLOC`"]
+#[doc = "I/O Location for CD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
 }
-impl crate::ToBits<u8> for CDLOC_A {
+impl From<CDLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CDLOC_A) -> Self {
+        match variant {
             CDLOC_A::LOC0 => 0,
             CDLOC_A::LOC1 => 1,
             CDLOC_A::LOC2 => 2,
@@ -146,8 +145,7 @@ impl<'a> CDLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CDLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -176,22 +174,22 @@ impl<'a> CDLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WPLOC`"]
+#[doc = "I/O Location for WP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
 }
-impl crate::ToBits<u8> for WPLOC_A {
+impl From<WPLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: WPLOC_A) -> Self {
+        match variant {
             WPLOC_A::LOC0 => 0,
             WPLOC_A::LOC1 => 1,
             WPLOC_A::LOC2 => 2,
@@ -243,8 +241,7 @@ impl<'a> WPLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WPLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -273,18 +270,18 @@ impl<'a> WPLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKLOC`"]
+#[doc = "I/O Location for CLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
 }
-impl crate::ToBits<u8> for CLKLOC_A {
+impl From<CLKLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKLOC_A) -> Self {
+        match variant {
             CLKLOC_A::LOC0 => 0,
             CLKLOC_A::LOC1 => 1,
         }
@@ -322,8 +319,7 @@ impl<'a> CLKLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

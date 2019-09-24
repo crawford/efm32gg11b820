@@ -82,22 +82,22 @@ impl<'a> ADJ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RES`"]
+#[doc = "Scan Sequence Resolution Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RES_A {
-    #[doc = "12-bit resolution"]
+    #[doc = "0: 12-bit resolution"]
     _12BIT,
-    #[doc = "8-bit resolution"]
+    #[doc = "1: 8-bit resolution"]
     _8BIT,
-    #[doc = "6-bit resolution"]
+    #[doc = "2: 6-bit resolution"]
     _6BIT,
-    #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL"]
+    #[doc = "3: Oversampling enabled. Oversampling rate is set in OVSRSEL"]
     OVS,
 }
-impl crate::ToBits<u8> for RES_A {
+impl From<RES_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RES_A) -> Self {
+        match variant {
             RES_A::_12BIT => 0,
             RES_A::_8BIT => 1,
             RES_A::_6BIT => 2,
@@ -148,9 +148,8 @@ impl<'a> RES_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RES_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "12-bit resolution"]
@@ -180,30 +179,30 @@ impl<'a> RES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REF`"]
+#[doc = "Scan Sequence Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REF_A {
-    #[doc = "VFS = 1.25V with internal VBGR reference"]
+    #[doc = "0: VFS = 1.25V with internal VBGR reference"]
     _1V25,
-    #[doc = "VFS = 2.5V with internal VBGR reference"]
+    #[doc = "1: VFS = 2.5V with internal VBGR reference"]
     _2V5,
-    #[doc = "VFS = AVDD with AVDD as reference source"]
+    #[doc = "2: VFS = AVDD with AVDD as reference source"]
     VDD,
-    #[doc = "VFS = 5V with internal VBGR reference"]
+    #[doc = "3: VFS = 5V with internal VBGR reference"]
     _5V,
-    #[doc = "Single ended external reference"]
+    #[doc = "4: Single ended external reference"]
     EXTSINGLE,
-    #[doc = "Differential external reference, 2x"]
+    #[doc = "5: Differential external reference, 2x"]
     _2XEXTDIFF,
-    #[doc = "VFS=2xAVDD with AVDD as the reference source"]
+    #[doc = "6: VFS=2xAVDD with AVDD as the reference source"]
     _2XVDD,
-    #[doc = "Use SCANCTRLX to configure reference"]
+    #[doc = "7: Use SCANCTRLX to configure reference"]
     CONF,
 }
-impl crate::ToBits<u8> for REF_A {
+impl From<REF_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: REF_A) -> Self {
+        match variant {
             REF_A::_1V25 => 0,
             REF_A::_2V5 => 1,
             REF_A::VDD => 2,
@@ -282,9 +281,8 @@ impl<'a> REF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REF_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "VFS = 1.25V with internal VBGR reference"]
@@ -334,34 +332,34 @@ impl<'a> REF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AT`"]
+#[doc = "Scan Acquisition Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AT_A {
-    #[doc = "1 conversion clock cycle acquisition time for scan"]
+    #[doc = "0: 1 conversion clock cycle acquisition time for scan"]
     _1CYCLE,
-    #[doc = "2 conversion clock cycles acquisition time for scan"]
+    #[doc = "1: 2 conversion clock cycles acquisition time for scan"]
     _2CYCLES,
-    #[doc = "3 conversion clock cycles acquisition time for scan"]
+    #[doc = "2: 3 conversion clock cycles acquisition time for scan"]
     _3CYCLES,
-    #[doc = "4 conversion clock cycles acquisition time for scan"]
+    #[doc = "3: 4 conversion clock cycles acquisition time for scan"]
     _4CYCLES,
-    #[doc = "8 conversion clock cycles acquisition time for scan"]
+    #[doc = "4: 8 conversion clock cycles acquisition time for scan"]
     _8CYCLES,
-    #[doc = "16 conversion clock cycles acquisition time for scan"]
+    #[doc = "5: 16 conversion clock cycles acquisition time for scan"]
     _16CYCLES,
-    #[doc = "32 conversion clock cycles acquisition time for scan"]
+    #[doc = "6: 32 conversion clock cycles acquisition time for scan"]
     _32CYCLES,
-    #[doc = "64 conversion clock cycles acquisition time for scan"]
+    #[doc = "7: 64 conversion clock cycles acquisition time for scan"]
     _64CYCLES,
-    #[doc = "128 conversion clock cycles acquisition time for scan"]
+    #[doc = "8: 128 conversion clock cycles acquisition time for scan"]
     _128CYCLES,
-    #[doc = "256 conversion clock cycles acquisition time for scan"]
+    #[doc = "9: 256 conversion clock cycles acquisition time for scan"]
     _256CYCLES,
 }
-impl crate::ToBits<u8> for AT_A {
+impl From<AT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AT_A) -> Self {
+        match variant {
             AT_A::_1CYCLE => 0,
             AT_A::_2CYCLES => 1,
             AT_A::_3CYCLES => 2,
@@ -455,8 +453,7 @@ impl<'a> AT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AT_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1 conversion clock cycle acquisition time for scan"]
     #[inline(always)]

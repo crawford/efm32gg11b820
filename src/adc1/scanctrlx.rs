@@ -10,28 +10,28 @@ impl crate::ResetValue for super::SCANCTRLX {
         0
     }
 }
-#[doc = "Possible values of the field `VREFSEL`"]
+#[doc = "Scan Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VREFSEL_A {
-    #[doc = "Internal 0.83V Bandgap reference"]
+    #[doc = "0: Internal 0.83V Bandgap reference"]
     VBGR,
-    #[doc = "Scaled AVDD: AVDD*(the VREF attenuation factor)"]
+    #[doc = "1: Scaled AVDD: AVDD*(the VREF attenuation factor)"]
     VDDXWATT,
-    #[doc = "Scaled singled ended external Vref: ADCn_EXTP*(the VREF attenuation factor)"]
+    #[doc = "2: Scaled singled ended external Vref: ADCn_EXTP*(the VREF attenuation factor)"]
     VREFPWATT,
-    #[doc = "Raw single ended external Vref: ADCn_EXTP"]
+    #[doc = "3: Raw single ended external Vref: ADCn_EXTP"]
     VREFP,
-    #[doc = "Scaled differential external Vref from : (ADCn_EXTP-ADCn_EXTN)*(the VREF attenuation factor)"]
+    #[doc = "5: Scaled differential external Vref from : (ADCn_EXTP-ADCn_EXTN)*(the VREF attenuation factor)"]
     VREFPNWATT,
-    #[doc = "Raw differential external Vref from : (ADCn_EXTP-ADCn_EXTN)"]
+    #[doc = "6: Raw differential external Vref from : (ADCn_EXTP-ADCn_EXTN)"]
     VREFPN,
-    #[doc = "Internal Bandgap reference at low setting 0.78V"]
+    #[doc = "7: Internal Bandgap reference at low setting 0.78V"]
     VBGRLOW,
 }
-impl crate::ToBits<u8> for VREFSEL_A {
+impl From<VREFSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: VREFSEL_A) -> Self {
+        match variant {
             VREFSEL_A::VBGR => 0,
             VREFSEL_A::VDDXWATT => 1,
             VREFSEL_A::VREFPWATT => 2,
@@ -104,8 +104,7 @@ impl<'a> VREFSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VREFSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Internal 0.83V Bandgap reference"]
     #[inline(always)]
@@ -263,62 +262,62 @@ impl<'a> PRSMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "Scan Sequence PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS ch 0 triggers scan sequence"]
+    #[doc = "0: PRS ch 0 triggers scan sequence"]
     PRSCH0,
-    #[doc = "PRS ch 1 triggers scan sequence"]
+    #[doc = "1: PRS ch 1 triggers scan sequence"]
     PRSCH1,
-    #[doc = "PRS ch 2 triggers scan sequence"]
+    #[doc = "2: PRS ch 2 triggers scan sequence"]
     PRSCH2,
-    #[doc = "PRS ch 3 triggers scan sequence"]
+    #[doc = "3: PRS ch 3 triggers scan sequence"]
     PRSCH3,
-    #[doc = "PRS ch 4 triggers scan sequence"]
+    #[doc = "4: PRS ch 4 triggers scan sequence"]
     PRSCH4,
-    #[doc = "PRS ch 5 triggers scan sequence"]
+    #[doc = "5: PRS ch 5 triggers scan sequence"]
     PRSCH5,
-    #[doc = "PRS ch 6 triggers scan sequence"]
+    #[doc = "6: PRS ch 6 triggers scan sequence"]
     PRSCH6,
-    #[doc = "PRS ch 7 triggers scan sequence"]
+    #[doc = "7: PRS ch 7 triggers scan sequence"]
     PRSCH7,
-    #[doc = "PRS ch 8 triggers scan sequence"]
+    #[doc = "8: PRS ch 8 triggers scan sequence"]
     PRSCH8,
-    #[doc = "PRS ch 9 triggers scan sequence"]
+    #[doc = "9: PRS ch 9 triggers scan sequence"]
     PRSCH9,
-    #[doc = "PRS ch 10 triggers scan sequence"]
+    #[doc = "10: PRS ch 10 triggers scan sequence"]
     PRSCH10,
-    #[doc = "PRS ch 11 triggers scan sequence"]
+    #[doc = "11: PRS ch 11 triggers scan sequence"]
     PRSCH11,
-    #[doc = "PRS ch 12 triggers scan sequence"]
+    #[doc = "12: PRS ch 12 triggers scan sequence"]
     PRSCH12,
-    #[doc = "PRS ch 13 triggers scan sequence"]
+    #[doc = "13: PRS ch 13 triggers scan sequence"]
     PRSCH13,
-    #[doc = "PRS ch 14 triggers scan sequence"]
+    #[doc = "14: PRS ch 14 triggers scan sequence"]
     PRSCH14,
-    #[doc = "PRS ch 15 triggers scan sequence"]
+    #[doc = "15: PRS ch 15 triggers scan sequence"]
     PRSCH15,
-    #[doc = "PRS ch 16 triggers scan sequence"]
+    #[doc = "16: PRS ch 16 triggers scan sequence"]
     PRSCH16,
-    #[doc = "PRS ch 17 triggers scan sequence"]
+    #[doc = "17: PRS ch 17 triggers scan sequence"]
     PRSCH17,
-    #[doc = "PRS ch 18 triggers scan sequence"]
+    #[doc = "18: PRS ch 18 triggers scan sequence"]
     PRSCH18,
-    #[doc = "PRS ch 19 triggers scan sequence"]
+    #[doc = "19: PRS ch 19 triggers scan sequence"]
     PRSCH19,
-    #[doc = "PRS ch 20 triggers scan sequence"]
+    #[doc = "20: PRS ch 20 triggers scan sequence"]
     PRSCH20,
-    #[doc = "PRS ch 21 triggers scan sequence"]
+    #[doc = "21: PRS ch 21 triggers scan sequence"]
     PRSCH21,
-    #[doc = "PRS ch 22 triggers scan sequence"]
+    #[doc = "22: PRS ch 22 triggers scan sequence"]
     PRSCH22,
-    #[doc = "PRS ch 23 triggers scan sequence"]
+    #[doc = "23: PRS ch 23 triggers scan sequence"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -510,8 +509,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS ch 0 triggers scan sequence"]
     #[inline(always)]
@@ -678,30 +676,30 @@ impl<'a> CONVSTARTDELAYEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REPDELAY`"]
+#[doc = "REPDELAY Select for SCAN REP Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REPDELAY_A {
-    #[doc = "No delay"]
+    #[doc = "0: No delay"]
     NODELAY,
-    #[doc = "4 conversion clock cycles"]
+    #[doc = "1: 4 conversion clock cycles"]
     _4CYCLES,
-    #[doc = "8 conversion clock cycles"]
+    #[doc = "2: 8 conversion clock cycles"]
     _8CYCLES,
-    #[doc = "16 conversion clock cycles"]
+    #[doc = "3: 16 conversion clock cycles"]
     _16CYCLES,
-    #[doc = "32 conversion clock cycles"]
+    #[doc = "4: 32 conversion clock cycles"]
     _32CYCLES,
-    #[doc = "64 conversion clock cycles"]
+    #[doc = "5: 64 conversion clock cycles"]
     _64CYCLES,
-    #[doc = "128 conversion clock cycles"]
+    #[doc = "6: 128 conversion clock cycles"]
     _128CYCLES,
-    #[doc = "256 conversion clock cycles"]
+    #[doc = "7: 256 conversion clock cycles"]
     _256CYCLES,
 }
-impl crate::ToBits<u8> for REPDELAY_A {
+impl From<REPDELAY_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: REPDELAY_A) -> Self {
+        match variant {
             REPDELAY_A::NODELAY => 0,
             REPDELAY_A::_4CYCLES => 1,
             REPDELAY_A::_8CYCLES => 2,
@@ -780,9 +778,8 @@ impl<'a> REPDELAY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REPDELAY_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No delay"]

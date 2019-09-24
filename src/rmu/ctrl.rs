@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CTRL {
         0x4204
     }
 }
-#[doc = "Possible values of the field `WDOGRMODE`"]
+#[doc = "WDOG Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOGRMODE_A {
-    #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
+    #[doc = "0: Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
     DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
     LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
+    #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
     EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[doc = "4: The entire device is reset except some EMU and RMU registers."]
     FULL,
 }
-impl crate::ToBits<u8> for WDOGRMODE_A {
+impl From<WDOGRMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: WDOGRMODE_A) -> Self {
+        match variant {
             WDOGRMODE_A::DISABLED => 0,
             WDOGRMODE_A::LIMITED => 1,
             WDOGRMODE_A::EXTENDED => 2,
@@ -77,8 +77,7 @@ impl<'a> WDOGRMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WDOGRMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
     #[inline(always)]
@@ -107,22 +106,22 @@ impl<'a> WDOGRMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCKUPRMODE`"]
+#[doc = "Core LOCKUP Reset Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKUPRMODE_A {
-    #[doc = "Reset request is blocked."]
+    #[doc = "0: Reset request is blocked."]
     DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
     LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
+    #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
     EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[doc = "4: The entire device is reset except some EMU and RMU registers."]
     FULL,
 }
-impl crate::ToBits<u8> for LOCKUPRMODE_A {
+impl From<LOCKUPRMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LOCKUPRMODE_A) -> Self {
+        match variant {
             LOCKUPRMODE_A::DISABLED => 0,
             LOCKUPRMODE_A::LIMITED => 1,
             LOCKUPRMODE_A::EXTENDED => 2,
@@ -174,8 +173,7 @@ impl<'a> LOCKUPRMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LOCKUPRMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Reset request is blocked."]
     #[inline(always)]
@@ -204,22 +202,22 @@ impl<'a> LOCKUPRMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYSRMODE`"]
+#[doc = "Core Sysreset Reset Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSRMODE_A {
-    #[doc = "Reset request is blocked. "]
+    #[doc = "0: Reset request is blocked. "]
     DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
     LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
+    #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
     EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[doc = "4: The entire device is reset except some EMU and RMU registers."]
     FULL,
 }
-impl crate::ToBits<u8> for SYSRMODE_A {
+impl From<SYSRMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SYSRMODE_A) -> Self {
+        match variant {
             SYSRMODE_A::DISABLED => 0,
             SYSRMODE_A::LIMITED => 1,
             SYSRMODE_A::EXTENDED => 2,
@@ -271,8 +269,7 @@ impl<'a> SYSRMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYSRMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Reset request is blocked."]
     #[inline(always)]
@@ -301,22 +298,22 @@ impl<'a> SYSRMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PINRMODE`"]
+#[doc = "PIN Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINRMODE_A {
-    #[doc = "Reset request is blocked. "]
+    #[doc = "0: Reset request is blocked. "]
     DISABLED,
-    #[doc = "The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
+    #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
     LIMITED,
-    #[doc = "The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
+    #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
     EXTENDED,
-    #[doc = "The entire device is reset except some EMU and RMU registers."]
+    #[doc = "4: The entire device is reset except some EMU and RMU registers."]
     FULL,
 }
-impl crate::ToBits<u8> for PINRMODE_A {
+impl From<PINRMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PINRMODE_A) -> Self {
+        match variant {
             PINRMODE_A::DISABLED => 0,
             PINRMODE_A::LIMITED => 1,
             PINRMODE_A::EXTENDED => 2,
@@ -368,8 +365,7 @@ impl<'a> PINRMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PINRMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Reset request is blocked."]
     #[inline(always)]

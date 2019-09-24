@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CH17_CFG {
         0
     }
 }
-#[doc = "Possible values of the field `ARBSLOTS`"]
+#[doc = "Arbitration Slot Number Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARBSLOTS_A {
-    #[doc = "One arbitration slot selected"]
+    #[doc = "0: One arbitration slot selected"]
     ONE,
-    #[doc = "Two arbitration slots selected"]
+    #[doc = "1: Two arbitration slots selected"]
     TWO,
-    #[doc = "Four arbitration slots selected"]
+    #[doc = "2: Four arbitration slots selected"]
     FOUR,
-    #[doc = "Eight arbitration slots selected"]
+    #[doc = "3: Eight arbitration slots selected"]
     EIGHT,
 }
-impl crate::ToBits<u8> for ARBSLOTS_A {
+impl From<ARBSLOTS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ARBSLOTS_A) -> Self {
+        match variant {
             ARBSLOTS_A::ONE => 0,
             ARBSLOTS_A::TWO => 1,
             ARBSLOTS_A::FOUR => 2,
@@ -76,9 +76,8 @@ impl<'a> ARBSLOTS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ARBSLOTS_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "One arbitration slot selected"]

@@ -10,20 +10,20 @@ impl crate::ResetValue for super::LFEPRESC0 {
         0
     }
 }
-#[doc = "Possible values of the field `RTCC`"]
+#[doc = "Real-Time Counter and Calendar Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCC_A {
-    #[doc = "LFECLKRTCC = LFECLK"]
+    #[doc = "0: LFECLKRTCC = LFECLK"]
     DIV1,
-    #[doc = "LFECLKRTCC = LFECLK/2"]
+    #[doc = "1: LFECLKRTCC = LFECLK/2"]
     DIV2,
-    #[doc = "LFECLKRTCC = LFECLK/4"]
+    #[doc = "2: LFECLKRTCC = LFECLK/4"]
     DIV4,
 }
-impl crate::ToBits<u8> for RTCC_A {
+impl From<RTCC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RTCC_A) -> Self {
+        match variant {
             RTCC_A::DIV1 => 0,
             RTCC_A::DIV2 => 1,
             RTCC_A::DIV4 => 2,
@@ -68,8 +68,7 @@ impl<'a> RTCC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LFECLKRTCC = LFECLK"]
     #[inline(always)]

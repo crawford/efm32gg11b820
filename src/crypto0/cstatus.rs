@@ -1,29 +1,29 @@
 #[doc = "Reader of register CSTATUS"]
 pub type R = crate::R<u32, super::CSTATUS>;
-#[doc = "Possible values of the field `V0`"]
+#[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V0_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     DDATA0,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     DDATA1,
-    #[doc = "`10`"]
+    #[doc = "2: `10`"]
     DDATA2,
-    #[doc = "`11`"]
+    #[doc = "3: `11`"]
     DDATA3,
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     DDATA4,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     DATA0,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     DATA1,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     DATA2,
 }
-impl crate::ToBits<u8> for V0_A {
+impl From<V0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: V0_A) -> Self {
+        match variant {
             V0_A::DDATA0 => 0,
             V0_A::DDATA1 => 1,
             V0_A::DDATA2 => 2,
@@ -94,30 +94,30 @@ impl V0_R {
         *self == V0_A::DATA2
     }
 }
-#[doc = "Possible values of the field `V1`"]
+#[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V1_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     DDATA0,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     DDATA1,
-    #[doc = "`10`"]
+    #[doc = "2: `10`"]
     DDATA2,
-    #[doc = "`11`"]
+    #[doc = "3: `11`"]
     DDATA3,
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     DDATA4,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     DATA0,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     DATA1,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     DATA2,
 }
-impl crate::ToBits<u8> for V1_A {
+impl From<V1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: V1_A) -> Self {
+        match variant {
             V1_A::DDATA0 => 0,
             V1_A::DDATA1 => 1,
             V1_A::DDATA2 => 2,

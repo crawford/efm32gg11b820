@@ -336,30 +336,30 @@ impl<'a> FCSREMOVE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MDCCLKDIV`"]
+#[doc = "MDC clock division\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MDCCLKDIV_A {
-    #[doc = "divide HFBUSCLKETH by 8 (HFBUSCLKETH up to 20 MHz)"]
+    #[doc = "0: divide HFBUSCLKETH by 8 (HFBUSCLKETH up to 20 MHz)"]
     DIVBY8,
-    #[doc = "divide HFBUSCLKETH by 16 (HFBUSCLKETH up to 40 MHz)"]
+    #[doc = "1: divide HFBUSCLKETH by 16 (HFBUSCLKETH up to 40 MHz)"]
     DIVBY16,
-    #[doc = "divide HFBUSCLKETH by 32 (HFBUSCLKETH up to 80 MHz)"]
+    #[doc = "2: divide HFBUSCLKETH by 32 (HFBUSCLKETH up to 80 MHz)"]
     DIVBY32,
-    #[doc = "divide HFBUSCLKETH by 48 (HFBUSCLKETH up to 120 MHz)"]
+    #[doc = "3: divide HFBUSCLKETH by 48 (HFBUSCLKETH up to 120 MHz)"]
     DIVBY48,
-    #[doc = "divide HFBUSCLKETH by 64 (HFBUSCLKETH up to 160 MHz)"]
+    #[doc = "4: divide HFBUSCLKETH by 64 (HFBUSCLKETH up to 160 MHz)"]
     DIVBY64,
-    #[doc = "divide HFBUSCLKETH by 96 (HFBUSCLKETH up to 240 MHz)"]
+    #[doc = "5: divide HFBUSCLKETH by 96 (HFBUSCLKETH up to 240 MHz)"]
     DIVBY96,
-    #[doc = "divide HFBUSCLKETH by 128 (HFBUSCLKETH up to 320 MHz)"]
+    #[doc = "6: divide HFBUSCLKETH by 128 (HFBUSCLKETH up to 320 MHz)"]
     DIVBY128,
-    #[doc = "divide HFBUSCLKETH by 224 (HFBUSCLKETH up to 540 MHz)"]
+    #[doc = "7: divide HFBUSCLKETH by 224 (HFBUSCLKETH up to 540 MHz)"]
     DIVBY224,
 }
-impl crate::ToBits<u8> for MDCCLKDIV_A {
+impl From<MDCCLKDIV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MDCCLKDIV_A) -> Self {
+        match variant {
             MDCCLKDIV_A::DIVBY8 => 0,
             MDCCLKDIV_A::DIVBY16 => 1,
             MDCCLKDIV_A::DIVBY32 => 2,
@@ -438,9 +438,8 @@ impl<'a> MDCCLKDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MDCCLKDIV_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "divide HFBUSCLKETH by 8 (HFBUSCLKETH up to 20 MHz)"]

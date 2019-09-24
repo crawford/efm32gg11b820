@@ -10,26 +10,26 @@ impl crate::ResetValue for super::BIASPROG {
         0
     }
 }
-#[doc = "Possible values of the field `ADCBIASPROG`"]
+#[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCBIASPROG_A {
-    #[doc = "Normal power (use for 1Msps operation)"]
+    #[doc = "0: Normal power (use for 1Msps operation)"]
     NORMAL,
-    #[doc = "Scaling bias to 1/2"]
+    #[doc = "4: Scaling bias to 1/2"]
     SCALE2,
-    #[doc = "Scaling bias to 1/4"]
+    #[doc = "8: Scaling bias to 1/4"]
     SCALE4,
-    #[doc = "Scaling bias to 1/8"]
+    #[doc = "12: Scaling bias to 1/8"]
     SCALE8,
-    #[doc = "Scaling bias to 1/16"]
+    #[doc = "14: Scaling bias to 1/16"]
     SCALE16,
-    #[doc = "Scaling bias to 1/32"]
+    #[doc = "15: Scaling bias to 1/32"]
     SCALE32,
 }
-impl crate::ToBits<u8> for ADCBIASPROG_A {
+impl From<ADCBIASPROG_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADCBIASPROG_A) -> Self {
+        match variant {
             ADCBIASPROG_A::NORMAL => 0,
             ADCBIASPROG_A::SCALE2 => 4,
             ADCBIASPROG_A::SCALE4 => 8,
@@ -95,8 +95,7 @@ impl<'a> ADCBIASPROG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADCBIASPROG_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Normal power (use for 1Msps operation)"]
     #[inline(always)]

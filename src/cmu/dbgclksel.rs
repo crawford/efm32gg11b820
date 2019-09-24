@@ -10,20 +10,20 @@ impl crate::ResetValue for super::DBGCLKSEL {
         0
     }
 }
-#[doc = "Possible values of the field `DBG`"]
+#[doc = "Debug Trace Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_A {
-    #[doc = "AUXHFRCO is the debug trace clock"]
+    #[doc = "0: AUXHFRCO is the debug trace clock"]
     AUXHFRCO,
-    #[doc = "HFCLK is the debug trace clock"]
+    #[doc = "1: HFCLK is the debug trace clock"]
     HFCLK,
-    #[doc = "HFRCO divided by 2 is the debug trace clock"]
+    #[doc = "2: HFRCO divided by 2 is the debug trace clock"]
     HFRCODIV2,
 }
-impl crate::ToBits<u8> for DBG_A {
+impl From<DBG_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DBG_A) -> Self {
+        match variant {
             DBG_A::AUXHFRCO => 0,
             DBG_A::HFCLK => 1,
             DBG_A::HFRCODIV2 => 2,
@@ -68,8 +68,7 @@ impl<'a> DBG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DBG_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "AUXHFRCO is the debug trace clock"]
     #[inline(always)]

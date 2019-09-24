@@ -192,22 +192,22 @@ impl<'a> PERSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKSEL`"]
+#[doc = "Watchdog Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSEL_A {
-    #[doc = "ULFRCO"]
+    #[doc = "0: ULFRCO"]
     ULFRCO,
-    #[doc = "LFRCO"]
+    #[doc = "1: LFRCO"]
     LFRCO,
-    #[doc = "LFXO"]
+    #[doc = "2: LFXO"]
     LFXO,
-    #[doc = "HFCORECLK"]
+    #[doc = "3: HFCORECLK"]
     HFCORECLK,
 }
-impl crate::ToBits<u8> for CLKSEL_A {
+impl From<CLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKSEL_A) -> Self {
+        match variant {
             CLKSEL_A::ULFRCO => 0,
             CLKSEL_A::LFRCO => 1,
             CLKSEL_A::LFXO => 2,
@@ -258,9 +258,8 @@ impl<'a> CLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ULFRCO"]

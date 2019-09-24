@@ -176,22 +176,22 @@ impl<'a> LNCLIMILIMSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LPCMPBIASEM234H`"]
+#[doc = "LP Mode Comparator Bias Selection for EM23 or EM4H\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPCMPBIASEM234H_A {
-    #[doc = "Maximum load current less than 75uA."]
+    #[doc = "0: Maximum load current less than 75uA."]
     BIAS0,
-    #[doc = "Maximum load current less than 500uA."]
+    #[doc = "1: Maximum load current less than 500uA."]
     BIAS1,
-    #[doc = "Maximum load current less than 2.5mA."]
+    #[doc = "2: Maximum load current less than 2.5mA."]
     BIAS2,
-    #[doc = "Maximum load current less than 10mA."]
+    #[doc = "3: Maximum load current less than 10mA."]
     BIAS3,
 }
-impl crate::ToBits<u8> for LPCMPBIASEM234H_A {
+impl From<LPCMPBIASEM234H_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LPCMPBIASEM234H_A) -> Self {
+        match variant {
             LPCMPBIASEM234H_A::BIAS0 => 0,
             LPCMPBIASEM234H_A::BIAS1 => 1,
             LPCMPBIASEM234H_A::BIAS2 => 2,
@@ -242,9 +242,8 @@ impl<'a> LPCMPBIASEM234H_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LPCMPBIASEM234H_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Maximum load current less than 75uA."]

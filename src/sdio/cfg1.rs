@@ -34,20 +34,20 @@ impl<'a> ASYNCINTRSUP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SLOTTYPE`"]
+#[doc = "Slot Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLOTTYPE_A {
-    #[doc = "Removable SD Card Slot"]
+    #[doc = "0: Removable SD Card Slot"]
     RMSDSLOT,
-    #[doc = "Embedded SD Card Slot"]
+    #[doc = "1: Embedded SD Card Slot"]
     EMSDSLOT,
-    #[doc = "Shared SD Card Slot"]
+    #[doc = "2: Shared SD Card Slot"]
     SHBUSSLOT,
 }
-impl crate::ToBits<u8> for SLOTTYPE_A {
+impl From<SLOTTYPE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SLOTTYPE_A) -> Self {
+        match variant {
             SLOTTYPE_A::RMSDSLOT => 0,
             SLOTTYPE_A::EMSDSLOT => 1,
             SLOTTYPE_A::SHBUSSLOT => 2,
@@ -92,8 +92,7 @@ impl<'a> SLOTTYPE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SLOTTYPE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Removable SD Card Slot"]
     #[inline(always)]

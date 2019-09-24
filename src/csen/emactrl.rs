@@ -10,28 +10,28 @@ impl crate::ResetValue for super::EMACTRL {
         0
     }
 }
-#[doc = "Possible values of the field `EMASAMPLE`"]
+#[doc = "EMA Sample Weight\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMASAMPLE_A {
-    #[doc = "EMA weight (N) is 1."]
+    #[doc = "0: EMA weight (N) is 1."]
     W1,
-    #[doc = "EMA weight (N) is 2."]
+    #[doc = "1: EMA weight (N) is 2."]
     W2,
-    #[doc = "EMA weight (N) is 4."]
+    #[doc = "2: EMA weight (N) is 4."]
     W4,
-    #[doc = "EMA weight (N) is 8."]
+    #[doc = "3: EMA weight (N) is 8."]
     W8,
-    #[doc = "EMA weight (N) is 16."]
+    #[doc = "4: EMA weight (N) is 16."]
     W16,
-    #[doc = "EMA weight (N) is 32."]
+    #[doc = "5: EMA weight (N) is 32."]
     W32,
-    #[doc = "EMA weight (N) is 64."]
+    #[doc = "6: EMA weight (N) is 64."]
     W64,
 }
-impl crate::ToBits<u8> for EMASAMPLE_A {
+impl From<EMASAMPLE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EMASAMPLE_A) -> Self {
+        match variant {
             EMASAMPLE_A::W1 => 0,
             EMASAMPLE_A::W2 => 1,
             EMASAMPLE_A::W4 => 2,
@@ -104,8 +104,7 @@ impl<'a> EMASAMPLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EMASAMPLE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "EMA weight (N) is 1."]
     #[inline(always)]

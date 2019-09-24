@@ -34,24 +34,24 @@ impl<'a> ENAMUX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AMUXSEL`"]
+#[doc = "ADC Mux Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AMUXSEL_A {
-    #[doc = "VBUS divided by 10"]
+    #[doc = "0: VBUS divided by 10"]
     VBUSDIV10,
-    #[doc = "VREGI divided by 10"]
+    #[doc = "1: VREGI divided by 10"]
     VREGIDIV10,
-    #[doc = "VREGO divided by 6"]
+    #[doc = "2: VREGO divided by 6"]
     VREGODIV6,
-    #[doc = "VREGI current monitor"]
+    #[doc = "3: VREGI current monitor"]
     VREGIIMON,
-    #[doc = "VBUS current monitor"]
+    #[doc = "4: VBUS current monitor"]
     VBUSIMON,
 }
-impl crate::ToBits<u8> for AMUXSEL_A {
+impl From<AMUXSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AMUXSEL_A) -> Self {
+        match variant {
             AMUXSEL_A::VBUSDIV10 => 0,
             AMUXSEL_A::VREGIDIV10 => 1,
             AMUXSEL_A::VREGODIV6 => 2,
@@ -110,8 +110,7 @@ impl<'a> AMUXSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AMUXSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "VBUS divided by 10"]
     #[inline(always)]

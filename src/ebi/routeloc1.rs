@@ -10,20 +10,20 @@ impl crate::ResetValue for super::ROUTELOC1 {
         0
     }
 }
-#[doc = "Possible values of the field `ADLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
 }
-impl crate::ToBits<u8> for ADLOC_A {
+impl From<ADLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ADLOC_A) -> Self {
+        match variant {
             ADLOC_A::LOC0 => 0,
             ADLOC_A::LOC1 => 1,
             ADLOC_A::LOC2 => 2,
@@ -68,8 +68,7 @@ impl<'a> ADLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -93,22 +92,22 @@ impl<'a> ADLOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
 }
-impl crate::ToBits<u8> for ALOC_A {
+impl From<ALOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ALOC_A) -> Self {
+        match variant {
             ALOC_A::LOC0 => 0,
             ALOC_A::LOC1 => 1,
             ALOC_A::LOC2 => 2,
@@ -160,8 +159,7 @@ impl<'a> ALOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ALOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]
@@ -190,26 +188,26 @@ impl<'a> ALOC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RDYLOC`"]
+#[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDYLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
-    #[doc = "Location 2"]
+    #[doc = "2: Location 2"]
     LOC2,
-    #[doc = "Location 3"]
+    #[doc = "3: Location 3"]
     LOC3,
-    #[doc = "Location 4"]
+    #[doc = "4: Location 4"]
     LOC4,
-    #[doc = "Location 5"]
+    #[doc = "5: Location 5"]
     LOC5,
 }
-impl crate::ToBits<u8> for RDYLOC_A {
+impl From<RDYLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RDYLOC_A) -> Self {
+        match variant {
             RDYLOC_A::LOC0 => 0,
             RDYLOC_A::LOC1 => 1,
             RDYLOC_A::LOC2 => 2,
@@ -275,8 +273,7 @@ impl<'a> RDYLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RDYLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CURPROG {
         0x009b_0000
     }
 }
-#[doc = "Possible values of the field `RANGESEL`"]
+#[doc = "Current Range Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RANGESEL_A {
-    #[doc = "Current range set to 0 - 1.6 uA."]
+    #[doc = "0: Current range set to 0 - 1.6 uA."]
     RANGE0,
-    #[doc = "Current range set to 1.6 - 4.7 uA."]
+    #[doc = "1: Current range set to 1.6 - 4.7 uA."]
     RANGE1,
-    #[doc = "Current range set to 0.5 - 16 uA."]
+    #[doc = "2: Current range set to 0.5 - 16 uA."]
     RANGE2,
-    #[doc = "Current range set to 2 - 64 uA."]
+    #[doc = "3: Current range set to 2 - 64 uA."]
     RANGE3,
 }
-impl crate::ToBits<u8> for RANGESEL_A {
+impl From<RANGESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RANGESEL_A) -> Self {
+        match variant {
             RANGESEL_A::RANGE0 => 0,
             RANGESEL_A::RANGE1 => 1,
             RANGESEL_A::RANGE2 => 2,
@@ -76,9 +76,8 @@ impl<'a> RANGESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RANGESEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Current range set to 0 - 1.6 uA."]

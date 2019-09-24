@@ -10,44 +10,44 @@ impl crate::ResetValue for super::WAC {
         0
     }
 }
-#[doc = "Possible values of the field `MODULUS`"]
+#[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODULUS_A {
-    #[doc = "Generic modulus. p = 2^256"]
+    #[doc = "0: Generic modulus. p = 2^256"]
     BIN256,
-    #[doc = "Generic modulus. p = 2^128"]
+    #[doc = "1: Generic modulus. p = 2^128"]
     BIN128,
-    #[doc = "Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
+    #[doc = "2: Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
     ECCBIN233P,
-    #[doc = "Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
+    #[doc = "3: Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
     ECCBIN163P,
-    #[doc = "Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
+    #[doc = "4: Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
     GCMBIN128,
-    #[doc = "Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
+    #[doc = "5: Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
     ECCPRIME256P,
-    #[doc = "Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
+    #[doc = "6: Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
     ECCPRIME224P,
-    #[doc = "Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
+    #[doc = "7: Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
     ECCPRIME192P,
-    #[doc = "P modulus for B-233 ECC curve"]
+    #[doc = "8: P modulus for B-233 ECC curve"]
     ECCBIN233N,
-    #[doc = "P modulus for K-233 ECC curve"]
+    #[doc = "9: P modulus for K-233 ECC curve"]
     ECCBIN233KN,
-    #[doc = "P modulus for B-163 ECC curve"]
+    #[doc = "10: P modulus for B-163 ECC curve"]
     ECCBIN163N,
-    #[doc = "P modulus for K-163 ECC curve"]
+    #[doc = "11: P modulus for K-163 ECC curve"]
     ECCBIN163KN,
-    #[doc = "P modulus for P-256 ECC curve"]
+    #[doc = "12: P modulus for P-256 ECC curve"]
     ECCPRIME256N,
-    #[doc = "P modulus for P-224 ECC curve"]
+    #[doc = "13: P modulus for P-224 ECC curve"]
     ECCPRIME224N,
-    #[doc = "P modulus for P-192 ECC curve"]
+    #[doc = "14: P modulus for P-192 ECC curve"]
     ECCPRIME192N,
 }
-impl crate::ToBits<u8> for MODULUS_A {
+impl From<MODULUS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODULUS_A) -> Self {
+        match variant {
             MODULUS_A::BIN256 => 0,
             MODULUS_A::BIN128 => 1,
             MODULUS_A::ECCBIN233P => 2,
@@ -176,8 +176,7 @@ impl<'a> MODULUS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODULUS_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Generic modulus. p = 2^256"]
     #[inline(always)]
@@ -285,20 +284,20 @@ impl<'a> MODOP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MULWIDTH`"]
+#[doc = "Multiply Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MULWIDTH_A {
-    #[doc = "Multiply 256 bits"]
+    #[doc = "0: Multiply 256 bits"]
     MUL256,
-    #[doc = "Multiply 128 bits"]
+    #[doc = "1: Multiply 128 bits"]
     MUL128,
-    #[doc = "Same number of bits as specified by MODULUS"]
+    #[doc = "2: Same number of bits as specified by MODULUS"]
     MULMOD,
 }
-impl crate::ToBits<u8> for MULWIDTH_A {
+impl From<MULWIDTH_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MULWIDTH_A) -> Self {
+        match variant {
             MULWIDTH_A::MUL256 => 0,
             MULWIDTH_A::MUL128 => 1,
             MULWIDTH_A::MULMOD => 2,
@@ -343,8 +342,7 @@ impl<'a> MULWIDTH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MULWIDTH_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Multiply 256 bits"]
     #[inline(always)]
@@ -368,20 +366,20 @@ impl<'a> MULWIDTH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESULTWIDTH`"]
+#[doc = "Result Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESULTWIDTH_A {
-    #[doc = "Results have 256 bits"]
+    #[doc = "0: Results have 256 bits"]
     _256BIT,
-    #[doc = "Results have 128 bits"]
+    #[doc = "1: Results have 128 bits"]
     _128BIT,
-    #[doc = "Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
+    #[doc = "2: Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
     _260BIT,
 }
-impl crate::ToBits<u8> for RESULTWIDTH_A {
+impl From<RESULTWIDTH_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RESULTWIDTH_A) -> Self {
+        match variant {
             RESULTWIDTH_A::_256BIT => 0,
             RESULTWIDTH_A::_128BIT => 1,
             RESULTWIDTH_A::_260BIT => 2,
@@ -426,8 +424,7 @@ impl<'a> RESULTWIDTH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESULTWIDTH_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Results have 256 bits"]
     #[inline(always)]

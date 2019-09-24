@@ -58,18 +58,18 @@ impl<'a> SELFPOWERED_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LEMOSCCTRL`"]
+#[doc = "Low Energy Mode Oscillator Control\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEMOSCCTRL_A {
-    #[doc = "Low Energy Mode has no effect on neither USBC or USHFRCO."]
+    #[doc = "0: Low Energy Mode has no effect on neither USBC or USHFRCO."]
     NONE,
-    #[doc = "The USBC clock is gated when Low Energy Mode is active."]
+    #[doc = "1: The USBC clock is gated when Low Energy Mode is active."]
     GATE,
 }
-impl crate::ToBits<u8> for LEMOSCCTRL_A {
+impl From<LEMOSCCTRL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LEMOSCCTRL_A) -> Self {
+        match variant {
             LEMOSCCTRL_A::NONE => 0,
             LEMOSCCTRL_A::GATE => 1,
         }
@@ -107,8 +107,7 @@ impl<'a> LEMOSCCTRL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LEMOSCCTRL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Low Energy Mode has no effect on neither USBC or USHFRCO."]
     #[inline(always)]
@@ -271,20 +270,20 @@ impl<'a> OTGPHYCTRLDIS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DCDEN`"]
+#[doc = "Data Contact Detection Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDEN_A {
-    #[doc = "DCD is disabled."]
+    #[doc = "0: DCD is disabled."]
     DISABLED,
-    #[doc = "Only DCD timeout will be initiated."]
+    #[doc = "2: Only DCD timeout will be initiated."]
     TIMEOUT,
-    #[doc = "Full DCD operation (physical contact and timeout) will be initiated."]
+    #[doc = "3: Full DCD operation (physical contact and timeout) will be initiated."]
     ENABLED,
 }
-impl crate::ToBits<u8> for DCDEN_A {
+impl From<DCDEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DCDEN_A) -> Self {
+        match variant {
             DCDEN_A::DISABLED => 0,
             DCDEN_A::TIMEOUT => 2,
             DCDEN_A::ENABLED => 3,
@@ -329,8 +328,7 @@ impl<'a> DCDEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCDEN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "DCD is disabled."]
     #[inline(always)]

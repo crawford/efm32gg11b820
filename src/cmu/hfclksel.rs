@@ -8,28 +8,28 @@ impl crate::ResetValue for super::HFCLKSEL {
         0
     }
 }
-#[doc = "Possible values of the field `HF`"]
+#[doc = "HFCLK Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HF_AW {
-    #[doc = "Select HFRCO as HFCLK"]
+    #[doc = "1: Select HFRCO as HFCLK"]
     HFRCO,
-    #[doc = "Select HFXO as HFCLK"]
+    #[doc = "2: Select HFXO as HFCLK"]
     HFXO,
-    #[doc = "Select LFRCO as HFCLK"]
+    #[doc = "3: Select LFRCO as HFCLK"]
     LFRCO,
-    #[doc = "Select LFXO as HFCLK"]
+    #[doc = "4: Select LFXO as HFCLK"]
     LFXO,
-    #[doc = "Select HFRCO divided by 2 as HFCLK"]
+    #[doc = "5: Select HFRCO divided by 2 as HFCLK"]
     HFRCODIV2,
-    #[doc = "Select USHFRCO as HFCLK"]
+    #[doc = "6: Select USHFRCO as HFCLK"]
     USHFRCO,
-    #[doc = "Select CLKIN0 as HFCLK"]
+    #[doc = "7: Select CLKIN0 as HFCLK"]
     CLKIN0,
 }
-impl crate::ToBits<u8> for HF_AW {
+impl From<HF_AW> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: HF_AW) -> Self {
+        match variant {
             HF_AW::HFRCO => 1,
             HF_AW::HFXO => 2,
             HF_AW::LFRCO => 3,
@@ -48,8 +48,7 @@ impl<'a> HF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HF_AW) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Select HFRCO as HFCLK"]
     #[inline(always)]

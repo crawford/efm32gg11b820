@@ -10,26 +10,26 @@ impl crate::ResetValue for super::USBCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `USBCLKSEL`"]
+#[doc = "USB Rate Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBCLKSEL_A {
-    #[doc = "USHFRCO (clock recovery) is clocking USB"]
+    #[doc = "0: USHFRCO (clock recovery) is clocking USB"]
     USHFRCO,
-    #[doc = "HFXO clock is used to clock USB"]
+    #[doc = "1: HFXO clock is used to clock USB"]
     HFXO,
-    #[doc = "HFXO clock doubler is used to clock USB"]
+    #[doc = "2: HFXO clock doubler is used to clock USB"]
     HFXOX2,
-    #[doc = "HFRCO clock is used to clock USB"]
+    #[doc = "3: HFRCO clock is used to clock USB"]
     HFRCO,
-    #[doc = "LFXO clock is used to clock USB"]
+    #[doc = "4: LFXO clock is used to clock USB"]
     LFXO,
-    #[doc = "LFRCO clock is used to clock USB"]
+    #[doc = "5: LFRCO clock is used to clock USB"]
     LFRCO,
 }
-impl crate::ToBits<u8> for USBCLKSEL_A {
+impl From<USBCLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: USBCLKSEL_A) -> Self {
+        match variant {
             USBCLKSEL_A::USHFRCO => 0,
             USBCLKSEL_A::HFXO => 1,
             USBCLKSEL_A::HFXOX2 => 2,
@@ -95,8 +95,7 @@ impl<'a> USBCLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBCLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "USHFRCO (clock recovery) is clocking USB"]
     #[inline(always)]

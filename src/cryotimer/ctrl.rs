@@ -58,22 +58,22 @@ impl<'a> DEBUGRUN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OSCSEL`"]
+#[doc = "Select Low Frequency Oscillator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCSEL_A {
-    #[doc = "Output is driven low"]
+    #[doc = "0: Output is driven low"]
     DISABLED,
-    #[doc = "Select Low Frequency RC Oscillator"]
+    #[doc = "1: Select Low Frequency RC Oscillator"]
     LFRCO,
-    #[doc = "Select Low Frequency Crystal Oscillator"]
+    #[doc = "2: Select Low Frequency Crystal Oscillator"]
     LFXO,
-    #[doc = "Select Ultra Low Frequency RC Oscillator"]
+    #[doc = "3: Select Ultra Low Frequency RC Oscillator"]
     ULFRCO,
 }
-impl crate::ToBits<u8> for OSCSEL_A {
+impl From<OSCSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: OSCSEL_A) -> Self {
+        match variant {
             OSCSEL_A::DISABLED => 0,
             OSCSEL_A::LFRCO => 1,
             OSCSEL_A::LFXO => 2,
@@ -124,9 +124,8 @@ impl<'a> OSCSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OSCSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Output is driven low"]
@@ -156,30 +155,30 @@ impl<'a> OSCSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRESC`"]
+#[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESC_A {
-    #[doc = "LF Oscillator frequency undivided"]
+    #[doc = "0: LF Oscillator frequency undivided"]
     DIV1,
-    #[doc = "LF Oscillator frequency divided by 2"]
+    #[doc = "1: LF Oscillator frequency divided by 2"]
     DIV2,
-    #[doc = "LF Oscillator frequency divided by 4"]
+    #[doc = "2: LF Oscillator frequency divided by 4"]
     DIV4,
-    #[doc = "LF Oscillator frequency divided by 8"]
+    #[doc = "3: LF Oscillator frequency divided by 8"]
     DIV8,
-    #[doc = "LF Oscillator frequency divided by 16"]
+    #[doc = "4: LF Oscillator frequency divided by 16"]
     DIV16,
-    #[doc = "LF Oscillator frequency divided by 32"]
+    #[doc = "5: LF Oscillator frequency divided by 32"]
     DIV32,
-    #[doc = "LF Oscillator frequency divided by 64"]
+    #[doc = "6: LF Oscillator frequency divided by 64"]
     DIV64,
-    #[doc = "LF Oscillator frequency divided by 128"]
+    #[doc = "7: LF Oscillator frequency divided by 128"]
     DIV128,
 }
-impl crate::ToBits<u8> for PRESC_A {
+impl From<PRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRESC_A) -> Self {
+        match variant {
             PRESC_A::DIV1 => 0,
             PRESC_A::DIV2 => 1,
             PRESC_A::DIV4 => 2,
@@ -258,9 +257,8 @@ impl<'a> PRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LF Oscillator frequency undivided"]

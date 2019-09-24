@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CTRL {
         0x001f_0000
     }
 }
-#[doc = "Possible values of the field `WARMUPMODE`"]
+#[doc = "Warm-up Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WARMUPMODE_A {
-    #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
+    #[doc = "0: ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
     NORMAL,
-    #[doc = "ADC is kept in standby mode between conversions. 1us warmup time is used before each conversion."]
+    #[doc = "1: ADC is kept in standby mode between conversions. 1us warmup time is used before each conversion."]
     KEEPINSTANDBY,
-    #[doc = "ADC is kept in slow acquisition mode between conversions. 1us warmup time is used before each conversion."]
+    #[doc = "2: ADC is kept in slow acquisition mode between conversions. 1us warmup time is used before each conversion."]
     KEEPINSLOWACC,
-    #[doc = "ADC is kept on after conversions, allowing for continuous conversion."]
+    #[doc = "3: ADC is kept on after conversions, allowing for continuous conversion."]
     KEEPADCWARM,
 }
-impl crate::ToBits<u8> for WARMUPMODE_A {
+impl From<WARMUPMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: WARMUPMODE_A) -> Self {
+        match variant {
             WARMUPMODE_A::NORMAL => 0,
             WARMUPMODE_A::KEEPINSTANDBY => 1,
             WARMUPMODE_A::KEEPINSLOWACC => 2,
@@ -76,9 +76,8 @@ impl<'a> WARMUPMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WARMUPMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
@@ -228,16 +227,16 @@ impl<'a> ADCCLKMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRESC`"]
+#[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESC_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u8> for PRESC_A {
+impl From<PRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRESC_A) -> Self {
+        match variant {
             PRESC_A::NODIVISION => 0,
         }
     }
@@ -268,8 +267,7 @@ impl<'a> PRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -297,38 +295,38 @@ impl<'a> TIMEBASE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OVSRSEL`"]
+#[doc = "Oversample Rate Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVSRSEL_A {
-    #[doc = "2 samples for each conversion result"]
+    #[doc = "0: 2 samples for each conversion result"]
     X2,
-    #[doc = "4 samples for each conversion result"]
+    #[doc = "1: 4 samples for each conversion result"]
     X4,
-    #[doc = "8 samples for each conversion result"]
+    #[doc = "2: 8 samples for each conversion result"]
     X8,
-    #[doc = "16 samples for each conversion result"]
+    #[doc = "3: 16 samples for each conversion result"]
     X16,
-    #[doc = "32 samples for each conversion result"]
+    #[doc = "4: 32 samples for each conversion result"]
     X32,
-    #[doc = "64 samples for each conversion result"]
+    #[doc = "5: 64 samples for each conversion result"]
     X64,
-    #[doc = "128 samples for each conversion result"]
+    #[doc = "6: 128 samples for each conversion result"]
     X128,
-    #[doc = "256 samples for each conversion result"]
+    #[doc = "7: 256 samples for each conversion result"]
     X256,
-    #[doc = "512 samples for each conversion result"]
+    #[doc = "8: 512 samples for each conversion result"]
     X512,
-    #[doc = "1024 samples for each conversion result"]
+    #[doc = "9: 1024 samples for each conversion result"]
     X1024,
-    #[doc = "2048 samples for each conversion result"]
+    #[doc = "10: 2048 samples for each conversion result"]
     X2048,
-    #[doc = "4096 samples for each conversion result"]
+    #[doc = "11: 4096 samples for each conversion result"]
     X4096,
 }
-impl crate::ToBits<u8> for OVSRSEL_A {
+impl From<OVSRSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: OVSRSEL_A) -> Self {
+        match variant {
             OVSRSEL_A::X2 => 0,
             OVSRSEL_A::X4 => 1,
             OVSRSEL_A::X8 => 2,
@@ -436,8 +434,7 @@ impl<'a> OVSRSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OVSRSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "2 samples for each conversion result"]
     #[inline(always)]
@@ -554,20 +551,20 @@ impl<'a> CHCONMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CHCONREFWARMIDLE`"]
+#[doc = "Channel Connect and Reference Warm Sel When ADC is IDLE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHCONREFWARMIDLE_A {
-    #[doc = "Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
+    #[doc = "0: Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
     PREFSCAN,
-    #[doc = "Keep single reference warm and keep APORT switches for single channel closed if WARMUPMODE is not NORMAL"]
+    #[doc = "1: Keep single reference warm and keep APORT switches for single channel closed if WARMUPMODE is not NORMAL"]
     PREFSINGLE,
-    #[doc = "Keep last used reference warm and keep APORT switches for corresponding channel closed if WARMUPMODE is not NORMAL"]
+    #[doc = "2: Keep last used reference warm and keep APORT switches for corresponding channel closed if WARMUPMODE is not NORMAL"]
     KEEPPREV,
 }
-impl crate::ToBits<u8> for CHCONREFWARMIDLE_A {
+impl From<CHCONREFWARMIDLE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CHCONREFWARMIDLE_A) -> Self {
+        match variant {
             CHCONREFWARMIDLE_A::PREFSCAN => 0,
             CHCONREFWARMIDLE_A::PREFSINGLE => 1,
             CHCONREFWARMIDLE_A::KEEPPREV => 2,
@@ -612,8 +609,7 @@ impl<'a> CHCONREFWARMIDLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHCONREFWARMIDLE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
     #[inline(always)]

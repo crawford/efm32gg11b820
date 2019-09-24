@@ -1,21 +1,21 @@
 #[doc = "Reader of register DSTATUS"]
 pub type R = crate::R<u32, super::DSTATUS>;
-#[doc = "Possible values of the field `DATA0ZERO`"]
+#[doc = "Data 0 Zero\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA0ZERO_A {
-    #[doc = "In DATA0 bits 0 to 31 are all zero."]
+    #[doc = "1: In DATA0 bits 0 to 31 are all zero."]
     ZERO0TO31,
-    #[doc = "In DATA0 bits 32 to 63 are all zero."]
+    #[doc = "2: In DATA0 bits 32 to 63 are all zero."]
     ZERO32TO63,
-    #[doc = "In DATA0 bits 64 to 95 are all zero."]
+    #[doc = "4: In DATA0 bits 64 to 95 are all zero."]
     ZERO64TO95,
-    #[doc = "In DATA0 bits 96 to 127 are all zero."]
+    #[doc = "8: In DATA0 bits 96 to 127 are all zero."]
     ZERO96TO127,
 }
-impl crate::ToBits<u8> for DATA0ZERO_A {
+impl From<DATA0ZERO_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DATA0ZERO_A) -> Self {
+        match variant {
             DATA0ZERO_A::ZERO0TO31 => 1,
             DATA0ZERO_A::ZERO32TO63 => 2,
             DATA0ZERO_A::ZERO64TO95 => 4,

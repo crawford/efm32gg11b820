@@ -98,16 +98,16 @@ impl<'a> UPPSDCLKFRE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDCLKFREQSEL`"]
+#[doc = "SD_CLK Frequency Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDCLKFREQSEL_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u8> for SDCLKFREQSEL_A {
+impl From<SDCLKFREQSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDCLKFREQSEL_A) -> Self {
+        match variant {
             SDCLKFREQSEL_A::NODIVISION => 0,
         }
     }
@@ -138,8 +138,7 @@ impl<'a> SDCLKFREQSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDCLKFREQSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

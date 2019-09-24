@@ -10,30 +10,30 @@ impl crate::ResetValue for super::SCANINPUTSEL1 {
         0
     }
 }
-#[doc = "Possible values of the field `INPUT32TO39SEL`"]
+#[doc = "CSEN_INPUT32-39 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT32TO39SEL_A {
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     APORT1CH0TO7,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     APORT1CH8TO15,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     APORT1CH16TO23,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     APORT1CH24TO31,
-    #[doc = "`1100`"]
+    #[doc = "12: `1100`"]
     APORT3CH0TO7,
-    #[doc = "`1101`"]
+    #[doc = "13: `1101`"]
     APORT3CH8TO15,
-    #[doc = "`1110`"]
+    #[doc = "14: `1110`"]
     APORT3CH16TO23,
-    #[doc = "`1111`"]
+    #[doc = "15: `1111`"]
     APORT3CH24TO31,
 }
-impl crate::ToBits<u8> for INPUT32TO39SEL_A {
+impl From<INPUT32TO39SEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT32TO39SEL_A) -> Self {
+        match variant {
             INPUT32TO39SEL_A::APORT1CH0TO7 => 4,
             INPUT32TO39SEL_A::APORT1CH8TO15 => 5,
             INPUT32TO39SEL_A::APORT1CH16TO23 => 6,
@@ -113,8 +113,7 @@ impl<'a> INPUT32TO39SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT32TO39SEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`100`"]
     #[inline(always)]
@@ -163,30 +162,30 @@ impl<'a> INPUT32TO39SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT40TO47SEL`"]
+#[doc = "CSEN_INPUT40-47 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT40TO47SEL_A {
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     APORT1CH0TO7,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     APORT1CH8TO15,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     APORT1CH16TO23,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     APORT1CH24TO31,
-    #[doc = "`1100`"]
+    #[doc = "12: `1100`"]
     APORT3CH0TO7,
-    #[doc = "`1101`"]
+    #[doc = "13: `1101`"]
     APORT3CH8TO15,
-    #[doc = "`1110`"]
+    #[doc = "14: `1110`"]
     APORT3CH16TO23,
-    #[doc = "`1111`"]
+    #[doc = "15: `1111`"]
     APORT3CH24TO31,
 }
-impl crate::ToBits<u8> for INPUT40TO47SEL_A {
+impl From<INPUT40TO47SEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT40TO47SEL_A) -> Self {
+        match variant {
             INPUT40TO47SEL_A::APORT1CH0TO7 => 4,
             INPUT40TO47SEL_A::APORT1CH8TO15 => 5,
             INPUT40TO47SEL_A::APORT1CH16TO23 => 6,
@@ -266,8 +265,7 @@ impl<'a> INPUT40TO47SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT40TO47SEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`100`"]
     #[inline(always)]
@@ -316,30 +314,30 @@ impl<'a> INPUT40TO47SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT48TO55SEL`"]
+#[doc = "CSEN_INPUT48-55 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT48TO55SEL_A {
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     APORT1CH0TO7,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     APORT1CH8TO15,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     APORT1CH16TO23,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     APORT1CH24TO31,
-    #[doc = "`1100`"]
+    #[doc = "12: `1100`"]
     APORT3CH0TO7,
-    #[doc = "`1101`"]
+    #[doc = "13: `1101`"]
     APORT3CH8TO15,
-    #[doc = "`1110`"]
+    #[doc = "14: `1110`"]
     APORT3CH16TO23,
-    #[doc = "`1111`"]
+    #[doc = "15: `1111`"]
     APORT3CH24TO31,
 }
-impl crate::ToBits<u8> for INPUT48TO55SEL_A {
+impl From<INPUT48TO55SEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT48TO55SEL_A) -> Self {
+        match variant {
             INPUT48TO55SEL_A::APORT1CH0TO7 => 4,
             INPUT48TO55SEL_A::APORT1CH8TO15 => 5,
             INPUT48TO55SEL_A::APORT1CH16TO23 => 6,
@@ -419,8 +417,7 @@ impl<'a> INPUT48TO55SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT48TO55SEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`100`"]
     #[inline(always)]
@@ -469,30 +466,30 @@ impl<'a> INPUT48TO55SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT56TO63SEL`"]
+#[doc = "CSEN_INPUT56-63 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT56TO63SEL_A {
-    #[doc = "`100`"]
+    #[doc = "4: `100`"]
     APORT1CH0TO7,
-    #[doc = "`101`"]
+    #[doc = "5: `101`"]
     APORT1CH8TO15,
-    #[doc = "`110`"]
+    #[doc = "6: `110`"]
     APORT1CH16TO23,
-    #[doc = "`111`"]
+    #[doc = "7: `111`"]
     APORT1CH24TO31,
-    #[doc = "`1100`"]
+    #[doc = "12: `1100`"]
     APORT3CH0TO7,
-    #[doc = "`1101`"]
+    #[doc = "13: `1101`"]
     APORT3CH8TO15,
-    #[doc = "`1110`"]
+    #[doc = "14: `1110`"]
     APORT3CH16TO23,
-    #[doc = "`1111`"]
+    #[doc = "15: `1111`"]
     APORT3CH24TO31,
 }
-impl crate::ToBits<u8> for INPUT56TO63SEL_A {
+impl From<INPUT56TO63SEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT56TO63SEL_A) -> Self {
+        match variant {
             INPUT56TO63SEL_A::APORT1CH0TO7 => 4,
             INPUT56TO63SEL_A::APORT1CH8TO15 => 5,
             INPUT56TO63SEL_A::APORT1CH16TO23 => 6,
@@ -572,8 +569,7 @@ impl<'a> INPUT56TO63SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT56TO63SEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`100`"]
     #[inline(always)]

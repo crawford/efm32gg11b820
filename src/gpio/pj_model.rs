@@ -10,46 +10,46 @@ impl crate::ResetValue for super::PJ_MODEL {
         0
     }
 }
-#[doc = "Possible values of the field `MODE0`"]
+#[doc = "Pin 0 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE0_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE0_A {
+impl From<MODE0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE0_A) -> Self {
+        match variant {
             MODE0_A::DISABLED => 0,
             MODE0_A::INPUT => 1,
             MODE0_A::INPUTPULL => 2,
@@ -184,9 +184,8 @@ impl<'a> MODE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE0_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -276,46 +275,46 @@ impl<'a> MODE0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE1`"]
+#[doc = "Pin 1 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE1_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE1_A {
+impl From<MODE1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE1_A) -> Self {
+        match variant {
             MODE1_A::DISABLED => 0,
             MODE1_A::INPUT => 1,
             MODE1_A::INPUTPULL => 2,
@@ -450,9 +449,8 @@ impl<'a> MODE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE1_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -542,46 +540,46 @@ impl<'a> MODE1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE2`"]
+#[doc = "Pin 2 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE2_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE2_A {
+impl From<MODE2_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE2_A) -> Self {
+        match variant {
             MODE2_A::DISABLED => 0,
             MODE2_A::INPUT => 1,
             MODE2_A::INPUTPULL => 2,
@@ -716,9 +714,8 @@ impl<'a> MODE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE2_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -808,46 +805,46 @@ impl<'a> MODE2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE3`"]
+#[doc = "Pin 3 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE3_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE3_A {
+impl From<MODE3_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE3_A) -> Self {
+        match variant {
             MODE3_A::DISABLED => 0,
             MODE3_A::INPUT => 1,
             MODE3_A::INPUTPULL => 2,
@@ -982,9 +979,8 @@ impl<'a> MODE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE3_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -1074,46 +1070,46 @@ impl<'a> MODE3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE4`"]
+#[doc = "Pin 4 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE4_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE4_A {
+impl From<MODE4_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE4_A) -> Self {
+        match variant {
             MODE4_A::DISABLED => 0,
             MODE4_A::INPUT => 1,
             MODE4_A::INPUTPULL => 2,
@@ -1248,9 +1244,8 @@ impl<'a> MODE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE4_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -1340,46 +1335,46 @@ impl<'a> MODE4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE5`"]
+#[doc = "Pin 5 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE5_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE5_A {
+impl From<MODE5_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE5_A) -> Self {
+        match variant {
             MODE5_A::DISABLED => 0,
             MODE5_A::INPUT => 1,
             MODE5_A::INPUTPULL => 2,
@@ -1514,9 +1509,8 @@ impl<'a> MODE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE5_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -1606,46 +1600,46 @@ impl<'a> MODE5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE6`"]
+#[doc = "Pin 6 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE6_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE6_A {
+impl From<MODE6_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE6_A) -> Self {
+        match variant {
             MODE6_A::DISABLED => 0,
             MODE6_A::INPUT => 1,
             MODE6_A::INPUTPULL => 2,
@@ -1780,9 +1774,8 @@ impl<'a> MODE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE6_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]
@@ -1872,46 +1865,46 @@ impl<'a> MODE6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE7`"]
+#[doc = "Pin 7 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE7_A {
-    #[doc = "Input disabled. Pullup if DOUT is set."]
+    #[doc = "0: Input disabled. Pullup if DOUT is set."]
     DISABLED,
-    #[doc = "Input enabled. Filter if DOUT is set"]
+    #[doc = "1: Input enabled. Filter if DOUT is set"]
     INPUT,
-    #[doc = "Input enabled. DOUT determines pull direction"]
+    #[doc = "2: Input enabled. DOUT determines pull direction"]
     INPUTPULL,
-    #[doc = "Input enabled with filter. DOUT determines pull direction"]
+    #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
     INPUTPULLFILTER,
-    #[doc = "Push-pull output"]
+    #[doc = "4: Push-pull output"]
     PUSHPULL,
-    #[doc = "Push-pull using alternate control"]
+    #[doc = "5: Push-pull using alternate control"]
     PUSHPULLALT,
-    #[doc = "Wired-or output"]
+    #[doc = "6: Wired-or output"]
     WIREDOR,
-    #[doc = "Wired-or output with pull-down"]
+    #[doc = "7: Wired-or output with pull-down"]
     WIREDORPULLDOWN,
-    #[doc = "Open-drain output"]
+    #[doc = "8: Open-drain output"]
     WIREDAND,
-    #[doc = "Open-drain output with filter"]
+    #[doc = "9: Open-drain output with filter"]
     WIREDANDFILTER,
-    #[doc = "Open-drain output with pullup"]
+    #[doc = "10: Open-drain output with pullup"]
     WIREDANDPULLUP,
-    #[doc = "Open-drain output with filter and pullup"]
+    #[doc = "11: Open-drain output with filter and pullup"]
     WIREDANDPULLUPFILTER,
-    #[doc = "Open-drain output using alternate control"]
+    #[doc = "12: Open-drain output using alternate control"]
     WIREDANDALT,
-    #[doc = "Open-drain output using alternate control with filter"]
+    #[doc = "13: Open-drain output using alternate control with filter"]
     WIREDANDALTFILTER,
-    #[doc = "Open-drain output using alternate control with pullup"]
+    #[doc = "14: Open-drain output using alternate control with pullup"]
     WIREDANDALTPULLUP,
-    #[doc = "Open-drain output using alternate control with filter and pullup"]
+    #[doc = "15: Open-drain output using alternate control with filter and pullup"]
     WIREDANDALTPULLUPFILTER,
 }
-impl crate::ToBits<u8> for MODE7_A {
+impl From<MODE7_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE7_A) -> Self {
+        match variant {
             MODE7_A::DISABLED => 0,
             MODE7_A::INPUT => 1,
             MODE7_A::INPUTPULL => 2,
@@ -2046,9 +2039,8 @@ impl<'a> MODE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE7_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Input disabled. Pullup if DOUT is set."]

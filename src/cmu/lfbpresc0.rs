@@ -10,22 +10,22 @@ impl crate::ResetValue for super::LFBPRESC0 {
         0
     }
 }
-#[doc = "Possible values of the field `LEUART0`"]
+#[doc = "Low Energy UART 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEUART0_A {
-    #[doc = "LFBCLKLEUART0 = LFBCLK"]
+    #[doc = "0: LFBCLKLEUART0 = LFBCLK"]
     DIV1,
-    #[doc = "LFBCLKLEUART0 = LFBCLK/2"]
+    #[doc = "1: LFBCLKLEUART0 = LFBCLK/2"]
     DIV2,
-    #[doc = "LFBCLKLEUART0 = LFBCLK/4"]
+    #[doc = "2: LFBCLKLEUART0 = LFBCLK/4"]
     DIV4,
-    #[doc = "LFBCLKLEUART0 = LFBCLK/8"]
+    #[doc = "3: LFBCLKLEUART0 = LFBCLK/8"]
     DIV8,
 }
-impl crate::ToBits<u8> for LEUART0_A {
+impl From<LEUART0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LEUART0_A) -> Self {
+        match variant {
             LEUART0_A::DIV1 => 0,
             LEUART0_A::DIV2 => 1,
             LEUART0_A::DIV4 => 2,
@@ -76,9 +76,8 @@ impl<'a> LEUART0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LEUART0_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFBCLKLEUART0 = LFBCLK"]
@@ -108,22 +107,22 @@ impl<'a> LEUART0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LEUART1`"]
+#[doc = "Low Energy UART 1 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEUART1_A {
-    #[doc = "LFBCLKLEUART1 = LFBCLK"]
+    #[doc = "0: LFBCLKLEUART1 = LFBCLK"]
     DIV1,
-    #[doc = "LFBCLKLEUART1 = LFBCLK/2"]
+    #[doc = "1: LFBCLKLEUART1 = LFBCLK/2"]
     DIV2,
-    #[doc = "LFBCLKLEUART1 = LFBCLK/4"]
+    #[doc = "2: LFBCLKLEUART1 = LFBCLK/4"]
     DIV4,
-    #[doc = "LFBCLKLEUART1 = LFBCLK/8"]
+    #[doc = "3: LFBCLKLEUART1 = LFBCLK/8"]
     DIV8,
 }
-impl crate::ToBits<u8> for LEUART1_A {
+impl From<LEUART1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LEUART1_A) -> Self {
+        match variant {
             LEUART1_A::DIV1 => 0,
             LEUART1_A::DIV2 => 1,
             LEUART1_A::DIV4 => 2,
@@ -174,9 +173,8 @@ impl<'a> LEUART1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LEUART1_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFBCLKLEUART1 = LFBCLK"]
@@ -206,16 +204,16 @@ impl<'a> LEUART1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYSTICK`"]
+#[doc = "Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSTICK_A {
-    #[doc = "LFBCLKSYSTICK = LFBCLK"]
+    #[doc = "0: LFBCLKSYSTICK = LFBCLK"]
     DIV1,
 }
-impl crate::ToBits<u8> for SYSTICK_A {
+impl From<SYSTICK_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SYSTICK_A) -> Self {
+        match variant {
             SYSTICK_A::DIV1 => 0,
         }
     }
@@ -238,22 +236,22 @@ impl SYSTICK_R {
         *self == SYSTICK_A::DIV1
     }
 }
-#[doc = "Possible values of the field `CSEN`"]
+#[doc = "Capacitive touch sense module Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSEN_A {
-    #[doc = "LFBCLKCSEN = LFBCLK/16"]
+    #[doc = "0: LFBCLKCSEN = LFBCLK/16"]
     DIV16,
-    #[doc = "LFBCLKCSEN = LFBCLK/32"]
+    #[doc = "1: LFBCLKCSEN = LFBCLK/32"]
     DIV32,
-    #[doc = "LFBCLKCSEN = LFBCLK/64"]
+    #[doc = "2: LFBCLKCSEN = LFBCLK/64"]
     DIV64,
-    #[doc = "LFBCLKCSEN = LFBCLK/128"]
+    #[doc = "3: LFBCLKCSEN = LFBCLK/128"]
     DIV128,
 }
-impl crate::ToBits<u8> for CSEN_A {
+impl From<CSEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CSEN_A) -> Self {
+        match variant {
             CSEN_A::DIV16 => 0,
             CSEN_A::DIV32 => 1,
             CSEN_A::DIV64 => 2,
@@ -304,9 +302,8 @@ impl<'a> CSEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CSEN_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFBCLKCSEN = LFBCLK/16"]

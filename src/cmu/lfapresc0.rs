@@ -10,46 +10,46 @@ impl crate::ResetValue for super::LFAPRESC0 {
         0
     }
 }
-#[doc = "Possible values of the field `LETIMER0`"]
+#[doc = "Low Energy Timer 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LETIMER0_A {
-    #[doc = "LFACLKLETIMER0 = LFACLK"]
+    #[doc = "0: LFACLKLETIMER0 = LFACLK"]
     DIV1,
-    #[doc = "LFACLKLETIMER0 = LFACLK/2"]
+    #[doc = "1: LFACLKLETIMER0 = LFACLK/2"]
     DIV2,
-    #[doc = "LFACLKLETIMER0 = LFACLK/4"]
+    #[doc = "2: LFACLKLETIMER0 = LFACLK/4"]
     DIV4,
-    #[doc = "LFACLKLETIMER0 = LFACLK/8"]
+    #[doc = "3: LFACLKLETIMER0 = LFACLK/8"]
     DIV8,
-    #[doc = "LFACLKLETIMER0 = LFACLK/16"]
+    #[doc = "4: LFACLKLETIMER0 = LFACLK/16"]
     DIV16,
-    #[doc = "LFACLKLETIMER0 = LFACLK/32"]
+    #[doc = "5: LFACLKLETIMER0 = LFACLK/32"]
     DIV32,
-    #[doc = "LFACLKLETIMER0 = LFACLK/64"]
+    #[doc = "6: LFACLKLETIMER0 = LFACLK/64"]
     DIV64,
-    #[doc = "LFACLKLETIMER0 = LFACLK/128"]
+    #[doc = "7: LFACLKLETIMER0 = LFACLK/128"]
     DIV128,
-    #[doc = "LFACLKLETIMER0 = LFACLK/256"]
+    #[doc = "8: LFACLKLETIMER0 = LFACLK/256"]
     DIV256,
-    #[doc = "LFACLKLETIMER0 = LFACLK/512"]
+    #[doc = "9: LFACLKLETIMER0 = LFACLK/512"]
     DIV512,
-    #[doc = "LFACLKLETIMER0 = LFACLK/1024"]
+    #[doc = "10: LFACLKLETIMER0 = LFACLK/1024"]
     DIV1024,
-    #[doc = "LFACLKLETIMER0 = LFACLK/2048"]
+    #[doc = "11: LFACLKLETIMER0 = LFACLK/2048"]
     DIV2048,
-    #[doc = "LFACLKLETIMER0 = LFACLK/4096"]
+    #[doc = "12: LFACLKLETIMER0 = LFACLK/4096"]
     DIV4096,
-    #[doc = "LFACLKLETIMER0 = LFACLK/8192"]
+    #[doc = "13: LFACLKLETIMER0 = LFACLK/8192"]
     DIV8192,
-    #[doc = "LFACLKLETIMER0 = LFACLK/16384"]
+    #[doc = "14: LFACLKLETIMER0 = LFACLK/16384"]
     DIV16384,
-    #[doc = "LFACLKLETIMER0 = LFACLK/32768"]
+    #[doc = "15: LFACLKLETIMER0 = LFACLK/32768"]
     DIV32768,
 }
-impl crate::ToBits<u8> for LETIMER0_A {
+impl From<LETIMER0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LETIMER0_A) -> Self {
+        match variant {
             LETIMER0_A::DIV1 => 0,
             LETIMER0_A::DIV2 => 1,
             LETIMER0_A::DIV4 => 2,
@@ -184,9 +184,8 @@ impl<'a> LETIMER0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LETIMER0_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFACLKLETIMER0 = LFACLK"]
@@ -276,46 +275,46 @@ impl<'a> LETIMER0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LETIMER1`"]
+#[doc = "Low Energy Timer 1 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LETIMER1_A {
-    #[doc = "LFACLKLETIMER1 = LFACLK"]
+    #[doc = "0: LFACLKLETIMER1 = LFACLK"]
     DIV1,
-    #[doc = "LFACLKLETIMER1 = LFACLK/2"]
+    #[doc = "1: LFACLKLETIMER1 = LFACLK/2"]
     DIV2,
-    #[doc = "LFACLKLETIMER1 = LFACLK/4"]
+    #[doc = "2: LFACLKLETIMER1 = LFACLK/4"]
     DIV4,
-    #[doc = "LFACLKLETIMER1 = LFACLK/8"]
+    #[doc = "3: LFACLKLETIMER1 = LFACLK/8"]
     DIV8,
-    #[doc = "LFACLKLETIMER1 = LFACLK/16"]
+    #[doc = "4: LFACLKLETIMER1 = LFACLK/16"]
     DIV16,
-    #[doc = "LFACLKLETIMER1 = LFACLK/32"]
+    #[doc = "5: LFACLKLETIMER1 = LFACLK/32"]
     DIV32,
-    #[doc = "LFACLKLETIMER1 = LFACLK/64"]
+    #[doc = "6: LFACLKLETIMER1 = LFACLK/64"]
     DIV64,
-    #[doc = "LFACLKLETIMER1 = LFACLK/128"]
+    #[doc = "7: LFACLKLETIMER1 = LFACLK/128"]
     DIV128,
-    #[doc = "LFACLKLETIMER1 = LFACLK/256"]
+    #[doc = "8: LFACLKLETIMER1 = LFACLK/256"]
     DIV256,
-    #[doc = "LFACLKLETIMER1 = LFACLK/512"]
+    #[doc = "9: LFACLKLETIMER1 = LFACLK/512"]
     DIV512,
-    #[doc = "LFACLKLETIMER1 = LFACLK/1024"]
+    #[doc = "10: LFACLKLETIMER1 = LFACLK/1024"]
     DIV1024,
-    #[doc = "LFACLKLETIMER1 = LFACLK/2048"]
+    #[doc = "11: LFACLKLETIMER1 = LFACLK/2048"]
     DIV2048,
-    #[doc = "LFACLKLETIMER1 = LFACLK/4096"]
+    #[doc = "12: LFACLKLETIMER1 = LFACLK/4096"]
     DIV4096,
-    #[doc = "LFACLKLETIMER1 = LFACLK/8192"]
+    #[doc = "13: LFACLKLETIMER1 = LFACLK/8192"]
     DIV8192,
-    #[doc = "LFACLKLETIMER1 = LFACLK/16384"]
+    #[doc = "14: LFACLKLETIMER1 = LFACLK/16384"]
     DIV16384,
-    #[doc = "LFACLKLETIMER1 = LFACLK/32768"]
+    #[doc = "15: LFACLKLETIMER1 = LFACLK/32768"]
     DIV32768,
 }
-impl crate::ToBits<u8> for LETIMER1_A {
+impl From<LETIMER1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LETIMER1_A) -> Self {
+        match variant {
             LETIMER1_A::DIV1 => 0,
             LETIMER1_A::DIV2 => 1,
             LETIMER1_A::DIV4 => 2,
@@ -450,9 +449,8 @@ impl<'a> LETIMER1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LETIMER1_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFACLKLETIMER1 = LFACLK"]
@@ -542,22 +540,22 @@ impl<'a> LETIMER1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LESENSE`"]
+#[doc = "Low Energy Sensor Interface Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LESENSE_A {
-    #[doc = "LFACLKLESENSE = LFACLK"]
+    #[doc = "0: LFACLKLESENSE = LFACLK"]
     DIV1,
-    #[doc = "LFACLKLESENSE = LFACLK/2"]
+    #[doc = "1: LFACLKLESENSE = LFACLK/2"]
     DIV2,
-    #[doc = "LFACLKLESENSE = LFACLK/4"]
+    #[doc = "2: LFACLKLESENSE = LFACLK/4"]
     DIV4,
-    #[doc = "LFACLKLESENSE = LFACLK/8"]
+    #[doc = "3: LFACLKLESENSE = LFACLK/8"]
     DIV8,
 }
-impl crate::ToBits<u8> for LESENSE_A {
+impl From<LESENSE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LESENSE_A) -> Self {
+        match variant {
             LESENSE_A::DIV1 => 0,
             LESENSE_A::DIV2 => 1,
             LESENSE_A::DIV4 => 2,
@@ -608,9 +606,8 @@ impl<'a> LESENSE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LESENSE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFACLKLESENSE = LFACLK"]
@@ -640,30 +637,30 @@ impl<'a> LESENSE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LCD`"]
+#[doc = "Liquid Crystal Display Controller Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCD_A {
-    #[doc = "LFACLKLCD = LFACLK"]
+    #[doc = "0: LFACLKLCD = LFACLK"]
     DIV1,
-    #[doc = "LFACLKLCD = LFACLK/2"]
+    #[doc = "1: LFACLKLCD = LFACLK/2"]
     DIV2,
-    #[doc = "LFACLKLCD = LFACLK/4"]
+    #[doc = "2: LFACLKLCD = LFACLK/4"]
     DIV4,
-    #[doc = "LFACLKLCD = LFACLK/8"]
+    #[doc = "3: LFACLKLCD = LFACLK/8"]
     DIV8,
-    #[doc = "LFACLKLCD = LFACLK/16"]
+    #[doc = "4: LFACLKLCD = LFACLK/16"]
     DIV16,
-    #[doc = "LFACLKLCD = LFACLK/32"]
+    #[doc = "5: LFACLKLCD = LFACLK/32"]
     DIV32,
-    #[doc = "LFACLKLCD = LFACLK/64"]
+    #[doc = "6: LFACLKLCD = LFACLK/64"]
     DIV64,
-    #[doc = "LFACLKLCD = LFACLK/128"]
+    #[doc = "7: LFACLKLCD = LFACLK/128"]
     DIV128,
 }
-impl crate::ToBits<u8> for LCD_A {
+impl From<LCD_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LCD_A) -> Self {
+        match variant {
             LCD_A::DIV1 => 0,
             LCD_A::DIV2 => 1,
             LCD_A::DIV4 => 2,
@@ -742,9 +739,8 @@ impl<'a> LCD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LCD_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFACLKLCD = LFACLK"]
@@ -794,46 +790,46 @@ impl<'a> LCD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC`"]
+#[doc = "Real-Time Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_A {
-    #[doc = "LFACLKRTC = LFACLK"]
+    #[doc = "0: LFACLKRTC = LFACLK"]
     DIV1,
-    #[doc = "LFACLKRTC = LFACLK/2"]
+    #[doc = "1: LFACLKRTC = LFACLK/2"]
     DIV2,
-    #[doc = "LFACLKRTC = LFACLK/4"]
+    #[doc = "2: LFACLKRTC = LFACLK/4"]
     DIV4,
-    #[doc = "LFACLKRTC = LFACLK/8"]
+    #[doc = "3: LFACLKRTC = LFACLK/8"]
     DIV8,
-    #[doc = "LFACLKRTC = LFACLK/16"]
+    #[doc = "4: LFACLKRTC = LFACLK/16"]
     DIV16,
-    #[doc = "LFACLKRTC = LFACLK/32"]
+    #[doc = "5: LFACLKRTC = LFACLK/32"]
     DIV32,
-    #[doc = "LFACLKRTC = LFACLK/64"]
+    #[doc = "6: LFACLKRTC = LFACLK/64"]
     DIV64,
-    #[doc = "LFACLKRTC = LFACLK/128"]
+    #[doc = "7: LFACLKRTC = LFACLK/128"]
     DIV128,
-    #[doc = "LFACLKRTC = LFACLK/256"]
+    #[doc = "8: LFACLKRTC = LFACLK/256"]
     DIV256,
-    #[doc = "LFACLKRTC = LFACLK/512"]
+    #[doc = "9: LFACLKRTC = LFACLK/512"]
     DIV512,
-    #[doc = "LFACLKRTC = LFACLK/1024"]
+    #[doc = "10: LFACLKRTC = LFACLK/1024"]
     DIV1024,
-    #[doc = "LFACLKRTC = LFACLK/2048"]
+    #[doc = "11: LFACLKRTC = LFACLK/2048"]
     DIV2048,
-    #[doc = "LFACLKRTC = LFACLK/4096"]
+    #[doc = "12: LFACLKRTC = LFACLK/4096"]
     DIV4096,
-    #[doc = "LFACLKRTC = LFACLK/8192"]
+    #[doc = "13: LFACLKRTC = LFACLK/8192"]
     DIV8192,
-    #[doc = "LFACLKRTC = LFACLK/16384"]
+    #[doc = "14: LFACLKRTC = LFACLK/16384"]
     DIV16384,
-    #[doc = "LFACLKRTC = LFACLK/32768"]
+    #[doc = "15: LFACLKRTC = LFACLK/32768"]
     DIV32768,
 }
-impl crate::ToBits<u8> for RTC_A {
+impl From<RTC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RTC_A) -> Self {
+        match variant {
             RTC_A::DIV1 => 0,
             RTC_A::DIV2 => 1,
             RTC_A::DIV4 => 2,
@@ -968,9 +964,8 @@ impl<'a> RTC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LFACLKRTC = LFACLK"]

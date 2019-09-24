@@ -106,22 +106,22 @@ impl<'a> NOBUSYSTALL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INCWIDTH`"]
+#[doc = "Increment Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INCWIDTH_A {
-    #[doc = "Byte 15 in DATA1 is used for the increment function."]
+    #[doc = "0: Byte 15 in DATA1 is used for the increment function."]
     INCWIDTH1,
-    #[doc = "Bytes 14 and 15 in DATA1 are used for the increment function."]
+    #[doc = "1: Bytes 14 and 15 in DATA1 are used for the increment function."]
     INCWIDTH2,
-    #[doc = "Bytes 13 to 15 in DATA1 are used for the increment function."]
+    #[doc = "2: Bytes 13 to 15 in DATA1 are used for the increment function."]
     INCWIDTH3,
-    #[doc = "Bytes 12 to 15 in DATA1 are used for the increment function."]
+    #[doc = "3: Bytes 12 to 15 in DATA1 are used for the increment function."]
     INCWIDTH4,
 }
-impl crate::ToBits<u8> for INCWIDTH_A {
+impl From<INCWIDTH_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INCWIDTH_A) -> Self {
+        match variant {
             INCWIDTH_A::INCWIDTH1 => 0,
             INCWIDTH_A::INCWIDTH2 => 1,
             INCWIDTH_A::INCWIDTH3 => 2,
@@ -172,9 +172,8 @@ impl<'a> INCWIDTH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INCWIDTH_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Byte 15 in DATA1 is used for the increment function."]
@@ -204,22 +203,22 @@ impl<'a> INCWIDTH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA0MODE`"]
+#[doc = "DMA0 Read Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0MODE_A {
-    #[doc = "Target register is fully read/written during every DMA transaction"]
+    #[doc = "0: Target register is fully read/written during every DMA transaction"]
     FULL,
-    #[doc = "Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Zero padding is automatically added when writing."]
+    #[doc = "1: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Zero padding is automatically added when writing."]
     LENLIMIT,
-    #[doc = "Target register is fully read/written during every DMA transaction. Bytewise DMA."]
+    #[doc = "2: Target register is fully read/written during every DMA transaction. Bytewise DMA."]
     FULLBYTE,
-    #[doc = "Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
+    #[doc = "3: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
     LENLIMITBYTE,
 }
-impl crate::ToBits<u8> for DMA0MODE_A {
+impl From<DMA0MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMA0MODE_A) -> Self {
+        match variant {
             DMA0MODE_A::FULL => 0,
             DMA0MODE_A::LENLIMIT => 1,
             DMA0MODE_A::FULLBYTE => 2,
@@ -270,9 +269,8 @@ impl<'a> DMA0MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA0MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Target register is fully read/written during every DMA transaction"]
@@ -302,22 +300,22 @@ impl<'a> DMA0MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA0RSEL`"]
+#[doc = "DMA0 Read Register Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0RSEL_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     DATA0,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     DDATA0,
-    #[doc = "`10`"]
+    #[doc = "2: `10`"]
     DDATA0BIG,
-    #[doc = "`11`"]
+    #[doc = "3: `11`"]
     QDATA0,
 }
-impl crate::ToBits<u8> for DMA0RSEL_A {
+impl From<DMA0RSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMA0RSEL_A) -> Self {
+        match variant {
             DMA0RSEL_A::DATA0 => 0,
             DMA0RSEL_A::DDATA0 => 1,
             DMA0RSEL_A::DDATA0BIG => 2,
@@ -368,9 +366,8 @@ impl<'a> DMA0RSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA0RSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "`0`"]
@@ -400,22 +397,22 @@ impl<'a> DMA0RSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA1MODE`"]
+#[doc = "DMA1 Read Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1MODE_A {
-    #[doc = "Target register is fully read/written during every DMA transaction"]
+    #[doc = "0: Target register is fully read/written during every DMA transaction"]
     FULL,
-    #[doc = "Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Zero padding is automatically added when writing."]
+    #[doc = "1: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Zero padding is automatically added when writing."]
     LENLIMIT,
-    #[doc = "Target register is fully read/written during every DMA transaction. Bytewise DMA."]
+    #[doc = "2: Target register is fully read/written during every DMA transaction. Bytewise DMA."]
     FULLBYTE,
-    #[doc = "Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
+    #[doc = "3: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
     LENLIMITBYTE,
 }
-impl crate::ToBits<u8> for DMA1MODE_A {
+impl From<DMA1MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMA1MODE_A) -> Self {
+        match variant {
             DMA1MODE_A::FULL => 0,
             DMA1MODE_A::LENLIMIT => 1,
             DMA1MODE_A::FULLBYTE => 2,
@@ -466,9 +463,8 @@ impl<'a> DMA1MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA1MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Target register is fully read/written during every DMA transaction"]
@@ -498,22 +494,22 @@ impl<'a> DMA1MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA1RSEL`"]
+#[doc = "DATA0 DMA Unaligned Read Register Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1RSEL_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     DATA1,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     DDATA1,
-    #[doc = "`10`"]
+    #[doc = "2: `10`"]
     QDATA1,
-    #[doc = "`11`"]
+    #[doc = "3: `11`"]
     QDATA1BIG,
 }
-impl crate::ToBits<u8> for DMA1RSEL_A {
+impl From<DMA1RSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMA1RSEL_A) -> Self {
+        match variant {
             DMA1RSEL_A::DATA1 => 0,
             DMA1RSEL_A::DDATA1 => 1,
             DMA1RSEL_A::QDATA1 => 2,
@@ -564,9 +560,8 @@ impl<'a> DMA1RSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA1RSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "`0`"]

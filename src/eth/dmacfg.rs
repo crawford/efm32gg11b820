@@ -48,22 +48,22 @@ impl<'a> HDRDATASPLITEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPBUFSIZE`"]
+#[doc = "Receiver packet buffer memory size select.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPBUFSIZE_A {
-    #[doc = "Do not use top three address bits (0.5 Kb)"]
+    #[doc = "0: Do not use top three address bits (0.5 Kb)"]
     SIZE0,
-    #[doc = "Do not use top two address bits (1 Kb)"]
+    #[doc = "1: Do not use top two address bits (1 Kb)"]
     SIZE1,
-    #[doc = "Do not use top address bit (2 Kb)"]
+    #[doc = "2: Do not use top address bit (2 Kb)"]
     SIZE2,
-    #[doc = "Use full configured addressable space (4 Kb)"]
+    #[doc = "3: Use full configured addressable space (4 Kb)"]
     SIZE3,
 }
-impl crate::ToBits<u8> for RXPBUFSIZE_A {
+impl From<RXPBUFSIZE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RXPBUFSIZE_A) -> Self {
+        match variant {
             RXPBUFSIZE_A::SIZE0 => 0,
             RXPBUFSIZE_A::SIZE1 => 1,
             RXPBUFSIZE_A::SIZE2 => 2,
@@ -114,9 +114,8 @@ impl<'a> RXPBUFSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RXPBUFSIZE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Do not use top three address bits (0.5 Kb)"]

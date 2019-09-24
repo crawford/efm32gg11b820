@@ -10,30 +10,30 @@ impl crate::ResetValue for super::HFXOCTRL1 {
         0x2000
     }
 }
-#[doc = "Possible values of the field `PEAKDETTHR`"]
+#[doc = "Sets the Amplitude Detection Level (mV)\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEAKDETTHR_A {
-    #[doc = "50mV amplitude detection level"]
+    #[doc = "0: 50mV amplitude detection level"]
     THR0,
-    #[doc = "75mV amplitude detection level"]
+    #[doc = "1: 75mV amplitude detection level"]
     THR1,
-    #[doc = "115mV amplitude detection level"]
+    #[doc = "2: 115mV amplitude detection level"]
     THR2,
-    #[doc = "160mV amplitude detection level"]
+    #[doc = "3: 160mV amplitude detection level"]
     THR3,
-    #[doc = "220mV amplitude detection level"]
+    #[doc = "4: 220mV amplitude detection level"]
     THR4,
-    #[doc = "260mV amplitude detection level"]
+    #[doc = "5: 260mV amplitude detection level"]
     THR5,
-    #[doc = "320mV amplitude detection level"]
+    #[doc = "6: 320mV amplitude detection level"]
     THR6,
-    #[doc = "Same as THR6"]
+    #[doc = "7: Same as THR6"]
     THR7,
 }
-impl crate::ToBits<u8> for PEAKDETTHR_A {
+impl From<PEAKDETTHR_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PEAKDETTHR_A) -> Self {
+        match variant {
             PEAKDETTHR_A::THR0 => 0,
             PEAKDETTHR_A::THR1 => 1,
             PEAKDETTHR_A::THR2 => 2,
@@ -112,9 +112,8 @@ impl<'a> PEAKDETTHR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEAKDETTHR_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "50mV amplitude detection level"]

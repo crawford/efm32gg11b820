@@ -10,22 +10,22 @@ impl crate::ResetValue for super::LFECLKSEL {
         0
     }
 }
-#[doc = "Possible values of the field `LFE`"]
+#[doc = "Clock Select for LFE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFE_A {
-    #[doc = "LFECLK is disabled"]
+    #[doc = "0: LFECLK is disabled"]
     DISABLED,
-    #[doc = "LFRCO selected as LFECLK"]
+    #[doc = "1: LFRCO selected as LFECLK"]
     LFRCO,
-    #[doc = "LFXO selected as LFECLK"]
+    #[doc = "2: LFXO selected as LFECLK"]
     LFXO,
-    #[doc = "ULFRCO selected as LFECLK"]
+    #[doc = "4: ULFRCO selected as LFECLK"]
     ULFRCO,
 }
-impl crate::ToBits<u8> for LFE_A {
+impl From<LFE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: LFE_A) -> Self {
+        match variant {
             LFE_A::DISABLED => 0,
             LFE_A::LFRCO => 1,
             LFE_A::LFXO => 2,
@@ -77,8 +77,7 @@ impl<'a> LFE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LFECLK is disabled"]
     #[inline(always)]

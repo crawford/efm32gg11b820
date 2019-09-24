@@ -106,24 +106,24 @@ impl<'a> SHORT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALTOUTPADEN`"]
+#[doc = "OPAx Output Enable Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALTOUTPADEN_A {
-    #[doc = "Alternate Output 0"]
+    #[doc = "1: Alternate Output 0"]
     OUT0,
-    #[doc = "Alternate Output 1"]
+    #[doc = "2: Alternate Output 1"]
     OUT1,
-    #[doc = "Alternate Output 2"]
+    #[doc = "4: Alternate Output 2"]
     OUT2,
-    #[doc = "Alternate Output 3"]
+    #[doc = "8: Alternate Output 3"]
     OUT3,
-    #[doc = "Alternate Output 4"]
+    #[doc = "16: Alternate Output 4"]
     OUT4,
 }
-impl crate::ToBits<u8> for ALTOUTPADEN_A {
+impl From<ALTOUTPADEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ALTOUTPADEN_A) -> Self {
+        match variant {
             ALTOUTPADEN_A::OUT0 => 1,
             ALTOUTPADEN_A::OUT1 => 2,
             ALTOUTPADEN_A::OUT2 => 4,
@@ -182,8 +182,7 @@ impl<'a> ALTOUTPADEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ALTOUTPADEN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Alternate Output 0"]
     #[inline(always)]

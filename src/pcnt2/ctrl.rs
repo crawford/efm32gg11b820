@@ -10,28 +10,28 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "The module is disabled."]
+    #[doc = "0: The module is disabled."]
     DISABLE,
-    #[doc = "Single input LFACLK oversampling mode (available in EM0-EM3)."]
+    #[doc = "1: Single input LFACLK oversampling mode (available in EM0-EM3)."]
     OVSSINGLE,
-    #[doc = "Externally clocked single input counter mode (available in EM0-EM3)."]
+    #[doc = "2: Externally clocked single input counter mode (available in EM0-EM3)."]
     EXTCLKSINGLE,
-    #[doc = "Externally clocked quadrature decoder mode (available in EM0-EM3)."]
+    #[doc = "3: Externally clocked quadrature decoder mode (available in EM0-EM3)."]
     EXTCLKQUAD,
-    #[doc = "LFACLK oversampling quadrature decoder 1X mode (available in EM0-EM3)."]
+    #[doc = "4: LFACLK oversampling quadrature decoder 1X mode (available in EM0-EM3)."]
     OVSQUAD1X,
-    #[doc = "LFACLK oversampling quadrature decoder 2X mode (available in EM0-EM3)."]
+    #[doc = "5: LFACLK oversampling quadrature decoder 2X mode (available in EM0-EM3)."]
     OVSQUAD2X,
-    #[doc = "LFACLK oversampling quadrature decoder 4X mode (available in EM0-EM3)."]
+    #[doc = "6: LFACLK oversampling quadrature decoder 4X mode (available in EM0-EM3)."]
     OVSQUAD4X,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::DISABLE => 0,
             MODE_A::OVSSINGLE => 1,
             MODE_A::EXTCLKSINGLE => 2,
@@ -104,8 +104,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The module is disabled."]
     #[inline(always)]
@@ -317,22 +316,22 @@ impl<'a> S1CDIR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CNTEV`"]
+#[doc = "Controls When the Counter Counts\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTEV_A {
-    #[doc = "Counts up on up-count and down on down-count events."]
+    #[doc = "0: Counts up on up-count and down on down-count events."]
     BOTH,
-    #[doc = "Only counts up on up-count events."]
+    #[doc = "1: Only counts up on up-count events."]
     UP,
-    #[doc = "Only counts down on down-count events."]
+    #[doc = "2: Only counts down on down-count events."]
     DOWN,
-    #[doc = "Never counts."]
+    #[doc = "3: Never counts."]
     NONE,
 }
-impl crate::ToBits<u8> for CNTEV_A {
+impl From<CNTEV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CNTEV_A) -> Self {
+        match variant {
             CNTEV_A::BOTH => 0,
             CNTEV_A::UP => 1,
             CNTEV_A::DOWN => 2,
@@ -383,9 +382,8 @@ impl<'a> CNTEV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CNTEV_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Counts up on up-count and down on down-count events."]
@@ -415,22 +413,22 @@ impl<'a> CNTEV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUXCNTEV`"]
+#[doc = "Controls When the Auxiliary Counter Counts\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUXCNTEV_A {
-    #[doc = "Never counts."]
+    #[doc = "0: Never counts."]
     NONE,
-    #[doc = "Counts up on up-count events."]
+    #[doc = "1: Counts up on up-count events."]
     UP,
-    #[doc = "Counts up on down-count events."]
+    #[doc = "2: Counts up on down-count events."]
     DOWN,
-    #[doc = "Counts up on both up-count and down-count events."]
+    #[doc = "3: Counts up on both up-count and down-count events."]
     BOTH,
 }
-impl crate::ToBits<u8> for AUXCNTEV_A {
+impl From<AUXCNTEV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AUXCNTEV_A) -> Self {
+        match variant {
             AUXCNTEV_A::NONE => 0,
             AUXCNTEV_A::UP => 1,
             AUXCNTEV_A::DOWN => 2,
@@ -481,9 +479,8 @@ impl<'a> AUXCNTEV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AUXCNTEV_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Never counts."]
@@ -561,20 +558,20 @@ impl<'a> EDGE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCCMODE`"]
+#[doc = "Sets the Mode for Triggered Compare and Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCMODE_A {
-    #[doc = "Triggered compare and clear not enabled."]
+    #[doc = "0: Triggered compare and clear not enabled."]
     DISABLED,
-    #[doc = "Compare and clear performed on each (optionally prescaled) LFA clock cycle."]
+    #[doc = "1: Compare and clear performed on each (optionally prescaled) LFA clock cycle."]
     LFA,
-    #[doc = "Compare and clear performed on positive PRS edges."]
+    #[doc = "2: Compare and clear performed on positive PRS edges."]
     PRS,
 }
-impl crate::ToBits<u8> for TCCMODE_A {
+impl From<TCCMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TCCMODE_A) -> Self {
+        match variant {
             TCCMODE_A::DISABLED => 0,
             TCCMODE_A::LFA => 1,
             TCCMODE_A::PRS => 2,
@@ -619,8 +616,7 @@ impl<'a> TCCMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TCCMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Triggered compare and clear not enabled."]
     #[inline(always)]
@@ -644,22 +640,22 @@ impl<'a> TCCMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCCPRESC`"]
+#[doc = "Set the LFA Prescaler for Triggered Compare and Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCPRESC_A {
-    #[doc = "Compare and clear event each LFA cycle."]
+    #[doc = "0: Compare and clear event each LFA cycle."]
     DIV1,
-    #[doc = "Compare and clear performed on every other LFA cycle."]
+    #[doc = "1: Compare and clear performed on every other LFA cycle."]
     DIV2,
-    #[doc = "Compare and clear performed on every 4th LFA cycle."]
+    #[doc = "2: Compare and clear performed on every 4th LFA cycle."]
     DIV4,
-    #[doc = "Compare and clear performed on every 8th LFA cycle."]
+    #[doc = "3: Compare and clear performed on every 8th LFA cycle."]
     DIV8,
 }
-impl crate::ToBits<u8> for TCCPRESC_A {
+impl From<TCCPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TCCPRESC_A) -> Self {
+        match variant {
             TCCPRESC_A::DIV1 => 0,
             TCCPRESC_A::DIV2 => 1,
             TCCPRESC_A::DIV4 => 2,
@@ -710,9 +706,8 @@ impl<'a> TCCPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TCCPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Compare and clear event each LFA cycle."]
@@ -742,20 +737,20 @@ impl<'a> TCCPRESC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCCCOMP`"]
+#[doc = "Triggered Compare and Clear Compare Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCCOMP_A {
-    #[doc = "Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
+    #[doc = "0: Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
     LTOE,
-    #[doc = "Compare match if PCNT_CNT is greater than or equal to PCNT_TOP."]
+    #[doc = "1: Compare match if PCNT_CNT is greater than or equal to PCNT_TOP."]
     GTOE,
-    #[doc = "Compare match if PCNT_CNT is less than, or equal to PCNT_TOP\\[15:8\\]\\], and greater than, or equal to PCNT_TOP\\[7:0\\]."]
+    #[doc = "2: Compare match if PCNT_CNT is less than, or equal to PCNT_TOP\\[15:8\\]\\], and greater than, or equal to PCNT_TOP\\[7:0\\]."]
     RANGE,
 }
-impl crate::ToBits<u8> for TCCCOMP_A {
+impl From<TCCCOMP_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TCCCOMP_A) -> Self {
+        match variant {
             TCCCOMP_A::LTOE => 0,
             TCCCOMP_A::GTOE => 1,
             TCCCOMP_A::RANGE => 2,
@@ -800,8 +795,7 @@ impl<'a> TCCCOMP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TCCCOMP_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
     #[inline(always)]
@@ -873,62 +867,62 @@ impl<'a> TCCPRSPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCCPRSSEL`"]
+#[doc = "TCC PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCPRSSEL_A {
-    #[doc = "PRS Channel 0 selected."]
+    #[doc = "0: PRS Channel 0 selected."]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected."]
+    #[doc = "1: PRS Channel 1 selected."]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected."]
+    #[doc = "2: PRS Channel 2 selected."]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected."]
+    #[doc = "3: PRS Channel 3 selected."]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected."]
+    #[doc = "4: PRS Channel 4 selected."]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected."]
+    #[doc = "5: PRS Channel 5 selected."]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected."]
+    #[doc = "6: PRS Channel 6 selected."]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected."]
+    #[doc = "7: PRS Channel 7 selected."]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected."]
+    #[doc = "8: PRS Channel 8 selected."]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected."]
+    #[doc = "9: PRS Channel 9 selected."]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected."]
+    #[doc = "10: PRS Channel 10 selected."]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected."]
+    #[doc = "11: PRS Channel 11 selected."]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected."]
+    #[doc = "12: PRS Channel 12 selected."]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected."]
+    #[doc = "13: PRS Channel 13 selected."]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected."]
+    #[doc = "14: PRS Channel 14 selected."]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected."]
+    #[doc = "15: PRS Channel 15 selected."]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected."]
+    #[doc = "16: PRS Channel 16 selected."]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected."]
+    #[doc = "17: PRS Channel 17 selected."]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected."]
+    #[doc = "18: PRS Channel 18 selected."]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected."]
+    #[doc = "19: PRS Channel 19 selected."]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected."]
+    #[doc = "20: PRS Channel 20 selected."]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected."]
+    #[doc = "21: PRS Channel 21 selected."]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected."]
+    #[doc = "22: PRS Channel 22 selected."]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected."]
+    #[doc = "23: PRS Channel 23 selected."]
     PRSCH23,
 }
-impl crate::ToBits<u8> for TCCPRSSEL_A {
+impl From<TCCPRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TCCPRSSEL_A) -> Self {
+        match variant {
             TCCPRSSEL_A::PRSCH0 => 0,
             TCCPRSSEL_A::PRSCH1 => 1,
             TCCPRSSEL_A::PRSCH2 => 2,
@@ -1120,8 +1114,7 @@ impl<'a> TCCPRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TCCPRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]

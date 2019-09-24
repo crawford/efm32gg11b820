@@ -34,26 +34,26 @@ impl<'a> CONVMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRIGMODE`"]
+#[doc = "Channel 0 Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGMODE_A {
-    #[doc = "Channel 0 is triggered by CH0DATA or COMBDATA write"]
+    #[doc = "0: Channel 0 is triggered by CH0DATA or COMBDATA write"]
     SW,
-    #[doc = "Channel 0 is triggered by PRS input"]
+    #[doc = "1: Channel 0 is triggered by PRS input"]
     PRS,
-    #[doc = "Channel 0 is triggered by Refresh timer"]
+    #[doc = "2: Channel 0 is triggered by Refresh timer"]
     REFRESH,
-    #[doc = "Channel 0 is triggered by CH0DATA/COMBDATA write or PRS input"]
+    #[doc = "3: Channel 0 is triggered by CH0DATA/COMBDATA write or PRS input"]
     SWPRS,
-    #[doc = "Channel 0 is triggered by CH0DATA/COMBDATA write or Refresh timer"]
+    #[doc = "4: Channel 0 is triggered by CH0DATA/COMBDATA write or Refresh timer"]
     SWREFRESH,
-    #[doc = "Channel 0 is triggered by LESENSE"]
+    #[doc = "5: Channel 0 is triggered by LESENSE"]
     LESENSE,
 }
-impl crate::ToBits<u8> for TRIGMODE_A {
+impl From<TRIGMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TRIGMODE_A) -> Self {
+        match variant {
             TRIGMODE_A::SW => 0,
             TRIGMODE_A::PRS => 1,
             TRIGMODE_A::REFRESH => 2,
@@ -119,8 +119,7 @@ impl<'a> TRIGMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TRIGMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Channel 0 is triggered by CH0DATA or COMBDATA write"]
     #[inline(always)]
@@ -183,62 +182,62 @@ impl<'a> PRSASYNC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "Channel 0 PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS ch 0 triggers a conversion."]
+    #[doc = "0: PRS ch 0 triggers a conversion."]
     PRSCH0,
-    #[doc = "PRS ch 1 triggers a conversion."]
+    #[doc = "1: PRS ch 1 triggers a conversion."]
     PRSCH1,
-    #[doc = "PRS ch 2 triggers a conversion."]
+    #[doc = "2: PRS ch 2 triggers a conversion."]
     PRSCH2,
-    #[doc = "PRS ch 3 triggers a conversion."]
+    #[doc = "3: PRS ch 3 triggers a conversion."]
     PRSCH3,
-    #[doc = "PRS ch 4 triggers a conversion."]
+    #[doc = "4: PRS ch 4 triggers a conversion."]
     PRSCH4,
-    #[doc = "PRS ch 5 triggers a conversion."]
+    #[doc = "5: PRS ch 5 triggers a conversion."]
     PRSCH5,
-    #[doc = "PRS ch 6 triggers a conversion."]
+    #[doc = "6: PRS ch 6 triggers a conversion."]
     PRSCH6,
-    #[doc = "PRS ch 7 triggers a conversion."]
+    #[doc = "7: PRS ch 7 triggers a conversion."]
     PRSCH7,
-    #[doc = "PRS ch 8 triggers a conversion."]
+    #[doc = "8: PRS ch 8 triggers a conversion."]
     PRSCH8,
-    #[doc = "PRS ch 9 triggers a conversion."]
+    #[doc = "9: PRS ch 9 triggers a conversion."]
     PRSCH9,
-    #[doc = "PRS ch 10 triggers a conversion."]
+    #[doc = "10: PRS ch 10 triggers a conversion."]
     PRSCH10,
-    #[doc = "PRS ch 11 triggers a conversion."]
+    #[doc = "11: PRS ch 11 triggers a conversion."]
     PRSCH11,
-    #[doc = "PRS ch 12 triggers a conversion."]
+    #[doc = "12: PRS ch 12 triggers a conversion."]
     PRSCH12,
-    #[doc = "PRS ch 13 triggers a conversion."]
+    #[doc = "13: PRS ch 13 triggers a conversion."]
     PRSCH13,
-    #[doc = "PRS ch 14 triggers a conversion."]
+    #[doc = "14: PRS ch 14 triggers a conversion."]
     PRSCH14,
-    #[doc = "PRS ch 15 triggers a conversion."]
+    #[doc = "15: PRS ch 15 triggers a conversion."]
     PRSCH15,
-    #[doc = "PRS ch 16 triggers a conversion."]
+    #[doc = "16: PRS ch 16 triggers a conversion."]
     PRSCH16,
-    #[doc = "PRS ch 17 triggers a conversion."]
+    #[doc = "17: PRS ch 17 triggers a conversion."]
     PRSCH17,
-    #[doc = "PRS ch 18 triggers a conversion."]
+    #[doc = "18: PRS ch 18 triggers a conversion."]
     PRSCH18,
-    #[doc = "PRS ch 19 triggers a conversion."]
+    #[doc = "19: PRS ch 19 triggers a conversion."]
     PRSCH19,
-    #[doc = "PRS ch 20 triggers a conversion."]
+    #[doc = "20: PRS ch 20 triggers a conversion."]
     PRSCH20,
-    #[doc = "PRS ch 21 triggers a conversion."]
+    #[doc = "21: PRS ch 21 triggers a conversion."]
     PRSCH21,
-    #[doc = "PRS ch 22 triggers a conversion."]
+    #[doc = "22: PRS ch 22 triggers a conversion."]
     PRSCH22,
-    #[doc = "PRS ch 23 triggers a conversion."]
+    #[doc = "23: PRS ch 23 triggers a conversion."]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -430,8 +429,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS ch 0 triggers a conversion."]
     #[inline(always)]

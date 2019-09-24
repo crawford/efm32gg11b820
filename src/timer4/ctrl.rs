@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Timer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "Up-count mode"]
+    #[doc = "0: Up-count mode"]
     UP,
-    #[doc = "Down-count mode"]
+    #[doc = "1: Down-count mode"]
     DOWN,
-    #[doc = "Up/down-count mode"]
+    #[doc = "2: Up/down-count mode"]
     UPDOWN,
-    #[doc = "Quadrature decoder mode"]
+    #[doc = "3: Quadrature decoder mode"]
     QDEC,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::UP => 0,
             MODE_A::DOWN => 1,
             MODE_A::UPDOWN => 2,
@@ -76,9 +76,8 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Up-count mode"]
@@ -228,22 +227,22 @@ impl<'a> DMACLRACT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RISEA`"]
+#[doc = "Timer Rising Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RISEA_A {
-    #[doc = "No action"]
+    #[doc = "0: No action"]
     NONE,
-    #[doc = "Start counter without reload"]
+    #[doc = "1: Start counter without reload"]
     START,
-    #[doc = "Stop counter without reload"]
+    #[doc = "2: Stop counter without reload"]
     STOP,
-    #[doc = "Reload and start counter"]
+    #[doc = "3: Reload and start counter"]
     RELOADSTART,
 }
-impl crate::ToBits<u8> for RISEA_A {
+impl From<RISEA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RISEA_A) -> Self {
+        match variant {
             RISEA_A::NONE => 0,
             RISEA_A::START => 1,
             RISEA_A::STOP => 2,
@@ -294,9 +293,8 @@ impl<'a> RISEA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RISEA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action"]
@@ -326,22 +324,22 @@ impl<'a> RISEA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FALLA`"]
+#[doc = "Timer Falling Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FALLA_A {
-    #[doc = "No action"]
+    #[doc = "0: No action"]
     NONE,
-    #[doc = "Start counter without reload"]
+    #[doc = "1: Start counter without reload"]
     START,
-    #[doc = "Stop counter without reload"]
+    #[doc = "2: Stop counter without reload"]
     STOP,
-    #[doc = "Reload and start counter"]
+    #[doc = "3: Reload and start counter"]
     RELOADSTART,
 }
-impl crate::ToBits<u8> for FALLA_A {
+impl From<FALLA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: FALLA_A) -> Self {
+        match variant {
             FALLA_A::NONE => 0,
             FALLA_A::START => 1,
             FALLA_A::STOP => 2,
@@ -392,9 +390,8 @@ impl<'a> FALLA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FALLA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action"]
@@ -472,20 +469,20 @@ impl<'a> DISSYNCOUT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKSEL`"]
+#[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSEL_A {
-    #[doc = "Prescaled HFPERCLK"]
+    #[doc = "0: Prescaled HFPERCLK"]
     PRESCHFPERCLK,
-    #[doc = "Compare/Capture Channel 1 Input"]
+    #[doc = "1: Compare/Capture Channel 1 Input"]
     CC1,
-    #[doc = "Timer is clocked by underflow(down-count) or overflow(up-count) in the lower numbered neighbor Timer"]
+    #[doc = "2: Timer is clocked by underflow(down-count) or overflow(up-count) in the lower numbered neighbor Timer"]
     TIMEROUF,
 }
-impl crate::ToBits<u8> for CLKSEL_A {
+impl From<CLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKSEL_A) -> Self {
+        match variant {
             CLKSEL_A::PRESCHFPERCLK => 0,
             CLKSEL_A::CC1 => 1,
             CLKSEL_A::TIMEROUF => 2,
@@ -530,8 +527,7 @@ impl<'a> CLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Prescaled HFPERCLK"]
     #[inline(always)]
@@ -555,36 +551,36 @@ impl<'a> CLKSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRESC`"]
+#[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESC_A {
-    #[doc = "The HFPERCLK is undivided"]
+    #[doc = "0: The HFPERCLK is undivided"]
     DIV1,
-    #[doc = "The HFPERCLK is divided by 2"]
+    #[doc = "1: The HFPERCLK is divided by 2"]
     DIV2,
-    #[doc = "The HFPERCLK is divided by 4"]
+    #[doc = "2: The HFPERCLK is divided by 4"]
     DIV4,
-    #[doc = "The HFPERCLK is divided by 8"]
+    #[doc = "3: The HFPERCLK is divided by 8"]
     DIV8,
-    #[doc = "The HFPERCLK is divided by 16"]
+    #[doc = "4: The HFPERCLK is divided by 16"]
     DIV16,
-    #[doc = "The HFPERCLK is divided by 32"]
+    #[doc = "5: The HFPERCLK is divided by 32"]
     DIV32,
-    #[doc = "The HFPERCLK is divided by 64"]
+    #[doc = "6: The HFPERCLK is divided by 64"]
     DIV64,
-    #[doc = "The HFPERCLK is divided by 128"]
+    #[doc = "7: The HFPERCLK is divided by 128"]
     DIV128,
-    #[doc = "The HFPERCLK is divided by 256"]
+    #[doc = "8: The HFPERCLK is divided by 256"]
     DIV256,
-    #[doc = "The HFPERCLK is divided by 512"]
+    #[doc = "9: The HFPERCLK is divided by 512"]
     DIV512,
-    #[doc = "The HFPERCLK is divided by 1024"]
+    #[doc = "10: The HFPERCLK is divided by 1024"]
     DIV1024,
 }
-impl crate::ToBits<u8> for PRESC_A {
+impl From<PRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRESC_A) -> Self {
+        match variant {
             PRESC_A::DIV1 => 0,
             PRESC_A::DIV2 => 1,
             PRESC_A::DIV4 => 2,
@@ -685,8 +681,7 @@ impl<'a> PRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]

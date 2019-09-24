@@ -202,20 +202,20 @@ impl<'a> TXBIL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLHR`"]
+#[doc = "Clock Low High Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLHR_A {
-    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
+    #[doc = "0: The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     STANDARD,
-    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 6:3"]
+    #[doc = "1: The ratio between low period and high period counters (Nlow:Nhigh) is 6:3"]
     ASYMMETRIC,
-    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 11:6"]
+    #[doc = "2: The ratio between low period and high period counters (Nlow:Nhigh) is 11:6"]
     FAST,
 }
-impl crate::ToBits<u8> for CLHR_A {
+impl From<CLHR_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLHR_A) -> Self {
+        match variant {
             CLHR_A::STANDARD => 0,
             CLHR_A::ASYMMETRIC => 1,
             CLHR_A::FAST => 2,
@@ -260,8 +260,7 @@ impl<'a> CLHR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLHR_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     #[inline(always)]
@@ -285,22 +284,22 @@ impl<'a> CLHR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BITO`"]
+#[doc = "Bus Idle Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BITO_A {
-    #[doc = "Timeout disabled"]
+    #[doc = "0: Timeout disabled"]
     OFF,
-    #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
+    #[doc = "1: Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     _40PCC,
-    #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
+    #[doc = "2: Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     _80PCC,
-    #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
+    #[doc = "3: Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     _160PCC,
 }
-impl crate::ToBits<u8> for BITO_A {
+impl From<BITO_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BITO_A) -> Self {
+        match variant {
             BITO_A::OFF => 0,
             BITO_A::_40PCC => 1,
             BITO_A::_80PCC => 2,
@@ -351,9 +350,8 @@ impl<'a> BITO_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BITO_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Timeout disabled"]
@@ -407,26 +405,26 @@ impl<'a> GIBITO_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLTO`"]
+#[doc = "Clock Low Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLTO_A {
-    #[doc = "Timeout disabled"]
+    #[doc = "0: Timeout disabled"]
     OFF,
-    #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
+    #[doc = "1: Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     _40PCC,
-    #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
+    #[doc = "2: Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     _80PCC,
-    #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
+    #[doc = "3: Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     _160PCC,
-    #[doc = "Timeout after 320 prescaled clock cycles. In standard mode at 100 kHz, this results in a 400us timeout."]
+    #[doc = "4: Timeout after 320 prescaled clock cycles. In standard mode at 100 kHz, this results in a 400us timeout."]
     _320PCC,
-    #[doc = "Timeout after 1024 prescaled clock cycles. In standard mode at 100 kHz, this results in a 1280us timeout."]
+    #[doc = "5: Timeout after 1024 prescaled clock cycles. In standard mode at 100 kHz, this results in a 1280us timeout."]
     _1024PCC,
 }
-impl crate::ToBits<u8> for CLTO_A {
+impl From<CLTO_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLTO_A) -> Self {
+        match variant {
             CLTO_A::OFF => 0,
             CLTO_A::_40PCC => 1,
             CLTO_A::_80PCC => 2,
@@ -492,8 +490,7 @@ impl<'a> CLTO_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLTO_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Timeout disabled"]
     #[inline(always)]

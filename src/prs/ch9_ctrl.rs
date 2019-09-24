@@ -24,108 +24,108 @@ impl<'a> SIGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SOURCESEL`"]
+#[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOURCESEL_A {
-    #[doc = "No source selected"]
+    #[doc = "0: No source selected"]
     NONE,
-    #[doc = "Peripheral Reflex System"]
+    #[doc = "1: Peripheral Reflex System"]
     PRSL,
-    #[doc = "Peripheral Reflex System"]
+    #[doc = "2: Peripheral Reflex System"]
     PRS,
-    #[doc = "Peripheral Reflex System"]
+    #[doc = "3: Peripheral Reflex System"]
     PRSH,
-    #[doc = "Analog Comparator 0"]
+    #[doc = "4: Analog Comparator 0"]
     ACMP0,
-    #[doc = "Analog Comparator 1"]
+    #[doc = "5: Analog Comparator 1"]
     ACMP1,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "6: Analog to Digital Converter 0"]
     ADC0,
-    #[doc = "Real-Time Counter"]
+    #[doc = "7: Real-Time Counter"]
     RTC,
-    #[doc = "Real-Time Counter and Calendar"]
+    #[doc = "8: Real-Time Counter and Calendar"]
     RTCC,
-    #[doc = "General purpose Input/Output"]
+    #[doc = "9: General purpose Input/Output"]
     GPIOL,
-    #[doc = "General purpose Input/Output"]
+    #[doc = "10: General purpose Input/Output"]
     GPIOH,
-    #[doc = "Low Energy Timer 0"]
+    #[doc = "11: Low Energy Timer 0"]
     LETIMER0,
-    #[doc = "Low Energy Timer 1"]
+    #[doc = "12: Low Energy Timer 1"]
     LETIMER1,
-    #[doc = "Pulse Counter 0"]
+    #[doc = "13: Pulse Counter 0"]
     PCNT0,
-    #[doc = "Pulse Counter 1"]
+    #[doc = "14: Pulse Counter 1"]
     PCNT1,
-    #[doc = "Pulse Counter 2"]
+    #[doc = "15: Pulse Counter 2"]
     PCNT2,
-    #[doc = "CryoTimer"]
+    #[doc = "16: CryoTimer"]
     CRYOTIMER,
-    #[doc = "Clock Management Unit"]
+    #[doc = "17: Clock Management Unit"]
     CMU,
-    #[doc = "Digital to Analog Converter 0"]
+    #[doc = "23: Digital to Analog Converter 0"]
     VDAC0,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "24: Low Energy Sensor Interface"]
     LESENSEL,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "25: Low Energy Sensor Interface"]
     LESENSEH,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "26: Low Energy Sensor Interface"]
     LESENSED,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "27: Low Energy Sensor Interface"]
     LESENSE,
-    #[doc = "Analog Comparator 1"]
+    #[doc = "28: Analog Comparator 1"]
     ACMP2,
-    #[doc = "Analog Comparator 3"]
+    #[doc = "29: Analog Comparator 3"]
     ACMP3,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "30: Analog to Digital Converter 0"]
     ADC1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
+    #[doc = "48: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
     USART0,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
+    #[doc = "49: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
     USART1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
+    #[doc = "50: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
     USART2,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
+    #[doc = "51: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
     USART3,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
+    #[doc = "52: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
     USART4,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
+    #[doc = "53: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
     USART5,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
+    #[doc = "54: Universal Asynchronous Receiver/Transmitter 0"]
     UART0,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
+    #[doc = "55: Universal Asynchronous Receiver/Transmitter 1"]
     UART1,
-    #[doc = "Timer 0"]
+    #[doc = "60: Timer 0"]
     TIMER0,
-    #[doc = "Timer 1"]
+    #[doc = "61: Timer 1"]
     TIMER1,
-    #[doc = "Timer 2"]
+    #[doc = "62: Timer 2"]
     TIMER2,
-    #[doc = "Universal Serial Bus Interface"]
+    #[doc = "64: Universal Serial Bus Interface"]
     USB,
-    #[doc = "`1000011`"]
+    #[doc = "67: `1000011`"]
     CM4,
-    #[doc = "Timer 3"]
+    #[doc = "80: Timer 3"]
     TIMER3,
-    #[doc = "Wide Timer 0"]
+    #[doc = "82: Wide Timer 0"]
     WTIMER0,
-    #[doc = "Wide Timer 0"]
+    #[doc = "83: Wide Timer 0"]
     WTIMER1,
-    #[doc = "Wide Timer 2"]
+    #[doc = "84: Wide Timer 2"]
     WTIMER2,
-    #[doc = "Wide Timer 3"]
+    #[doc = "85: Wide Timer 3"]
     WTIMER3,
-    #[doc = "Timer 4"]
+    #[doc = "98: Timer 4"]
     TIMER4,
-    #[doc = "Timer 5"]
+    #[doc = "99: Timer 5"]
     TIMER5,
-    #[doc = "Timer 6"]
+    #[doc = "100: Timer 6"]
     TIMER6,
 }
-impl crate::ToBits<u8> for SOURCESEL_A {
+impl From<SOURCESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SOURCESEL_A) -> Self {
+        match variant {
             SOURCESEL_A::NONE => 0,
             SOURCESEL_A::PRSL => 1,
             SOURCESEL_A::PRS => 2,
@@ -478,8 +478,7 @@ impl<'a> SOURCESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No source selected"]
     #[inline(always)]
@@ -723,22 +722,22 @@ impl<'a> SOURCESEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EDSEL`"]
+#[doc = "Edge Detect Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDSEL_A {
-    #[doc = "Signal is left as it is"]
+    #[doc = "0: Signal is left as it is"]
     OFF,
-    #[doc = "A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
+    #[doc = "1: A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
     POSEDGE,
-    #[doc = "A one HFCLK clock cycle pulse is generated for every negative edge of the incoming signal"]
+    #[doc = "2: A one HFCLK clock cycle pulse is generated for every negative edge of the incoming signal"]
     NEGEDGE,
-    #[doc = "A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
+    #[doc = "3: A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
     BOTHEDGES,
 }
-impl crate::ToBits<u8> for EDSEL_A {
+impl From<EDSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EDSEL_A) -> Self {
+        match variant {
             EDSEL_A::OFF => 0,
             EDSEL_A::POSEDGE => 1,
             EDSEL_A::NEGEDGE => 2,
@@ -789,9 +788,8 @@ impl<'a> EDSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EDSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Signal is left as it is"]

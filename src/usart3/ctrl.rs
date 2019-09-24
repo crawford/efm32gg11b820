@@ -130,22 +130,22 @@ impl<'a> MPAB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OVS`"]
+#[doc = "Oversampling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVS_A {
-    #[doc = "Regular UART mode with 16X oversampling in asynchronous mode"]
+    #[doc = "0: Regular UART mode with 16X oversampling in asynchronous mode"]
     X16,
-    #[doc = "Double speed with 8X oversampling in asynchronous mode"]
+    #[doc = "1: Double speed with 8X oversampling in asynchronous mode"]
     X8,
-    #[doc = "6X oversampling in asynchronous mode"]
+    #[doc = "2: 6X oversampling in asynchronous mode"]
     X6,
-    #[doc = "Quadruple speed with 4X oversampling in asynchronous mode"]
+    #[doc = "3: Quadruple speed with 4X oversampling in asynchronous mode"]
     X4,
 }
-impl crate::ToBits<u8> for OVS_A {
+impl From<OVS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: OVS_A) -> Self {
+        match variant {
             OVS_A::X16 => 0,
             OVS_A::X8 => 1,
             OVS_A::X6 => 2,
@@ -196,9 +196,8 @@ impl<'a> OVS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OVS_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Regular UART mode with 16X oversampling in asynchronous mode"]

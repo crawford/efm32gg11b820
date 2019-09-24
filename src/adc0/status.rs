@@ -10,18 +10,18 @@ pub type SCANPENDING_R = crate::R<bool, bool>;
 pub type SINGLEREFWARM_R = crate::R<bool, bool>;
 #[doc = "Reader of field `SCANREFWARM`"]
 pub type SCANREFWARM_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `PROGERR`"]
+#[doc = "Programming Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROGERR_A {
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     BUSCONF,
-    #[doc = "`10`"]
+    #[doc = "2: `10`"]
     NEGSELCONF,
 }
-impl crate::ToBits<u8> for PROGERR_A {
+impl From<PROGERR_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PROGERR_A) -> Self {
+        match variant {
             PROGERR_A::BUSCONF => 1,
             PROGERR_A::NEGSELCONF => 2,
         }

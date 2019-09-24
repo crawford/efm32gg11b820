@@ -10,142 +10,142 @@ impl crate::ResetValue for super::SINGLECTRL {
         0
     }
 }
-#[doc = "Possible values of the field `SINGLESEL`"]
+#[doc = "Single Channel Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SINGLESEL_A {
-    #[doc = "`100000`"]
+    #[doc = "32: `100000`"]
     APORT1XCH0,
-    #[doc = "`100001`"]
+    #[doc = "33: `100001`"]
     APORT1YCH1,
-    #[doc = "`100010`"]
+    #[doc = "34: `100010`"]
     APORT1XCH2,
-    #[doc = "`100011`"]
+    #[doc = "35: `100011`"]
     APORT1YCH3,
-    #[doc = "`100100`"]
+    #[doc = "36: `100100`"]
     APORT1XCH4,
-    #[doc = "`100101`"]
+    #[doc = "37: `100101`"]
     APORT1YCH5,
-    #[doc = "`100110`"]
+    #[doc = "38: `100110`"]
     APORT1XCH6,
-    #[doc = "`100111`"]
+    #[doc = "39: `100111`"]
     APORT1YCH7,
-    #[doc = "`101000`"]
+    #[doc = "40: `101000`"]
     APORT1XCH8,
-    #[doc = "`101001`"]
+    #[doc = "41: `101001`"]
     APORT1YCH9,
-    #[doc = "`101010`"]
+    #[doc = "42: `101010`"]
     APORT1XCH10,
-    #[doc = "`101011`"]
+    #[doc = "43: `101011`"]
     APORT1YCH11,
-    #[doc = "`101100`"]
+    #[doc = "44: `101100`"]
     APORT1XCH12,
-    #[doc = "`101101`"]
+    #[doc = "45: `101101`"]
     APORT1YCH13,
-    #[doc = "`101110`"]
+    #[doc = "46: `101110`"]
     APORT1XCH14,
-    #[doc = "`101111`"]
+    #[doc = "47: `101111`"]
     APORT1YCH15,
-    #[doc = "`110000`"]
+    #[doc = "48: `110000`"]
     APORT1XCH16,
-    #[doc = "`110001`"]
+    #[doc = "49: `110001`"]
     APORT1YCH17,
-    #[doc = "`110010`"]
+    #[doc = "50: `110010`"]
     APORT1XCH18,
-    #[doc = "`110011`"]
+    #[doc = "51: `110011`"]
     APORT1YCH19,
-    #[doc = "`110100`"]
+    #[doc = "52: `110100`"]
     APORT1XCH20,
-    #[doc = "`110101`"]
+    #[doc = "53: `110101`"]
     APORT1YCH21,
-    #[doc = "`110110`"]
+    #[doc = "54: `110110`"]
     APORT1XCH22,
-    #[doc = "`110111`"]
+    #[doc = "55: `110111`"]
     APORT1YCH23,
-    #[doc = "`111000`"]
+    #[doc = "56: `111000`"]
     APORT1XCH24,
-    #[doc = "`111001`"]
+    #[doc = "57: `111001`"]
     APORT1YCH25,
-    #[doc = "`111010`"]
+    #[doc = "58: `111010`"]
     APORT1XCH26,
-    #[doc = "`111011`"]
+    #[doc = "59: `111011`"]
     APORT1YCH27,
-    #[doc = "`111100`"]
+    #[doc = "60: `111100`"]
     APORT1XCH28,
-    #[doc = "`111101`"]
+    #[doc = "61: `111101`"]
     APORT1YCH29,
-    #[doc = "`111110`"]
+    #[doc = "62: `111110`"]
     APORT1XCH30,
-    #[doc = "`111111`"]
+    #[doc = "63: `111111`"]
     APORT1YCH31,
-    #[doc = "`1100000`"]
+    #[doc = "96: `1100000`"]
     APORT3XCH0,
-    #[doc = "`1100001`"]
+    #[doc = "97: `1100001`"]
     APORT3YCH1,
-    #[doc = "`1100010`"]
+    #[doc = "98: `1100010`"]
     APORT3XCH2,
-    #[doc = "`1100011`"]
+    #[doc = "99: `1100011`"]
     APORT3YCH3,
-    #[doc = "`1100100`"]
+    #[doc = "100: `1100100`"]
     APORT3XCH4,
-    #[doc = "`1100101`"]
+    #[doc = "101: `1100101`"]
     APORT3YCH5,
-    #[doc = "`1100110`"]
+    #[doc = "102: `1100110`"]
     APORT3XCH6,
-    #[doc = "`1100111`"]
+    #[doc = "103: `1100111`"]
     APORT3YCH7,
-    #[doc = "`1101000`"]
+    #[doc = "104: `1101000`"]
     APORT3XCH8,
-    #[doc = "`1101001`"]
+    #[doc = "105: `1101001`"]
     APORT3YCH9,
-    #[doc = "`1101010`"]
+    #[doc = "106: `1101010`"]
     APORT3XCH10,
-    #[doc = "`1101011`"]
+    #[doc = "107: `1101011`"]
     APORT3YCH11,
-    #[doc = "`1101100`"]
+    #[doc = "108: `1101100`"]
     APORT3XCH12,
-    #[doc = "`1101101`"]
+    #[doc = "109: `1101101`"]
     APORT3YCH13,
-    #[doc = "`1101110`"]
+    #[doc = "110: `1101110`"]
     APORT3XCH14,
-    #[doc = "`1101111`"]
+    #[doc = "111: `1101111`"]
     APORT3YCH15,
-    #[doc = "`1110000`"]
+    #[doc = "112: `1110000`"]
     APORT3XCH16,
-    #[doc = "`1110001`"]
+    #[doc = "113: `1110001`"]
     APORT3YCH17,
-    #[doc = "`1110010`"]
+    #[doc = "114: `1110010`"]
     APORT3XCH18,
-    #[doc = "`1110011`"]
+    #[doc = "115: `1110011`"]
     APORT3YCH19,
-    #[doc = "`1110100`"]
+    #[doc = "116: `1110100`"]
     APORT3XCH20,
-    #[doc = "`1110101`"]
+    #[doc = "117: `1110101`"]
     APORT3YCH21,
-    #[doc = "`1110110`"]
+    #[doc = "118: `1110110`"]
     APORT3XCH22,
-    #[doc = "`1110111`"]
+    #[doc = "119: `1110111`"]
     APORT3YCH23,
-    #[doc = "`1111000`"]
+    #[doc = "120: `1111000`"]
     APORT3XCH24,
-    #[doc = "`1111001`"]
+    #[doc = "121: `1111001`"]
     APORT3YCH25,
-    #[doc = "`1111010`"]
+    #[doc = "122: `1111010`"]
     APORT3XCH26,
-    #[doc = "`1111011`"]
+    #[doc = "123: `1111011`"]
     APORT3YCH27,
-    #[doc = "`1111100`"]
+    #[doc = "124: `1111100`"]
     APORT3XCH28,
-    #[doc = "`1111101`"]
+    #[doc = "125: `1111101`"]
     APORT3YCH29,
-    #[doc = "`1111110`"]
+    #[doc = "126: `1111110`"]
     APORT3XCH30,
-    #[doc = "`1111111`"]
+    #[doc = "127: `1111111`"]
     APORT3YCH31,
 }
-impl crate::ToBits<u8> for SINGLESEL_A {
+impl From<SINGLESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SINGLESEL_A) -> Self {
+        match variant {
             SINGLESEL_A::APORT1XCH0 => 32,
             SINGLESEL_A::APORT1YCH1 => 33,
             SINGLESEL_A::APORT1XCH2 => 34,
@@ -617,8 +617,7 @@ impl<'a> SINGLESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SINGLESEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`100000`"]
     #[inline(always)]

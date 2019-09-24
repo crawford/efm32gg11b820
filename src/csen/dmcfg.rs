@@ -52,22 +52,22 @@ impl<'a> DMCR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CRMODE`"]
+#[doc = "Delta Modulator Conversion Resolution.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRMODE_A {
-    #[doc = "10-bit delta modulator"]
+    #[doc = "0: 10-bit delta modulator"]
     DM10,
-    #[doc = "12-bit delta modulator"]
+    #[doc = "1: 12-bit delta modulator"]
     DM12,
-    #[doc = "14-bit delta modulator"]
+    #[doc = "2: 14-bit delta modulator"]
     DM14,
-    #[doc = "16-bit delta modulator"]
+    #[doc = "3: 16-bit delta modulator"]
     DM16,
 }
-impl crate::ToBits<u8> for CRMODE_A {
+impl From<CRMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CRMODE_A) -> Self {
+        match variant {
             CRMODE_A::DM10 => 0,
             CRMODE_A::DM12 => 1,
             CRMODE_A::DM14 => 2,
@@ -118,9 +118,8 @@ impl<'a> CRMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CRMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "10-bit delta modulator"]

@@ -10,16 +10,16 @@ impl crate::ResetValue for super::BLKSIZE {
         0
     }
 }
-#[doc = "Possible values of the field `TFRBLKSIZE`"]
+#[doc = "Transfer Block Size, Specifies the Block Size for Block Data Transfers for CMD17, CMD18, CMD24, CMD25, and CMD53\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TFRBLKSIZE_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NOXFER,
 }
-impl crate::ToBits<u16> for TFRBLKSIZE_A {
+impl From<TFRBLKSIZE_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: TFRBLKSIZE_A) -> Self {
+        match variant {
             TFRBLKSIZE_A::NOXFER => 0,
         }
     }
@@ -50,8 +50,7 @@ impl<'a> TFRBLKSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TFRBLKSIZE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -65,30 +64,30 @@ impl<'a> TFRBLKSIZE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HSTSDMABUFSIZE`"]
+#[doc = "Host SDMA Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSTSDMABUFSIZE_A {
-    #[doc = "4KB(Detects A11 Carry out)"]
+    #[doc = "0: 4KB(Detects A11 Carry out)"]
     SIZE4,
-    #[doc = "8KB(Detects A12 Carry out)"]
+    #[doc = "1: 8KB(Detects A12 Carry out)"]
     SIZE8,
-    #[doc = "16KB(Detects A13 Carry out)"]
+    #[doc = "2: 16KB(Detects A13 Carry out)"]
     SIZE16,
-    #[doc = "32KB(Detects A14 Carry out)"]
+    #[doc = "3: 32KB(Detects A14 Carry out)"]
     SIZE32,
-    #[doc = "64KB(Detects A15 Carry out)"]
+    #[doc = "4: 64KB(Detects A15 Carry out)"]
     SIZE64,
-    #[doc = "128KB(Detects A16 Carry out)"]
+    #[doc = "5: 128KB(Detects A16 Carry out)"]
     SIZE128,
-    #[doc = "256KB(Detects A17 Carry out)"]
+    #[doc = "6: 256KB(Detects A17 Carry out)"]
     SIZE256,
-    #[doc = "512KB(Detects A18 Carry out)"]
+    #[doc = "7: 512KB(Detects A18 Carry out)"]
     SIZE512,
 }
-impl crate::ToBits<u8> for HSTSDMABUFSIZE_A {
+impl From<HSTSDMABUFSIZE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: HSTSDMABUFSIZE_A) -> Self {
+        match variant {
             HSTSDMABUFSIZE_A::SIZE4 => 0,
             HSTSDMABUFSIZE_A::SIZE8 => 1,
             HSTSDMABUFSIZE_A::SIZE16 => 2,
@@ -167,9 +166,8 @@ impl<'a> HSTSDMABUFSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HSTSDMABUFSIZE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "4KB(Detects A11 Carry out)"]
@@ -219,16 +217,16 @@ impl<'a> HSTSDMABUFSIZE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BLKSCNTFORCURRTFR`"]
+#[doc = "Blocks Count for Current Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLKSCNTFORCURRTFR_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     STOPCNT,
 }
-impl crate::ToBits<u16> for BLKSCNTFORCURRTFR_A {
+impl From<BLKSCNTFORCURRTFR_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: BLKSCNTFORCURRTFR_A) -> Self {
+        match variant {
             BLKSCNTFORCURRTFR_A::STOPCNT => 0,
         }
     }
@@ -259,8 +257,7 @@ impl<'a> BLKSCNTFORCURRTFR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BLKSCNTFORCURRTFR_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

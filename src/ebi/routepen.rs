@@ -226,22 +226,22 @@ impl<'a> NANDPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALB`"]
+#[doc = "Sets the Lower Bound for EBI_A Enabling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALB_A {
-    #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
+    #[doc = "0: Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
     A0,
-    #[doc = "Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
+    #[doc = "1: Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
     A8,
-    #[doc = "Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
+    #[doc = "2: Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
     A16,
-    #[doc = "Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
+    #[doc = "3: Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
     A24,
 }
-impl crate::ToBits<u8> for ALB_A {
+impl From<ALB_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ALB_A) -> Self {
+        match variant {
             ALB_A::A0 => 0,
             ALB_A::A8 => 1,
             ALB_A::A16 => 2,
@@ -292,9 +292,8 @@ impl<'a> ALB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ALB_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
@@ -324,64 +323,64 @@ impl<'a> ALB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `APEN`"]
+#[doc = "EBI_A Pin Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APEN_A {
-    #[doc = "All EBI_A pins are disabled."]
+    #[doc = "0: All EBI_A pins are disabled."]
     A0,
-    #[doc = "EBI_A\\[4:L\\] pins enabled."]
+    #[doc = "5: EBI_A\\[4:L\\] pins enabled."]
     A5,
-    #[doc = "EBI_A\\[5:L\\] pins enabled."]
+    #[doc = "6: EBI_A\\[5:L\\] pins enabled."]
     A6,
-    #[doc = "EBI_A\\[6:L\\] pins enabled."]
+    #[doc = "7: EBI_A\\[6:L\\] pins enabled."]
     A7,
-    #[doc = "EBI_A\\[7:L\\] pins enabled."]
+    #[doc = "8: EBI_A\\[7:L\\] pins enabled."]
     A8,
-    #[doc = "EBI_A\\[8:L\\] pins enabled."]
+    #[doc = "9: EBI_A\\[8:L\\] pins enabled."]
     A9,
-    #[doc = "EBI_A\\[9:L\\] pins enabled."]
+    #[doc = "10: EBI_A\\[9:L\\] pins enabled."]
     A10,
-    #[doc = "EBI_A\\[10:L\\] pins enabled."]
+    #[doc = "11: EBI_A\\[10:L\\] pins enabled."]
     A11,
-    #[doc = "EBI_A\\[11:L\\] pins enabled."]
+    #[doc = "12: EBI_A\\[11:L\\] pins enabled."]
     A12,
-    #[doc = "EBI_A\\[12:L\\] pins enabled."]
+    #[doc = "13: EBI_A\\[12:L\\] pins enabled."]
     A13,
-    #[doc = "EBI_A\\[13:L\\] pins enabled."]
+    #[doc = "14: EBI_A\\[13:L\\] pins enabled."]
     A14,
-    #[doc = "EBI_A\\[14:L\\] pins enabled."]
+    #[doc = "15: EBI_A\\[14:L\\] pins enabled."]
     A15,
-    #[doc = "EBI_A\\[15:L\\] pins enabled."]
+    #[doc = "16: EBI_A\\[15:L\\] pins enabled."]
     A16,
-    #[doc = "EBI_A\\[16:L\\] pins enabled."]
+    #[doc = "17: EBI_A\\[16:L\\] pins enabled."]
     A17,
-    #[doc = "EBI_A\\[17:L\\] pins enabled."]
+    #[doc = "18: EBI_A\\[17:L\\] pins enabled."]
     A18,
-    #[doc = "EBI_A\\[18:L\\] pins enabled."]
+    #[doc = "19: EBI_A\\[18:L\\] pins enabled."]
     A19,
-    #[doc = "EBI_A\\[19:L\\] pins enabled."]
+    #[doc = "20: EBI_A\\[19:L\\] pins enabled."]
     A20,
-    #[doc = "EBI_A\\[20:L\\] pins enabled."]
+    #[doc = "21: EBI_A\\[20:L\\] pins enabled."]
     A21,
-    #[doc = "EBI_A\\[21:L\\] pins enabled."]
+    #[doc = "22: EBI_A\\[21:L\\] pins enabled."]
     A22,
-    #[doc = "EBI_A\\[22:L\\] pins enabled."]
+    #[doc = "23: EBI_A\\[22:L\\] pins enabled."]
     A23,
-    #[doc = "EBI_A\\[23:L\\] pins enabled."]
+    #[doc = "24: EBI_A\\[23:L\\] pins enabled."]
     A24,
-    #[doc = "EBI_A\\[24:L\\] pins enabled."]
+    #[doc = "25: EBI_A\\[24:L\\] pins enabled."]
     A25,
-    #[doc = "EBI_A\\[25:L\\] pins enabled."]
+    #[doc = "26: EBI_A\\[25:L\\] pins enabled."]
     A26,
-    #[doc = "EBI_A\\[26:L\\] pins enabled."]
+    #[doc = "27: EBI_A\\[26:L\\] pins enabled."]
     A27,
-    #[doc = "EBI_A\\[27:L\\] pins enabled."]
+    #[doc = "28: EBI_A\\[27:L\\] pins enabled."]
     A28,
 }
-impl crate::ToBits<u8> for APEN_A {
+impl From<APEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: APEN_A) -> Self {
+        match variant {
             APEN_A::A0 => 0,
             APEN_A::A5 => 5,
             APEN_A::A6 => 6,
@@ -580,8 +579,7 @@ impl<'a> APEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: APEN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "All EBI_A pins are disabled."]
     #[inline(always)]

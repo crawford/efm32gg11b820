@@ -82,20 +82,20 @@ impl<'a> AEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AREGASC`"]
+#[doc = "Animate Register a Shift Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AREGASC_A {
-    #[doc = "No Shift operation on Animation Register A"]
+    #[doc = "0: No Shift operation on Animation Register A"]
     NOSHIFT,
-    #[doc = "Animation Register A is shifted left"]
+    #[doc = "1: Animation Register A is shifted left"]
     SHIFTLEFT,
-    #[doc = "Animation Register A is shifted right"]
+    #[doc = "2: Animation Register A is shifted right"]
     SHIFTRIGHT,
 }
-impl crate::ToBits<u8> for AREGASC_A {
+impl From<AREGASC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AREGASC_A) -> Self {
+        match variant {
             AREGASC_A::NOSHIFT => 0,
             AREGASC_A::SHIFTLEFT => 1,
             AREGASC_A::SHIFTRIGHT => 2,
@@ -140,8 +140,7 @@ impl<'a> AREGASC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AREGASC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No Shift operation on Animation Register A"]
     #[inline(always)]
@@ -165,20 +164,20 @@ impl<'a> AREGASC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AREGBSC`"]
+#[doc = "Animate Register B Shift Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AREGBSC_A {
-    #[doc = "No Shift operation on Animation Register B"]
+    #[doc = "0: No Shift operation on Animation Register B"]
     NOSHIFT,
-    #[doc = "Animation Register B is shifted left"]
+    #[doc = "1: Animation Register B is shifted left"]
     SHIFTLEFT,
-    #[doc = "Animation Register B is shifted right"]
+    #[doc = "2: Animation Register B is shifted right"]
     SHIFTRIGHT,
 }
-impl crate::ToBits<u8> for AREGBSC_A {
+impl From<AREGBSC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AREGBSC_A) -> Self {
+        match variant {
             AREGBSC_A::NOSHIFT => 0,
             AREGBSC_A::SHIFTLEFT => 1,
             AREGBSC_A::SHIFTRIGHT => 2,
@@ -223,8 +222,7 @@ impl<'a> AREGBSC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AREGBSC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No Shift operation on Animation Register B"]
     #[inline(always)]
@@ -296,22 +294,22 @@ impl<'a> FCEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FCPRESC`"]
+#[doc = "Frame Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCPRESC_A {
-    #[doc = "CLKFC = CLKFRAME / 1"]
+    #[doc = "0: CLKFC = CLKFRAME / 1"]
     DIV1,
-    #[doc = "CLKFC = CLKFRAME / 2"]
+    #[doc = "1: CLKFC = CLKFRAME / 2"]
     DIV2,
-    #[doc = "CLKFC = CLKFRAME / 4"]
+    #[doc = "2: CLKFC = CLKFRAME / 4"]
     DIV4,
-    #[doc = "CLKFC = CLKFRAME / 8"]
+    #[doc = "3: CLKFC = CLKFRAME / 8"]
     DIV8,
 }
-impl crate::ToBits<u8> for FCPRESC_A {
+impl From<FCPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: FCPRESC_A) -> Self {
+        match variant {
             FCPRESC_A::DIV1 => 0,
             FCPRESC_A::DIV2 => 1,
             FCPRESC_A::DIV4 => 2,
@@ -362,9 +360,8 @@ impl<'a> FCPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "CLKFC = CLKFRAME / 1"]

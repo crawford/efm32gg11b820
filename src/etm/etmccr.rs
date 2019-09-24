@@ -10,20 +10,20 @@ pub type MMDECCNT_R = crate::R<u8, u8>;
 pub type COUNTNUM_R = crate::R<u8, u8>;
 #[doc = "Reader of field `SEQPRES`"]
 pub type SEQPRES_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `EXTINPNUM`"]
+#[doc = "Number of External Inputs\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTINPNUM_A {
-    #[doc = "Zero inputs presents"]
+    #[doc = "0: Zero inputs presents"]
     ZERO,
-    #[doc = "One inputs presents"]
+    #[doc = "1: One inputs presents"]
     ONE,
-    #[doc = "Two inputs presents"]
+    #[doc = "2: Two inputs presents"]
     TWO,
 }
-impl crate::ToBits<u8> for EXTINPNUM_A {
+impl From<EXTINPNUM_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTINPNUM_A) -> Self {
+        match variant {
             EXTINPNUM_A::ZERO => 0,
             EXTINPNUM_A::ONE => 1,
             EXTINPNUM_A::TWO => 2,

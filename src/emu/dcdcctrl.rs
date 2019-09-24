@@ -10,22 +10,22 @@ impl crate::ResetValue for super::DCDCCTRL {
         0x33
     }
 }
-#[doc = "Possible values of the field `DCDCMODE`"]
+#[doc = "Regulator Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDCMODE_A {
-    #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
+    #[doc = "0: DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
     BYPASS,
-    #[doc = "DCDC regulator is operating in low noise mode."]
+    #[doc = "1: DCDC regulator is operating in low noise mode."]
     LOWNOISE,
-    #[doc = "DCDC regulator is operating in low power mode."]
+    #[doc = "2: DCDC regulator is operating in low power mode."]
     LOWPOWER,
-    #[doc = "DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
+    #[doc = "3: DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
     OFF,
 }
-impl crate::ToBits<u8> for DCDCMODE_A {
+impl From<DCDCMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DCDCMODE_A) -> Self {
+        match variant {
             DCDCMODE_A::BYPASS => 0,
             DCDCMODE_A::LOWNOISE => 1,
             DCDCMODE_A::LOWPOWER => 2,
@@ -76,9 +76,8 @@ impl<'a> DCDCMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCDCMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]

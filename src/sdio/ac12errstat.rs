@@ -22,24 +22,24 @@ pub type AC12ENDBITERR_R = crate::R<bool, bool>;
 pub type AC12INDEXERR_R = crate::R<bool, bool>;
 #[doc = "Reader of field `CNIBAC12ERR`"]
 pub type CNIBAC12ERR_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `UHSMODESEL`"]
+#[doc = "UHS Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UHSMODESEL_A {
-    #[doc = "SDR12"]
+    #[doc = "0: SDR12"]
     SDR12,
-    #[doc = "SDR25"]
+    #[doc = "1: SDR25"]
     SDR25,
-    #[doc = "SDR50"]
+    #[doc = "2: SDR50"]
     SDR50,
-    #[doc = "SDR104"]
+    #[doc = "3: SDR104"]
     SDR104,
-    #[doc = "DDR50"]
+    #[doc = "4: DDR50"]
     DDR50,
 }
-impl crate::ToBits<u8> for UHSMODESEL_A {
+impl From<UHSMODESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: UHSMODESEL_A) -> Self {
+        match variant {
             UHSMODESEL_A::SDR12 => 0,
             UHSMODESEL_A::SDR25 => 1,
             UHSMODESEL_A::SDR50 => 2,
@@ -98,8 +98,7 @@ impl<'a> UHSMODESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UHSMODESEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "SDR12"]
     #[inline(always)]
@@ -157,22 +156,22 @@ impl<'a> SIGEN1P8V_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DRVSTNSEL`"]
+#[doc = "Driver Strength Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRVSTNSEL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for DRVSTNSEL_A {
+impl From<DRVSTNSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DRVSTNSEL_A) -> Self {
+        match variant {
             DRVSTNSEL_A::TYPEB => 0,
             DRVSTNSEL_A::TYPEA => 1,
             DRVSTNSEL_A::TYPEC => 2,
@@ -223,9 +222,8 @@ impl<'a> DRVSTNSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DRVSTNSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Driver Type B is selected (Default)"]

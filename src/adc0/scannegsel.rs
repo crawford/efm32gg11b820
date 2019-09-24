@@ -10,22 +10,22 @@ impl crate::ResetValue for super::SCANNEGSEL {
         0x39e4
     }
 }
-#[doc = "Possible values of the field `INPUT0NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT0NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT1 as negative channel input"]
     INPUT1,
-    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT3 as negative channel input"]
     INPUT3,
-    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT5 as negative channel input"]
     INPUT5,
-    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT7 as negative channel input"]
     INPUT7,
 }
-impl crate::ToBits<u8> for INPUT0NEGSEL_A {
+impl From<INPUT0NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT0NEGSEL_A) -> Self {
+        match variant {
             INPUT0NEGSEL_A::INPUT1 => 0,
             INPUT0NEGSEL_A::INPUT3 => 1,
             INPUT0NEGSEL_A::INPUT5 => 2,
@@ -76,9 +76,8 @@ impl<'a> INPUT0NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT0NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
@@ -108,22 +107,22 @@ impl<'a> INPUT0NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT2NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT2 in Differential Scan Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT2NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT1 as negative channel input"]
     INPUT1,
-    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT3 as negative channel input"]
     INPUT3,
-    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT5 as negative channel input"]
     INPUT5,
-    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT7 as negative channel input"]
     INPUT7,
 }
-impl crate::ToBits<u8> for INPUT2NEGSEL_A {
+impl From<INPUT2NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT2NEGSEL_A) -> Self {
+        match variant {
             INPUT2NEGSEL_A::INPUT1 => 0,
             INPUT2NEGSEL_A::INPUT3 => 1,
             INPUT2NEGSEL_A::INPUT5 => 2,
@@ -174,9 +173,8 @@ impl<'a> INPUT2NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT2NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
@@ -206,22 +204,22 @@ impl<'a> INPUT2NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT4NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT4 in Differential Scan Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT4NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT1 as negative channel input"]
     INPUT1,
-    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT3 as negative channel input"]
     INPUT3,
-    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT5 as negative channel input"]
     INPUT5,
-    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT7 as negative channel input"]
     INPUT7,
 }
-impl crate::ToBits<u8> for INPUT4NEGSEL_A {
+impl From<INPUT4NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT4NEGSEL_A) -> Self {
+        match variant {
             INPUT4NEGSEL_A::INPUT1 => 0,
             INPUT4NEGSEL_A::INPUT3 => 1,
             INPUT4NEGSEL_A::INPUT5 => 2,
@@ -272,9 +270,8 @@ impl<'a> INPUT4NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT4NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
@@ -304,22 +301,22 @@ impl<'a> INPUT4NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT6NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT1 in Differential Scan Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT6NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT1 as negative channel input"]
     INPUT1,
-    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT3 as negative channel input"]
     INPUT3,
-    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT5 as negative channel input"]
     INPUT5,
-    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT7 as negative channel input"]
     INPUT7,
 }
-impl crate::ToBits<u8> for INPUT6NEGSEL_A {
+impl From<INPUT6NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT6NEGSEL_A) -> Self {
+        match variant {
             INPUT6NEGSEL_A::INPUT1 => 0,
             INPUT6NEGSEL_A::INPUT3 => 1,
             INPUT6NEGSEL_A::INPUT5 => 2,
@@ -370,9 +367,8 @@ impl<'a> INPUT6NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT6NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
@@ -402,22 +398,22 @@ impl<'a> INPUT6NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT9NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT9 in Differential Scan Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT9NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT8 as negative channel input"]
     INPUT8,
-    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT10 as negative channel input"]
     INPUT10,
-    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT12 as negative channel input"]
     INPUT12,
-    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT14 as negative channel input"]
     INPUT14,
 }
-impl crate::ToBits<u8> for INPUT9NEGSEL_A {
+impl From<INPUT9NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT9NEGSEL_A) -> Self {
+        match variant {
             INPUT9NEGSEL_A::INPUT8 => 0,
             INPUT9NEGSEL_A::INPUT10 => 1,
             INPUT9NEGSEL_A::INPUT12 => 2,
@@ -468,9 +464,8 @@ impl<'a> INPUT9NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT9NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
@@ -500,22 +495,22 @@ impl<'a> INPUT9NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT11NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT11 in Differential Scan Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT11NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT8 as negative channel input"]
     INPUT8,
-    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT10 as negative channel input"]
     INPUT10,
-    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT12 as negative channel input"]
     INPUT12,
-    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT14 as negative channel input"]
     INPUT14,
 }
-impl crate::ToBits<u8> for INPUT11NEGSEL_A {
+impl From<INPUT11NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT11NEGSEL_A) -> Self {
+        match variant {
             INPUT11NEGSEL_A::INPUT8 => 0,
             INPUT11NEGSEL_A::INPUT10 => 1,
             INPUT11NEGSEL_A::INPUT12 => 2,
@@ -566,9 +561,8 @@ impl<'a> INPUT11NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT11NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
@@ -598,22 +592,22 @@ impl<'a> INPUT11NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT13NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT13 in Differential Scan Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT13NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT8 as negative channel input"]
     INPUT8,
-    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT10 as negative channel input"]
     INPUT10,
-    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT12 as negative channel input"]
     INPUT12,
-    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT14 as negative channel input"]
     INPUT14,
 }
-impl crate::ToBits<u8> for INPUT13NEGSEL_A {
+impl From<INPUT13NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT13NEGSEL_A) -> Self {
+        match variant {
             INPUT13NEGSEL_A::INPUT8 => 0,
             INPUT13NEGSEL_A::INPUT10 => 1,
             INPUT13NEGSEL_A::INPUT12 => 2,
@@ -664,9 +658,8 @@ impl<'a> INPUT13NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT13NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
@@ -696,22 +689,22 @@ impl<'a> INPUT13NEGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUT15NEGSEL`"]
+#[doc = "Negative Input Select Register for ADCn_INPUT15 in Differential Scan Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT15NEGSEL_A {
-    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
+    #[doc = "0: Selects ADCn_INPUT8 as negative channel input"]
     INPUT8,
-    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
+    #[doc = "1: Selects ADCn_INPUT10 as negative channel input"]
     INPUT10,
-    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
+    #[doc = "2: Selects ADCn_INPUT12 as negative channel input"]
     INPUT12,
-    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
+    #[doc = "3: Selects ADCn_INPUT14 as negative channel input"]
     INPUT14,
 }
-impl crate::ToBits<u8> for INPUT15NEGSEL_A {
+impl From<INPUT15NEGSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUT15NEGSEL_A) -> Self {
+        match variant {
             INPUT15NEGSEL_A::INPUT8 => 0,
             INPUT15NEGSEL_A::INPUT10 => 1,
             INPUT15NEGSEL_A::INPUT12 => 2,
@@ -762,9 +755,8 @@ impl<'a> INPUT15NEGSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUT15NEGSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]

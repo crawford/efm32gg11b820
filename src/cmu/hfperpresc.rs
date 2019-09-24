@@ -10,16 +10,16 @@ impl crate::ResetValue for super::HFPERPRESC {
         0
     }
 }
-#[doc = "Possible values of the field `PRESC`"]
+#[doc = "HFPERCLK Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESC_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u16> for PRESC_A {
+impl From<PRESC_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: PRESC_A) -> Self {
+        match variant {
             PRESC_A::NODIVISION => 0,
         }
     }
@@ -50,8 +50,7 @@ impl<'a> PRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

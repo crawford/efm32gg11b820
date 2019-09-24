@@ -10,30 +10,30 @@ impl crate::ResetValue for super::TIMCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `PCPRESC`"]
+#[doc = "Period Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCPRESC_A {
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/1"]
+    #[doc = "0: The period counter clock frequency is LFBCLKCSEN/1"]
     DIV1,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/2"]
+    #[doc = "1: The period counter clock frequency is LFBCLKCSEN/2"]
     DIV2,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/4"]
+    #[doc = "2: The period counter clock frequency is LFBCLKCSEN/4"]
     DIV4,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/8"]
+    #[doc = "3: The period counter clock frequency is LFBCLKCSEN/8"]
     DIV8,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/16"]
+    #[doc = "4: The period counter clock frequency is LFBCLKCSEN/16"]
     DIV16,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/32"]
+    #[doc = "5: The period counter clock frequency is LFBCLKCSEN/32"]
     DIV32,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/64"]
+    #[doc = "6: The period counter clock frequency is LFBCLKCSEN/64"]
     DIV64,
-    #[doc = "The period counter clock frequency is LFBCLKCSEN/128"]
+    #[doc = "7: The period counter clock frequency is LFBCLKCSEN/128"]
     DIV128,
 }
-impl crate::ToBits<u8> for PCPRESC_A {
+impl From<PCPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PCPRESC_A) -> Self {
+        match variant {
             PCPRESC_A::DIV1 => 0,
             PCPRESC_A::DIV2 => 1,
             PCPRESC_A::DIV4 => 2,
@@ -112,9 +112,8 @@ impl<'a> PCPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PCPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The period counter clock frequency is LFBCLKCSEN/1"]

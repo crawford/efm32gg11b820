@@ -1,27 +1,27 @@
 #[doc = "Reader of register HFCLKSTATUS"]
 pub type R = crate::R<u32, super::HFCLKSTATUS>;
-#[doc = "Possible values of the field `SELECTED`"]
+#[doc = "HFCLK Selected\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELECTED_A {
-    #[doc = "HFRCO is selected as HFCLK clock source"]
+    #[doc = "1: HFRCO is selected as HFCLK clock source"]
     HFRCO,
-    #[doc = "HFXO is selected as HFCLK clock source"]
+    #[doc = "2: HFXO is selected as HFCLK clock source"]
     HFXO,
-    #[doc = "LFRCO is selected as HFCLK clock source"]
+    #[doc = "3: LFRCO is selected as HFCLK clock source"]
     LFRCO,
-    #[doc = "LFXO is selected as HFCLK clock source"]
+    #[doc = "4: LFXO is selected as HFCLK clock source"]
     LFXO,
-    #[doc = "HFRCO divided by 2 is selected as HFCLK clock source"]
+    #[doc = "5: HFRCO divided by 2 is selected as HFCLK clock source"]
     HFRCODIV2,
-    #[doc = "USHFRCO is selected as HFCLK clock source"]
+    #[doc = "6: USHFRCO is selected as HFCLK clock source"]
     USHFRCO,
-    #[doc = "CLKIN0 is selected as HFCLK clock source"]
+    #[doc = "7: CLKIN0 is selected as HFCLK clock source"]
     CLKIN0,
 }
-impl crate::ToBits<u8> for SELECTED_A {
+impl From<SELECTED_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SELECTED_A) -> Self {
+        match variant {
             SELECTED_A::HFRCO => 1,
             SELECTED_A::HFXO => 2,
             SELECTED_A::LFRCO => 3,

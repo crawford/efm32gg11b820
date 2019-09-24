@@ -24,82 +24,82 @@ impl<'a> SIGSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SOURCESEL`"]
+#[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOURCESEL_A {
-    #[doc = "No source selected"]
+    #[doc = "0: No source selected"]
     NONE,
-    #[doc = "Peripheral Reflex System"]
+    #[doc = "1: Peripheral Reflex System"]
     PRS,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "8: Analog to Digital Converter 0"]
     ADC0,
-    #[doc = "Analog to Digital Converter 0"]
+    #[doc = "9: Analog to Digital Converter 0"]
     ADC1,
-    #[doc = "Digital to Analog Converter 0"]
+    #[doc = "10: Digital to Analog Converter 0"]
     VDAC0,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
+    #[doc = "12: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
     USART0,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
+    #[doc = "13: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
     USART1,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
+    #[doc = "14: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
     USART2,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
+    #[doc = "15: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
     USART3,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
+    #[doc = "16: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
     USART4,
-    #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
+    #[doc = "17: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
     USART5,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 0"]
+    #[doc = "18: Universal Asynchronous Receiver/Transmitter 0"]
     UART0,
-    #[doc = "Universal Asynchronous Receiver/Transmitter 1"]
+    #[doc = "19: Universal Asynchronous Receiver/Transmitter 1"]
     UART1,
-    #[doc = "Low Energy UART 0"]
+    #[doc = "20: Low Energy UART 0"]
     LEUART0,
-    #[doc = "Low Energy UART 1"]
+    #[doc = "21: Low Energy UART 1"]
     LEUART1,
-    #[doc = "I2C 0"]
+    #[doc = "22: I2C 0"]
     I2C0,
-    #[doc = "I2C 1"]
+    #[doc = "23: I2C 1"]
     I2C1,
-    #[doc = "I2C 2"]
+    #[doc = "24: I2C 2"]
     I2C2,
-    #[doc = "Timer 0"]
+    #[doc = "25: Timer 0"]
     TIMER0,
-    #[doc = "Timer 1"]
+    #[doc = "26: Timer 1"]
     TIMER1,
-    #[doc = "Timer 2"]
+    #[doc = "27: Timer 2"]
     TIMER2,
-    #[doc = "Timer 3"]
+    #[doc = "28: Timer 3"]
     TIMER3,
-    #[doc = "Timer 4"]
+    #[doc = "29: Timer 4"]
     TIMER4,
-    #[doc = "Timer 5"]
+    #[doc = "30: Timer 5"]
     TIMER5,
-    #[doc = "Timer 6"]
+    #[doc = "31: Timer 6"]
     TIMER6,
-    #[doc = "Wide Timer 0"]
+    #[doc = "32: Wide Timer 0"]
     WTIMER0,
-    #[doc = "Wide Timer 0"]
+    #[doc = "33: Wide Timer 0"]
     WTIMER1,
-    #[doc = "Wide Timer 2"]
+    #[doc = "34: Wide Timer 2"]
     WTIMER2,
-    #[doc = "Wide Timer 3"]
+    #[doc = "35: Wide Timer 3"]
     WTIMER3,
-    #[doc = "Memory System Controller"]
+    #[doc = "48: Memory System Controller"]
     MSC,
-    #[doc = "Advanced Encryption Standard Accelerator"]
+    #[doc = "49: Advanced Encryption Standard Accelerator"]
     CRYPTO0,
-    #[doc = "External Bus Interface"]
+    #[doc = "50: External Bus Interface"]
     EBI,
-    #[doc = "Capacitive touch sense module"]
+    #[doc = "61: Capacitive touch sense module"]
     CSEN,
-    #[doc = "Low Energy Sensor Interface"]
+    #[doc = "62: Low Energy Sensor Interface"]
     LESENSE,
 }
-impl crate::ToBits<u8> for SOURCESEL_A {
+impl From<SOURCESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SOURCESEL_A) -> Self {
+        match variant {
             SOURCESEL_A::NONE => 0,
             SOURCESEL_A::PRS => 1,
             SOURCESEL_A::ADC0 => 8,
@@ -361,8 +361,7 @@ impl<'a> SOURCESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No source selected"]
     #[inline(always)]

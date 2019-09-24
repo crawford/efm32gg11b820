@@ -154,20 +154,20 @@ impl<'a> DACCONVTRIG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ACMP0MODE`"]
+#[doc = "ACMP0 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMP0MODE_A {
-    #[doc = "LESENSE does not control ACMP0"]
+    #[doc = "0: LESENSE does not control ACMP0"]
     DISABLE,
-    #[doc = "LESENSE controls the input mux (POSSEL) of ACMP0"]
+    #[doc = "1: LESENSE controls the input mux (POSSEL) of ACMP0"]
     MUX,
-    #[doc = "LESENSE controls the input mux (POSSEL) and the threshold value (VDDLEVEL) of ACMP0"]
+    #[doc = "2: LESENSE controls the input mux (POSSEL) and the threshold value (VDDLEVEL) of ACMP0"]
     MUXTHRES,
 }
-impl crate::ToBits<u8> for ACMP0MODE_A {
+impl From<ACMP0MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ACMP0MODE_A) -> Self {
+        match variant {
             ACMP0MODE_A::DISABLE => 0,
             ACMP0MODE_A::MUX => 1,
             ACMP0MODE_A::MUXTHRES => 2,
@@ -212,8 +212,7 @@ impl<'a> ACMP0MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ACMP0MODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LESENSE does not control ACMP0"]
     #[inline(always)]
@@ -237,20 +236,20 @@ impl<'a> ACMP0MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ACMP1MODE`"]
+#[doc = "ACMP1 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMP1MODE_A {
-    #[doc = "LESENSE does not control ACMP1"]
+    #[doc = "0: LESENSE does not control ACMP1"]
     DISABLE,
-    #[doc = "LESENSE controls the input mux (POSSEL) of ACMP1"]
+    #[doc = "1: LESENSE controls the input mux (POSSEL) of ACMP1"]
     MUX,
-    #[doc = "LESENSE controls the input mux and the threshold value (VDDLEVEL) of ACMP1"]
+    #[doc = "2: LESENSE controls the input mux and the threshold value (VDDLEVEL) of ACMP1"]
     MUXTHRES,
 }
-impl crate::ToBits<u8> for ACMP1MODE_A {
+impl From<ACMP1MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ACMP1MODE_A) -> Self {
+        match variant {
             ACMP1MODE_A::DISABLE => 0,
             ACMP1MODE_A::MUX => 1,
             ACMP1MODE_A::MUXTHRES => 2,
@@ -295,8 +294,7 @@ impl<'a> ACMP1MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ACMP1MODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LESENSE does not control ACMP1"]
     #[inline(always)]
@@ -416,22 +414,22 @@ impl<'a> ACMP1HYSTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WARMUPMODE`"]
+#[doc = "ACMP and VDAC Duty Cycle Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WARMUPMODE_A {
-    #[doc = "The analog comparators and VDAC are shut down when LESENSE is idle"]
+    #[doc = "0: The analog comparators and VDAC are shut down when LESENSE is idle"]
     NORMAL,
-    #[doc = "The analog comparators are kept powered up when LESENSE is idle"]
+    #[doc = "1: The analog comparators are kept powered up when LESENSE is idle"]
     KEEPACMPWARM,
-    #[doc = "The VDAC is kept powered up when LESENSE is idle"]
+    #[doc = "2: The VDAC is kept powered up when LESENSE is idle"]
     KEEPDACWARM,
-    #[doc = "The analog comparators and VDAC are kept powered up when LESENSE is idle"]
+    #[doc = "3: The analog comparators and VDAC are kept powered up when LESENSE is idle"]
     KEEPACMPDACWARM,
 }
-impl crate::ToBits<u8> for WARMUPMODE_A {
+impl From<WARMUPMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: WARMUPMODE_A) -> Self {
+        match variant {
             WARMUPMODE_A::NORMAL => 0,
             WARMUPMODE_A::KEEPACMPWARM => 1,
             WARMUPMODE_A::KEEPDACWARM => 2,
@@ -482,9 +480,8 @@ impl<'a> WARMUPMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WARMUPMODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The analog comparators and VDAC are shut down when LESENSE is idle"]

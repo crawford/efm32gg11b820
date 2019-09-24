@@ -178,22 +178,22 @@ impl<'a> QSPICDIS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Read Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "Zero wait-states inserted in fetch or read transfers"]
+    #[doc = "0: Zero wait-states inserted in fetch or read transfers"]
     WS0,
-    #[doc = "One wait-state inserted for each fetch or read transfer. See Flash Wait-States table for details"]
+    #[doc = "1: One wait-state inserted for each fetch or read transfer. See Flash Wait-States table for details"]
     WS1,
-    #[doc = "Two wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
+    #[doc = "2: Two wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
     WS2,
-    #[doc = "Three wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
+    #[doc = "3: Three wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
     WS3,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::WS0 => 0,
             MODE_A::WS1 => 1,
             MODE_A::WS2 => 2,
@@ -244,9 +244,8 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Zero wait-states inserted in fetch or read transfers"]

@@ -4,22 +4,22 @@ pub type R = crate::R<u32, super::PRSTVAL4>;
 pub type SDR25SDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `SDR25CLKGENVAL`"]
 pub type SDR25CLKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `SDR25DRVSTVAL`"]
+#[doc = "Driver Strength Select Value for SDR25\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR25DRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for SDR25DRVSTVAL_A {
+impl From<SDR25DRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDR25DRVSTVAL_A) -> Self {
+        match variant {
             SDR25DRVSTVAL_A::TYPEB => 0,
             SDR25DRVSTVAL_A::TYPEA => 1,
             SDR25DRVSTVAL_A::TYPEC => 2,
@@ -66,22 +66,22 @@ impl SDR25DRVSTVAL_R {
 pub type SDR50SDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `SDR50CLCKGENVAL`"]
 pub type SDR50CLCKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `SDR50DRVSTVAL`"]
+#[doc = "Driver Strength Select Value for SDR50\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR50DRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for SDR50DRVSTVAL_A {
+impl From<SDR50DRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDR50DRVSTVAL_A) -> Self {
+        match variant {
             SDR50DRVSTVAL_A::TYPEB => 0,
             SDR50DRVSTVAL_A::TYPEA => 1,
             SDR50DRVSTVAL_A::TYPEC => 2,

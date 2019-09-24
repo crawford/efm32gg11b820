@@ -10,24 +10,24 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `TSUCLKSEL`"]
+#[doc = "TSU Clock selection value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSUCLKSEL_A {
-    #[doc = "No TSU clock source selected"]
+    #[doc = "0: No TSU clock source selected"]
     NOCLOCK,
-    #[doc = "Select system clock as TSU Clock"]
+    #[doc = "1: Select system clock as TSU Clock"]
     PLL,
-    #[doc = "Select ethernet RX Clock as TSU Clock"]
+    #[doc = "2: Select ethernet RX Clock as TSU Clock"]
     RXCLK,
-    #[doc = "Select ref clock as TSU Clock"]
+    #[doc = "3: Select ref clock as TSU Clock"]
     REFCLK,
-    #[doc = "Select tsu external pin as TSU Clock"]
+    #[doc = "4: Select tsu external pin as TSU Clock"]
     TSUEXTCLK,
 }
-impl crate::ToBits<u8> for TSUCLKSEL_A {
+impl From<TSUCLKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TSUCLKSEL_A) -> Self {
+        match variant {
             TSUCLKSEL_A::NOCLOCK => 0,
             TSUCLKSEL_A::PLL => 1,
             TSUCLKSEL_A::RXCLK => 2,
@@ -86,8 +86,7 @@ impl<'a> TSUCLKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TSUCLKSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No TSU clock source selected"]
     #[inline(always)]

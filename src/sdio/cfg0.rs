@@ -76,20 +76,20 @@ impl<'a> BASECLKFREQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MAXBLKLEN`"]
+#[doc = "MAX Block Length of Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAXBLKLEN_A {
-    #[doc = "512 Bytes are Selected"]
+    #[doc = "0: 512 Bytes are Selected"]
     _512B,
-    #[doc = "1024 Bytes are Selected"]
+    #[doc = "1: 1024 Bytes are Selected"]
     _1024B,
-    #[doc = "2048 Bytes are Selected"]
+    #[doc = "2: 2048 Bytes are Selected"]
     _2048B,
 }
-impl crate::ToBits<u8> for MAXBLKLEN_A {
+impl From<MAXBLKLEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MAXBLKLEN_A) -> Self {
+        match variant {
             MAXBLKLEN_A::_512B => 0,
             MAXBLKLEN_A::_1024B => 1,
             MAXBLKLEN_A::_2048B => 2,
@@ -134,8 +134,7 @@ impl<'a> MAXBLKLEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MAXBLKLEN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "512 Bytes are Selected"]
     #[inline(always)]

@@ -10,28 +10,28 @@ impl crate::ResetValue for super::CALCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `UPSEL`"]
+#[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UPSEL_A {
-    #[doc = "Select HFXO as up-counter"]
+    #[doc = "0: Select HFXO as up-counter"]
     HFXO,
-    #[doc = "Select LFXO as up-counter"]
+    #[doc = "1: Select LFXO as up-counter"]
     LFXO,
-    #[doc = "Select HFRCO as up-counter"]
+    #[doc = "2: Select HFRCO as up-counter"]
     HFRCO,
-    #[doc = "Select LFRCO as up-counter"]
+    #[doc = "3: Select LFRCO as up-counter"]
     LFRCO,
-    #[doc = "Select AUXHFRCO as up-counter"]
+    #[doc = "4: Select AUXHFRCO as up-counter"]
     AUXHFRCO,
-    #[doc = "Select PRS input selected by PRSUPSEL as up-counter"]
+    #[doc = "5: Select PRS input selected by PRSUPSEL as up-counter"]
     PRS,
-    #[doc = "Select USHFRCO as up-counter"]
+    #[doc = "7: Select USHFRCO as up-counter"]
     USHFRCO,
 }
-impl crate::ToBits<u8> for UPSEL_A {
+impl From<UPSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: UPSEL_A) -> Self {
+        match variant {
             UPSEL_A::HFXO => 0,
             UPSEL_A::LFXO => 1,
             UPSEL_A::HFRCO => 2,
@@ -104,8 +104,7 @@ impl<'a> UPSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UPSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Select HFXO as up-counter"]
     #[inline(always)]
@@ -149,30 +148,30 @@ impl<'a> UPSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DOWNSEL`"]
+#[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOWNSEL_A {
-    #[doc = "Select HFCLK for down-counter"]
+    #[doc = "0: Select HFCLK for down-counter"]
     HFCLK,
-    #[doc = "Select HFXO for down-counter"]
+    #[doc = "1: Select HFXO for down-counter"]
     HFXO,
-    #[doc = "Select LFXO for down-counter"]
+    #[doc = "2: Select LFXO for down-counter"]
     LFXO,
-    #[doc = "Select HFRCO for down-counter"]
+    #[doc = "3: Select HFRCO for down-counter"]
     HFRCO,
-    #[doc = "Select LFRCO for down-counter"]
+    #[doc = "4: Select LFRCO for down-counter"]
     LFRCO,
-    #[doc = "Select AUXHFRCO for down-counter"]
+    #[doc = "5: Select AUXHFRCO for down-counter"]
     AUXHFRCO,
-    #[doc = "Select PRS input selected by PRSDOWNSEL as down-counter"]
+    #[doc = "6: Select PRS input selected by PRSDOWNSEL as down-counter"]
     PRS,
-    #[doc = "Select USHFRCO for down-counter"]
+    #[doc = "8: Select USHFRCO for down-counter"]
     USHFRCO,
 }
-impl crate::ToBits<u8> for DOWNSEL_A {
+impl From<DOWNSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DOWNSEL_A) -> Self {
+        match variant {
             DOWNSEL_A::HFCLK => 0,
             DOWNSEL_A::HFXO => 1,
             DOWNSEL_A::LFXO => 2,
@@ -252,8 +251,7 @@ impl<'a> DOWNSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DOWNSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Select HFCLK for down-counter"]
     #[inline(always)]
@@ -326,62 +324,62 @@ impl<'a> CONT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSUPSEL`"]
+#[doc = "PRS Select for PRS Input When Selected in UPSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSUPSEL_A {
-    #[doc = "PRS Channel 0 selected as input"]
+    #[doc = "0: PRS Channel 0 selected as input"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
+    #[doc = "1: PRS Channel 1 selected as input"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
+    #[doc = "2: PRS Channel 2 selected as input"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
+    #[doc = "3: PRS Channel 3 selected as input"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
+    #[doc = "4: PRS Channel 4 selected as input"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
+    #[doc = "5: PRS Channel 5 selected as input"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
+    #[doc = "6: PRS Channel 6 selected as input"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
+    #[doc = "7: PRS Channel 7 selected as input"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
+    #[doc = "8: PRS Channel 8 selected as input"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
+    #[doc = "9: PRS Channel 9 selected as input"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
+    #[doc = "10: PRS Channel 10 selected as input"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
+    #[doc = "11: PRS Channel 11 selected as input"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
+    #[doc = "12: PRS Channel 12 selected as input"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
+    #[doc = "13: PRS Channel 13 selected as input"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
+    #[doc = "14: PRS Channel 14 selected as input"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
+    #[doc = "15: PRS Channel 15 selected as input"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
+    #[doc = "16: PRS Channel 16 selected as input"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
+    #[doc = "17: PRS Channel 17 selected as input"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
+    #[doc = "18: PRS Channel 18 selected as input"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
+    #[doc = "19: PRS Channel 19 selected as input"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
+    #[doc = "20: PRS Channel 20 selected as input"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
+    #[doc = "21: PRS Channel 21 selected as input"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
+    #[doc = "22: PRS Channel 22 selected as input"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
+    #[doc = "23: PRS Channel 23 selected as input"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSUPSEL_A {
+impl From<PRSUPSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSUPSEL_A) -> Self {
+        match variant {
             PRSUPSEL_A::PRSCH0 => 0,
             PRSUPSEL_A::PRSCH1 => 1,
             PRSUPSEL_A::PRSCH2 => 2,
@@ -573,8 +571,7 @@ impl<'a> PRSUPSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSUPSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -703,62 +700,62 @@ impl<'a> PRSUPSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSDOWNSEL`"]
+#[doc = "PRS Select for PRS Input When Selected in DOWNSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSDOWNSEL_A {
-    #[doc = "PRS Channel 0 selected as input"]
+    #[doc = "0: PRS Channel 0 selected as input"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
+    #[doc = "1: PRS Channel 1 selected as input"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
+    #[doc = "2: PRS Channel 2 selected as input"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
+    #[doc = "3: PRS Channel 3 selected as input"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
+    #[doc = "4: PRS Channel 4 selected as input"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
+    #[doc = "5: PRS Channel 5 selected as input"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
+    #[doc = "6: PRS Channel 6 selected as input"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
+    #[doc = "7: PRS Channel 7 selected as input"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
+    #[doc = "8: PRS Channel 8 selected as input"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
+    #[doc = "9: PRS Channel 9 selected as input"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
+    #[doc = "10: PRS Channel 10 selected as input"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
+    #[doc = "11: PRS Channel 11 selected as input"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
+    #[doc = "12: PRS Channel 12 selected as input"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
+    #[doc = "13: PRS Channel 13 selected as input"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
+    #[doc = "14: PRS Channel 14 selected as input"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
+    #[doc = "15: PRS Channel 15 selected as input"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
+    #[doc = "16: PRS Channel 16 selected as input"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
+    #[doc = "17: PRS Channel 17 selected as input"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
+    #[doc = "18: PRS Channel 18 selected as input"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
+    #[doc = "19: PRS Channel 19 selected as input"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
+    #[doc = "20: PRS Channel 20 selected as input"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
+    #[doc = "21: PRS Channel 21 selected as input"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
+    #[doc = "22: PRS Channel 22 selected as input"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
+    #[doc = "23: PRS Channel 23 selected as input"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSDOWNSEL_A {
+impl From<PRSDOWNSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSDOWNSEL_A) -> Self {
+        match variant {
             PRSDOWNSEL_A::PRSCH0 => 0,
             PRSDOWNSEL_A::PRSCH1 => 1,
             PRSDOWNSEL_A::PRSCH2 => 2,
@@ -950,8 +947,7 @@ impl<'a> PRSDOWNSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSDOWNSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]

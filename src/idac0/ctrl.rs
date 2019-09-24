@@ -106,78 +106,78 @@ impl<'a> APORTOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `APORTOUTSEL`"]
+#[doc = "APORT Output Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APORTOUTSEL_A {
-    #[doc = "APORT1X Channel 0"]
+    #[doc = "32: APORT1X Channel 0"]
     APORT1XCH0,
-    #[doc = "APORT1Y Channel 1"]
+    #[doc = "33: APORT1Y Channel 1"]
     APORT1YCH1,
-    #[doc = "APORT1X Channel 2"]
+    #[doc = "34: APORT1X Channel 2"]
     APORT1XCH2,
-    #[doc = "APORT1Y Channel 3"]
+    #[doc = "35: APORT1Y Channel 3"]
     APORT1YCH3,
-    #[doc = "APORT1X Channel 4"]
+    #[doc = "36: APORT1X Channel 4"]
     APORT1XCH4,
-    #[doc = "APORT1Y Channel 5"]
+    #[doc = "37: APORT1Y Channel 5"]
     APORT1YCH5,
-    #[doc = "APORT1X Channel 6"]
+    #[doc = "38: APORT1X Channel 6"]
     APORT1XCH6,
-    #[doc = "APORT1Y Channel 7"]
+    #[doc = "39: APORT1Y Channel 7"]
     APORT1YCH7,
-    #[doc = "APORT1X Channel 8"]
+    #[doc = "40: APORT1X Channel 8"]
     APORT1XCH8,
-    #[doc = "APORT1Y Channel 9"]
+    #[doc = "41: APORT1Y Channel 9"]
     APORT1YCH9,
-    #[doc = "APORT1X Channel 10"]
+    #[doc = "42: APORT1X Channel 10"]
     APORT1XCH10,
-    #[doc = "APORT1Y Channel 11"]
+    #[doc = "43: APORT1Y Channel 11"]
     APORT1YCH11,
-    #[doc = "APORT1X Channel 12"]
+    #[doc = "44: APORT1X Channel 12"]
     APORT1XCH12,
-    #[doc = "APORT1Y Channel 13"]
+    #[doc = "45: APORT1Y Channel 13"]
     APORT1YCH13,
-    #[doc = "APORT1X Channel 14"]
+    #[doc = "46: APORT1X Channel 14"]
     APORT1XCH14,
-    #[doc = "APORT1Y Channel 15"]
+    #[doc = "47: APORT1Y Channel 15"]
     APORT1YCH15,
-    #[doc = "APORT1X Channel 16"]
+    #[doc = "48: APORT1X Channel 16"]
     APORT1XCH16,
-    #[doc = "APORT1Y Channel 17"]
+    #[doc = "49: APORT1Y Channel 17"]
     APORT1YCH17,
-    #[doc = "APORT1X Channel 18"]
+    #[doc = "50: APORT1X Channel 18"]
     APORT1XCH18,
-    #[doc = "APORT1Y Channel 19"]
+    #[doc = "51: APORT1Y Channel 19"]
     APORT1YCH19,
-    #[doc = "APORT1X Channel 20"]
+    #[doc = "52: APORT1X Channel 20"]
     APORT1XCH20,
-    #[doc = "APORT1Y Channel 21"]
+    #[doc = "53: APORT1Y Channel 21"]
     APORT1YCH21,
-    #[doc = "APORT1X Channel 22"]
+    #[doc = "54: APORT1X Channel 22"]
     APORT1XCH22,
-    #[doc = "APORT1Y Channel 23"]
+    #[doc = "55: APORT1Y Channel 23"]
     APORT1YCH23,
-    #[doc = "APORT1X Channel 24"]
+    #[doc = "56: APORT1X Channel 24"]
     APORT1XCH24,
-    #[doc = "APORT1Y Channel 25"]
+    #[doc = "57: APORT1Y Channel 25"]
     APORT1YCH25,
-    #[doc = "APORT1X Channel 26"]
+    #[doc = "58: APORT1X Channel 26"]
     APORT1XCH26,
-    #[doc = "APORT1Y Channel 27"]
+    #[doc = "59: APORT1Y Channel 27"]
     APORT1YCH27,
-    #[doc = "APORT1X Channel 28"]
+    #[doc = "60: APORT1X Channel 28"]
     APORT1XCH28,
-    #[doc = "APORT1Y Channel 29"]
+    #[doc = "61: APORT1Y Channel 29"]
     APORT1YCH29,
-    #[doc = "APORT1X Channel 30"]
+    #[doc = "62: APORT1X Channel 30"]
     APORT1XCH30,
-    #[doc = "APORT1Y Channel 31"]
+    #[doc = "63: APORT1Y Channel 31"]
     APORT1YCH31,
 }
-impl crate::ToBits<u8> for APORTOUTSEL_A {
+impl From<APORTOUTSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: APORTOUTSEL_A) -> Self {
+        match variant {
             APORTOUTSEL_A::APORT1XCH0 => 32,
             APORTOUTSEL_A::APORT1YCH1 => 33,
             APORTOUTSEL_A::APORT1XCH2 => 34,
@@ -425,8 +425,7 @@ impl<'a> APORTOUTSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: APORTOUTSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "APORT1X Channel 0"]
     #[inline(always)]
@@ -739,62 +738,62 @@ impl<'a> MAINOUTENPRS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "IDAC Output Enable PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS Channel 0 selected."]
+    #[doc = "0: PRS Channel 0 selected."]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected."]
+    #[doc = "1: PRS Channel 1 selected."]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected."]
+    #[doc = "2: PRS Channel 2 selected."]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected."]
+    #[doc = "3: PRS Channel 3 selected."]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected."]
+    #[doc = "4: PRS Channel 4 selected."]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected."]
+    #[doc = "5: PRS Channel 5 selected."]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected."]
+    #[doc = "6: PRS Channel 6 selected."]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected."]
+    #[doc = "7: PRS Channel 7 selected."]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected."]
+    #[doc = "8: PRS Channel 8 selected."]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected."]
+    #[doc = "9: PRS Channel 9 selected."]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected."]
+    #[doc = "10: PRS Channel 10 selected."]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected."]
+    #[doc = "11: PRS Channel 11 selected."]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected."]
+    #[doc = "12: PRS Channel 12 selected."]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected."]
+    #[doc = "13: PRS Channel 13 selected."]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected."]
+    #[doc = "14: PRS Channel 14 selected."]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected."]
+    #[doc = "15: PRS Channel 15 selected."]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected."]
+    #[doc = "16: PRS Channel 16 selected."]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected."]
+    #[doc = "17: PRS Channel 17 selected."]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected."]
+    #[doc = "18: PRS Channel 18 selected."]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected."]
+    #[doc = "19: PRS Channel 19 selected."]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected."]
+    #[doc = "20: PRS Channel 20 selected."]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected."]
+    #[doc = "21: PRS Channel 21 selected."]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected."]
+    #[doc = "22: PRS Channel 22 selected."]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected."]
+    #[doc = "23: PRS Channel 23 selected."]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -986,8 +985,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]

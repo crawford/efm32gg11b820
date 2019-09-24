@@ -4,22 +4,22 @@ pub type R = crate::R<u32, super::PRSTVAL0>;
 pub type INITSDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `INITCLCKGENVAL`"]
 pub type INITCLCKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `INITDRVSTVAL`"]
+#[doc = "Driver Strength Select Value for Initialization\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INITDRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for INITDRVSTVAL_A {
+impl From<INITDRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INITDRVSTVAL_A) -> Self {
+        match variant {
             INITDRVSTVAL_A::TYPEB => 0,
             INITDRVSTVAL_A::TYPEA => 1,
             INITDRVSTVAL_A::TYPEC => 2,
@@ -66,22 +66,22 @@ impl INITDRVSTVAL_R {
 pub type DSPSDCLKFREQVAL_R = crate::R<u16, u16>;
 #[doc = "Reader of field `DSPCLKGENVAL`"]
 pub type DSPCLKGENVAL_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `DSPDRVSTVAL`"]
+#[doc = "Driver Strength Select Value for Default Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSPDRVSTVAL_A {
-    #[doc = "Driver Type B is selected (Default)"]
+    #[doc = "0: Driver Type B is selected (Default)"]
     TYPEB,
-    #[doc = "Driver Type A is selected"]
+    #[doc = "1: Driver Type A is selected"]
     TYPEA,
-    #[doc = "Driver Type C is selected"]
+    #[doc = "2: Driver Type C is selected"]
     TYPEC,
-    #[doc = "Driver Type D is selected"]
+    #[doc = "3: Driver Type D is selected"]
     TYPED,
 }
-impl crate::ToBits<u8> for DSPDRVSTVAL_A {
+impl From<DSPDRVSTVAL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DSPDRVSTVAL_A) -> Self {
+        match variant {
             DSPDRVSTVAL_A::TYPEB => 0,
             DSPDRVSTVAL_A::TYPEA => 1,
             DSPDRVSTVAL_A::TYPEC => 2,

@@ -82,22 +82,22 @@ impl<'a> HSEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMASEL`"]
+#[doc = "DMA Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMASEL_A {
-    #[doc = "SDMA selected"]
+    #[doc = "0: SDMA selected"]
     SDMA,
-    #[doc = "32-bit ADMA1 selected"]
+    #[doc = "1: 32-bit ADMA1 selected"]
     ADMA1,
-    #[doc = "32-bit ADMA2 selected"]
+    #[doc = "2: 32-bit ADMA2 selected"]
     ADMA2,
-    #[doc = "64-bit ADMA2 selected"]
+    #[doc = "3: 64-bit ADMA2 selected"]
     _64BITADMA2,
 }
-impl crate::ToBits<u8> for DMASEL_A {
+impl From<DMASEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMASEL_A) -> Self {
+        match variant {
             DMASEL_A::SDMA => 0,
             DMASEL_A::ADMA1 => 1,
             DMASEL_A::ADMA2 => 2,
@@ -148,9 +148,8 @@ impl<'a> DMASEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMASEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "SDMA selected"]
@@ -276,20 +275,20 @@ impl<'a> SDBUSPOWER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDBUSVOLTSEL`"]
+#[doc = "SD Bus Voltage Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDBUSVOLTSEL_A {
-    #[doc = "Select 1.8V"]
+    #[doc = "5: Select 1.8V"]
     _1P8V,
-    #[doc = "Select 3.0V"]
+    #[doc = "6: Select 3.0V"]
     _3P0V,
-    #[doc = "Select 3.3V"]
+    #[doc = "7: Select 3.3V"]
     _3P3V,
 }
-impl crate::ToBits<u8> for SDBUSVOLTSEL_A {
+impl From<SDBUSVOLTSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SDBUSVOLTSEL_A) -> Self {
+        match variant {
             SDBUSVOLTSEL_A::_1P8V => 5,
             SDBUSVOLTSEL_A::_3P0V => 6,
             SDBUSVOLTSEL_A::_3P3V => 7,
@@ -334,8 +333,7 @@ impl<'a> SDBUSVOLTSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDBUSVOLTSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Select 1.8V"]
     #[inline(always)]

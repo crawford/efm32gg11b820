@@ -10,32 +10,32 @@ impl crate::ResetValue for super::EXTIPSELL {
         0
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL0`"]
+#[doc = "External Interrupt 0 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL0_A {
-    #[doc = "Port A group selected for external interrupt 0"]
+    #[doc = "0: Port A group selected for external interrupt 0"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 0"]
+    #[doc = "1: Port B group selected for external interrupt 0"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 0"]
+    #[doc = "2: Port C group selected for external interrupt 0"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 0"]
+    #[doc = "3: Port D group selected for external interrupt 0"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 0"]
+    #[doc = "4: Port E group selected for external interrupt 0"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 0"]
+    #[doc = "5: Port F group selected for external interrupt 0"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 0"]
+    #[doc = "6: Port G group selected for external interrupt 0"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 0"]
+    #[doc = "7: Port H group selected for external interrupt 0"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 0"]
+    #[doc = "8: Port I group selected for external interrupt 0"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL0_A {
+impl From<EXTIPSEL0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL0_A) -> Self {
+        match variant {
             EXTIPSEL0_A::PORTA => 0,
             EXTIPSEL0_A::PORTB => 1,
             EXTIPSEL0_A::PORTC => 2,
@@ -122,8 +122,7 @@ impl<'a> EXTIPSEL0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL0_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 0"]
     #[inline(always)]
@@ -177,32 +176,32 @@ impl<'a> EXTIPSEL0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL1`"]
+#[doc = "External Interrupt 1 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL1_A {
-    #[doc = "Port A group selected for external interrupt 1"]
+    #[doc = "0: Port A group selected for external interrupt 1"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 1"]
+    #[doc = "1: Port B group selected for external interrupt 1"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 1"]
+    #[doc = "2: Port C group selected for external interrupt 1"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 1"]
+    #[doc = "3: Port D group selected for external interrupt 1"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 1"]
+    #[doc = "4: Port E group selected for external interrupt 1"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 1"]
+    #[doc = "5: Port F group selected for external interrupt 1"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 1"]
+    #[doc = "6: Port G group selected for external interrupt 1"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 1"]
+    #[doc = "7: Port H group selected for external interrupt 1"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 1"]
+    #[doc = "8: Port I group selected for external interrupt 1"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL1_A {
+impl From<EXTIPSEL1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL1_A) -> Self {
+        match variant {
             EXTIPSEL1_A::PORTA => 0,
             EXTIPSEL1_A::PORTB => 1,
             EXTIPSEL1_A::PORTC => 2,
@@ -289,8 +288,7 @@ impl<'a> EXTIPSEL1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL1_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 1"]
     #[inline(always)]
@@ -344,32 +342,32 @@ impl<'a> EXTIPSEL1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL2`"]
+#[doc = "External Interrupt 2 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL2_A {
-    #[doc = "Port A group selected for external interrupt 2"]
+    #[doc = "0: Port A group selected for external interrupt 2"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 2"]
+    #[doc = "1: Port B group selected for external interrupt 2"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 2"]
+    #[doc = "2: Port C group selected for external interrupt 2"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 2"]
+    #[doc = "3: Port D group selected for external interrupt 2"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 2"]
+    #[doc = "4: Port E group selected for external interrupt 2"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 2"]
+    #[doc = "5: Port F group selected for external interrupt 2"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 2"]
+    #[doc = "6: Port G group selected for external interrupt 2"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 2"]
+    #[doc = "7: Port H group selected for external interrupt 2"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 2"]
+    #[doc = "8: Port I group selected for external interrupt 2"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL2_A {
+impl From<EXTIPSEL2_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL2_A) -> Self {
+        match variant {
             EXTIPSEL2_A::PORTA => 0,
             EXTIPSEL2_A::PORTB => 1,
             EXTIPSEL2_A::PORTC => 2,
@@ -456,8 +454,7 @@ impl<'a> EXTIPSEL2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL2_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 2"]
     #[inline(always)]
@@ -511,32 +508,32 @@ impl<'a> EXTIPSEL2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL3`"]
+#[doc = "External Interrupt 3 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL3_A {
-    #[doc = "Port A group selected for external interrupt 3"]
+    #[doc = "0: Port A group selected for external interrupt 3"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 3"]
+    #[doc = "1: Port B group selected for external interrupt 3"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 3"]
+    #[doc = "2: Port C group selected for external interrupt 3"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 3"]
+    #[doc = "3: Port D group selected for external interrupt 3"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 3"]
+    #[doc = "4: Port E group selected for external interrupt 3"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 3"]
+    #[doc = "5: Port F group selected for external interrupt 3"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 3"]
+    #[doc = "6: Port G group selected for external interrupt 3"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 3"]
+    #[doc = "7: Port H group selected for external interrupt 3"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 3"]
+    #[doc = "8: Port I group selected for external interrupt 3"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL3_A {
+impl From<EXTIPSEL3_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL3_A) -> Self {
+        match variant {
             EXTIPSEL3_A::PORTA => 0,
             EXTIPSEL3_A::PORTB => 1,
             EXTIPSEL3_A::PORTC => 2,
@@ -623,8 +620,7 @@ impl<'a> EXTIPSEL3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL3_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 3"]
     #[inline(always)]
@@ -678,32 +674,32 @@ impl<'a> EXTIPSEL3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL4`"]
+#[doc = "External Interrupt 4 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL4_A {
-    #[doc = "Port A group selected for external interrupt 4"]
+    #[doc = "0: Port A group selected for external interrupt 4"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 4"]
+    #[doc = "1: Port B group selected for external interrupt 4"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 4"]
+    #[doc = "2: Port C group selected for external interrupt 4"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 4"]
+    #[doc = "3: Port D group selected for external interrupt 4"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 4"]
+    #[doc = "4: Port E group selected for external interrupt 4"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 4"]
+    #[doc = "5: Port F group selected for external interrupt 4"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 4"]
+    #[doc = "6: Port G group selected for external interrupt 4"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 4"]
+    #[doc = "7: Port H group selected for external interrupt 4"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 4"]
+    #[doc = "8: Port I group selected for external interrupt 4"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL4_A {
+impl From<EXTIPSEL4_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL4_A) -> Self {
+        match variant {
             EXTIPSEL4_A::PORTA => 0,
             EXTIPSEL4_A::PORTB => 1,
             EXTIPSEL4_A::PORTC => 2,
@@ -790,8 +786,7 @@ impl<'a> EXTIPSEL4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL4_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 4"]
     #[inline(always)]
@@ -845,32 +840,32 @@ impl<'a> EXTIPSEL4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL5`"]
+#[doc = "External Interrupt 5 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL5_A {
-    #[doc = "Port A group selected for external interrupt 5"]
+    #[doc = "0: Port A group selected for external interrupt 5"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 5"]
+    #[doc = "1: Port B group selected for external interrupt 5"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 5"]
+    #[doc = "2: Port C group selected for external interrupt 5"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 5"]
+    #[doc = "3: Port D group selected for external interrupt 5"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 5"]
+    #[doc = "4: Port E group selected for external interrupt 5"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 5"]
+    #[doc = "5: Port F group selected for external interrupt 5"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 5"]
+    #[doc = "6: Port G group selected for external interrupt 5"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 5"]
+    #[doc = "7: Port H group selected for external interrupt 5"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 5"]
+    #[doc = "8: Port I group selected for external interrupt 5"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL5_A {
+impl From<EXTIPSEL5_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL5_A) -> Self {
+        match variant {
             EXTIPSEL5_A::PORTA => 0,
             EXTIPSEL5_A::PORTB => 1,
             EXTIPSEL5_A::PORTC => 2,
@@ -957,8 +952,7 @@ impl<'a> EXTIPSEL5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL5_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 5"]
     #[inline(always)]
@@ -1012,32 +1006,32 @@ impl<'a> EXTIPSEL5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL6`"]
+#[doc = "External Interrupt 6 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL6_A {
-    #[doc = "Port A group selected for external interrupt 6"]
+    #[doc = "0: Port A group selected for external interrupt 6"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 6"]
+    #[doc = "1: Port B group selected for external interrupt 6"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 6"]
+    #[doc = "2: Port C group selected for external interrupt 6"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 6"]
+    #[doc = "3: Port D group selected for external interrupt 6"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 6"]
+    #[doc = "4: Port E group selected for external interrupt 6"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 6"]
+    #[doc = "5: Port F group selected for external interrupt 6"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 6"]
+    #[doc = "6: Port G group selected for external interrupt 6"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 6"]
+    #[doc = "7: Port H group selected for external interrupt 6"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 6"]
+    #[doc = "8: Port I group selected for external interrupt 6"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL6_A {
+impl From<EXTIPSEL6_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL6_A) -> Self {
+        match variant {
             EXTIPSEL6_A::PORTA => 0,
             EXTIPSEL6_A::PORTB => 1,
             EXTIPSEL6_A::PORTC => 2,
@@ -1124,8 +1118,7 @@ impl<'a> EXTIPSEL6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL6_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 6"]
     #[inline(always)]
@@ -1179,32 +1172,32 @@ impl<'a> EXTIPSEL6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPSEL7`"]
+#[doc = "External Interrupt 7 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPSEL7_A {
-    #[doc = "Port A group selected for external interrupt 7"]
+    #[doc = "0: Port A group selected for external interrupt 7"]
     PORTA,
-    #[doc = "Port B group selected for external interrupt 7"]
+    #[doc = "1: Port B group selected for external interrupt 7"]
     PORTB,
-    #[doc = "Port C group selected for external interrupt 7"]
+    #[doc = "2: Port C group selected for external interrupt 7"]
     PORTC,
-    #[doc = "Port D group selected for external interrupt 7"]
+    #[doc = "3: Port D group selected for external interrupt 7"]
     PORTD,
-    #[doc = "Port E group selected for external interrupt 7"]
+    #[doc = "4: Port E group selected for external interrupt 7"]
     PORTE,
-    #[doc = "Port F group selected for external interrupt 7"]
+    #[doc = "5: Port F group selected for external interrupt 7"]
     PORTF,
-    #[doc = "Port G group selected for external interrupt 7"]
+    #[doc = "6: Port G group selected for external interrupt 7"]
     PORTG,
-    #[doc = "Port H group selected for external interrupt 7"]
+    #[doc = "7: Port H group selected for external interrupt 7"]
     PORTH,
-    #[doc = "Port I group selected for external interrupt 7"]
+    #[doc = "8: Port I group selected for external interrupt 7"]
     PORTI,
 }
-impl crate::ToBits<u8> for EXTIPSEL7_A {
+impl From<EXTIPSEL7_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPSEL7_A) -> Self {
+        match variant {
             EXTIPSEL7_A::PORTA => 0,
             EXTIPSEL7_A::PORTB => 1,
             EXTIPSEL7_A::PORTC => 2,
@@ -1291,8 +1284,7 @@ impl<'a> EXTIPSEL7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPSEL7_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Port A group selected for external interrupt 7"]
     #[inline(always)]

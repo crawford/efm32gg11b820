@@ -58,22 +58,22 @@ impl<'a> CMPPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CM`"]
+#[doc = "CSEN Conversion Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CM_A {
-    #[doc = "Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
+    #[doc = "0: Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
     SGL,
-    #[doc = "Scan Mode: Scans multiple selected channels once per conversion trigger."]
+    #[doc = "1: Scan Mode: Scans multiple selected channels once per conversion trigger."]
     SCAN,
-    #[doc = "Continuous Single Channel: Continuous conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1)."]
+    #[doc = "2: Continuous Single Channel: Continuous conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1)."]
     CONTSGL,
-    #[doc = "Continuous Scan Mode: Continuously scans multiple selected channels."]
+    #[doc = "3: Continuous Scan Mode: Continuously scans multiple selected channels."]
     CONTSCAN,
 }
-impl crate::ToBits<u8> for CM_A {
+impl From<CM_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CM_A) -> Self {
+        match variant {
             CM_A::SGL => 0,
             CM_A::SCAN => 1,
             CM_A::CONTSGL => 2,
@@ -124,9 +124,8 @@ impl<'a> CM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CM_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
@@ -156,22 +155,22 @@ impl<'a> CM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SARCR`"]
+#[doc = "SAR Conversion Resolution.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SARCR_A {
-    #[doc = "Conversions last 10 internal CSEN clocks and are 10-bits in length."]
+    #[doc = "0: Conversions last 10 internal CSEN clocks and are 10-bits in length."]
     CLK10,
-    #[doc = "Conversions last 12 internal CSEN clocks and are 12-bits in length."]
+    #[doc = "1: Conversions last 12 internal CSEN clocks and are 12-bits in length."]
     CLK12,
-    #[doc = "Conversions last 14 internal CSEN clocks and are 14-bits in length."]
+    #[doc = "2: Conversions last 14 internal CSEN clocks and are 14-bits in length."]
     CLK14,
-    #[doc = "Conversions last 16 internal CSEN clocks and are 16-bits in length."]
+    #[doc = "3: Conversions last 16 internal CSEN clocks and are 16-bits in length."]
     CLK16,
 }
-impl crate::ToBits<u8> for SARCR_A {
+impl From<SARCR_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SARCR_A) -> Self {
+        match variant {
             SARCR_A::CLK10 => 0,
             SARCR_A::CLK12 => 1,
             SARCR_A::CLK14 => 2,
@@ -222,9 +221,8 @@ impl<'a> SARCR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SARCR_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Conversions last 10 internal CSEN clocks and are 10-bits in length."]
@@ -254,28 +252,28 @@ impl<'a> SARCR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ACU`"]
+#[doc = "CSEN Accumulator Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACU_A {
-    #[doc = "Accumulate 1 sample."]
+    #[doc = "0: Accumulate 1 sample."]
     ACC1,
-    #[doc = "Accumulate 2 sample."]
+    #[doc = "1: Accumulate 2 sample."]
     ACC2,
-    #[doc = "Accumulate 4 sample."]
+    #[doc = "2: Accumulate 4 sample."]
     ACC4,
-    #[doc = "Accumulate 8 sample."]
+    #[doc = "3: Accumulate 8 sample."]
     ACC8,
-    #[doc = "Accumulate 16 sample."]
+    #[doc = "4: Accumulate 16 sample."]
     ACC16,
-    #[doc = "Accumulate 32 sample."]
+    #[doc = "5: Accumulate 32 sample."]
     ACC32,
-    #[doc = "Accumulate 64 sample."]
+    #[doc = "6: Accumulate 64 sample."]
     ACC64,
 }
-impl crate::ToBits<u8> for ACU_A {
+impl From<ACU_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ACU_A) -> Self {
+        match variant {
             ACU_A::ACC1 => 0,
             ACU_A::ACC2 => 1,
             ACU_A::ACC4 => 2,
@@ -348,8 +346,7 @@ impl<'a> ACU_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ACU_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Accumulate 1 sample."]
     #[inline(always)]
@@ -417,20 +414,20 @@ impl<'a> MCEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STM`"]
+#[doc = "Start Trigger Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STM_A {
-    #[doc = "PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
+    #[doc = "0: PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
     PRS,
-    #[doc = "Timer Triggering. Conversions are triggered by a local CSEN timer reload."]
+    #[doc = "1: Timer Triggering. Conversions are triggered by a local CSEN timer reload."]
     TIMER,
-    #[doc = "Software Triggering. Conversions are triggered by writing a 1 to the START field of the CMD register."]
+    #[doc = "2: Software Triggering. Conversions are triggered by writing a 1 to the START field of the CMD register."]
     START,
 }
-impl crate::ToBits<u8> for STM_A {
+impl From<STM_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STM_A) -> Self {
+        match variant {
             STM_A::PRS => 0,
             STM_A::TIMER => 1,
             STM_A::START => 2,
@@ -475,8 +472,7 @@ impl<'a> STM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: STM_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
     #[inline(always)]

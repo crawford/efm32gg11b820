@@ -16,20 +16,20 @@ pub type VMONIO1_R = crate::R<bool, bool>;
 pub type VMONBUVDD_R = crate::R<bool, bool>;
 #[doc = "Reader of field `BURDY`"]
 pub type BURDY_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `VSCALE`"]
+#[doc = "Current Voltage Scale Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VSCALE_A {
-    #[doc = "Voltage Scale Level 2"]
+    #[doc = "0: Voltage Scale Level 2"]
     VSCALE2,
-    #[doc = "Voltage Scale Level 0"]
+    #[doc = "2: Voltage Scale Level 0"]
     VSCALE0,
-    #[doc = "RESV"]
+    #[doc = "3: RESV"]
     RESV,
 }
-impl crate::ToBits<u8> for VSCALE_A {
+impl From<VSCALE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: VSCALE_A) -> Self {
+        match variant {
             VSCALE_A::VSCALE2 => 0,
             VSCALE_A::VSCALE0 => 2,
             VSCALE_A::RESV => 3,

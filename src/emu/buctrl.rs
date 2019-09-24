@@ -82,22 +82,22 @@ impl<'a> BUVINPROBEEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VOUTRES`"]
+#[doc = "BU_VOUT Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOUTRES_A {
-    #[doc = "BU_VOUT is not connected"]
+    #[doc = "0: BU_VOUT is not connected"]
     DIS,
-    #[doc = "Enable weak switch between BU_VOUT and backup domain power supply."]
+    #[doc = "1: Enable weak switch between BU_VOUT and backup domain power supply."]
     WEAK,
-    #[doc = "Enable medium switch between BU_VOUT and backup domain power supply."]
+    #[doc = "2: Enable medium switch between BU_VOUT and backup domain power supply."]
     MED,
-    #[doc = "Enable strong switch between BU_VOUT and backup domain power supply."]
+    #[doc = "3: Enable strong switch between BU_VOUT and backup domain power supply."]
     STRONG,
 }
-impl crate::ToBits<u8> for VOUTRES_A {
+impl From<VOUTRES_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: VOUTRES_A) -> Self {
+        match variant {
             VOUTRES_A::DIS => 0,
             VOUTRES_A::WEAK => 1,
             VOUTRES_A::MED => 2,
@@ -148,9 +148,8 @@ impl<'a> VOUTRES_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VOUTRES_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "BU_VOUT is not connected"]
@@ -180,22 +179,22 @@ impl<'a> VOUTRES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWRRES`"]
+#[doc = "Power Domain Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWRRES_A {
-    #[doc = "Main power and backup power connected with RES0 series resistance."]
+    #[doc = "0: Main power and backup power connected with RES0 series resistance."]
     RES0,
-    #[doc = "Main power and backup power connected with RES1 series resistance."]
+    #[doc = "1: Main power and backup power connected with RES1 series resistance."]
     RES1,
-    #[doc = "Main power and backup power connected with RES2 series resistance."]
+    #[doc = "2: Main power and backup power connected with RES2 series resistance."]
     RES2,
-    #[doc = "Main power and backup power connected with RES3 series resistance."]
+    #[doc = "3: Main power and backup power connected with RES3 series resistance."]
     RES3,
 }
-impl crate::ToBits<u8> for PWRRES_A {
+impl From<PWRRES_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PWRRES_A) -> Self {
+        match variant {
             PWRRES_A::RES0 => 0,
             PWRRES_A::RES1 => 1,
             PWRRES_A::RES2 => 2,
@@ -246,9 +245,8 @@ impl<'a> PWRRES_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PWRRES_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Main power and backup power connected with RES0 series resistance."]
@@ -278,22 +276,22 @@ impl<'a> PWRRES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BUACTPWRCON`"]
+#[doc = "Power Connection Configuration in Backup Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUACTPWRCON_A {
-    #[doc = "No connection."]
+    #[doc = "0: No connection."]
     NONE,
-    #[doc = "Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
+    #[doc = "1: Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
     MAINBU,
-    #[doc = "Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
+    #[doc = "2: Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
     BUMAIN,
-    #[doc = "Main power and backup power are connected without diode."]
+    #[doc = "3: Main power and backup power are connected without diode."]
     NODIODE,
 }
-impl crate::ToBits<u8> for BUACTPWRCON_A {
+impl From<BUACTPWRCON_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BUACTPWRCON_A) -> Self {
+        match variant {
             BUACTPWRCON_A::NONE => 0,
             BUACTPWRCON_A::MAINBU => 1,
             BUACTPWRCON_A::BUMAIN => 2,
@@ -344,9 +342,8 @@ impl<'a> BUACTPWRCON_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BUACTPWRCON_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No connection."]
@@ -376,22 +373,22 @@ impl<'a> BUACTPWRCON_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BUINACTPWRCON`"]
+#[doc = "Power Connection Configuration When Not in Backup Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUINACTPWRCON_A {
-    #[doc = "No connection."]
+    #[doc = "0: No connection."]
     NONE,
-    #[doc = "Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
+    #[doc = "1: Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
     MAINBU,
-    #[doc = "Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
+    #[doc = "2: Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
     BUMAIN,
-    #[doc = "Main power and backup power are connected without diode."]
+    #[doc = "3: Main power and backup power are connected without diode."]
     NODIODE,
 }
-impl crate::ToBits<u8> for BUINACTPWRCON_A {
+impl From<BUINACTPWRCON_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BUINACTPWRCON_A) -> Self {
+        match variant {
             BUINACTPWRCON_A::NONE => 0,
             BUINACTPWRCON_A::MAINBU => 1,
             BUINACTPWRCON_A::BUMAIN => 2,
@@ -442,9 +439,8 @@ impl<'a> BUINACTPWRCON_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BUINACTPWRCON_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No connection."]

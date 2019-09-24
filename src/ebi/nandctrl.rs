@@ -34,22 +34,22 @@ impl<'a> EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BANKSEL`"]
+#[doc = "NAND Flash Bank\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BANKSEL_A {
-    #[doc = "Memory bank 0 is connected to a NAND Flash device."]
+    #[doc = "0: Memory bank 0 is connected to a NAND Flash device."]
     BANK0,
-    #[doc = "Memory bank 1 is connected to a NAND Flash device."]
+    #[doc = "1: Memory bank 1 is connected to a NAND Flash device."]
     BANK1,
-    #[doc = "Memory bank 2 is connected to a NAND Flash device."]
+    #[doc = "2: Memory bank 2 is connected to a NAND Flash device."]
     BANK2,
-    #[doc = "Memory bank 3 is connected to a NAND Flash device."]
+    #[doc = "3: Memory bank 3 is connected to a NAND Flash device."]
     BANK3,
 }
-impl crate::ToBits<u8> for BANKSEL_A {
+impl From<BANKSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BANKSEL_A) -> Self {
+        match variant {
             BANKSEL_A::BANK0 => 0,
             BANKSEL_A::BANK1 => 1,
             BANKSEL_A::BANK2 => 2,
@@ -100,9 +100,8 @@ impl<'a> BANKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BANKSEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Memory bank 0 is connected to a NAND Flash device."]

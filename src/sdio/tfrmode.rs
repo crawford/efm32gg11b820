@@ -58,20 +58,20 @@ impl<'a> BLKCNTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUTOCMDEN`"]
+#[doc = "Auto Command Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOCMDEN_A {
-    #[doc = "Auto CMD Disabled"]
+    #[doc = "0: Auto CMD Disabled"]
     ACMDDISABLED,
-    #[doc = "Auto CMD12 Enable"]
+    #[doc = "1: Auto CMD12 Enable"]
     ACMD12EN,
-    #[doc = "Auto CMD23 Enable"]
+    #[doc = "2: Auto CMD23 Enable"]
     ACMD23EN,
 }
-impl crate::ToBits<u8> for AUTOCMDEN_A {
+impl From<AUTOCMDEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: AUTOCMDEN_A) -> Self {
+        match variant {
             AUTOCMDEN_A::ACMDDISABLED => 0,
             AUTOCMDEN_A::ACMD12EN => 1,
             AUTOCMDEN_A::ACMD23EN => 2,
@@ -116,8 +116,7 @@ impl<'a> AUTOCMDEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AUTOCMDEN_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Auto CMD Disabled"]
     #[inline(always)]
@@ -189,22 +188,22 @@ impl<'a> MULTSINGBLKSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESPTYPESEL`"]
+#[doc = "Response Type Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESPTYPESEL_A {
-    #[doc = "No RESP"]
+    #[doc = "0: No RESP"]
     NORESP,
-    #[doc = "RESP Length 136"]
+    #[doc = "1: RESP Length 136"]
     RESP136,
-    #[doc = "RESP Length 48"]
+    #[doc = "2: RESP Length 48"]
     RESP48,
-    #[doc = "RESP Length 48 check busy after RESP"]
+    #[doc = "3: RESP Length 48 check busy after RESP"]
     BUSYAFTRESP,
 }
-impl crate::ToBits<u8> for RESPTYPESEL_A {
+impl From<RESPTYPESEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: RESPTYPESEL_A) -> Self {
+        match variant {
             RESPTYPESEL_A::NORESP => 0,
             RESPTYPESEL_A::RESP136 => 1,
             RESPTYPESEL_A::RESP48 => 2,
@@ -255,9 +254,8 @@ impl<'a> RESPTYPESEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESPTYPESEL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No RESP"]
@@ -359,22 +357,22 @@ impl<'a> DATPRESSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CMDTYPE`"]
+#[doc = "Command Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMDTYPE_A {
-    #[doc = "Normal Command"]
+    #[doc = "0: Normal Command"]
     NORMAL,
-    #[doc = "Suspend command"]
+    #[doc = "1: Suspend command"]
     SUSPEND,
-    #[doc = "Resume command"]
+    #[doc = "2: Resume command"]
     RESUME,
-    #[doc = "Abort command"]
+    #[doc = "3: Abort command"]
     ABORT,
 }
-impl crate::ToBits<u8> for CMDTYPE_A {
+impl From<CMDTYPE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CMDTYPE_A) -> Self {
+        match variant {
             CMDTYPE_A::NORMAL => 0,
             CMDTYPE_A::SUSPEND => 1,
             CMDTYPE_A::RESUME => 2,
@@ -425,9 +423,8 @@ impl<'a> CMDTYPE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CMDTYPE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Normal Command"]

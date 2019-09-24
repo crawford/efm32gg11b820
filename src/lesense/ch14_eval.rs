@@ -72,20 +72,20 @@ impl<'a> DECODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STRSAMPLE`"]
+#[doc = "Enable Storing of Sensor Sample in Result Buffer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STRSAMPLE_A {
-    #[doc = "Nothing will be stored in the result buffer."]
+    #[doc = "0: Nothing will be stored in the result buffer."]
     DISABLE,
-    #[doc = "The sensor sample data will be stored in the result buffer."]
+    #[doc = "1: The sensor sample data will be stored in the result buffer."]
     DATA,
-    #[doc = "The data source (i.e., the channel) will be stored alongside the sensor sample data."]
+    #[doc = "2: The data source (i.e., the channel) will be stored alongside the sensor sample data."]
     DATASRC,
 }
-impl crate::ToBits<u8> for STRSAMPLE_A {
+impl From<STRSAMPLE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STRSAMPLE_A) -> Self {
+        match variant {
             STRSAMPLE_A::DISABLE => 0,
             STRSAMPLE_A::DATA => 1,
             STRSAMPLE_A::DATASRC => 2,
@@ -130,8 +130,7 @@ impl<'a> STRSAMPLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: STRSAMPLE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Nothing will be stored in the result buffer."]
     #[inline(always)]
@@ -179,20 +178,20 @@ impl<'a> SCANRESINV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Configure Evaluation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "Threshold comparison is used to evaluate sensor result"]
+    #[doc = "0: Threshold comparison is used to evaluate sensor result"]
     THRES,
-    #[doc = "Sliding window is used to evaluate sensor result"]
+    #[doc = "1: Sliding window is used to evaluate sensor result"]
     SLIDINGWIN,
-    #[doc = "Step detection is used to evaluate sensor result"]
+    #[doc = "2: Step detection is used to evaluate sensor result"]
     STEPDET,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::THRES => 0,
             MODE_A::SLIDINGWIN => 1,
             MODE_A::STEPDET => 2,
@@ -237,8 +236,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Threshold comparison is used to evaluate sensor result"]
     #[inline(always)]

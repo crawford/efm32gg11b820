@@ -10,18 +10,18 @@ impl crate::ResetValue for super::LOCK {
         0
     }
 }
-#[doc = "Possible values of the field `TIMERLOCKKEY`"]
+#[doc = "Timer Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMERLOCKKEY_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     UNLOCKED,
-    #[doc = "`1`"]
+    #[doc = "1: `1`"]
     LOCKED,
 }
-impl crate::ToBits<u16> for TIMERLOCKKEY_A {
+impl From<TIMERLOCKKEY_A> for u16 {
     #[inline(always)]
-    fn _bits(&self) -> u16 {
-        match *self {
+    fn from(variant: TIMERLOCKKEY_A) -> Self {
+        match variant {
             TIMERLOCKKEY_A::UNLOCKED => 0,
             TIMERLOCKKEY_A::LOCKED => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> TIMERLOCKKEY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TIMERLOCKKEY_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]

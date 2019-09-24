@@ -10,20 +10,20 @@ impl crate::ResetValue for super::ALTEXCONF {
         0
     }
 }
-#[doc = "Possible values of the field `IDLECONF0`"]
+#[doc = "ALTEX0 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF0_A {
-    #[doc = "ALTEX0 output is disabled in idle phase"]
+    #[doc = "0: ALTEX0 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX0 output is high in idle phase"]
+    #[doc = "1: ALTEX0 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX0 output is low in idle phase"]
+    #[doc = "2: ALTEX0 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF0_A {
+impl From<IDLECONF0_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF0_A) -> Self {
+        match variant {
             IDLECONF0_A::DISABLE => 0,
             IDLECONF0_A::HIGH => 1,
             IDLECONF0_A::LOW => 2,
@@ -68,8 +68,7 @@ impl<'a> IDLECONF0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF0_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX0 output is disabled in idle phase"]
     #[inline(always)]
@@ -93,20 +92,20 @@ impl<'a> IDLECONF0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF1`"]
+#[doc = "ALTEX1 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF1_A {
-    #[doc = "ALTEX1 output is disabled in idle phase"]
+    #[doc = "0: ALTEX1 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX1 output is high in idle phase"]
+    #[doc = "1: ALTEX1 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX1 output is low in idle phase"]
+    #[doc = "2: ALTEX1 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF1_A {
+impl From<IDLECONF1_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF1_A) -> Self {
+        match variant {
             IDLECONF1_A::DISABLE => 0,
             IDLECONF1_A::HIGH => 1,
             IDLECONF1_A::LOW => 2,
@@ -151,8 +150,7 @@ impl<'a> IDLECONF1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF1_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX1 output is disabled in idle phase"]
     #[inline(always)]
@@ -176,20 +174,20 @@ impl<'a> IDLECONF1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF2`"]
+#[doc = "ALTEX2 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF2_A {
-    #[doc = "ALTEX2 output is disabled in idle phase"]
+    #[doc = "0: ALTEX2 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX2 output is high in idle phase"]
+    #[doc = "1: ALTEX2 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX2 output is low in idle phase"]
+    #[doc = "2: ALTEX2 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF2_A {
+impl From<IDLECONF2_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF2_A) -> Self {
+        match variant {
             IDLECONF2_A::DISABLE => 0,
             IDLECONF2_A::HIGH => 1,
             IDLECONF2_A::LOW => 2,
@@ -234,8 +232,7 @@ impl<'a> IDLECONF2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF2_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX2 output is disabled in idle phase"]
     #[inline(always)]
@@ -259,20 +256,20 @@ impl<'a> IDLECONF2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF3`"]
+#[doc = "ALTEX3 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF3_A {
-    #[doc = "ALTEX3 output is disabled in idle phase"]
+    #[doc = "0: ALTEX3 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX3 output is high in idle phase"]
+    #[doc = "1: ALTEX3 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX3 output is low in idle phase"]
+    #[doc = "2: ALTEX3 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF3_A {
+impl From<IDLECONF3_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF3_A) -> Self {
+        match variant {
             IDLECONF3_A::DISABLE => 0,
             IDLECONF3_A::HIGH => 1,
             IDLECONF3_A::LOW => 2,
@@ -317,8 +314,7 @@ impl<'a> IDLECONF3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF3_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX3 output is disabled in idle phase"]
     #[inline(always)]
@@ -342,20 +338,20 @@ impl<'a> IDLECONF3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF4`"]
+#[doc = "ALTEX4 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF4_A {
-    #[doc = "ALTEX4 output is disabled in idle phase"]
+    #[doc = "0: ALTEX4 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX4 output is high in idle phase"]
+    #[doc = "1: ALTEX4 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX4 output is low in idle phase"]
+    #[doc = "2: ALTEX4 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF4_A {
+impl From<IDLECONF4_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF4_A) -> Self {
+        match variant {
             IDLECONF4_A::DISABLE => 0,
             IDLECONF4_A::HIGH => 1,
             IDLECONF4_A::LOW => 2,
@@ -400,8 +396,7 @@ impl<'a> IDLECONF4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF4_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX4 output is disabled in idle phase"]
     #[inline(always)]
@@ -425,20 +420,20 @@ impl<'a> IDLECONF4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF5`"]
+#[doc = "ALTEX5 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF5_A {
-    #[doc = "ALTEX5 output is disabled in idle phase"]
+    #[doc = "0: ALTEX5 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX5 output is high in idle phase"]
+    #[doc = "1: ALTEX5 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX5 output is low in idle phase"]
+    #[doc = "2: ALTEX5 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF5_A {
+impl From<IDLECONF5_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF5_A) -> Self {
+        match variant {
             IDLECONF5_A::DISABLE => 0,
             IDLECONF5_A::HIGH => 1,
             IDLECONF5_A::LOW => 2,
@@ -483,8 +478,7 @@ impl<'a> IDLECONF5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF5_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX5 output is disabled in idle phase"]
     #[inline(always)]
@@ -508,20 +502,20 @@ impl<'a> IDLECONF5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF6`"]
+#[doc = "ALTEX6 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF6_A {
-    #[doc = "ALTEX6 output is disabled in idle phase"]
+    #[doc = "0: ALTEX6 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX6 output is high in idle phase"]
+    #[doc = "1: ALTEX6 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX6 output is low in idle phase"]
+    #[doc = "2: ALTEX6 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF6_A {
+impl From<IDLECONF6_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF6_A) -> Self {
+        match variant {
             IDLECONF6_A::DISABLE => 0,
             IDLECONF6_A::HIGH => 1,
             IDLECONF6_A::LOW => 2,
@@ -566,8 +560,7 @@ impl<'a> IDLECONF6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF6_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX6 output is disabled in idle phase"]
     #[inline(always)]
@@ -591,20 +584,20 @@ impl<'a> IDLECONF6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDLECONF7`"]
+#[doc = "ALTEX7 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECONF7_A {
-    #[doc = "ALTEX7 output is disabled in idle phase"]
+    #[doc = "0: ALTEX7 output is disabled in idle phase"]
     DISABLE,
-    #[doc = "ALTEX7 output is high in idle phase"]
+    #[doc = "1: ALTEX7 output is high in idle phase"]
     HIGH,
-    #[doc = "ALTEX7 output is low in idle phase"]
+    #[doc = "2: ALTEX7 output is low in idle phase"]
     LOW,
 }
-impl crate::ToBits<u8> for IDLECONF7_A {
+impl From<IDLECONF7_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: IDLECONF7_A) -> Self {
+        match variant {
             IDLECONF7_A::DISABLE => 0,
             IDLECONF7_A::HIGH => 1,
             IDLECONF7_A::LOW => 2,
@@ -649,8 +642,7 @@ impl<'a> IDLECONF7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IDLECONF7_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "ALTEX7 output is disabled in idle phase"]
     #[inline(always)]

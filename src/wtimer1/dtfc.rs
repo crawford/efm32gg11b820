@@ -10,62 +10,62 @@ impl crate::ResetValue for super::DTFC {
         0
     }
 }
-#[doc = "Possible values of the field `DTPRS0FSEL`"]
+#[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTPRS0FSEL_A {
-    #[doc = "PRS Channel 0 selected as fault source 0"]
+    #[doc = "0: PRS Channel 0 selected as fault source 0"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as fault source 1"]
+    #[doc = "1: PRS Channel 1 selected as fault source 1"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as fault source 2"]
+    #[doc = "2: PRS Channel 2 selected as fault source 2"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as fault source 3"]
+    #[doc = "3: PRS Channel 3 selected as fault source 3"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as fault source 4"]
+    #[doc = "4: PRS Channel 4 selected as fault source 4"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as fault source 5"]
+    #[doc = "5: PRS Channel 5 selected as fault source 5"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as fault source 6"]
+    #[doc = "6: PRS Channel 6 selected as fault source 6"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as fault source 7"]
+    #[doc = "7: PRS Channel 7 selected as fault source 7"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as fault source 8"]
+    #[doc = "8: PRS Channel 8 selected as fault source 8"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as fault source 9"]
+    #[doc = "9: PRS Channel 9 selected as fault source 9"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as fault source 10"]
+    #[doc = "10: PRS Channel 10 selected as fault source 10"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as fault source 11"]
+    #[doc = "11: PRS Channel 11 selected as fault source 11"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as fault source 12"]
+    #[doc = "12: PRS Channel 12 selected as fault source 12"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as fault source 13"]
+    #[doc = "13: PRS Channel 13 selected as fault source 13"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as fault source 14"]
+    #[doc = "14: PRS Channel 14 selected as fault source 14"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as fault source 15"]
+    #[doc = "15: PRS Channel 15 selected as fault source 15"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as fault source 16"]
+    #[doc = "16: PRS Channel 16 selected as fault source 16"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as fault source 17"]
+    #[doc = "17: PRS Channel 17 selected as fault source 17"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as fault source 18"]
+    #[doc = "18: PRS Channel 18 selected as fault source 18"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as fault source 19"]
+    #[doc = "19: PRS Channel 19 selected as fault source 19"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as fault source 20"]
+    #[doc = "20: PRS Channel 20 selected as fault source 20"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as fault source 21"]
+    #[doc = "21: PRS Channel 21 selected as fault source 21"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as fault source 22"]
+    #[doc = "22: PRS Channel 22 selected as fault source 22"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as fault source 23"]
+    #[doc = "23: PRS Channel 23 selected as fault source 23"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for DTPRS0FSEL_A {
+impl From<DTPRS0FSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DTPRS0FSEL_A) -> Self {
+        match variant {
             DTPRS0FSEL_A::PRSCH0 => 0,
             DTPRS0FSEL_A::PRSCH1 => 1,
             DTPRS0FSEL_A::PRSCH2 => 2,
@@ -257,8 +257,7 @@ impl<'a> DTPRS0FSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTPRS0FSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as fault source 0"]
     #[inline(always)]
@@ -387,62 +386,62 @@ impl<'a> DTPRS0FSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DTPRS1FSEL`"]
+#[doc = "DTI PRS Fault Source 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTPRS1FSEL_A {
-    #[doc = "PRS Channel 0 selected as fault source 1"]
+    #[doc = "0: PRS Channel 0 selected as fault source 1"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as fault source 1"]
+    #[doc = "1: PRS Channel 1 selected as fault source 1"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as fault source 1"]
+    #[doc = "2: PRS Channel 2 selected as fault source 1"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as fault source 1"]
+    #[doc = "3: PRS Channel 3 selected as fault source 1"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as fault source 1"]
+    #[doc = "4: PRS Channel 4 selected as fault source 1"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as fault source 1"]
+    #[doc = "5: PRS Channel 5 selected as fault source 1"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as fault source 1"]
+    #[doc = "6: PRS Channel 6 selected as fault source 1"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as fault source 1"]
+    #[doc = "7: PRS Channel 7 selected as fault source 1"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as fault source 1"]
+    #[doc = "8: PRS Channel 8 selected as fault source 1"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as fault source 1"]
+    #[doc = "9: PRS Channel 9 selected as fault source 1"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as fault source 1"]
+    #[doc = "10: PRS Channel 10 selected as fault source 1"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as fault source 1"]
+    #[doc = "11: PRS Channel 11 selected as fault source 1"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as fault source 1"]
+    #[doc = "12: PRS Channel 12 selected as fault source 1"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as fault source 1"]
+    #[doc = "13: PRS Channel 13 selected as fault source 1"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as fault source 1"]
+    #[doc = "14: PRS Channel 14 selected as fault source 1"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as fault source 1"]
+    #[doc = "15: PRS Channel 15 selected as fault source 1"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as fault source 1"]
+    #[doc = "16: PRS Channel 16 selected as fault source 1"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as fault source 1"]
+    #[doc = "17: PRS Channel 17 selected as fault source 1"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as fault source 1"]
+    #[doc = "18: PRS Channel 18 selected as fault source 1"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as fault source 1"]
+    #[doc = "19: PRS Channel 19 selected as fault source 1"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as fault source 1"]
+    #[doc = "20: PRS Channel 20 selected as fault source 1"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as fault source 1"]
+    #[doc = "21: PRS Channel 21 selected as fault source 1"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as fault source 1"]
+    #[doc = "22: PRS Channel 22 selected as fault source 1"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as fault source 1"]
+    #[doc = "23: PRS Channel 23 selected as fault source 1"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for DTPRS1FSEL_A {
+impl From<DTPRS1FSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DTPRS1FSEL_A) -> Self {
+        match variant {
             DTPRS1FSEL_A::PRSCH0 => 0,
             DTPRS1FSEL_A::PRSCH1 => 1,
             DTPRS1FSEL_A::PRSCH2 => 2,
@@ -634,8 +633,7 @@ impl<'a> DTPRS1FSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTPRS1FSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as fault source 1"]
     #[inline(always)]
@@ -764,22 +762,22 @@ impl<'a> DTPRS1FSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DTFA`"]
+#[doc = "DTI Fault Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTFA_A {
-    #[doc = "No action on fault"]
+    #[doc = "0: No action on fault"]
     NONE,
-    #[doc = "Set outputs inactive"]
+    #[doc = "1: Set outputs inactive"]
     INACTIVE,
-    #[doc = "Clear outputs"]
+    #[doc = "2: Clear outputs"]
     CLEAR,
-    #[doc = "Tristate outputs"]
+    #[doc = "3: Tristate outputs"]
     TRISTATE,
 }
-impl crate::ToBits<u8> for DTFA_A {
+impl From<DTFA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DTFA_A) -> Self {
+        match variant {
             DTFA_A::NONE => 0,
             DTFA_A::INACTIVE => 1,
             DTFA_A::CLEAR => 2,
@@ -830,9 +828,8 @@ impl<'a> DTFA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTFA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action on fault"]

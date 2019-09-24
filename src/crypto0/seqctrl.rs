@@ -24,20 +24,20 @@ impl<'a> LENGTHA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BLOCKSIZE`"]
+#[doc = "Size of Data Blocks\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCKSIZE_A {
-    #[doc = "A block is 16 bytes long"]
+    #[doc = "0: A block is 16 bytes long"]
     _16BYTES,
-    #[doc = "A block is 32 bytes long"]
+    #[doc = "1: A block is 32 bytes long"]
     _32BYTES,
-    #[doc = "A block is 64 bytes long"]
+    #[doc = "2: A block is 64 bytes long"]
     _64BYTES,
 }
-impl crate::ToBits<u8> for BLOCKSIZE_A {
+impl From<BLOCKSIZE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BLOCKSIZE_A) -> Self {
+        match variant {
             BLOCKSIZE_A::_16BYTES => 0,
             BLOCKSIZE_A::_32BYTES => 1,
             BLOCKSIZE_A::_64BYTES => 2,
@@ -82,8 +82,7 @@ impl<'a> BLOCKSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BLOCKSIZE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "A block is 16 bytes long"]
     #[inline(always)]

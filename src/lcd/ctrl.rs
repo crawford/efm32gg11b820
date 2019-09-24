@@ -34,20 +34,20 @@ impl<'a> EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `UDCTRL`"]
+#[doc = "Update Data Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UDCTRL_A {
-    #[doc = "The data transfer is controlled by SW. Transfer is performed as soon as possible"]
+    #[doc = "0: The data transfer is controlled by SW. Transfer is performed as soon as possible"]
     REGULAR,
-    #[doc = "The data transfer is done at the next event triggered by the Frame Counter"]
+    #[doc = "1: The data transfer is done at the next event triggered by the Frame Counter"]
     FCEVENT,
-    #[doc = "The data transfer is done continuously at every LCD frame start"]
+    #[doc = "2: The data transfer is done continuously at every LCD frame start"]
     FRAMESTART,
 }
-impl crate::ToBits<u8> for UDCTRL_A {
+impl From<UDCTRL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: UDCTRL_A) -> Self {
+        match variant {
             UDCTRL_A::REGULAR => 0,
             UDCTRL_A::FCEVENT => 1,
             UDCTRL_A::FRAMESTART => 2,
@@ -92,8 +92,7 @@ impl<'a> UDCTRL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UDCTRL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The data transfer is controlled by SW. Transfer is performed as soon as possible"]
     #[inline(always)]

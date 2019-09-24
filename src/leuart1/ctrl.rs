@@ -58,20 +58,20 @@ impl<'a> DATABITS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PARITY`"]
+#[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
-    #[doc = "Parity bits are not used"]
+    #[doc = "0: Parity bits are not used"]
     NONE,
-    #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
+    #[doc = "2: Even parity are used. Parity bits are automatically generated and checked by hardware."]
     EVEN,
-    #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
+    #[doc = "3: Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     ODD,
 }
-impl crate::ToBits<u8> for PARITY_A {
+impl From<PARITY_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PARITY_A) -> Self {
+        match variant {
             PARITY_A::NONE => 0,
             PARITY_A::EVEN => 2,
             PARITY_A::ODD => 3,
@@ -116,8 +116,7 @@ impl<'a> PARITY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PARITY_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Parity bits are not used"]
     #[inline(always)]
@@ -381,22 +380,22 @@ impl<'a> TXDMAWU_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXDELAY`"]
+#[doc = "TX Delay Transmission\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDELAY_A {
-    #[doc = "Frames are transmitted immediately"]
+    #[doc = "0: Frames are transmitted immediately"]
     NONE,
-    #[doc = "Transmission of new frames are delayed by a single bit period"]
+    #[doc = "1: Transmission of new frames are delayed by a single bit period"]
     SINGLE,
-    #[doc = "Transmission of new frames are delayed by two bit periods"]
+    #[doc = "2: Transmission of new frames are delayed by two bit periods"]
     DOUBLE,
-    #[doc = "Transmission of new frames are delayed by three bit periods"]
+    #[doc = "3: Transmission of new frames are delayed by three bit periods"]
     TRIPLE,
 }
-impl crate::ToBits<u8> for TXDELAY_A {
+impl From<TXDELAY_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TXDELAY_A) -> Self {
+        match variant {
             TXDELAY_A::NONE => 0,
             TXDELAY_A::SINGLE => 1,
             TXDELAY_A::DOUBLE => 2,
@@ -447,9 +446,8 @@ impl<'a> TXDELAY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TXDELAY_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Frames are transmitted immediately"]

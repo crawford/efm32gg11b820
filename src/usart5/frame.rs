@@ -10,40 +10,40 @@ impl crate::ResetValue for super::FRAME {
         0x1005
     }
 }
-#[doc = "Possible values of the field `DATABITS`"]
+#[doc = "Data-Bit Mode\n\nValue on reset: 5"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATABITS_A {
-    #[doc = "Each frame contains 4 data bits"]
+    #[doc = "1: Each frame contains 4 data bits"]
     FOUR,
-    #[doc = "Each frame contains 5 data bits"]
+    #[doc = "2: Each frame contains 5 data bits"]
     FIVE,
-    #[doc = "Each frame contains 6 data bits"]
+    #[doc = "3: Each frame contains 6 data bits"]
     SIX,
-    #[doc = "Each frame contains 7 data bits"]
+    #[doc = "4: Each frame contains 7 data bits"]
     SEVEN,
-    #[doc = "Each frame contains 8 data bits"]
+    #[doc = "5: Each frame contains 8 data bits"]
     EIGHT,
-    #[doc = "Each frame contains 9 data bits"]
+    #[doc = "6: Each frame contains 9 data bits"]
     NINE,
-    #[doc = "Each frame contains 10 data bits"]
+    #[doc = "7: Each frame contains 10 data bits"]
     TEN,
-    #[doc = "Each frame contains 11 data bits"]
+    #[doc = "8: Each frame contains 11 data bits"]
     ELEVEN,
-    #[doc = "Each frame contains 12 data bits"]
+    #[doc = "9: Each frame contains 12 data bits"]
     TWELVE,
-    #[doc = "Each frame contains 13 data bits"]
+    #[doc = "10: Each frame contains 13 data bits"]
     THIRTEEN,
-    #[doc = "Each frame contains 14 data bits"]
+    #[doc = "11: Each frame contains 14 data bits"]
     FOURTEEN,
-    #[doc = "Each frame contains 15 data bits"]
+    #[doc = "12: Each frame contains 15 data bits"]
     FIFTEEN,
-    #[doc = "Each frame contains 16 data bits"]
+    #[doc = "13: Each frame contains 16 data bits"]
     SIXTEEN,
 }
-impl crate::ToBits<u8> for DATABITS_A {
+impl From<DATABITS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DATABITS_A) -> Self {
+        match variant {
             DATABITS_A::FOUR => 1,
             DATABITS_A::FIVE => 2,
             DATABITS_A::SIX => 3,
@@ -158,8 +158,7 @@ impl<'a> DATABITS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DATABITS_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Each frame contains 4 data bits"]
     #[inline(always)]
@@ -233,20 +232,20 @@ impl<'a> DATABITS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PARITY`"]
+#[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
-    #[doc = "Parity bits are not used"]
+    #[doc = "0: Parity bits are not used"]
     NONE,
-    #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
+    #[doc = "2: Even parity are used. Parity bits are automatically generated and checked by hardware."]
     EVEN,
-    #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
+    #[doc = "3: Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     ODD,
 }
-impl crate::ToBits<u8> for PARITY_A {
+impl From<PARITY_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PARITY_A) -> Self {
+        match variant {
             PARITY_A::NONE => 0,
             PARITY_A::EVEN => 2,
             PARITY_A::ODD => 3,
@@ -291,8 +290,7 @@ impl<'a> PARITY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PARITY_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Parity bits are not used"]
     #[inline(always)]
@@ -316,22 +314,22 @@ impl<'a> PARITY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STOPBITS`"]
+#[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPBITS_A {
-    #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
+    #[doc = "0: The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     HALF,
-    #[doc = "One stop bit is generated and verified"]
+    #[doc = "1: One stop bit is generated and verified"]
     ONE,
-    #[doc = "The transmitter generates one and a half stop bit. The receiver verifies the first stop bit"]
+    #[doc = "2: The transmitter generates one and a half stop bit. The receiver verifies the first stop bit"]
     ONEANDAHALF,
-    #[doc = "The transmitter generates two stop bits. The receiver checks the first stop-bit only"]
+    #[doc = "3: The transmitter generates two stop bits. The receiver checks the first stop-bit only"]
     TWO,
 }
-impl crate::ToBits<u8> for STOPBITS_A {
+impl From<STOPBITS_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STOPBITS_A) -> Self {
+        match variant {
             STOPBITS_A::HALF => 0,
             STOPBITS_A::ONE => 1,
             STOPBITS_A::ONEANDAHALF => 2,
@@ -382,9 +380,8 @@ impl<'a> STOPBITS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: STOPBITS_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]

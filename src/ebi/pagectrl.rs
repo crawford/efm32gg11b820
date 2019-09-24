@@ -10,22 +10,22 @@ impl crate::ResetValue for super::PAGECTRL {
         0x0f00
     }
 }
-#[doc = "Possible values of the field `PAGELEN`"]
+#[doc = "Page Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PAGELEN_A {
-    #[doc = "4 members in a page."]
+    #[doc = "0: 4 members in a page."]
     MEMBER4,
-    #[doc = "8 members in a page."]
+    #[doc = "1: 8 members in a page."]
     MEMBER8,
-    #[doc = "16 members in a page."]
+    #[doc = "2: 16 members in a page."]
     MEMBER16,
-    #[doc = "32 members in a page."]
+    #[doc = "3: 32 members in a page."]
     MEMBER32,
 }
-impl crate::ToBits<u8> for PAGELEN_A {
+impl From<PAGELEN_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PAGELEN_A) -> Self {
+        match variant {
             PAGELEN_A::MEMBER4 => 0,
             PAGELEN_A::MEMBER8 => 1,
             PAGELEN_A::MEMBER16 => 2,
@@ -76,9 +76,8 @@ impl<'a> PAGELEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PAGELEN_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "4 members in a page."]

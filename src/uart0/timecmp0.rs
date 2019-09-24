@@ -24,24 +24,24 @@ impl<'a> TCMPVAL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TSTART`"]
+#[doc = "Timer Start Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTART_A {
-    #[doc = "Comparator 0 is disabled"]
+    #[doc = "0: Comparator 0 is disabled"]
     DISABLE,
-    #[doc = "Comparator 0 and timer are started at TX end of frame"]
+    #[doc = "1: Comparator 0 and timer are started at TX end of frame"]
     TXEOF,
-    #[doc = "Comparator 0 and timer are started at TX Complete"]
+    #[doc = "2: Comparator 0 and timer are started at TX Complete"]
     TXC,
-    #[doc = "Comparator 0 and timer are started at RX going Active (default: low)"]
+    #[doc = "3: Comparator 0 and timer are started at RX going Active (default: low)"]
     RXACT,
-    #[doc = "Comparator 0 and timer are started at RX end of frame"]
+    #[doc = "4: Comparator 0 and timer are started at RX end of frame"]
     RXEOF,
 }
-impl crate::ToBits<u8> for TSTART_A {
+impl From<TSTART_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TSTART_A) -> Self {
+        match variant {
             TSTART_A::DISABLE => 0,
             TSTART_A::TXEOF => 1,
             TSTART_A::TXC => 2,
@@ -100,8 +100,7 @@ impl<'a> TSTART_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TSTART_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Comparator 0 is disabled"]
     #[inline(always)]
@@ -135,22 +134,22 @@ impl<'a> TSTART_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TSTOP`"]
+#[doc = "Source Used to Disable Comparator 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTOP_A {
-    #[doc = "Comparator 0 is disabled when the counter equals TCMPVAL and triggers a TCMP0 event"]
+    #[doc = "0: Comparator 0 is disabled when the counter equals TCMPVAL and triggers a TCMP0 event"]
     TCMP0,
-    #[doc = "Comparator 0 is disabled at the start of transmission"]
+    #[doc = "1: Comparator 0 is disabled at the start of transmission"]
     TXST,
-    #[doc = "Comparator 0 is disabled on RX going going Active (default: low)"]
+    #[doc = "2: Comparator 0 is disabled on RX going going Active (default: low)"]
     RXACT,
-    #[doc = "Comparator 0 is disabled on RX going Inactive"]
+    #[doc = "3: Comparator 0 is disabled on RX going Inactive"]
     RXACTN,
 }
-impl crate::ToBits<u8> for TSTOP_A {
+impl From<TSTOP_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: TSTOP_A) -> Self {
+        match variant {
             TSTOP_A::TCMP0 => 0,
             TSTOP_A::TXST => 1,
             TSTOP_A::RXACT => 2,
@@ -202,8 +201,7 @@ impl<'a> TSTOP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TSTOP_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Comparator 0 is disabled when the counter equals TCMPVAL and triggers a TCMP0 event"]
     #[inline(always)]

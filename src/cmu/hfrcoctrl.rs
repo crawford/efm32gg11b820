@@ -90,20 +90,20 @@ impl<'a> LDOHP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKDIV`"]
+#[doc = "Locally Divide HFRCO Clock Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKDIV_A {
-    #[doc = "Divide by 1."]
+    #[doc = "0: Divide by 1."]
     DIV1,
-    #[doc = "Divide by 2."]
+    #[doc = "1: Divide by 2."]
     DIV2,
-    #[doc = "Divide by 4."]
+    #[doc = "2: Divide by 4."]
     DIV4,
 }
-impl crate::ToBits<u8> for CLKDIV_A {
+impl From<CLKDIV_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CLKDIV_A) -> Self {
+        match variant {
             CLKDIV_A::DIV1 => 0,
             CLKDIV_A::DIV2 => 1,
             CLKDIV_A::DIV4 => 2,
@@ -148,8 +148,7 @@ impl<'a> CLKDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLKDIV_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Divide by 1."]
     #[inline(always)]

@@ -2,18 +2,18 @@
 pub type R = crate::R<u32, super::ETMAUTHSTATUS>;
 #[doc = "Reader of field `NONSECINVDBG`"]
 pub type NONSECINVDBG_R = crate::R<u8, u8>;
-#[doc = "Possible values of the field `NONSECNONINVDBG`"]
+#[doc = "Non-secure non-invasive Debug Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NONSECNONINVDBG_A {
-    #[doc = "Non-secure non-invasive debug disable"]
+    #[doc = "2: Non-secure non-invasive debug disable"]
     DISABLE,
-    #[doc = "Non-secure non-invasive debug enable"]
+    #[doc = "3: Non-secure non-invasive debug enable"]
     ENABLE,
 }
-impl crate::ToBits<u8> for NONSECNONINVDBG_A {
+impl From<NONSECNONINVDBG_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: NONSECNONINVDBG_A) -> Self {
+        match variant {
             NONSECNONINVDBG_A::DISABLE => 2,
             NONSECNONINVDBG_A::ENABLE => 3,
         }

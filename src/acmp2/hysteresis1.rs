@@ -10,46 +10,46 @@ impl crate::ResetValue for super::HYSTERESIS1 {
         0
     }
 }
-#[doc = "Possible values of the field `HYST`"]
+#[doc = "Hysteresis Select When ACMPOUT=1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HYST_A {
-    #[doc = "No hysteresis"]
+    #[doc = "0: No hysteresis"]
     HYST0,
-    #[doc = "14 mV hysteresis"]
+    #[doc = "1: 14 mV hysteresis"]
     HYST1,
-    #[doc = "25 mV hysteresis"]
+    #[doc = "2: 25 mV hysteresis"]
     HYST2,
-    #[doc = "30 mV hysteresis"]
+    #[doc = "3: 30 mV hysteresis"]
     HYST3,
-    #[doc = "35 mV hysteresis"]
+    #[doc = "4: 35 mV hysteresis"]
     HYST4,
-    #[doc = "39 mV hysteresis"]
+    #[doc = "5: 39 mV hysteresis"]
     HYST5,
-    #[doc = "42 mV hysteresis"]
+    #[doc = "6: 42 mV hysteresis"]
     HYST6,
-    #[doc = "45 mV hysteresis"]
+    #[doc = "7: 45 mV hysteresis"]
     HYST7,
-    #[doc = "No hysteresis"]
+    #[doc = "8: No hysteresis"]
     HYST8,
-    #[doc = "-14 mV hysteresis"]
+    #[doc = "9: -14 mV hysteresis"]
     HYST9,
-    #[doc = "-25 mV hysteresis"]
+    #[doc = "10: -25 mV hysteresis"]
     HYST10,
-    #[doc = "-30 mV hysteresis"]
+    #[doc = "11: -30 mV hysteresis"]
     HYST11,
-    #[doc = "-35 mV hysteresis"]
+    #[doc = "12: -35 mV hysteresis"]
     HYST12,
-    #[doc = "-39 mV hysteresis"]
+    #[doc = "13: -39 mV hysteresis"]
     HYST13,
-    #[doc = "-42 mV hysteresis"]
+    #[doc = "14: -42 mV hysteresis"]
     HYST14,
-    #[doc = "-45 mV hysteresis"]
+    #[doc = "15: -45 mV hysteresis"]
     HYST15,
 }
-impl crate::ToBits<u8> for HYST_A {
+impl From<HYST_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: HYST_A) -> Self {
+        match variant {
             HYST_A::HYST0 => 0,
             HYST_A::HYST1 => 1,
             HYST_A::HYST2 => 2,
@@ -184,9 +184,8 @@ impl<'a> HYST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HYST_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No hysteresis"]

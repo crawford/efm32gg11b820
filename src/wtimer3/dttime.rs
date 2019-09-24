@@ -10,36 +10,36 @@ impl crate::ResetValue for super::DTTIME {
         0
     }
 }
-#[doc = "Possible values of the field `DTPRESC`"]
+#[doc = "DTI Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTPRESC_A {
-    #[doc = "The HFPERCLK is undivided"]
+    #[doc = "0: The HFPERCLK is undivided"]
     DIV1,
-    #[doc = "The HFPERCLK is divided by 2"]
+    #[doc = "1: The HFPERCLK is divided by 2"]
     DIV2,
-    #[doc = "The HFPERCLK is divided by 4"]
+    #[doc = "2: The HFPERCLK is divided by 4"]
     DIV4,
-    #[doc = "The HFPERCLK is divided by 8"]
+    #[doc = "3: The HFPERCLK is divided by 8"]
     DIV8,
-    #[doc = "The HFPERCLK is divided by 16"]
+    #[doc = "4: The HFPERCLK is divided by 16"]
     DIV16,
-    #[doc = "The HFPERCLK is divided by 32"]
+    #[doc = "5: The HFPERCLK is divided by 32"]
     DIV32,
-    #[doc = "The HFPERCLK is divided by 64"]
+    #[doc = "6: The HFPERCLK is divided by 64"]
     DIV64,
-    #[doc = "The HFPERCLK is divided by 128"]
+    #[doc = "7: The HFPERCLK is divided by 128"]
     DIV128,
-    #[doc = "The HFPERCLK is divided by 256"]
+    #[doc = "8: The HFPERCLK is divided by 256"]
     DIV256,
-    #[doc = "The HFPERCLK is divided by 512"]
+    #[doc = "9: The HFPERCLK is divided by 512"]
     DIV512,
-    #[doc = "The HFPERCLK is divided by 1024"]
+    #[doc = "10: The HFPERCLK is divided by 1024"]
     DIV1024,
 }
-impl crate::ToBits<u8> for DTPRESC_A {
+impl From<DTPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DTPRESC_A) -> Self {
+        match variant {
             DTPRESC_A::DIV1 => 0,
             DTPRESC_A::DIV2 => 1,
             DTPRESC_A::DIV4 => 2,
@@ -140,8 +140,7 @@ impl<'a> DTPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTPRESC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]

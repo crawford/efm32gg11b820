@@ -106,20 +106,20 @@ impl<'a> RETAINULFRCO_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EM4IORETMODE`"]
+#[doc = "EM4 IO Retention Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EM4IORETMODE_A {
-    #[doc = "No Retention: Pads enter reset state when entering EM4"]
+    #[doc = "0: No Retention: Pads enter reset state when entering EM4"]
     DISABLE,
-    #[doc = "Retention through EM4: Pads enter reset state when exiting EM4"]
+    #[doc = "1: Retention through EM4: Pads enter reset state when exiting EM4"]
     EM4EXIT,
-    #[doc = "Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
+    #[doc = "2: Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
     SWUNLATCH,
 }
-impl crate::ToBits<u8> for EM4IORETMODE_A {
+impl From<EM4IORETMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EM4IORETMODE_A) -> Self {
+        match variant {
             EM4IORETMODE_A::DISABLE => 0,
             EM4IORETMODE_A::EM4EXIT => 1,
             EM4IORETMODE_A::SWUNLATCH => 2,
@@ -164,8 +164,7 @@ impl<'a> EM4IORETMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EM4IORETMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No Retention: Pads enter reset state when entering EM4"]
     #[inline(always)]

@@ -106,26 +106,26 @@ impl<'a> CH0PRESCRST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REFSEL`"]
+#[doc = "Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFSEL_A {
-    #[doc = "Internal low noise 1.25 V bandgap reference"]
+    #[doc = "0: Internal low noise 1.25 V bandgap reference"]
     _1V25LN,
-    #[doc = "Internal low noise 2.5 V bandgap reference"]
+    #[doc = "1: Internal low noise 2.5 V bandgap reference"]
     _2V5LN,
-    #[doc = "Internal 1.25 V bandgap reference"]
+    #[doc = "2: Internal 1.25 V bandgap reference"]
     _1V25,
-    #[doc = "Internal 2.5 V bandgap reference"]
+    #[doc = "3: Internal 2.5 V bandgap reference"]
     _2V5,
-    #[doc = "AVDD reference"]
+    #[doc = "4: AVDD reference"]
     VDD,
-    #[doc = "External pin reference"]
+    #[doc = "6: External pin reference"]
     EXT,
 }
-impl crate::ToBits<u8> for REFSEL_A {
+impl From<REFSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: REFSEL_A) -> Self {
+        match variant {
             REFSEL_A::_1V25LN => 0,
             REFSEL_A::_2V5LN => 1,
             REFSEL_A::_1V25 => 2,
@@ -191,8 +191,7 @@ impl<'a> REFSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Internal low noise 1.25 V bandgap reference"]
     #[inline(always)]
@@ -231,16 +230,16 @@ impl<'a> REFSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRESC`"]
+#[doc = "Prescaler Setting for DAC Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESC_A {
-    #[doc = "`0`"]
+    #[doc = "0: `0`"]
     NODIVISION,
 }
-impl crate::ToBits<u8> for PRESC_A {
+impl From<PRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRESC_A) -> Self {
+        match variant {
             PRESC_A::NODIVISION => 0,
         }
     }
@@ -271,8 +270,7 @@ impl<'a> PRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -286,22 +284,22 @@ impl<'a> PRESC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REFRESHPERIOD`"]
+#[doc = "Refresh Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFRESHPERIOD_A {
-    #[doc = "All channels with enabled refresh are refreshed every 8 DAC_CLK cycles"]
+    #[doc = "0: All channels with enabled refresh are refreshed every 8 DAC_CLK cycles"]
     _8CYCLES,
-    #[doc = "All channels with enabled refresh are refreshed every 16 DAC_CLK cycles"]
+    #[doc = "1: All channels with enabled refresh are refreshed every 16 DAC_CLK cycles"]
     _16CYCLES,
-    #[doc = "All channels with enabled refresh are refreshed every 32 DAC_CLK cycles"]
+    #[doc = "2: All channels with enabled refresh are refreshed every 32 DAC_CLK cycles"]
     _32CYCLES,
-    #[doc = "All channels with enabled refresh are refreshed every 64 DAC_CLK cycles"]
+    #[doc = "3: All channels with enabled refresh are refreshed every 64 DAC_CLK cycles"]
     _64CYCLES,
 }
-impl crate::ToBits<u8> for REFRESHPERIOD_A {
+impl From<REFRESHPERIOD_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: REFRESHPERIOD_A) -> Self {
+        match variant {
             REFRESHPERIOD_A::_8CYCLES => 0,
             REFRESHPERIOD_A::_16CYCLES => 1,
             REFRESHPERIOD_A::_32CYCLES => 2,
@@ -352,9 +350,8 @@ impl<'a> REFRESHPERIOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFRESHPERIOD_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "All channels with enabled refresh are refreshed every 8 DAC_CLK cycles"]

@@ -10,22 +10,22 @@ impl crate::ResetValue for super::EXTIPINSELH {
         0x3210_3210
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL8`"]
+#[doc = "External Interrupt 8 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL8_A {
-    #[doc = "Pin 8"]
+    #[doc = "0: Pin 8"]
     PIN8,
-    #[doc = "Pin 9"]
+    #[doc = "1: Pin 9"]
     PIN9,
-    #[doc = "Pin 10"]
+    #[doc = "2: Pin 10"]
     PIN10,
-    #[doc = "Pin 11"]
+    #[doc = "3: Pin 11"]
     PIN11,
 }
-impl crate::ToBits<u8> for EXTIPINSEL8_A {
+impl From<EXTIPINSEL8_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL8_A) -> Self {
+        match variant {
             EXTIPINSEL8_A::PIN8 => 0,
             EXTIPINSEL8_A::PIN9 => 1,
             EXTIPINSEL8_A::PIN10 => 2,
@@ -76,9 +76,8 @@ impl<'a> EXTIPINSEL8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL8_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 8"]
@@ -108,22 +107,22 @@ impl<'a> EXTIPINSEL8_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL9`"]
+#[doc = "External Interrupt 9 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL9_A {
-    #[doc = "Pin 8"]
+    #[doc = "0: Pin 8"]
     PIN8,
-    #[doc = "Pin 9"]
+    #[doc = "1: Pin 9"]
     PIN9,
-    #[doc = "Pin 10"]
+    #[doc = "2: Pin 10"]
     PIN10,
-    #[doc = "Pin 11"]
+    #[doc = "3: Pin 11"]
     PIN11,
 }
-impl crate::ToBits<u8> for EXTIPINSEL9_A {
+impl From<EXTIPINSEL9_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL9_A) -> Self {
+        match variant {
             EXTIPINSEL9_A::PIN8 => 0,
             EXTIPINSEL9_A::PIN9 => 1,
             EXTIPINSEL9_A::PIN10 => 2,
@@ -174,9 +173,8 @@ impl<'a> EXTIPINSEL9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL9_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 8"]
@@ -206,22 +204,22 @@ impl<'a> EXTIPINSEL9_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL10`"]
+#[doc = "External Interrupt 10 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL10_A {
-    #[doc = "Pin 8"]
+    #[doc = "0: Pin 8"]
     PIN8,
-    #[doc = "Pin 9"]
+    #[doc = "1: Pin 9"]
     PIN9,
-    #[doc = "Pin 10"]
+    #[doc = "2: Pin 10"]
     PIN10,
-    #[doc = "Pin 11"]
+    #[doc = "3: Pin 11"]
     PIN11,
 }
-impl crate::ToBits<u8> for EXTIPINSEL10_A {
+impl From<EXTIPINSEL10_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL10_A) -> Self {
+        match variant {
             EXTIPINSEL10_A::PIN8 => 0,
             EXTIPINSEL10_A::PIN9 => 1,
             EXTIPINSEL10_A::PIN10 => 2,
@@ -272,9 +270,8 @@ impl<'a> EXTIPINSEL10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL10_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 8"]
@@ -304,22 +301,22 @@ impl<'a> EXTIPINSEL10_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL11`"]
+#[doc = "External Interrupt 11 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL11_A {
-    #[doc = "Pin 8"]
+    #[doc = "0: Pin 8"]
     PIN8,
-    #[doc = "Pin 9"]
+    #[doc = "1: Pin 9"]
     PIN9,
-    #[doc = "Pin 10"]
+    #[doc = "2: Pin 10"]
     PIN10,
-    #[doc = "Pin 11"]
+    #[doc = "3: Pin 11"]
     PIN11,
 }
-impl crate::ToBits<u8> for EXTIPINSEL11_A {
+impl From<EXTIPINSEL11_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL11_A) -> Self {
+        match variant {
             EXTIPINSEL11_A::PIN8 => 0,
             EXTIPINSEL11_A::PIN9 => 1,
             EXTIPINSEL11_A::PIN10 => 2,
@@ -370,9 +367,8 @@ impl<'a> EXTIPINSEL11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL11_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 8"]
@@ -402,22 +398,22 @@ impl<'a> EXTIPINSEL11_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL12`"]
+#[doc = "External Interrupt 12 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL12_A {
-    #[doc = "Pin 12"]
+    #[doc = "0: Pin 12"]
     PIN12,
-    #[doc = "Pin 13"]
+    #[doc = "1: Pin 13"]
     PIN13,
-    #[doc = "Pin 14"]
+    #[doc = "2: Pin 14"]
     PIN14,
-    #[doc = "Pin 15"]
+    #[doc = "3: Pin 15"]
     PIN15,
 }
-impl crate::ToBits<u8> for EXTIPINSEL12_A {
+impl From<EXTIPINSEL12_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL12_A) -> Self {
+        match variant {
             EXTIPINSEL12_A::PIN12 => 0,
             EXTIPINSEL12_A::PIN13 => 1,
             EXTIPINSEL12_A::PIN14 => 2,
@@ -468,9 +464,8 @@ impl<'a> EXTIPINSEL12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL12_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 12"]
@@ -500,22 +495,22 @@ impl<'a> EXTIPINSEL12_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL13`"]
+#[doc = "External Interrupt 13 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL13_A {
-    #[doc = "Pin 12"]
+    #[doc = "0: Pin 12"]
     PIN12,
-    #[doc = "Pin 13"]
+    #[doc = "1: Pin 13"]
     PIN13,
-    #[doc = "Pin 14"]
+    #[doc = "2: Pin 14"]
     PIN14,
-    #[doc = "Pin 15"]
+    #[doc = "3: Pin 15"]
     PIN15,
 }
-impl crate::ToBits<u8> for EXTIPINSEL13_A {
+impl From<EXTIPINSEL13_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL13_A) -> Self {
+        match variant {
             EXTIPINSEL13_A::PIN12 => 0,
             EXTIPINSEL13_A::PIN13 => 1,
             EXTIPINSEL13_A::PIN14 => 2,
@@ -566,9 +561,8 @@ impl<'a> EXTIPINSEL13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL13_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 12"]
@@ -598,22 +592,22 @@ impl<'a> EXTIPINSEL13_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL14`"]
+#[doc = "External Interrupt 14 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL14_A {
-    #[doc = "Pin 12"]
+    #[doc = "0: Pin 12"]
     PIN12,
-    #[doc = "Pin 13"]
+    #[doc = "1: Pin 13"]
     PIN13,
-    #[doc = "Pin 14"]
+    #[doc = "2: Pin 14"]
     PIN14,
-    #[doc = "Pin 15"]
+    #[doc = "3: Pin 15"]
     PIN15,
 }
-impl crate::ToBits<u8> for EXTIPINSEL14_A {
+impl From<EXTIPINSEL14_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL14_A) -> Self {
+        match variant {
             EXTIPINSEL14_A::PIN12 => 0,
             EXTIPINSEL14_A::PIN13 => 1,
             EXTIPINSEL14_A::PIN14 => 2,
@@ -664,9 +658,8 @@ impl<'a> EXTIPINSEL14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL14_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 12"]
@@ -696,22 +689,22 @@ impl<'a> EXTIPINSEL14_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXTIPINSEL15`"]
+#[doc = "External Interrupt 15 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTIPINSEL15_A {
-    #[doc = "Pin 12"]
+    #[doc = "0: Pin 12"]
     PIN12,
-    #[doc = "Pin 13"]
+    #[doc = "1: Pin 13"]
     PIN13,
-    #[doc = "Pin 14"]
+    #[doc = "2: Pin 14"]
     PIN14,
-    #[doc = "Pin 15"]
+    #[doc = "3: Pin 15"]
     PIN15,
 }
-impl crate::ToBits<u8> for EXTIPINSEL15_A {
+impl From<EXTIPINSEL15_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: EXTIPINSEL15_A) -> Self {
+        match variant {
             EXTIPINSEL15_A::PIN12 => 0,
             EXTIPINSEL15_A::PIN13 => 1,
             EXTIPINSEL15_A::PIN14 => 2,
@@ -762,9 +755,8 @@ impl<'a> EXTIPINSEL15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTIPINSEL15_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Pin 12"]

@@ -10,18 +10,18 @@ impl crate::ResetValue for super::ROUTELOC1 {
         0
     }
 }
-#[doc = "Possible values of the field `CMDLOC`"]
+#[doc = "I/O Location for CMD Pin\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMDLOC_A {
-    #[doc = "Location 0"]
+    #[doc = "0: Location 0"]
     LOC0,
-    #[doc = "Location 1"]
+    #[doc = "1: Location 1"]
     LOC1,
 }
-impl crate::ToBits<u8> for CMDLOC_A {
+impl From<CMDLOC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CMDLOC_A) -> Self {
+        match variant {
             CMDLOC_A::LOC0 => 0,
             CMDLOC_A::LOC1 => 1,
         }
@@ -59,8 +59,7 @@ impl<'a> CMDLOC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CMDLOC_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Location 0"]
     #[inline(always)]

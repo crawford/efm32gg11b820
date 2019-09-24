@@ -82,20 +82,20 @@ impl<'a> IMONEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUTMODE`"]
+#[doc = "5V Input Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUTMODE_A {
-    #[doc = "Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
+    #[doc = "0: Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
     AUTO,
-    #[doc = "Force VBUS pin as the regulator input"]
+    #[doc = "1: Force VBUS pin as the regulator input"]
     VBUS,
-    #[doc = "Force VREGI pin as the regulator input"]
+    #[doc = "2: Force VREGI pin as the regulator input"]
     VREGI,
 }
-impl crate::ToBits<u8> for INPUTMODE_A {
+impl From<INPUTMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUTMODE_A) -> Self {
+        match variant {
             INPUTMODE_A::AUTO => 0,
             INPUTMODE_A::VBUS => 1,
             INPUTMODE_A::VREGI => 2,
@@ -140,8 +140,7 @@ impl<'a> INPUTMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUTMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
     #[inline(always)]

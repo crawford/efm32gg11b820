@@ -10,44 +10,44 @@ impl crate::ResetValue for super::HFXOTIMEOUTCTRL {
         0xd08e
     }
 }
-#[doc = "Possible values of the field `STARTUPTIMEOUT`"]
+#[doc = "Wait Duration in HFXO Startup Enable Wait State\n\nValue on reset: 14"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STARTUPTIMEOUT_A {
-    #[doc = "Timeout period of 2 cycles"]
+    #[doc = "0: Timeout period of 2 cycles"]
     _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
+    #[doc = "1: Timeout period of 4 cycles"]
     _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
+    #[doc = "2: Timeout period of 16 cycles"]
     _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
+    #[doc = "3: Timeout period of 32 cycles"]
     _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
+    #[doc = "4: Timeout period of 64 cycles"]
     _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
+    #[doc = "5: Timeout period of 128 cycles"]
     _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
+    #[doc = "6: Timeout period of 256 cycles"]
     _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
+    #[doc = "7: Timeout period of 1024 cycles"]
     _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
+    #[doc = "8: Timeout period of 2048 cycles"]
     _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
+    #[doc = "9: Timeout period of 4096 cycles"]
     _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
+    #[doc = "10: Timeout period of 8192 cycles"]
     _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
+    #[doc = "11: Timeout period of 16384 cycles"]
     _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
+    #[doc = "12: Timeout period of 32768 cycles"]
     _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
+    #[doc = "13: Timeout period of 65536 cycles"]
     _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
+    #[doc = "14: Timeout period of 131072 cycles"]
     _128KCYCLES,
 }
-impl crate::ToBits<u8> for STARTUPTIMEOUT_A {
+impl From<STARTUPTIMEOUT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STARTUPTIMEOUT_A) -> Self {
+        match variant {
             STARTUPTIMEOUT_A::_2CYCLES => 0,
             STARTUPTIMEOUT_A::_4CYCLES => 1,
             STARTUPTIMEOUT_A::_16CYCLES => 2,
@@ -176,8 +176,7 @@ impl<'a> STARTUPTIMEOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: STARTUPTIMEOUT_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -261,44 +260,44 @@ impl<'a> STARTUPTIMEOUT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STEADYTIMEOUT`"]
+#[doc = "Wait Duration in HFXO Startup Steady Wait State\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STEADYTIMEOUT_A {
-    #[doc = "Timeout period of 2 cycles"]
+    #[doc = "0: Timeout period of 2 cycles"]
     _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
+    #[doc = "1: Timeout period of 4 cycles"]
     _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
+    #[doc = "2: Timeout period of 16 cycles"]
     _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
+    #[doc = "3: Timeout period of 32 cycles"]
     _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
+    #[doc = "4: Timeout period of 64 cycles"]
     _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
+    #[doc = "5: Timeout period of 128 cycles"]
     _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
+    #[doc = "6: Timeout period of 256 cycles"]
     _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
+    #[doc = "7: Timeout period of 1024 cycles"]
     _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
+    #[doc = "8: Timeout period of 2048 cycles"]
     _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
+    #[doc = "9: Timeout period of 4096 cycles"]
     _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
+    #[doc = "10: Timeout period of 8192 cycles"]
     _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
+    #[doc = "11: Timeout period of 16384 cycles"]
     _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
+    #[doc = "12: Timeout period of 32768 cycles"]
     _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
+    #[doc = "13: Timeout period of 65536 cycles"]
     _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
+    #[doc = "14: Timeout period of 131072 cycles"]
     _128KCYCLES,
 }
-impl crate::ToBits<u8> for STEADYTIMEOUT_A {
+impl From<STEADYTIMEOUT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STEADYTIMEOUT_A) -> Self {
+        match variant {
             STEADYTIMEOUT_A::_2CYCLES => 0,
             STEADYTIMEOUT_A::_4CYCLES => 1,
             STEADYTIMEOUT_A::_16CYCLES => 2,
@@ -427,8 +426,7 @@ impl<'a> STEADYTIMEOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: STEADYTIMEOUT_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -512,44 +510,44 @@ impl<'a> STEADYTIMEOUT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PEAKDETTIMEOUT`"]
+#[doc = "Wait Duration in HFXO Peak Detection Wait State\n\nValue on reset: 13"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEAKDETTIMEOUT_A {
-    #[doc = "Timeout period of 2 cycles"]
+    #[doc = "0: Timeout period of 2 cycles"]
     _2CYCLES,
-    #[doc = "Timeout period of 4 cycles"]
+    #[doc = "1: Timeout period of 4 cycles"]
     _4CYCLES,
-    #[doc = "Timeout period of 16 cycles"]
+    #[doc = "2: Timeout period of 16 cycles"]
     _16CYCLES,
-    #[doc = "Timeout period of 32 cycles"]
+    #[doc = "3: Timeout period of 32 cycles"]
     _32CYCLES,
-    #[doc = "Timeout period of 64 cycles"]
+    #[doc = "4: Timeout period of 64 cycles"]
     _64CYCLES,
-    #[doc = "Timeout period of 128 cycles"]
+    #[doc = "5: Timeout period of 128 cycles"]
     _128CYCLES,
-    #[doc = "Timeout period of 256 cycles"]
+    #[doc = "6: Timeout period of 256 cycles"]
     _256CYCLES,
-    #[doc = "Timeout period of 1024 cycles"]
+    #[doc = "7: Timeout period of 1024 cycles"]
     _1KCYCLES,
-    #[doc = "Timeout period of 2048 cycles"]
+    #[doc = "8: Timeout period of 2048 cycles"]
     _2KCYCLES,
-    #[doc = "Timeout period of 4096 cycles"]
+    #[doc = "9: Timeout period of 4096 cycles"]
     _4KCYCLES,
-    #[doc = "Timeout period of 8192 cycles"]
+    #[doc = "10: Timeout period of 8192 cycles"]
     _8KCYCLES,
-    #[doc = "Timeout period of 16384 cycles"]
+    #[doc = "11: Timeout period of 16384 cycles"]
     _16KCYCLES,
-    #[doc = "Timeout period of 32768 cycles"]
+    #[doc = "12: Timeout period of 32768 cycles"]
     _32KCYCLES,
-    #[doc = "Timeout period of 65536 cycles"]
+    #[doc = "13: Timeout period of 65536 cycles"]
     _64KCYCLES,
-    #[doc = "Timeout period of 131072 cycles"]
+    #[doc = "14: Timeout period of 131072 cycles"]
     _128KCYCLES,
 }
-impl crate::ToBits<u8> for PEAKDETTIMEOUT_A {
+impl From<PEAKDETTIMEOUT_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PEAKDETTIMEOUT_A) -> Self {
+        match variant {
             PEAKDETTIMEOUT_A::_2CYCLES => 0,
             PEAKDETTIMEOUT_A::_4CYCLES => 1,
             PEAKDETTIMEOUT_A::_16CYCLES => 2,
@@ -678,8 +676,7 @@ impl<'a> PEAKDETTIMEOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEAKDETTIMEOUT_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]

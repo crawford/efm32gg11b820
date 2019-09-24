@@ -10,22 +10,22 @@ impl crate::ResetValue for super::CC2_CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "CC Channel Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "Compare/Capture channel turned off"]
+    #[doc = "0: Compare/Capture channel turned off"]
     OFF,
-    #[doc = "Input capture"]
+    #[doc = "1: Input capture"]
     INPUTCAPTURE,
-    #[doc = "Output compare"]
+    #[doc = "2: Output compare"]
     OUTPUTCOMPARE,
-    #[doc = "Pulse-Width Modulation"]
+    #[doc = "3: Pulse-Width Modulation"]
     PWM,
 }
-impl crate::ToBits<u8> for MODE_A {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: MODE_A) -> Self {
+        match variant {
             MODE_A::OFF => 0,
             MODE_A::INPUTCAPTURE => 1,
             MODE_A::OUTPUTCOMPARE => 2,
@@ -76,9 +76,8 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Compare/Capture channel turned off"]
@@ -156,22 +155,22 @@ impl<'a> COIST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CMOA`"]
+#[doc = "Compare Match Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMOA_A {
-    #[doc = "No action on compare match"]
+    #[doc = "0: No action on compare match"]
     NONE,
-    #[doc = "Toggle output on compare match"]
+    #[doc = "1: Toggle output on compare match"]
     TOGGLE,
-    #[doc = "Clear output on compare match"]
+    #[doc = "2: Clear output on compare match"]
     CLEAR,
-    #[doc = "Set output on compare match"]
+    #[doc = "3: Set output on compare match"]
     SET,
 }
-impl crate::ToBits<u8> for CMOA_A {
+impl From<CMOA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CMOA_A) -> Self {
+        match variant {
             CMOA_A::NONE => 0,
             CMOA_A::TOGGLE => 1,
             CMOA_A::CLEAR => 2,
@@ -222,9 +221,8 @@ impl<'a> CMOA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CMOA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action on compare match"]
@@ -254,22 +252,22 @@ impl<'a> CMOA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `COFOA`"]
+#[doc = "Counter Overflow Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COFOA_A {
-    #[doc = "No action on counter overflow"]
+    #[doc = "0: No action on counter overflow"]
     NONE,
-    #[doc = "Toggle output on counter overflow"]
+    #[doc = "1: Toggle output on counter overflow"]
     TOGGLE,
-    #[doc = "Clear output on counter overflow"]
+    #[doc = "2: Clear output on counter overflow"]
     CLEAR,
-    #[doc = "Set output on counter overflow"]
+    #[doc = "3: Set output on counter overflow"]
     SET,
 }
-impl crate::ToBits<u8> for COFOA_A {
+impl From<COFOA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: COFOA_A) -> Self {
+        match variant {
             COFOA_A::NONE => 0,
             COFOA_A::TOGGLE => 1,
             COFOA_A::CLEAR => 2,
@@ -320,9 +318,8 @@ impl<'a> COFOA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: COFOA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action on counter overflow"]
@@ -352,22 +349,22 @@ impl<'a> COFOA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CUFOA`"]
+#[doc = "Counter Underflow Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CUFOA_A {
-    #[doc = "No action on counter underflow"]
+    #[doc = "0: No action on counter underflow"]
     NONE,
-    #[doc = "Toggle output on counter underflow"]
+    #[doc = "1: Toggle output on counter underflow"]
     TOGGLE,
-    #[doc = "Clear output on counter underflow"]
+    #[doc = "2: Clear output on counter underflow"]
     CLEAR,
-    #[doc = "Set output on counter underflow"]
+    #[doc = "3: Set output on counter underflow"]
     SET,
 }
-impl crate::ToBits<u8> for CUFOA_A {
+impl From<CUFOA_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CUFOA_A) -> Self {
+        match variant {
             CUFOA_A::NONE => 0,
             CUFOA_A::TOGGLE => 1,
             CUFOA_A::CLEAR => 2,
@@ -418,9 +415,8 @@ impl<'a> CUFOA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CUFOA_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action on counter underflow"]
@@ -450,62 +446,62 @@ impl<'a> CUFOA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "Compare/Capture Channel PRS Input Channel Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS Channel 0 selected as input"]
+    #[doc = "0: PRS Channel 0 selected as input"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
+    #[doc = "1: PRS Channel 1 selected as input"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
+    #[doc = "2: PRS Channel 2 selected as input"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
+    #[doc = "3: PRS Channel 3 selected as input"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
+    #[doc = "4: PRS Channel 4 selected as input"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
+    #[doc = "5: PRS Channel 5 selected as input"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
+    #[doc = "6: PRS Channel 6 selected as input"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
+    #[doc = "7: PRS Channel 7 selected as input"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
+    #[doc = "8: PRS Channel 8 selected as input"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
+    #[doc = "9: PRS Channel 9 selected as input"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
+    #[doc = "10: PRS Channel 10 selected as input"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
+    #[doc = "11: PRS Channel 11 selected as input"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
+    #[doc = "12: PRS Channel 12 selected as input"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
+    #[doc = "13: PRS Channel 13 selected as input"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
+    #[doc = "14: PRS Channel 14 selected as input"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
+    #[doc = "15: PRS Channel 15 selected as input"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
+    #[doc = "16: PRS Channel 16 selected as input"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
+    #[doc = "17: PRS Channel 17 selected as input"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
+    #[doc = "18: PRS Channel 18 selected as input"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
+    #[doc = "19: PRS Channel 19 selected as input"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
+    #[doc = "20: PRS Channel 20 selected as input"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
+    #[doc = "21: PRS Channel 21 selected as input"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
+    #[doc = "22: PRS Channel 22 selected as input"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
+    #[doc = "23: PRS Channel 23 selected as input"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -697,8 +693,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -827,22 +822,22 @@ impl<'a> PRSSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ICEDGE`"]
+#[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICEDGE_A {
-    #[doc = "Rising edges detected"]
+    #[doc = "0: Rising edges detected"]
     RISING,
-    #[doc = "Falling edges detected"]
+    #[doc = "1: Falling edges detected"]
     FALLING,
-    #[doc = "Both edges detected"]
+    #[doc = "2: Both edges detected"]
     BOTH,
-    #[doc = "No edge detection, signal is left as it is"]
+    #[doc = "3: No edge detection, signal is left as it is"]
     NONE,
 }
-impl crate::ToBits<u8> for ICEDGE_A {
+impl From<ICEDGE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ICEDGE_A) -> Self {
+        match variant {
             ICEDGE_A::RISING => 0,
             ICEDGE_A::FALLING => 1,
             ICEDGE_A::BOTH => 2,
@@ -893,9 +888,8 @@ impl<'a> ICEDGE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ICEDGE_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Rising edges detected"]
@@ -925,22 +919,22 @@ impl<'a> ICEDGE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ICEVCTRL`"]
+#[doc = "Input Capture Event Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICEVCTRL_A {
-    #[doc = "PRS output pulse and interrupt flag set on every capture"]
+    #[doc = "0: PRS output pulse and interrupt flag set on every capture"]
     EVERYEDGE,
-    #[doc = "PRS output pulse and interrupt flag set on every second capture"]
+    #[doc = "1: PRS output pulse and interrupt flag set on every second capture"]
     EVERYSECONDEDGE,
-    #[doc = "PRS output pulse and interrupt flag set on rising edge only (if ICEDGE = BOTH)"]
+    #[doc = "2: PRS output pulse and interrupt flag set on rising edge only (if ICEDGE = BOTH)"]
     RISING,
-    #[doc = "PRS output pulse and interrupt flag set on falling edge only (if ICEDGE = BOTH)"]
+    #[doc = "3: PRS output pulse and interrupt flag set on falling edge only (if ICEDGE = BOTH)"]
     FALLING,
 }
-impl crate::ToBits<u8> for ICEVCTRL_A {
+impl From<ICEVCTRL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: ICEVCTRL_A) -> Self {
+        match variant {
             ICEVCTRL_A::EVERYEDGE => 0,
             ICEVCTRL_A::EVERYSECONDEDGE => 1,
             ICEVCTRL_A::RISING => 2,
@@ -991,9 +985,8 @@ impl<'a> ICEVCTRL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ICEVCTRL_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "PRS output pulse and interrupt flag set on every capture"]

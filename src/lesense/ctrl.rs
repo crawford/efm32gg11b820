@@ -10,20 +10,20 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `SCANMODE`"]
+#[doc = "Configure Scan Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCANMODE_A {
-    #[doc = "A new scan is started each time the period counter overflows"]
+    #[doc = "0: A new scan is started each time the period counter overflows"]
     PERIODIC,
-    #[doc = "A single scan is performed when START in CMD is set"]
+    #[doc = "1: A single scan is performed when START in CMD is set"]
     ONESHOT,
-    #[doc = "Pulse on PRS channel"]
+    #[doc = "2: Pulse on PRS channel"]
     PRS,
 }
-impl crate::ToBits<u8> for SCANMODE_A {
+impl From<SCANMODE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SCANMODE_A) -> Self {
+        match variant {
             SCANMODE_A::PERIODIC => 0,
             SCANMODE_A::ONESHOT => 1,
             SCANMODE_A::PRS => 2,
@@ -68,8 +68,7 @@ impl<'a> SCANMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SCANMODE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "A new scan is started each time the period counter overflows"]
     #[inline(always)]
@@ -93,62 +92,62 @@ impl<'a> SCANMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRSSEL`"]
+#[doc = "Scan Start PRS Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRSSEL_A {
-    #[doc = "PRS Channel 0 selected as input"]
+    #[doc = "0: PRS Channel 0 selected as input"]
     PRSCH0,
-    #[doc = "PRS Channel 1 selected as input"]
+    #[doc = "1: PRS Channel 1 selected as input"]
     PRSCH1,
-    #[doc = "PRS Channel 2 selected as input"]
+    #[doc = "2: PRS Channel 2 selected as input"]
     PRSCH2,
-    #[doc = "PRS Channel 3 selected as input"]
+    #[doc = "3: PRS Channel 3 selected as input"]
     PRSCH3,
-    #[doc = "PRS Channel 4 selected as input"]
+    #[doc = "4: PRS Channel 4 selected as input"]
     PRSCH4,
-    #[doc = "PRS Channel 5 selected as input"]
+    #[doc = "5: PRS Channel 5 selected as input"]
     PRSCH5,
-    #[doc = "PRS Channel 6 selected as input"]
+    #[doc = "6: PRS Channel 6 selected as input"]
     PRSCH6,
-    #[doc = "PRS Channel 7 selected as input"]
+    #[doc = "7: PRS Channel 7 selected as input"]
     PRSCH7,
-    #[doc = "PRS Channel 8 selected as input"]
+    #[doc = "8: PRS Channel 8 selected as input"]
     PRSCH8,
-    #[doc = "PRS Channel 9 selected as input"]
+    #[doc = "9: PRS Channel 9 selected as input"]
     PRSCH9,
-    #[doc = "PRS Channel 10 selected as input"]
+    #[doc = "10: PRS Channel 10 selected as input"]
     PRSCH10,
-    #[doc = "PRS Channel 11 selected as input"]
+    #[doc = "11: PRS Channel 11 selected as input"]
     PRSCH11,
-    #[doc = "PRS Channel 12 selected as input"]
+    #[doc = "12: PRS Channel 12 selected as input"]
     PRSCH12,
-    #[doc = "PRS Channel 13 selected as input"]
+    #[doc = "13: PRS Channel 13 selected as input"]
     PRSCH13,
-    #[doc = "PRS Channel 14 selected as input"]
+    #[doc = "14: PRS Channel 14 selected as input"]
     PRSCH14,
-    #[doc = "PRS Channel 15 selected as input"]
+    #[doc = "15: PRS Channel 15 selected as input"]
     PRSCH15,
-    #[doc = "PRS Channel 16 selected as input"]
+    #[doc = "16: PRS Channel 16 selected as input"]
     PRSCH16,
-    #[doc = "PRS Channel 17 selected as input"]
+    #[doc = "17: PRS Channel 17 selected as input"]
     PRSCH17,
-    #[doc = "PRS Channel 18 selected as input"]
+    #[doc = "18: PRS Channel 18 selected as input"]
     PRSCH18,
-    #[doc = "PRS Channel 19 selected as input"]
+    #[doc = "19: PRS Channel 19 selected as input"]
     PRSCH19,
-    #[doc = "PRS Channel 20 selected as input"]
+    #[doc = "20: PRS Channel 20 selected as input"]
     PRSCH20,
-    #[doc = "PRS Channel 21 selected as input"]
+    #[doc = "21: PRS Channel 21 selected as input"]
     PRSCH21,
-    #[doc = "PRS Channel 22 selected as input"]
+    #[doc = "22: PRS Channel 22 selected as input"]
     PRSCH22,
-    #[doc = "PRS Channel 23 selected as input"]
+    #[doc = "23: PRS Channel 23 selected as input"]
     PRSCH23,
 }
-impl crate::ToBits<u8> for PRSSEL_A {
+impl From<PRSSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PRSSEL_A) -> Self {
+        match variant {
             PRSSEL_A::PRSCH0 => 0,
             PRSSEL_A::PRSCH1 => 1,
             PRSSEL_A::PRSCH2 => 2,
@@ -340,8 +339,7 @@ impl<'a> PRSSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -470,22 +468,22 @@ impl<'a> PRSSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SCANCONF`"]
+#[doc = "Select Scan Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCANCONF_A {
-    #[doc = "The channel configuration register registers used are directly mapped to the channel number."]
+    #[doc = "0: The channel configuration register registers used are directly mapped to the channel number."]
     DIRMAP,
-    #[doc = "The channel configuration register registers used are CHX+8_CONF for channels 0-7 and CHX-8_CONF for channels 8-15."]
+    #[doc = "1: The channel configuration register registers used are CHX+8_CONF for channels 0-7 and CHX-8_CONF for channels 8-15."]
     INVMAP,
-    #[doc = "The channel configuration register registers used toggles between CHX_CONF and CHX+8_CONF when channel x triggers"]
+    #[doc = "2: The channel configuration register registers used toggles between CHX_CONF and CHX+8_CONF when channel x triggers"]
     TOGGLE,
-    #[doc = "The decoder state defines the CONF registers to be used."]
+    #[doc = "3: The decoder state defines the CONF registers to be used."]
     DECDEF,
 }
-impl crate::ToBits<u8> for SCANCONF_A {
+impl From<SCANCONF_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SCANCONF_A) -> Self {
+        match variant {
             SCANCONF_A::DIRMAP => 0,
             SCANCONF_A::INVMAP => 1,
             SCANCONF_A::TOGGLE => 2,
@@ -536,9 +534,8 @@ impl<'a> SCANCONF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SCANCONF_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The channel configuration register registers used are directly mapped to the channel number."]
@@ -688,20 +685,20 @@ impl<'a> BUFIDL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMAWU`"]
+#[doc = "DMA Wake-up From EM2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAWU_A {
-    #[doc = "No DMA wake-up from EM2"]
+    #[doc = "0: No DMA wake-up from EM2"]
     DISABLE,
-    #[doc = "DMA wake-up from EM2 when data is valid in the result buffer"]
+    #[doc = "1: DMA wake-up from EM2 when data is valid in the result buffer"]
     BUFDATAV,
-    #[doc = "DMA wake-up from EM2 when the result buffer is full/half-full depending on BUFIDL configuration"]
+    #[doc = "2: DMA wake-up from EM2 when the result buffer is full/half-full depending on BUFIDL configuration"]
     BUFLEVEL,
 }
-impl crate::ToBits<u8> for DMAWU_A {
+impl From<DMAWU_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DMAWU_A) -> Self {
+        match variant {
             DMAWU_A::DISABLE => 0,
             DMAWU_A::BUFDATAV => 1,
             DMAWU_A::BUFLEVEL => 2,
@@ -746,8 +743,7 @@ impl<'a> DMAWU_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMAWU_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No DMA wake-up from EM2"]
     #[inline(always)]

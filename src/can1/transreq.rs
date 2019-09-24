@@ -1,17 +1,17 @@
 #[doc = "Reader of register TRANSREQ"]
 pub type R = crate::R<u32, super::TRANSREQ>;
-#[doc = "Possible values of the field `TXRQSTOUT`"]
+#[doc = "Transmission Request Bits (Of All Message Objects)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXRQSTOUT_A {
-    #[doc = "This Message Object is not waiting for transmission."]
+    #[doc = "0: This Message Object is not waiting for transmission."]
     FALSE,
-    #[doc = "The transmission of this Message Object is requested and is not yet done."]
+    #[doc = "1: The transmission of this Message Object is requested and is not yet done."]
     TRUE,
 }
-impl crate::ToBits<u32> for TXRQSTOUT_A {
+impl From<TXRQSTOUT_A> for u32 {
     #[inline(always)]
-    fn _bits(&self) -> u32 {
-        match *self {
+    fn from(variant: TXRQSTOUT_A) -> Self {
+        match variant {
             TXRQSTOUT_A::FALSE => 0,
             TXRQSTOUT_A::TRUE => 1,
         }

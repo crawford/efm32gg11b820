@@ -154,22 +154,22 @@ impl<'a> APORTVMASTERDIS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWRSEL`"]
+#[doc = "Power Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWRSEL_A {
-    #[doc = "AVDD supply"]
+    #[doc = "0: AVDD supply"]
     AVDD,
-    #[doc = "DVDD supply"]
+    #[doc = "1: DVDD supply"]
     DVDD,
-    #[doc = "IOVDD/IOVDD0 supply"]
+    #[doc = "2: IOVDD/IOVDD0 supply"]
     IOVDD0,
-    #[doc = "IOVDD1 supply (if part has two I/O voltages)"]
+    #[doc = "4: IOVDD1 supply (if part has two I/O voltages)"]
     IOVDD1,
 }
-impl crate::ToBits<u8> for PWRSEL_A {
+impl From<PWRSEL_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: PWRSEL_A) -> Self {
+        match variant {
             PWRSEL_A::AVDD => 0,
             PWRSEL_A::DVDD => 1,
             PWRSEL_A::IOVDD0 => 2,
@@ -221,8 +221,7 @@ impl<'a> PWRSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PWRSEL_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "AVDD supply"]
     #[inline(always)]
@@ -275,20 +274,20 @@ impl<'a> ACCURACY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INPUTRANGE`"]
+#[doc = "Input Range\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUTRANGE_A {
-    #[doc = "Setting when the input can be from 0 to ACMPVDD."]
+    #[doc = "0: Setting when the input can be from 0 to ACMPVDD."]
     FULL,
-    #[doc = "Setting when the input will always be greater than ACMPVDD/2."]
+    #[doc = "1: Setting when the input will always be greater than ACMPVDD/2."]
     GTVDDDIV2,
-    #[doc = "Setting when the input will always be less than ACMPVDD/2."]
+    #[doc = "2: Setting when the input will always be less than ACMPVDD/2."]
     LTVDDDIV2,
 }
-impl crate::ToBits<u8> for INPUTRANGE_A {
+impl From<INPUTRANGE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: INPUTRANGE_A) -> Self {
+        match variant {
             INPUTRANGE_A::FULL => 0,
             INPUTRANGE_A::GTVDDDIV2 => 1,
             INPUTRANGE_A::LTVDDDIV2 => 2,
@@ -333,8 +332,7 @@ impl<'a> INPUTRANGE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INPUTRANGE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Setting when the input can be from 0 to ACMPVDD."]
     #[inline(always)]

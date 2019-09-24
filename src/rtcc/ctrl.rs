@@ -106,46 +106,46 @@ impl<'a> CCV1TOP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CNTPRESC`"]
+#[doc = "Counter Prescaler Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTPRESC_A {
-    #[doc = "CLKCNT = LFECLKRTCC/1"]
+    #[doc = "0: CLKCNT = LFECLKRTCC/1"]
     DIV1,
-    #[doc = "CLKCNT = LFECLKRTCC/2"]
+    #[doc = "1: CLKCNT = LFECLKRTCC/2"]
     DIV2,
-    #[doc = "CLKCNT = LFECLKRTCC/4"]
+    #[doc = "2: CLKCNT = LFECLKRTCC/4"]
     DIV4,
-    #[doc = "CLKCNT = LFECLKRTCC/8"]
+    #[doc = "3: CLKCNT = LFECLKRTCC/8"]
     DIV8,
-    #[doc = "CLKCNT = LFECLKRTCC/16"]
+    #[doc = "4: CLKCNT = LFECLKRTCC/16"]
     DIV16,
-    #[doc = "CLKCNT = LFECLKRTCC/32"]
+    #[doc = "5: CLKCNT = LFECLKRTCC/32"]
     DIV32,
-    #[doc = "CLKCNT = LFECLKRTCC/64"]
+    #[doc = "6: CLKCNT = LFECLKRTCC/64"]
     DIV64,
-    #[doc = "CLKCNT = LFECLKRTCC/128"]
+    #[doc = "7: CLKCNT = LFECLKRTCC/128"]
     DIV128,
-    #[doc = "CLKCNT = LFECLKRTCC/256"]
+    #[doc = "8: CLKCNT = LFECLKRTCC/256"]
     DIV256,
-    #[doc = "CLKCNT = LFECLKRTCC/512"]
+    #[doc = "9: CLKCNT = LFECLKRTCC/512"]
     DIV512,
-    #[doc = "CLKCNT = LFECLKRTCC/1024"]
+    #[doc = "10: CLKCNT = LFECLKRTCC/1024"]
     DIV1024,
-    #[doc = "CLKCNT = LFECLKRTCC/2048"]
+    #[doc = "11: CLKCNT = LFECLKRTCC/2048"]
     DIV2048,
-    #[doc = "CLKCNT = LFECLKRTCC/4096"]
+    #[doc = "12: CLKCNT = LFECLKRTCC/4096"]
     DIV4096,
-    #[doc = "CLKCNT = LFECLKRTCC/8192"]
+    #[doc = "13: CLKCNT = LFECLKRTCC/8192"]
     DIV8192,
-    #[doc = "CLKCNT = LFECLKRTCC/16384"]
+    #[doc = "14: CLKCNT = LFECLKRTCC/16384"]
     DIV16384,
-    #[doc = "CLKCNT = LFECLKRTCC/32768"]
+    #[doc = "15: CLKCNT = LFECLKRTCC/32768"]
     DIV32768,
 }
-impl crate::ToBits<u8> for CNTPRESC_A {
+impl From<CNTPRESC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: CNTPRESC_A) -> Self {
+        match variant {
             CNTPRESC_A::DIV1 => 0,
             CNTPRESC_A::DIV2 => 1,
             CNTPRESC_A::DIV4 => 2,
@@ -280,9 +280,8 @@ impl<'a> CNTPRESC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CNTPRESC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "CLKCNT = LFECLKRTCC/1"]

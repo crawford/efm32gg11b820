@@ -10,20 +10,20 @@ impl crate::ResetValue for super::CH11_CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `STRUCTTYPE`"]
+#[doc = "DMA Structure Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STRUCTTYPE_A {
-    #[doc = "DMA transfer structure type selected."]
+    #[doc = "0: DMA transfer structure type selected."]
     TRANSFER,
-    #[doc = "Synchronization structure type selected."]
+    #[doc = "1: Synchronization structure type selected."]
     SYNCHRONIZE,
-    #[doc = "Write immediate value structure type selected."]
+    #[doc = "2: Write immediate value structure type selected."]
     WRITE,
 }
-impl crate::ToBits<u8> for STRUCTTYPE_A {
+impl From<STRUCTTYPE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: STRUCTTYPE_A) -> Self {
+        match variant {
             STRUCTTYPE_A::TRANSFER => 0,
             STRUCTTYPE_A::SYNCHRONIZE => 1,
             STRUCTTYPE_A::WRITE => 2,
@@ -120,42 +120,42 @@ impl<'a> BYTESWAP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BLOCKSIZE`"]
+#[doc = "Block Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCKSIZE_A {
-    #[doc = "One unit transfer per arbitration"]
+    #[doc = "0: One unit transfer per arbitration"]
     UNIT1,
-    #[doc = "Two unit transfers per arbitration"]
+    #[doc = "1: Two unit transfers per arbitration"]
     UNIT2,
-    #[doc = "Three unit transfers per arbitration"]
+    #[doc = "2: Three unit transfers per arbitration"]
     UNIT3,
-    #[doc = "Four unit transfers per arbitration"]
+    #[doc = "3: Four unit transfers per arbitration"]
     UNIT4,
-    #[doc = "Six unit transfers per arbitration"]
+    #[doc = "4: Six unit transfers per arbitration"]
     UNIT6,
-    #[doc = "Eight unit transfers per arbitration"]
+    #[doc = "5: Eight unit transfers per arbitration"]
     UNIT8,
-    #[doc = "Sixteen unit transfers per arbitration"]
+    #[doc = "7: Sixteen unit transfers per arbitration"]
     UNIT16,
-    #[doc = "32 unit transfers per arbitration"]
+    #[doc = "9: 32 unit transfers per arbitration"]
     UNIT32,
-    #[doc = "64 unit transfers per arbitration"]
+    #[doc = "10: 64 unit transfers per arbitration"]
     UNIT64,
-    #[doc = "128 unit transfers per arbitration"]
+    #[doc = "11: 128 unit transfers per arbitration"]
     UNIT128,
-    #[doc = "256 unit transfers per arbitration"]
+    #[doc = "12: 256 unit transfers per arbitration"]
     UNIT256,
-    #[doc = "512 unit transfers per arbitration"]
+    #[doc = "13: 512 unit transfers per arbitration"]
     UNIT512,
-    #[doc = "1024 unit transfers per arbitration"]
+    #[doc = "14: 1024 unit transfers per arbitration"]
     UNIT1024,
-    #[doc = "Transfer all units as specified by the XFRCNT field"]
+    #[doc = "15: Transfer all units as specified by the XFRCNT field"]
     ALL,
 }
-impl crate::ToBits<u8> for BLOCKSIZE_A {
+impl From<BLOCKSIZE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: BLOCKSIZE_A) -> Self {
+        match variant {
             BLOCKSIZE_A::UNIT1 => 0,
             BLOCKSIZE_A::UNIT2 => 1,
             BLOCKSIZE_A::UNIT3 => 2,
@@ -277,8 +277,7 @@ impl<'a> BLOCKSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BLOCKSIZE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "One unit transfer per arbitration"]
     #[inline(always)]
@@ -453,22 +452,22 @@ impl<'a> IGNORESREQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRCINC`"]
+#[doc = "Source Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRCINC_A {
-    #[doc = "Increment source address by one unit data size after each read"]
+    #[doc = "0: Increment source address by one unit data size after each read"]
     ONE,
-    #[doc = "Increment source address by two unit data sizes after each read"]
+    #[doc = "1: Increment source address by two unit data sizes after each read"]
     TWO,
-    #[doc = "Increment source address by four unit data sizes after each read"]
+    #[doc = "2: Increment source address by four unit data sizes after each read"]
     FOUR,
-    #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
+    #[doc = "3: Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
     NONE,
 }
-impl crate::ToBits<u8> for SRCINC_A {
+impl From<SRCINC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SRCINC_A) -> Self {
+        match variant {
             SRCINC_A::ONE => 0,
             SRCINC_A::TWO => 1,
             SRCINC_A::FOUR => 2,
@@ -519,9 +518,8 @@ impl<'a> SRCINC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SRCINC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Increment source address by one unit data size after each read"]
@@ -551,20 +549,20 @@ impl<'a> SRCINC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SIZE`"]
+#[doc = "Unit Data Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIZE_A {
-    #[doc = "Each unit transfer is a byte"]
+    #[doc = "0: Each unit transfer is a byte"]
     BYTE,
-    #[doc = "Each unit transfer is a half-word"]
+    #[doc = "1: Each unit transfer is a half-word"]
     HALFWORD,
-    #[doc = "Each unit transfer is a word"]
+    #[doc = "2: Each unit transfer is a word"]
     WORD,
 }
-impl crate::ToBits<u8> for SIZE_A {
+impl From<SIZE_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: SIZE_A) -> Self {
+        match variant {
             SIZE_A::BYTE => 0,
             SIZE_A::HALFWORD => 1,
             SIZE_A::WORD => 2,
@@ -609,8 +607,7 @@ impl<'a> SIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIZE_A) -> &'a mut W {
-        use crate::ToBits;
-        unsafe { self.bits(variant._bits()) }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Each unit transfer is a byte"]
     #[inline(always)]
@@ -634,22 +631,22 @@ impl<'a> SIZE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DSTINC`"]
+#[doc = "Destination Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSTINC_A {
-    #[doc = "Increment destination address by one unit data size after each write"]
+    #[doc = "0: Increment destination address by one unit data size after each write"]
     ONE,
-    #[doc = "Increment destination address by two unit data sizes after each write"]
+    #[doc = "1: Increment destination address by two unit data sizes after each write"]
     TWO,
-    #[doc = "Increment destination address by four unit data sizes after each write"]
+    #[doc = "2: Increment destination address by four unit data sizes after each write"]
     FOUR,
-    #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
+    #[doc = "3: Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
     NONE,
 }
-impl crate::ToBits<u8> for DSTINC_A {
+impl From<DSTINC_A> for u8 {
     #[inline(always)]
-    fn _bits(&self) -> u8 {
-        match *self {
+    fn from(variant: DSTINC_A) -> Self {
+        match variant {
             DSTINC_A::ONE => 0,
             DSTINC_A::TWO => 1,
             DSTINC_A::FOUR => 2,
@@ -700,9 +697,8 @@ impl<'a> DSTINC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DSTINC_A) -> &'a mut W {
-        use crate::ToBits;
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Increment destination address by one unit data size after each write"]
