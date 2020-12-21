@@ -24,28 +24,23 @@ pub type AC12INDEXERR_R = crate::R<bool, bool>;
 pub type CNIBAC12ERR_R = crate::R<bool, bool>;
 #[doc = "UHS Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UHSMODESEL_A {
     #[doc = "0: SDR12"]
-    SDR12,
+    SDR12 = 0,
     #[doc = "1: SDR25"]
-    SDR25,
+    SDR25 = 1,
     #[doc = "2: SDR50"]
-    SDR50,
+    SDR50 = 2,
     #[doc = "3: SDR104"]
-    SDR104,
+    SDR104 = 3,
     #[doc = "4: DDR50"]
-    DDR50,
+    DDR50 = 4,
 }
 impl From<UHSMODESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: UHSMODESEL_A) -> Self {
-        match variant {
-            UHSMODESEL_A::SDR12 => 0,
-            UHSMODESEL_A::SDR25 => 1,
-            UHSMODESEL_A::SDR50 => 2,
-            UHSMODESEL_A::SDR104 => 3,
-            UHSMODESEL_A::DDR50 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UHSMODESEL`"]
@@ -158,25 +153,21 @@ impl<'a> SIGEN1P8V_W<'a> {
 }
 #[doc = "Driver Strength Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRVSTNSEL_A {
     #[doc = "0: Driver Type B is selected (Default)"]
-    TYPEB,
+    TYPEB = 0,
     #[doc = "1: Driver Type A is selected"]
-    TYPEA,
+    TYPEA = 1,
     #[doc = "2: Driver Type C is selected"]
-    TYPEC,
+    TYPEC = 2,
     #[doc = "3: Driver Type D is selected"]
-    TYPED,
+    TYPED = 3,
 }
 impl From<DRVSTNSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DRVSTNSEL_A) -> Self {
-        match variant {
-            DRVSTNSEL_A::TYPEB => 0,
-            DRVSTNSEL_A::TYPEA => 1,
-            DRVSTNSEL_A::TYPEC => 2,
-            DRVSTNSEL_A::TYPED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRVSTNSEL`"]

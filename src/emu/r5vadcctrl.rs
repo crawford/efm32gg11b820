@@ -36,28 +36,23 @@ impl<'a> ENAMUX_W<'a> {
 }
 #[doc = "ADC Mux Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AMUXSEL_A {
     #[doc = "0: VBUS divided by 10"]
-    VBUSDIV10,
+    VBUSDIV10 = 0,
     #[doc = "1: VREGI divided by 10"]
-    VREGIDIV10,
+    VREGIDIV10 = 1,
     #[doc = "2: VREGO divided by 6"]
-    VREGODIV6,
+    VREGODIV6 = 2,
     #[doc = "3: VREGI current monitor"]
-    VREGIIMON,
+    VREGIIMON = 3,
     #[doc = "4: VBUS current monitor"]
-    VBUSIMON,
+    VBUSIMON = 4,
 }
 impl From<AMUXSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: AMUXSEL_A) -> Self {
-        match variant {
-            AMUXSEL_A::VBUSDIV10 => 0,
-            AMUXSEL_A::VREGIDIV10 => 1,
-            AMUXSEL_A::VREGODIV6 => 2,
-            AMUXSEL_A::VREGIIMON => 3,
-            AMUXSEL_A::VBUSIMON => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AMUXSEL`"]

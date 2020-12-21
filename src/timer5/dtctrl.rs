@@ -108,85 +108,61 @@ impl<'a> DTCINV_W<'a> {
 }
 #[doc = "DTI PRS Source Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<DTPRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DTPRSSEL_A) -> Self {
-        match variant {
-            DTPRSSEL_A::PRSCH0 => 0,
-            DTPRSSEL_A::PRSCH1 => 1,
-            DTPRSSEL_A::PRSCH2 => 2,
-            DTPRSSEL_A::PRSCH3 => 3,
-            DTPRSSEL_A::PRSCH4 => 4,
-            DTPRSSEL_A::PRSCH5 => 5,
-            DTPRSSEL_A::PRSCH6 => 6,
-            DTPRSSEL_A::PRSCH7 => 7,
-            DTPRSSEL_A::PRSCH8 => 8,
-            DTPRSSEL_A::PRSCH9 => 9,
-            DTPRSSEL_A::PRSCH10 => 10,
-            DTPRSSEL_A::PRSCH11 => 11,
-            DTPRSSEL_A::PRSCH12 => 12,
-            DTPRSSEL_A::PRSCH13 => 13,
-            DTPRSSEL_A::PRSCH14 => 14,
-            DTPRSSEL_A::PRSCH15 => 15,
-            DTPRSSEL_A::PRSCH16 => 16,
-            DTPRSSEL_A::PRSCH17 => 17,
-            DTPRSSEL_A::PRSCH18 => 18,
-            DTPRSSEL_A::PRSCH19 => 19,
-            DTPRSSEL_A::PRSCH20 => 20,
-            DTPRSSEL_A::PRSCH21 => 21,
-            DTPRSSEL_A::PRSCH22 => 22,
-            DTPRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTPRSSEL`"]

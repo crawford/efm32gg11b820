@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CH3_CFG {
 }
 #[doc = "Arbitration Slot Number Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ARBSLOTS_A {
     #[doc = "0: One arbitration slot selected"]
-    ONE,
+    ONE = 0,
     #[doc = "1: Two arbitration slots selected"]
-    TWO,
+    TWO = 1,
     #[doc = "2: Four arbitration slots selected"]
-    FOUR,
+    FOUR = 2,
     #[doc = "3: Eight arbitration slots selected"]
-    EIGHT,
+    EIGHT = 3,
 }
 impl From<ARBSLOTS_A> for u8 {
     #[inline(always)]
     fn from(variant: ARBSLOTS_A) -> Self {
-        match variant {
-            ARBSLOTS_A::ONE => 0,
-            ARBSLOTS_A::TWO => 1,
-            ARBSLOTS_A::FOUR => 2,
-            ARBSLOTS_A::EIGHT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ARBSLOTS`"]

@@ -12,34 +12,27 @@ pub type NACKED_R = crate::R<bool, bool>;
 pub type BUSHOLD_R = crate::R<bool, bool>;
 #[doc = "Transmission State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STATE_A {
     #[doc = "0: No transmission is being performed."]
-    IDLE,
+    IDLE = 0,
     #[doc = "1: Waiting for idle. Will send a start condition as soon as the bus is idle."]
-    WAIT,
+    WAIT = 1,
     #[doc = "2: Start transmitted or received"]
-    START,
+    START = 2,
     #[doc = "3: Address transmitted or received"]
-    ADDR,
+    ADDR = 3,
     #[doc = "4: Address ack/nack transmitted or received"]
-    ADDRACK,
+    ADDRACK = 4,
     #[doc = "5: Data transmitted or received"]
-    DATA,
+    DATA = 5,
     #[doc = "6: Data ack/nack transmitted or received"]
-    DATAACK,
+    DATAACK = 6,
 }
 impl From<STATE_A> for u8 {
     #[inline(always)]
     fn from(variant: STATE_A) -> Self {
-        match variant {
-            STATE_A::IDLE => 0,
-            STATE_A::WAIT => 1,
-            STATE_A::START => 2,
-            STATE_A::ADDR => 3,
-            STATE_A::ADDRACK => 4,
-            STATE_A::DATA => 5,
-            STATE_A::DATAACK => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STATE`"]

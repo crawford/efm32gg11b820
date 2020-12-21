@@ -108,109 +108,77 @@ impl<'a> APORTOUTEN_W<'a> {
 }
 #[doc = "APORT Output Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum APORTOUTSEL_A {
     #[doc = "32: APORT1X Channel 0"]
-    APORT1XCH0,
+    APORT1XCH0 = 32,
     #[doc = "33: APORT1Y Channel 1"]
-    APORT1YCH1,
+    APORT1YCH1 = 33,
     #[doc = "34: APORT1X Channel 2"]
-    APORT1XCH2,
+    APORT1XCH2 = 34,
     #[doc = "35: APORT1Y Channel 3"]
-    APORT1YCH3,
+    APORT1YCH3 = 35,
     #[doc = "36: APORT1X Channel 4"]
-    APORT1XCH4,
+    APORT1XCH4 = 36,
     #[doc = "37: APORT1Y Channel 5"]
-    APORT1YCH5,
+    APORT1YCH5 = 37,
     #[doc = "38: APORT1X Channel 6"]
-    APORT1XCH6,
+    APORT1XCH6 = 38,
     #[doc = "39: APORT1Y Channel 7"]
-    APORT1YCH7,
+    APORT1YCH7 = 39,
     #[doc = "40: APORT1X Channel 8"]
-    APORT1XCH8,
+    APORT1XCH8 = 40,
     #[doc = "41: APORT1Y Channel 9"]
-    APORT1YCH9,
+    APORT1YCH9 = 41,
     #[doc = "42: APORT1X Channel 10"]
-    APORT1XCH10,
+    APORT1XCH10 = 42,
     #[doc = "43: APORT1Y Channel 11"]
-    APORT1YCH11,
+    APORT1YCH11 = 43,
     #[doc = "44: APORT1X Channel 12"]
-    APORT1XCH12,
+    APORT1XCH12 = 44,
     #[doc = "45: APORT1Y Channel 13"]
-    APORT1YCH13,
+    APORT1YCH13 = 45,
     #[doc = "46: APORT1X Channel 14"]
-    APORT1XCH14,
+    APORT1XCH14 = 46,
     #[doc = "47: APORT1Y Channel 15"]
-    APORT1YCH15,
+    APORT1YCH15 = 47,
     #[doc = "48: APORT1X Channel 16"]
-    APORT1XCH16,
+    APORT1XCH16 = 48,
     #[doc = "49: APORT1Y Channel 17"]
-    APORT1YCH17,
+    APORT1YCH17 = 49,
     #[doc = "50: APORT1X Channel 18"]
-    APORT1XCH18,
+    APORT1XCH18 = 50,
     #[doc = "51: APORT1Y Channel 19"]
-    APORT1YCH19,
+    APORT1YCH19 = 51,
     #[doc = "52: APORT1X Channel 20"]
-    APORT1XCH20,
+    APORT1XCH20 = 52,
     #[doc = "53: APORT1Y Channel 21"]
-    APORT1YCH21,
+    APORT1YCH21 = 53,
     #[doc = "54: APORT1X Channel 22"]
-    APORT1XCH22,
+    APORT1XCH22 = 54,
     #[doc = "55: APORT1Y Channel 23"]
-    APORT1YCH23,
+    APORT1YCH23 = 55,
     #[doc = "56: APORT1X Channel 24"]
-    APORT1XCH24,
+    APORT1XCH24 = 56,
     #[doc = "57: APORT1Y Channel 25"]
-    APORT1YCH25,
+    APORT1YCH25 = 57,
     #[doc = "58: APORT1X Channel 26"]
-    APORT1XCH26,
+    APORT1XCH26 = 58,
     #[doc = "59: APORT1Y Channel 27"]
-    APORT1YCH27,
+    APORT1YCH27 = 59,
     #[doc = "60: APORT1X Channel 28"]
-    APORT1XCH28,
+    APORT1XCH28 = 60,
     #[doc = "61: APORT1Y Channel 29"]
-    APORT1YCH29,
+    APORT1YCH29 = 61,
     #[doc = "62: APORT1X Channel 30"]
-    APORT1XCH30,
+    APORT1XCH30 = 62,
     #[doc = "63: APORT1Y Channel 31"]
-    APORT1YCH31,
+    APORT1YCH31 = 63,
 }
 impl From<APORTOUTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: APORTOUTSEL_A) -> Self {
-        match variant {
-            APORTOUTSEL_A::APORT1XCH0 => 32,
-            APORTOUTSEL_A::APORT1YCH1 => 33,
-            APORTOUTSEL_A::APORT1XCH2 => 34,
-            APORTOUTSEL_A::APORT1YCH3 => 35,
-            APORTOUTSEL_A::APORT1XCH4 => 36,
-            APORTOUTSEL_A::APORT1YCH5 => 37,
-            APORTOUTSEL_A::APORT1XCH6 => 38,
-            APORTOUTSEL_A::APORT1YCH7 => 39,
-            APORTOUTSEL_A::APORT1XCH8 => 40,
-            APORTOUTSEL_A::APORT1YCH9 => 41,
-            APORTOUTSEL_A::APORT1XCH10 => 42,
-            APORTOUTSEL_A::APORT1YCH11 => 43,
-            APORTOUTSEL_A::APORT1XCH12 => 44,
-            APORTOUTSEL_A::APORT1YCH13 => 45,
-            APORTOUTSEL_A::APORT1XCH14 => 46,
-            APORTOUTSEL_A::APORT1YCH15 => 47,
-            APORTOUTSEL_A::APORT1XCH16 => 48,
-            APORTOUTSEL_A::APORT1YCH17 => 49,
-            APORTOUTSEL_A::APORT1XCH18 => 50,
-            APORTOUTSEL_A::APORT1YCH19 => 51,
-            APORTOUTSEL_A::APORT1XCH20 => 52,
-            APORTOUTSEL_A::APORT1YCH21 => 53,
-            APORTOUTSEL_A::APORT1XCH22 => 54,
-            APORTOUTSEL_A::APORT1YCH23 => 55,
-            APORTOUTSEL_A::APORT1XCH24 => 56,
-            APORTOUTSEL_A::APORT1YCH25 => 57,
-            APORTOUTSEL_A::APORT1XCH26 => 58,
-            APORTOUTSEL_A::APORT1YCH27 => 59,
-            APORTOUTSEL_A::APORT1XCH28 => 60,
-            APORTOUTSEL_A::APORT1YCH29 => 61,
-            APORTOUTSEL_A::APORT1XCH30 => 62,
-            APORTOUTSEL_A::APORT1YCH31 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `APORTOUTSEL`"]
@@ -740,85 +708,61 @@ impl<'a> MAINOUTENPRS_W<'a> {
 }
 #[doc = "IDAC Output Enable PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected."]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected."]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected."]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected."]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected."]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected."]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected."]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected."]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected."]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected."]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected."]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected."]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected."]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected."]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected."]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected."]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected."]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected."]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected."]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]

@@ -84,22 +84,19 @@ impl<'a> IMONEN_W<'a> {
 }
 #[doc = "5V Input Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUTMODE_A {
     #[doc = "0: Regulator input supply switched automatically to the highest voltage of either VBUS or VREGI"]
-    AUTO,
+    AUTO = 0,
     #[doc = "1: Force VBUS pin as the regulator input"]
-    VBUS,
+    VBUS = 1,
     #[doc = "2: Force VREGI pin as the regulator input"]
-    VREGI,
+    VREGI = 2,
 }
 impl From<INPUTMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUTMODE_A) -> Self {
-        match variant {
-            INPUTMODE_A::AUTO => 0,
-            INPUTMODE_A::VBUS => 1,
-            INPUTMODE_A::VREGI => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUTMODE`"]

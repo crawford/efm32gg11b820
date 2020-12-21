@@ -40,34 +40,27 @@ impl<'a> NEGSEL_W<'a> {
 }
 #[doc = "OPAx Resistor Ladder Input Mux\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESINMUX_A {
     #[doc = "0: Set for Unity Gain"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Set for NEXTOUT(x-1) input"]
-    OPANEXT,
+    OPANEXT = 1,
     #[doc = "2: NEG pad connected"]
-    NEGPAD,
+    NEGPAD = 2,
     #[doc = "3: POS pad connected"]
-    POSPAD,
+    POSPAD = 3,
     #[doc = "4: Neg pad of OPA0 connected. Direct input to support common reference."]
-    COMPAD,
+    COMPAD = 4,
     #[doc = "5: OPA0 and OPA1 Resmux connected to form fully differential instrumentation amplifier."]
-    CENTER,
+    CENTER = 5,
     #[doc = "6: VSS connected"]
-    VSS,
+    VSS = 6,
 }
 impl From<RESINMUX_A> for u8 {
     #[inline(always)]
     fn from(variant: RESINMUX_A) -> Self {
-        match variant {
-            RESINMUX_A::DISABLE => 0,
-            RESINMUX_A::OPANEXT => 1,
-            RESINMUX_A::NEGPAD => 2,
-            RESINMUX_A::POSPAD => 3,
-            RESINMUX_A::COMPAD => 4,
-            RESINMUX_A::CENTER => 5,
-            RESINMUX_A::VSS => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESINMUX`"]
@@ -202,37 +195,29 @@ impl<'a> GAIN3X_W<'a> {
 }
 #[doc = "OPAx Resistor Ladder Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESSEL_A {
     #[doc = "0: Gain of 1/3"]
-    RES0,
+    RES0 = 0,
     #[doc = "1: Gain of 1"]
-    RES1,
+    RES1 = 1,
     #[doc = "2: Gain of 1 2/3"]
-    RES2,
+    RES2 = 2,
     #[doc = "3: Gain of 2 1/5"]
-    RES3,
+    RES3 = 3,
     #[doc = "4: Gain of 3"]
-    RES4,
+    RES4 = 4,
     #[doc = "5: Gain of 4 1/3"]
-    RES5,
+    RES5 = 5,
     #[doc = "6: Gain of 7"]
-    RES6,
+    RES6 = 6,
     #[doc = "7: Gain of 15"]
-    RES7,
+    RES7 = 7,
 }
 impl From<RESSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: RESSEL_A) -> Self {
-        match variant {
-            RESSEL_A::RES0 => 0,
-            RESSEL_A::RES1 => 1,
-            RESSEL_A::RES2 => 2,
-            RESSEL_A::RES3 => 3,
-            RESSEL_A::RES4 => 4,
-            RESSEL_A::RES5 => 5,
-            RESSEL_A::RES6 => 6,
-            RESSEL_A::RES7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESSEL`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::PAGECTRL {
 }
 #[doc = "Page Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PAGELEN_A {
     #[doc = "0: 4 members in a page."]
-    MEMBER4,
+    MEMBER4 = 0,
     #[doc = "1: 8 members in a page."]
-    MEMBER8,
+    MEMBER8 = 1,
     #[doc = "2: 16 members in a page."]
-    MEMBER16,
+    MEMBER16 = 2,
     #[doc = "3: 32 members in a page."]
-    MEMBER32,
+    MEMBER32 = 3,
 }
 impl From<PAGELEN_A> for u8 {
     #[inline(always)]
     fn from(variant: PAGELEN_A) -> Self {
-        match variant {
-            PAGELEN_A::MEMBER4 => 0,
-            PAGELEN_A::MEMBER8 => 1,
-            PAGELEN_A::MEMBER16 => 2,
-            PAGELEN_A::MEMBER32 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PAGELEN`"]

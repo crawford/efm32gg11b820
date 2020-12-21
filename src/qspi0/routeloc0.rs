@@ -12,22 +12,19 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum QSPILOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<QSPILOC_A> for u8 {
     #[inline(always)]
     fn from(variant: QSPILOC_A) -> Self {
-        match variant {
-            QSPILOC_A::LOC0 => 0,
-            QSPILOC_A::LOC1 => 1,
-            QSPILOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `QSPILOC`"]

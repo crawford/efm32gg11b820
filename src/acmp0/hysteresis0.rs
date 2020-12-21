@@ -12,61 +12,45 @@ impl crate::ResetValue for super::HYSTERESIS0 {
 }
 #[doc = "Hysteresis Select When ACMPOUT=0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HYST_A {
     #[doc = "0: No hysteresis"]
-    HYST0,
+    HYST0 = 0,
     #[doc = "1: 14 mV hysteresis"]
-    HYST1,
+    HYST1 = 1,
     #[doc = "2: 25 mV hysteresis"]
-    HYST2,
+    HYST2 = 2,
     #[doc = "3: 30 mV hysteresis"]
-    HYST3,
+    HYST3 = 3,
     #[doc = "4: 35 mV hysteresis"]
-    HYST4,
+    HYST4 = 4,
     #[doc = "5: 39 mV hysteresis"]
-    HYST5,
+    HYST5 = 5,
     #[doc = "6: 42 mV hysteresis"]
-    HYST6,
+    HYST6 = 6,
     #[doc = "7: 45 mV hysteresis"]
-    HYST7,
+    HYST7 = 7,
     #[doc = "8: No hysteresis"]
-    HYST8,
+    HYST8 = 8,
     #[doc = "9: -14 mV hysteresis"]
-    HYST9,
+    HYST9 = 9,
     #[doc = "10: -25 mV hysteresis"]
-    HYST10,
+    HYST10 = 10,
     #[doc = "11: -30 mV hysteresis"]
-    HYST11,
+    HYST11 = 11,
     #[doc = "12: -35 mV hysteresis"]
-    HYST12,
+    HYST12 = 12,
     #[doc = "13: -39 mV hysteresis"]
-    HYST13,
+    HYST13 = 13,
     #[doc = "14: -42 mV hysteresis"]
-    HYST14,
+    HYST14 = 14,
     #[doc = "15: -45 mV hysteresis"]
-    HYST15,
+    HYST15 = 15,
 }
 impl From<HYST_A> for u8 {
     #[inline(always)]
     fn from(variant: HYST_A) -> Self {
-        match variant {
-            HYST_A::HYST0 => 0,
-            HYST_A::HYST1 => 1,
-            HYST_A::HYST2 => 2,
-            HYST_A::HYST3 => 3,
-            HYST_A::HYST4 => 4,
-            HYST_A::HYST5 => 5,
-            HYST_A::HYST6 => 6,
-            HYST_A::HYST7 => 7,
-            HYST_A::HYST8 => 8,
-            HYST_A::HYST9 => 9,
-            HYST_A::HYST10 => 10,
-            HYST_A::HYST11 => 11,
-            HYST_A::HYST12 => 12,
-            HYST_A::HYST13 => 13,
-            HYST_A::HYST14 => 14,
-            HYST_A::HYST15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HYST`"]

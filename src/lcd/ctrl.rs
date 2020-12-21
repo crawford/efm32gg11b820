@@ -36,22 +36,19 @@ impl<'a> EN_W<'a> {
 }
 #[doc = "Update Data Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UDCTRL_A {
     #[doc = "0: The data transfer is controlled by SW. Transfer is performed as soon as possible"]
-    REGULAR,
+    REGULAR = 0,
     #[doc = "1: The data transfer is done at the next event triggered by the Frame Counter"]
-    FCEVENT,
+    FCEVENT = 1,
     #[doc = "2: The data transfer is done continuously at every LCD frame start"]
-    FRAMESTART,
+    FRAMESTART = 2,
 }
 impl From<UDCTRL_A> for u8 {
     #[inline(always)]
     fn from(variant: UDCTRL_A) -> Self {
-        match variant {
-            UDCTRL_A::REGULAR => 0,
-            UDCTRL_A::FCEVENT => 1,
-            UDCTRL_A::FRAMESTART => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UDCTRL`"]

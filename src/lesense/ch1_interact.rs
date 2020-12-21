@@ -26,25 +26,21 @@ impl<'a> THRES_W<'a> {
 }
 #[doc = "Select Sample Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SAMPLE_A {
     #[doc = "0: Counter output will be used in evaluation"]
-    ACMPCOUNT,
+    ACMPCOUNT = 0,
     #[doc = "1: ACMP output will be used in evaluation"]
-    ACMP,
+    ACMP = 1,
     #[doc = "2: ADC output will be used in evaluation"]
-    ADC,
+    ADC = 2,
     #[doc = "3: Differential ADC output will be used in evaluation"]
-    ADCDIFF,
+    ADCDIFF = 3,
 }
 impl From<SAMPLE_A> for u8 {
     #[inline(always)]
     fn from(variant: SAMPLE_A) -> Self {
-        match variant {
-            SAMPLE_A::ACMPCOUNT => 0,
-            SAMPLE_A::ACMP => 1,
-            SAMPLE_A::ADC => 2,
-            SAMPLE_A::ADCDIFF => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SAMPLE`"]
@@ -123,28 +119,23 @@ impl<'a> SAMPLE_W<'a> {
 }
 #[doc = "Enable Interrupt Generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETIF_A {
     #[doc = "0: No interrupt is generated"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Set interrupt flag if the sensor triggers."]
-    LEVEL,
+    LEVEL = 1,
     #[doc = "2: Set interrupt flag on positive edge of the sensor state"]
-    POSEDGE,
+    POSEDGE = 2,
     #[doc = "3: Set interrupt flag on negative edge of the sensor state"]
-    NEGEDGE,
+    NEGEDGE = 3,
     #[doc = "4: Set interrupt flag on both edges of the sensor state"]
-    BOTHEDGES,
+    BOTHEDGES = 4,
 }
 impl From<SETIF_A> for u8 {
     #[inline(always)]
     fn from(variant: SETIF_A) -> Self {
-        match variant {
-            SETIF_A::NONE => 0,
-            SETIF_A::LEVEL => 1,
-            SETIF_A::POSEDGE => 2,
-            SETIF_A::NEGEDGE => 3,
-            SETIF_A::BOTHEDGES => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETIF`"]
@@ -233,25 +224,21 @@ impl<'a> SETIF_W<'a> {
 }
 #[doc = "Set GPIO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXMODE_A {
     #[doc = "0: Disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Push Pull, GPIO is driven high"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: Push Pull, GPIO is driven low"]
-    LOW,
+    LOW = 2,
     #[doc = "3: VDAC output"]
-    DACOUT,
+    DACOUT = 3,
 }
 impl From<EXMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: EXMODE_A) -> Self {
-        match variant {
-            EXMODE_A::DISABLE => 0,
-            EXMODE_A::HIGH => 1,
-            EXMODE_A::LOW => 2,
-            EXMODE_A::DACOUT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXMODE`"]

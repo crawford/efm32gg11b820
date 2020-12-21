@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CURPROG {
 }
 #[doc = "Current Range Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RANGESEL_A {
     #[doc = "0: Current range set to 0 - 1.6 uA."]
-    RANGE0,
+    RANGE0 = 0,
     #[doc = "1: Current range set to 1.6 - 4.7 uA."]
-    RANGE1,
+    RANGE1 = 1,
     #[doc = "2: Current range set to 0.5 - 16 uA."]
-    RANGE2,
+    RANGE2 = 2,
     #[doc = "3: Current range set to 2 - 64 uA."]
-    RANGE3,
+    RANGE3 = 3,
 }
 impl From<RANGESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: RANGESEL_A) -> Self {
-        match variant {
-            RANGESEL_A::RANGE0 => 0,
-            RANGESEL_A::RANGE1 => 1,
-            RANGESEL_A::RANGE2 => 2,
-            RANGESEL_A::RANGE3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RANGESEL`"]

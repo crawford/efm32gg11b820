@@ -12,16 +12,15 @@ impl crate::ResetValue for super::BLKSIZE {
 }
 #[doc = "Transfer Block Size, Specifies the Block Size for Block Data Transfers for CMD17, CMD18, CMD24, CMD25, and CMD53\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TFRBLKSIZE_A {
     #[doc = "0: `0`"]
-    NOXFER,
+    NOXFER = 0,
 }
 impl From<TFRBLKSIZE_A> for u16 {
     #[inline(always)]
     fn from(variant: TFRBLKSIZE_A) -> Self {
-        match variant {
-            TFRBLKSIZE_A::NOXFER => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TFRBLKSIZE`"]
@@ -66,37 +65,29 @@ impl<'a> TFRBLKSIZE_W<'a> {
 }
 #[doc = "Host SDMA Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HSTSDMABUFSIZE_A {
     #[doc = "0: 4KB(Detects A11 Carry out)"]
-    SIZE4,
+    SIZE4 = 0,
     #[doc = "1: 8KB(Detects A12 Carry out)"]
-    SIZE8,
+    SIZE8 = 1,
     #[doc = "2: 16KB(Detects A13 Carry out)"]
-    SIZE16,
+    SIZE16 = 2,
     #[doc = "3: 32KB(Detects A14 Carry out)"]
-    SIZE32,
+    SIZE32 = 3,
     #[doc = "4: 64KB(Detects A15 Carry out)"]
-    SIZE64,
+    SIZE64 = 4,
     #[doc = "5: 128KB(Detects A16 Carry out)"]
-    SIZE128,
+    SIZE128 = 5,
     #[doc = "6: 256KB(Detects A17 Carry out)"]
-    SIZE256,
+    SIZE256 = 6,
     #[doc = "7: 512KB(Detects A18 Carry out)"]
-    SIZE512,
+    SIZE512 = 7,
 }
 impl From<HSTSDMABUFSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: HSTSDMABUFSIZE_A) -> Self {
-        match variant {
-            HSTSDMABUFSIZE_A::SIZE4 => 0,
-            HSTSDMABUFSIZE_A::SIZE8 => 1,
-            HSTSDMABUFSIZE_A::SIZE16 => 2,
-            HSTSDMABUFSIZE_A::SIZE32 => 3,
-            HSTSDMABUFSIZE_A::SIZE64 => 4,
-            HSTSDMABUFSIZE_A::SIZE128 => 5,
-            HSTSDMABUFSIZE_A::SIZE256 => 6,
-            HSTSDMABUFSIZE_A::SIZE512 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HSTSDMABUFSIZE`"]
@@ -219,16 +210,15 @@ impl<'a> HSTSDMABUFSIZE_W<'a> {
 }
 #[doc = "Blocks Count for Current Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum BLKSCNTFORCURRTFR_A {
     #[doc = "0: `0`"]
-    STOPCNT,
+    STOPCNT = 0,
 }
 impl From<BLKSCNTFORCURRTFR_A> for u16 {
     #[inline(always)]
     fn from(variant: BLKSCNTFORCURRTFR_A) -> Self {
-        match variant {
-            BLKSCNTFORCURRTFR_A::STOPCNT => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BLKSCNTFORCURRTFR`"]

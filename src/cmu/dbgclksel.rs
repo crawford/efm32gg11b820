@@ -12,22 +12,19 @@ impl crate::ResetValue for super::DBGCLKSEL {
 }
 #[doc = "Debug Trace Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DBG_A {
     #[doc = "0: AUXHFRCO is the debug trace clock"]
-    AUXHFRCO,
+    AUXHFRCO = 0,
     #[doc = "1: HFCLK is the debug trace clock"]
-    HFCLK,
+    HFCLK = 1,
     #[doc = "2: HFRCO divided by 2 is the debug trace clock"]
-    HFRCODIV2,
+    HFRCODIV2 = 2,
 }
 impl From<DBG_A> for u8 {
     #[inline(always)]
     fn from(variant: DBG_A) -> Self {
-        match variant {
-            DBG_A::AUXHFRCO => 0,
-            DBG_A::HFCLK => 1,
-            DBG_A::HFRCODIV2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DBG`"]

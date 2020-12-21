@@ -108,61 +108,45 @@ impl<'a> CCV1TOP_W<'a> {
 }
 #[doc = "Counter Prescaler Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CNTPRESC_A {
     #[doc = "0: CLKCNT = LFECLKRTCC/1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: CLKCNT = LFECLKRTCC/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: CLKCNT = LFECLKRTCC/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: CLKCNT = LFECLKRTCC/8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: CLKCNT = LFECLKRTCC/16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: CLKCNT = LFECLKRTCC/32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: CLKCNT = LFECLKRTCC/64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: CLKCNT = LFECLKRTCC/128"]
-    DIV128,
+    DIV128 = 7,
     #[doc = "8: CLKCNT = LFECLKRTCC/256"]
-    DIV256,
+    DIV256 = 8,
     #[doc = "9: CLKCNT = LFECLKRTCC/512"]
-    DIV512,
+    DIV512 = 9,
     #[doc = "10: CLKCNT = LFECLKRTCC/1024"]
-    DIV1024,
+    DIV1024 = 10,
     #[doc = "11: CLKCNT = LFECLKRTCC/2048"]
-    DIV2048,
+    DIV2048 = 11,
     #[doc = "12: CLKCNT = LFECLKRTCC/4096"]
-    DIV4096,
+    DIV4096 = 12,
     #[doc = "13: CLKCNT = LFECLKRTCC/8192"]
-    DIV8192,
+    DIV8192 = 13,
     #[doc = "14: CLKCNT = LFECLKRTCC/16384"]
-    DIV16384,
+    DIV16384 = 14,
     #[doc = "15: CLKCNT = LFECLKRTCC/32768"]
-    DIV32768,
+    DIV32768 = 15,
 }
 impl From<CNTPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: CNTPRESC_A) -> Self {
-        match variant {
-            CNTPRESC_A::DIV1 => 0,
-            CNTPRESC_A::DIV2 => 1,
-            CNTPRESC_A::DIV4 => 2,
-            CNTPRESC_A::DIV8 => 3,
-            CNTPRESC_A::DIV16 => 4,
-            CNTPRESC_A::DIV32 => 5,
-            CNTPRESC_A::DIV64 => 6,
-            CNTPRESC_A::DIV128 => 7,
-            CNTPRESC_A::DIV256 => 8,
-            CNTPRESC_A::DIV512 => 9,
-            CNTPRESC_A::DIV1024 => 10,
-            CNTPRESC_A::DIV2048 => 11,
-            CNTPRESC_A::DIV4096 => 12,
-            CNTPRESC_A::DIV8192 => 13,
-            CNTPRESC_A::DIV16384 => 14,
-            CNTPRESC_A::DIV32768 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNTPRESC`"]

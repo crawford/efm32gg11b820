@@ -108,28 +108,23 @@ impl<'a> SHORT_W<'a> {
 }
 #[doc = "OPAx Output Enable Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ALTOUTPADEN_A {
     #[doc = "1: Alternate Output 0"]
-    OUT0,
+    OUT0 = 1,
     #[doc = "2: Alternate Output 1"]
-    OUT1,
+    OUT1 = 2,
     #[doc = "4: Alternate Output 2"]
-    OUT2,
+    OUT2 = 4,
     #[doc = "8: Alternate Output 3"]
-    OUT3,
+    OUT3 = 8,
     #[doc = "16: Alternate Output 4"]
-    OUT4,
+    OUT4 = 16,
 }
 impl From<ALTOUTPADEN_A> for u8 {
     #[inline(always)]
     fn from(variant: ALTOUTPADEN_A) -> Self {
-        match variant {
-            ALTOUTPADEN_A::OUT0 => 1,
-            ALTOUTPADEN_A::OUT1 => 2,
-            ALTOUTPADEN_A::OUT2 => 4,
-            ALTOUTPADEN_A::OUT3 => 8,
-            ALTOUTPADEN_A::OUT4 => 16,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ALTOUTPADEN`"]

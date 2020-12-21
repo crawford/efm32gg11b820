@@ -30,22 +30,19 @@ pub type SYSBUS64BSUP_R = crate::R<bool, bool>;
 pub type ASYNCINTSUP_R = crate::R<bool, bool>;
 #[doc = "Interface Card Slot Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IFSLOTTYPE_A {
     #[doc = "0: Removable Card Slot"]
-    REMOVABLE,
+    REMOVABLE = 0,
     #[doc = "1: Only one non-removable device is conected to a SD bus slot"]
-    EMBEDDED,
+    EMBEDDED = 1,
     #[doc = "2: Can be set if Host controller supports Shared Bus CTRL register"]
-    SHARED,
+    SHARED = 2,
 }
 impl From<IFSLOTTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: IFSLOTTYPE_A) -> Self {
-        match variant {
-            IFSLOTTYPE_A::REMOVABLE => 0,
-            IFSLOTTYPE_A::EMBEDDED => 1,
-            IFSLOTTYPE_A::SHARED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IFSLOTTYPE`"]

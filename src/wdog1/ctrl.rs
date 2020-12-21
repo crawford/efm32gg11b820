@@ -194,25 +194,21 @@ impl<'a> PERSEL_W<'a> {
 }
 #[doc = "Watchdog Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: ULFRCO"]
-    ULFRCO,
+    ULFRCO = 0,
     #[doc = "1: LFRCO"]
-    LFRCO,
+    LFRCO = 1,
     #[doc = "2: LFXO"]
-    LFXO,
+    LFXO = 2,
     #[doc = "3: HFCORECLK"]
-    HFCORECLK,
+    HFCORECLK = 3,
 }
 impl From<CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKSEL_A) -> Self {
-        match variant {
-            CLKSEL_A::ULFRCO => 0,
-            CLKSEL_A::LFRCO => 1,
-            CLKSEL_A::LFXO => 2,
-            CLKSEL_A::HFCORECLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKSEL`"]

@@ -2,205 +2,141 @@
 pub type R = crate::R<u32, super::PPUFS>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PERIPHID_A {
     #[doc = "0: Analog Comparator 0"]
-    ACMP0,
+    ACMP0 = 0,
     #[doc = "1: Analog Comparator 1"]
-    ACMP1,
+    ACMP1 = 1,
     #[doc = "2: Analog Comparator 1"]
-    ACMP2,
+    ACMP2 = 2,
     #[doc = "3: Analog Comparator 3"]
-    ACMP3,
+    ACMP3 = 3,
     #[doc = "4: Analog to Digital Converter 0"]
-    ADC0,
+    ADC0 = 4,
     #[doc = "5: Analog to Digital Converter 0"]
-    ADC1,
+    ADC1 = 5,
     #[doc = "6: CAN 0"]
-    CAN0,
+    CAN0 = 6,
     #[doc = "7: CAN 1"]
-    CAN1,
+    CAN1 = 7,
     #[doc = "8: Clock Management Unit"]
-    CMU,
+    CMU = 8,
     #[doc = "9: CryoTimer"]
-    CRYOTIMER,
+    CRYOTIMER = 9,
     #[doc = "10: Advanced Encryption Standard Accelerator"]
-    CRYPTO0,
+    CRYPTO0 = 10,
     #[doc = "11: Capacitive touch sense module"]
-    CSEN,
+    CSEN = 11,
     #[doc = "12: Digital to Analog Converter 0"]
-    VDAC0,
+    VDAC0 = 12,
     #[doc = "13: Peripheral Reflex System"]
-    PRS,
+    PRS = 13,
     #[doc = "14: External Bus Interface"]
-    EBI,
+    EBI = 14,
     #[doc = "15: Energy Management Unit"]
-    EMU,
+    EMU = 15,
     #[doc = "16: Ethernet Controller"]
-    ETH,
+    ETH = 16,
     #[doc = "17: FPU Exception Handler"]
-    FPUEH,
+    FPUEH = 17,
     #[doc = "18: General Purpose CRC"]
-    GPCRC,
+    GPCRC = 18,
     #[doc = "19: General purpose Input/Output"]
-    GPIO,
+    GPIO = 19,
     #[doc = "20: I2C 0"]
-    I2C0,
+    I2C0 = 20,
     #[doc = "21: I2C 1"]
-    I2C1,
+    I2C1 = 21,
     #[doc = "22: I2C 2"]
-    I2C2,
+    I2C2 = 22,
     #[doc = "23: Current Digital to Analog Converter 0"]
-    IDAC0,
+    IDAC0 = 23,
     #[doc = "24: Memory System Controller"]
-    MSC,
+    MSC = 24,
     #[doc = "25: Liquid Crystal Display Controller"]
-    LCD,
+    LCD = 25,
     #[doc = "26: Linked Direct Memory Access Controller"]
-    LDMA,
+    LDMA = 26,
     #[doc = "27: Low Energy Sensor Interface"]
-    LESENSE,
+    LESENSE = 27,
     #[doc = "28: Low Energy Timer 0"]
-    LETIMER0,
+    LETIMER0 = 28,
     #[doc = "29: Low Energy Timer 1"]
-    LETIMER1,
+    LETIMER1 = 29,
     #[doc = "30: Low Energy UART 0"]
-    LEUART0,
+    LEUART0 = 30,
     #[doc = "31: Low Energy UART 1"]
-    LEUART1,
+    LEUART1 = 31,
     #[doc = "32: Pulse Counter 0"]
-    PCNT0,
+    PCNT0 = 32,
     #[doc = "33: Pulse Counter 1"]
-    PCNT1,
+    PCNT1 = 33,
     #[doc = "34: Pulse Counter 2"]
-    PCNT2,
+    PCNT2 = 34,
     #[doc = "35: Quad-SPI"]
-    QSPI0,
+    QSPI0 = 35,
     #[doc = "36: Reset Management Unit"]
-    RMU,
+    RMU = 36,
     #[doc = "37: Real-Time Counter"]
-    RTC,
+    RTC = 37,
     #[doc = "38: Real-Time Counter and Calendar"]
-    RTCC,
+    RTCC = 38,
     #[doc = "39: SDIO Controller"]
-    SDIO,
+    SDIO = 39,
     #[doc = "40: Security Management Unit"]
-    SMU,
+    SMU = 40,
     #[doc = "41: Timer 0"]
-    TIMER0,
+    TIMER0 = 41,
     #[doc = "42: Timer 1"]
-    TIMER1,
+    TIMER1 = 42,
     #[doc = "43: Timer 2"]
-    TIMER2,
+    TIMER2 = 43,
     #[doc = "44: Timer 3"]
-    TIMER3,
+    TIMER3 = 44,
     #[doc = "45: Timer 4"]
-    TIMER4,
+    TIMER4 = 45,
     #[doc = "46: Timer 5"]
-    TIMER5,
+    TIMER5 = 46,
     #[doc = "47: Timer 6"]
-    TIMER6,
+    TIMER6 = 47,
     #[doc = "48: True Random Number Generator 0"]
-    TRNG0,
+    TRNG0 = 48,
     #[doc = "49: Universal Asynchronous Receiver/Transmitter 0"]
-    UART0,
+    UART0 = 49,
     #[doc = "50: Universal Asynchronous Receiver/Transmitter 1"]
-    UART1,
+    UART1 = 50,
     #[doc = "51: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0,
+    USART0 = 51,
     #[doc = "52: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1,
+    USART1 = 52,
     #[doc = "53: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
-    USART2,
+    USART2 = 53,
     #[doc = "54: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
-    USART3,
+    USART3 = 54,
     #[doc = "55: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
-    USART4,
+    USART4 = 55,
     #[doc = "56: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
-    USART5,
+    USART5 = 56,
     #[doc = "57: Universal Serial Bus Interface"]
-    USB,
+    USB = 57,
     #[doc = "58: Watchdog"]
-    WDOG0,
+    WDOG0 = 58,
     #[doc = "59: Watchdog"]
-    WDOG1,
+    WDOG1 = 59,
     #[doc = "60: Wide Timer 0"]
-    WTIMER0,
+    WTIMER0 = 60,
     #[doc = "61: Wide Timer 0"]
-    WTIMER1,
+    WTIMER1 = 61,
     #[doc = "62: Wide Timer 2"]
-    WTIMER2,
+    WTIMER2 = 62,
     #[doc = "63: Wide Timer 3"]
-    WTIMER3,
+    WTIMER3 = 63,
 }
 impl From<PERIPHID_A> for u8 {
     #[inline(always)]
     fn from(variant: PERIPHID_A) -> Self {
-        match variant {
-            PERIPHID_A::ACMP0 => 0,
-            PERIPHID_A::ACMP1 => 1,
-            PERIPHID_A::ACMP2 => 2,
-            PERIPHID_A::ACMP3 => 3,
-            PERIPHID_A::ADC0 => 4,
-            PERIPHID_A::ADC1 => 5,
-            PERIPHID_A::CAN0 => 6,
-            PERIPHID_A::CAN1 => 7,
-            PERIPHID_A::CMU => 8,
-            PERIPHID_A::CRYOTIMER => 9,
-            PERIPHID_A::CRYPTO0 => 10,
-            PERIPHID_A::CSEN => 11,
-            PERIPHID_A::VDAC0 => 12,
-            PERIPHID_A::PRS => 13,
-            PERIPHID_A::EBI => 14,
-            PERIPHID_A::EMU => 15,
-            PERIPHID_A::ETH => 16,
-            PERIPHID_A::FPUEH => 17,
-            PERIPHID_A::GPCRC => 18,
-            PERIPHID_A::GPIO => 19,
-            PERIPHID_A::I2C0 => 20,
-            PERIPHID_A::I2C1 => 21,
-            PERIPHID_A::I2C2 => 22,
-            PERIPHID_A::IDAC0 => 23,
-            PERIPHID_A::MSC => 24,
-            PERIPHID_A::LCD => 25,
-            PERIPHID_A::LDMA => 26,
-            PERIPHID_A::LESENSE => 27,
-            PERIPHID_A::LETIMER0 => 28,
-            PERIPHID_A::LETIMER1 => 29,
-            PERIPHID_A::LEUART0 => 30,
-            PERIPHID_A::LEUART1 => 31,
-            PERIPHID_A::PCNT0 => 32,
-            PERIPHID_A::PCNT1 => 33,
-            PERIPHID_A::PCNT2 => 34,
-            PERIPHID_A::QSPI0 => 35,
-            PERIPHID_A::RMU => 36,
-            PERIPHID_A::RTC => 37,
-            PERIPHID_A::RTCC => 38,
-            PERIPHID_A::SDIO => 39,
-            PERIPHID_A::SMU => 40,
-            PERIPHID_A::TIMER0 => 41,
-            PERIPHID_A::TIMER1 => 42,
-            PERIPHID_A::TIMER2 => 43,
-            PERIPHID_A::TIMER3 => 44,
-            PERIPHID_A::TIMER4 => 45,
-            PERIPHID_A::TIMER5 => 46,
-            PERIPHID_A::TIMER6 => 47,
-            PERIPHID_A::TRNG0 => 48,
-            PERIPHID_A::UART0 => 49,
-            PERIPHID_A::UART1 => 50,
-            PERIPHID_A::USART0 => 51,
-            PERIPHID_A::USART1 => 52,
-            PERIPHID_A::USART2 => 53,
-            PERIPHID_A::USART3 => 54,
-            PERIPHID_A::USART4 => 55,
-            PERIPHID_A::USART5 => 56,
-            PERIPHID_A::USB => 57,
-            PERIPHID_A::WDOG0 => 58,
-            PERIPHID_A::WDOG1 => 59,
-            PERIPHID_A::WTIMER0 => 60,
-            PERIPHID_A::WTIMER1 => 61,
-            PERIPHID_A::WTIMER2 => 62,
-            PERIPHID_A::WTIMER3 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PERIPHID`"]

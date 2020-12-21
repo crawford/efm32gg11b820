@@ -2,37 +2,29 @@
 pub type R = crate::R<u32, super::CSTATUS>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum V0_A {
     #[doc = "0: `0`"]
-    DDATA0,
+    DDATA0 = 0,
     #[doc = "1: `1`"]
-    DDATA1,
+    DDATA1 = 1,
     #[doc = "2: `10`"]
-    DDATA2,
+    DDATA2 = 2,
     #[doc = "3: `11`"]
-    DDATA3,
+    DDATA3 = 3,
     #[doc = "4: `100`"]
-    DDATA4,
+    DDATA4 = 4,
     #[doc = "5: `101`"]
-    DATA0,
+    DATA0 = 5,
     #[doc = "6: `110`"]
-    DATA1,
+    DATA1 = 6,
     #[doc = "7: `111`"]
-    DATA2,
+    DATA2 = 7,
 }
 impl From<V0_A> for u8 {
     #[inline(always)]
     fn from(variant: V0_A) -> Self {
-        match variant {
-            V0_A::DDATA0 => 0,
-            V0_A::DDATA1 => 1,
-            V0_A::DDATA2 => 2,
-            V0_A::DDATA3 => 3,
-            V0_A::DDATA4 => 4,
-            V0_A::DATA0 => 5,
-            V0_A::DATA1 => 6,
-            V0_A::DATA2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `V0`"]
@@ -96,37 +88,29 @@ impl V0_R {
 }
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum V1_A {
     #[doc = "0: `0`"]
-    DDATA0,
+    DDATA0 = 0,
     #[doc = "1: `1`"]
-    DDATA1,
+    DDATA1 = 1,
     #[doc = "2: `10`"]
-    DDATA2,
+    DDATA2 = 2,
     #[doc = "3: `11`"]
-    DDATA3,
+    DDATA3 = 3,
     #[doc = "4: `100`"]
-    DDATA4,
+    DDATA4 = 4,
     #[doc = "5: `101`"]
-    DATA0,
+    DATA0 = 5,
     #[doc = "6: `110`"]
-    DATA1,
+    DATA1 = 6,
     #[doc = "7: `111`"]
-    DATA2,
+    DATA2 = 7,
 }
 impl From<V1_A> for u8 {
     #[inline(always)]
     fn from(variant: V1_A) -> Self {
-        match variant {
-            V1_A::DDATA0 => 0,
-            V1_A::DDATA1 => 1,
-            V1_A::DDATA2 => 2,
-            V1_A::DDATA3 => 3,
-            V1_A::DDATA4 => 4,
-            V1_A::DATA0 => 5,
-            V1_A::DATA1 => 6,
-            V1_A::DATA2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `V1`"]

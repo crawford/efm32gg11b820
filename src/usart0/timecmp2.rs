@@ -26,28 +26,23 @@ impl<'a> TCMPVAL_W<'a> {
 }
 #[doc = "Timer Start Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSTART_A {
     #[doc = "0: Comparator 2 is disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Comparator 2 and timer are started at TX end of frame"]
-    TXEOF,
+    TXEOF = 1,
     #[doc = "2: Comparator 2 and timer are started at TX Complete"]
-    TXC,
+    TXC = 2,
     #[doc = "3: Comparator 2 and timer are started at RX going going Active (default: low)"]
-    RXACT,
+    RXACT = 3,
     #[doc = "4: Comparator 2 and timer are started at RX end of frame"]
-    RXEOF,
+    RXEOF = 4,
 }
 impl From<TSTART_A> for u8 {
     #[inline(always)]
     fn from(variant: TSTART_A) -> Self {
-        match variant {
-            TSTART_A::DISABLE => 0,
-            TSTART_A::TXEOF => 1,
-            TSTART_A::TXC => 2,
-            TSTART_A::RXACT => 3,
-            TSTART_A::RXEOF => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSTART`"]
@@ -136,25 +131,21 @@ impl<'a> TSTART_W<'a> {
 }
 #[doc = "Source Used to Disable Comparator 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSTOP_A {
     #[doc = "0: Comparator 2 is disabled when the counter equals TCMPVAL and triggers a TCMP2 event"]
-    TCMP2,
+    TCMP2 = 0,
     #[doc = "1: Comparator 2 is disabled at TX start TX Engine"]
-    TXST,
+    TXST = 1,
     #[doc = "2: Comparator 2 is disabled on RX going going Active (default: low)"]
-    RXACT,
+    RXACT = 2,
     #[doc = "3: Comparator 2 is disabled on RX going Inactive"]
-    RXACTN,
+    RXACTN = 3,
 }
 impl From<TSTOP_A> for u8 {
     #[inline(always)]
     fn from(variant: TSTOP_A) -> Self {
-        match variant {
-            TSTOP_A::TCMP2 => 0,
-            TSTOP_A::TXST => 1,
-            TSTOP_A::RXACT => 2,
-            TSTOP_A::RXACTN => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSTOP`"]

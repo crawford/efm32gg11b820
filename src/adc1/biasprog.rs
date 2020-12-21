@@ -12,31 +12,25 @@ impl crate::ResetValue for super::BIASPROG {
 }
 #[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCBIASPROG_A {
     #[doc = "0: Normal power (use for 1Msps operation)"]
-    NORMAL,
+    NORMAL = 0,
     #[doc = "4: Scaling bias to 1/2"]
-    SCALE2,
+    SCALE2 = 4,
     #[doc = "8: Scaling bias to 1/4"]
-    SCALE4,
+    SCALE4 = 8,
     #[doc = "12: Scaling bias to 1/8"]
-    SCALE8,
+    SCALE8 = 12,
     #[doc = "14: Scaling bias to 1/16"]
-    SCALE16,
+    SCALE16 = 14,
     #[doc = "15: Scaling bias to 1/32"]
-    SCALE32,
+    SCALE32 = 15,
 }
 impl From<ADCBIASPROG_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCBIASPROG_A) -> Self {
-        match variant {
-            ADCBIASPROG_A::NORMAL => 0,
-            ADCBIASPROG_A::SCALE2 => 4,
-            ADCBIASPROG_A::SCALE4 => 8,
-            ADCBIASPROG_A::SCALE8 => 12,
-            ADCBIASPROG_A::SCALE16 => 14,
-            ADCBIASPROG_A::SCALE32 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCBIASPROG`"]

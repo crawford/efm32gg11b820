@@ -12,19 +12,17 @@ impl crate::ResetValue for super::BANKSWITCHLOCK {
 }
 #[doc = "Bank Switching Lock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum BANKSWITCHLOCKKEY_A {
     #[doc = "0: `0`"]
-    UNLOCKED,
+    UNLOCKED = 0,
     #[doc = "1: `1`"]
-    LOCKED,
+    LOCKED = 1,
 }
 impl From<BANKSWITCHLOCKKEY_A> for u16 {
     #[inline(always)]
     fn from(variant: BANKSWITCHLOCKKEY_A) -> Self {
-        match variant {
-            BANKSWITCHLOCKKEY_A::UNLOCKED => 0,
-            BANKSWITCHLOCKKEY_A::LOCKED => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BANKSWITCHLOCKKEY`"]

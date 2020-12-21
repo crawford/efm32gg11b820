@@ -323,7 +323,7 @@ pub struct RegisterBlock {
     #[doc = "0x338 - Scan Configuration"]
     pub ch15_eval: CH15_EVAL,
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]
 pub type CTRL = crate::Reg<u32, _CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -334,7 +334,7 @@ impl crate::Readable for CTRL {}
 impl crate::Writable for CTRL {}
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "Timing Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [timctrl](timctrl) module"]
+#[doc = "Timing Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timctrl](timctrl) module"]
 pub type TIMCTRL = crate::Reg<u32, _TIMCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -345,7 +345,7 @@ impl crate::Readable for TIMCTRL {}
 impl crate::Writable for TIMCTRL {}
 #[doc = "Timing Control Register"]
 pub mod timctrl;
-#[doc = "Peripheral Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [perctrl](perctrl) module"]
+#[doc = "Peripheral Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [perctrl](perctrl) module"]
 pub type PERCTRL = crate::Reg<u32, _PERCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -356,7 +356,7 @@ impl crate::Readable for PERCTRL {}
 impl crate::Writable for PERCTRL {}
 #[doc = "Peripheral Control Register"]
 pub mod perctrl;
-#[doc = "Decoder Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [decctrl](decctrl) module"]
+#[doc = "Decoder Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [decctrl](decctrl) module"]
 pub type DECCTRL = crate::Reg<u32, _DECCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -367,7 +367,7 @@ impl crate::Readable for DECCTRL {}
 impl crate::Writable for DECCTRL {}
 #[doc = "Decoder Control Register"]
 pub mod decctrl;
-#[doc = "Bias Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [biasctrl](biasctrl) module"]
+#[doc = "Bias Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [biasctrl](biasctrl) module"]
 pub type BIASCTRL = crate::Reg<u32, _BIASCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -378,7 +378,7 @@ impl crate::Readable for BIASCTRL {}
 impl crate::Writable for BIASCTRL {}
 #[doc = "Bias Control Register"]
 pub mod biasctrl;
-#[doc = "LESENSE Evaluation Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evalctrl](evalctrl) module"]
+#[doc = "LESENSE Evaluation Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evalctrl](evalctrl) module"]
 pub type EVALCTRL = crate::Reg<u32, _EVALCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -389,7 +389,7 @@ impl crate::Readable for EVALCTRL {}
 impl crate::Writable for EVALCTRL {}
 #[doc = "LESENSE Evaluation Control"]
 pub mod evalctrl;
-#[doc = "PRS Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prsctrl](prsctrl) module"]
+#[doc = "PRS Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prsctrl](prsctrl) module"]
 pub type PRSCTRL = crate::Reg<u32, _PRSCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -400,7 +400,7 @@ impl crate::Readable for PRSCTRL {}
 impl crate::Writable for PRSCTRL {}
 #[doc = "PRS Control Register"]
 pub mod prsctrl;
-#[doc = "Command Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd](cmd) module"]
+#[doc = "Command Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd](cmd) module"]
 pub type CMD = crate::Reg<u32, _CMD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -409,7 +409,7 @@ pub struct _CMD;
 impl crate::Writable for CMD {}
 #[doc = "Command Register"]
 pub mod cmd;
-#[doc = "Channel Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [chen](chen) module"]
+#[doc = "Channel Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chen](chen) module"]
 pub type CHEN = crate::Reg<u32, _CHEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -420,7 +420,7 @@ impl crate::Readable for CHEN {}
 impl crate::Writable for CHEN {}
 #[doc = "Channel Enable Register"]
 pub mod chen;
-#[doc = "Scan Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [scanres](scanres) module"]
+#[doc = "Scan Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scanres](scanres) module"]
 pub type SCANRES = crate::Reg<u32, _SCANRES>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -431,7 +431,7 @@ impl crate::Readable for SCANRES {}
 impl crate::Writable for SCANRES {}
 #[doc = "Scan Result Register"]
 pub mod scanres;
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](status) module"]
 pub type STATUS = crate::Reg<u32, _STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -440,7 +440,7 @@ pub struct _STATUS;
 impl crate::Readable for STATUS {}
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "Result Buffer Pointers\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ptr](ptr) module"]
+#[doc = "Result Buffer Pointers\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptr](ptr) module"]
 pub type PTR = crate::Reg<u32, _PTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -449,7 +449,7 @@ pub struct _PTR;
 impl crate::Readable for PTR {}
 #[doc = "Result Buffer Pointers"]
 pub mod ptr;
-#[doc = "Result Buffer Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bufdata](bufdata) module"]
+#[doc = "Result Buffer Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bufdata](bufdata) module"]
 pub type BUFDATA = crate::Reg<u32, _BUFDATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -458,7 +458,7 @@ pub struct _BUFDATA;
 impl crate::Readable for BUFDATA {}
 #[doc = "Result Buffer Data Register"]
 pub mod bufdata;
-#[doc = "Current Channel Index\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [curch](curch) module"]
+#[doc = "Current Channel Index\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [curch](curch) module"]
 pub type CURCH = crate::Reg<u32, _CURCH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -467,7 +467,7 @@ pub struct _CURCH;
 impl crate::Readable for CURCH {}
 #[doc = "Current Channel Index"]
 pub mod curch;
-#[doc = "Current Decoder State\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [decstate](decstate) module"]
+#[doc = "Current Decoder State\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [decstate](decstate) module"]
 pub type DECSTATE = crate::Reg<u32, _DECSTATE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -478,7 +478,7 @@ impl crate::Readable for DECSTATE {}
 impl crate::Writable for DECSTATE {}
 #[doc = "Current Decoder State"]
 pub mod decstate;
-#[doc = "Decoder Input Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sensorstate](sensorstate) module"]
+#[doc = "Decoder Input Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sensorstate](sensorstate) module"]
 pub type SENSORSTATE = crate::Reg<u32, _SENSORSTATE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -489,7 +489,7 @@ impl crate::Readable for SENSORSTATE {}
 impl crate::Writable for SENSORSTATE {}
 #[doc = "Decoder Input Register"]
 pub mod sensorstate;
-#[doc = "GPIO Idle Phase Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [idleconf](idleconf) module"]
+#[doc = "GPIO Idle Phase Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idleconf](idleconf) module"]
 pub type IDLECONF = crate::Reg<u32, _IDLECONF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -500,7 +500,7 @@ impl crate::Readable for IDLECONF {}
 impl crate::Writable for IDLECONF {}
 #[doc = "GPIO Idle Phase Configuration"]
 pub mod idleconf;
-#[doc = "Alternative Excite Pin Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [altexconf](altexconf) module"]
+#[doc = "Alternative Excite Pin Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [altexconf](altexconf) module"]
 pub type ALTEXCONF = crate::Reg<u32, _ALTEXCONF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -511,7 +511,7 @@ impl crate::Readable for ALTEXCONF {}
 impl crate::Writable for ALTEXCONF {}
 #[doc = "Alternative Excite Pin Configuration"]
 pub mod altexconf;
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [if_](if_) module"]
+#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](if_) module"]
 pub type IF = crate::Reg<u32, _IF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -520,7 +520,7 @@ pub struct _IF;
 impl crate::Readable for IF {}
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifs](ifs) module"]
+#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifs](ifs) module"]
 pub type IFS = crate::Reg<u32, _IFS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -529,7 +529,7 @@ pub struct _IFS;
 impl crate::Writable for IFS {}
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifc](ifc) module"]
+#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifc](ifc) module"]
 pub type IFC = crate::Reg<u32, _IFC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -538,7 +538,7 @@ pub struct _IFC;
 impl crate::Writable for IFC {}
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ien](ien) module"]
+#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](ien) module"]
 pub type IEN = crate::Reg<u32, _IEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -549,7 +549,7 @@ impl crate::Readable for IEN {}
 impl crate::Writable for IEN {}
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "Synchronization Busy Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [syncbusy](syncbusy) module"]
+#[doc = "Synchronization Busy Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syncbusy](syncbusy) module"]
 pub type SYNCBUSY = crate::Reg<u32, _SYNCBUSY>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -558,7 +558,7 @@ pub struct _SYNCBUSY;
 impl crate::Readable for SYNCBUSY {}
 #[doc = "Synchronization Busy Register"]
 pub mod syncbusy;
-#[doc = "I/O Routing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [routepen](routepen) module"]
+#[doc = "I/O Routing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routepen](routepen) module"]
 pub type ROUTEPEN = crate::Reg<u32, _ROUTEPEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -569,7 +569,7 @@ impl crate::Readable for ROUTEPEN {}
 impl crate::Writable for ROUTEPEN {}
 #[doc = "I/O Routing Register"]
 pub mod routepen;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st0_tconfa](st0_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st0_tconfa](st0_tconfa) module"]
 pub type ST0_TCONFA = crate::Reg<u32, _ST0_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -580,7 +580,7 @@ impl crate::Readable for ST0_TCONFA {}
 impl crate::Writable for ST0_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st0_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st0_tconfb](st0_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st0_tconfb](st0_tconfb) module"]
 pub type ST0_TCONFB = crate::Reg<u32, _ST0_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -591,7 +591,7 @@ impl crate::Readable for ST0_TCONFB {}
 impl crate::Writable for ST0_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st0_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st1_tconfa](st1_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st1_tconfa](st1_tconfa) module"]
 pub type ST1_TCONFA = crate::Reg<u32, _ST1_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -602,7 +602,7 @@ impl crate::Readable for ST1_TCONFA {}
 impl crate::Writable for ST1_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st1_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st1_tconfb](st1_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st1_tconfb](st1_tconfb) module"]
 pub type ST1_TCONFB = crate::Reg<u32, _ST1_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -613,7 +613,7 @@ impl crate::Readable for ST1_TCONFB {}
 impl crate::Writable for ST1_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st1_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st2_tconfa](st2_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st2_tconfa](st2_tconfa) module"]
 pub type ST2_TCONFA = crate::Reg<u32, _ST2_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -624,7 +624,7 @@ impl crate::Readable for ST2_TCONFA {}
 impl crate::Writable for ST2_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st2_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st2_tconfb](st2_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st2_tconfb](st2_tconfb) module"]
 pub type ST2_TCONFB = crate::Reg<u32, _ST2_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -635,7 +635,7 @@ impl crate::Readable for ST2_TCONFB {}
 impl crate::Writable for ST2_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st2_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st3_tconfa](st3_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st3_tconfa](st3_tconfa) module"]
 pub type ST3_TCONFA = crate::Reg<u32, _ST3_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -646,7 +646,7 @@ impl crate::Readable for ST3_TCONFA {}
 impl crate::Writable for ST3_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st3_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st3_tconfb](st3_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st3_tconfb](st3_tconfb) module"]
 pub type ST3_TCONFB = crate::Reg<u32, _ST3_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -657,7 +657,7 @@ impl crate::Readable for ST3_TCONFB {}
 impl crate::Writable for ST3_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st3_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st4_tconfa](st4_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st4_tconfa](st4_tconfa) module"]
 pub type ST4_TCONFA = crate::Reg<u32, _ST4_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -668,7 +668,7 @@ impl crate::Readable for ST4_TCONFA {}
 impl crate::Writable for ST4_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st4_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st4_tconfb](st4_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st4_tconfb](st4_tconfb) module"]
 pub type ST4_TCONFB = crate::Reg<u32, _ST4_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -679,7 +679,7 @@ impl crate::Readable for ST4_TCONFB {}
 impl crate::Writable for ST4_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st4_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st5_tconfa](st5_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st5_tconfa](st5_tconfa) module"]
 pub type ST5_TCONFA = crate::Reg<u32, _ST5_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -690,7 +690,7 @@ impl crate::Readable for ST5_TCONFA {}
 impl crate::Writable for ST5_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st5_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st5_tconfb](st5_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st5_tconfb](st5_tconfb) module"]
 pub type ST5_TCONFB = crate::Reg<u32, _ST5_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -701,7 +701,7 @@ impl crate::Readable for ST5_TCONFB {}
 impl crate::Writable for ST5_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st5_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st6_tconfa](st6_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st6_tconfa](st6_tconfa) module"]
 pub type ST6_TCONFA = crate::Reg<u32, _ST6_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -712,7 +712,7 @@ impl crate::Readable for ST6_TCONFA {}
 impl crate::Writable for ST6_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st6_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st6_tconfb](st6_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st6_tconfb](st6_tconfb) module"]
 pub type ST6_TCONFB = crate::Reg<u32, _ST6_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -723,7 +723,7 @@ impl crate::Readable for ST6_TCONFB {}
 impl crate::Writable for ST6_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st6_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st7_tconfa](st7_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st7_tconfa](st7_tconfa) module"]
 pub type ST7_TCONFA = crate::Reg<u32, _ST7_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -734,7 +734,7 @@ impl crate::Readable for ST7_TCONFA {}
 impl crate::Writable for ST7_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st7_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st7_tconfb](st7_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st7_tconfb](st7_tconfb) module"]
 pub type ST7_TCONFB = crate::Reg<u32, _ST7_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -745,7 +745,7 @@ impl crate::Readable for ST7_TCONFB {}
 impl crate::Writable for ST7_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st7_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st8_tconfa](st8_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st8_tconfa](st8_tconfa) module"]
 pub type ST8_TCONFA = crate::Reg<u32, _ST8_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -756,7 +756,7 @@ impl crate::Readable for ST8_TCONFA {}
 impl crate::Writable for ST8_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st8_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st8_tconfb](st8_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st8_tconfb](st8_tconfb) module"]
 pub type ST8_TCONFB = crate::Reg<u32, _ST8_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -767,7 +767,7 @@ impl crate::Readable for ST8_TCONFB {}
 impl crate::Writable for ST8_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st8_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st9_tconfa](st9_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st9_tconfa](st9_tconfa) module"]
 pub type ST9_TCONFA = crate::Reg<u32, _ST9_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -778,7 +778,7 @@ impl crate::Readable for ST9_TCONFA {}
 impl crate::Writable for ST9_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st9_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st9_tconfb](st9_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st9_tconfb](st9_tconfb) module"]
 pub type ST9_TCONFB = crate::Reg<u32, _ST9_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -789,7 +789,7 @@ impl crate::Readable for ST9_TCONFB {}
 impl crate::Writable for ST9_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st9_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st10_tconfa](st10_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st10_tconfa](st10_tconfa) module"]
 pub type ST10_TCONFA = crate::Reg<u32, _ST10_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -800,7 +800,7 @@ impl crate::Readable for ST10_TCONFA {}
 impl crate::Writable for ST10_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st10_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st10_tconfb](st10_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st10_tconfb](st10_tconfb) module"]
 pub type ST10_TCONFB = crate::Reg<u32, _ST10_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -811,7 +811,7 @@ impl crate::Readable for ST10_TCONFB {}
 impl crate::Writable for ST10_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st10_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st11_tconfa](st11_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st11_tconfa](st11_tconfa) module"]
 pub type ST11_TCONFA = crate::Reg<u32, _ST11_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -822,7 +822,7 @@ impl crate::Readable for ST11_TCONFA {}
 impl crate::Writable for ST11_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st11_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st11_tconfb](st11_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st11_tconfb](st11_tconfb) module"]
 pub type ST11_TCONFB = crate::Reg<u32, _ST11_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -833,7 +833,7 @@ impl crate::Readable for ST11_TCONFB {}
 impl crate::Writable for ST11_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st11_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st12_tconfa](st12_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st12_tconfa](st12_tconfa) module"]
 pub type ST12_TCONFA = crate::Reg<u32, _ST12_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -844,7 +844,7 @@ impl crate::Readable for ST12_TCONFA {}
 impl crate::Writable for ST12_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st12_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st12_tconfb](st12_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st12_tconfb](st12_tconfb) module"]
 pub type ST12_TCONFB = crate::Reg<u32, _ST12_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -855,7 +855,7 @@ impl crate::Readable for ST12_TCONFB {}
 impl crate::Writable for ST12_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st12_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st13_tconfa](st13_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st13_tconfa](st13_tconfa) module"]
 pub type ST13_TCONFA = crate::Reg<u32, _ST13_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -866,7 +866,7 @@ impl crate::Readable for ST13_TCONFA {}
 impl crate::Writable for ST13_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st13_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st13_tconfb](st13_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st13_tconfb](st13_tconfb) module"]
 pub type ST13_TCONFB = crate::Reg<u32, _ST13_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -877,7 +877,7 @@ impl crate::Readable for ST13_TCONFB {}
 impl crate::Writable for ST13_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st13_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st14_tconfa](st14_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st14_tconfa](st14_tconfa) module"]
 pub type ST14_TCONFA = crate::Reg<u32, _ST14_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -888,7 +888,7 @@ impl crate::Readable for ST14_TCONFA {}
 impl crate::Writable for ST14_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st14_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st14_tconfb](st14_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st14_tconfb](st14_tconfb) module"]
 pub type ST14_TCONFB = crate::Reg<u32, _ST14_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -899,7 +899,7 @@ impl crate::Readable for ST14_TCONFB {}
 impl crate::Writable for ST14_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st14_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st15_tconfa](st15_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st15_tconfa](st15_tconfa) module"]
 pub type ST15_TCONFA = crate::Reg<u32, _ST15_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -910,7 +910,7 @@ impl crate::Readable for ST15_TCONFA {}
 impl crate::Writable for ST15_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st15_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st15_tconfb](st15_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st15_tconfb](st15_tconfb) module"]
 pub type ST15_TCONFB = crate::Reg<u32, _ST15_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -921,7 +921,7 @@ impl crate::Readable for ST15_TCONFB {}
 impl crate::Writable for ST15_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st15_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st16_tconfa](st16_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st16_tconfa](st16_tconfa) module"]
 pub type ST16_TCONFA = crate::Reg<u32, _ST16_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -932,7 +932,7 @@ impl crate::Readable for ST16_TCONFA {}
 impl crate::Writable for ST16_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st16_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st16_tconfb](st16_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st16_tconfb](st16_tconfb) module"]
 pub type ST16_TCONFB = crate::Reg<u32, _ST16_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -943,7 +943,7 @@ impl crate::Readable for ST16_TCONFB {}
 impl crate::Writable for ST16_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st16_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st17_tconfa](st17_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st17_tconfa](st17_tconfa) module"]
 pub type ST17_TCONFA = crate::Reg<u32, _ST17_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -954,7 +954,7 @@ impl crate::Readable for ST17_TCONFA {}
 impl crate::Writable for ST17_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st17_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st17_tconfb](st17_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st17_tconfb](st17_tconfb) module"]
 pub type ST17_TCONFB = crate::Reg<u32, _ST17_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -965,7 +965,7 @@ impl crate::Readable for ST17_TCONFB {}
 impl crate::Writable for ST17_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st17_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st18_tconfa](st18_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st18_tconfa](st18_tconfa) module"]
 pub type ST18_TCONFA = crate::Reg<u32, _ST18_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -976,7 +976,7 @@ impl crate::Readable for ST18_TCONFA {}
 impl crate::Writable for ST18_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st18_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st18_tconfb](st18_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st18_tconfb](st18_tconfb) module"]
 pub type ST18_TCONFB = crate::Reg<u32, _ST18_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -987,7 +987,7 @@ impl crate::Readable for ST18_TCONFB {}
 impl crate::Writable for ST18_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st18_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st19_tconfa](st19_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st19_tconfa](st19_tconfa) module"]
 pub type ST19_TCONFA = crate::Reg<u32, _ST19_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -998,7 +998,7 @@ impl crate::Readable for ST19_TCONFA {}
 impl crate::Writable for ST19_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st19_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st19_tconfb](st19_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st19_tconfb](st19_tconfb) module"]
 pub type ST19_TCONFB = crate::Reg<u32, _ST19_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1009,7 +1009,7 @@ impl crate::Readable for ST19_TCONFB {}
 impl crate::Writable for ST19_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st19_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st20_tconfa](st20_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st20_tconfa](st20_tconfa) module"]
 pub type ST20_TCONFA = crate::Reg<u32, _ST20_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1020,7 +1020,7 @@ impl crate::Readable for ST20_TCONFA {}
 impl crate::Writable for ST20_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st20_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st20_tconfb](st20_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st20_tconfb](st20_tconfb) module"]
 pub type ST20_TCONFB = crate::Reg<u32, _ST20_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1031,7 +1031,7 @@ impl crate::Readable for ST20_TCONFB {}
 impl crate::Writable for ST20_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st20_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st21_tconfa](st21_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st21_tconfa](st21_tconfa) module"]
 pub type ST21_TCONFA = crate::Reg<u32, _ST21_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1042,7 +1042,7 @@ impl crate::Readable for ST21_TCONFA {}
 impl crate::Writable for ST21_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st21_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st21_tconfb](st21_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st21_tconfb](st21_tconfb) module"]
 pub type ST21_TCONFB = crate::Reg<u32, _ST21_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1053,7 +1053,7 @@ impl crate::Readable for ST21_TCONFB {}
 impl crate::Writable for ST21_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st21_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st22_tconfa](st22_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st22_tconfa](st22_tconfa) module"]
 pub type ST22_TCONFA = crate::Reg<u32, _ST22_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1064,7 +1064,7 @@ impl crate::Readable for ST22_TCONFA {}
 impl crate::Writable for ST22_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st22_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st22_tconfb](st22_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st22_tconfb](st22_tconfb) module"]
 pub type ST22_TCONFB = crate::Reg<u32, _ST22_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1075,7 +1075,7 @@ impl crate::Readable for ST22_TCONFB {}
 impl crate::Writable for ST22_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st22_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st23_tconfa](st23_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st23_tconfa](st23_tconfa) module"]
 pub type ST23_TCONFA = crate::Reg<u32, _ST23_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1086,7 +1086,7 @@ impl crate::Readable for ST23_TCONFA {}
 impl crate::Writable for ST23_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st23_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st23_tconfb](st23_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st23_tconfb](st23_tconfb) module"]
 pub type ST23_TCONFB = crate::Reg<u32, _ST23_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1097,7 +1097,7 @@ impl crate::Readable for ST23_TCONFB {}
 impl crate::Writable for ST23_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st23_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st24_tconfa](st24_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st24_tconfa](st24_tconfa) module"]
 pub type ST24_TCONFA = crate::Reg<u32, _ST24_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1108,7 +1108,7 @@ impl crate::Readable for ST24_TCONFA {}
 impl crate::Writable for ST24_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st24_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st24_tconfb](st24_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st24_tconfb](st24_tconfb) module"]
 pub type ST24_TCONFB = crate::Reg<u32, _ST24_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1119,7 +1119,7 @@ impl crate::Readable for ST24_TCONFB {}
 impl crate::Writable for ST24_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st24_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st25_tconfa](st25_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st25_tconfa](st25_tconfa) module"]
 pub type ST25_TCONFA = crate::Reg<u32, _ST25_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1130,7 +1130,7 @@ impl crate::Readable for ST25_TCONFA {}
 impl crate::Writable for ST25_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st25_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st25_tconfb](st25_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st25_tconfb](st25_tconfb) module"]
 pub type ST25_TCONFB = crate::Reg<u32, _ST25_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1141,7 +1141,7 @@ impl crate::Readable for ST25_TCONFB {}
 impl crate::Writable for ST25_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st25_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st26_tconfa](st26_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st26_tconfa](st26_tconfa) module"]
 pub type ST26_TCONFA = crate::Reg<u32, _ST26_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1152,7 +1152,7 @@ impl crate::Readable for ST26_TCONFA {}
 impl crate::Writable for ST26_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st26_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st26_tconfb](st26_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st26_tconfb](st26_tconfb) module"]
 pub type ST26_TCONFB = crate::Reg<u32, _ST26_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1163,7 +1163,7 @@ impl crate::Readable for ST26_TCONFB {}
 impl crate::Writable for ST26_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st26_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st27_tconfa](st27_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st27_tconfa](st27_tconfa) module"]
 pub type ST27_TCONFA = crate::Reg<u32, _ST27_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1174,7 +1174,7 @@ impl crate::Readable for ST27_TCONFA {}
 impl crate::Writable for ST27_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st27_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st27_tconfb](st27_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st27_tconfb](st27_tconfb) module"]
 pub type ST27_TCONFB = crate::Reg<u32, _ST27_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1185,7 +1185,7 @@ impl crate::Readable for ST27_TCONFB {}
 impl crate::Writable for ST27_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st27_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st28_tconfa](st28_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st28_tconfa](st28_tconfa) module"]
 pub type ST28_TCONFA = crate::Reg<u32, _ST28_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1196,7 +1196,7 @@ impl crate::Readable for ST28_TCONFA {}
 impl crate::Writable for ST28_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st28_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st28_tconfb](st28_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st28_tconfb](st28_tconfb) module"]
 pub type ST28_TCONFB = crate::Reg<u32, _ST28_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1207,7 +1207,7 @@ impl crate::Readable for ST28_TCONFB {}
 impl crate::Writable for ST28_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st28_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st29_tconfa](st29_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st29_tconfa](st29_tconfa) module"]
 pub type ST29_TCONFA = crate::Reg<u32, _ST29_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1218,7 +1218,7 @@ impl crate::Readable for ST29_TCONFA {}
 impl crate::Writable for ST29_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st29_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st29_tconfb](st29_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st29_tconfb](st29_tconfb) module"]
 pub type ST29_TCONFB = crate::Reg<u32, _ST29_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1229,7 +1229,7 @@ impl crate::Readable for ST29_TCONFB {}
 impl crate::Writable for ST29_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st29_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st30_tconfa](st30_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st30_tconfa](st30_tconfa) module"]
 pub type ST30_TCONFA = crate::Reg<u32, _ST30_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1240,7 +1240,7 @@ impl crate::Readable for ST30_TCONFA {}
 impl crate::Writable for ST30_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st30_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st30_tconfb](st30_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st30_tconfb](st30_tconfb) module"]
 pub type ST30_TCONFB = crate::Reg<u32, _ST30_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1251,7 +1251,7 @@ impl crate::Readable for ST30_TCONFB {}
 impl crate::Writable for ST30_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st30_tconfb;
-#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st31_tconfa](st31_tconfa) module"]
+#[doc = "State Transition Configuration a\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st31_tconfa](st31_tconfa) module"]
 pub type ST31_TCONFA = crate::Reg<u32, _ST31_TCONFA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1262,7 +1262,7 @@ impl crate::Readable for ST31_TCONFA {}
 impl crate::Writable for ST31_TCONFA {}
 #[doc = "State Transition Configuration a"]
 pub mod st31_tconfa;
-#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [st31_tconfb](st31_tconfb) module"]
+#[doc = "State Transition Configuration B\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [st31_tconfb](st31_tconfb) module"]
 pub type ST31_TCONFB = crate::Reg<u32, _ST31_TCONFB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1273,7 +1273,7 @@ impl crate::Readable for ST31_TCONFB {}
 impl crate::Writable for ST31_TCONFB {}
 #[doc = "State Transition Configuration B"]
 pub mod st31_tconfb;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf0_data](buf0_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf0_data](buf0_data) module"]
 pub type BUF0_DATA = crate::Reg<u32, _BUF0_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1284,7 +1284,7 @@ impl crate::Readable for BUF0_DATA {}
 impl crate::Writable for BUF0_DATA {}
 #[doc = "Scan Results"]
 pub mod buf0_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf1_data](buf1_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf1_data](buf1_data) module"]
 pub type BUF1_DATA = crate::Reg<u32, _BUF1_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1295,7 +1295,7 @@ impl crate::Readable for BUF1_DATA {}
 impl crate::Writable for BUF1_DATA {}
 #[doc = "Scan Results"]
 pub mod buf1_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf2_data](buf2_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf2_data](buf2_data) module"]
 pub type BUF2_DATA = crate::Reg<u32, _BUF2_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1306,7 +1306,7 @@ impl crate::Readable for BUF2_DATA {}
 impl crate::Writable for BUF2_DATA {}
 #[doc = "Scan Results"]
 pub mod buf2_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf3_data](buf3_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf3_data](buf3_data) module"]
 pub type BUF3_DATA = crate::Reg<u32, _BUF3_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1317,7 +1317,7 @@ impl crate::Readable for BUF3_DATA {}
 impl crate::Writable for BUF3_DATA {}
 #[doc = "Scan Results"]
 pub mod buf3_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf4_data](buf4_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf4_data](buf4_data) module"]
 pub type BUF4_DATA = crate::Reg<u32, _BUF4_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1328,7 +1328,7 @@ impl crate::Readable for BUF4_DATA {}
 impl crate::Writable for BUF4_DATA {}
 #[doc = "Scan Results"]
 pub mod buf4_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf5_data](buf5_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf5_data](buf5_data) module"]
 pub type BUF5_DATA = crate::Reg<u32, _BUF5_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1339,7 +1339,7 @@ impl crate::Readable for BUF5_DATA {}
 impl crate::Writable for BUF5_DATA {}
 #[doc = "Scan Results"]
 pub mod buf5_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf6_data](buf6_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf6_data](buf6_data) module"]
 pub type BUF6_DATA = crate::Reg<u32, _BUF6_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1350,7 +1350,7 @@ impl crate::Readable for BUF6_DATA {}
 impl crate::Writable for BUF6_DATA {}
 #[doc = "Scan Results"]
 pub mod buf6_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf7_data](buf7_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf7_data](buf7_data) module"]
 pub type BUF7_DATA = crate::Reg<u32, _BUF7_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1361,7 +1361,7 @@ impl crate::Readable for BUF7_DATA {}
 impl crate::Writable for BUF7_DATA {}
 #[doc = "Scan Results"]
 pub mod buf7_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf8_data](buf8_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf8_data](buf8_data) module"]
 pub type BUF8_DATA = crate::Reg<u32, _BUF8_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1372,7 +1372,7 @@ impl crate::Readable for BUF8_DATA {}
 impl crate::Writable for BUF8_DATA {}
 #[doc = "Scan Results"]
 pub mod buf8_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf9_data](buf9_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf9_data](buf9_data) module"]
 pub type BUF9_DATA = crate::Reg<u32, _BUF9_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1383,7 +1383,7 @@ impl crate::Readable for BUF9_DATA {}
 impl crate::Writable for BUF9_DATA {}
 #[doc = "Scan Results"]
 pub mod buf9_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf10_data](buf10_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf10_data](buf10_data) module"]
 pub type BUF10_DATA = crate::Reg<u32, _BUF10_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1394,7 +1394,7 @@ impl crate::Readable for BUF10_DATA {}
 impl crate::Writable for BUF10_DATA {}
 #[doc = "Scan Results"]
 pub mod buf10_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf11_data](buf11_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf11_data](buf11_data) module"]
 pub type BUF11_DATA = crate::Reg<u32, _BUF11_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1405,7 +1405,7 @@ impl crate::Readable for BUF11_DATA {}
 impl crate::Writable for BUF11_DATA {}
 #[doc = "Scan Results"]
 pub mod buf11_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf12_data](buf12_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf12_data](buf12_data) module"]
 pub type BUF12_DATA = crate::Reg<u32, _BUF12_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1416,7 +1416,7 @@ impl crate::Readable for BUF12_DATA {}
 impl crate::Writable for BUF12_DATA {}
 #[doc = "Scan Results"]
 pub mod buf12_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf13_data](buf13_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf13_data](buf13_data) module"]
 pub type BUF13_DATA = crate::Reg<u32, _BUF13_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1427,7 +1427,7 @@ impl crate::Readable for BUF13_DATA {}
 impl crate::Writable for BUF13_DATA {}
 #[doc = "Scan Results"]
 pub mod buf13_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf14_data](buf14_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf14_data](buf14_data) module"]
 pub type BUF14_DATA = crate::Reg<u32, _BUF14_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1438,7 +1438,7 @@ impl crate::Readable for BUF14_DATA {}
 impl crate::Writable for BUF14_DATA {}
 #[doc = "Scan Results"]
 pub mod buf14_data;
-#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf15_data](buf15_data) module"]
+#[doc = "Scan Results\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf15_data](buf15_data) module"]
 pub type BUF15_DATA = crate::Reg<u32, _BUF15_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1449,7 +1449,7 @@ impl crate::Readable for BUF15_DATA {}
 impl crate::Writable for BUF15_DATA {}
 #[doc = "Scan Results"]
 pub mod buf15_data;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch0_timing](ch0_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch0_timing](ch0_timing) module"]
 pub type CH0_TIMING = crate::Reg<u32, _CH0_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1460,7 +1460,7 @@ impl crate::Readable for CH0_TIMING {}
 impl crate::Writable for CH0_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch0_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch0_interact](ch0_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch0_interact](ch0_interact) module"]
 pub type CH0_INTERACT = crate::Reg<u32, _CH0_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1471,7 +1471,7 @@ impl crate::Readable for CH0_INTERACT {}
 impl crate::Writable for CH0_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch0_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch0_eval](ch0_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch0_eval](ch0_eval) module"]
 pub type CH0_EVAL = crate::Reg<u32, _CH0_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1482,7 +1482,7 @@ impl crate::Readable for CH0_EVAL {}
 impl crate::Writable for CH0_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch0_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch1_timing](ch1_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch1_timing](ch1_timing) module"]
 pub type CH1_TIMING = crate::Reg<u32, _CH1_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1493,7 +1493,7 @@ impl crate::Readable for CH1_TIMING {}
 impl crate::Writable for CH1_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch1_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch1_interact](ch1_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch1_interact](ch1_interact) module"]
 pub type CH1_INTERACT = crate::Reg<u32, _CH1_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1504,7 +1504,7 @@ impl crate::Readable for CH1_INTERACT {}
 impl crate::Writable for CH1_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch1_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch1_eval](ch1_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch1_eval](ch1_eval) module"]
 pub type CH1_EVAL = crate::Reg<u32, _CH1_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1515,7 +1515,7 @@ impl crate::Readable for CH1_EVAL {}
 impl crate::Writable for CH1_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch1_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch2_timing](ch2_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch2_timing](ch2_timing) module"]
 pub type CH2_TIMING = crate::Reg<u32, _CH2_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1526,7 +1526,7 @@ impl crate::Readable for CH2_TIMING {}
 impl crate::Writable for CH2_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch2_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch2_interact](ch2_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch2_interact](ch2_interact) module"]
 pub type CH2_INTERACT = crate::Reg<u32, _CH2_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1537,7 +1537,7 @@ impl crate::Readable for CH2_INTERACT {}
 impl crate::Writable for CH2_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch2_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch2_eval](ch2_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch2_eval](ch2_eval) module"]
 pub type CH2_EVAL = crate::Reg<u32, _CH2_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1548,7 +1548,7 @@ impl crate::Readable for CH2_EVAL {}
 impl crate::Writable for CH2_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch2_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch3_timing](ch3_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch3_timing](ch3_timing) module"]
 pub type CH3_TIMING = crate::Reg<u32, _CH3_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1559,7 +1559,7 @@ impl crate::Readable for CH3_TIMING {}
 impl crate::Writable for CH3_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch3_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch3_interact](ch3_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch3_interact](ch3_interact) module"]
 pub type CH3_INTERACT = crate::Reg<u32, _CH3_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1570,7 +1570,7 @@ impl crate::Readable for CH3_INTERACT {}
 impl crate::Writable for CH3_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch3_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch3_eval](ch3_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch3_eval](ch3_eval) module"]
 pub type CH3_EVAL = crate::Reg<u32, _CH3_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1581,7 +1581,7 @@ impl crate::Readable for CH3_EVAL {}
 impl crate::Writable for CH3_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch3_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch4_timing](ch4_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch4_timing](ch4_timing) module"]
 pub type CH4_TIMING = crate::Reg<u32, _CH4_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1592,7 +1592,7 @@ impl crate::Readable for CH4_TIMING {}
 impl crate::Writable for CH4_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch4_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch4_interact](ch4_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch4_interact](ch4_interact) module"]
 pub type CH4_INTERACT = crate::Reg<u32, _CH4_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1603,7 +1603,7 @@ impl crate::Readable for CH4_INTERACT {}
 impl crate::Writable for CH4_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch4_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch4_eval](ch4_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch4_eval](ch4_eval) module"]
 pub type CH4_EVAL = crate::Reg<u32, _CH4_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1614,7 +1614,7 @@ impl crate::Readable for CH4_EVAL {}
 impl crate::Writable for CH4_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch4_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch5_timing](ch5_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch5_timing](ch5_timing) module"]
 pub type CH5_TIMING = crate::Reg<u32, _CH5_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1625,7 +1625,7 @@ impl crate::Readable for CH5_TIMING {}
 impl crate::Writable for CH5_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch5_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch5_interact](ch5_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch5_interact](ch5_interact) module"]
 pub type CH5_INTERACT = crate::Reg<u32, _CH5_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1636,7 +1636,7 @@ impl crate::Readable for CH5_INTERACT {}
 impl crate::Writable for CH5_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch5_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch5_eval](ch5_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch5_eval](ch5_eval) module"]
 pub type CH5_EVAL = crate::Reg<u32, _CH5_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1647,7 +1647,7 @@ impl crate::Readable for CH5_EVAL {}
 impl crate::Writable for CH5_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch5_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch6_timing](ch6_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch6_timing](ch6_timing) module"]
 pub type CH6_TIMING = crate::Reg<u32, _CH6_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1658,7 +1658,7 @@ impl crate::Readable for CH6_TIMING {}
 impl crate::Writable for CH6_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch6_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch6_interact](ch6_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch6_interact](ch6_interact) module"]
 pub type CH6_INTERACT = crate::Reg<u32, _CH6_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1669,7 +1669,7 @@ impl crate::Readable for CH6_INTERACT {}
 impl crate::Writable for CH6_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch6_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch6_eval](ch6_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch6_eval](ch6_eval) module"]
 pub type CH6_EVAL = crate::Reg<u32, _CH6_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1680,7 +1680,7 @@ impl crate::Readable for CH6_EVAL {}
 impl crate::Writable for CH6_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch6_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch7_timing](ch7_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch7_timing](ch7_timing) module"]
 pub type CH7_TIMING = crate::Reg<u32, _CH7_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1691,7 +1691,7 @@ impl crate::Readable for CH7_TIMING {}
 impl crate::Writable for CH7_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch7_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch7_interact](ch7_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch7_interact](ch7_interact) module"]
 pub type CH7_INTERACT = crate::Reg<u32, _CH7_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1702,7 +1702,7 @@ impl crate::Readable for CH7_INTERACT {}
 impl crate::Writable for CH7_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch7_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch7_eval](ch7_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch7_eval](ch7_eval) module"]
 pub type CH7_EVAL = crate::Reg<u32, _CH7_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1713,7 +1713,7 @@ impl crate::Readable for CH7_EVAL {}
 impl crate::Writable for CH7_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch7_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch8_timing](ch8_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch8_timing](ch8_timing) module"]
 pub type CH8_TIMING = crate::Reg<u32, _CH8_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1724,7 +1724,7 @@ impl crate::Readable for CH8_TIMING {}
 impl crate::Writable for CH8_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch8_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch8_interact](ch8_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch8_interact](ch8_interact) module"]
 pub type CH8_INTERACT = crate::Reg<u32, _CH8_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1735,7 +1735,7 @@ impl crate::Readable for CH8_INTERACT {}
 impl crate::Writable for CH8_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch8_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch8_eval](ch8_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch8_eval](ch8_eval) module"]
 pub type CH8_EVAL = crate::Reg<u32, _CH8_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1746,7 +1746,7 @@ impl crate::Readable for CH8_EVAL {}
 impl crate::Writable for CH8_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch8_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch9_timing](ch9_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch9_timing](ch9_timing) module"]
 pub type CH9_TIMING = crate::Reg<u32, _CH9_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1757,7 +1757,7 @@ impl crate::Readable for CH9_TIMING {}
 impl crate::Writable for CH9_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch9_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch9_interact](ch9_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch9_interact](ch9_interact) module"]
 pub type CH9_INTERACT = crate::Reg<u32, _CH9_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1768,7 +1768,7 @@ impl crate::Readable for CH9_INTERACT {}
 impl crate::Writable for CH9_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch9_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch9_eval](ch9_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch9_eval](ch9_eval) module"]
 pub type CH9_EVAL = crate::Reg<u32, _CH9_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1779,7 +1779,7 @@ impl crate::Readable for CH9_EVAL {}
 impl crate::Writable for CH9_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch9_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch10_timing](ch10_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch10_timing](ch10_timing) module"]
 pub type CH10_TIMING = crate::Reg<u32, _CH10_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1790,7 +1790,7 @@ impl crate::Readable for CH10_TIMING {}
 impl crate::Writable for CH10_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch10_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch10_interact](ch10_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch10_interact](ch10_interact) module"]
 pub type CH10_INTERACT = crate::Reg<u32, _CH10_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1801,7 +1801,7 @@ impl crate::Readable for CH10_INTERACT {}
 impl crate::Writable for CH10_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch10_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch10_eval](ch10_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch10_eval](ch10_eval) module"]
 pub type CH10_EVAL = crate::Reg<u32, _CH10_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1812,7 +1812,7 @@ impl crate::Readable for CH10_EVAL {}
 impl crate::Writable for CH10_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch10_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch11_timing](ch11_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch11_timing](ch11_timing) module"]
 pub type CH11_TIMING = crate::Reg<u32, _CH11_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1823,7 +1823,7 @@ impl crate::Readable for CH11_TIMING {}
 impl crate::Writable for CH11_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch11_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch11_interact](ch11_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch11_interact](ch11_interact) module"]
 pub type CH11_INTERACT = crate::Reg<u32, _CH11_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1834,7 +1834,7 @@ impl crate::Readable for CH11_INTERACT {}
 impl crate::Writable for CH11_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch11_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch11_eval](ch11_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch11_eval](ch11_eval) module"]
 pub type CH11_EVAL = crate::Reg<u32, _CH11_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1845,7 +1845,7 @@ impl crate::Readable for CH11_EVAL {}
 impl crate::Writable for CH11_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch11_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch12_timing](ch12_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch12_timing](ch12_timing) module"]
 pub type CH12_TIMING = crate::Reg<u32, _CH12_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1856,7 +1856,7 @@ impl crate::Readable for CH12_TIMING {}
 impl crate::Writable for CH12_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch12_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch12_interact](ch12_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch12_interact](ch12_interact) module"]
 pub type CH12_INTERACT = crate::Reg<u32, _CH12_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1867,7 +1867,7 @@ impl crate::Readable for CH12_INTERACT {}
 impl crate::Writable for CH12_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch12_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch12_eval](ch12_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch12_eval](ch12_eval) module"]
 pub type CH12_EVAL = crate::Reg<u32, _CH12_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1878,7 +1878,7 @@ impl crate::Readable for CH12_EVAL {}
 impl crate::Writable for CH12_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch12_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch13_timing](ch13_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch13_timing](ch13_timing) module"]
 pub type CH13_TIMING = crate::Reg<u32, _CH13_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1889,7 +1889,7 @@ impl crate::Readable for CH13_TIMING {}
 impl crate::Writable for CH13_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch13_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch13_interact](ch13_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch13_interact](ch13_interact) module"]
 pub type CH13_INTERACT = crate::Reg<u32, _CH13_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1900,7 +1900,7 @@ impl crate::Readable for CH13_INTERACT {}
 impl crate::Writable for CH13_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch13_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch13_eval](ch13_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch13_eval](ch13_eval) module"]
 pub type CH13_EVAL = crate::Reg<u32, _CH13_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1911,7 +1911,7 @@ impl crate::Readable for CH13_EVAL {}
 impl crate::Writable for CH13_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch13_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch14_timing](ch14_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch14_timing](ch14_timing) module"]
 pub type CH14_TIMING = crate::Reg<u32, _CH14_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1922,7 +1922,7 @@ impl crate::Readable for CH14_TIMING {}
 impl crate::Writable for CH14_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch14_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch14_interact](ch14_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch14_interact](ch14_interact) module"]
 pub type CH14_INTERACT = crate::Reg<u32, _CH14_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1933,7 +1933,7 @@ impl crate::Readable for CH14_INTERACT {}
 impl crate::Writable for CH14_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch14_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch14_eval](ch14_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch14_eval](ch14_eval) module"]
 pub type CH14_EVAL = crate::Reg<u32, _CH14_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1944,7 +1944,7 @@ impl crate::Readable for CH14_EVAL {}
 impl crate::Writable for CH14_EVAL {}
 #[doc = "Scan Configuration"]
 pub mod ch14_eval;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch15_timing](ch15_timing) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch15_timing](ch15_timing) module"]
 pub type CH15_TIMING = crate::Reg<u32, _CH15_TIMING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1955,7 +1955,7 @@ impl crate::Readable for CH15_TIMING {}
 impl crate::Writable for CH15_TIMING {}
 #[doc = "Scan Configuration"]
 pub mod ch15_timing;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch15_interact](ch15_interact) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch15_interact](ch15_interact) module"]
 pub type CH15_INTERACT = crate::Reg<u32, _CH15_INTERACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1966,7 +1966,7 @@ impl crate::Readable for CH15_INTERACT {}
 impl crate::Writable for CH15_INTERACT {}
 #[doc = "Scan Configuration"]
 pub mod ch15_interact;
-#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ch15_eval](ch15_eval) module"]
+#[doc = "Scan Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch15_eval](ch15_eval) module"]
 pub type CH15_EVAL = crate::Reg<u32, _CH15_EVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

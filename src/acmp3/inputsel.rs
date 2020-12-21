@@ -40,160 +40,111 @@ impl<'a> NEGSEL_W<'a> {
 }
 #[doc = "VA Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VASEL_A {
     #[doc = "0: ACMPVDD"]
-    VDD,
+    VDD = 0,
     #[doc = "1: APORT2Y Channel 0"]
-    APORT2YCH0,
+    APORT2YCH0 = 1,
     #[doc = "3: APORT2Y Channel 2"]
-    APORT2YCH2,
+    APORT2YCH2 = 3,
     #[doc = "5: APORT2Y Channel 4"]
-    APORT2YCH4,
+    APORT2YCH4 = 5,
     #[doc = "7: APORT2Y Channel 6"]
-    APORT2YCH6,
+    APORT2YCH6 = 7,
     #[doc = "9: APORT2Y Channel 8"]
-    APORT2YCH8,
+    APORT2YCH8 = 9,
     #[doc = "11: APORT2Y Channel 10"]
-    APORT2YCH10,
+    APORT2YCH10 = 11,
     #[doc = "13: APORT2Y Channel 12"]
-    APORT2YCH12,
+    APORT2YCH12 = 13,
     #[doc = "15: APORT2Y Channel 14"]
-    APORT2YCH14,
+    APORT2YCH14 = 15,
     #[doc = "17: APORT2Y Channel 16"]
-    APORT2YCH16,
+    APORT2YCH16 = 17,
     #[doc = "19: APORT2Y Channel 18"]
-    APORT2YCH18,
+    APORT2YCH18 = 19,
     #[doc = "21: APORT2Y Channel 20"]
-    APORT2YCH20,
+    APORT2YCH20 = 21,
     #[doc = "23: APORT2Y Channel 22"]
-    APORT2YCH22,
+    APORT2YCH22 = 23,
     #[doc = "25: APORT2Y Channel 24"]
-    APORT2YCH24,
+    APORT2YCH24 = 25,
     #[doc = "27: APORT2Y Channel 26"]
-    APORT2YCH26,
+    APORT2YCH26 = 27,
     #[doc = "29: APORT2Y Channel 28"]
-    APORT2YCH28,
+    APORT2YCH28 = 29,
     #[doc = "31: APORT2Y Channel 30"]
-    APORT2YCH30,
+    APORT2YCH30 = 31,
     #[doc = "32: APORT1X Channel 0"]
-    APORT1XCH0,
+    APORT1XCH0 = 32,
     #[doc = "33: APORT1Y Channel 1"]
-    APORT1YCH1,
+    APORT1YCH1 = 33,
     #[doc = "34: APORT1X Channel 2"]
-    APORT1XCH2,
+    APORT1XCH2 = 34,
     #[doc = "35: APORT1Y Channel 3"]
-    APORT1YCH3,
+    APORT1YCH3 = 35,
     #[doc = "36: APORT1X Channel 4"]
-    APORT1XCH4,
+    APORT1XCH4 = 36,
     #[doc = "37: APORT1Y Channel 5"]
-    APORT1YCH5,
+    APORT1YCH5 = 37,
     #[doc = "38: APORT1X Channel 6"]
-    APORT1XCH6,
+    APORT1XCH6 = 38,
     #[doc = "39: APORT1Y Channel 7"]
-    APORT1YCH7,
+    APORT1YCH7 = 39,
     #[doc = "40: APORT1X Channel 8"]
-    APORT1XCH8,
+    APORT1XCH8 = 40,
     #[doc = "41: APORT1Y Channel 9"]
-    APORT1YCH9,
+    APORT1YCH9 = 41,
     #[doc = "42: APORT1X Channel 10"]
-    APORT1XCH10,
+    APORT1XCH10 = 42,
     #[doc = "43: APORT1Y Channel 11"]
-    APORT1YCH11,
+    APORT1YCH11 = 43,
     #[doc = "44: APORT1X Channel 12"]
-    APORT1XCH12,
+    APORT1XCH12 = 44,
     #[doc = "45: APORT1Y Channel 13"]
-    APORT1YCH13,
+    APORT1YCH13 = 45,
     #[doc = "46: APORT1X Channel 14"]
-    APORT1XCH14,
+    APORT1XCH14 = 46,
     #[doc = "47: APORT1Y Channel 15"]
-    APORT1YCH15,
+    APORT1YCH15 = 47,
     #[doc = "48: APORT1X Channel 16"]
-    APORT1XCH16,
+    APORT1XCH16 = 48,
     #[doc = "49: APORT1Y Channel 17"]
-    APORT1YCH17,
+    APORT1YCH17 = 49,
     #[doc = "50: APORT1X Channel 18"]
-    APORT1XCH18,
+    APORT1XCH18 = 50,
     #[doc = "51: APORT1Y Channel 19"]
-    APORT1YCH19,
+    APORT1YCH19 = 51,
     #[doc = "52: APORT1X Channel 20"]
-    APORT1XCH20,
+    APORT1XCH20 = 52,
     #[doc = "53: APORT1Y Channel 21"]
-    APORT1YCH21,
+    APORT1YCH21 = 53,
     #[doc = "54: APORT1X Channel 22"]
-    APORT1XCH22,
+    APORT1XCH22 = 54,
     #[doc = "55: APORT1Y Channel 23"]
-    APORT1YCH23,
+    APORT1YCH23 = 55,
     #[doc = "56: APORT1X Channel 24"]
-    APORT1XCH24,
+    APORT1XCH24 = 56,
     #[doc = "57: APORT1Y Channel 25"]
-    APORT1YCH25,
+    APORT1YCH25 = 57,
     #[doc = "58: APORT1X Channel 26"]
-    APORT1XCH26,
+    APORT1XCH26 = 58,
     #[doc = "59: APORT1Y Channel 27"]
-    APORT1YCH27,
+    APORT1YCH27 = 59,
     #[doc = "60: APORT1X Channel 28"]
-    APORT1XCH28,
+    APORT1XCH28 = 60,
     #[doc = "61: APORT1Y Channel 29"]
-    APORT1YCH29,
+    APORT1YCH29 = 61,
     #[doc = "62: APORT1X Channel 30"]
-    APORT1XCH30,
+    APORT1XCH30 = 62,
     #[doc = "63: APORT1Y Channel 31"]
-    APORT1YCH31,
+    APORT1YCH31 = 63,
 }
 impl From<VASEL_A> for u8 {
     #[inline(always)]
     fn from(variant: VASEL_A) -> Self {
-        match variant {
-            VASEL_A::VDD => 0,
-            VASEL_A::APORT2YCH0 => 1,
-            VASEL_A::APORT2YCH2 => 3,
-            VASEL_A::APORT2YCH4 => 5,
-            VASEL_A::APORT2YCH6 => 7,
-            VASEL_A::APORT2YCH8 => 9,
-            VASEL_A::APORT2YCH10 => 11,
-            VASEL_A::APORT2YCH12 => 13,
-            VASEL_A::APORT2YCH14 => 15,
-            VASEL_A::APORT2YCH16 => 17,
-            VASEL_A::APORT2YCH18 => 19,
-            VASEL_A::APORT2YCH20 => 21,
-            VASEL_A::APORT2YCH22 => 23,
-            VASEL_A::APORT2YCH24 => 25,
-            VASEL_A::APORT2YCH26 => 27,
-            VASEL_A::APORT2YCH28 => 29,
-            VASEL_A::APORT2YCH30 => 31,
-            VASEL_A::APORT1XCH0 => 32,
-            VASEL_A::APORT1YCH1 => 33,
-            VASEL_A::APORT1XCH2 => 34,
-            VASEL_A::APORT1YCH3 => 35,
-            VASEL_A::APORT1XCH4 => 36,
-            VASEL_A::APORT1YCH5 => 37,
-            VASEL_A::APORT1XCH6 => 38,
-            VASEL_A::APORT1YCH7 => 39,
-            VASEL_A::APORT1XCH8 => 40,
-            VASEL_A::APORT1YCH9 => 41,
-            VASEL_A::APORT1XCH10 => 42,
-            VASEL_A::APORT1YCH11 => 43,
-            VASEL_A::APORT1XCH12 => 44,
-            VASEL_A::APORT1YCH13 => 45,
-            VASEL_A::APORT1XCH14 => 46,
-            VASEL_A::APORT1YCH15 => 47,
-            VASEL_A::APORT1XCH16 => 48,
-            VASEL_A::APORT1YCH17 => 49,
-            VASEL_A::APORT1XCH18 => 50,
-            VASEL_A::APORT1YCH19 => 51,
-            VASEL_A::APORT1XCH20 => 52,
-            VASEL_A::APORT1YCH21 => 53,
-            VASEL_A::APORT1XCH22 => 54,
-            VASEL_A::APORT1YCH23 => 55,
-            VASEL_A::APORT1XCH24 => 56,
-            VASEL_A::APORT1YCH25 => 57,
-            VASEL_A::APORT1XCH26 => 58,
-            VASEL_A::APORT1YCH27 => 59,
-            VASEL_A::APORT1XCH28 => 60,
-            VASEL_A::APORT1YCH29 => 61,
-            VASEL_A::APORT1XCH30 => 62,
-            VASEL_A::APORT1YCH31 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VASEL`"]
@@ -838,37 +789,29 @@ impl<'a> CSRESEN_W<'a> {
 }
 #[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSRESSEL_A {
     #[doc = "0: Internal capacitive sense resistor value 0"]
-    RES0,
+    RES0 = 0,
     #[doc = "1: Internal capacitive sense resistor value 1"]
-    RES1,
+    RES1 = 1,
     #[doc = "2: Internal capacitive sense resistor value 2"]
-    RES2,
+    RES2 = 2,
     #[doc = "3: Internal capacitive sense resistor value 3"]
-    RES3,
+    RES3 = 3,
     #[doc = "4: Internal capacitive sense resistor value 4"]
-    RES4,
+    RES4 = 4,
     #[doc = "5: Internal capacitive sense resistor value 5"]
-    RES5,
+    RES5 = 5,
     #[doc = "6: Internal capacitive sense resistor value 6"]
-    RES6,
+    RES6 = 6,
     #[doc = "7: Internal capacitive sense resistor value 7"]
-    RES7,
+    RES7 = 7,
 }
 impl From<CSRESSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CSRESSEL_A) -> Self {
-        match variant {
-            CSRESSEL_A::RES0 => 0,
-            CSRESSEL_A::RES1 => 1,
-            CSRESSEL_A::RES2 => 2,
-            CSRESSEL_A::RES3 => 3,
-            CSRESSEL_A::RES4 => 4,
-            CSRESSEL_A::RES5 => 5,
-            CSRESSEL_A::RES6 => 6,
-            CSRESSEL_A::RES7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSRESSEL`"]

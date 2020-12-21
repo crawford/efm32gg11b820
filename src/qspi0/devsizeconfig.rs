@@ -96,12 +96,14 @@ impl R {
     pub fn bytespersubsector(&self) -> BYTESPERSUBSECTOR_R {
         BYTESPERSUBSECTOR_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
-    #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\] Pin"]
+    #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\]
+Pin"]
     #[inline(always)]
     pub fn memsizeoncs0(&self) -> MEMSIZEONCS0_R {
         MEMSIZEONCS0_R::new(((self.bits >> 21) & 0x03) as u8)
     }
-    #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\] Pin"]
+    #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\]
+Pin"]
     #[inline(always)]
     pub fn memsizeoncs1(&self) -> MEMSIZEONCS1_R {
         MEMSIZEONCS1_R::new(((self.bits >> 23) & 0x03) as u8)
@@ -123,12 +125,14 @@ impl W {
     pub fn bytespersubsector(&mut self) -> BYTESPERSUBSECTOR_W {
         BYTESPERSUBSECTOR_W { w: self }
     }
-    #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\] Pin"]
+    #[doc = "Bits 21:22 - Size of Flash Device Connected to CS\\[0\\]
+Pin"]
     #[inline(always)]
     pub fn memsizeoncs0(&mut self) -> MEMSIZEONCS0_W {
         MEMSIZEONCS0_W { w: self }
     }
-    #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\] Pin"]
+    #[doc = "Bits 23:24 - Size of Flash Device Connected to CS\\[1\\]
+Pin"]
     #[inline(always)]
     pub fn memsizeoncs1(&mut self) -> MEMSIZEONCS1_W {
         MEMSIZEONCS1_W { w: self }

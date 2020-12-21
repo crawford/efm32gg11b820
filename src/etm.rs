@@ -100,7 +100,7 @@ pub struct RegisterBlock {
     #[doc = "0xffc - Component ID3 Register"]
     pub etmcidr3: ETMCIDR3,
 }
-#[doc = "Main Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcr](etmcr) module"]
+#[doc = "Main Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcr](etmcr) module"]
 pub type ETMCR = crate::Reg<u32, _ETMCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -111,7 +111,7 @@ impl crate::Readable for ETMCR {}
 impl crate::Writable for ETMCR {}
 #[doc = "Main Control Register"]
 pub mod etmcr;
-#[doc = "Configuration Code Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmccr](etmccr) module"]
+#[doc = "Configuration Code Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmccr](etmccr) module"]
 pub type ETMCCR = crate::Reg<u32, _ETMCCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -120,7 +120,7 @@ pub struct _ETMCCR;
 impl crate::Readable for ETMCCR {}
 #[doc = "Configuration Code Register"]
 pub mod etmccr;
-#[doc = "ETM Trigger Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmtrigger](etmtrigger) module"]
+#[doc = "ETM Trigger Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmtrigger](etmtrigger) module"]
 pub type ETMTRIGGER = crate::Reg<u32, _ETMTRIGGER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -131,7 +131,7 @@ impl crate::Readable for ETMTRIGGER {}
 impl crate::Writable for ETMTRIGGER {}
 #[doc = "ETM Trigger Event Register"]
 pub mod etmtrigger;
-#[doc = "ETM Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmsr](etmsr) module"]
+#[doc = "ETM Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmsr](etmsr) module"]
 pub type ETMSR = crate::Reg<u32, _ETMSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -142,7 +142,7 @@ impl crate::Readable for ETMSR {}
 impl crate::Writable for ETMSR {}
 #[doc = "ETM Status Register"]
 pub mod etmsr;
-#[doc = "ETM System Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmscr](etmscr) module"]
+#[doc = "ETM System Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmscr](etmscr) module"]
 pub type ETMSCR = crate::Reg<u32, _ETMSCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -151,7 +151,7 @@ pub struct _ETMSCR;
 impl crate::Readable for ETMSCR {}
 #[doc = "ETM System Configuration Register"]
 pub mod etmscr;
-#[doc = "ETM TraceEnable Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmteevr](etmteevr) module"]
+#[doc = "ETM TraceEnable Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmteevr](etmteevr) module"]
 pub type ETMTEEVR = crate::Reg<u32, _ETMTEEVR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -162,7 +162,7 @@ impl crate::Readable for ETMTEEVR {}
 impl crate::Writable for ETMTEEVR {}
 #[doc = "ETM TraceEnable Event Register"]
 pub mod etmteevr;
-#[doc = "ETM Trace control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmtecr1](etmtecr1) module"]
+#[doc = "ETM Trace control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmtecr1](etmtecr1) module"]
 pub type ETMTECR1 = crate::Reg<u32, _ETMTECR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -173,7 +173,7 @@ impl crate::Readable for ETMTECR1 {}
 impl crate::Writable for ETMTECR1 {}
 #[doc = "ETM Trace control Register"]
 pub mod etmtecr1;
-#[doc = "ETM Fifo Full Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmfflr](etmfflr) module"]
+#[doc = "ETM Fifo Full Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmfflr](etmfflr) module"]
 pub type ETMFFLR = crate::Reg<u32, _ETMFFLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -184,7 +184,7 @@ impl crate::Readable for ETMFFLR {}
 impl crate::Writable for ETMFFLR {}
 #[doc = "ETM Fifo Full Level Register"]
 pub mod etmfflr;
-#[doc = "Counter Reload Value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcntrldvr1](etmcntrldvr1) module"]
+#[doc = "Counter Reload Value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcntrldvr1](etmcntrldvr1) module"]
 pub type ETMCNTRLDVR1 = crate::Reg<u32, _ETMCNTRLDVR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -195,7 +195,7 @@ impl crate::Readable for ETMCNTRLDVR1 {}
 impl crate::Writable for ETMCNTRLDVR1 {}
 #[doc = "Counter Reload Value"]
 pub mod etmcntrldvr1;
-#[doc = "Synchronisation Frequency Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmsyncfr](etmsyncfr) module"]
+#[doc = "Synchronisation Frequency Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmsyncfr](etmsyncfr) module"]
 pub type ETMSYNCFR = crate::Reg<u32, _ETMSYNCFR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -206,7 +206,7 @@ impl crate::Readable for ETMSYNCFR {}
 impl crate::Writable for ETMSYNCFR {}
 #[doc = "Synchronisation Frequency Register"]
 pub mod etmsyncfr;
-#[doc = "ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmidr](etmidr) module"]
+#[doc = "ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmidr](etmidr) module"]
 pub type ETMIDR = crate::Reg<u32, _ETMIDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -215,7 +215,7 @@ pub struct _ETMIDR;
 impl crate::Readable for ETMIDR {}
 #[doc = "ID Register"]
 pub mod etmidr;
-#[doc = "Configuration Code Extension Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmccer](etmccer) module"]
+#[doc = "Configuration Code Extension Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmccer](etmccer) module"]
 pub type ETMCCER = crate::Reg<u32, _ETMCCER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -224,7 +224,7 @@ pub struct _ETMCCER;
 impl crate::Readable for ETMCCER {}
 #[doc = "Configuration Code Extension Register"]
 pub mod etmccer;
-#[doc = "TraceEnable Start/Stop EmbeddedICE Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmtesseicr](etmtesseicr) module"]
+#[doc = "TraceEnable Start/Stop EmbeddedICE Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmtesseicr](etmtesseicr) module"]
 pub type ETMTESSEICR = crate::Reg<u32, _ETMTESSEICR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -235,7 +235,7 @@ impl crate::Readable for ETMTESSEICR {}
 impl crate::Writable for ETMTESSEICR {}
 #[doc = "TraceEnable Start/Stop EmbeddedICE Control Register"]
 pub mod etmtesseicr;
-#[doc = "Timestamp Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmtsevr](etmtsevr) module"]
+#[doc = "Timestamp Event Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmtsevr](etmtsevr) module"]
 pub type ETMTSEVR = crate::Reg<u32, _ETMTSEVR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -246,7 +246,7 @@ impl crate::Readable for ETMTSEVR {}
 impl crate::Writable for ETMTSEVR {}
 #[doc = "Timestamp Event Register"]
 pub mod etmtsevr;
-#[doc = "CoreSight Trace ID Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmtraceidr](etmtraceidr) module"]
+#[doc = "CoreSight Trace ID Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmtraceidr](etmtraceidr) module"]
 pub type ETMTRACEIDR = crate::Reg<u32, _ETMTRACEIDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -257,7 +257,7 @@ impl crate::Readable for ETMTRACEIDR {}
 impl crate::Writable for ETMTRACEIDR {}
 #[doc = "CoreSight Trace ID Register"]
 pub mod etmtraceidr;
-#[doc = "ETM ID Register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmidr2](etmidr2) module"]
+#[doc = "ETM ID Register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmidr2](etmidr2) module"]
 pub type ETMIDR2 = crate::Reg<u32, _ETMIDR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -266,7 +266,7 @@ pub struct _ETMIDR2;
 impl crate::Readable for ETMIDR2 {}
 #[doc = "ETM ID Register 2"]
 pub mod etmidr2;
-#[doc = "Device Power-down Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpdsr](etmpdsr) module"]
+#[doc = "Device Power-down Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpdsr](etmpdsr) module"]
 pub type ETMPDSR = crate::Reg<u32, _ETMPDSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -275,7 +275,7 @@ pub struct _ETMPDSR;
 impl crate::Readable for ETMPDSR {}
 #[doc = "Device Power-down Status Register"]
 pub mod etmpdsr;
-#[doc = "Integration Test Miscellaneous Inputs Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmiscin](etmiscin) module"]
+#[doc = "Integration Test Miscellaneous Inputs Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmiscin](etmiscin) module"]
 pub type ETMISCIN = crate::Reg<u32, _ETMISCIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -286,7 +286,7 @@ impl crate::Readable for ETMISCIN {}
 impl crate::Writable for ETMISCIN {}
 #[doc = "Integration Test Miscellaneous Inputs Register"]
 pub mod etmiscin;
-#[doc = "Integration Test Trigger Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ittrigout](ittrigout) module"]
+#[doc = "Integration Test Trigger Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ittrigout](ittrigout) module"]
 pub type ITTRIGOUT = crate::Reg<u32, _ITTRIGOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -297,7 +297,7 @@ impl crate::Readable for ITTRIGOUT {}
 impl crate::Writable for ITTRIGOUT {}
 #[doc = "Integration Test Trigger Out Register"]
 pub mod ittrigout;
-#[doc = "ETM Integration Test ATB Control 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmitatbctr2](etmitatbctr2) module"]
+#[doc = "ETM Integration Test ATB Control 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmitatbctr2](etmitatbctr2) module"]
 pub type ETMITATBCTR2 = crate::Reg<u32, _ETMITATBCTR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -306,7 +306,7 @@ pub struct _ETMITATBCTR2;
 impl crate::Readable for ETMITATBCTR2 {}
 #[doc = "ETM Integration Test ATB Control 2 Register"]
 pub mod etmitatbctr2;
-#[doc = "ETM Integration Test ATB Control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmitatbctr0](etmitatbctr0) module"]
+#[doc = "ETM Integration Test ATB Control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmitatbctr0](etmitatbctr0) module"]
 pub type ETMITATBCTR0 = crate::Reg<u32, _ETMITATBCTR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -317,7 +317,7 @@ impl crate::Readable for ETMITATBCTR0 {}
 impl crate::Writable for ETMITATBCTR0 {}
 #[doc = "ETM Integration Test ATB Control 0 Register"]
 pub mod etmitatbctr0;
-#[doc = "ETM Integration Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmitctrl](etmitctrl) module"]
+#[doc = "ETM Integration Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmitctrl](etmitctrl) module"]
 pub type ETMITCTRL = crate::Reg<u32, _ETMITCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -328,7 +328,7 @@ impl crate::Readable for ETMITCTRL {}
 impl crate::Writable for ETMITCTRL {}
 #[doc = "ETM Integration Control Register"]
 pub mod etmitctrl;
-#[doc = "ETM Claim Tag Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmclaimset](etmclaimset) module"]
+#[doc = "ETM Claim Tag Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmclaimset](etmclaimset) module"]
 pub type ETMCLAIMSET = crate::Reg<u32, _ETMCLAIMSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -339,7 +339,7 @@ impl crate::Readable for ETMCLAIMSET {}
 impl crate::Writable for ETMCLAIMSET {}
 #[doc = "ETM Claim Tag Set Register"]
 pub mod etmclaimset;
-#[doc = "ETM Claim Tag Clear Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmclaimclr](etmclaimclr) module"]
+#[doc = "ETM Claim Tag Clear Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmclaimclr](etmclaimclr) module"]
 pub type ETMCLAIMCLR = crate::Reg<u32, _ETMCLAIMCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -350,7 +350,7 @@ impl crate::Readable for ETMCLAIMCLR {}
 impl crate::Writable for ETMCLAIMCLR {}
 #[doc = "ETM Claim Tag Clear Register"]
 pub mod etmclaimclr;
-#[doc = "ETM Lock Access Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmlar](etmlar) module"]
+#[doc = "ETM Lock Access Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmlar](etmlar) module"]
 pub type ETMLAR = crate::Reg<u32, _ETMLAR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -361,7 +361,7 @@ impl crate::Readable for ETMLAR {}
 impl crate::Writable for ETMLAR {}
 #[doc = "ETM Lock Access Register"]
 pub mod etmlar;
-#[doc = "Lock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmlsr](etmlsr) module"]
+#[doc = "Lock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmlsr](etmlsr) module"]
 pub type ETMLSR = crate::Reg<u32, _ETMLSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -370,7 +370,7 @@ pub struct _ETMLSR;
 impl crate::Readable for ETMLSR {}
 #[doc = "Lock Status Register"]
 pub mod etmlsr;
-#[doc = "ETM Authentication Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmauthstatus](etmauthstatus) module"]
+#[doc = "ETM Authentication Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmauthstatus](etmauthstatus) module"]
 pub type ETMAUTHSTATUS = crate::Reg<u32, _ETMAUTHSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -379,7 +379,7 @@ pub struct _ETMAUTHSTATUS;
 impl crate::Readable for ETMAUTHSTATUS {}
 #[doc = "ETM Authentication Status Register"]
 pub mod etmauthstatus;
-#[doc = "CoreSight Device Type Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmdevtype](etmdevtype) module"]
+#[doc = "CoreSight Device Type Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmdevtype](etmdevtype) module"]
 pub type ETMDEVTYPE = crate::Reg<u32, _ETMDEVTYPE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -388,7 +388,7 @@ pub struct _ETMDEVTYPE;
 impl crate::Readable for ETMDEVTYPE {}
 #[doc = "CoreSight Device Type Register"]
 pub mod etmdevtype;
-#[doc = "Peripheral ID4 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr4](etmpidr4) module"]
+#[doc = "Peripheral ID4 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr4](etmpidr4) module"]
 pub type ETMPIDR4 = crate::Reg<u32, _ETMPIDR4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -397,7 +397,7 @@ pub struct _ETMPIDR4;
 impl crate::Readable for ETMPIDR4 {}
 #[doc = "Peripheral ID4 Register"]
 pub mod etmpidr4;
-#[doc = "Peripheral ID5 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr5](etmpidr5) module"]
+#[doc = "Peripheral ID5 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr5](etmpidr5) module"]
 pub type ETMPIDR5 = crate::Reg<u32, _ETMPIDR5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -406,7 +406,7 @@ pub struct _ETMPIDR5;
 impl crate::Writable for ETMPIDR5 {}
 #[doc = "Peripheral ID5 Register"]
 pub mod etmpidr5;
-#[doc = "Peripheral ID6 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr6](etmpidr6) module"]
+#[doc = "Peripheral ID6 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr6](etmpidr6) module"]
 pub type ETMPIDR6 = crate::Reg<u32, _ETMPIDR6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -415,7 +415,7 @@ pub struct _ETMPIDR6;
 impl crate::Writable for ETMPIDR6 {}
 #[doc = "Peripheral ID6 Register"]
 pub mod etmpidr6;
-#[doc = "Peripheral ID7 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr7](etmpidr7) module"]
+#[doc = "Peripheral ID7 Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr7](etmpidr7) module"]
 pub type ETMPIDR7 = crate::Reg<u32, _ETMPIDR7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -424,7 +424,7 @@ pub struct _ETMPIDR7;
 impl crate::Writable for ETMPIDR7 {}
 #[doc = "Peripheral ID7 Register"]
 pub mod etmpidr7;
-#[doc = "Peripheral ID0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr0](etmpidr0) module"]
+#[doc = "Peripheral ID0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr0](etmpidr0) module"]
 pub type ETMPIDR0 = crate::Reg<u32, _ETMPIDR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -433,7 +433,7 @@ pub struct _ETMPIDR0;
 impl crate::Readable for ETMPIDR0 {}
 #[doc = "Peripheral ID0 Register"]
 pub mod etmpidr0;
-#[doc = "Peripheral ID1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr1](etmpidr1) module"]
+#[doc = "Peripheral ID1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr1](etmpidr1) module"]
 pub type ETMPIDR1 = crate::Reg<u32, _ETMPIDR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -442,7 +442,7 @@ pub struct _ETMPIDR1;
 impl crate::Readable for ETMPIDR1 {}
 #[doc = "Peripheral ID1 Register"]
 pub mod etmpidr1;
-#[doc = "Peripheral ID2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr2](etmpidr2) module"]
+#[doc = "Peripheral ID2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr2](etmpidr2) module"]
 pub type ETMPIDR2 = crate::Reg<u32, _ETMPIDR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -451,7 +451,7 @@ pub struct _ETMPIDR2;
 impl crate::Readable for ETMPIDR2 {}
 #[doc = "Peripheral ID2 Register"]
 pub mod etmpidr2;
-#[doc = "Peripheral ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmpidr3](etmpidr3) module"]
+#[doc = "Peripheral ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmpidr3](etmpidr3) module"]
 pub type ETMPIDR3 = crate::Reg<u32, _ETMPIDR3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -460,7 +460,7 @@ pub struct _ETMPIDR3;
 impl crate::Readable for ETMPIDR3 {}
 #[doc = "Peripheral ID3 Register"]
 pub mod etmpidr3;
-#[doc = "Component ID0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcidr0](etmcidr0) module"]
+#[doc = "Component ID0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcidr0](etmcidr0) module"]
 pub type ETMCIDR0 = crate::Reg<u32, _ETMCIDR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -469,7 +469,7 @@ pub struct _ETMCIDR0;
 impl crate::Readable for ETMCIDR0 {}
 #[doc = "Component ID0 Register"]
 pub mod etmcidr0;
-#[doc = "Component ID1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcidr1](etmcidr1) module"]
+#[doc = "Component ID1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcidr1](etmcidr1) module"]
 pub type ETMCIDR1 = crate::Reg<u32, _ETMCIDR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -478,7 +478,7 @@ pub struct _ETMCIDR1;
 impl crate::Readable for ETMCIDR1 {}
 #[doc = "Component ID1 Register"]
 pub mod etmcidr1;
-#[doc = "Component ID2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcidr2](etmcidr2) module"]
+#[doc = "Component ID2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcidr2](etmcidr2) module"]
 pub type ETMCIDR2 = crate::Reg<u32, _ETMCIDR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -487,7 +487,7 @@ pub struct _ETMCIDR2;
 impl crate::Readable for ETMCIDR2 {}
 #[doc = "Component ID2 Register"]
 pub mod etmcidr2;
-#[doc = "Component ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [etmcidr3](etmcidr3) module"]
+#[doc = "Component ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [etmcidr3](etmcidr3) module"]
 pub type ETMCIDR3 = crate::Reg<u32, _ETMCIDR3>;
 #[allow(missing_docs)]
 #[doc(hidden)]

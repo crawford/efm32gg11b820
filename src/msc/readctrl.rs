@@ -180,25 +180,21 @@ impl<'a> QSPICDIS_W<'a> {
 }
 #[doc = "Read Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Zero wait-states inserted in fetch or read transfers"]
-    WS0,
+    WS0 = 0,
     #[doc = "1: One wait-state inserted for each fetch or read transfer. See Flash Wait-States table for details"]
-    WS1,
+    WS1 = 1,
     #[doc = "2: Two wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
-    WS2,
+    WS2 = 2,
     #[doc = "3: Three wait-states inserted for eatch fetch or read transfer. See Flash Wait-States table for details"]
-    WS3,
+    WS3 = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::WS0 => 0,
-            MODE_A::WS1 => 1,
-            MODE_A::WS2 => 2,
-            MODE_A::WS3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

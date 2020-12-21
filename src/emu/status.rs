@@ -18,22 +18,19 @@ pub type VMONBUVDD_R = crate::R<bool, bool>;
 pub type BURDY_R = crate::R<bool, bool>;
 #[doc = "Current Voltage Scale Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
-    VSCALE2,
+    VSCALE2 = 0,
     #[doc = "2: Voltage Scale Level 0"]
-    VSCALE0,
+    VSCALE0 = 2,
     #[doc = "3: RESV"]
-    RESV,
+    RESV = 3,
 }
 impl From<VSCALE_A> for u8 {
     #[inline(always)]
     fn from(variant: VSCALE_A) -> Self {
-        match variant {
-            VSCALE_A::VSCALE2 => 0,
-            VSCALE_A::VSCALE0 => 2,
-            VSCALE_A::RESV => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VSCALE`"]

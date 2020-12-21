@@ -84,25 +84,21 @@ impl<'a> ADJ_W<'a> {
 }
 #[doc = "Single Channel Resolution Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RES_A {
     #[doc = "0: 12-bit resolution."]
-    _12BIT,
+    _12BIT = 0,
     #[doc = "1: 8-bit resolution."]
-    _8BIT,
+    _8BIT = 1,
     #[doc = "2: 6-bit resolution."]
-    _6BIT,
+    _6BIT = 2,
     #[doc = "3: Oversampling enabled. Oversampling rate is set in OVSRSEL."]
-    OVS,
+    OVS = 3,
 }
 impl From<RES_A> for u8 {
     #[inline(always)]
     fn from(variant: RES_A) -> Self {
-        match variant {
-            RES_A::_12BIT => 0,
-            RES_A::_8BIT => 1,
-            RES_A::_6BIT => 2,
-            RES_A::OVS => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RES`"]
@@ -181,37 +177,29 @@ impl<'a> RES_W<'a> {
 }
 #[doc = "Single Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REF_A {
     #[doc = "0: VFS = 1.25V with internal VBGR reference"]
-    _1V25,
+    _1V25 = 0,
     #[doc = "1: VFS = 2.5V with internal VBGR reference"]
-    _2V5,
+    _2V5 = 1,
     #[doc = "2: VFS = AVDD with AVDD as reference source"]
-    VDD,
+    VDD = 2,
     #[doc = "3: VFS = 5V with internal VBGR reference"]
-    _5V,
+    _5V = 3,
     #[doc = "4: Single ended external reference"]
-    EXTSINGLE,
+    EXTSINGLE = 4,
     #[doc = "5: Differential external reference, 2x"]
-    _2XEXTDIFF,
+    _2XEXTDIFF = 5,
     #[doc = "6: VFS = 2xAVDD with AVDD as the reference source"]
-    _2XVDD,
+    _2XVDD = 6,
     #[doc = "7: Use SINGLECTRLX to configure reference"]
-    CONF,
+    CONF = 7,
 }
 impl From<REF_A> for u8 {
     #[inline(always)]
     fn from(variant: REF_A) -> Self {
-        match variant {
-            REF_A::_1V25 => 0,
-            REF_A::_2V5 => 1,
-            REF_A::VDD => 2,
-            REF_A::_5V => 3,
-            REF_A::EXTSINGLE => 4,
-            REF_A::_2XEXTDIFF => 5,
-            REF_A::_2XVDD => 6,
-            REF_A::CONF => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REF`"]
@@ -362,43 +350,33 @@ impl<'a> NEGSEL_W<'a> {
 }
 #[doc = "Single Channel Acquisition Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AT_A {
     #[doc = "0: 1 conversion clock cycle acquisition time for single channel"]
-    _1CYCLE,
+    _1CYCLE = 0,
     #[doc = "1: 2 conversion clock cycles acquisition time for single channel"]
-    _2CYCLES,
+    _2CYCLES = 1,
     #[doc = "2: 3 conversion clock cycles acquisition time for single channel"]
-    _3CYCLES,
+    _3CYCLES = 2,
     #[doc = "3: 4 conversion clock cycles acquisition time for single channel"]
-    _4CYCLES,
+    _4CYCLES = 3,
     #[doc = "4: 8 conversion clock cycles acquisition time for single channel"]
-    _8CYCLES,
+    _8CYCLES = 4,
     #[doc = "5: 16 conversion clock cycles acquisition time for single channel"]
-    _16CYCLES,
+    _16CYCLES = 5,
     #[doc = "6: 32 conversion clock cycles acquisition time for single channel"]
-    _32CYCLES,
+    _32CYCLES = 6,
     #[doc = "7: 64 conversion clock cycles acquisition time for single channel"]
-    _64CYCLES,
+    _64CYCLES = 7,
     #[doc = "8: 128 conversion clock cycles acquisition time for single channel"]
-    _128CYCLES,
+    _128CYCLES = 8,
     #[doc = "9: 256 conversion clock cycles acquisition time for single channel"]
-    _256CYCLES,
+    _256CYCLES = 9,
 }
 impl From<AT_A> for u8 {
     #[inline(always)]
     fn from(variant: AT_A) -> Self {
-        match variant {
-            AT_A::_1CYCLE => 0,
-            AT_A::_2CYCLES => 1,
-            AT_A::_3CYCLES => 2,
-            AT_A::_4CYCLES => 3,
-            AT_A::_8CYCLES => 4,
-            AT_A::_16CYCLES => 5,
-            AT_A::_32CYCLES => 6,
-            AT_A::_64CYCLES => 7,
-            AT_A::_128CYCLES => 8,
-            AT_A::_256CYCLES => 9,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AT`"]

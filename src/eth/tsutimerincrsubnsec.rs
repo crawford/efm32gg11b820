@@ -39,24 +39,28 @@ impl<'a> SUBNSINCRLSB_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15 - MSB \\[23:8\\] of the subscript-ns value"]
+    #[doc = "Bits 0:15 - MSB \\[23:8\\]
+of the subscript-ns value"]
     #[inline(always)]
     pub fn subnsincr(&self) -> SUBNSINCR_R {
         SUBNSINCR_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 24:31 - LSB \\[7:0\\] of the subscript-ns value"]
+    #[doc = "Bits 24:31 - LSB \\[7:0\\]
+of the subscript-ns value"]
     #[inline(always)]
     pub fn subnsincrlsb(&self) -> SUBNSINCRLSB_R {
         SUBNSINCRLSB_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - MSB \\[23:8\\] of the subscript-ns value"]
+    #[doc = "Bits 0:15 - MSB \\[23:8\\]
+of the subscript-ns value"]
     #[inline(always)]
     pub fn subnsincr(&mut self) -> SUBNSINCR_W {
         SUBNSINCR_W { w: self }
     }
-    #[doc = "Bits 24:31 - LSB \\[7:0\\] of the subscript-ns value"]
+    #[doc = "Bits 24:31 - LSB \\[7:0\\]
+of the subscript-ns value"]
     #[inline(always)]
     pub fn subnsincrlsb(&mut self) -> SUBNSINCRLSB_W {
         SUBNSINCRLSB_W { w: self }

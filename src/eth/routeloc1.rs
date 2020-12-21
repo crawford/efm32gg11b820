@@ -12,25 +12,21 @@ impl crate::ResetValue for super::ROUTELOC1 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSUEXTCLKLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<TSUEXTCLKLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: TSUEXTCLKLOC_A) -> Self {
-        match variant {
-            TSUEXTCLKLOC_A::LOC0 => 0,
-            TSUEXTCLKLOC_A::LOC1 => 1,
-            TSUEXTCLKLOC_A::LOC2 => 2,
-            TSUEXTCLKLOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSUEXTCLKLOC`"]
@@ -108,25 +104,21 @@ impl<'a> TSUEXTCLKLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSUTMRTOGLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<TSUTMRTOGLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: TSUTMRTOGLOC_A) -> Self {
-        match variant {
-            TSUTMRTOGLOC_A::LOC0 => 0,
-            TSUTMRTOGLOC_A::LOC1 => 1,
-            TSUTMRTOGLOC_A::LOC2 => 2,
-            TSUTMRTOGLOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSUTMRTOGLOC`"]
@@ -204,25 +196,21 @@ impl<'a> TSUTMRTOGLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MDIOLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<MDIOLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: MDIOLOC_A) -> Self {
-        match variant {
-            MDIOLOC_A::LOC0 => 0,
-            MDIOLOC_A::LOC1 => 1,
-            MDIOLOC_A::LOC2 => 2,
-            MDIOLOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MDIOLOC`"]
@@ -300,19 +288,17 @@ impl<'a> MDIOLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RMIILOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
 }
 impl From<RMIILOC_A> for u8 {
     #[inline(always)]
     fn from(variant: RMIILOC_A) -> Self {
-        match variant {
-            RMIILOC_A::LOC0 => 0,
-            RMIILOC_A::LOC1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RMIILOC`"]

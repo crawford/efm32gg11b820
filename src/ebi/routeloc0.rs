@@ -12,31 +12,25 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EBILOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<EBILOC_A> for u8 {
     #[inline(always)]
     fn from(variant: EBILOC_A) -> Self {
-        match variant {
-            EBILOC_A::LOC0 => 0,
-            EBILOC_A::LOC1 => 1,
-            EBILOC_A::LOC2 => 2,
-            EBILOC_A::LOC3 => 3,
-            EBILOC_A::LOC4 => 4,
-            EBILOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EBILOC`"]
@@ -136,28 +130,23 @@ impl<'a> EBILOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
 }
 impl From<CSLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CSLOC_A) -> Self {
-        match variant {
-            CSLOC_A::LOC0 => 0,
-            CSLOC_A::LOC1 => 1,
-            CSLOC_A::LOC2 => 2,
-            CSLOC_A::LOC3 => 3,
-            CSLOC_A::LOC4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSLOC`"]
@@ -246,31 +235,25 @@ impl<'a> CSLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NANDLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<NANDLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: NANDLOC_A) -> Self {
-        match variant {
-            NANDLOC_A::LOC0 => 0,
-            NANDLOC_A::LOC1 => 1,
-            NANDLOC_A::LOC2 => 2,
-            NANDLOC_A::LOC3 => 3,
-            NANDLOC_A::LOC4 => 4,
-            NANDLOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NANDLOC`"]
@@ -370,25 +353,21 @@ impl<'a> NANDLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TFTLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<TFTLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: TFTLOC_A) -> Self {
-        match variant {
-            TFTLOC_A::LOC0 => 0,
-            TFTLOC_A::LOC1 => 1,
-            TFTLOC_A::LOC2 => 2,
-            TFTLOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TFTLOC`"]

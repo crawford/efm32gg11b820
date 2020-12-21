@@ -108,25 +108,21 @@ impl<'a> NOBUSYSTALL_W<'a> {
 }
 #[doc = "Increment Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INCWIDTH_A {
     #[doc = "0: Byte 15 in DATA1 is used for the increment function."]
-    INCWIDTH1,
+    INCWIDTH1 = 0,
     #[doc = "1: Bytes 14 and 15 in DATA1 are used for the increment function."]
-    INCWIDTH2,
+    INCWIDTH2 = 1,
     #[doc = "2: Bytes 13 to 15 in DATA1 are used for the increment function."]
-    INCWIDTH3,
+    INCWIDTH3 = 2,
     #[doc = "3: Bytes 12 to 15 in DATA1 are used for the increment function."]
-    INCWIDTH4,
+    INCWIDTH4 = 3,
 }
 impl From<INCWIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: INCWIDTH_A) -> Self {
-        match variant {
-            INCWIDTH_A::INCWIDTH1 => 0,
-            INCWIDTH_A::INCWIDTH2 => 1,
-            INCWIDTH_A::INCWIDTH3 => 2,
-            INCWIDTH_A::INCWIDTH4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INCWIDTH`"]
@@ -205,25 +201,21 @@ impl<'a> INCWIDTH_W<'a> {
 }
 #[doc = "DMA0 Read Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMA0MODE_A {
     #[doc = "0: Target register is fully read/written during every DMA transaction"]
-    FULL,
+    FULL = 0,
     #[doc = "1: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Zero padding is automatically added when writing."]
-    LENLIMIT,
+    LENLIMIT = 1,
     #[doc = "2: Target register is fully read/written during every DMA transaction. Bytewise DMA."]
-    FULLBYTE,
+    FULLBYTE = 2,
     #[doc = "3: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
-    LENLIMITBYTE,
+    LENLIMITBYTE = 3,
 }
 impl From<DMA0MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DMA0MODE_A) -> Self {
-        match variant {
-            DMA0MODE_A::FULL => 0,
-            DMA0MODE_A::LENLIMIT => 1,
-            DMA0MODE_A::FULLBYTE => 2,
-            DMA0MODE_A::LENLIMITBYTE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMA0MODE`"]
@@ -302,25 +294,21 @@ impl<'a> DMA0MODE_W<'a> {
 }
 #[doc = "DMA0 Read Register Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMA0RSEL_A {
     #[doc = "0: `0`"]
-    DATA0,
+    DATA0 = 0,
     #[doc = "1: `1`"]
-    DDATA0,
+    DDATA0 = 1,
     #[doc = "2: `10`"]
-    DDATA0BIG,
+    DDATA0BIG = 2,
     #[doc = "3: `11`"]
-    QDATA0,
+    QDATA0 = 3,
 }
 impl From<DMA0RSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DMA0RSEL_A) -> Self {
-        match variant {
-            DMA0RSEL_A::DATA0 => 0,
-            DMA0RSEL_A::DDATA0 => 1,
-            DMA0RSEL_A::DDATA0BIG => 2,
-            DMA0RSEL_A::QDATA0 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMA0RSEL`"]
@@ -399,25 +387,21 @@ impl<'a> DMA0RSEL_W<'a> {
 }
 #[doc = "DMA1 Read Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMA1MODE_A {
     #[doc = "0: Target register is fully read/written during every DMA transaction"]
-    FULL,
+    FULL = 0,
     #[doc = "1: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Zero padding is automatically added when writing."]
-    LENLIMIT,
+    LENLIMIT = 1,
     #[doc = "2: Target register is fully read/written during every DMA transaction. Bytewise DMA."]
-    FULLBYTE,
+    FULLBYTE = 2,
     #[doc = "3: Length Limited. When the current length, i.e. LENGTHA or LENGTHB indicates that there are less bytes available than the register size, only length + 1 bytes + necessary zero padding is read. Bytewise DMA. Zero padding is automatically added when writing."]
-    LENLIMITBYTE,
+    LENLIMITBYTE = 3,
 }
 impl From<DMA1MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DMA1MODE_A) -> Self {
-        match variant {
-            DMA1MODE_A::FULL => 0,
-            DMA1MODE_A::LENLIMIT => 1,
-            DMA1MODE_A::FULLBYTE => 2,
-            DMA1MODE_A::LENLIMITBYTE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMA1MODE`"]
@@ -496,25 +480,21 @@ impl<'a> DMA1MODE_W<'a> {
 }
 #[doc = "DATA0 DMA Unaligned Read Register Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMA1RSEL_A {
     #[doc = "0: `0`"]
-    DATA1,
+    DATA1 = 0,
     #[doc = "1: `1`"]
-    DDATA1,
+    DDATA1 = 1,
     #[doc = "2: `10`"]
-    QDATA1,
+    QDATA1 = 2,
     #[doc = "3: `11`"]
-    QDATA1BIG,
+    QDATA1BIG = 3,
 }
 impl From<DMA1RSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DMA1RSEL_A) -> Self {
-        match variant {
-            DMA1RSEL_A::DATA1 => 0,
-            DMA1RSEL_A::DDATA1 => 1,
-            DMA1RSEL_A::QDATA1 => 2,
-            DMA1RSEL_A::QDATA1BIG => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMA1RSEL`"]

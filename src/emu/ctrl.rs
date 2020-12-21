@@ -108,22 +108,19 @@ impl<'a> EM23VSCALEAUTOWSEN_W<'a> {
 }
 #[doc = "EM23 Voltage Scale\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EM23VSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
-    VSCALE2,
+    VSCALE2 = 0,
     #[doc = "2: Voltage Scale Level 0"]
-    VSCALE0,
+    VSCALE0 = 2,
     #[doc = "3: RESV"]
-    RESV,
+    RESV = 3,
 }
 impl From<EM23VSCALE_A> for u8 {
     #[inline(always)]
     fn from(variant: EM23VSCALE_A) -> Self {
-        match variant {
-            EM23VSCALE_A::VSCALE2 => 0,
-            EM23VSCALE_A::VSCALE0 => 2,
-            EM23VSCALE_A::RESV => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EM23VSCALE`"]
@@ -190,22 +187,19 @@ impl<'a> EM23VSCALE_W<'a> {
 }
 #[doc = "EM4H Voltage Scale\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EM4HVSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
-    VSCALE2,
+    VSCALE2 = 0,
     #[doc = "2: Voltage Scale Level 0"]
-    VSCALE0,
+    VSCALE0 = 2,
     #[doc = "3: RESV"]
-    RESV,
+    RESV = 3,
 }
 impl From<EM4HVSCALE_A> for u8 {
     #[inline(always)]
     fn from(variant: EM4HVSCALE_A) -> Self {
-        match variant {
-            EM4HVSCALE_A::VSCALE2 => 0,
-            EM4HVSCALE_A::VSCALE0 => 2,
-            EM4HVSCALE_A::RESV => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EM4HVSCALE`"]

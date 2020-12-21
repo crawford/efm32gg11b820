@@ -132,25 +132,21 @@ impl<'a> MPAB_W<'a> {
 }
 #[doc = "Oversampling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OVS_A {
     #[doc = "0: Regular UART mode with 16X oversampling in asynchronous mode"]
-    X16,
+    X16 = 0,
     #[doc = "1: Double speed with 8X oversampling in asynchronous mode"]
-    X8,
+    X8 = 1,
     #[doc = "2: 6X oversampling in asynchronous mode"]
-    X6,
+    X6 = 2,
     #[doc = "3: Quadruple speed with 4X oversampling in asynchronous mode"]
-    X4,
+    X4 = 3,
 }
 impl From<OVS_A> for u8 {
     #[inline(always)]
     fn from(variant: OVS_A) -> Self {
-        match variant {
-            OVS_A::X16 => 0,
-            OVS_A::X8 => 1,
-            OVS_A::X6 => 2,
-            OVS_A::X4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OVS`"]

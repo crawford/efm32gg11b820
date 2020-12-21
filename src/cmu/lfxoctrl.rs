@@ -26,22 +26,19 @@ impl<'a> TUNING_W<'a> {
 }
 #[doc = "LFXO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: 32768 Hz crystal oscillator"]
-    XTAL,
+    XTAL = 0,
     #[doc = "1: An AC coupled buffer is coupled in series with LFXTAL_N pin, suitable for external sinus wave (32768 Hz)."]
-    BUFEXTCLK,
+    BUFEXTCLK = 1,
     #[doc = "2: Digital external clock on LFXTAL_N pin. Oscillator is effectively bypassed."]
-    DIGEXTCLK,
+    DIGEXTCLK = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::XTAL => 0,
-            MODE_A::BUFEXTCLK => 1,
-            MODE_A::DIGEXTCLK => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -208,37 +205,29 @@ impl<'a> BUFCUR_W<'a> {
 }
 #[doc = "LFXO Timeout\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
-    _2CYCLES,
+    _2CYCLES = 0,
     #[doc = "1: Timeout period of 256 cycles"]
-    _256CYCLES,
+    _256CYCLES = 1,
     #[doc = "2: Timeout period of 1024 cycles"]
-    _1KCYCLES,
+    _1KCYCLES = 2,
     #[doc = "3: Timeout period of 2048 cycles"]
-    _2KCYCLES,
+    _2KCYCLES = 3,
     #[doc = "4: Timeout period of 4096 cycles"]
-    _4KCYCLES,
+    _4KCYCLES = 4,
     #[doc = "5: Timeout period of 8192 cycles"]
-    _8KCYCLES,
+    _8KCYCLES = 5,
     #[doc = "6: Timeout period of 16384 cycles"]
-    _16KCYCLES,
+    _16KCYCLES = 6,
     #[doc = "7: Timeout period of 32768 cycles"]
-    _32KCYCLES,
+    _32KCYCLES = 7,
 }
 impl From<TIMEOUT_A> for u8 {
     #[inline(always)]
     fn from(variant: TIMEOUT_A) -> Self {
-        match variant {
-            TIMEOUT_A::_2CYCLES => 0,
-            TIMEOUT_A::_256CYCLES => 1,
-            TIMEOUT_A::_1KCYCLES => 2,
-            TIMEOUT_A::_2KCYCLES => 3,
-            TIMEOUT_A::_4KCYCLES => 4,
-            TIMEOUT_A::_8KCYCLES => 5,
-            TIMEOUT_A::_16KCYCLES => 6,
-            TIMEOUT_A::_32KCYCLES => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMEOUT`"]

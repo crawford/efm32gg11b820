@@ -12,25 +12,21 @@ impl crate::ResetValue for super::EXTIPINSELH {
 }
 #[doc = "External Interrupt 8 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL8_A {
     #[doc = "0: Pin 8"]
-    PIN8,
+    PIN8 = 0,
     #[doc = "1: Pin 9"]
-    PIN9,
+    PIN9 = 1,
     #[doc = "2: Pin 10"]
-    PIN10,
+    PIN10 = 2,
     #[doc = "3: Pin 11"]
-    PIN11,
+    PIN11 = 3,
 }
 impl From<EXTIPINSEL8_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL8_A) -> Self {
-        match variant {
-            EXTIPINSEL8_A::PIN8 => 0,
-            EXTIPINSEL8_A::PIN9 => 1,
-            EXTIPINSEL8_A::PIN10 => 2,
-            EXTIPINSEL8_A::PIN11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL8`"]
@@ -109,25 +105,21 @@ impl<'a> EXTIPINSEL8_W<'a> {
 }
 #[doc = "External Interrupt 9 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL9_A {
     #[doc = "0: Pin 8"]
-    PIN8,
+    PIN8 = 0,
     #[doc = "1: Pin 9"]
-    PIN9,
+    PIN9 = 1,
     #[doc = "2: Pin 10"]
-    PIN10,
+    PIN10 = 2,
     #[doc = "3: Pin 11"]
-    PIN11,
+    PIN11 = 3,
 }
 impl From<EXTIPINSEL9_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL9_A) -> Self {
-        match variant {
-            EXTIPINSEL9_A::PIN8 => 0,
-            EXTIPINSEL9_A::PIN9 => 1,
-            EXTIPINSEL9_A::PIN10 => 2,
-            EXTIPINSEL9_A::PIN11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL9`"]
@@ -206,25 +198,21 @@ impl<'a> EXTIPINSEL9_W<'a> {
 }
 #[doc = "External Interrupt 10 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL10_A {
     #[doc = "0: Pin 8"]
-    PIN8,
+    PIN8 = 0,
     #[doc = "1: Pin 9"]
-    PIN9,
+    PIN9 = 1,
     #[doc = "2: Pin 10"]
-    PIN10,
+    PIN10 = 2,
     #[doc = "3: Pin 11"]
-    PIN11,
+    PIN11 = 3,
 }
 impl From<EXTIPINSEL10_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL10_A) -> Self {
-        match variant {
-            EXTIPINSEL10_A::PIN8 => 0,
-            EXTIPINSEL10_A::PIN9 => 1,
-            EXTIPINSEL10_A::PIN10 => 2,
-            EXTIPINSEL10_A::PIN11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL10`"]
@@ -303,25 +291,21 @@ impl<'a> EXTIPINSEL10_W<'a> {
 }
 #[doc = "External Interrupt 11 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL11_A {
     #[doc = "0: Pin 8"]
-    PIN8,
+    PIN8 = 0,
     #[doc = "1: Pin 9"]
-    PIN9,
+    PIN9 = 1,
     #[doc = "2: Pin 10"]
-    PIN10,
+    PIN10 = 2,
     #[doc = "3: Pin 11"]
-    PIN11,
+    PIN11 = 3,
 }
 impl From<EXTIPINSEL11_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL11_A) -> Self {
-        match variant {
-            EXTIPINSEL11_A::PIN8 => 0,
-            EXTIPINSEL11_A::PIN9 => 1,
-            EXTIPINSEL11_A::PIN10 => 2,
-            EXTIPINSEL11_A::PIN11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL11`"]
@@ -400,25 +384,21 @@ impl<'a> EXTIPINSEL11_W<'a> {
 }
 #[doc = "External Interrupt 12 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL12_A {
     #[doc = "0: Pin 12"]
-    PIN12,
+    PIN12 = 0,
     #[doc = "1: Pin 13"]
-    PIN13,
+    PIN13 = 1,
     #[doc = "2: Pin 14"]
-    PIN14,
+    PIN14 = 2,
     #[doc = "3: Pin 15"]
-    PIN15,
+    PIN15 = 3,
 }
 impl From<EXTIPINSEL12_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL12_A) -> Self {
-        match variant {
-            EXTIPINSEL12_A::PIN12 => 0,
-            EXTIPINSEL12_A::PIN13 => 1,
-            EXTIPINSEL12_A::PIN14 => 2,
-            EXTIPINSEL12_A::PIN15 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL12`"]
@@ -497,25 +477,21 @@ impl<'a> EXTIPINSEL12_W<'a> {
 }
 #[doc = "External Interrupt 13 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL13_A {
     #[doc = "0: Pin 12"]
-    PIN12,
+    PIN12 = 0,
     #[doc = "1: Pin 13"]
-    PIN13,
+    PIN13 = 1,
     #[doc = "2: Pin 14"]
-    PIN14,
+    PIN14 = 2,
     #[doc = "3: Pin 15"]
-    PIN15,
+    PIN15 = 3,
 }
 impl From<EXTIPINSEL13_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL13_A) -> Self {
-        match variant {
-            EXTIPINSEL13_A::PIN12 => 0,
-            EXTIPINSEL13_A::PIN13 => 1,
-            EXTIPINSEL13_A::PIN14 => 2,
-            EXTIPINSEL13_A::PIN15 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL13`"]
@@ -594,25 +570,21 @@ impl<'a> EXTIPINSEL13_W<'a> {
 }
 #[doc = "External Interrupt 14 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL14_A {
     #[doc = "0: Pin 12"]
-    PIN12,
+    PIN12 = 0,
     #[doc = "1: Pin 13"]
-    PIN13,
+    PIN13 = 1,
     #[doc = "2: Pin 14"]
-    PIN14,
+    PIN14 = 2,
     #[doc = "3: Pin 15"]
-    PIN15,
+    PIN15 = 3,
 }
 impl From<EXTIPINSEL14_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL14_A) -> Self {
-        match variant {
-            EXTIPINSEL14_A::PIN12 => 0,
-            EXTIPINSEL14_A::PIN13 => 1,
-            EXTIPINSEL14_A::PIN14 => 2,
-            EXTIPINSEL14_A::PIN15 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL14`"]
@@ -691,25 +663,21 @@ impl<'a> EXTIPINSEL14_W<'a> {
 }
 #[doc = "External Interrupt 15 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTIPINSEL15_A {
     #[doc = "0: Pin 12"]
-    PIN12,
+    PIN12 = 0,
     #[doc = "1: Pin 13"]
-    PIN13,
+    PIN13 = 1,
     #[doc = "2: Pin 14"]
-    PIN14,
+    PIN14 = 2,
     #[doc = "3: Pin 15"]
-    PIN15,
+    PIN15 = 3,
 }
 impl From<EXTIPINSEL15_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTIPINSEL15_A) -> Self {
-        match variant {
-            EXTIPINSEL15_A::PIN12 => 0,
-            EXTIPINSEL15_A::PIN13 => 1,
-            EXTIPINSEL15_A::PIN14 => 2,
-            EXTIPINSEL15_A::PIN15 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTIPINSEL15`"]

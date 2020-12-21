@@ -2,19 +2,17 @@
 pub type R = crate::R<u32, super::TRANSREQ>;
 #[doc = "Transmission Request Bits (Of All Message Objects)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum TXRQSTOUT_A {
     #[doc = "0: This Message Object is not waiting for transmission."]
-    FALSE,
+    FALSE = 0,
     #[doc = "1: The transmission of this Message Object is requested and is not yet done."]
-    TRUE,
+    TRUE = 1,
 }
 impl From<TXRQSTOUT_A> for u32 {
     #[inline(always)]
     fn from(variant: TXRQSTOUT_A) -> Self {
-        match variant {
-            TXRQSTOUT_A::FALSE => 0,
-            TXRQSTOUT_A::TRUE => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TXRQSTOUT`"]

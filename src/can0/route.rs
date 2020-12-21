@@ -36,37 +36,29 @@ impl<'a> TXPEN_W<'a> {
 }
 #[doc = "RX Pin Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<RXLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: RXLOC_A) -> Self {
-        match variant {
-            RXLOC_A::LOC0 => 0,
-            RXLOC_A::LOC1 => 1,
-            RXLOC_A::LOC2 => 2,
-            RXLOC_A::LOC3 => 3,
-            RXLOC_A::LOC4 => 4,
-            RXLOC_A::LOC5 => 5,
-            RXLOC_A::LOC6 => 6,
-            RXLOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXLOC`"]
@@ -188,37 +180,29 @@ impl<'a> RXLOC_W<'a> {
 }
 #[doc = "TX Pin Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TXLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<TXLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: TXLOC_A) -> Self {
-        match variant {
-            TXLOC_A::LOC0 => 0,
-            TXLOC_A::LOC1 => 1,
-            TXLOC_A::LOC2 => 2,
-            TXLOC_A::LOC3 => 3,
-            TXLOC_A::LOC4 => 4,
-            TXLOC_A::LOC5 => 5,
-            TXLOC_A::LOC6 => 6,
-            TXLOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TXLOC`"]

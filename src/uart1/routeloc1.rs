@@ -12,34 +12,27 @@ impl crate::ResetValue for super::ROUTELOC1 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTSLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
 }
 impl From<CTSLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CTSLOC_A) -> Self {
-        match variant {
-            CTSLOC_A::LOC0 => 0,
-            CTSLOC_A::LOC1 => 1,
-            CTSLOC_A::LOC2 => 2,
-            CTSLOC_A::LOC3 => 3,
-            CTSLOC_A::LOC4 => 4,
-            CTSLOC_A::LOC5 => 5,
-            CTSLOC_A::LOC6 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTSLOC`"]
@@ -150,34 +143,27 @@ impl<'a> CTSLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RTSLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
 }
 impl From<RTSLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: RTSLOC_A) -> Self {
-        match variant {
-            RTSLOC_A::LOC0 => 0,
-            RTSLOC_A::LOC1 => 1,
-            RTSLOC_A::LOC2 => 2,
-            RTSLOC_A::LOC3 => 3,
-            RTSLOC_A::LOC4 => 4,
-            RTSLOC_A::LOC5 => 5,
-            RTSLOC_A::LOC6 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RTSLOC`"]

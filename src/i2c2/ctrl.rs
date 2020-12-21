@@ -204,22 +204,19 @@ impl<'a> TXBIL_W<'a> {
 }
 #[doc = "Clock Low High Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLHR_A {
     #[doc = "0: The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
-    STANDARD,
+    STANDARD = 0,
     #[doc = "1: The ratio between low period and high period counters (Nlow:Nhigh) is 6:3"]
-    ASYMMETRIC,
+    ASYMMETRIC = 1,
     #[doc = "2: The ratio between low period and high period counters (Nlow:Nhigh) is 11:6"]
-    FAST,
+    FAST = 2,
 }
 impl From<CLHR_A> for u8 {
     #[inline(always)]
     fn from(variant: CLHR_A) -> Self {
-        match variant {
-            CLHR_A::STANDARD => 0,
-            CLHR_A::ASYMMETRIC => 1,
-            CLHR_A::FAST => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLHR`"]
@@ -286,25 +283,21 @@ impl<'a> CLHR_W<'a> {
 }
 #[doc = "Bus Idle Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BITO_A {
     #[doc = "0: Timeout disabled"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
-    _40PCC,
+    _40PCC = 1,
     #[doc = "2: Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
-    _80PCC,
+    _80PCC = 2,
     #[doc = "3: Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
-    _160PCC,
+    _160PCC = 3,
 }
 impl From<BITO_A> for u8 {
     #[inline(always)]
     fn from(variant: BITO_A) -> Self {
-        match variant {
-            BITO_A::OFF => 0,
-            BITO_A::_40PCC => 1,
-            BITO_A::_80PCC => 2,
-            BITO_A::_160PCC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BITO`"]
@@ -407,31 +400,25 @@ impl<'a> GIBITO_W<'a> {
 }
 #[doc = "Clock Low Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLTO_A {
     #[doc = "0: Timeout disabled"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
-    _40PCC,
+    _40PCC = 1,
     #[doc = "2: Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
-    _80PCC,
+    _80PCC = 2,
     #[doc = "3: Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
-    _160PCC,
+    _160PCC = 3,
     #[doc = "4: Timeout after 320 prescaled clock cycles. In standard mode at 100 kHz, this results in a 400us timeout."]
-    _320PCC,
+    _320PCC = 4,
     #[doc = "5: Timeout after 1024 prescaled clock cycles. In standard mode at 100 kHz, this results in a 1280us timeout."]
-    _1024PCC,
+    _1024PCC = 5,
 }
 impl From<CLTO_A> for u8 {
     #[inline(always)]
     fn from(variant: CLTO_A) -> Self {
-        match variant {
-            CLTO_A::OFF => 0,
-            CLTO_A::_40PCC => 1,
-            CLTO_A::_80PCC => 2,
-            CLTO_A::_160PCC => 3,
-            CLTO_A::_320PCC => 4,
-            CLTO_A::_1024PCC => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLTO`"]

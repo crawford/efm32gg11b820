@@ -84,25 +84,21 @@ impl<'a> BUVINPROBEEN_W<'a> {
 }
 #[doc = "BU_VOUT Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VOUTRES_A {
     #[doc = "0: BU_VOUT is not connected"]
-    DIS,
+    DIS = 0,
     #[doc = "1: Enable weak switch between BU_VOUT and backup domain power supply."]
-    WEAK,
+    WEAK = 1,
     #[doc = "2: Enable medium switch between BU_VOUT and backup domain power supply."]
-    MED,
+    MED = 2,
     #[doc = "3: Enable strong switch between BU_VOUT and backup domain power supply."]
-    STRONG,
+    STRONG = 3,
 }
 impl From<VOUTRES_A> for u8 {
     #[inline(always)]
     fn from(variant: VOUTRES_A) -> Self {
-        match variant {
-            VOUTRES_A::DIS => 0,
-            VOUTRES_A::WEAK => 1,
-            VOUTRES_A::MED => 2,
-            VOUTRES_A::STRONG => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VOUTRES`"]
@@ -181,25 +177,21 @@ impl<'a> VOUTRES_W<'a> {
 }
 #[doc = "Power Domain Resistor Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWRRES_A {
     #[doc = "0: Main power and backup power connected with RES0 series resistance."]
-    RES0,
+    RES0 = 0,
     #[doc = "1: Main power and backup power connected with RES1 series resistance."]
-    RES1,
+    RES1 = 1,
     #[doc = "2: Main power and backup power connected with RES2 series resistance."]
-    RES2,
+    RES2 = 2,
     #[doc = "3: Main power and backup power connected with RES3 series resistance."]
-    RES3,
+    RES3 = 3,
 }
 impl From<PWRRES_A> for u8 {
     #[inline(always)]
     fn from(variant: PWRRES_A) -> Self {
-        match variant {
-            PWRRES_A::RES0 => 0,
-            PWRRES_A::RES1 => 1,
-            PWRRES_A::RES2 => 2,
-            PWRRES_A::RES3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWRRES`"]
@@ -278,25 +270,21 @@ impl<'a> PWRRES_W<'a> {
 }
 #[doc = "Power Connection Configuration in Backup Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BUACTPWRCON_A {
     #[doc = "0: No connection."]
-    NONE,
+    NONE = 0,
     #[doc = "1: Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
-    MAINBU,
+    MAINBU = 1,
     #[doc = "2: Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
-    BUMAIN,
+    BUMAIN = 2,
     #[doc = "3: Main power and backup power are connected without diode."]
-    NODIODE,
+    NODIODE = 3,
 }
 impl From<BUACTPWRCON_A> for u8 {
     #[inline(always)]
     fn from(variant: BUACTPWRCON_A) -> Self {
-        match variant {
-            BUACTPWRCON_A::NONE => 0,
-            BUACTPWRCON_A::MAINBU => 1,
-            BUACTPWRCON_A::BUMAIN => 2,
-            BUACTPWRCON_A::NODIODE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BUACTPWRCON`"]
@@ -375,25 +363,21 @@ impl<'a> BUACTPWRCON_W<'a> {
 }
 #[doc = "Power Connection Configuration When Not in Backup Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BUINACTPWRCON_A {
     #[doc = "0: No connection."]
-    NONE,
+    NONE = 0,
     #[doc = "1: Main power and backup power are connected through a diode, allowing current to flow from backup power source to main power source, but not the other way."]
-    MAINBU,
+    MAINBU = 1,
     #[doc = "2: Main power and backup power are connected through a diode, allowing current to flow from main power source to backup power source, but not the other way."]
-    BUMAIN,
+    BUMAIN = 2,
     #[doc = "3: Main power and backup power are connected without diode."]
-    NODIODE,
+    NODIODE = 3,
 }
 impl From<BUINACTPWRCON_A> for u8 {
     #[inline(always)]
     fn from(variant: BUINACTPWRCON_A) -> Self {
-        match variant {
-            BUINACTPWRCON_A::NONE => 0,
-            BUINACTPWRCON_A::MAINBU => 1,
-            BUINACTPWRCON_A::BUMAIN => 2,
-            BUINACTPWRCON_A::NODIODE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BUINACTPWRCON`"]

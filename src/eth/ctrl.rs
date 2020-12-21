@@ -12,28 +12,23 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "TSU Clock selection value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSUCLKSEL_A {
     #[doc = "0: No TSU clock source selected"]
-    NOCLOCK,
+    NOCLOCK = 0,
     #[doc = "1: Select system clock as TSU Clock"]
-    PLL,
+    PLL = 1,
     #[doc = "2: Select ethernet RX Clock as TSU Clock"]
-    RXCLK,
+    RXCLK = 2,
     #[doc = "3: Select ref clock as TSU Clock"]
-    REFCLK,
+    REFCLK = 3,
     #[doc = "4: Select tsu external pin as TSU Clock"]
-    TSUEXTCLK,
+    TSUEXTCLK = 4,
 }
 impl From<TSUCLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: TSUCLKSEL_A) -> Self {
-        match variant {
-            TSUCLKSEL_A::NOCLOCK => 0,
-            TSUCLKSEL_A::PLL => 1,
-            TSUCLKSEL_A::RXCLK => 2,
-            TSUCLKSEL_A::REFCLK => 3,
-            TSUCLKSEL_A::TSUEXTCLK => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSUCLKSEL`"]

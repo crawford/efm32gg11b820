@@ -26,154 +26,107 @@ impl<'a> SIGSEL_W<'a> {
 }
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SOURCESEL_A {
     #[doc = "0: No source selected"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Peripheral Reflex System"]
-    PRSL,
+    PRSL = 1,
     #[doc = "2: Peripheral Reflex System"]
-    PRS,
+    PRS = 2,
     #[doc = "3: Peripheral Reflex System"]
-    PRSH,
+    PRSH = 3,
     #[doc = "4: Analog Comparator 0"]
-    ACMP0,
+    ACMP0 = 4,
     #[doc = "5: Analog Comparator 1"]
-    ACMP1,
+    ACMP1 = 5,
     #[doc = "6: Analog to Digital Converter 0"]
-    ADC0,
+    ADC0 = 6,
     #[doc = "7: Real-Time Counter"]
-    RTC,
+    RTC = 7,
     #[doc = "8: Real-Time Counter and Calendar"]
-    RTCC,
+    RTCC = 8,
     #[doc = "9: General purpose Input/Output"]
-    GPIOL,
+    GPIOL = 9,
     #[doc = "10: General purpose Input/Output"]
-    GPIOH,
+    GPIOH = 10,
     #[doc = "11: Low Energy Timer 0"]
-    LETIMER0,
+    LETIMER0 = 11,
     #[doc = "12: Low Energy Timer 1"]
-    LETIMER1,
+    LETIMER1 = 12,
     #[doc = "13: Pulse Counter 0"]
-    PCNT0,
+    PCNT0 = 13,
     #[doc = "14: Pulse Counter 1"]
-    PCNT1,
+    PCNT1 = 14,
     #[doc = "15: Pulse Counter 2"]
-    PCNT2,
+    PCNT2 = 15,
     #[doc = "16: CryoTimer"]
-    CRYOTIMER,
+    CRYOTIMER = 16,
     #[doc = "17: Clock Management Unit"]
-    CMU,
+    CMU = 17,
     #[doc = "23: Digital to Analog Converter 0"]
-    VDAC0,
+    VDAC0 = 23,
     #[doc = "24: Low Energy Sensor Interface"]
-    LESENSEL,
+    LESENSEL = 24,
     #[doc = "25: Low Energy Sensor Interface"]
-    LESENSEH,
+    LESENSEH = 25,
     #[doc = "26: Low Energy Sensor Interface"]
-    LESENSED,
+    LESENSED = 26,
     #[doc = "27: Low Energy Sensor Interface"]
-    LESENSE,
+    LESENSE = 27,
     #[doc = "28: Analog Comparator 1"]
-    ACMP2,
+    ACMP2 = 28,
     #[doc = "29: Analog Comparator 3"]
-    ACMP3,
+    ACMP3 = 29,
     #[doc = "30: Analog to Digital Converter 0"]
-    ADC1,
+    ADC1 = 30,
     #[doc = "48: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0,
+    USART0 = 48,
     #[doc = "49: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1,
+    USART1 = 49,
     #[doc = "50: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
-    USART2,
+    USART2 = 50,
     #[doc = "51: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
-    USART3,
+    USART3 = 51,
     #[doc = "52: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
-    USART4,
+    USART4 = 52,
     #[doc = "53: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
-    USART5,
+    USART5 = 53,
     #[doc = "54: Universal Asynchronous Receiver/Transmitter 0"]
-    UART0,
+    UART0 = 54,
     #[doc = "55: Universal Asynchronous Receiver/Transmitter 1"]
-    UART1,
+    UART1 = 55,
     #[doc = "60: Timer 0"]
-    TIMER0,
+    TIMER0 = 60,
     #[doc = "61: Timer 1"]
-    TIMER1,
+    TIMER1 = 61,
     #[doc = "62: Timer 2"]
-    TIMER2,
+    TIMER2 = 62,
     #[doc = "64: Universal Serial Bus Interface"]
-    USB,
+    USB = 64,
     #[doc = "67: `1000011`"]
-    CM4,
+    CM4 = 67,
     #[doc = "80: Timer 3"]
-    TIMER3,
+    TIMER3 = 80,
     #[doc = "82: Wide Timer 0"]
-    WTIMER0,
+    WTIMER0 = 82,
     #[doc = "83: Wide Timer 0"]
-    WTIMER1,
+    WTIMER1 = 83,
     #[doc = "84: Wide Timer 2"]
-    WTIMER2,
+    WTIMER2 = 84,
     #[doc = "85: Wide Timer 3"]
-    WTIMER3,
+    WTIMER3 = 85,
     #[doc = "98: Timer 4"]
-    TIMER4,
+    TIMER4 = 98,
     #[doc = "99: Timer 5"]
-    TIMER5,
+    TIMER5 = 99,
     #[doc = "100: Timer 6"]
-    TIMER6,
+    TIMER6 = 100,
 }
 impl From<SOURCESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SOURCESEL_A) -> Self {
-        match variant {
-            SOURCESEL_A::NONE => 0,
-            SOURCESEL_A::PRSL => 1,
-            SOURCESEL_A::PRS => 2,
-            SOURCESEL_A::PRSH => 3,
-            SOURCESEL_A::ACMP0 => 4,
-            SOURCESEL_A::ACMP1 => 5,
-            SOURCESEL_A::ADC0 => 6,
-            SOURCESEL_A::RTC => 7,
-            SOURCESEL_A::RTCC => 8,
-            SOURCESEL_A::GPIOL => 9,
-            SOURCESEL_A::GPIOH => 10,
-            SOURCESEL_A::LETIMER0 => 11,
-            SOURCESEL_A::LETIMER1 => 12,
-            SOURCESEL_A::PCNT0 => 13,
-            SOURCESEL_A::PCNT1 => 14,
-            SOURCESEL_A::PCNT2 => 15,
-            SOURCESEL_A::CRYOTIMER => 16,
-            SOURCESEL_A::CMU => 17,
-            SOURCESEL_A::VDAC0 => 23,
-            SOURCESEL_A::LESENSEL => 24,
-            SOURCESEL_A::LESENSEH => 25,
-            SOURCESEL_A::LESENSED => 26,
-            SOURCESEL_A::LESENSE => 27,
-            SOURCESEL_A::ACMP2 => 28,
-            SOURCESEL_A::ACMP3 => 29,
-            SOURCESEL_A::ADC1 => 30,
-            SOURCESEL_A::USART0 => 48,
-            SOURCESEL_A::USART1 => 49,
-            SOURCESEL_A::USART2 => 50,
-            SOURCESEL_A::USART3 => 51,
-            SOURCESEL_A::USART4 => 52,
-            SOURCESEL_A::USART5 => 53,
-            SOURCESEL_A::UART0 => 54,
-            SOURCESEL_A::UART1 => 55,
-            SOURCESEL_A::TIMER0 => 60,
-            SOURCESEL_A::TIMER1 => 61,
-            SOURCESEL_A::TIMER2 => 62,
-            SOURCESEL_A::USB => 64,
-            SOURCESEL_A::CM4 => 67,
-            SOURCESEL_A::TIMER3 => 80,
-            SOURCESEL_A::WTIMER0 => 82,
-            SOURCESEL_A::WTIMER1 => 83,
-            SOURCESEL_A::WTIMER2 => 84,
-            SOURCESEL_A::WTIMER3 => 85,
-            SOURCESEL_A::TIMER4 => 98,
-            SOURCESEL_A::TIMER5 => 99,
-            SOURCESEL_A::TIMER6 => 100,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SOURCESEL`"]
@@ -724,25 +677,21 @@ impl<'a> SOURCESEL_W<'a> {
 }
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EDSEL_A {
     #[doc = "0: Signal is left as it is"]
-    OFF,
+    OFF = 0,
     #[doc = "1: A one HFCLK cycle pulse is generated for every positive edge of the incoming signal"]
-    POSEDGE,
+    POSEDGE = 1,
     #[doc = "2: A one HFCLK clock cycle pulse is generated for every negative edge of the incoming signal"]
-    NEGEDGE,
+    NEGEDGE = 2,
     #[doc = "3: A one HFCLK clock cycle pulse is generated for every edge of the incoming signal"]
-    BOTHEDGES,
+    BOTHEDGES = 3,
 }
 impl From<EDSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: EDSEL_A) -> Self {
-        match variant {
-            EDSEL_A::OFF => 0,
-            EDSEL_A::POSEDGE => 1,
-            EDSEL_A::NEGEDGE => 2,
-            EDSEL_A::BOTHEDGES => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EDSEL`"]

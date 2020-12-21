@@ -84,25 +84,21 @@ impl<'a> LBACK_W<'a> {
 }
 #[doc = "Control of CAN_TX Pin\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TX_A {
     #[doc = "0: Reset value, CAN_TX is controlled by the CAN Core."]
-    CORE,
+    CORE = 0,
     #[doc = "1: Sample Point can be monitored at CAN_TX pin."]
-    SAMPT,
+    SAMPT = 1,
     #[doc = "2: CAN_TX pin drives a dominant bit (0) value."]
-    LOW,
+    LOW = 2,
     #[doc = "3: CAN_TX pin drives a recessive bit (1) value."]
-    HIGH,
+    HIGH = 3,
 }
 impl From<TX_A> for u8 {
     #[inline(always)]
     fn from(variant: TX_A) -> Self {
-        match variant {
-            TX_A::CORE => 0,
-            TX_A::SAMPT => 1,
-            TX_A::LOW => 2,
-            TX_A::HIGH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TX`"]

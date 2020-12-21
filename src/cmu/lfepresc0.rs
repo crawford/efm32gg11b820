@@ -12,22 +12,19 @@ impl crate::ResetValue for super::LFEPRESC0 {
 }
 #[doc = "Real-Time Counter and Calendar Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RTCC_A {
     #[doc = "0: LFECLKRTCC = LFECLK"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: LFECLKRTCC = LFECLK/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: LFECLKRTCC = LFECLK/4"]
-    DIV4,
+    DIV4 = 2,
 }
 impl From<RTCC_A> for u8 {
     #[inline(always)]
     fn from(variant: RTCC_A) -> Self {
-        match variant {
-            RTCC_A::DIV1 => 0,
-            RTCC_A::DIV2 => 1,
-            RTCC_A::DIV4 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RTCC`"]

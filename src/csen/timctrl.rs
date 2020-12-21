@@ -12,37 +12,29 @@ impl crate::ResetValue for super::TIMCTRL {
 }
 #[doc = "Period Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PCPRESC_A {
     #[doc = "0: The period counter clock frequency is LFBCLKCSEN/1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: The period counter clock frequency is LFBCLKCSEN/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: The period counter clock frequency is LFBCLKCSEN/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: The period counter clock frequency is LFBCLKCSEN/8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: The period counter clock frequency is LFBCLKCSEN/16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: The period counter clock frequency is LFBCLKCSEN/32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: The period counter clock frequency is LFBCLKCSEN/64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: The period counter clock frequency is LFBCLKCSEN/128"]
-    DIV128,
+    DIV128 = 7,
 }
 impl From<PCPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PCPRESC_A) -> Self {
-        match variant {
-            PCPRESC_A::DIV1 => 0,
-            PCPRESC_A::DIV2 => 1,
-            PCPRESC_A::DIV4 => 2,
-            PCPRESC_A::DIV8 => 3,
-            PCPRESC_A::DIV16 => 4,
-            PCPRESC_A::DIV32 => 5,
-            PCPRESC_A::DIV64 => 6,
-            PCPRESC_A::DIV128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PCPRESC`"]

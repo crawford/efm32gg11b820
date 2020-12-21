@@ -12,37 +12,29 @@ impl crate::ResetValue for super::SINGLECTRLX {
 }
 #[doc = "Single Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VREFSEL_A {
     #[doc = "0: Internal 0.83V Bandgap reference"]
-    VBGR,
+    VBGR = 0,
     #[doc = "1: Scaled AVDD: AVDD*(the VREF attenuation factor)"]
-    VDDXWATT,
+    VDDXWATT = 1,
     #[doc = "2: Scaled singled ended external Vref: ADCn_EXTP*(the VREF attenuation factor)"]
-    VREFPWATT,
+    VREFPWATT = 2,
     #[doc = "3: Raw single ended external Vref: ADCn_EXTP"]
-    VREFP,
+    VREFP = 3,
     #[doc = "4: Special mode used to generate ENTROPY."]
-    VENTROPY,
+    VENTROPY = 4,
     #[doc = "5: Scaled differential external Vref from : (ADCn_EXTP-ADCn_EXTN)*(the VREF attenuation factor)"]
-    VREFPNWATT,
+    VREFPNWATT = 5,
     #[doc = "6: Raw differential external Vref from : (ADCn_EXTP-ADCn_EXTN)"]
-    VREFPN,
+    VREFPN = 6,
     #[doc = "7: Internal Bandgap reference at low setting 0.78V"]
-    VBGRLOW,
+    VBGRLOW = 7,
 }
 impl From<VREFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: VREFSEL_A) -> Self {
-        match variant {
-            VREFSEL_A::VBGR => 0,
-            VREFSEL_A::VDDXWATT => 1,
-            VREFSEL_A::VREFPWATT => 2,
-            VREFSEL_A::VREFP => 3,
-            VREFSEL_A::VENTROPY => 4,
-            VREFSEL_A::VREFPNWATT => 5,
-            VREFSEL_A::VREFPN => 6,
-            VREFSEL_A::VBGRLOW => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VREFSEL`"]
@@ -279,85 +271,61 @@ impl<'a> PRSMODE_W<'a> {
 }
 #[doc = "Single Channel PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS ch 0 triggers single channel"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS ch 1 triggers single channel"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS ch 2 triggers single channel"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS ch 3 triggers single channel"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS ch 4 triggers single channel"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS ch 5 triggers single channel"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS ch 6 triggers single channel"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS ch 7 triggers single channel"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS ch 8 triggers single channel"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS ch 9 triggers single channel"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS ch 10 triggers single channel"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS ch 11 triggers single channel"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS ch 12 triggers single channel"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS ch 13 triggers single channel"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS ch 14 triggers single channel"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS ch 15 triggers single channel"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS ch 16 triggers single channel"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS ch 17 triggers single channel"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS ch 18 triggers single channel"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS ch 19 triggers single channel"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS ch 20 triggers single channel"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS ch 21 triggers single channel"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS ch 22 triggers single channel"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS ch 23 triggers single channel"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]
@@ -693,37 +661,29 @@ impl<'a> CONVSTARTDELAYEN_W<'a> {
 }
 #[doc = "REPDELAY Select for SINGLE REP Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REPDELAY_A {
     #[doc = "0: No delay"]
-    NODELAY,
+    NODELAY = 0,
     #[doc = "1: 4 conversion clock cycles"]
-    _4CYCLES,
+    _4CYCLES = 1,
     #[doc = "2: 8 conversion clock cycles"]
-    _8CYCLES,
+    _8CYCLES = 2,
     #[doc = "3: 16 conversion clock cycles"]
-    _16CYCLES,
+    _16CYCLES = 3,
     #[doc = "4: 32 conversion clock cycles"]
-    _32CYCLES,
+    _32CYCLES = 4,
     #[doc = "5: 64 conversion clock cycles"]
-    _64CYCLES,
+    _64CYCLES = 5,
     #[doc = "6: 128 conversion clock cycles"]
-    _128CYCLES,
+    _128CYCLES = 6,
     #[doc = "7: 256 conversion clock cycles"]
-    _256CYCLES,
+    _256CYCLES = 7,
 }
 impl From<REPDELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: REPDELAY_A) -> Self {
-        match variant {
-            REPDELAY_A::NODELAY => 0,
-            REPDELAY_A::_4CYCLES => 1,
-            REPDELAY_A::_8CYCLES => 2,
-            REPDELAY_A::_16CYCLES => 3,
-            REPDELAY_A::_32CYCLES => 4,
-            REPDELAY_A::_64CYCLES => 5,
-            REPDELAY_A::_128CYCLES => 6,
-            REPDELAY_A::_256CYCLES => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REPDELAY`"]

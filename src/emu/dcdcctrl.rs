@@ -12,25 +12,21 @@ impl crate::ResetValue for super::DCDCCTRL {
 }
 #[doc = "Regulator Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DCDCMODE_A {
     #[doc = "0: DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
-    BYPASS,
+    BYPASS = 0,
     #[doc = "1: DCDC regulator is operating in low noise mode."]
-    LOWNOISE,
+    LOWNOISE = 1,
     #[doc = "2: DCDC regulator is operating in low power mode."]
-    LOWPOWER,
+    LOWPOWER = 2,
     #[doc = "3: DCDC regulator is off and the bypass switch is off. Note: DVDD must be supplied externally"]
-    OFF,
+    OFF = 3,
 }
 impl From<DCDCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DCDCMODE_A) -> Self {
-        match variant {
-            DCDCMODE_A::BYPASS => 0,
-            DCDCMODE_A::LOWNOISE => 1,
-            DCDCMODE_A::LOWPOWER => 2,
-            DCDCMODE_A::OFF => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DCDCMODE`"]

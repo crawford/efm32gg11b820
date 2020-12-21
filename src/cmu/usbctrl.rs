@@ -12,31 +12,25 @@ impl crate::ResetValue for super::USBCTRL {
 }
 #[doc = "USB Rate Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum USBCLKSEL_A {
     #[doc = "0: USHFRCO (clock recovery) is clocking USB"]
-    USHFRCO,
+    USHFRCO = 0,
     #[doc = "1: HFXO clock is used to clock USB"]
-    HFXO,
+    HFXO = 1,
     #[doc = "2: HFXO clock doubler is used to clock USB"]
-    HFXOX2,
+    HFXOX2 = 2,
     #[doc = "3: HFRCO clock is used to clock USB"]
-    HFRCO,
+    HFRCO = 3,
     #[doc = "4: LFXO clock is used to clock USB"]
-    LFXO,
+    LFXO = 4,
     #[doc = "5: LFRCO clock is used to clock USB"]
-    LFRCO,
+    LFRCO = 5,
 }
 impl From<USBCLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: USBCLKSEL_A) -> Self {
-        match variant {
-            USBCLKSEL_A::USHFRCO => 0,
-            USBCLKSEL_A::HFXO => 1,
-            USBCLKSEL_A::HFXOX2 => 2,
-            USBCLKSEL_A::HFRCO => 3,
-            USBCLKSEL_A::LFXO => 4,
-            USBCLKSEL_A::LFRCO => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `USBCLKSEL`"]

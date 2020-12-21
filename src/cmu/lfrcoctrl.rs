@@ -98,25 +98,21 @@ impl<'a> ENDEM_W<'a> {
 }
 #[doc = "Control Vref Update Rate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VREFUPDATE_A {
     #[doc = "0: 32 clocks."]
-    _32CYCLES,
+    _32CYCLES = 0,
     #[doc = "1: 64 clocks."]
-    _64CYCLES,
+    _64CYCLES = 1,
     #[doc = "2: 128 clocks."]
-    _128CYCLES,
+    _128CYCLES = 2,
     #[doc = "3: 256 clocks."]
-    _256CYCLES,
+    _256CYCLES = 3,
 }
 impl From<VREFUPDATE_A> for u8 {
     #[inline(always)]
     fn from(variant: VREFUPDATE_A) -> Self {
-        match variant {
-            VREFUPDATE_A::_32CYCLES => 0,
-            VREFUPDATE_A::_64CYCLES => 1,
-            VREFUPDATE_A::_128CYCLES => 2,
-            VREFUPDATE_A::_256CYCLES => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VREFUPDATE`"]
@@ -195,22 +191,19 @@ impl<'a> VREFUPDATE_W<'a> {
 }
 #[doc = "LFRCO Timeout\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
-    _2CYCLES,
+    _2CYCLES = 0,
     #[doc = "1: Timeout period of 16 cycles"]
-    _16CYCLES,
+    _16CYCLES = 1,
     #[doc = "2: Timeout period of 32 cycles"]
-    _32CYCLES,
+    _32CYCLES = 2,
 }
 impl From<TIMEOUT_A> for u8 {
     #[inline(always)]
     fn from(variant: TIMEOUT_A) -> Self {
-        match variant {
-            TIMEOUT_A::_2CYCLES => 0,
-            TIMEOUT_A::_16CYCLES => 1,
-            TIMEOUT_A::_32CYCLES => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMEOUT`"]

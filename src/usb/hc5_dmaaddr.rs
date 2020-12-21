@@ -25,14 +25,16 @@ impl<'a> DMAADDR_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Buffer DMA Mode: \\[31:0\\] DMA Address"]
+    #[doc = "Bits 0:31 - Buffer DMA Mode: \\[31:0\\]
+DMA Address"]
     #[inline(always)]
     pub fn dmaaddr(&self) -> DMAADDR_R {
         DMAADDR_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Buffer DMA Mode: \\[31:0\\] DMA Address"]
+    #[doc = "Bits 0:31 - Buffer DMA Mode: \\[31:0\\]
+DMA Address"]
     #[inline(always)]
     pub fn dmaaddr(&mut self) -> DMAADDR_W {
         DMAADDR_W { w: self }

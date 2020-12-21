@@ -12,25 +12,21 @@ impl crate::ResetValue for super::IDLECONF {
 }
 #[doc = "Channel 0 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH0_A {
     #[doc = "0: CH0 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH0 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH0 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH0 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH0_A> for u8 {
     #[inline(always)]
     fn from(variant: CH0_A) -> Self {
-        match variant {
-            CH0_A::DISABLE => 0,
-            CH0_A::HIGH => 1,
-            CH0_A::LOW => 2,
-            CH0_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH0`"]
@@ -109,25 +105,21 @@ impl<'a> CH0_W<'a> {
 }
 #[doc = "Channel 1 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH1_A {
     #[doc = "0: CH1 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH1 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH1 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH1 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH1_A> for u8 {
     #[inline(always)]
     fn from(variant: CH1_A) -> Self {
-        match variant {
-            CH1_A::DISABLE => 0,
-            CH1_A::HIGH => 1,
-            CH1_A::LOW => 2,
-            CH1_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH1`"]
@@ -206,25 +198,21 @@ impl<'a> CH1_W<'a> {
 }
 #[doc = "Channel 2 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH2_A {
     #[doc = "0: CH2 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH2 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH2 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH2 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH2_A> for u8 {
     #[inline(always)]
     fn from(variant: CH2_A) -> Self {
-        match variant {
-            CH2_A::DISABLE => 0,
-            CH2_A::HIGH => 1,
-            CH2_A::LOW => 2,
-            CH2_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH2`"]
@@ -303,25 +291,21 @@ impl<'a> CH2_W<'a> {
 }
 #[doc = "Channel 3 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH3_A {
     #[doc = "0: CH3 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH3 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH3 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH3 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH3_A> for u8 {
     #[inline(always)]
     fn from(variant: CH3_A) -> Self {
-        match variant {
-            CH3_A::DISABLE => 0,
-            CH3_A::HIGH => 1,
-            CH3_A::LOW => 2,
-            CH3_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH3`"]
@@ -400,25 +384,21 @@ impl<'a> CH3_W<'a> {
 }
 #[doc = "Channel 4 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH4_A {
     #[doc = "0: CH4 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH4 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH4 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH4 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH4_A> for u8 {
     #[inline(always)]
     fn from(variant: CH4_A) -> Self {
-        match variant {
-            CH4_A::DISABLE => 0,
-            CH4_A::HIGH => 1,
-            CH4_A::LOW => 2,
-            CH4_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH4`"]
@@ -497,25 +477,21 @@ impl<'a> CH4_W<'a> {
 }
 #[doc = "Channel 5 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH5_A {
     #[doc = "0: CH5 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH5 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH5 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH5 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH5_A> for u8 {
     #[inline(always)]
     fn from(variant: CH5_A) -> Self {
-        match variant {
-            CH5_A::DISABLE => 0,
-            CH5_A::HIGH => 1,
-            CH5_A::LOW => 2,
-            CH5_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH5`"]
@@ -594,25 +570,21 @@ impl<'a> CH5_W<'a> {
 }
 #[doc = "Channel 6 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH6_A {
     #[doc = "0: CH6 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH6 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH6 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH6 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH6_A> for u8 {
     #[inline(always)]
     fn from(variant: CH6_A) -> Self {
-        match variant {
-            CH6_A::DISABLE => 0,
-            CH6_A::HIGH => 1,
-            CH6_A::LOW => 2,
-            CH6_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH6`"]
@@ -691,25 +663,21 @@ impl<'a> CH6_W<'a> {
 }
 #[doc = "Channel 7 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH7_A {
     #[doc = "0: CH7 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH7 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH7 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH7 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH7_A> for u8 {
     #[inline(always)]
     fn from(variant: CH7_A) -> Self {
-        match variant {
-            CH7_A::DISABLE => 0,
-            CH7_A::HIGH => 1,
-            CH7_A::LOW => 2,
-            CH7_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH7`"]
@@ -788,25 +756,21 @@ impl<'a> CH7_W<'a> {
 }
 #[doc = "Channel 8 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH8_A {
     #[doc = "0: CH8 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH8 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH8 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH8 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH8_A> for u8 {
     #[inline(always)]
     fn from(variant: CH8_A) -> Self {
-        match variant {
-            CH8_A::DISABLE => 0,
-            CH8_A::HIGH => 1,
-            CH8_A::LOW => 2,
-            CH8_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH8`"]
@@ -885,25 +849,21 @@ impl<'a> CH8_W<'a> {
 }
 #[doc = "Channel 9 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH9_A {
     #[doc = "0: CH9 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH9 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH9 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH9 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH9_A> for u8 {
     #[inline(always)]
     fn from(variant: CH9_A) -> Self {
-        match variant {
-            CH9_A::DISABLE => 0,
-            CH9_A::HIGH => 1,
-            CH9_A::LOW => 2,
-            CH9_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH9`"]
@@ -982,25 +942,21 @@ impl<'a> CH9_W<'a> {
 }
 #[doc = "Channel 10 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH10_A {
     #[doc = "0: CH10 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH10 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH10 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH10 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH10_A> for u8 {
     #[inline(always)]
     fn from(variant: CH10_A) -> Self {
-        match variant {
-            CH10_A::DISABLE => 0,
-            CH10_A::HIGH => 1,
-            CH10_A::LOW => 2,
-            CH10_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH10`"]
@@ -1079,25 +1035,21 @@ impl<'a> CH10_W<'a> {
 }
 #[doc = "Channel 11 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH11_A {
     #[doc = "0: CH11 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH11 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH11 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH11 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH11_A> for u8 {
     #[inline(always)]
     fn from(variant: CH11_A) -> Self {
-        match variant {
-            CH11_A::DISABLE => 0,
-            CH11_A::HIGH => 1,
-            CH11_A::LOW => 2,
-            CH11_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH11`"]
@@ -1176,25 +1128,21 @@ impl<'a> CH11_W<'a> {
 }
 #[doc = "Channel 12 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH12_A {
     #[doc = "0: CH12 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH12 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH12 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH12 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH12_A> for u8 {
     #[inline(always)]
     fn from(variant: CH12_A) -> Self {
-        match variant {
-            CH12_A::DISABLE => 0,
-            CH12_A::HIGH => 1,
-            CH12_A::LOW => 2,
-            CH12_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH12`"]
@@ -1273,25 +1221,21 @@ impl<'a> CH12_W<'a> {
 }
 #[doc = "Channel 13 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH13_A {
     #[doc = "0: CH13 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH13 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH13 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH13 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH13_A> for u8 {
     #[inline(always)]
     fn from(variant: CH13_A) -> Self {
-        match variant {
-            CH13_A::DISABLE => 0,
-            CH13_A::HIGH => 1,
-            CH13_A::LOW => 2,
-            CH13_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH13`"]
@@ -1370,25 +1314,21 @@ impl<'a> CH13_W<'a> {
 }
 #[doc = "Channel 14 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH14_A {
     #[doc = "0: CH14 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH14 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH14 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH14 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH14_A> for u8 {
     #[inline(always)]
     fn from(variant: CH14_A) -> Self {
-        match variant {
-            CH14_A::DISABLE => 0,
-            CH14_A::HIGH => 1,
-            CH14_A::LOW => 2,
-            CH14_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH14`"]
@@ -1467,25 +1407,21 @@ impl<'a> CH14_W<'a> {
 }
 #[doc = "Channel 15 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH15_A {
     #[doc = "0: CH15 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: CH15 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: CH15 output is low in idle phase"]
-    LOW,
+    LOW = 2,
     #[doc = "3: CH15 output is connected to VDAC output in idle phase. Note that this mode is only available on channels 0, 1, 2, 3, 12, 13, 14, 15"]
-    DAC,
+    DAC = 3,
 }
 impl From<CH15_A> for u8 {
     #[inline(always)]
     fn from(variant: CH15_A) -> Self {
-        match variant {
-            CH15_A::DISABLE => 0,
-            CH15_A::HIGH => 1,
-            CH15_A::LOW => 2,
-            CH15_A::DAC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH15`"]

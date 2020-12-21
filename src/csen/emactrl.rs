@@ -12,34 +12,27 @@ impl crate::ResetValue for super::EMACTRL {
 }
 #[doc = "EMA Sample Weight\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EMASAMPLE_A {
     #[doc = "0: EMA weight (N) is 1."]
-    W1,
+    W1 = 0,
     #[doc = "1: EMA weight (N) is 2."]
-    W2,
+    W2 = 1,
     #[doc = "2: EMA weight (N) is 4."]
-    W4,
+    W4 = 2,
     #[doc = "3: EMA weight (N) is 8."]
-    W8,
+    W8 = 3,
     #[doc = "4: EMA weight (N) is 16."]
-    W16,
+    W16 = 4,
     #[doc = "5: EMA weight (N) is 32."]
-    W32,
+    W32 = 5,
     #[doc = "6: EMA weight (N) is 64."]
-    W64,
+    W64 = 6,
 }
 impl From<EMASAMPLE_A> for u8 {
     #[inline(always)]
     fn from(variant: EMASAMPLE_A) -> Self {
-        match variant {
-            EMASAMPLE_A::W1 => 0,
-            EMASAMPLE_A::W2 => 1,
-            EMASAMPLE_A::W4 => 2,
-            EMASAMPLE_A::W8 => 3,
-            EMASAMPLE_A::W16 => 4,
-            EMASAMPLE_A::W32 => 5,
-            EMASAMPLE_A::W64 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EMASAMPLE`"]

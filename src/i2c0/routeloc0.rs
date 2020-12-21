@@ -12,37 +12,29 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDALOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<SDALOC_A> for u8 {
     #[inline(always)]
     fn from(variant: SDALOC_A) -> Self {
-        match variant {
-            SDALOC_A::LOC0 => 0,
-            SDALOC_A::LOC1 => 1,
-            SDALOC_A::LOC2 => 2,
-            SDALOC_A::LOC3 => 3,
-            SDALOC_A::LOC4 => 4,
-            SDALOC_A::LOC5 => 5,
-            SDALOC_A::LOC6 => 6,
-            SDALOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDALOC`"]
@@ -164,37 +156,29 @@ impl<'a> SDALOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCLLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<SCLLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: SCLLOC_A) -> Self {
-        match variant {
-            SCLLOC_A::LOC0 => 0,
-            SCLLOC_A::LOC1 => 1,
-            SCLLOC_A::LOC2 => 2,
-            SCLLOC_A::LOC3 => 3,
-            SCLLOC_A::LOC4 => 4,
-            SCLLOC_A::LOC5 => 5,
-            SCLLOC_A::LOC6 => 6,
-            SCLLOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SCLLOC`"]

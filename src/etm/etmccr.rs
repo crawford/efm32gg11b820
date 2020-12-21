@@ -12,22 +12,19 @@ pub type COUNTNUM_R = crate::R<u8, u8>;
 pub type SEQPRES_R = crate::R<bool, bool>;
 #[doc = "Number of External Inputs\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTINPNUM_A {
     #[doc = "0: Zero inputs presents"]
-    ZERO,
+    ZERO = 0,
     #[doc = "1: One inputs presents"]
-    ONE,
+    ONE = 1,
     #[doc = "2: Two inputs presents"]
-    TWO,
+    TWO = 2,
 }
 impl From<EXTINPNUM_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTINPNUM_A) -> Self {
-        match variant {
-            EXTINPNUM_A::ZERO => 0,
-            EXTINPNUM_A::ONE => 1,
-            EXTINPNUM_A::TWO => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTINPNUM`"]

@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Configure Scan Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCANMODE_A {
     #[doc = "0: A new scan is started each time the period counter overflows"]
-    PERIODIC,
+    PERIODIC = 0,
     #[doc = "1: A single scan is performed when START in CMD is set"]
-    ONESHOT,
+    ONESHOT = 1,
     #[doc = "2: Pulse on PRS channel"]
-    PRS,
+    PRS = 2,
 }
 impl From<SCANMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: SCANMODE_A) -> Self {
-        match variant {
-            SCANMODE_A::PERIODIC => 0,
-            SCANMODE_A::ONESHOT => 1,
-            SCANMODE_A::PRS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SCANMODE`"]
@@ -94,85 +91,61 @@ impl<'a> SCANMODE_W<'a> {
 }
 #[doc = "Scan Start PRS Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]
@@ -470,25 +443,21 @@ impl<'a> PRSSEL_W<'a> {
 }
 #[doc = "Select Scan Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCANCONF_A {
     #[doc = "0: The channel configuration register registers used are directly mapped to the channel number."]
-    DIRMAP,
+    DIRMAP = 0,
     #[doc = "1: The channel configuration register registers used are CHX+8_CONF for channels 0-7 and CHX-8_CONF for channels 8-15."]
-    INVMAP,
+    INVMAP = 1,
     #[doc = "2: The channel configuration register registers used toggles between CHX_CONF and CHX+8_CONF when channel x triggers"]
-    TOGGLE,
+    TOGGLE = 2,
     #[doc = "3: The decoder state defines the CONF registers to be used."]
-    DECDEF,
+    DECDEF = 3,
 }
 impl From<SCANCONF_A> for u8 {
     #[inline(always)]
     fn from(variant: SCANCONF_A) -> Self {
-        match variant {
-            SCANCONF_A::DIRMAP => 0,
-            SCANCONF_A::INVMAP => 1,
-            SCANCONF_A::TOGGLE => 2,
-            SCANCONF_A::DECDEF => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SCANCONF`"]
@@ -687,22 +656,19 @@ impl<'a> BUFIDL_W<'a> {
 }
 #[doc = "DMA Wake-up From EM2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMAWU_A {
     #[doc = "0: No DMA wake-up from EM2"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: DMA wake-up from EM2 when data is valid in the result buffer"]
-    BUFDATAV,
+    BUFDATAV = 1,
     #[doc = "2: DMA wake-up from EM2 when the result buffer is full/half-full depending on BUFIDL configuration"]
-    BUFLEVEL,
+    BUFLEVEL = 2,
 }
 impl From<DMAWU_A> for u8 {
     #[inline(always)]
     fn from(variant: DMAWU_A) -> Self {
-        match variant {
-            DMAWU_A::DISABLE => 0,
-            DMAWU_A::BUFDATAV => 1,
-            DMAWU_A::BUFLEVEL => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMAWU`"]

@@ -264,7 +264,7 @@ pub struct RegisterBlock {
     #[doc = "0x454 - Configuration Lock Register"]
     pub lock: LOCK,
 }
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_ctrl](pa_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_ctrl](pa_ctrl) module"]
 pub type PA_CTRL = crate::Reg<u32, _PA_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -275,7 +275,7 @@ impl crate::Readable for PA_CTRL {}
 impl crate::Writable for PA_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pa_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_model](pa_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_model](pa_model) module"]
 pub type PA_MODEL = crate::Reg<u32, _PA_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -286,7 +286,7 @@ impl crate::Readable for PA_MODEL {}
 impl crate::Writable for PA_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pa_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_modeh](pa_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_modeh](pa_modeh) module"]
 pub type PA_MODEH = crate::Reg<u32, _PA_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -297,7 +297,7 @@ impl crate::Readable for PA_MODEH {}
 impl crate::Writable for PA_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pa_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_dout](pa_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_dout](pa_dout) module"]
 pub type PA_DOUT = crate::Reg<u32, _PA_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -308,7 +308,7 @@ impl crate::Readable for PA_DOUT {}
 impl crate::Writable for PA_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pa_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_douttgl](pa_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_douttgl](pa_douttgl) module"]
 pub type PA_DOUTTGL = crate::Reg<u32, _PA_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -317,7 +317,7 @@ pub struct _PA_DOUTTGL;
 impl crate::Writable for PA_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pa_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_din](pa_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_din](pa_din) module"]
 pub type PA_DIN = crate::Reg<u32, _PA_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -326,7 +326,7 @@ pub struct _PA_DIN;
 impl crate::Readable for PA_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pa_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_pinlockn](pa_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_pinlockn](pa_pinlockn) module"]
 pub type PA_PINLOCKN = crate::Reg<u32, _PA_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -337,7 +337,7 @@ impl crate::Readable for PA_PINLOCKN {}
 impl crate::Writable for PA_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pa_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pa_ovtdis](pa_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pa_ovtdis](pa_ovtdis) module"]
 pub type PA_OVTDIS = crate::Reg<u32, _PA_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -348,7 +348,7 @@ impl crate::Readable for PA_OVTDIS {}
 impl crate::Writable for PA_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pa_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_ctrl](pb_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_ctrl](pb_ctrl) module"]
 pub type PB_CTRL = crate::Reg<u32, _PB_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -359,7 +359,7 @@ impl crate::Readable for PB_CTRL {}
 impl crate::Writable for PB_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pb_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_model](pb_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_model](pb_model) module"]
 pub type PB_MODEL = crate::Reg<u32, _PB_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -370,7 +370,7 @@ impl crate::Readable for PB_MODEL {}
 impl crate::Writable for PB_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pb_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_modeh](pb_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_modeh](pb_modeh) module"]
 pub type PB_MODEH = crate::Reg<u32, _PB_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -381,7 +381,7 @@ impl crate::Readable for PB_MODEH {}
 impl crate::Writable for PB_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pb_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_dout](pb_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_dout](pb_dout) module"]
 pub type PB_DOUT = crate::Reg<u32, _PB_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -392,7 +392,7 @@ impl crate::Readable for PB_DOUT {}
 impl crate::Writable for PB_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pb_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_douttgl](pb_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_douttgl](pb_douttgl) module"]
 pub type PB_DOUTTGL = crate::Reg<u32, _PB_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -401,7 +401,7 @@ pub struct _PB_DOUTTGL;
 impl crate::Writable for PB_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pb_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_din](pb_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_din](pb_din) module"]
 pub type PB_DIN = crate::Reg<u32, _PB_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -410,7 +410,7 @@ pub struct _PB_DIN;
 impl crate::Readable for PB_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pb_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_pinlockn](pb_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_pinlockn](pb_pinlockn) module"]
 pub type PB_PINLOCKN = crate::Reg<u32, _PB_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -421,7 +421,7 @@ impl crate::Readable for PB_PINLOCKN {}
 impl crate::Writable for PB_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pb_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pb_ovtdis](pb_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_ovtdis](pb_ovtdis) module"]
 pub type PB_OVTDIS = crate::Reg<u32, _PB_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -432,7 +432,7 @@ impl crate::Readable for PB_OVTDIS {}
 impl crate::Writable for PB_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pb_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_ctrl](pc_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_ctrl](pc_ctrl) module"]
 pub type PC_CTRL = crate::Reg<u32, _PC_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -443,7 +443,7 @@ impl crate::Readable for PC_CTRL {}
 impl crate::Writable for PC_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pc_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_model](pc_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_model](pc_model) module"]
 pub type PC_MODEL = crate::Reg<u32, _PC_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -454,7 +454,7 @@ impl crate::Readable for PC_MODEL {}
 impl crate::Writable for PC_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pc_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_modeh](pc_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_modeh](pc_modeh) module"]
 pub type PC_MODEH = crate::Reg<u32, _PC_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -465,7 +465,7 @@ impl crate::Readable for PC_MODEH {}
 impl crate::Writable for PC_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pc_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_dout](pc_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_dout](pc_dout) module"]
 pub type PC_DOUT = crate::Reg<u32, _PC_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -476,7 +476,7 @@ impl crate::Readable for PC_DOUT {}
 impl crate::Writable for PC_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pc_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_douttgl](pc_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_douttgl](pc_douttgl) module"]
 pub type PC_DOUTTGL = crate::Reg<u32, _PC_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -485,7 +485,7 @@ pub struct _PC_DOUTTGL;
 impl crate::Writable for PC_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pc_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_din](pc_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_din](pc_din) module"]
 pub type PC_DIN = crate::Reg<u32, _PC_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -494,7 +494,7 @@ pub struct _PC_DIN;
 impl crate::Readable for PC_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pc_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_pinlockn](pc_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_pinlockn](pc_pinlockn) module"]
 pub type PC_PINLOCKN = crate::Reg<u32, _PC_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -505,7 +505,7 @@ impl crate::Readable for PC_PINLOCKN {}
 impl crate::Writable for PC_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pc_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pc_ovtdis](pc_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_ovtdis](pc_ovtdis) module"]
 pub type PC_OVTDIS = crate::Reg<u32, _PC_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -516,7 +516,7 @@ impl crate::Readable for PC_OVTDIS {}
 impl crate::Writable for PC_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pc_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_ctrl](pd_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_ctrl](pd_ctrl) module"]
 pub type PD_CTRL = crate::Reg<u32, _PD_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -527,7 +527,7 @@ impl crate::Readable for PD_CTRL {}
 impl crate::Writable for PD_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pd_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_model](pd_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_model](pd_model) module"]
 pub type PD_MODEL = crate::Reg<u32, _PD_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -538,7 +538,7 @@ impl crate::Readable for PD_MODEL {}
 impl crate::Writable for PD_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pd_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_modeh](pd_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_modeh](pd_modeh) module"]
 pub type PD_MODEH = crate::Reg<u32, _PD_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -549,7 +549,7 @@ impl crate::Readable for PD_MODEH {}
 impl crate::Writable for PD_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pd_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_dout](pd_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_dout](pd_dout) module"]
 pub type PD_DOUT = crate::Reg<u32, _PD_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -560,7 +560,7 @@ impl crate::Readable for PD_DOUT {}
 impl crate::Writable for PD_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pd_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_douttgl](pd_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_douttgl](pd_douttgl) module"]
 pub type PD_DOUTTGL = crate::Reg<u32, _PD_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -569,7 +569,7 @@ pub struct _PD_DOUTTGL;
 impl crate::Writable for PD_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pd_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_din](pd_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_din](pd_din) module"]
 pub type PD_DIN = crate::Reg<u32, _PD_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -578,7 +578,7 @@ pub struct _PD_DIN;
 impl crate::Readable for PD_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pd_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_pinlockn](pd_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_pinlockn](pd_pinlockn) module"]
 pub type PD_PINLOCKN = crate::Reg<u32, _PD_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -589,7 +589,7 @@ impl crate::Readable for PD_PINLOCKN {}
 impl crate::Writable for PD_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pd_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pd_ovtdis](pd_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_ovtdis](pd_ovtdis) module"]
 pub type PD_OVTDIS = crate::Reg<u32, _PD_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -600,7 +600,7 @@ impl crate::Readable for PD_OVTDIS {}
 impl crate::Writable for PD_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pd_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_ctrl](pe_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_ctrl](pe_ctrl) module"]
 pub type PE_CTRL = crate::Reg<u32, _PE_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -611,7 +611,7 @@ impl crate::Readable for PE_CTRL {}
 impl crate::Writable for PE_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pe_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_model](pe_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_model](pe_model) module"]
 pub type PE_MODEL = crate::Reg<u32, _PE_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -622,7 +622,7 @@ impl crate::Readable for PE_MODEL {}
 impl crate::Writable for PE_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pe_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_modeh](pe_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_modeh](pe_modeh) module"]
 pub type PE_MODEH = crate::Reg<u32, _PE_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -633,7 +633,7 @@ impl crate::Readable for PE_MODEH {}
 impl crate::Writable for PE_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pe_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_dout](pe_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_dout](pe_dout) module"]
 pub type PE_DOUT = crate::Reg<u32, _PE_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -644,7 +644,7 @@ impl crate::Readable for PE_DOUT {}
 impl crate::Writable for PE_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pe_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_douttgl](pe_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_douttgl](pe_douttgl) module"]
 pub type PE_DOUTTGL = crate::Reg<u32, _PE_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -653,7 +653,7 @@ pub struct _PE_DOUTTGL;
 impl crate::Writable for PE_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pe_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_din](pe_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_din](pe_din) module"]
 pub type PE_DIN = crate::Reg<u32, _PE_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -662,7 +662,7 @@ pub struct _PE_DIN;
 impl crate::Readable for PE_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pe_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_pinlockn](pe_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_pinlockn](pe_pinlockn) module"]
 pub type PE_PINLOCKN = crate::Reg<u32, _PE_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -673,7 +673,7 @@ impl crate::Readable for PE_PINLOCKN {}
 impl crate::Writable for PE_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pe_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pe_ovtdis](pe_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_ovtdis](pe_ovtdis) module"]
 pub type PE_OVTDIS = crate::Reg<u32, _PE_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -684,7 +684,7 @@ impl crate::Readable for PE_OVTDIS {}
 impl crate::Writable for PE_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pe_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_ctrl](pf_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_ctrl](pf_ctrl) module"]
 pub type PF_CTRL = crate::Reg<u32, _PF_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -695,7 +695,7 @@ impl crate::Readable for PF_CTRL {}
 impl crate::Writable for PF_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pf_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_model](pf_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_model](pf_model) module"]
 pub type PF_MODEL = crate::Reg<u32, _PF_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -706,7 +706,7 @@ impl crate::Readable for PF_MODEL {}
 impl crate::Writable for PF_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pf_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_modeh](pf_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_modeh](pf_modeh) module"]
 pub type PF_MODEH = crate::Reg<u32, _PF_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -717,7 +717,7 @@ impl crate::Readable for PF_MODEH {}
 impl crate::Writable for PF_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pf_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_dout](pf_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_dout](pf_dout) module"]
 pub type PF_DOUT = crate::Reg<u32, _PF_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -728,7 +728,7 @@ impl crate::Readable for PF_DOUT {}
 impl crate::Writable for PF_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pf_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_douttgl](pf_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_douttgl](pf_douttgl) module"]
 pub type PF_DOUTTGL = crate::Reg<u32, _PF_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -737,7 +737,7 @@ pub struct _PF_DOUTTGL;
 impl crate::Writable for PF_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pf_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_din](pf_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_din](pf_din) module"]
 pub type PF_DIN = crate::Reg<u32, _PF_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -746,7 +746,7 @@ pub struct _PF_DIN;
 impl crate::Readable for PF_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pf_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_pinlockn](pf_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_pinlockn](pf_pinlockn) module"]
 pub type PF_PINLOCKN = crate::Reg<u32, _PF_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -757,7 +757,7 @@ impl crate::Readable for PF_PINLOCKN {}
 impl crate::Writable for PF_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pf_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pf_ovtdis](pf_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pf_ovtdis](pf_ovtdis) module"]
 pub type PF_OVTDIS = crate::Reg<u32, _PF_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -768,7 +768,7 @@ impl crate::Readable for PF_OVTDIS {}
 impl crate::Writable for PF_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pf_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_ctrl](pg_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_ctrl](pg_ctrl) module"]
 pub type PG_CTRL = crate::Reg<u32, _PG_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -779,7 +779,7 @@ impl crate::Readable for PG_CTRL {}
 impl crate::Writable for PG_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pg_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_model](pg_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_model](pg_model) module"]
 pub type PG_MODEL = crate::Reg<u32, _PG_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -790,7 +790,7 @@ impl crate::Readable for PG_MODEL {}
 impl crate::Writable for PG_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pg_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_modeh](pg_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_modeh](pg_modeh) module"]
 pub type PG_MODEH = crate::Reg<u32, _PG_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -801,7 +801,7 @@ impl crate::Readable for PG_MODEH {}
 impl crate::Writable for PG_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pg_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_dout](pg_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_dout](pg_dout) module"]
 pub type PG_DOUT = crate::Reg<u32, _PG_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -812,7 +812,7 @@ impl crate::Readable for PG_DOUT {}
 impl crate::Writable for PG_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pg_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_douttgl](pg_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_douttgl](pg_douttgl) module"]
 pub type PG_DOUTTGL = crate::Reg<u32, _PG_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -821,7 +821,7 @@ pub struct _PG_DOUTTGL;
 impl crate::Writable for PG_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pg_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_din](pg_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_din](pg_din) module"]
 pub type PG_DIN = crate::Reg<u32, _PG_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -830,7 +830,7 @@ pub struct _PG_DIN;
 impl crate::Readable for PG_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pg_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_pinlockn](pg_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_pinlockn](pg_pinlockn) module"]
 pub type PG_PINLOCKN = crate::Reg<u32, _PG_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -841,7 +841,7 @@ impl crate::Readable for PG_PINLOCKN {}
 impl crate::Writable for PG_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pg_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pg_ovtdis](pg_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_ovtdis](pg_ovtdis) module"]
 pub type PG_OVTDIS = crate::Reg<u32, _PG_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -852,7 +852,7 @@ impl crate::Readable for PG_OVTDIS {}
 impl crate::Writable for PG_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pg_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_ctrl](ph_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_ctrl](ph_ctrl) module"]
 pub type PH_CTRL = crate::Reg<u32, _PH_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -863,7 +863,7 @@ impl crate::Readable for PH_CTRL {}
 impl crate::Writable for PH_CTRL {}
 #[doc = "Port Control Register"]
 pub mod ph_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_model](ph_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_model](ph_model) module"]
 pub type PH_MODEL = crate::Reg<u32, _PH_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -874,7 +874,7 @@ impl crate::Readable for PH_MODEL {}
 impl crate::Writable for PH_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod ph_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_modeh](ph_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_modeh](ph_modeh) module"]
 pub type PH_MODEH = crate::Reg<u32, _PH_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -885,7 +885,7 @@ impl crate::Readable for PH_MODEH {}
 impl crate::Writable for PH_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod ph_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_dout](ph_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_dout](ph_dout) module"]
 pub type PH_DOUT = crate::Reg<u32, _PH_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -896,7 +896,7 @@ impl crate::Readable for PH_DOUT {}
 impl crate::Writable for PH_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod ph_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_douttgl](ph_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_douttgl](ph_douttgl) module"]
 pub type PH_DOUTTGL = crate::Reg<u32, _PH_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -905,7 +905,7 @@ pub struct _PH_DOUTTGL;
 impl crate::Writable for PH_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod ph_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_din](ph_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_din](ph_din) module"]
 pub type PH_DIN = crate::Reg<u32, _PH_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -914,7 +914,7 @@ pub struct _PH_DIN;
 impl crate::Readable for PH_DIN {}
 #[doc = "Port Data in Register"]
 pub mod ph_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_pinlockn](ph_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_pinlockn](ph_pinlockn) module"]
 pub type PH_PINLOCKN = crate::Reg<u32, _PH_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -925,7 +925,7 @@ impl crate::Readable for PH_PINLOCKN {}
 impl crate::Writable for PH_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod ph_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ph_ovtdis](ph_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ph_ovtdis](ph_ovtdis) module"]
 pub type PH_OVTDIS = crate::Reg<u32, _PH_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -936,7 +936,7 @@ impl crate::Readable for PH_OVTDIS {}
 impl crate::Writable for PH_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod ph_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_ctrl](pi_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_ctrl](pi_ctrl) module"]
 pub type PI_CTRL = crate::Reg<u32, _PI_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -947,7 +947,7 @@ impl crate::Readable for PI_CTRL {}
 impl crate::Writable for PI_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pi_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_model](pi_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_model](pi_model) module"]
 pub type PI_MODEL = crate::Reg<u32, _PI_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -958,7 +958,7 @@ impl crate::Readable for PI_MODEL {}
 impl crate::Writable for PI_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pi_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_modeh](pi_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_modeh](pi_modeh) module"]
 pub type PI_MODEH = crate::Reg<u32, _PI_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -969,7 +969,7 @@ impl crate::Readable for PI_MODEH {}
 impl crate::Writable for PI_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pi_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_dout](pi_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_dout](pi_dout) module"]
 pub type PI_DOUT = crate::Reg<u32, _PI_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -980,7 +980,7 @@ impl crate::Readable for PI_DOUT {}
 impl crate::Writable for PI_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pi_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_douttgl](pi_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_douttgl](pi_douttgl) module"]
 pub type PI_DOUTTGL = crate::Reg<u32, _PI_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -989,7 +989,7 @@ pub struct _PI_DOUTTGL;
 impl crate::Writable for PI_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pi_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_din](pi_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_din](pi_din) module"]
 pub type PI_DIN = crate::Reg<u32, _PI_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -998,7 +998,7 @@ pub struct _PI_DIN;
 impl crate::Readable for PI_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pi_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_pinlockn](pi_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_pinlockn](pi_pinlockn) module"]
 pub type PI_PINLOCKN = crate::Reg<u32, _PI_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1009,7 +1009,7 @@ impl crate::Readable for PI_PINLOCKN {}
 impl crate::Writable for PI_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pi_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pi_ovtdis](pi_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pi_ovtdis](pi_ovtdis) module"]
 pub type PI_OVTDIS = crate::Reg<u32, _PI_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1020,7 +1020,7 @@ impl crate::Readable for PI_OVTDIS {}
 impl crate::Writable for PI_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pi_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_ctrl](pj_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_ctrl](pj_ctrl) module"]
 pub type PJ_CTRL = crate::Reg<u32, _PJ_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1031,7 +1031,7 @@ impl crate::Readable for PJ_CTRL {}
 impl crate::Writable for PJ_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pj_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_model](pj_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_model](pj_model) module"]
 pub type PJ_MODEL = crate::Reg<u32, _PJ_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1042,7 +1042,7 @@ impl crate::Readable for PJ_MODEL {}
 impl crate::Writable for PJ_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pj_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_modeh](pj_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_modeh](pj_modeh) module"]
 pub type PJ_MODEH = crate::Reg<u32, _PJ_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1053,7 +1053,7 @@ impl crate::Readable for PJ_MODEH {}
 impl crate::Writable for PJ_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pj_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_dout](pj_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_dout](pj_dout) module"]
 pub type PJ_DOUT = crate::Reg<u32, _PJ_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1064,7 +1064,7 @@ impl crate::Readable for PJ_DOUT {}
 impl crate::Writable for PJ_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pj_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_douttgl](pj_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_douttgl](pj_douttgl) module"]
 pub type PJ_DOUTTGL = crate::Reg<u32, _PJ_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1073,7 +1073,7 @@ pub struct _PJ_DOUTTGL;
 impl crate::Writable for PJ_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pj_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_din](pj_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_din](pj_din) module"]
 pub type PJ_DIN = crate::Reg<u32, _PJ_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1082,7 +1082,7 @@ pub struct _PJ_DIN;
 impl crate::Readable for PJ_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pj_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_pinlockn](pj_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_pinlockn](pj_pinlockn) module"]
 pub type PJ_PINLOCKN = crate::Reg<u32, _PJ_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1093,7 +1093,7 @@ impl crate::Readable for PJ_PINLOCKN {}
 impl crate::Writable for PJ_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pj_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pj_ovtdis](pj_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pj_ovtdis](pj_ovtdis) module"]
 pub type PJ_OVTDIS = crate::Reg<u32, _PJ_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1104,7 +1104,7 @@ impl crate::Readable for PJ_OVTDIS {}
 impl crate::Writable for PJ_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pj_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_ctrl](pk_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_ctrl](pk_ctrl) module"]
 pub type PK_CTRL = crate::Reg<u32, _PK_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1115,7 +1115,7 @@ impl crate::Readable for PK_CTRL {}
 impl crate::Writable for PK_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pk_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_model](pk_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_model](pk_model) module"]
 pub type PK_MODEL = crate::Reg<u32, _PK_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1126,7 +1126,7 @@ impl crate::Readable for PK_MODEL {}
 impl crate::Writable for PK_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pk_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_modeh](pk_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_modeh](pk_modeh) module"]
 pub type PK_MODEH = crate::Reg<u32, _PK_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1137,7 +1137,7 @@ impl crate::Readable for PK_MODEH {}
 impl crate::Writable for PK_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pk_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_dout](pk_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_dout](pk_dout) module"]
 pub type PK_DOUT = crate::Reg<u32, _PK_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1148,7 +1148,7 @@ impl crate::Readable for PK_DOUT {}
 impl crate::Writable for PK_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pk_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_douttgl](pk_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_douttgl](pk_douttgl) module"]
 pub type PK_DOUTTGL = crate::Reg<u32, _PK_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1157,7 +1157,7 @@ pub struct _PK_DOUTTGL;
 impl crate::Writable for PK_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pk_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_din](pk_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_din](pk_din) module"]
 pub type PK_DIN = crate::Reg<u32, _PK_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1166,7 +1166,7 @@ pub struct _PK_DIN;
 impl crate::Readable for PK_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pk_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_pinlockn](pk_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_pinlockn](pk_pinlockn) module"]
 pub type PK_PINLOCKN = crate::Reg<u32, _PK_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1177,7 +1177,7 @@ impl crate::Readable for PK_PINLOCKN {}
 impl crate::Writable for PK_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pk_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pk_ovtdis](pk_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pk_ovtdis](pk_ovtdis) module"]
 pub type PK_OVTDIS = crate::Reg<u32, _PK_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1188,7 +1188,7 @@ impl crate::Readable for PK_OVTDIS {}
 impl crate::Writable for PK_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pk_ovtdis;
-#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_ctrl](pl_ctrl) module"]
+#[doc = "Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_ctrl](pl_ctrl) module"]
 pub type PL_CTRL = crate::Reg<u32, _PL_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1199,7 +1199,7 @@ impl crate::Readable for PL_CTRL {}
 impl crate::Writable for PL_CTRL {}
 #[doc = "Port Control Register"]
 pub mod pl_ctrl;
-#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_model](pl_model) module"]
+#[doc = "Port Pin Mode Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_model](pl_model) module"]
 pub type PL_MODEL = crate::Reg<u32, _PL_MODEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1210,7 +1210,7 @@ impl crate::Readable for PL_MODEL {}
 impl crate::Writable for PL_MODEL {}
 #[doc = "Port Pin Mode Low Register"]
 pub mod pl_model;
-#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_modeh](pl_modeh) module"]
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_modeh](pl_modeh) module"]
 pub type PL_MODEH = crate::Reg<u32, _PL_MODEH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1221,7 +1221,7 @@ impl crate::Readable for PL_MODEH {}
 impl crate::Writable for PL_MODEH {}
 #[doc = "Port Pin Mode High Register"]
 pub mod pl_modeh;
-#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_dout](pl_dout) module"]
+#[doc = "Port Data Out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_dout](pl_dout) module"]
 pub type PL_DOUT = crate::Reg<u32, _PL_DOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1232,7 +1232,7 @@ impl crate::Readable for PL_DOUT {}
 impl crate::Writable for PL_DOUT {}
 #[doc = "Port Data Out Register"]
 pub mod pl_dout;
-#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_douttgl](pl_douttgl) module"]
+#[doc = "Port Data Out Toggle Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_douttgl](pl_douttgl) module"]
 pub type PL_DOUTTGL = crate::Reg<u32, _PL_DOUTTGL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1241,7 +1241,7 @@ pub struct _PL_DOUTTGL;
 impl crate::Writable for PL_DOUTTGL {}
 #[doc = "Port Data Out Toggle Register"]
 pub mod pl_douttgl;
-#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_din](pl_din) module"]
+#[doc = "Port Data in Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_din](pl_din) module"]
 pub type PL_DIN = crate::Reg<u32, _PL_DIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1250,7 +1250,7 @@ pub struct _PL_DIN;
 impl crate::Readable for PL_DIN {}
 #[doc = "Port Data in Register"]
 pub mod pl_din;
-#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_pinlockn](pl_pinlockn) module"]
+#[doc = "Port Unlocked Pins Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_pinlockn](pl_pinlockn) module"]
 pub type PL_PINLOCKN = crate::Reg<u32, _PL_PINLOCKN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1261,7 +1261,7 @@ impl crate::Readable for PL_PINLOCKN {}
 impl crate::Writable for PL_PINLOCKN {}
 #[doc = "Port Unlocked Pins Register"]
 pub mod pl_pinlockn;
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pl_ovtdis](pl_ovtdis) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pl_ovtdis](pl_ovtdis) module"]
 pub type PL_OVTDIS = crate::Reg<u32, _PL_OVTDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1272,7 +1272,7 @@ impl crate::Readable for PL_OVTDIS {}
 impl crate::Writable for PL_OVTDIS {}
 #[doc = "Over Voltage Disable for All Modes"]
 pub mod pl_ovtdis;
-#[doc = "External Interrupt Port Select Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extipsell](extipsell) module"]
+#[doc = "External Interrupt Port Select Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extipsell](extipsell) module"]
 pub type EXTIPSELL = crate::Reg<u32, _EXTIPSELL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1283,7 +1283,7 @@ impl crate::Readable for EXTIPSELL {}
 impl crate::Writable for EXTIPSELL {}
 #[doc = "External Interrupt Port Select Low Register"]
 pub mod extipsell;
-#[doc = "External Interrupt Port Select High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extipselh](extipselh) module"]
+#[doc = "External Interrupt Port Select High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extipselh](extipselh) module"]
 pub type EXTIPSELH = crate::Reg<u32, _EXTIPSELH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1294,7 +1294,7 @@ impl crate::Readable for EXTIPSELH {}
 impl crate::Writable for EXTIPSELH {}
 #[doc = "External Interrupt Port Select High Register"]
 pub mod extipselh;
-#[doc = "External Interrupt Pin Select Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extipinsell](extipinsell) module"]
+#[doc = "External Interrupt Pin Select Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extipinsell](extipinsell) module"]
 pub type EXTIPINSELL = crate::Reg<u32, _EXTIPINSELL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1305,7 +1305,7 @@ impl crate::Readable for EXTIPINSELL {}
 impl crate::Writable for EXTIPINSELL {}
 #[doc = "External Interrupt Pin Select Low Register"]
 pub mod extipinsell;
-#[doc = "External Interrupt Pin Select High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extipinselh](extipinselh) module"]
+#[doc = "External Interrupt Pin Select High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extipinselh](extipinselh) module"]
 pub type EXTIPINSELH = crate::Reg<u32, _EXTIPINSELH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1316,7 +1316,7 @@ impl crate::Readable for EXTIPINSELH {}
 impl crate::Writable for EXTIPINSELH {}
 #[doc = "External Interrupt Pin Select High Register"]
 pub mod extipinselh;
-#[doc = "External Interrupt Rising Edge Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extirise](extirise) module"]
+#[doc = "External Interrupt Rising Edge Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extirise](extirise) module"]
 pub type EXTIRISE = crate::Reg<u32, _EXTIRISE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1327,7 +1327,7 @@ impl crate::Readable for EXTIRISE {}
 impl crate::Writable for EXTIRISE {}
 #[doc = "External Interrupt Rising Edge Trigger Register"]
 pub mod extirise;
-#[doc = "External Interrupt Falling Edge Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extifall](extifall) module"]
+#[doc = "External Interrupt Falling Edge Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extifall](extifall) module"]
 pub type EXTIFALL = crate::Reg<u32, _EXTIFALL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1338,7 +1338,7 @@ impl crate::Readable for EXTIFALL {}
 impl crate::Writable for EXTIFALL {}
 #[doc = "External Interrupt Falling Edge Trigger Register"]
 pub mod extifall;
-#[doc = "External Interrupt Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extilevel](extilevel) module"]
+#[doc = "External Interrupt Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extilevel](extilevel) module"]
 pub type EXTILEVEL = crate::Reg<u32, _EXTILEVEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1349,7 +1349,7 @@ impl crate::Readable for EXTILEVEL {}
 impl crate::Writable for EXTILEVEL {}
 #[doc = "External Interrupt Level Register"]
 pub mod extilevel;
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [if_](if_) module"]
+#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](if_) module"]
 pub type IF = crate::Reg<u32, _IF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1358,7 +1358,7 @@ pub struct _IF;
 impl crate::Readable for IF {}
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifs](ifs) module"]
+#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifs](ifs) module"]
 pub type IFS = crate::Reg<u32, _IFS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1367,7 +1367,7 @@ pub struct _IFS;
 impl crate::Writable for IFS {}
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ifc](ifc) module"]
+#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifc](ifc) module"]
 pub type IFC = crate::Reg<u32, _IFC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1376,7 +1376,7 @@ pub struct _IFC;
 impl crate::Writable for IFC {}
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ien](ien) module"]
+#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](ien) module"]
 pub type IEN = crate::Reg<u32, _IEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1387,7 +1387,7 @@ impl crate::Readable for IEN {}
 impl crate::Writable for IEN {}
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "EM4 Wake Up Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [em4wuen](em4wuen) module"]
+#[doc = "EM4 Wake Up Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [em4wuen](em4wuen) module"]
 pub type EM4WUEN = crate::Reg<u32, _EM4WUEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1398,7 +1398,7 @@ impl crate::Readable for EM4WUEN {}
 impl crate::Writable for EM4WUEN {}
 #[doc = "EM4 Wake Up Enable Register"]
 pub mod em4wuen;
-#[doc = "I/O Routing Pin Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [routepen](routepen) module"]
+#[doc = "I/O Routing Pin Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routepen](routepen) module"]
 pub type ROUTEPEN = crate::Reg<u32, _ROUTEPEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1409,7 +1409,7 @@ impl crate::Readable for ROUTEPEN {}
 impl crate::Writable for ROUTEPEN {}
 #[doc = "I/O Routing Pin Enable Register"]
 pub mod routepen;
-#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [routeloc0](routeloc0) module"]
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc0](routeloc0) module"]
 pub type ROUTELOC0 = crate::Reg<u32, _ROUTELOC0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1420,7 +1420,7 @@ impl crate::Readable for ROUTELOC0 {}
 impl crate::Writable for ROUTELOC0 {}
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc0;
-#[doc = "Input Sense Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [insense](insense) module"]
+#[doc = "Input Sense Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [insense](insense) module"]
 pub type INSENSE = crate::Reg<u32, _INSENSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1431,7 +1431,7 @@ impl crate::Readable for INSENSE {}
 impl crate::Writable for INSENSE {}
 #[doc = "Input Sense Register"]
 pub mod insense;
-#[doc = "Configuration Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [lock](lock) module"]
+#[doc = "Configuration Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](lock) module"]
 pub type LOCK = crate::Reg<u32, _LOCK>;
 #[allow(missing_docs)]
 #[doc(hidden)]

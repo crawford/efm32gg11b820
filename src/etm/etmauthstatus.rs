@@ -4,19 +4,17 @@ pub type R = crate::R<u32, super::ETMAUTHSTATUS>;
 pub type NONSECINVDBG_R = crate::R<u8, u8>;
 #[doc = "Non-secure non-invasive Debug Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NONSECNONINVDBG_A {
     #[doc = "2: Non-secure non-invasive debug disable"]
-    DISABLE,
+    DISABLE = 2,
     #[doc = "3: Non-secure non-invasive debug enable"]
-    ENABLE,
+    ENABLE = 3,
 }
 impl From<NONSECNONINVDBG_A> for u8 {
     #[inline(always)]
     fn from(variant: NONSECNONINVDBG_A) -> Self {
-        match variant {
-            NONSECNONINVDBG_A::DISABLE => 2,
-            NONSECNONINVDBG_A::ENABLE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NONSECNONINVDBG`"]

@@ -12,34 +12,27 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: The module is disabled."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Single input LFACLK oversampling mode (available in EM0-EM3)."]
-    OVSSINGLE,
+    OVSSINGLE = 1,
     #[doc = "2: Externally clocked single input counter mode (available in EM0-EM3)."]
-    EXTCLKSINGLE,
+    EXTCLKSINGLE = 2,
     #[doc = "3: Externally clocked quadrature decoder mode (available in EM0-EM3)."]
-    EXTCLKQUAD,
+    EXTCLKQUAD = 3,
     #[doc = "4: LFACLK oversampling quadrature decoder 1X mode (available in EM0-EM3)."]
-    OVSQUAD1X,
+    OVSQUAD1X = 4,
     #[doc = "5: LFACLK oversampling quadrature decoder 2X mode (available in EM0-EM3)."]
-    OVSQUAD2X,
+    OVSQUAD2X = 5,
     #[doc = "6: LFACLK oversampling quadrature decoder 4X mode (available in EM0-EM3)."]
-    OVSQUAD4X,
+    OVSQUAD4X = 6,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::DISABLE => 0,
-            MODE_A::OVSSINGLE => 1,
-            MODE_A::EXTCLKSINGLE => 2,
-            MODE_A::EXTCLKQUAD => 3,
-            MODE_A::OVSQUAD1X => 4,
-            MODE_A::OVSQUAD2X => 5,
-            MODE_A::OVSQUAD4X => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -318,25 +311,21 @@ impl<'a> S1CDIR_W<'a> {
 }
 #[doc = "Controls When the Counter Counts\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CNTEV_A {
     #[doc = "0: Counts up on up-count and down on down-count events."]
-    BOTH,
+    BOTH = 0,
     #[doc = "1: Only counts up on up-count events."]
-    UP,
+    UP = 1,
     #[doc = "2: Only counts down on down-count events."]
-    DOWN,
+    DOWN = 2,
     #[doc = "3: Never counts."]
-    NONE,
+    NONE = 3,
 }
 impl From<CNTEV_A> for u8 {
     #[inline(always)]
     fn from(variant: CNTEV_A) -> Self {
-        match variant {
-            CNTEV_A::BOTH => 0,
-            CNTEV_A::UP => 1,
-            CNTEV_A::DOWN => 2,
-            CNTEV_A::NONE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNTEV`"]
@@ -415,25 +404,21 @@ impl<'a> CNTEV_W<'a> {
 }
 #[doc = "Controls When the Auxiliary Counter Counts\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AUXCNTEV_A {
     #[doc = "0: Never counts."]
-    NONE,
+    NONE = 0,
     #[doc = "1: Counts up on up-count events."]
-    UP,
+    UP = 1,
     #[doc = "2: Counts up on down-count events."]
-    DOWN,
+    DOWN = 2,
     #[doc = "3: Counts up on both up-count and down-count events."]
-    BOTH,
+    BOTH = 3,
 }
 impl From<AUXCNTEV_A> for u8 {
     #[inline(always)]
     fn from(variant: AUXCNTEV_A) -> Self {
-        match variant {
-            AUXCNTEV_A::NONE => 0,
-            AUXCNTEV_A::UP => 1,
-            AUXCNTEV_A::DOWN => 2,
-            AUXCNTEV_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AUXCNTEV`"]
@@ -560,22 +545,19 @@ impl<'a> EDGE_W<'a> {
 }
 #[doc = "Sets the Mode for Triggered Compare and Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TCCMODE_A {
     #[doc = "0: Triggered compare and clear not enabled."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Compare and clear performed on each (optionally prescaled) LFA clock cycle."]
-    LFA,
+    LFA = 1,
     #[doc = "2: Compare and clear performed on positive PRS edges."]
-    PRS,
+    PRS = 2,
 }
 impl From<TCCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: TCCMODE_A) -> Self {
-        match variant {
-            TCCMODE_A::DISABLED => 0,
-            TCCMODE_A::LFA => 1,
-            TCCMODE_A::PRS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCCMODE`"]
@@ -642,25 +624,21 @@ impl<'a> TCCMODE_W<'a> {
 }
 #[doc = "Set the LFA Prescaler for Triggered Compare and Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TCCPRESC_A {
     #[doc = "0: Compare and clear event each LFA cycle."]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: Compare and clear performed on every other LFA cycle."]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: Compare and clear performed on every 4th LFA cycle."]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: Compare and clear performed on every 8th LFA cycle."]
-    DIV8,
+    DIV8 = 3,
 }
 impl From<TCCPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: TCCPRESC_A) -> Self {
-        match variant {
-            TCCPRESC_A::DIV1 => 0,
-            TCCPRESC_A::DIV2 => 1,
-            TCCPRESC_A::DIV4 => 2,
-            TCCPRESC_A::DIV8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCCPRESC`"]
@@ -739,22 +717,19 @@ impl<'a> TCCPRESC_W<'a> {
 }
 #[doc = "Triggered Compare and Clear Compare Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TCCCOMP_A {
     #[doc = "0: Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
-    LTOE,
+    LTOE = 0,
     #[doc = "1: Compare match if PCNT_CNT is greater than or equal to PCNT_TOP."]
-    GTOE,
+    GTOE = 1,
     #[doc = "2: Compare match if PCNT_CNT is less than, or equal to PCNT_TOP\\[15:8\\]\\], and greater than, or equal to PCNT_TOP\\[7:0\\]."]
-    RANGE,
+    RANGE = 2,
 }
 impl From<TCCCOMP_A> for u8 {
     #[inline(always)]
     fn from(variant: TCCCOMP_A) -> Self {
-        match variant {
-            TCCCOMP_A::LTOE => 0,
-            TCCCOMP_A::GTOE => 1,
-            TCCCOMP_A::RANGE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCCCOMP`"]
@@ -869,85 +844,61 @@ impl<'a> TCCPRSPOL_W<'a> {
 }
 #[doc = "TCC PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TCCPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected."]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected."]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected."]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected."]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected."]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected."]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected."]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected."]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected."]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected."]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected."]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected."]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected."]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected."]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected."]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected."]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected."]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected."]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected."]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<TCCPRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: TCCPRSSEL_A) -> Self {
-        match variant {
-            TCCPRSSEL_A::PRSCH0 => 0,
-            TCCPRSSEL_A::PRSCH1 => 1,
-            TCCPRSSEL_A::PRSCH2 => 2,
-            TCCPRSSEL_A::PRSCH3 => 3,
-            TCCPRSSEL_A::PRSCH4 => 4,
-            TCCPRSSEL_A::PRSCH5 => 5,
-            TCCPRSSEL_A::PRSCH6 => 6,
-            TCCPRSSEL_A::PRSCH7 => 7,
-            TCCPRSSEL_A::PRSCH8 => 8,
-            TCCPRSSEL_A::PRSCH9 => 9,
-            TCCPRSSEL_A::PRSCH10 => 10,
-            TCCPRSSEL_A::PRSCH11 => 11,
-            TCCPRSSEL_A::PRSCH12 => 12,
-            TCCPRSSEL_A::PRSCH13 => 13,
-            TCCPRSSEL_A::PRSCH14 => 14,
-            TCCPRSSEL_A::PRSCH15 => 15,
-            TCCPRSSEL_A::PRSCH16 => 16,
-            TCCPRSSEL_A::PRSCH17 => 17,
-            TCCPRSSEL_A::PRSCH18 => 18,
-            TCCPRSSEL_A::PRSCH19 => 19,
-            TCCPRSSEL_A::PRSCH20 => 20,
-            TCCPRSSEL_A::PRSCH21 => 21,
-            TCCPRSSEL_A::PRSCH22 => 22,
-            TCCPRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCCPRSSEL`"]

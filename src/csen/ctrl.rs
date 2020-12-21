@@ -60,25 +60,21 @@ impl<'a> CMPPOL_W<'a> {
 }
 #[doc = "CSEN Conversion Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CM_A {
     #[doc = "0: Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
-    SGL,
+    SGL = 0,
     #[doc = "1: Scan Mode: Scans multiple selected channels once per conversion trigger."]
-    SCAN,
+    SCAN = 1,
     #[doc = "2: Continuous Single Channel: Continuous conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1)."]
-    CONTSGL,
+    CONTSGL = 2,
     #[doc = "3: Continuous Scan Mode: Continuously scans multiple selected channels."]
-    CONTSCAN,
+    CONTSCAN = 3,
 }
 impl From<CM_A> for u8 {
     #[inline(always)]
     fn from(variant: CM_A) -> Self {
-        match variant {
-            CM_A::SGL => 0,
-            CM_A::SCAN => 1,
-            CM_A::CONTSGL => 2,
-            CM_A::CONTSCAN => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CM`"]
@@ -157,25 +153,21 @@ impl<'a> CM_W<'a> {
 }
 #[doc = "SAR Conversion Resolution.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SARCR_A {
     #[doc = "0: Conversions last 10 internal CSEN clocks and are 10-bits in length."]
-    CLK10,
+    CLK10 = 0,
     #[doc = "1: Conversions last 12 internal CSEN clocks and are 12-bits in length."]
-    CLK12,
+    CLK12 = 1,
     #[doc = "2: Conversions last 14 internal CSEN clocks and are 14-bits in length."]
-    CLK14,
+    CLK14 = 2,
     #[doc = "3: Conversions last 16 internal CSEN clocks and are 16-bits in length."]
-    CLK16,
+    CLK16 = 3,
 }
 impl From<SARCR_A> for u8 {
     #[inline(always)]
     fn from(variant: SARCR_A) -> Self {
-        match variant {
-            SARCR_A::CLK10 => 0,
-            SARCR_A::CLK12 => 1,
-            SARCR_A::CLK14 => 2,
-            SARCR_A::CLK16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SARCR`"]
@@ -254,34 +246,27 @@ impl<'a> SARCR_W<'a> {
 }
 #[doc = "CSEN Accumulator Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ACU_A {
     #[doc = "0: Accumulate 1 sample."]
-    ACC1,
+    ACC1 = 0,
     #[doc = "1: Accumulate 2 sample."]
-    ACC2,
+    ACC2 = 1,
     #[doc = "2: Accumulate 4 sample."]
-    ACC4,
+    ACC4 = 2,
     #[doc = "3: Accumulate 8 sample."]
-    ACC8,
+    ACC8 = 3,
     #[doc = "4: Accumulate 16 sample."]
-    ACC16,
+    ACC16 = 4,
     #[doc = "5: Accumulate 32 sample."]
-    ACC32,
+    ACC32 = 5,
     #[doc = "6: Accumulate 64 sample."]
-    ACC64,
+    ACC64 = 6,
 }
 impl From<ACU_A> for u8 {
     #[inline(always)]
     fn from(variant: ACU_A) -> Self {
-        match variant {
-            ACU_A::ACC1 => 0,
-            ACU_A::ACC2 => 1,
-            ACU_A::ACC4 => 2,
-            ACU_A::ACC8 => 3,
-            ACU_A::ACC16 => 4,
-            ACU_A::ACC32 => 5,
-            ACU_A::ACC64 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACU`"]
@@ -416,22 +401,19 @@ impl<'a> MCEN_W<'a> {
 }
 #[doc = "Start Trigger Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STM_A {
     #[doc = "0: PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
-    PRS,
+    PRS = 0,
     #[doc = "1: Timer Triggering. Conversions are triggered by a local CSEN timer reload."]
-    TIMER,
+    TIMER = 1,
     #[doc = "2: Software Triggering. Conversions are triggered by writing a 1 to the START field of the CMD register."]
-    START,
+    START = 2,
 }
 impl From<STM_A> for u8 {
     #[inline(always)]
     fn from(variant: STM_A) -> Self {
-        match variant {
-            STM_A::PRS => 0,
-            STM_A::TIMER => 1,
-            STM_A::START => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STM`"]

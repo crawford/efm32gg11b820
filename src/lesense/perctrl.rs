@@ -156,22 +156,19 @@ impl<'a> DACCONVTRIG_W<'a> {
 }
 #[doc = "ACMP0 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ACMP0MODE_A {
     #[doc = "0: LESENSE does not control ACMP0"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: LESENSE controls the input mux (POSSEL) of ACMP0"]
-    MUX,
+    MUX = 1,
     #[doc = "2: LESENSE controls the input mux (POSSEL) and the threshold value (VDDLEVEL) of ACMP0"]
-    MUXTHRES,
+    MUXTHRES = 2,
 }
 impl From<ACMP0MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ACMP0MODE_A) -> Self {
-        match variant {
-            ACMP0MODE_A::DISABLE => 0,
-            ACMP0MODE_A::MUX => 1,
-            ACMP0MODE_A::MUXTHRES => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACMP0MODE`"]
@@ -238,22 +235,19 @@ impl<'a> ACMP0MODE_W<'a> {
 }
 #[doc = "ACMP1 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ACMP1MODE_A {
     #[doc = "0: LESENSE does not control ACMP1"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: LESENSE controls the input mux (POSSEL) of ACMP1"]
-    MUX,
+    MUX = 1,
     #[doc = "2: LESENSE controls the input mux and the threshold value (VDDLEVEL) of ACMP1"]
-    MUXTHRES,
+    MUXTHRES = 2,
 }
 impl From<ACMP1MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ACMP1MODE_A) -> Self {
-        match variant {
-            ACMP1MODE_A::DISABLE => 0,
-            ACMP1MODE_A::MUX => 1,
-            ACMP1MODE_A::MUXTHRES => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACMP1MODE`"]
@@ -416,25 +410,21 @@ impl<'a> ACMP1HYSTEN_W<'a> {
 }
 #[doc = "ACMP and VDAC Duty Cycle Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WARMUPMODE_A {
     #[doc = "0: The analog comparators and VDAC are shut down when LESENSE is idle"]
-    NORMAL,
+    NORMAL = 0,
     #[doc = "1: The analog comparators are kept powered up when LESENSE is idle"]
-    KEEPACMPWARM,
+    KEEPACMPWARM = 1,
     #[doc = "2: The VDAC is kept powered up when LESENSE is idle"]
-    KEEPDACWARM,
+    KEEPDACWARM = 2,
     #[doc = "3: The analog comparators and VDAC are kept powered up when LESENSE is idle"]
-    KEEPACMPDACWARM,
+    KEEPACMPDACWARM = 3,
 }
 impl From<WARMUPMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: WARMUPMODE_A) -> Self {
-        match variant {
-            WARMUPMODE_A::NORMAL => 0,
-            WARMUPMODE_A::KEEPACMPWARM => 1,
-            WARMUPMODE_A::KEEPDACWARM => 2,
-            WARMUPMODE_A::KEEPACMPDACWARM => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WARMUPMODE`"]

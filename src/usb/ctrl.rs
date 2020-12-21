@@ -60,19 +60,17 @@ impl<'a> SELFPOWERED_W<'a> {
 }
 #[doc = "Low Energy Mode Oscillator Control\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LEMOSCCTRL_A {
     #[doc = "0: Low Energy Mode has no effect on neither USBC or USHFRCO."]
-    NONE,
+    NONE = 0,
     #[doc = "1: The USBC clock is gated when Low Energy Mode is active."]
-    GATE,
+    GATE = 1,
 }
 impl From<LEMOSCCTRL_A> for u8 {
     #[inline(always)]
     fn from(variant: LEMOSCCTRL_A) -> Self {
-        match variant {
-            LEMOSCCTRL_A::NONE => 0,
-            LEMOSCCTRL_A::GATE => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LEMOSCCTRL`"]
@@ -272,22 +270,19 @@ impl<'a> OTGPHYCTRLDIS_W<'a> {
 }
 #[doc = "Data Contact Detection Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DCDEN_A {
     #[doc = "0: DCD is disabled."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "2: Only DCD timeout will be initiated."]
-    TIMEOUT,
+    TIMEOUT = 2,
     #[doc = "3: Full DCD operation (physical contact and timeout) will be initiated."]
-    ENABLED,
+    ENABLED = 3,
 }
 impl From<DCDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: DCDEN_A) -> Self {
-        match variant {
-            DCDEN_A::DISABLED => 0,
-            DCDEN_A::TIMEOUT => 2,
-            DCDEN_A::ENABLED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DCDEN`"]

@@ -12,19 +12,17 @@ pub type SINGLEREFWARM_R = crate::R<bool, bool>;
 pub type SCANREFWARM_R = crate::R<bool, bool>;
 #[doc = "Programming Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PROGERR_A {
     #[doc = "1: `1`"]
-    BUSCONF,
+    BUSCONF = 1,
     #[doc = "2: `10`"]
-    NEGSELCONF,
+    NEGSELCONF = 2,
 }
 impl From<PROGERR_A> for u8 {
     #[inline(always)]
     fn from(variant: PROGERR_A) -> Self {
-        match variant {
-            PROGERR_A::BUSCONF => 1,
-            PROGERR_A::NEGSELCONF => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PROGERR`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "WDOG Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDOGRMODE_A {
     #[doc = "0: Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
+    LIMITED = 1,
     #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
+    EXTENDED = 2,
     #[doc = "4: The entire device is reset except some EMU and RMU registers."]
-    FULL,
+    FULL = 4,
 }
 impl From<WDOGRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: WDOGRMODE_A) -> Self {
-        match variant {
-            WDOGRMODE_A::DISABLED => 0,
-            WDOGRMODE_A::LIMITED => 1,
-            WDOGRMODE_A::EXTENDED => 2,
-            WDOGRMODE_A::FULL => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDOGRMODE`"]
@@ -108,25 +104,21 @@ impl<'a> WDOGRMODE_W<'a> {
 }
 #[doc = "Core LOCKUP Reset Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCKUPRMODE_A {
     #[doc = "0: Reset request is blocked."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
+    LIMITED = 1,
     #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
+    EXTENDED = 2,
     #[doc = "4: The entire device is reset except some EMU and RMU registers."]
-    FULL,
+    FULL = 4,
 }
 impl From<LOCKUPRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCKUPRMODE_A) -> Self {
-        match variant {
-            LOCKUPRMODE_A::DISABLED => 0,
-            LOCKUPRMODE_A::LIMITED => 1,
-            LOCKUPRMODE_A::EXTENDED => 2,
-            LOCKUPRMODE_A::FULL => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCKUPRMODE`"]
@@ -204,25 +196,21 @@ impl<'a> LOCKUPRMODE_W<'a> {
 }
 #[doc = "Core Sysreset Reset Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SYSRMODE_A {
     #[doc = "0: Reset request is blocked. "]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
+    LIMITED = 1,
     #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
+    EXTENDED = 2,
     #[doc = "4: The entire device is reset except some EMU and RMU registers."]
-    FULL,
+    FULL = 4,
 }
 impl From<SYSRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: SYSRMODE_A) -> Self {
-        match variant {
-            SYSRMODE_A::DISABLED => 0,
-            SYSRMODE_A::LIMITED => 1,
-            SYSRMODE_A::EXTENDED => 2,
-            SYSRMODE_A::FULL => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SYSRMODE`"]
@@ -300,25 +288,21 @@ impl<'a> SYSRMODE_W<'a> {
 }
 #[doc = "PIN Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PINRMODE_A {
     #[doc = "0: Reset request is blocked. "]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: The CRYOTIMER, DEBUGGER, RTCC, are not reset."]
-    LIMITED,
+    LIMITED = 1,
     #[doc = "2: The CRYOTIMER, DEBUGGER are not reset. RTCC is reset. "]
-    EXTENDED,
+    EXTENDED = 2,
     #[doc = "4: The entire device is reset except some EMU and RMU registers."]
-    FULL,
+    FULL = 4,
 }
 impl From<PINRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PINRMODE_A) -> Self {
-        match variant {
-            PINRMODE_A::DISABLED => 0,
-            PINRMODE_A::LIMITED => 1,
-            PINRMODE_A::EXTENDED => 2,
-            PINRMODE_A::FULL => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PINRMODE`"]

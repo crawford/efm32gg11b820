@@ -92,22 +92,19 @@ impl<'a> LDOHP_W<'a> {
 }
 #[doc = "Locally Divide HFRCO Clock Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKDIV_A {
     #[doc = "0: Divide by 1."]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: Divide by 2."]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: Divide by 4."]
-    DIV4,
+    DIV4 = 2,
 }
 impl From<CLKDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKDIV_A) -> Self {
-        match variant {
-            CLKDIV_A::DIV1 => 0,
-            CLKDIV_A::DIV2 => 1,
-            CLKDIV_A::DIV4 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKDIV`"]

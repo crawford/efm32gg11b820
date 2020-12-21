@@ -12,22 +12,19 @@ impl crate::ResetValue for super::ROUTELOC1 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<ADLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: ADLOC_A) -> Self {
-        match variant {
-            ADLOC_A::LOC0 => 0,
-            ADLOC_A::LOC1 => 1,
-            ADLOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADLOC`"]
@@ -94,25 +91,21 @@ impl<'a> ADLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ALOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<ALOC_A> for u8 {
     #[inline(always)]
     fn from(variant: ALOC_A) -> Self {
-        match variant {
-            ALOC_A::LOC0 => 0,
-            ALOC_A::LOC1 => 1,
-            ALOC_A::LOC2 => 2,
-            ALOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ALOC`"]
@@ -190,31 +183,25 @@ impl<'a> ALOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RDYLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<RDYLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: RDYLOC_A) -> Self {
-        match variant {
-            RDYLOC_A::LOC0 => 0,
-            RDYLOC_A::LOC1 => 1,
-            RDYLOC_A::LOC2 => 2,
-            RDYLOC_A::LOC3 => 3,
-            RDYLOC_A::LOC4 => 4,
-            RDYLOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RDYLOC`"]

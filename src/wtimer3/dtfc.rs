@@ -12,85 +12,61 @@ impl crate::ResetValue for super::DTFC {
 }
 #[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTPRS0FSEL_A {
     #[doc = "0: PRS Channel 0 selected as fault source 0"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as fault source 1"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as fault source 2"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as fault source 3"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as fault source 4"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as fault source 5"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as fault source 6"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as fault source 7"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as fault source 8"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as fault source 9"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as fault source 10"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as fault source 11"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as fault source 12"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as fault source 13"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as fault source 14"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as fault source 15"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as fault source 16"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as fault source 17"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as fault source 18"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as fault source 19"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as fault source 20"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as fault source 21"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as fault source 22"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as fault source 23"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<DTPRS0FSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DTPRS0FSEL_A) -> Self {
-        match variant {
-            DTPRS0FSEL_A::PRSCH0 => 0,
-            DTPRS0FSEL_A::PRSCH1 => 1,
-            DTPRS0FSEL_A::PRSCH2 => 2,
-            DTPRS0FSEL_A::PRSCH3 => 3,
-            DTPRS0FSEL_A::PRSCH4 => 4,
-            DTPRS0FSEL_A::PRSCH5 => 5,
-            DTPRS0FSEL_A::PRSCH6 => 6,
-            DTPRS0FSEL_A::PRSCH7 => 7,
-            DTPRS0FSEL_A::PRSCH8 => 8,
-            DTPRS0FSEL_A::PRSCH9 => 9,
-            DTPRS0FSEL_A::PRSCH10 => 10,
-            DTPRS0FSEL_A::PRSCH11 => 11,
-            DTPRS0FSEL_A::PRSCH12 => 12,
-            DTPRS0FSEL_A::PRSCH13 => 13,
-            DTPRS0FSEL_A::PRSCH14 => 14,
-            DTPRS0FSEL_A::PRSCH15 => 15,
-            DTPRS0FSEL_A::PRSCH16 => 16,
-            DTPRS0FSEL_A::PRSCH17 => 17,
-            DTPRS0FSEL_A::PRSCH18 => 18,
-            DTPRS0FSEL_A::PRSCH19 => 19,
-            DTPRS0FSEL_A::PRSCH20 => 20,
-            DTPRS0FSEL_A::PRSCH21 => 21,
-            DTPRS0FSEL_A::PRSCH22 => 22,
-            DTPRS0FSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTPRS0FSEL`"]
@@ -388,85 +364,61 @@ impl<'a> DTPRS0FSEL_W<'a> {
 }
 #[doc = "DTI PRS Fault Source 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTPRS1FSEL_A {
     #[doc = "0: PRS Channel 0 selected as fault source 1"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as fault source 1"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as fault source 1"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as fault source 1"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as fault source 1"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as fault source 1"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as fault source 1"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as fault source 1"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as fault source 1"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as fault source 1"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as fault source 1"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as fault source 1"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as fault source 1"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as fault source 1"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as fault source 1"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as fault source 1"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as fault source 1"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as fault source 1"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as fault source 1"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as fault source 1"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as fault source 1"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as fault source 1"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as fault source 1"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as fault source 1"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<DTPRS1FSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DTPRS1FSEL_A) -> Self {
-        match variant {
-            DTPRS1FSEL_A::PRSCH0 => 0,
-            DTPRS1FSEL_A::PRSCH1 => 1,
-            DTPRS1FSEL_A::PRSCH2 => 2,
-            DTPRS1FSEL_A::PRSCH3 => 3,
-            DTPRS1FSEL_A::PRSCH4 => 4,
-            DTPRS1FSEL_A::PRSCH5 => 5,
-            DTPRS1FSEL_A::PRSCH6 => 6,
-            DTPRS1FSEL_A::PRSCH7 => 7,
-            DTPRS1FSEL_A::PRSCH8 => 8,
-            DTPRS1FSEL_A::PRSCH9 => 9,
-            DTPRS1FSEL_A::PRSCH10 => 10,
-            DTPRS1FSEL_A::PRSCH11 => 11,
-            DTPRS1FSEL_A::PRSCH12 => 12,
-            DTPRS1FSEL_A::PRSCH13 => 13,
-            DTPRS1FSEL_A::PRSCH14 => 14,
-            DTPRS1FSEL_A::PRSCH15 => 15,
-            DTPRS1FSEL_A::PRSCH16 => 16,
-            DTPRS1FSEL_A::PRSCH17 => 17,
-            DTPRS1FSEL_A::PRSCH18 => 18,
-            DTPRS1FSEL_A::PRSCH19 => 19,
-            DTPRS1FSEL_A::PRSCH20 => 20,
-            DTPRS1FSEL_A::PRSCH21 => 21,
-            DTPRS1FSEL_A::PRSCH22 => 22,
-            DTPRS1FSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTPRS1FSEL`"]
@@ -764,25 +716,21 @@ impl<'a> DTPRS1FSEL_W<'a> {
 }
 #[doc = "DTI Fault Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTFA_A {
     #[doc = "0: No action on fault"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Set outputs inactive"]
-    INACTIVE,
+    INACTIVE = 1,
     #[doc = "2: Clear outputs"]
-    CLEAR,
+    CLEAR = 2,
     #[doc = "3: Tristate outputs"]
-    TRISTATE,
+    TRISTATE = 3,
 }
 impl From<DTFA_A> for u8 {
     #[inline(always)]
     fn from(variant: DTFA_A) -> Self {
-        match variant {
-            DTFA_A::NONE => 0,
-            DTFA_A::INACTIVE => 1,
-            DTFA_A::CLEAR => 2,
-            DTFA_A::TRISTATE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTFA`"]

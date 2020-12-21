@@ -12,25 +12,21 @@ impl crate::ResetValue for super::LFACLKSEL {
 }
 #[doc = "Clock Select for LFA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFA_A {
     #[doc = "0: LFACLK is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: LFRCO selected as LFACLK"]
-    LFRCO,
+    LFRCO = 1,
     #[doc = "2: LFXO selected as LFACLK"]
-    LFXO,
+    LFXO = 2,
     #[doc = "4: ULFRCO selected as LFACLK"]
-    ULFRCO,
+    ULFRCO = 4,
 }
 impl From<LFA_A> for u8 {
     #[inline(always)]
     fn from(variant: LFA_A) -> Self {
-        match variant {
-            LFA_A::DISABLED => 0,
-            LFA_A::LFRCO => 1,
-            LFA_A::LFXO => 2,
-            LFA_A::ULFRCO => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFA`"]

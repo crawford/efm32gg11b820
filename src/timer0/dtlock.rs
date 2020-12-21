@@ -12,19 +12,17 @@ impl crate::ResetValue for super::DTLOCK {
 }
 #[doc = "DTI Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum LOCKKEY_A {
     #[doc = "0: `0`"]
-    UNLOCKED,
+    UNLOCKED = 0,
     #[doc = "1: `1`"]
-    LOCKED,
+    LOCKED = 1,
 }
 impl From<LOCKKEY_A> for u16 {
     #[inline(always)]
     fn from(variant: LOCKKEY_A) -> Self {
-        match variant {
-            LOCKKEY_A::UNLOCKED => 0,
-            LOCKKEY_A::LOCKED => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCKKEY`"]

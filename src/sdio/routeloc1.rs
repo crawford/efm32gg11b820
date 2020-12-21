@@ -12,19 +12,17 @@ impl crate::ResetValue for super::ROUTELOC1 {
 }
 #[doc = "I/O Location for CMD Pin\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMDLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
 }
 impl From<CMDLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CMDLOC_A) -> Self {
-        match variant {
-            CMDLOC_A::LOC0 => 0,
-            CMDLOC_A::LOC1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMDLOC`"]

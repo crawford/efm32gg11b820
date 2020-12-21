@@ -36,22 +36,19 @@ impl<'a> ASYNCINTRSUP_W<'a> {
 }
 #[doc = "Slot Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SLOTTYPE_A {
     #[doc = "0: Removable SD Card Slot"]
-    RMSDSLOT,
+    RMSDSLOT = 0,
     #[doc = "1: Embedded SD Card Slot"]
-    EMSDSLOT,
+    EMSDSLOT = 1,
     #[doc = "2: Shared SD Card Slot"]
-    SHBUSSLOT,
+    SHBUSSLOT = 2,
 }
 impl From<SLOTTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: SLOTTYPE_A) -> Self {
-        match variant {
-            SLOTTYPE_A::RMSDSLOT => 0,
-            SLOTTYPE_A::EMSDSLOT => 1,
-            SLOTTYPE_A::SHBUSSLOT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SLOTTYPE`"]

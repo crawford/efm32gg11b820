@@ -12,37 +12,29 @@ impl crate::ResetValue for super::TIMING {
 }
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TXDELAY_A {
     #[doc = "0: Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Start of transmission is delayed for 1 baud-times"]
-    ONE,
+    ONE = 1,
     #[doc = "2: Start of transmission is delayed for 2 baud-times"]
-    TWO,
+    TWO = 2,
     #[doc = "3: Start of transmission is delayed for 3 baud-times"]
-    THREE,
+    THREE = 3,
     #[doc = "4: Start of transmission is delayed for 7 baud-times"]
-    SEVEN,
+    SEVEN = 4,
     #[doc = "5: Start of transmission is delayed for TCMPVAL0 baud-times"]
-    TCMP0,
+    TCMP0 = 5,
     #[doc = "6: Start of transmission is delayed for TCMPVAL1 baud-times"]
-    TCMP1,
+    TCMP1 = 6,
     #[doc = "7: Start of transmission is delayed for TCMPVAL2 baud-times"]
-    TCMP2,
+    TCMP2 = 7,
 }
 impl From<TXDELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: TXDELAY_A) -> Self {
-        match variant {
-            TXDELAY_A::DISABLE => 0,
-            TXDELAY_A::ONE => 1,
-            TXDELAY_A::TWO => 2,
-            TXDELAY_A::THREE => 3,
-            TXDELAY_A::SEVEN => 4,
-            TXDELAY_A::TCMP0 => 5,
-            TXDELAY_A::TCMP1 => 6,
-            TXDELAY_A::TCMP2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TXDELAY`"]
@@ -165,37 +157,29 @@ impl<'a> TXDELAY_W<'a> {
 }
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSSETUP_A {
     #[doc = "0: CS is not asserted before start of transmission"]
-    ZERO,
+    ZERO = 0,
     #[doc = "1: CS is asserted for 1 baud-times before start of transmission"]
-    ONE,
+    ONE = 1,
     #[doc = "2: CS is asserted for 2 baud-times before start of transmission"]
-    TWO,
+    TWO = 2,
     #[doc = "3: CS is asserted for 3 baud-times before start of transmission"]
-    THREE,
+    THREE = 3,
     #[doc = "4: CS is asserted for 7 baud-times before start of transmission"]
-    SEVEN,
+    SEVEN = 4,
     #[doc = "5: CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
-    TCMP0,
+    TCMP0 = 5,
     #[doc = "6: CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
-    TCMP1,
+    TCMP1 = 6,
     #[doc = "7: CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
-    TCMP2,
+    TCMP2 = 7,
 }
 impl From<CSSETUP_A> for u8 {
     #[inline(always)]
     fn from(variant: CSSETUP_A) -> Self {
-        match variant {
-            CSSETUP_A::ZERO => 0,
-            CSSETUP_A::ONE => 1,
-            CSSETUP_A::TWO => 2,
-            CSSETUP_A::THREE => 3,
-            CSSETUP_A::SEVEN => 4,
-            CSSETUP_A::TCMP0 => 5,
-            CSSETUP_A::TCMP1 => 6,
-            CSSETUP_A::TCMP2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSSETUP`"]
@@ -318,37 +302,29 @@ impl<'a> CSSETUP_W<'a> {
 }
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICS_A {
     #[doc = "0: There is no space between charcters"]
-    ZERO,
+    ZERO = 0,
     #[doc = "1: Create a space of 1 baud-times before start of transmission "]
-    ONE,
+    ONE = 1,
     #[doc = "2: Create a space of 2 baud-times before start of transmission"]
-    TWO,
+    TWO = 2,
     #[doc = "3: Create a space of 3 baud-times before start of transmission"]
-    THREE,
+    THREE = 3,
     #[doc = "4: Create a space of 7 baud-times before start of transmission"]
-    SEVEN,
+    SEVEN = 4,
     #[doc = "5: Create a space of before the start of transmission for TCMPVAL0 baud-times"]
-    TCMP0,
+    TCMP0 = 5,
     #[doc = "6: Create a space of before the start of transmission for TCMPVAL1 baud-times"]
-    TCMP1,
+    TCMP1 = 6,
     #[doc = "7: Create a space of before the start of transmission for TCMPVAL2 baud-times"]
-    TCMP2,
+    TCMP2 = 7,
 }
 impl From<ICS_A> for u8 {
     #[inline(always)]
     fn from(variant: ICS_A) -> Self {
-        match variant {
-            ICS_A::ZERO => 0,
-            ICS_A::ONE => 1,
-            ICS_A::TWO => 2,
-            ICS_A::THREE => 3,
-            ICS_A::SEVEN => 4,
-            ICS_A::TCMP0 => 5,
-            ICS_A::TCMP1 => 6,
-            ICS_A::TCMP2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICS`"]
@@ -471,37 +447,29 @@ impl<'a> ICS_W<'a> {
 }
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSHOLD_A {
     #[doc = "0: Disable CS being asserted after the end of transmission"]
-    ZERO,
+    ZERO = 0,
     #[doc = "1: CS is asserted for 1 baud-times after the end of transmission"]
-    ONE,
+    ONE = 1,
     #[doc = "2: CS is asserted for 2 baud-times after the end of transmission"]
-    TWO,
+    TWO = 2,
     #[doc = "3: CS is asserted for 3 baud-times after the end of transmission"]
-    THREE,
+    THREE = 3,
     #[doc = "4: CS is asserted for 7 baud-times after the end of transmission"]
-    SEVEN,
+    SEVEN = 4,
     #[doc = "5: CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
-    TCMP0,
+    TCMP0 = 5,
     #[doc = "6: CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
-    TCMP1,
+    TCMP1 = 6,
     #[doc = "7: CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
-    TCMP2,
+    TCMP2 = 7,
 }
 impl From<CSHOLD_A> for u8 {
     #[inline(always)]
     fn from(variant: CSHOLD_A) -> Self {
-        match variant {
-            CSHOLD_A::ZERO => 0,
-            CSHOLD_A::ONE => 1,
-            CSHOLD_A::TWO => 2,
-            CSHOLD_A::THREE => 3,
-            CSHOLD_A::SEVEN => 4,
-            CSHOLD_A::TCMP0 => 5,
-            CSHOLD_A::TCMP1 => 6,
-            CSHOLD_A::TCMP2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSHOLD`"]

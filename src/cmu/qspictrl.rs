@@ -12,25 +12,21 @@ impl crate::ResetValue for super::QSPICTRL {
 }
 #[doc = "QSPI0 Reference Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum QSPI0CLKSEL_A {
     #[doc = "0: HFRCO clock is used to clock QSPI0"]
-    HFRCO,
+    HFRCO = 0,
     #[doc = "1: HFXO clock is used to clock QSPI0"]
-    HFXO,
+    HFXO = 1,
     #[doc = "2: AUXHFRCO is used to clock QSPI0"]
-    AUXHFRCO,
+    AUXHFRCO = 2,
     #[doc = "3: USHFRCO is used to clock QSPI0"]
-    USHFRCO,
+    USHFRCO = 3,
 }
 impl From<QSPI0CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: QSPI0CLKSEL_A) -> Self {
-        match variant {
-            QSPI0CLKSEL_A::HFRCO => 0,
-            QSPI0CLKSEL_A::HFXO => 1,
-            QSPI0CLKSEL_A::AUXHFRCO => 2,
-            QSPI0CLKSEL_A::USHFRCO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `QSPI0CLKSEL`"]

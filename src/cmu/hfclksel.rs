@@ -10,34 +10,27 @@ impl crate::ResetValue for super::HFCLKSEL {
 }
 #[doc = "HFCLK Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HF_AW {
     #[doc = "1: Select HFRCO as HFCLK"]
-    HFRCO,
+    HFRCO = 1,
     #[doc = "2: Select HFXO as HFCLK"]
-    HFXO,
+    HFXO = 2,
     #[doc = "3: Select LFRCO as HFCLK"]
-    LFRCO,
+    LFRCO = 3,
     #[doc = "4: Select LFXO as HFCLK"]
-    LFXO,
+    LFXO = 4,
     #[doc = "5: Select HFRCO divided by 2 as HFCLK"]
-    HFRCODIV2,
+    HFRCODIV2 = 5,
     #[doc = "6: Select USHFRCO as HFCLK"]
-    USHFRCO,
+    USHFRCO = 6,
     #[doc = "7: Select CLKIN0 as HFCLK"]
-    CLKIN0,
+    CLKIN0 = 7,
 }
 impl From<HF_AW> for u8 {
     #[inline(always)]
     fn from(variant: HF_AW) -> Self {
-        match variant {
-            HF_AW::HFRCO => 1,
-            HF_AW::HFXO => 2,
-            HF_AW::LFRCO => 3,
-            HF_AW::LFXO => 4,
-            HF_AW::HFRCODIV2 => 5,
-            HF_AW::USHFRCO => 6,
-            HF_AW::CLKIN0 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Write proxy for field `HF`"]

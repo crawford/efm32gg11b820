@@ -60,22 +60,19 @@ impl<'a> BLKCNTEN_W<'a> {
 }
 #[doc = "Auto Command Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AUTOCMDEN_A {
     #[doc = "0: Auto CMD Disabled"]
-    ACMDDISABLED,
+    ACMDDISABLED = 0,
     #[doc = "1: Auto CMD12 Enable"]
-    ACMD12EN,
+    ACMD12EN = 1,
     #[doc = "2: Auto CMD23 Enable"]
-    ACMD23EN,
+    ACMD23EN = 2,
 }
 impl From<AUTOCMDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: AUTOCMDEN_A) -> Self {
-        match variant {
-            AUTOCMDEN_A::ACMDDISABLED => 0,
-            AUTOCMDEN_A::ACMD12EN => 1,
-            AUTOCMDEN_A::ACMD23EN => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AUTOCMDEN`"]
@@ -190,25 +187,21 @@ impl<'a> MULTSINGBLKSEL_W<'a> {
 }
 #[doc = "Response Type Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESPTYPESEL_A {
     #[doc = "0: No RESP"]
-    NORESP,
+    NORESP = 0,
     #[doc = "1: RESP Length 136"]
-    RESP136,
+    RESP136 = 1,
     #[doc = "2: RESP Length 48"]
-    RESP48,
+    RESP48 = 2,
     #[doc = "3: RESP Length 48 check busy after RESP"]
-    BUSYAFTRESP,
+    BUSYAFTRESP = 3,
 }
 impl From<RESPTYPESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: RESPTYPESEL_A) -> Self {
-        match variant {
-            RESPTYPESEL_A::NORESP => 0,
-            RESPTYPESEL_A::RESP136 => 1,
-            RESPTYPESEL_A::RESP48 => 2,
-            RESPTYPESEL_A::BUSYAFTRESP => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESPTYPESEL`"]
@@ -359,25 +352,21 @@ impl<'a> DATPRESSEL_W<'a> {
 }
 #[doc = "Command Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMDTYPE_A {
     #[doc = "0: Normal Command"]
-    NORMAL,
+    NORMAL = 0,
     #[doc = "1: Suspend command"]
-    SUSPEND,
+    SUSPEND = 1,
     #[doc = "2: Resume command"]
-    RESUME,
+    RESUME = 2,
     #[doc = "3: Abort command"]
-    ABORT,
+    ABORT = 3,
 }
 impl From<CMDTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: CMDTYPE_A) -> Self {
-        match variant {
-            CMDTYPE_A::NORMAL => 0,
-            CMDTYPE_A::SUSPEND => 1,
-            CMDTYPE_A::RESUME => 2,
-            CMDTYPE_A::ABORT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMDTYPE`"]

@@ -12,37 +12,29 @@ impl crate::ResetValue for super::STATUS {
 }
 #[doc = "Last Error Code\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LEC_A {
     #[doc = "0:  No error occurred during last CAN bus event."]
-    NONE,
+    NONE = 0,
     #[doc = "1: More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
-    STUFF,
+    STUFF = 1,
     #[doc = "2: A fixed format part of a received frame has the wrong format."]
-    FORM,
+    FORM = 2,
     #[doc = "3: The message this CAN Core transmitted was not acknowledged by another node."]
-    ACK,
+    ACK = 3,
     #[doc = "4: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant."]
-    BIT1,
+    BIT1 = 4,
     #[doc = "5: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored Bus value was recessive. During Bus Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed)."]
-    BIT0,
+    BIT0 = 5,
     #[doc = "6: The CRC check sum was incorrect in the message received; the CRC received for an incoming message does not match with the calculated CRC for the received data."]
-    CRC,
+    CRC = 6,
     #[doc = "7: When the LEC shows the value '7', no CAN bus event was detected since the CPU wrote this value to the LEC."]
-    UNUSED,
+    UNUSED = 7,
 }
 impl From<LEC_A> for u8 {
     #[inline(always)]
     fn from(variant: LEC_A) -> Self {
-        match variant {
-            LEC_A::NONE => 0,
-            LEC_A::STUFF => 1,
-            LEC_A::FORM => 2,
-            LEC_A::ACK => 3,
-            LEC_A::BIT1 => 4,
-            LEC_A::BIT0 => 5,
-            LEC_A::CRC => 6,
-            LEC_A::UNUSED => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LEC`"]

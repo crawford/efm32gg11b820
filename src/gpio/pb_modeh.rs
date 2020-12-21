@@ -12,61 +12,45 @@ impl crate::ResetValue for super::PB_MODEH {
 }
 #[doc = "Pin 8 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE8_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE8_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE8_A) -> Self {
-        match variant {
-            MODE8_A::DISABLED => 0,
-            MODE8_A::INPUT => 1,
-            MODE8_A::INPUTPULL => 2,
-            MODE8_A::INPUTPULLFILTER => 3,
-            MODE8_A::PUSHPULL => 4,
-            MODE8_A::PUSHPULLALT => 5,
-            MODE8_A::WIREDOR => 6,
-            MODE8_A::WIREDORPULLDOWN => 7,
-            MODE8_A::WIREDAND => 8,
-            MODE8_A::WIREDANDFILTER => 9,
-            MODE8_A::WIREDANDPULLUP => 10,
-            MODE8_A::WIREDANDPULLUPFILTER => 11,
-            MODE8_A::WIREDANDALT => 12,
-            MODE8_A::WIREDANDALTFILTER => 13,
-            MODE8_A::WIREDANDALTPULLUP => 14,
-            MODE8_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE8`"]
@@ -277,61 +261,45 @@ impl<'a> MODE8_W<'a> {
 }
 #[doc = "Pin 9 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE9_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE9_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE9_A) -> Self {
-        match variant {
-            MODE9_A::DISABLED => 0,
-            MODE9_A::INPUT => 1,
-            MODE9_A::INPUTPULL => 2,
-            MODE9_A::INPUTPULLFILTER => 3,
-            MODE9_A::PUSHPULL => 4,
-            MODE9_A::PUSHPULLALT => 5,
-            MODE9_A::WIREDOR => 6,
-            MODE9_A::WIREDORPULLDOWN => 7,
-            MODE9_A::WIREDAND => 8,
-            MODE9_A::WIREDANDFILTER => 9,
-            MODE9_A::WIREDANDPULLUP => 10,
-            MODE9_A::WIREDANDPULLUPFILTER => 11,
-            MODE9_A::WIREDANDALT => 12,
-            MODE9_A::WIREDANDALTFILTER => 13,
-            MODE9_A::WIREDANDALTPULLUP => 14,
-            MODE9_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE9`"]
@@ -542,61 +510,45 @@ impl<'a> MODE9_W<'a> {
 }
 #[doc = "Pin 10 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE10_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE10_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE10_A) -> Self {
-        match variant {
-            MODE10_A::DISABLED => 0,
-            MODE10_A::INPUT => 1,
-            MODE10_A::INPUTPULL => 2,
-            MODE10_A::INPUTPULLFILTER => 3,
-            MODE10_A::PUSHPULL => 4,
-            MODE10_A::PUSHPULLALT => 5,
-            MODE10_A::WIREDOR => 6,
-            MODE10_A::WIREDORPULLDOWN => 7,
-            MODE10_A::WIREDAND => 8,
-            MODE10_A::WIREDANDFILTER => 9,
-            MODE10_A::WIREDANDPULLUP => 10,
-            MODE10_A::WIREDANDPULLUPFILTER => 11,
-            MODE10_A::WIREDANDALT => 12,
-            MODE10_A::WIREDANDALTFILTER => 13,
-            MODE10_A::WIREDANDALTPULLUP => 14,
-            MODE10_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE10`"]
@@ -807,61 +759,45 @@ impl<'a> MODE10_W<'a> {
 }
 #[doc = "Pin 11 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE11_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE11_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE11_A) -> Self {
-        match variant {
-            MODE11_A::DISABLED => 0,
-            MODE11_A::INPUT => 1,
-            MODE11_A::INPUTPULL => 2,
-            MODE11_A::INPUTPULLFILTER => 3,
-            MODE11_A::PUSHPULL => 4,
-            MODE11_A::PUSHPULLALT => 5,
-            MODE11_A::WIREDOR => 6,
-            MODE11_A::WIREDORPULLDOWN => 7,
-            MODE11_A::WIREDAND => 8,
-            MODE11_A::WIREDANDFILTER => 9,
-            MODE11_A::WIREDANDPULLUP => 10,
-            MODE11_A::WIREDANDPULLUPFILTER => 11,
-            MODE11_A::WIREDANDALT => 12,
-            MODE11_A::WIREDANDALTFILTER => 13,
-            MODE11_A::WIREDANDALTPULLUP => 14,
-            MODE11_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE11`"]
@@ -1072,61 +1008,45 @@ impl<'a> MODE11_W<'a> {
 }
 #[doc = "Pin 12 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE12_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE12_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE12_A) -> Self {
-        match variant {
-            MODE12_A::DISABLED => 0,
-            MODE12_A::INPUT => 1,
-            MODE12_A::INPUTPULL => 2,
-            MODE12_A::INPUTPULLFILTER => 3,
-            MODE12_A::PUSHPULL => 4,
-            MODE12_A::PUSHPULLALT => 5,
-            MODE12_A::WIREDOR => 6,
-            MODE12_A::WIREDORPULLDOWN => 7,
-            MODE12_A::WIREDAND => 8,
-            MODE12_A::WIREDANDFILTER => 9,
-            MODE12_A::WIREDANDPULLUP => 10,
-            MODE12_A::WIREDANDPULLUPFILTER => 11,
-            MODE12_A::WIREDANDALT => 12,
-            MODE12_A::WIREDANDALTFILTER => 13,
-            MODE12_A::WIREDANDALTPULLUP => 14,
-            MODE12_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE12`"]
@@ -1337,61 +1257,45 @@ impl<'a> MODE12_W<'a> {
 }
 #[doc = "Pin 13 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE13_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE13_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE13_A) -> Self {
-        match variant {
-            MODE13_A::DISABLED => 0,
-            MODE13_A::INPUT => 1,
-            MODE13_A::INPUTPULL => 2,
-            MODE13_A::INPUTPULLFILTER => 3,
-            MODE13_A::PUSHPULL => 4,
-            MODE13_A::PUSHPULLALT => 5,
-            MODE13_A::WIREDOR => 6,
-            MODE13_A::WIREDORPULLDOWN => 7,
-            MODE13_A::WIREDAND => 8,
-            MODE13_A::WIREDANDFILTER => 9,
-            MODE13_A::WIREDANDPULLUP => 10,
-            MODE13_A::WIREDANDPULLUPFILTER => 11,
-            MODE13_A::WIREDANDALT => 12,
-            MODE13_A::WIREDANDALTFILTER => 13,
-            MODE13_A::WIREDANDALTPULLUP => 14,
-            MODE13_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE13`"]
@@ -1602,61 +1506,45 @@ impl<'a> MODE13_W<'a> {
 }
 #[doc = "Pin 14 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE14_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE14_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE14_A) -> Self {
-        match variant {
-            MODE14_A::DISABLED => 0,
-            MODE14_A::INPUT => 1,
-            MODE14_A::INPUTPULL => 2,
-            MODE14_A::INPUTPULLFILTER => 3,
-            MODE14_A::PUSHPULL => 4,
-            MODE14_A::PUSHPULLALT => 5,
-            MODE14_A::WIREDOR => 6,
-            MODE14_A::WIREDORPULLDOWN => 7,
-            MODE14_A::WIREDAND => 8,
-            MODE14_A::WIREDANDFILTER => 9,
-            MODE14_A::WIREDANDPULLUP => 10,
-            MODE14_A::WIREDANDPULLUPFILTER => 11,
-            MODE14_A::WIREDANDALT => 12,
-            MODE14_A::WIREDANDALTFILTER => 13,
-            MODE14_A::WIREDANDALTPULLUP => 14,
-            MODE14_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE14`"]
@@ -1867,61 +1755,45 @@ impl<'a> MODE14_W<'a> {
 }
 #[doc = "Pin 15 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE15_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Input enabled. Filter if DOUT is set"]
-    INPUT,
+    INPUT = 1,
     #[doc = "2: Input enabled. DOUT determines pull direction"]
-    INPUTPULL,
+    INPUTPULL = 2,
     #[doc = "3: Input enabled with filter. DOUT determines pull direction"]
-    INPUTPULLFILTER,
+    INPUTPULLFILTER = 3,
     #[doc = "4: Push-pull output"]
-    PUSHPULL,
+    PUSHPULL = 4,
     #[doc = "5: Push-pull using alternate control"]
-    PUSHPULLALT,
+    PUSHPULLALT = 5,
     #[doc = "6: Wired-or output"]
-    WIREDOR,
+    WIREDOR = 6,
     #[doc = "7: Wired-or output with pull-down"]
-    WIREDORPULLDOWN,
+    WIREDORPULLDOWN = 7,
     #[doc = "8: Open-drain output"]
-    WIREDAND,
+    WIREDAND = 8,
     #[doc = "9: Open-drain output with filter"]
-    WIREDANDFILTER,
+    WIREDANDFILTER = 9,
     #[doc = "10: Open-drain output with pullup"]
-    WIREDANDPULLUP,
+    WIREDANDPULLUP = 10,
     #[doc = "11: Open-drain output with filter and pullup"]
-    WIREDANDPULLUPFILTER,
+    WIREDANDPULLUPFILTER = 11,
     #[doc = "12: Open-drain output using alternate control"]
-    WIREDANDALT,
+    WIREDANDALT = 12,
     #[doc = "13: Open-drain output using alternate control with filter"]
-    WIREDANDALTFILTER,
+    WIREDANDALTFILTER = 13,
     #[doc = "14: Open-drain output using alternate control with pullup"]
-    WIREDANDALTPULLUP,
+    WIREDANDALTPULLUP = 14,
     #[doc = "15: Open-drain output using alternate control with filter and pullup"]
-    WIREDANDALTPULLUPFILTER,
+    WIREDANDALTPULLUPFILTER = 15,
 }
 impl From<MODE15_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE15_A) -> Self {
-        match variant {
-            MODE15_A::DISABLED => 0,
-            MODE15_A::INPUT => 1,
-            MODE15_A::INPUTPULL => 2,
-            MODE15_A::INPUTPULLFILTER => 3,
-            MODE15_A::PUSHPULL => 4,
-            MODE15_A::PUSHPULLALT => 5,
-            MODE15_A::WIREDOR => 6,
-            MODE15_A::WIREDORPULLDOWN => 7,
-            MODE15_A::WIREDAND => 8,
-            MODE15_A::WIREDANDFILTER => 9,
-            MODE15_A::WIREDANDPULLUP => 10,
-            MODE15_A::WIREDANDPULLUPFILTER => 11,
-            MODE15_A::WIREDANDALT => 12,
-            MODE15_A::WIREDANDALTFILTER => 13,
-            MODE15_A::WIREDANDALTPULLUP => 14,
-            MODE15_A::WIREDANDALTPULLUPFILTER => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE15`"]

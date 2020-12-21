@@ -74,22 +74,19 @@ impl<'a> DECODE_W<'a> {
 }
 #[doc = "Enable Storing of Sensor Sample in Result Buffer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STRSAMPLE_A {
     #[doc = "0: Nothing will be stored in the result buffer."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: The sensor sample data will be stored in the result buffer."]
-    DATA,
+    DATA = 1,
     #[doc = "2: The data source (i.e., the channel) will be stored alongside the sensor sample data."]
-    DATASRC,
+    DATASRC = 2,
 }
 impl From<STRSAMPLE_A> for u8 {
     #[inline(always)]
     fn from(variant: STRSAMPLE_A) -> Self {
-        match variant {
-            STRSAMPLE_A::DISABLE => 0,
-            STRSAMPLE_A::DATA => 1,
-            STRSAMPLE_A::DATASRC => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STRSAMPLE`"]
@@ -180,22 +177,19 @@ impl<'a> SCANRESINV_W<'a> {
 }
 #[doc = "Configure Evaluation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Threshold comparison is used to evaluate sensor result"]
-    THRES,
+    THRES = 0,
     #[doc = "1: Sliding window is used to evaluate sensor result"]
-    SLIDINGWIN,
+    SLIDINGWIN = 1,
     #[doc = "2: Step detection is used to evaluate sensor result"]
-    STEPDET,
+    STEPDET = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::THRES => 0,
-            MODE_A::SLIDINGWIN => 1,
-            MODE_A::STEPDET => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

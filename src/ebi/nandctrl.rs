@@ -36,25 +36,21 @@ impl<'a> EN_W<'a> {
 }
 #[doc = "NAND Flash Bank\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BANKSEL_A {
     #[doc = "0: Memory bank 0 is connected to a NAND Flash device."]
-    BANK0,
+    BANK0 = 0,
     #[doc = "1: Memory bank 1 is connected to a NAND Flash device."]
-    BANK1,
+    BANK1 = 1,
     #[doc = "2: Memory bank 2 is connected to a NAND Flash device."]
-    BANK2,
+    BANK2 = 2,
     #[doc = "3: Memory bank 3 is connected to a NAND Flash device."]
-    BANK3,
+    BANK3 = 3,
 }
 impl From<BANKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: BANKSEL_A) -> Self {
-        match variant {
-            BANKSEL_A::BANK0 => 0,
-            BANKSEL_A::BANK1 => 1,
-            BANKSEL_A::BANK2 => 2,
-            BANKSEL_A::BANK3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BANKSEL`"]

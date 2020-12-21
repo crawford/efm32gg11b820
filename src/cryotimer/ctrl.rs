@@ -60,25 +60,21 @@ impl<'a> DEBUGRUN_W<'a> {
 }
 #[doc = "Select Low Frequency Oscillator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OSCSEL_A {
     #[doc = "0: Output is driven low"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Select Low Frequency RC Oscillator"]
-    LFRCO,
+    LFRCO = 1,
     #[doc = "2: Select Low Frequency Crystal Oscillator"]
-    LFXO,
+    LFXO = 2,
     #[doc = "3: Select Ultra Low Frequency RC Oscillator"]
-    ULFRCO,
+    ULFRCO = 3,
 }
 impl From<OSCSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: OSCSEL_A) -> Self {
-        match variant {
-            OSCSEL_A::DISABLED => 0,
-            OSCSEL_A::LFRCO => 1,
-            OSCSEL_A::LFXO => 2,
-            OSCSEL_A::ULFRCO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OSCSEL`"]
@@ -157,37 +153,29 @@ impl<'a> OSCSEL_W<'a> {
 }
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: LF Oscillator frequency undivided"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: LF Oscillator frequency divided by 2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: LF Oscillator frequency divided by 4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: LF Oscillator frequency divided by 8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: LF Oscillator frequency divided by 16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: LF Oscillator frequency divided by 32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: LF Oscillator frequency divided by 64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: LF Oscillator frequency divided by 128"]
-    DIV128,
+    DIV128 = 7,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PRESC_A) -> Self {
-        match variant {
-            PRESC_A::DIV1 => 0,
-            PRESC_A::DIV2 => 1,
-            PRESC_A::DIV4 => 2,
-            PRESC_A::DIV8 => 3,
-            PRESC_A::DIV16 => 4,
-            PRESC_A::DIV32 => 5,
-            PRESC_A::DIV64 => 6,
-            PRESC_A::DIV128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRESC`"]

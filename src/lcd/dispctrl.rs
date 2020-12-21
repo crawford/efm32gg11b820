@@ -12,31 +12,25 @@ impl crate::ResetValue for super::DISPCTRL {
 }
 #[doc = "Mux Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MUX_A {
     #[doc = "0: Static"]
-    STATIC,
+    STATIC = 0,
     #[doc = "1: Duplex"]
-    DUPLEX,
+    DUPLEX = 1,
     #[doc = "2: Triplex"]
-    TRIPLEX,
+    TRIPLEX = 2,
     #[doc = "3: Quadruplex"]
-    QUADRUPLEX,
+    QUADRUPLEX = 3,
     #[doc = "5: Sextaplex"]
-    SEXTAPLEX,
+    SEXTAPLEX = 5,
     #[doc = "7: Octaplex"]
-    OCTAPLEX,
+    OCTAPLEX = 7,
 }
 impl From<MUX_A> for u8 {
     #[inline(always)]
     fn from(variant: MUX_A) -> Self {
-        match variant {
-            MUX_A::STATIC => 0,
-            MUX_A::DUPLEX => 1,
-            MUX_A::TRIPLEX => 2,
-            MUX_A::QUADRUPLEX => 3,
-            MUX_A::SEXTAPLEX => 5,
-            MUX_A::OCTAPLEX => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MUX`"]
@@ -174,28 +168,23 @@ impl<'a> CONTRAST_W<'a> {
 }
 #[doc = "Charge Redistribution Cycles\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CHGRDST_A {
     #[doc = "0: Disable charge redistribution."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Use 1 prescaled low frequency clock cycle for charge redistribution."]
-    ONE,
+    ONE = 1,
     #[doc = "2: Use 2 prescaled low frequency clock cycles for charge redistribution."]
-    TWO,
+    TWO = 2,
     #[doc = "3: Use 3 prescaled low frequency clock cycles for charge redistribution."]
-    THREE,
+    THREE = 3,
     #[doc = "4: Use 4 prescaled low frequency clock cycles for charge redistribution."]
-    FOUR,
+    FOUR = 4,
 }
 impl From<CHGRDST_A> for u8 {
     #[inline(always)]
     fn from(variant: CHGRDST_A) -> Self {
-        match variant {
-            CHGRDST_A::DISABLE => 0,
-            CHGRDST_A::ONE => 1,
-            CHGRDST_A::TWO => 2,
-            CHGRDST_A::THREE => 3,
-            CHGRDST_A::FOUR => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CHGRDST`"]
@@ -284,25 +273,21 @@ impl<'a> CHGRDST_W<'a> {
 }
 #[doc = "Bias Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BIAS_A {
     #[doc = "0: Static"]
-    STATIC,
+    STATIC = 0,
     #[doc = "1: 1/2 Bias"]
-    ONEHALF,
+    ONEHALF = 1,
     #[doc = "2: 1/3 Bias"]
-    ONETHIRD,
+    ONETHIRD = 2,
     #[doc = "3: 1/4 Bias"]
-    ONEFOURTH,
+    ONEFOURTH = 3,
 }
 impl From<BIAS_A> for u8 {
     #[inline(always)]
     fn from(variant: BIAS_A) -> Self {
-        match variant {
-            BIAS_A::STATIC => 0,
-            BIAS_A::ONEHALF => 1,
-            BIAS_A::ONETHIRD => 2,
-            BIAS_A::ONEFOURTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BIAS`"]
@@ -381,22 +366,22 @@ impl<'a> BIAS_W<'a> {
 }
 #[doc = "Mode Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
-    #[doc = "0: No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
-    NOEXTCAP,
-    #[doc = "1: Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
-    STEPDOWN,
-    #[doc = "2: Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
-    CPINTOSC,
+    #[doc = "0: No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\]
+to control VLCD."]
+    NOEXTCAP = 0,
+    #[doc = "1: Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\]
+to control VLCD level, and use SPEED to adjust VLCD drive strength."]
+    STEPDOWN = 1,
+    #[doc = "2: Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\]
+to control VLCD level, and use SPEED to adjust oscillator frequency."]
+    CPINTOSC = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::NOEXTCAP => 0,
-            MODE_A::STEPDOWN => 1,
-            MODE_A::CPINTOSC => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -439,17 +424,20 @@ impl<'a> MODE_W<'a> {
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\] to control VLCD."]
+    #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\]
+to control VLCD."]
     #[inline(always)]
     pub fn noextcap(self) -> &'a mut W {
         self.variant(MODE_A::NOEXTCAP)
     }
-    #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
+    #[doc = "Use step down control with VLCD less than VDD. Use CONTRAST\\[5:0\\]
+to control VLCD level, and use SPEED to adjust VLCD drive strength."]
     #[inline(always)]
     pub fn stepdown(self) -> &'a mut W {
         self.variant(MODE_A::STEPDOWN)
     }
-    #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\] to control VLCD level, and use SPEED to adjust oscillator frequency."]
+    #[doc = "Charge pump used with internal oscillator. Use CONTRAST\\[5:0\\]
+to control VLCD level, and use SPEED to adjust oscillator frequency."]
     #[inline(always)]
     pub fn cpintosc(self) -> &'a mut W {
         self.variant(MODE_A::CPINTOSC)

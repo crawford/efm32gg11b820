@@ -12,37 +12,29 @@ impl crate::ResetValue for super::TFTCOLORFORMAT {
 }
 #[doc = "Sprite Pixel Color Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PIXEL0FORMAT_A {
     #[doc = "0: ARGB data is 0555"]
-    ARGB0555,
+    ARGB0555 = 0,
     #[doc = "1: ARGB data is 0565"]
-    ARGB0565,
+    ARGB0565 = 1,
     #[doc = "2: ARGB data is 0666"]
-    ARGB0666,
+    ARGB0666 = 2,
     #[doc = "3: ARGB data is 0888"]
-    ARGB0888,
+    ARGB0888 = 3,
     #[doc = "4: ARGB data is 5555"]
-    ARGB5555,
+    ARGB5555 = 4,
     #[doc = "5: ARGB data is 6565"]
-    ARGB6565,
+    ARGB6565 = 5,
     #[doc = "6: ARGB data is 6666"]
-    ARGB6666,
+    ARGB6666 = 6,
     #[doc = "7: ARGB data is 8888"]
-    ARGB8888,
+    ARGB8888 = 7,
 }
 impl From<PIXEL0FORMAT_A> for u8 {
     #[inline(always)]
     fn from(variant: PIXEL0FORMAT_A) -> Self {
-        match variant {
-            PIXEL0FORMAT_A::ARGB0555 => 0,
-            PIXEL0FORMAT_A::ARGB0565 => 1,
-            PIXEL0FORMAT_A::ARGB0666 => 2,
-            PIXEL0FORMAT_A::ARGB0888 => 3,
-            PIXEL0FORMAT_A::ARGB5555 => 4,
-            PIXEL0FORMAT_A::ARGB6565 => 5,
-            PIXEL0FORMAT_A::ARGB6666 => 6,
-            PIXEL0FORMAT_A::ARGB8888 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PIXEL0FORMAT`"]
@@ -165,25 +157,21 @@ impl<'a> PIXEL0FORMAT_W<'a> {
 }
 #[doc = "Source and Destination Pixel Color Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PIXEL1FORMAT_A {
     #[doc = "0: RGB data is 555"]
-    RGB555,
+    RGB555 = 0,
     #[doc = "1: RGB data is 565"]
-    RGB565,
+    RGB565 = 1,
     #[doc = "2: RGB data is 666"]
-    RGB666,
+    RGB666 = 2,
     #[doc = "3: RGB data is 888"]
-    RGB888,
+    RGB888 = 3,
 }
 impl From<PIXEL1FORMAT_A> for u8 {
     #[inline(always)]
     fn from(variant: PIXEL1FORMAT_A) -> Self {
-        match variant {
-            PIXEL1FORMAT_A::RGB555 => 0,
-            PIXEL1FORMAT_A::RGB565 => 1,
-            PIXEL1FORMAT_A::RGB666 => 2,
-            PIXEL1FORMAT_A::RGB888 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PIXEL1FORMAT`"]

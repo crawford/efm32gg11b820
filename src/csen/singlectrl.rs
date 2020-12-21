@@ -12,205 +12,141 @@ impl crate::ResetValue for super::SINGLECTRL {
 }
 #[doc = "Single Channel Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SINGLESEL_A {
     #[doc = "32: `100000`"]
-    APORT1XCH0,
+    APORT1XCH0 = 32,
     #[doc = "33: `100001`"]
-    APORT1YCH1,
+    APORT1YCH1 = 33,
     #[doc = "34: `100010`"]
-    APORT1XCH2,
+    APORT1XCH2 = 34,
     #[doc = "35: `100011`"]
-    APORT1YCH3,
+    APORT1YCH3 = 35,
     #[doc = "36: `100100`"]
-    APORT1XCH4,
+    APORT1XCH4 = 36,
     #[doc = "37: `100101`"]
-    APORT1YCH5,
+    APORT1YCH5 = 37,
     #[doc = "38: `100110`"]
-    APORT1XCH6,
+    APORT1XCH6 = 38,
     #[doc = "39: `100111`"]
-    APORT1YCH7,
+    APORT1YCH7 = 39,
     #[doc = "40: `101000`"]
-    APORT1XCH8,
+    APORT1XCH8 = 40,
     #[doc = "41: `101001`"]
-    APORT1YCH9,
+    APORT1YCH9 = 41,
     #[doc = "42: `101010`"]
-    APORT1XCH10,
+    APORT1XCH10 = 42,
     #[doc = "43: `101011`"]
-    APORT1YCH11,
+    APORT1YCH11 = 43,
     #[doc = "44: `101100`"]
-    APORT1XCH12,
+    APORT1XCH12 = 44,
     #[doc = "45: `101101`"]
-    APORT1YCH13,
+    APORT1YCH13 = 45,
     #[doc = "46: `101110`"]
-    APORT1XCH14,
+    APORT1XCH14 = 46,
     #[doc = "47: `101111`"]
-    APORT1YCH15,
+    APORT1YCH15 = 47,
     #[doc = "48: `110000`"]
-    APORT1XCH16,
+    APORT1XCH16 = 48,
     #[doc = "49: `110001`"]
-    APORT1YCH17,
+    APORT1YCH17 = 49,
     #[doc = "50: `110010`"]
-    APORT1XCH18,
+    APORT1XCH18 = 50,
     #[doc = "51: `110011`"]
-    APORT1YCH19,
+    APORT1YCH19 = 51,
     #[doc = "52: `110100`"]
-    APORT1XCH20,
+    APORT1XCH20 = 52,
     #[doc = "53: `110101`"]
-    APORT1YCH21,
+    APORT1YCH21 = 53,
     #[doc = "54: `110110`"]
-    APORT1XCH22,
+    APORT1XCH22 = 54,
     #[doc = "55: `110111`"]
-    APORT1YCH23,
+    APORT1YCH23 = 55,
     #[doc = "56: `111000`"]
-    APORT1XCH24,
+    APORT1XCH24 = 56,
     #[doc = "57: `111001`"]
-    APORT1YCH25,
+    APORT1YCH25 = 57,
     #[doc = "58: `111010`"]
-    APORT1XCH26,
+    APORT1XCH26 = 58,
     #[doc = "59: `111011`"]
-    APORT1YCH27,
+    APORT1YCH27 = 59,
     #[doc = "60: `111100`"]
-    APORT1XCH28,
+    APORT1XCH28 = 60,
     #[doc = "61: `111101`"]
-    APORT1YCH29,
+    APORT1YCH29 = 61,
     #[doc = "62: `111110`"]
-    APORT1XCH30,
+    APORT1XCH30 = 62,
     #[doc = "63: `111111`"]
-    APORT1YCH31,
+    APORT1YCH31 = 63,
     #[doc = "96: `1100000`"]
-    APORT3XCH0,
+    APORT3XCH0 = 96,
     #[doc = "97: `1100001`"]
-    APORT3YCH1,
+    APORT3YCH1 = 97,
     #[doc = "98: `1100010`"]
-    APORT3XCH2,
+    APORT3XCH2 = 98,
     #[doc = "99: `1100011`"]
-    APORT3YCH3,
+    APORT3YCH3 = 99,
     #[doc = "100: `1100100`"]
-    APORT3XCH4,
+    APORT3XCH4 = 100,
     #[doc = "101: `1100101`"]
-    APORT3YCH5,
+    APORT3YCH5 = 101,
     #[doc = "102: `1100110`"]
-    APORT3XCH6,
+    APORT3XCH6 = 102,
     #[doc = "103: `1100111`"]
-    APORT3YCH7,
+    APORT3YCH7 = 103,
     #[doc = "104: `1101000`"]
-    APORT3XCH8,
+    APORT3XCH8 = 104,
     #[doc = "105: `1101001`"]
-    APORT3YCH9,
+    APORT3YCH9 = 105,
     #[doc = "106: `1101010`"]
-    APORT3XCH10,
+    APORT3XCH10 = 106,
     #[doc = "107: `1101011`"]
-    APORT3YCH11,
+    APORT3YCH11 = 107,
     #[doc = "108: `1101100`"]
-    APORT3XCH12,
+    APORT3XCH12 = 108,
     #[doc = "109: `1101101`"]
-    APORT3YCH13,
+    APORT3YCH13 = 109,
     #[doc = "110: `1101110`"]
-    APORT3XCH14,
+    APORT3XCH14 = 110,
     #[doc = "111: `1101111`"]
-    APORT3YCH15,
+    APORT3YCH15 = 111,
     #[doc = "112: `1110000`"]
-    APORT3XCH16,
+    APORT3XCH16 = 112,
     #[doc = "113: `1110001`"]
-    APORT3YCH17,
+    APORT3YCH17 = 113,
     #[doc = "114: `1110010`"]
-    APORT3XCH18,
+    APORT3XCH18 = 114,
     #[doc = "115: `1110011`"]
-    APORT3YCH19,
+    APORT3YCH19 = 115,
     #[doc = "116: `1110100`"]
-    APORT3XCH20,
+    APORT3XCH20 = 116,
     #[doc = "117: `1110101`"]
-    APORT3YCH21,
+    APORT3YCH21 = 117,
     #[doc = "118: `1110110`"]
-    APORT3XCH22,
+    APORT3XCH22 = 118,
     #[doc = "119: `1110111`"]
-    APORT3YCH23,
+    APORT3YCH23 = 119,
     #[doc = "120: `1111000`"]
-    APORT3XCH24,
+    APORT3XCH24 = 120,
     #[doc = "121: `1111001`"]
-    APORT3YCH25,
+    APORT3YCH25 = 121,
     #[doc = "122: `1111010`"]
-    APORT3XCH26,
+    APORT3XCH26 = 122,
     #[doc = "123: `1111011`"]
-    APORT3YCH27,
+    APORT3YCH27 = 123,
     #[doc = "124: `1111100`"]
-    APORT3XCH28,
+    APORT3XCH28 = 124,
     #[doc = "125: `1111101`"]
-    APORT3YCH29,
+    APORT3YCH29 = 125,
     #[doc = "126: `1111110`"]
-    APORT3XCH30,
+    APORT3XCH30 = 126,
     #[doc = "127: `1111111`"]
-    APORT3YCH31,
+    APORT3YCH31 = 127,
 }
 impl From<SINGLESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SINGLESEL_A) -> Self {
-        match variant {
-            SINGLESEL_A::APORT1XCH0 => 32,
-            SINGLESEL_A::APORT1YCH1 => 33,
-            SINGLESEL_A::APORT1XCH2 => 34,
-            SINGLESEL_A::APORT1YCH3 => 35,
-            SINGLESEL_A::APORT1XCH4 => 36,
-            SINGLESEL_A::APORT1YCH5 => 37,
-            SINGLESEL_A::APORT1XCH6 => 38,
-            SINGLESEL_A::APORT1YCH7 => 39,
-            SINGLESEL_A::APORT1XCH8 => 40,
-            SINGLESEL_A::APORT1YCH9 => 41,
-            SINGLESEL_A::APORT1XCH10 => 42,
-            SINGLESEL_A::APORT1YCH11 => 43,
-            SINGLESEL_A::APORT1XCH12 => 44,
-            SINGLESEL_A::APORT1YCH13 => 45,
-            SINGLESEL_A::APORT1XCH14 => 46,
-            SINGLESEL_A::APORT1YCH15 => 47,
-            SINGLESEL_A::APORT1XCH16 => 48,
-            SINGLESEL_A::APORT1YCH17 => 49,
-            SINGLESEL_A::APORT1XCH18 => 50,
-            SINGLESEL_A::APORT1YCH19 => 51,
-            SINGLESEL_A::APORT1XCH20 => 52,
-            SINGLESEL_A::APORT1YCH21 => 53,
-            SINGLESEL_A::APORT1XCH22 => 54,
-            SINGLESEL_A::APORT1YCH23 => 55,
-            SINGLESEL_A::APORT1XCH24 => 56,
-            SINGLESEL_A::APORT1YCH25 => 57,
-            SINGLESEL_A::APORT1XCH26 => 58,
-            SINGLESEL_A::APORT1YCH27 => 59,
-            SINGLESEL_A::APORT1XCH28 => 60,
-            SINGLESEL_A::APORT1YCH29 => 61,
-            SINGLESEL_A::APORT1XCH30 => 62,
-            SINGLESEL_A::APORT1YCH31 => 63,
-            SINGLESEL_A::APORT3XCH0 => 96,
-            SINGLESEL_A::APORT3YCH1 => 97,
-            SINGLESEL_A::APORT3XCH2 => 98,
-            SINGLESEL_A::APORT3YCH3 => 99,
-            SINGLESEL_A::APORT3XCH4 => 100,
-            SINGLESEL_A::APORT3YCH5 => 101,
-            SINGLESEL_A::APORT3XCH6 => 102,
-            SINGLESEL_A::APORT3YCH7 => 103,
-            SINGLESEL_A::APORT3XCH8 => 104,
-            SINGLESEL_A::APORT3YCH9 => 105,
-            SINGLESEL_A::APORT3XCH10 => 106,
-            SINGLESEL_A::APORT3YCH11 => 107,
-            SINGLESEL_A::APORT3XCH12 => 108,
-            SINGLESEL_A::APORT3YCH13 => 109,
-            SINGLESEL_A::APORT3XCH14 => 110,
-            SINGLESEL_A::APORT3YCH15 => 111,
-            SINGLESEL_A::APORT3XCH16 => 112,
-            SINGLESEL_A::APORT3YCH17 => 113,
-            SINGLESEL_A::APORT3XCH18 => 114,
-            SINGLESEL_A::APORT3YCH19 => 115,
-            SINGLESEL_A::APORT3XCH20 => 116,
-            SINGLESEL_A::APORT3YCH21 => 117,
-            SINGLESEL_A::APORT3XCH22 => 118,
-            SINGLESEL_A::APORT3YCH23 => 119,
-            SINGLESEL_A::APORT3XCH24 => 120,
-            SINGLESEL_A::APORT3YCH25 => 121,
-            SINGLESEL_A::APORT3XCH26 => 122,
-            SINGLESEL_A::APORT3YCH27 => 123,
-            SINGLESEL_A::APORT3XCH28 => 124,
-            SINGLESEL_A::APORT3YCH29 => 125,
-            SINGLESEL_A::APORT3XCH30 => 126,
-            SINGLESEL_A::APORT3YCH31 => 127,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SINGLESEL`"]

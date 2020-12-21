@@ -12,58 +12,43 @@ impl crate::ResetValue for super::WAC {
 }
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODULUS_A {
     #[doc = "0: Generic modulus. p = 2^256"]
-    BIN256,
+    BIN256 = 0,
     #[doc = "1: Generic modulus. p = 2^128"]
-    BIN128,
+    BIN128 = 1,
     #[doc = "2: Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
-    ECCBIN233P,
+    ECCBIN233P = 2,
     #[doc = "3: Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
-    ECCBIN163P,
+    ECCBIN163P = 3,
     #[doc = "4: Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
-    GCMBIN128,
+    GCMBIN128 = 4,
     #[doc = "5: Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
-    ECCPRIME256P,
+    ECCPRIME256P = 5,
     #[doc = "6: Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
-    ECCPRIME224P,
+    ECCPRIME224P = 6,
     #[doc = "7: Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
-    ECCPRIME192P,
+    ECCPRIME192P = 7,
     #[doc = "8: P modulus for B-233 ECC curve"]
-    ECCBIN233N,
+    ECCBIN233N = 8,
     #[doc = "9: P modulus for K-233 ECC curve"]
-    ECCBIN233KN,
+    ECCBIN233KN = 9,
     #[doc = "10: P modulus for B-163 ECC curve"]
-    ECCBIN163N,
+    ECCBIN163N = 10,
     #[doc = "11: P modulus for K-163 ECC curve"]
-    ECCBIN163KN,
+    ECCBIN163KN = 11,
     #[doc = "12: P modulus for P-256 ECC curve"]
-    ECCPRIME256N,
+    ECCPRIME256N = 12,
     #[doc = "13: P modulus for P-224 ECC curve"]
-    ECCPRIME224N,
+    ECCPRIME224N = 13,
     #[doc = "14: P modulus for P-192 ECC curve"]
-    ECCPRIME192N,
+    ECCPRIME192N = 14,
 }
 impl From<MODULUS_A> for u8 {
     #[inline(always)]
     fn from(variant: MODULUS_A) -> Self {
-        match variant {
-            MODULUS_A::BIN256 => 0,
-            MODULUS_A::BIN128 => 1,
-            MODULUS_A::ECCBIN233P => 2,
-            MODULUS_A::ECCBIN163P => 3,
-            MODULUS_A::GCMBIN128 => 4,
-            MODULUS_A::ECCPRIME256P => 5,
-            MODULUS_A::ECCPRIME224P => 6,
-            MODULUS_A::ECCPRIME192P => 7,
-            MODULUS_A::ECCBIN233N => 8,
-            MODULUS_A::ECCBIN233KN => 9,
-            MODULUS_A::ECCBIN163N => 10,
-            MODULUS_A::ECCBIN163KN => 11,
-            MODULUS_A::ECCPRIME256N => 12,
-            MODULUS_A::ECCPRIME224N => 13,
-            MODULUS_A::ECCPRIME192N => 14,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODULUS`"]
@@ -286,22 +271,19 @@ impl<'a> MODOP_W<'a> {
 }
 #[doc = "Multiply Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MULWIDTH_A {
     #[doc = "0: Multiply 256 bits"]
-    MUL256,
+    MUL256 = 0,
     #[doc = "1: Multiply 128 bits"]
-    MUL128,
+    MUL128 = 1,
     #[doc = "2: Same number of bits as specified by MODULUS"]
-    MULMOD,
+    MULMOD = 2,
 }
 impl From<MULWIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: MULWIDTH_A) -> Self {
-        match variant {
-            MULWIDTH_A::MUL256 => 0,
-            MULWIDTH_A::MUL128 => 1,
-            MULWIDTH_A::MULMOD => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MULWIDTH`"]
@@ -368,22 +350,19 @@ impl<'a> MULWIDTH_W<'a> {
 }
 #[doc = "Result Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESULTWIDTH_A {
     #[doc = "0: Results have 256 bits"]
-    _256BIT,
+    _256BIT = 0,
     #[doc = "1: Results have 128 bits"]
-    _128BIT,
+    _128BIT = 1,
     #[doc = "2: Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
-    _260BIT,
+    _260BIT = 2,
 }
 impl From<RESULTWIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: RESULTWIDTH_A) -> Self {
-        match variant {
-            RESULTWIDTH_A::_256BIT => 0,
-            RESULTWIDTH_A::_128BIT => 1,
-            RESULTWIDTH_A::_260BIT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESULTWIDTH`"]

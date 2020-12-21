@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CH4_CTRL {
 }
 #[doc = "DMA Structure Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STRUCTTYPE_A {
     #[doc = "0: DMA transfer structure type selected."]
-    TRANSFER,
+    TRANSFER = 0,
     #[doc = "1: Synchronization structure type selected."]
-    SYNCHRONIZE,
+    SYNCHRONIZE = 1,
     #[doc = "2: Write immediate value structure type selected."]
-    WRITE,
+    WRITE = 2,
 }
 impl From<STRUCTTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: STRUCTTYPE_A) -> Self {
-        match variant {
-            STRUCTTYPE_A::TRANSFER => 0,
-            STRUCTTYPE_A::SYNCHRONIZE => 1,
-            STRUCTTYPE_A::WRITE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STRUCTTYPE`"]
@@ -122,55 +119,41 @@ impl<'a> BYTESWAP_W<'a> {
 }
 #[doc = "Block Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BLOCKSIZE_A {
     #[doc = "0: One unit transfer per arbitration"]
-    UNIT1,
+    UNIT1 = 0,
     #[doc = "1: Two unit transfers per arbitration"]
-    UNIT2,
+    UNIT2 = 1,
     #[doc = "2: Three unit transfers per arbitration"]
-    UNIT3,
+    UNIT3 = 2,
     #[doc = "3: Four unit transfers per arbitration"]
-    UNIT4,
+    UNIT4 = 3,
     #[doc = "4: Six unit transfers per arbitration"]
-    UNIT6,
+    UNIT6 = 4,
     #[doc = "5: Eight unit transfers per arbitration"]
-    UNIT8,
+    UNIT8 = 5,
     #[doc = "7: Sixteen unit transfers per arbitration"]
-    UNIT16,
+    UNIT16 = 7,
     #[doc = "9: 32 unit transfers per arbitration"]
-    UNIT32,
+    UNIT32 = 9,
     #[doc = "10: 64 unit transfers per arbitration"]
-    UNIT64,
+    UNIT64 = 10,
     #[doc = "11: 128 unit transfers per arbitration"]
-    UNIT128,
+    UNIT128 = 11,
     #[doc = "12: 256 unit transfers per arbitration"]
-    UNIT256,
+    UNIT256 = 12,
     #[doc = "13: 512 unit transfers per arbitration"]
-    UNIT512,
+    UNIT512 = 13,
     #[doc = "14: 1024 unit transfers per arbitration"]
-    UNIT1024,
+    UNIT1024 = 14,
     #[doc = "15: Transfer all units as specified by the XFRCNT field"]
-    ALL,
+    ALL = 15,
 }
 impl From<BLOCKSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: BLOCKSIZE_A) -> Self {
-        match variant {
-            BLOCKSIZE_A::UNIT1 => 0,
-            BLOCKSIZE_A::UNIT2 => 1,
-            BLOCKSIZE_A::UNIT3 => 2,
-            BLOCKSIZE_A::UNIT4 => 3,
-            BLOCKSIZE_A::UNIT6 => 4,
-            BLOCKSIZE_A::UNIT8 => 5,
-            BLOCKSIZE_A::UNIT16 => 7,
-            BLOCKSIZE_A::UNIT32 => 9,
-            BLOCKSIZE_A::UNIT64 => 10,
-            BLOCKSIZE_A::UNIT128 => 11,
-            BLOCKSIZE_A::UNIT256 => 12,
-            BLOCKSIZE_A::UNIT512 => 13,
-            BLOCKSIZE_A::UNIT1024 => 14,
-            BLOCKSIZE_A::ALL => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BLOCKSIZE`"]
@@ -454,25 +437,21 @@ impl<'a> IGNORESREQ_W<'a> {
 }
 #[doc = "Source Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRCINC_A {
     #[doc = "0: Increment source address by one unit data size after each read"]
-    ONE,
+    ONE = 0,
     #[doc = "1: Increment source address by two unit data sizes after each read"]
-    TWO,
+    TWO = 1,
     #[doc = "2: Increment source address by four unit data sizes after each read"]
-    FOUR,
+    FOUR = 2,
     #[doc = "3: Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
-    NONE,
+    NONE = 3,
 }
 impl From<SRCINC_A> for u8 {
     #[inline(always)]
     fn from(variant: SRCINC_A) -> Self {
-        match variant {
-            SRCINC_A::ONE => 0,
-            SRCINC_A::TWO => 1,
-            SRCINC_A::FOUR => 2,
-            SRCINC_A::NONE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRCINC`"]
@@ -551,22 +530,19 @@ impl<'a> SRCINC_W<'a> {
 }
 #[doc = "Unit Data Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SIZE_A {
     #[doc = "0: Each unit transfer is a byte"]
-    BYTE,
+    BYTE = 0,
     #[doc = "1: Each unit transfer is a half-word"]
-    HALFWORD,
+    HALFWORD = 1,
     #[doc = "2: Each unit transfer is a word"]
-    WORD,
+    WORD = 2,
 }
 impl From<SIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: SIZE_A) -> Self {
-        match variant {
-            SIZE_A::BYTE => 0,
-            SIZE_A::HALFWORD => 1,
-            SIZE_A::WORD => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SIZE`"]
@@ -633,25 +609,21 @@ impl<'a> SIZE_W<'a> {
 }
 #[doc = "Destination Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSTINC_A {
     #[doc = "0: Increment destination address by one unit data size after each write"]
-    ONE,
+    ONE = 0,
     #[doc = "1: Increment destination address by two unit data sizes after each write"]
-    TWO,
+    TWO = 1,
     #[doc = "2: Increment destination address by four unit data sizes after each write"]
-    FOUR,
+    FOUR = 2,
     #[doc = "3: Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
-    NONE,
+    NONE = 3,
 }
 impl From<DSTINC_A> for u8 {
     #[inline(always)]
     fn from(variant: DSTINC_A) -> Self {
-        match variant {
-            DSTINC_A::ONE => 0,
-            DSTINC_A::TWO => 1,
-            DSTINC_A::FOUR => 2,
-            DSTINC_A::NONE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSTINC`"]

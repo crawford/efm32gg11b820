@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WARMUPMODE_A {
     #[doc = "0: ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
-    NORMAL,
+    NORMAL = 0,
     #[doc = "1: ADC is kept in standby mode between conversions. 1us warmup time is used before each conversion."]
-    KEEPINSTANDBY,
+    KEEPINSTANDBY = 1,
     #[doc = "2: ADC is kept in slow acquisition mode between conversions. 1us warmup time is used before each conversion."]
-    KEEPINSLOWACC,
+    KEEPINSLOWACC = 2,
     #[doc = "3: ADC is kept on after conversions, allowing for continuous conversion."]
-    KEEPADCWARM,
+    KEEPADCWARM = 3,
 }
 impl From<WARMUPMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: WARMUPMODE_A) -> Self {
-        match variant {
-            WARMUPMODE_A::NORMAL => 0,
-            WARMUPMODE_A::KEEPINSTANDBY => 1,
-            WARMUPMODE_A::KEEPINSLOWACC => 2,
-            WARMUPMODE_A::KEEPADCWARM => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WARMUPMODE`"]
@@ -229,16 +225,15 @@ impl<'a> ADCCLKMODE_W<'a> {
 }
 #[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: `0`"]
-    NODIVISION,
+    NODIVISION = 0,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PRESC_A) -> Self {
-        match variant {
-            PRESC_A::NODIVISION => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRESC`"]
@@ -297,49 +292,37 @@ impl<'a> TIMEBASE_W<'a> {
 }
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OVSRSEL_A {
     #[doc = "0: 2 samples for each conversion result"]
-    X2,
+    X2 = 0,
     #[doc = "1: 4 samples for each conversion result"]
-    X4,
+    X4 = 1,
     #[doc = "2: 8 samples for each conversion result"]
-    X8,
+    X8 = 2,
     #[doc = "3: 16 samples for each conversion result"]
-    X16,
+    X16 = 3,
     #[doc = "4: 32 samples for each conversion result"]
-    X32,
+    X32 = 4,
     #[doc = "5: 64 samples for each conversion result"]
-    X64,
+    X64 = 5,
     #[doc = "6: 128 samples for each conversion result"]
-    X128,
+    X128 = 6,
     #[doc = "7: 256 samples for each conversion result"]
-    X256,
+    X256 = 7,
     #[doc = "8: 512 samples for each conversion result"]
-    X512,
+    X512 = 8,
     #[doc = "9: 1024 samples for each conversion result"]
-    X1024,
+    X1024 = 9,
     #[doc = "10: 2048 samples for each conversion result"]
-    X2048,
+    X2048 = 10,
     #[doc = "11: 4096 samples for each conversion result"]
-    X4096,
+    X4096 = 11,
 }
 impl From<OVSRSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: OVSRSEL_A) -> Self {
-        match variant {
-            OVSRSEL_A::X2 => 0,
-            OVSRSEL_A::X4 => 1,
-            OVSRSEL_A::X8 => 2,
-            OVSRSEL_A::X16 => 3,
-            OVSRSEL_A::X32 => 4,
-            OVSRSEL_A::X64 => 5,
-            OVSRSEL_A::X128 => 6,
-            OVSRSEL_A::X256 => 7,
-            OVSRSEL_A::X512 => 8,
-            OVSRSEL_A::X1024 => 9,
-            OVSRSEL_A::X2048 => 10,
-            OVSRSEL_A::X4096 => 11,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OVSRSEL`"]
@@ -553,22 +536,19 @@ impl<'a> CHCONMODE_W<'a> {
 }
 #[doc = "Channel Connect and Reference Warm Sel When ADC is IDLE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CHCONREFWARMIDLE_A {
     #[doc = "0: Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
-    PREFSCAN,
+    PREFSCAN = 0,
     #[doc = "1: Keep single reference warm and keep APORT switches for single channel closed if WARMUPMODE is not NORMAL"]
-    PREFSINGLE,
+    PREFSINGLE = 1,
     #[doc = "2: Keep last used reference warm and keep APORT switches for corresponding channel closed if WARMUPMODE is not NORMAL"]
-    KEEPPREV,
+    KEEPPREV = 2,
 }
 impl From<CHCONREFWARMIDLE_A> for u8 {
     #[inline(always)]
     fn from(variant: CHCONREFWARMIDLE_A) -> Self {
-        match variant {
-            CHCONREFWARMIDLE_A::PREFSCAN => 0,
-            CHCONREFWARMIDLE_A::PREFSINGLE => 1,
-            CHCONREFWARMIDLE_A::KEEPPREV => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CHCONREFWARMIDLE`"]

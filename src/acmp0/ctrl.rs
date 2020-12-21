@@ -156,25 +156,21 @@ impl<'a> APORTVMASTERDIS_W<'a> {
 }
 #[doc = "Power Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWRSEL_A {
     #[doc = "0: AVDD supply"]
-    AVDD,
+    AVDD = 0,
     #[doc = "1: DVDD supply"]
-    DVDD,
+    DVDD = 1,
     #[doc = "2: IOVDD/IOVDD0 supply"]
-    IOVDD0,
+    IOVDD0 = 2,
     #[doc = "4: IOVDD1 supply (if part has two I/O voltages)"]
-    IOVDD1,
+    IOVDD1 = 4,
 }
 impl From<PWRSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PWRSEL_A) -> Self {
-        match variant {
-            PWRSEL_A::AVDD => 0,
-            PWRSEL_A::DVDD => 1,
-            PWRSEL_A::IOVDD0 => 2,
-            PWRSEL_A::IOVDD1 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWRSEL`"]
@@ -276,22 +272,19 @@ impl<'a> ACCURACY_W<'a> {
 }
 #[doc = "Input Range\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUTRANGE_A {
     #[doc = "0: Setting when the input can be from 0 to ACMPVDD."]
-    FULL,
+    FULL = 0,
     #[doc = "1: Setting when the input will always be greater than ACMPVDD/2."]
-    GTVDDDIV2,
+    GTVDDDIV2 = 1,
     #[doc = "2: Setting when the input will always be less than ACMPVDD/2."]
-    LTVDDDIV2,
+    LTVDDDIV2 = 2,
 }
 impl From<INPUTRANGE_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUTRANGE_A) -> Self {
-        match variant {
-            INPUTRANGE_A::FULL => 0,
-            INPUTRANGE_A::GTVDDDIV2 => 1,
-            INPUTRANGE_A::LTVDDDIV2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUTRANGE`"]

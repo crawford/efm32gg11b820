@@ -91,7 +91,8 @@ impl R {
     pub fn wrprotswpinlvl(&self) -> WRPROTSWPINLVL_R {
         WRPROTSWPINLVL_R::new(((self.bits >> 19) & 0x01) != 0)
     }
-    #[doc = "Bits 20:23 - DAT\\[3:0\\] Line Signal Level"]
+    #[doc = "Bits 20:23 - DAT\\[3:0\\]
+Line Signal Level"]
     #[inline(always)]
     pub fn dat3to0siglvl(&self) -> DAT3TO0SIGLVL_R {
         DAT3TO0SIGLVL_R::new(((self.bits >> 20) & 0x0f) as u8)
@@ -101,7 +102,8 @@ impl R {
     pub fn cmdsiglvl(&self) -> CMDSIGLVL_R {
         CMDSIGLVL_R::new(((self.bits >> 24) & 0x01) != 0)
     }
-    #[doc = "Bits 25:28 - DAT\\[7:4\\] Line Signal Level"]
+    #[doc = "Bits 25:28 - DAT\\[7:4\\]
+Line Signal Level"]
     #[inline(always)]
     pub fn dat7to4siglvl(&self) -> DAT7TO4SIGLVL_R {
         DAT7TO4SIGLVL_R::new(((self.bits >> 25) & 0x0f) as u8)

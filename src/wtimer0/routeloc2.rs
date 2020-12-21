@@ -12,28 +12,23 @@ impl crate::ResetValue for super::ROUTELOC2 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CDTI0LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
 }
 impl From<CDTI0LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CDTI0LOC_A) -> Self {
-        match variant {
-            CDTI0LOC_A::LOC0 => 0,
-            CDTI0LOC_A::LOC1 => 1,
-            CDTI0LOC_A::LOC2 => 2,
-            CDTI0LOC_A::LOC3 => 3,
-            CDTI0LOC_A::LOC4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CDTI0LOC`"]
@@ -122,28 +117,23 @@ impl<'a> CDTI0LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CDTI1LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
 }
 impl From<CDTI1LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CDTI1LOC_A) -> Self {
-        match variant {
-            CDTI1LOC_A::LOC0 => 0,
-            CDTI1LOC_A::LOC1 => 1,
-            CDTI1LOC_A::LOC2 => 2,
-            CDTI1LOC_A::LOC3 => 3,
-            CDTI1LOC_A::LOC4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CDTI1LOC`"]
@@ -232,28 +222,23 @@ impl<'a> CDTI1LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CDTI2LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
 }
 impl From<CDTI2LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CDTI2LOC_A) -> Self {
-        match variant {
-            CDTI2LOC_A::LOC0 => 0,
-            CDTI2LOC_A::LOC1 => 1,
-            CDTI2LOC_A::LOC2 => 2,
-            CDTI2LOC_A::LOC3 => 3,
-            CDTI2LOC_A::LOC4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CDTI2LOC`"]

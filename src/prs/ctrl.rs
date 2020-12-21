@@ -36,85 +36,61 @@ impl<'a> SEVONPRS_W<'a> {
 }
 #[doc = "SEVONPRS PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEVONPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<SEVONPRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SEVONPRSSEL_A) -> Self {
-        match variant {
-            SEVONPRSSEL_A::PRSCH0 => 0,
-            SEVONPRSSEL_A::PRSCH1 => 1,
-            SEVONPRSSEL_A::PRSCH2 => 2,
-            SEVONPRSSEL_A::PRSCH3 => 3,
-            SEVONPRSSEL_A::PRSCH4 => 4,
-            SEVONPRSSEL_A::PRSCH5 => 5,
-            SEVONPRSSEL_A::PRSCH6 => 6,
-            SEVONPRSSEL_A::PRSCH7 => 7,
-            SEVONPRSSEL_A::PRSCH8 => 8,
-            SEVONPRSSEL_A::PRSCH9 => 9,
-            SEVONPRSSEL_A::PRSCH10 => 10,
-            SEVONPRSSEL_A::PRSCH11 => 11,
-            SEVONPRSSEL_A::PRSCH12 => 12,
-            SEVONPRSSEL_A::PRSCH13 => 13,
-            SEVONPRSSEL_A::PRSCH14 => 14,
-            SEVONPRSSEL_A::PRSCH15 => 15,
-            SEVONPRSSEL_A::PRSCH16 => 16,
-            SEVONPRSSEL_A::PRSCH17 => 17,
-            SEVONPRSSEL_A::PRSCH18 => 18,
-            SEVONPRSSEL_A::PRSCH19 => 19,
-            SEVONPRSSEL_A::PRSCH20 => 20,
-            SEVONPRSSEL_A::PRSCH21 => 21,
-            SEVONPRSSEL_A::PRSCH22 => 22,
-            SEVONPRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEVONPRSSEL`"]

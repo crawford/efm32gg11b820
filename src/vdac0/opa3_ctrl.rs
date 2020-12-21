@@ -12,25 +12,21 @@ impl crate::ResetValue for super::OPA3_CTRL {
 }
 #[doc = "OPAx Operation Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRIVESTRENGTH_A {
     #[doc = "0: Lower accuracy with Low drive strength."]
-    _0,
+    _0 = 0,
     #[doc = "1: Low accuracy with Low drive strength."]
-    _1,
+    _1 = 1,
     #[doc = "2: High accuracy with High drive strength."]
-    _2,
+    _2 = 2,
     #[doc = "3: Higher accuracy with High drive strength."]
-    _3,
+    _3 = 3,
 }
 impl From<DRIVESTRENGTH_A> for u8 {
     #[inline(always)]
     fn from(variant: DRIVESTRENGTH_A) -> Self {
-        match variant {
-            DRIVESTRENGTH_A::_0 => 0,
-            DRIVESTRENGTH_A::_1 => 1,
-            DRIVESTRENGTH_A::_2 => 2,
-            DRIVESTRENGTH_A::_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRIVESTRENGTH`"]
@@ -229,85 +225,61 @@ impl<'a> PRSMODE_W<'a> {
 }
 #[doc = "OPAx PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS ch 0 triggers OPA."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS ch 1 triggers OPA."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS ch 2 triggers OPA."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS ch 3 triggers OPA."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS ch 4 triggers OPA."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS ch 5 triggers OPA."]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS ch 6 triggers OPA."]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS ch 7 triggers OPA."]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS ch 8 triggers OPA."]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS ch 9 triggers OPA."]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS ch 10 triggers OPA."]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS ch 11 triggers OPA."]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS ch 12 triggers OPA."]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS ch 13 triggers OPA."]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS ch 14 triggers OPA."]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS ch 15 triggers OPA."]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS ch 16 triggers OPA."]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS ch 17 triggers OPA."]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS ch 18 triggers OPA."]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS ch 19 triggers OPA."]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS ch 20 triggers OPA."]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS ch 21 triggers OPA."]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS ch 22 triggers OPA."]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS ch 23 triggers OPA."]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]

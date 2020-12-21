@@ -178,25 +178,21 @@ impl<'a> LNCLIMILIMSEL_W<'a> {
 }
 #[doc = "LP Mode Comparator Bias Selection for EM23 or EM4H\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LPCMPBIASEM234H_A {
     #[doc = "0: Maximum load current less than 75uA."]
-    BIAS0,
+    BIAS0 = 0,
     #[doc = "1: Maximum load current less than 500uA."]
-    BIAS1,
+    BIAS1 = 1,
     #[doc = "2: Maximum load current less than 2.5mA."]
-    BIAS2,
+    BIAS2 = 2,
     #[doc = "3: Maximum load current less than 10mA."]
-    BIAS3,
+    BIAS3 = 3,
 }
 impl From<LPCMPBIASEM234H_A> for u8 {
     #[inline(always)]
     fn from(variant: LPCMPBIASEM234H_A) -> Self {
-        match variant {
-            LPCMPBIASEM234H_A::BIAS0 => 0,
-            LPCMPBIASEM234H_A::BIAS1 => 1,
-            LPCMPBIASEM234H_A::BIAS2 => 2,
-            LPCMPBIASEM234H_A::BIAS3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LPCMPBIASEM234H`"]

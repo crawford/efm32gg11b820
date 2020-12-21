@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SDIOCTRL {
 }
 #[doc = "SDIO Reference Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDIOCLKSEL_A {
     #[doc = "0: HFRCO clock is used to clock SDIO"]
-    HFRCO,
+    HFRCO = 0,
     #[doc = "1: HFXO clock is used to clock SDIO"]
-    HFXO,
+    HFXO = 1,
     #[doc = "2: AUXHFRCO is used to clock SDIO"]
-    AUXHFRCO,
+    AUXHFRCO = 2,
     #[doc = "3: USHFRCO is used to clock SDIO"]
-    USHFRCO,
+    USHFRCO = 3,
 }
 impl From<SDIOCLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDIOCLKSEL_A) -> Self {
-        match variant {
-            SDIOCLKSEL_A::HFRCO => 0,
-            SDIOCLKSEL_A::HFXO => 1,
-            SDIOCLKSEL_A::AUXHFRCO => 2,
-            SDIOCLKSEL_A::USHFRCO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDIOCLKSEL`"]

@@ -12,37 +12,29 @@ impl crate::ResetValue for super::SCANINPUTSEL0 {
 }
 #[doc = "CSEN_INPUT0-7 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUT0TO7SEL_A {
     #[doc = "4: `100`"]
-    APORT1CH0TO7,
+    APORT1CH0TO7 = 4,
     #[doc = "5: `101`"]
-    APORT1CH8TO15,
+    APORT1CH8TO15 = 5,
     #[doc = "6: `110`"]
-    APORT1CH16TO23,
+    APORT1CH16TO23 = 6,
     #[doc = "7: `111`"]
-    APORT1CH24TO31,
+    APORT1CH24TO31 = 7,
     #[doc = "12: `1100`"]
-    APORT3CH0TO7,
+    APORT3CH0TO7 = 12,
     #[doc = "13: `1101`"]
-    APORT3CH8TO15,
+    APORT3CH8TO15 = 13,
     #[doc = "14: `1110`"]
-    APORT3CH16TO23,
+    APORT3CH16TO23 = 14,
     #[doc = "15: `1111`"]
-    APORT3CH24TO31,
+    APORT3CH24TO31 = 15,
 }
 impl From<INPUT0TO7SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUT0TO7SEL_A) -> Self {
-        match variant {
-            INPUT0TO7SEL_A::APORT1CH0TO7 => 4,
-            INPUT0TO7SEL_A::APORT1CH8TO15 => 5,
-            INPUT0TO7SEL_A::APORT1CH16TO23 => 6,
-            INPUT0TO7SEL_A::APORT1CH24TO31 => 7,
-            INPUT0TO7SEL_A::APORT3CH0TO7 => 12,
-            INPUT0TO7SEL_A::APORT3CH8TO15 => 13,
-            INPUT0TO7SEL_A::APORT3CH16TO23 => 14,
-            INPUT0TO7SEL_A::APORT3CH24TO31 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUT0TO7SEL`"]
@@ -164,37 +156,29 @@ impl<'a> INPUT0TO7SEL_W<'a> {
 }
 #[doc = "CSEN_INPUT8-15 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUT8TO15SEL_A {
     #[doc = "4: `100`"]
-    APORT1CH0TO7,
+    APORT1CH0TO7 = 4,
     #[doc = "5: `101`"]
-    APORT1CH8TO15,
+    APORT1CH8TO15 = 5,
     #[doc = "6: `110`"]
-    APORT1CH16TO23,
+    APORT1CH16TO23 = 6,
     #[doc = "7: `111`"]
-    APORT1CH24TO31,
+    APORT1CH24TO31 = 7,
     #[doc = "12: `1100`"]
-    APORT3CH0TO7,
+    APORT3CH0TO7 = 12,
     #[doc = "13: `1101`"]
-    APORT3CH8TO15,
+    APORT3CH8TO15 = 13,
     #[doc = "14: `1110`"]
-    APORT3CH16TO23,
+    APORT3CH16TO23 = 14,
     #[doc = "15: `1111`"]
-    APORT3CH24TO31,
+    APORT3CH24TO31 = 15,
 }
 impl From<INPUT8TO15SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUT8TO15SEL_A) -> Self {
-        match variant {
-            INPUT8TO15SEL_A::APORT1CH0TO7 => 4,
-            INPUT8TO15SEL_A::APORT1CH8TO15 => 5,
-            INPUT8TO15SEL_A::APORT1CH16TO23 => 6,
-            INPUT8TO15SEL_A::APORT1CH24TO31 => 7,
-            INPUT8TO15SEL_A::APORT3CH0TO7 => 12,
-            INPUT8TO15SEL_A::APORT3CH8TO15 => 13,
-            INPUT8TO15SEL_A::APORT3CH16TO23 => 14,
-            INPUT8TO15SEL_A::APORT3CH24TO31 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUT8TO15SEL`"]
@@ -316,37 +300,29 @@ impl<'a> INPUT8TO15SEL_W<'a> {
 }
 #[doc = "CSEN_INPUT16-23 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUT16TO23SEL_A {
     #[doc = "4: `100`"]
-    APORT1CH0TO7,
+    APORT1CH0TO7 = 4,
     #[doc = "5: `101`"]
-    APORT1CH8TO15,
+    APORT1CH8TO15 = 5,
     #[doc = "6: `110`"]
-    APORT1CH16TO23,
+    APORT1CH16TO23 = 6,
     #[doc = "7: `111`"]
-    APORT1CH24TO31,
+    APORT1CH24TO31 = 7,
     #[doc = "12: `1100`"]
-    APORT3CH0TO7,
+    APORT3CH0TO7 = 12,
     #[doc = "13: `1101`"]
-    APORT3CH8TO15,
+    APORT3CH8TO15 = 13,
     #[doc = "14: `1110`"]
-    APORT3CH16TO23,
+    APORT3CH16TO23 = 14,
     #[doc = "15: `1111`"]
-    APORT3CH24TO31,
+    APORT3CH24TO31 = 15,
 }
 impl From<INPUT16TO23SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUT16TO23SEL_A) -> Self {
-        match variant {
-            INPUT16TO23SEL_A::APORT1CH0TO7 => 4,
-            INPUT16TO23SEL_A::APORT1CH8TO15 => 5,
-            INPUT16TO23SEL_A::APORT1CH16TO23 => 6,
-            INPUT16TO23SEL_A::APORT1CH24TO31 => 7,
-            INPUT16TO23SEL_A::APORT3CH0TO7 => 12,
-            INPUT16TO23SEL_A::APORT3CH8TO15 => 13,
-            INPUT16TO23SEL_A::APORT3CH16TO23 => 14,
-            INPUT16TO23SEL_A::APORT3CH24TO31 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUT16TO23SEL`"]
@@ -468,37 +444,29 @@ impl<'a> INPUT16TO23SEL_W<'a> {
 }
 #[doc = "CSEN_INPUT24-31 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INPUT24TO31SEL_A {
     #[doc = "4: `100`"]
-    APORT1CH0TO7,
+    APORT1CH0TO7 = 4,
     #[doc = "5: `101`"]
-    APORT1CH8TO15,
+    APORT1CH8TO15 = 5,
     #[doc = "6: `110`"]
-    APORT1CH16TO23,
+    APORT1CH16TO23 = 6,
     #[doc = "7: `111`"]
-    APORT1CH24TO31,
+    APORT1CH24TO31 = 7,
     #[doc = "12: `1100`"]
-    APORT3CH0TO7,
+    APORT3CH0TO7 = 12,
     #[doc = "13: `1101`"]
-    APORT3CH8TO15,
+    APORT3CH8TO15 = 13,
     #[doc = "14: `1110`"]
-    APORT3CH16TO23,
+    APORT3CH16TO23 = 14,
     #[doc = "15: `1111`"]
-    APORT3CH24TO31,
+    APORT3CH24TO31 = 15,
 }
 impl From<INPUT24TO31SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: INPUT24TO31SEL_A) -> Self {
-        match variant {
-            INPUT24TO31SEL_A::APORT1CH0TO7 => 4,
-            INPUT24TO31SEL_A::APORT1CH8TO15 => 5,
-            INPUT24TO31SEL_A::APORT1CH16TO23 => 6,
-            INPUT24TO31SEL_A::APORT1CH24TO31 => 7,
-            INPUT24TO31SEL_A::APORT3CH0TO7 => 12,
-            INPUT24TO31SEL_A::APORT3CH8TO15 => 13,
-            INPUT24TO31SEL_A::APORT3CH16TO23 => 14,
-            INPUT24TO31SEL_A::APORT3CH24TO31 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INPUT24TO31SEL`"]

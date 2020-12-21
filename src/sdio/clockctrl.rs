@@ -100,16 +100,15 @@ impl<'a> UPPSDCLKFRE_W<'a> {
 }
 #[doc = "SD_CLK Frequency Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDCLKFREQSEL_A {
     #[doc = "0: `0`"]
-    NODIVISION,
+    NODIVISION = 0,
 }
 impl From<SDCLKFREQSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDCLKFREQSEL_A) -> Self {
-        match variant {
-            SDCLKFREQSEL_A::NODIVISION => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDCLKFREQSEL`"]

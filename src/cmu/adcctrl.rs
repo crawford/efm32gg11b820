@@ -12,16 +12,15 @@ impl crate::ResetValue for super::ADCCTRL {
 }
 #[doc = "ADC0 Clock Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC0CLKDIV_A {
     #[doc = "0: `0`"]
-    NODIVISION,
+    NODIVISION = 0,
 }
 impl From<ADC0CLKDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC0CLKDIV_A) -> Self {
-        match variant {
-            ADC0CLKDIV_A::NODIVISION => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC0CLKDIV`"]
@@ -66,25 +65,21 @@ impl<'a> ADC0CLKDIV_W<'a> {
 }
 #[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC0CLKSEL_A {
     #[doc = "0: ADC0 is not clocked"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: AUXHFRCO is clocking ADC0"]
-    AUXHFRCO,
+    AUXHFRCO = 1,
     #[doc = "2: HFXO is clocking ADC0"]
-    HFXO,
+    HFXO = 2,
     #[doc = "3: HFSRCCLK is clocking ADC0"]
-    HFSRCCLK,
+    HFSRCCLK = 3,
 }
 impl From<ADC0CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC0CLKSEL_A) -> Self {
-        match variant {
-            ADC0CLKSEL_A::DISABLED => 0,
-            ADC0CLKSEL_A::AUXHFRCO => 1,
-            ADC0CLKSEL_A::HFXO => 2,
-            ADC0CLKSEL_A::HFSRCCLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC0CLKSEL`"]
@@ -187,16 +182,15 @@ impl<'a> ADC0CLKINV_W<'a> {
 }
 #[doc = "ADC1 Clock Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC1CLKDIV_A {
     #[doc = "0: `0`"]
-    NODIVISION,
+    NODIVISION = 0,
 }
 impl From<ADC1CLKDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC1CLKDIV_A) -> Self {
-        match variant {
-            ADC1CLKDIV_A::NODIVISION => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC1CLKDIV`"]
@@ -241,25 +235,21 @@ impl<'a> ADC1CLKDIV_W<'a> {
 }
 #[doc = "ADC1 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC1CLKSEL_A {
     #[doc = "0: ADC1 is not clocked"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: AUXHFRCO is clocking ADC1"]
-    AUXHFRCO,
+    AUXHFRCO = 1,
     #[doc = "2: HFXO is clocking ADC1"]
-    HFXO,
+    HFXO = 2,
     #[doc = "3: HFSRCCLK is clocking ADC1"]
-    HFSRCCLK,
+    HFSRCCLK = 3,
 }
 impl From<ADC1CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC1CLKSEL_A) -> Self {
-        match variant {
-            ADC1CLKSEL_A::DISABLED => 0,
-            ADC1CLKSEL_A::AUXHFRCO => 1,
-            ADC1CLKSEL_A::HFXO => 2,
-            ADC1CLKSEL_A::HFSRCCLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC1CLKSEL`"]

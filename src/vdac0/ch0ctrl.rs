@@ -36,31 +36,25 @@ impl<'a> CONVMODE_W<'a> {
 }
 #[doc = "Channel 0 Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRIGMODE_A {
     #[doc = "0: Channel 0 is triggered by CH0DATA or COMBDATA write"]
-    SW,
+    SW = 0,
     #[doc = "1: Channel 0 is triggered by PRS input"]
-    PRS,
+    PRS = 1,
     #[doc = "2: Channel 0 is triggered by Refresh timer"]
-    REFRESH,
+    REFRESH = 2,
     #[doc = "3: Channel 0 is triggered by CH0DATA/COMBDATA write or PRS input"]
-    SWPRS,
+    SWPRS = 3,
     #[doc = "4: Channel 0 is triggered by CH0DATA/COMBDATA write or Refresh timer"]
-    SWREFRESH,
+    SWREFRESH = 4,
     #[doc = "5: Channel 0 is triggered by LESENSE"]
-    LESENSE,
+    LESENSE = 5,
 }
 impl From<TRIGMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: TRIGMODE_A) -> Self {
-        match variant {
-            TRIGMODE_A::SW => 0,
-            TRIGMODE_A::PRS => 1,
-            TRIGMODE_A::REFRESH => 2,
-            TRIGMODE_A::SWPRS => 3,
-            TRIGMODE_A::SWREFRESH => 4,
-            TRIGMODE_A::LESENSE => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRIGMODE`"]
@@ -184,85 +178,61 @@ impl<'a> PRSASYNC_W<'a> {
 }
 #[doc = "Channel 0 PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS ch 0 triggers a conversion."]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS ch 1 triggers a conversion."]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS ch 2 triggers a conversion."]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS ch 3 triggers a conversion."]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS ch 4 triggers a conversion."]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS ch 5 triggers a conversion."]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS ch 6 triggers a conversion."]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS ch 7 triggers a conversion."]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS ch 8 triggers a conversion."]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS ch 9 triggers a conversion."]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS ch 10 triggers a conversion."]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS ch 11 triggers a conversion."]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS ch 12 triggers a conversion."]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS ch 13 triggers a conversion."]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS ch 14 triggers a conversion."]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS ch 15 triggers a conversion."]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS ch 16 triggers a conversion."]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS ch 17 triggers a conversion."]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS ch 18 triggers a conversion."]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS ch 19 triggers a conversion."]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS ch 20 triggers a conversion."]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS ch 21 triggers a conversion."]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS ch 22 triggers a conversion."]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS ch 23 triggers a conversion."]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]

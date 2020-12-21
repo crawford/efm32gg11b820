@@ -12,22 +12,19 @@ impl crate::ResetValue for super::ALTEXCONF {
 }
 #[doc = "ALTEX0 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF0_A {
     #[doc = "0: ALTEX0 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX0 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX0 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF0_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF0_A) -> Self {
-        match variant {
-            IDLECONF0_A::DISABLE => 0,
-            IDLECONF0_A::HIGH => 1,
-            IDLECONF0_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF0`"]
@@ -94,22 +91,19 @@ impl<'a> IDLECONF0_W<'a> {
 }
 #[doc = "ALTEX1 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF1_A {
     #[doc = "0: ALTEX1 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX1 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX1 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF1_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF1_A) -> Self {
-        match variant {
-            IDLECONF1_A::DISABLE => 0,
-            IDLECONF1_A::HIGH => 1,
-            IDLECONF1_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF1`"]
@@ -176,22 +170,19 @@ impl<'a> IDLECONF1_W<'a> {
 }
 #[doc = "ALTEX2 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF2_A {
     #[doc = "0: ALTEX2 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX2 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX2 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF2_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF2_A) -> Self {
-        match variant {
-            IDLECONF2_A::DISABLE => 0,
-            IDLECONF2_A::HIGH => 1,
-            IDLECONF2_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF2`"]
@@ -258,22 +249,19 @@ impl<'a> IDLECONF2_W<'a> {
 }
 #[doc = "ALTEX3 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF3_A {
     #[doc = "0: ALTEX3 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX3 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX3 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF3_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF3_A) -> Self {
-        match variant {
-            IDLECONF3_A::DISABLE => 0,
-            IDLECONF3_A::HIGH => 1,
-            IDLECONF3_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF3`"]
@@ -340,22 +328,19 @@ impl<'a> IDLECONF3_W<'a> {
 }
 #[doc = "ALTEX4 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF4_A {
     #[doc = "0: ALTEX4 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX4 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX4 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF4_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF4_A) -> Self {
-        match variant {
-            IDLECONF4_A::DISABLE => 0,
-            IDLECONF4_A::HIGH => 1,
-            IDLECONF4_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF4`"]
@@ -422,22 +407,19 @@ impl<'a> IDLECONF4_W<'a> {
 }
 #[doc = "ALTEX5 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF5_A {
     #[doc = "0: ALTEX5 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX5 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX5 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF5_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF5_A) -> Self {
-        match variant {
-            IDLECONF5_A::DISABLE => 0,
-            IDLECONF5_A::HIGH => 1,
-            IDLECONF5_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF5`"]
@@ -504,22 +486,19 @@ impl<'a> IDLECONF5_W<'a> {
 }
 #[doc = "ALTEX6 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF6_A {
     #[doc = "0: ALTEX6 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX6 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX6 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF6_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF6_A) -> Self {
-        match variant {
-            IDLECONF6_A::DISABLE => 0,
-            IDLECONF6_A::HIGH => 1,
-            IDLECONF6_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF6`"]
@@ -586,22 +565,19 @@ impl<'a> IDLECONF6_W<'a> {
 }
 #[doc = "ALTEX7 Idle Phase Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDLECONF7_A {
     #[doc = "0: ALTEX7 output is disabled in idle phase"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: ALTEX7 output is high in idle phase"]
-    HIGH,
+    HIGH = 1,
     #[doc = "2: ALTEX7 output is low in idle phase"]
-    LOW,
+    LOW = 2,
 }
 impl From<IDLECONF7_A> for u8 {
     #[inline(always)]
     fn from(variant: IDLECONF7_A) -> Self {
-        match variant {
-            IDLECONF7_A::DISABLE => 0,
-            IDLECONF7_A::HIGH => 1,
-            IDLECONF7_A::LOW => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDLECONF7`"]

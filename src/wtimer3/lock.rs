@@ -12,19 +12,17 @@ impl crate::ResetValue for super::LOCK {
 }
 #[doc = "Timer Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TIMERLOCKKEY_A {
     #[doc = "0: `0`"]
-    UNLOCKED,
+    UNLOCKED = 0,
     #[doc = "1: `1`"]
-    LOCKED,
+    LOCKED = 1,
 }
 impl From<TIMERLOCKKEY_A> for u16 {
     #[inline(always)]
     fn from(variant: TIMERLOCKKEY_A) -> Self {
-        match variant {
-            TIMERLOCKKEY_A::UNLOCKED => 0,
-            TIMERLOCKKEY_A::LOCKED => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMERLOCKKEY`"]

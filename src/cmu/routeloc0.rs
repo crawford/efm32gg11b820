@@ -12,31 +12,25 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKOUT0LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<CLKOUT0LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKOUT0LOC_A) -> Self {
-        match variant {
-            CLKOUT0LOC_A::LOC0 => 0,
-            CLKOUT0LOC_A::LOC1 => 1,
-            CLKOUT0LOC_A::LOC2 => 2,
-            CLKOUT0LOC_A::LOC3 => 3,
-            CLKOUT0LOC_A::LOC4 => 4,
-            CLKOUT0LOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKOUT0LOC`"]
@@ -136,31 +130,25 @@ impl<'a> CLKOUT0LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKOUT1LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<CLKOUT1LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKOUT1LOC_A) -> Self {
-        match variant {
-            CLKOUT1LOC_A::LOC0 => 0,
-            CLKOUT1LOC_A::LOC1 => 1,
-            CLKOUT1LOC_A::LOC2 => 2,
-            CLKOUT1LOC_A::LOC3 => 3,
-            CLKOUT1LOC_A::LOC4 => 4,
-            CLKOUT1LOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKOUT1LOC`"]
@@ -260,31 +248,25 @@ impl<'a> CLKOUT1LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKOUT2LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<CLKOUT2LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKOUT2LOC_A) -> Self {
-        match variant {
-            CLKOUT2LOC_A::LOC0 => 0,
-            CLKOUT2LOC_A::LOC1 => 1,
-            CLKOUT2LOC_A::LOC2 => 2,
-            CLKOUT2LOC_A::LOC3 => 3,
-            CLKOUT2LOC_A::LOC4 => 4,
-            CLKOUT2LOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKOUT2LOC`"]

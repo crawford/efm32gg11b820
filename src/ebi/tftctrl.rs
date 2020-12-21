@@ -12,22 +12,19 @@ impl crate::ResetValue for super::TFTCTRL {
 }
 #[doc = "TFT Direct Drive Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DD_A {
     #[doc = "0: Direct Drive is disabled."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Direct Drive from internal memory enabled and started."]
-    INTERNAL,
+    INTERNAL = 1,
     #[doc = "2: Direct Drive from external memory enabled and started."]
-    EXTERNAL,
+    EXTERNAL = 2,
 }
 impl From<DD_A> for u8 {
     #[inline(always)]
     fn from(variant: DD_A) -> Self {
-        match variant {
-            DD_A::DISABLED => 0,
-            DD_A::INTERNAL => 1,
-            DD_A::EXTERNAL => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DD`"]
@@ -94,43 +91,33 @@ impl<'a> DD_W<'a> {
 }
 #[doc = "TFT Mask and Blend Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MASKBLEND_A {
     #[doc = "0: Masking and Blending are disabled."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Internal Masking is enabled."]
-    IMASK,
+    IMASK = 1,
     #[doc = "2: Internal Alpha Blending is enabled."]
-    IALPHA,
+    IALPHA = 2,
     #[doc = "3: Internal Masking and Alpha Blending are enabled."]
-    IMASKALPHA,
+    IMASKALPHA = 3,
     #[doc = "4: External Frame Buffer Masking is enabled."]
-    EFBMASK,
+    EFBMASK = 4,
     #[doc = "5: External Frame Buffer Alpha Blending is enabled."]
-    EFBALPHA,
+    EFBALPHA = 5,
     #[doc = "6: External Frame Buffer Masking and Alpha Blending are enabled."]
-    EFBMASKALPHA,
+    EFBMASKALPHA = 6,
     #[doc = "7: Internal Frame Buffer Masking is enabled."]
-    IFBMASK,
+    IFBMASK = 7,
     #[doc = "8: Internal Frame Buffer Alpha Blending is enabled."]
-    IFBALPHA,
+    IFBALPHA = 8,
     #[doc = "9: Internal Frame Buffer Masking and Alpha Blending are enabled."]
-    IFBMASKALPHA,
+    IFBMASKALPHA = 9,
 }
 impl From<MASKBLEND_A> for u8 {
     #[inline(always)]
     fn from(variant: MASKBLEND_A) -> Self {
-        match variant {
-            MASKBLEND_A::DISABLED => 0,
-            MASKBLEND_A::IMASK => 1,
-            MASKBLEND_A::IALPHA => 2,
-            MASKBLEND_A::IMASKALPHA => 3,
-            MASKBLEND_A::EFBMASK => 4,
-            MASKBLEND_A::EFBALPHA => 5,
-            MASKBLEND_A::EFBMASKALPHA => 6,
-            MASKBLEND_A::IFBMASK => 7,
-            MASKBLEND_A::IFBALPHA => 8,
-            MASKBLEND_A::IFBMASKALPHA => 9,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MASKBLEND`"]
@@ -322,22 +309,19 @@ impl<'a> FBCTRIG_W<'a> {
 }
 #[doc = "Interleave Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INTERLEAVE_A {
     #[doc = "0: Allow unlimited interleaved EBI accesses per EBI_DCLK period. This can cause jitter on the EBI_DCLK"]
-    UNLIMITED,
+    UNLIMITED = 0,
     #[doc = "1: Allow 1 interleaved EBI access per EBI_DCLK period."]
-    ONEPERDCLK,
+    ONEPERDCLK = 1,
     #[doc = "2: Only allow EBI accesses during TFT porches."]
-    PORCH,
+    PORCH = 2,
 }
 impl From<INTERLEAVE_A> for u8 {
     #[inline(always)]
     fn from(variant: INTERLEAVE_A) -> Self {
-        match variant {
-            INTERLEAVE_A::UNLIMITED => 0,
-            INTERLEAVE_A::ONEPERDCLK => 1,
-            INTERLEAVE_A::PORCH => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INTERLEAVE`"]
@@ -428,19 +412,17 @@ impl<'a> COLOR1SRC_W<'a> {
 }
 #[doc = "TFT Transaction Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WIDTH_A {
     #[doc = "0: TFT Data is 8 bit wide."]
-    BYTE,
+    BYTE = 0,
     #[doc = "1: TFT Data is 16 bit wide."]
-    HALFWORD,
+    HALFWORD = 1,
 }
 impl From<WIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: WIDTH_A) -> Self {
-        match variant {
-            WIDTH_A::BYTE => 0,
-            WIDTH_A::HALFWORD => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WIDTH`"]
@@ -520,25 +502,21 @@ impl<'a> ALIASBANKEN_W<'a> {
 }
 #[doc = "Graphics Bank\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BANKSEL_A {
     #[doc = "0: Memory bank 0 is used for Direct Drive, Masking, and Alpha Blending."]
-    BANK0,
+    BANK0 = 0,
     #[doc = "1: Memory bank 1 is used for Direct Drive, Masking, and Alpha Blending."]
-    BANK1,
+    BANK1 = 1,
     #[doc = "2: Memory bank 2 is used for Direct Drive, Masking, and Alpha Blending."]
-    BANK2,
+    BANK2 = 2,
     #[doc = "3: Memory bank 3 is used for Direct Drive, Masking, and Alpha Blending."]
-    BANK3,
+    BANK3 = 3,
 }
 impl From<BANKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: BANKSEL_A) -> Self {
-        match variant {
-            BANKSEL_A::BANK0 => 0,
-            BANKSEL_A::BANK1 => 1,
-            BANKSEL_A::BANK2 => 2,
-            BANKSEL_A::BANK3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BANKSEL`"]
@@ -617,25 +595,21 @@ impl<'a> BANKSEL_W<'a> {
 }
 #[doc = "Graphic Bank Select Aliasing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ALIASBANK_A {
     #[doc = "0: Graphic Bank Select is alias to Bank Select 0"]
-    ALIASBANK0,
+    ALIASBANK0 = 0,
     #[doc = "1: Graphic Bank Select is alias to Bank Select 1"]
-    ALIASBANK1,
+    ALIASBANK1 = 1,
     #[doc = "2: Graphic Bank Select is alias to Bank Select 2"]
-    ALIASBANK2,
+    ALIASBANK2 = 2,
     #[doc = "3: Graphic Bank Select is alias to Bank Select 3"]
-    ALIASBANK3,
+    ALIASBANK3 = 3,
 }
 impl From<ALIASBANK_A> for u8 {
     #[inline(always)]
     fn from(variant: ALIASBANK_A) -> Self {
-        match variant {
-            ALIASBANK_A::ALIASBANK0 => 0,
-            ALIASBANK_A::ALIASBANK1 => 1,
-            ALIASBANK_A::ALIASBANK2 => 2,
-            ALIASBANK_A::ALIASBANK3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ALIASBANK`"]

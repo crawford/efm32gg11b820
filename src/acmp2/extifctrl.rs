@@ -36,55 +36,41 @@ impl<'a> EN_W<'a> {
 }
 #[doc = "APORT Selection for External Interface\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum APORTSEL_A {
     #[doc = "0: APORT0X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT0XCH0."]
-    APORT0X,
+    APORT0X = 0,
     #[doc = "1: APORT0Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT0YCH0."]
-    APORT0Y,
+    APORT0Y = 1,
     #[doc = "2: APORT1X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT1XCH0."]
-    APORT1X,
+    APORT1X = 2,
     #[doc = "3: APORT1Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT1XCH0."]
-    APORT1Y,
+    APORT1Y = 3,
     #[doc = "4: APORT1X/Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT1XCH0."]
-    APORT1XY,
+    APORT1XY = 4,
     #[doc = "5: APORT2X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT2YCH0."]
-    APORT2X,
+    APORT2X = 5,
     #[doc = "6: APORT2Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT2YCH0."]
-    APORT2Y,
+    APORT2Y = 6,
     #[doc = "7: APORT2Y/X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT2YCH0."]
-    APORT2YX,
+    APORT2YX = 7,
     #[doc = "8: APORT3X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT3XCH0."]
-    APORT3X,
+    APORT3X = 8,
     #[doc = "9: APORT3Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT3XCH0."]
-    APORT3Y,
+    APORT3Y = 9,
     #[doc = "10: APORT3X/Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT3XCH0."]
-    APORT3XY,
+    APORT3XY = 10,
     #[doc = "11: APORT4X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT4YCH0."]
-    APORT4X,
+    APORT4X = 11,
     #[doc = "12: APORT4Y used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT4YCH0."]
-    APORT4Y,
+    APORT4Y = 12,
     #[doc = "13: APORT4Y/X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT4YCH0."]
-    APORT4YX,
+    APORT4YX = 13,
 }
 impl From<APORTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: APORTSEL_A) -> Self {
-        match variant {
-            APORTSEL_A::APORT0X => 0,
-            APORTSEL_A::APORT0Y => 1,
-            APORTSEL_A::APORT1X => 2,
-            APORTSEL_A::APORT1Y => 3,
-            APORTSEL_A::APORT1XY => 4,
-            APORTSEL_A::APORT2X => 5,
-            APORTSEL_A::APORT2Y => 6,
-            APORTSEL_A::APORT2YX => 7,
-            APORTSEL_A::APORT3X => 8,
-            APORTSEL_A::APORT3Y => 9,
-            APORTSEL_A::APORT3XY => 10,
-            APORTSEL_A::APORT4X => 11,
-            APORTSEL_A::APORT4Y => 12,
-            APORTSEL_A::APORT4YX => 13,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `APORTSEL`"]

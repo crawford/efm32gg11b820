@@ -228,25 +228,25 @@ impl<'a> NANDPEN_W<'a> {
 }
 #[doc = "Sets the Lower Bound for EBI_A Enabling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ALB_A {
-    #[doc = "0: Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
-    A0,
-    #[doc = "1: Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
-    A8,
-    #[doc = "2: Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
-    A16,
-    #[doc = "3: Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
-    A24,
+    #[doc = "0: Address lines from EBI_A\\[0\\]
+and upwards can be enabled via APEN."]
+    A0 = 0,
+    #[doc = "1: Address lines from EBI_A\\[8\\]
+and upwards can be enabled via APEN."]
+    A8 = 1,
+    #[doc = "2: Address lines from EBI_A\\[16\\]
+and upwards can be enabled via APEN."]
+    A16 = 2,
+    #[doc = "3: Address lines from EBI_A\\[24\\]
+and upwards can be enabled via APEN."]
+    A24 = 3,
 }
 impl From<ALB_A> for u8 {
     #[inline(always)]
     fn from(variant: ALB_A) -> Self {
-        match variant {
-            ALB_A::A0 => 0,
-            ALB_A::A8 => 1,
-            ALB_A::A16 => 2,
-            ALB_A::A24 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ALB`"]
@@ -296,22 +296,26 @@ impl<'a> ALB_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Address lines from EBI_A\\[0\\] and upwards can be enabled via APEN."]
+    #[doc = "Address lines from EBI_A\\[0\\]
+and upwards can be enabled via APEN."]
     #[inline(always)]
     pub fn a0(self) -> &'a mut W {
         self.variant(ALB_A::A0)
     }
-    #[doc = "Address lines from EBI_A\\[8\\] and upwards can be enabled via APEN."]
+    #[doc = "Address lines from EBI_A\\[8\\]
+and upwards can be enabled via APEN."]
     #[inline(always)]
     pub fn a8(self) -> &'a mut W {
         self.variant(ALB_A::A8)
     }
-    #[doc = "Address lines from EBI_A\\[16\\] and upwards can be enabled via APEN."]
+    #[doc = "Address lines from EBI_A\\[16\\]
+and upwards can be enabled via APEN."]
     #[inline(always)]
     pub fn a16(self) -> &'a mut W {
         self.variant(ALB_A::A16)
     }
-    #[doc = "Address lines from EBI_A\\[24\\] and upwards can be enabled via APEN."]
+    #[doc = "Address lines from EBI_A\\[24\\]
+and upwards can be enabled via APEN."]
     #[inline(always)]
     pub fn a24(self) -> &'a mut W {
         self.variant(ALB_A::A24)
@@ -325,88 +329,87 @@ impl<'a> ALB_W<'a> {
 }
 #[doc = "EBI_A Pin Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum APEN_A {
     #[doc = "0: All EBI_A pins are disabled."]
-    A0,
-    #[doc = "5: EBI_A\\[4:L\\] pins enabled."]
-    A5,
-    #[doc = "6: EBI_A\\[5:L\\] pins enabled."]
-    A6,
-    #[doc = "7: EBI_A\\[6:L\\] pins enabled."]
-    A7,
-    #[doc = "8: EBI_A\\[7:L\\] pins enabled."]
-    A8,
-    #[doc = "9: EBI_A\\[8:L\\] pins enabled."]
-    A9,
-    #[doc = "10: EBI_A\\[9:L\\] pins enabled."]
-    A10,
-    #[doc = "11: EBI_A\\[10:L\\] pins enabled."]
-    A11,
-    #[doc = "12: EBI_A\\[11:L\\] pins enabled."]
-    A12,
-    #[doc = "13: EBI_A\\[12:L\\] pins enabled."]
-    A13,
-    #[doc = "14: EBI_A\\[13:L\\] pins enabled."]
-    A14,
-    #[doc = "15: EBI_A\\[14:L\\] pins enabled."]
-    A15,
-    #[doc = "16: EBI_A\\[15:L\\] pins enabled."]
-    A16,
-    #[doc = "17: EBI_A\\[16:L\\] pins enabled."]
-    A17,
-    #[doc = "18: EBI_A\\[17:L\\] pins enabled."]
-    A18,
-    #[doc = "19: EBI_A\\[18:L\\] pins enabled."]
-    A19,
-    #[doc = "20: EBI_A\\[19:L\\] pins enabled."]
-    A20,
-    #[doc = "21: EBI_A\\[20:L\\] pins enabled."]
-    A21,
-    #[doc = "22: EBI_A\\[21:L\\] pins enabled."]
-    A22,
-    #[doc = "23: EBI_A\\[22:L\\] pins enabled."]
-    A23,
-    #[doc = "24: EBI_A\\[23:L\\] pins enabled."]
-    A24,
-    #[doc = "25: EBI_A\\[24:L\\] pins enabled."]
-    A25,
-    #[doc = "26: EBI_A\\[25:L\\] pins enabled."]
-    A26,
-    #[doc = "27: EBI_A\\[26:L\\] pins enabled."]
-    A27,
-    #[doc = "28: EBI_A\\[27:L\\] pins enabled."]
-    A28,
+    A0 = 0,
+    #[doc = "5: EBI_A\\[4:L\\]
+pins enabled."]
+    A5 = 5,
+    #[doc = "6: EBI_A\\[5:L\\]
+pins enabled."]
+    A6 = 6,
+    #[doc = "7: EBI_A\\[6:L\\]
+pins enabled."]
+    A7 = 7,
+    #[doc = "8: EBI_A\\[7:L\\]
+pins enabled."]
+    A8 = 8,
+    #[doc = "9: EBI_A\\[8:L\\]
+pins enabled."]
+    A9 = 9,
+    #[doc = "10: EBI_A\\[9:L\\]
+pins enabled."]
+    A10 = 10,
+    #[doc = "11: EBI_A\\[10:L\\]
+pins enabled."]
+    A11 = 11,
+    #[doc = "12: EBI_A\\[11:L\\]
+pins enabled."]
+    A12 = 12,
+    #[doc = "13: EBI_A\\[12:L\\]
+pins enabled."]
+    A13 = 13,
+    #[doc = "14: EBI_A\\[13:L\\]
+pins enabled."]
+    A14 = 14,
+    #[doc = "15: EBI_A\\[14:L\\]
+pins enabled."]
+    A15 = 15,
+    #[doc = "16: EBI_A\\[15:L\\]
+pins enabled."]
+    A16 = 16,
+    #[doc = "17: EBI_A\\[16:L\\]
+pins enabled."]
+    A17 = 17,
+    #[doc = "18: EBI_A\\[17:L\\]
+pins enabled."]
+    A18 = 18,
+    #[doc = "19: EBI_A\\[18:L\\]
+pins enabled."]
+    A19 = 19,
+    #[doc = "20: EBI_A\\[19:L\\]
+pins enabled."]
+    A20 = 20,
+    #[doc = "21: EBI_A\\[20:L\\]
+pins enabled."]
+    A21 = 21,
+    #[doc = "22: EBI_A\\[21:L\\]
+pins enabled."]
+    A22 = 22,
+    #[doc = "23: EBI_A\\[22:L\\]
+pins enabled."]
+    A23 = 23,
+    #[doc = "24: EBI_A\\[23:L\\]
+pins enabled."]
+    A24 = 24,
+    #[doc = "25: EBI_A\\[24:L\\]
+pins enabled."]
+    A25 = 25,
+    #[doc = "26: EBI_A\\[25:L\\]
+pins enabled."]
+    A26 = 26,
+    #[doc = "27: EBI_A\\[26:L\\]
+pins enabled."]
+    A27 = 27,
+    #[doc = "28: EBI_A\\[27:L\\]
+pins enabled."]
+    A28 = 28,
 }
 impl From<APEN_A> for u8 {
     #[inline(always)]
     fn from(variant: APEN_A) -> Self {
-        match variant {
-            APEN_A::A0 => 0,
-            APEN_A::A5 => 5,
-            APEN_A::A6 => 6,
-            APEN_A::A7 => 7,
-            APEN_A::A8 => 8,
-            APEN_A::A9 => 9,
-            APEN_A::A10 => 10,
-            APEN_A::A11 => 11,
-            APEN_A::A12 => 12,
-            APEN_A::A13 => 13,
-            APEN_A::A14 => 14,
-            APEN_A::A15 => 15,
-            APEN_A::A16 => 16,
-            APEN_A::A17 => 17,
-            APEN_A::A18 => 18,
-            APEN_A::A19 => 19,
-            APEN_A::A20 => 20,
-            APEN_A::A21 => 21,
-            APEN_A::A22 => 22,
-            APEN_A::A23 => 23,
-            APEN_A::A24 => 24,
-            APEN_A::A25 => 25,
-            APEN_A::A26 => 26,
-            APEN_A::A27 => 27,
-            APEN_A::A28 => 28,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `APEN`"]
@@ -586,122 +589,146 @@ impl<'a> APEN_W<'a> {
     pub fn a0(self) -> &'a mut W {
         self.variant(APEN_A::A0)
     }
-    #[doc = "EBI_A\\[4:L\\] pins enabled."]
+    #[doc = "EBI_A\\[4:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a5(self) -> &'a mut W {
         self.variant(APEN_A::A5)
     }
-    #[doc = "EBI_A\\[5:L\\] pins enabled."]
+    #[doc = "EBI_A\\[5:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a6(self) -> &'a mut W {
         self.variant(APEN_A::A6)
     }
-    #[doc = "EBI_A\\[6:L\\] pins enabled."]
+    #[doc = "EBI_A\\[6:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a7(self) -> &'a mut W {
         self.variant(APEN_A::A7)
     }
-    #[doc = "EBI_A\\[7:L\\] pins enabled."]
+    #[doc = "EBI_A\\[7:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a8(self) -> &'a mut W {
         self.variant(APEN_A::A8)
     }
-    #[doc = "EBI_A\\[8:L\\] pins enabled."]
+    #[doc = "EBI_A\\[8:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a9(self) -> &'a mut W {
         self.variant(APEN_A::A9)
     }
-    #[doc = "EBI_A\\[9:L\\] pins enabled."]
+    #[doc = "EBI_A\\[9:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a10(self) -> &'a mut W {
         self.variant(APEN_A::A10)
     }
-    #[doc = "EBI_A\\[10:L\\] pins enabled."]
+    #[doc = "EBI_A\\[10:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a11(self) -> &'a mut W {
         self.variant(APEN_A::A11)
     }
-    #[doc = "EBI_A\\[11:L\\] pins enabled."]
+    #[doc = "EBI_A\\[11:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a12(self) -> &'a mut W {
         self.variant(APEN_A::A12)
     }
-    #[doc = "EBI_A\\[12:L\\] pins enabled."]
+    #[doc = "EBI_A\\[12:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a13(self) -> &'a mut W {
         self.variant(APEN_A::A13)
     }
-    #[doc = "EBI_A\\[13:L\\] pins enabled."]
+    #[doc = "EBI_A\\[13:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a14(self) -> &'a mut W {
         self.variant(APEN_A::A14)
     }
-    #[doc = "EBI_A\\[14:L\\] pins enabled."]
+    #[doc = "EBI_A\\[14:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a15(self) -> &'a mut W {
         self.variant(APEN_A::A15)
     }
-    #[doc = "EBI_A\\[15:L\\] pins enabled."]
+    #[doc = "EBI_A\\[15:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a16(self) -> &'a mut W {
         self.variant(APEN_A::A16)
     }
-    #[doc = "EBI_A\\[16:L\\] pins enabled."]
+    #[doc = "EBI_A\\[16:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a17(self) -> &'a mut W {
         self.variant(APEN_A::A17)
     }
-    #[doc = "EBI_A\\[17:L\\] pins enabled."]
+    #[doc = "EBI_A\\[17:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a18(self) -> &'a mut W {
         self.variant(APEN_A::A18)
     }
-    #[doc = "EBI_A\\[18:L\\] pins enabled."]
+    #[doc = "EBI_A\\[18:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a19(self) -> &'a mut W {
         self.variant(APEN_A::A19)
     }
-    #[doc = "EBI_A\\[19:L\\] pins enabled."]
+    #[doc = "EBI_A\\[19:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a20(self) -> &'a mut W {
         self.variant(APEN_A::A20)
     }
-    #[doc = "EBI_A\\[20:L\\] pins enabled."]
+    #[doc = "EBI_A\\[20:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a21(self) -> &'a mut W {
         self.variant(APEN_A::A21)
     }
-    #[doc = "EBI_A\\[21:L\\] pins enabled."]
+    #[doc = "EBI_A\\[21:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a22(self) -> &'a mut W {
         self.variant(APEN_A::A22)
     }
-    #[doc = "EBI_A\\[22:L\\] pins enabled."]
+    #[doc = "EBI_A\\[22:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a23(self) -> &'a mut W {
         self.variant(APEN_A::A23)
     }
-    #[doc = "EBI_A\\[23:L\\] pins enabled."]
+    #[doc = "EBI_A\\[23:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a24(self) -> &'a mut W {
         self.variant(APEN_A::A24)
     }
-    #[doc = "EBI_A\\[24:L\\] pins enabled."]
+    #[doc = "EBI_A\\[24:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a25(self) -> &'a mut W {
         self.variant(APEN_A::A25)
     }
-    #[doc = "EBI_A\\[25:L\\] pins enabled."]
+    #[doc = "EBI_A\\[25:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a26(self) -> &'a mut W {
         self.variant(APEN_A::A26)
     }
-    #[doc = "EBI_A\\[26:L\\] pins enabled."]
+    #[doc = "EBI_A\\[26:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a27(self) -> &'a mut W {
         self.variant(APEN_A::A27)
     }
-    #[doc = "EBI_A\\[27:L\\] pins enabled."]
+    #[doc = "EBI_A\\[27:L\\]
+pins enabled."]
     #[inline(always)]
     pub fn a28(self) -> &'a mut W {
         self.variant(APEN_A::A28)
@@ -821,7 +848,8 @@ impl R {
     pub fn ardypen(&self) -> ARDYPEN_R {
         ARDYPEN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - EBI_BL\\[1:0\\] Pin Enable"]
+    #[doc = "Bit 7 - EBI_BL\\[1:0\\]
+Pin Enable"]
     #[inline(always)]
     pub fn blpen(&self) -> BLPEN_R {
         BLPEN_R::new(((self.bits >> 7) & 0x01) != 0)
@@ -893,7 +921,8 @@ impl W {
     pub fn ardypen(&mut self) -> ARDYPEN_W {
         ARDYPEN_W { w: self }
     }
-    #[doc = "Bit 7 - EBI_BL\\[1:0\\] Pin Enable"]
+    #[doc = "Bit 7 - EBI_BL\\[1:0\\]
+Pin Enable"]
     #[inline(always)]
     pub fn blpen(&mut self) -> BLPEN_W {
         BLPEN_W { w: self }

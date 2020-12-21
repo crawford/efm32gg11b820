@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Timer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Up-count mode"]
-    UP,
+    UP = 0,
     #[doc = "1: Down-count mode"]
-    DOWN,
+    DOWN = 1,
     #[doc = "2: Up/down-count mode"]
-    UPDOWN,
+    UPDOWN = 2,
     #[doc = "3: Quadrature decoder mode"]
-    QDEC,
+    QDEC = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::UP => 0,
-            MODE_A::DOWN => 1,
-            MODE_A::UPDOWN => 2,
-            MODE_A::QDEC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -229,25 +225,21 @@ impl<'a> DMACLRACT_W<'a> {
 }
 #[doc = "Timer Rising Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RISEA_A {
     #[doc = "0: No action"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Start counter without reload"]
-    START,
+    START = 1,
     #[doc = "2: Stop counter without reload"]
-    STOP,
+    STOP = 2,
     #[doc = "3: Reload and start counter"]
-    RELOADSTART,
+    RELOADSTART = 3,
 }
 impl From<RISEA_A> for u8 {
     #[inline(always)]
     fn from(variant: RISEA_A) -> Self {
-        match variant {
-            RISEA_A::NONE => 0,
-            RISEA_A::START => 1,
-            RISEA_A::STOP => 2,
-            RISEA_A::RELOADSTART => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RISEA`"]
@@ -326,25 +318,21 @@ impl<'a> RISEA_W<'a> {
 }
 #[doc = "Timer Falling Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FALLA_A {
     #[doc = "0: No action"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Start counter without reload"]
-    START,
+    START = 1,
     #[doc = "2: Stop counter without reload"]
-    STOP,
+    STOP = 2,
     #[doc = "3: Reload and start counter"]
-    RELOADSTART,
+    RELOADSTART = 3,
 }
 impl From<FALLA_A> for u8 {
     #[inline(always)]
     fn from(variant: FALLA_A) -> Self {
-        match variant {
-            FALLA_A::NONE => 0,
-            FALLA_A::START => 1,
-            FALLA_A::STOP => 2,
-            FALLA_A::RELOADSTART => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FALLA`"]
@@ -471,22 +459,19 @@ impl<'a> DISSYNCOUT_W<'a> {
 }
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: Prescaled HFPERCLK"]
-    PRESCHFPERCLK,
+    PRESCHFPERCLK = 0,
     #[doc = "1: Compare/Capture Channel 1 Input"]
-    CC1,
+    CC1 = 1,
     #[doc = "2: Timer is clocked by underflow(down-count) or overflow(up-count) in the lower numbered neighbor Timer"]
-    TIMEROUF,
+    TIMEROUF = 2,
 }
 impl From<CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKSEL_A) -> Self {
-        match variant {
-            CLKSEL_A::PRESCHFPERCLK => 0,
-            CLKSEL_A::CC1 => 1,
-            CLKSEL_A::TIMEROUF => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKSEL`"]
@@ -553,46 +538,35 @@ impl<'a> CLKSEL_W<'a> {
 }
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: The HFPERCLK is undivided"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: The HFPERCLK is divided by 2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: The HFPERCLK is divided by 4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: The HFPERCLK is divided by 8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: The HFPERCLK is divided by 16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: The HFPERCLK is divided by 32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: The HFPERCLK is divided by 64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: The HFPERCLK is divided by 128"]
-    DIV128,
+    DIV128 = 7,
     #[doc = "8: The HFPERCLK is divided by 256"]
-    DIV256,
+    DIV256 = 8,
     #[doc = "9: The HFPERCLK is divided by 512"]
-    DIV512,
+    DIV512 = 9,
     #[doc = "10: The HFPERCLK is divided by 1024"]
-    DIV1024,
+    DIV1024 = 10,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PRESC_A) -> Self {
-        match variant {
-            PRESC_A::DIV1 => 0,
-            PRESC_A::DIV2 => 1,
-            PRESC_A::DIV4 => 2,
-            PRESC_A::DIV8 => 3,
-            PRESC_A::DIV16 => 4,
-            PRESC_A::DIV32 => 5,
-            PRESC_A::DIV64 => 6,
-            PRESC_A::DIV128 => 7,
-            PRESC_A::DIV256 => 8,
-            PRESC_A::DIV512 => 9,
-            PRESC_A::DIV1024 => 10,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRESC`"]

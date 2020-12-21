@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Repeat Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REPMODE_A {
     #[doc = "0: When started, the LETIMER counts down until it is stopped by software"]
-    FREE,
+    FREE = 0,
     #[doc = "1: The counter counts REP0 times. When REP0 reaches zero, the counter stops"]
-    ONESHOT,
+    ONESHOT = 1,
     #[doc = "2: The counter counts REP0 times. If REP1 has been written, it is loaded into REP0 when REP0 reaches zero, otherwise the counter stops"]
-    BUFFERED,
+    BUFFERED = 2,
     #[doc = "3: Both REP0 and REP1 are decremented when the LETIMER wraps around. The LETIMER counts until both REP0 and REP1 are zero"]
-    DOUBLE,
+    DOUBLE = 3,
 }
 impl From<REPMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: REPMODE_A) -> Self {
-        match variant {
-            REPMODE_A::FREE => 0,
-            REPMODE_A::ONESHOT => 1,
-            REPMODE_A::BUFFERED => 2,
-            REPMODE_A::DOUBLE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REPMODE`"]
@@ -109,25 +105,21 @@ impl<'a> REPMODE_W<'a> {
 }
 #[doc = "Underflow Output Action 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UFOA0_A {
     #[doc = "0: LETn_O0 is held at its idle value as defined by OPOL0"]
-    NONE,
+    NONE = 0,
     #[doc = "1: LETn_O0 is toggled on CNT underflow"]
-    TOGGLE,
+    TOGGLE = 1,
     #[doc = "2: LETn_O0 is held active for one LFACLKLETIMER0 clock cycle on CNT underflow. The output then returns to its idle value as defined by OPOL0"]
-    PULSE,
+    PULSE = 2,
     #[doc = "3: LETn_O0 is set idle on CNT underflow, and active on compare match with COMP1"]
-    PWM,
+    PWM = 3,
 }
 impl From<UFOA0_A> for u8 {
     #[inline(always)]
     fn from(variant: UFOA0_A) -> Self {
-        match variant {
-            UFOA0_A::NONE => 0,
-            UFOA0_A::TOGGLE => 1,
-            UFOA0_A::PULSE => 2,
-            UFOA0_A::PWM => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UFOA0`"]
@@ -206,25 +198,21 @@ impl<'a> UFOA0_W<'a> {
 }
 #[doc = "Underflow Output Action 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UFOA1_A {
     #[doc = "0: LETn_O1 is held at its idle value as defined by OPOL1"]
-    NONE,
+    NONE = 0,
     #[doc = "1: LETn_O1 is toggled on CNT underflow"]
-    TOGGLE,
+    TOGGLE = 1,
     #[doc = "2: LETn_O1 is held active for one LFACLKLETIMER0 clock cycle on CNT underflow. The output then returns to its idle value as defined by OPOL1"]
-    PULSE,
+    PULSE = 2,
     #[doc = "3: LETn_O1 is set idle on CNT underflow, and active on compare match with COMP1"]
-    PWM,
+    PWM = 3,
 }
 impl From<UFOA1_A> for u8 {
     #[inline(always)]
     fn from(variant: UFOA1_A) -> Self {
-        match variant {
-            UFOA1_A::NONE => 0,
-            UFOA1_A::TOGGLE => 1,
-            UFOA1_A::PULSE => 2,
-            UFOA1_A::PWM => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UFOA1`"]

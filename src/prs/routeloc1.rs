@@ -12,22 +12,19 @@ impl crate::ResetValue for super::ROUTELOC1 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH4LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<CH4LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CH4LOC_A) -> Self {
-        match variant {
-            CH4LOC_A::LOC0 => 0,
-            CH4LOC_A::LOC1 => 1,
-            CH4LOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH4LOC`"]
@@ -94,22 +91,19 @@ impl<'a> CH4LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH5LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<CH5LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CH5LOC_A) -> Self {
-        match variant {
-            CH5LOC_A::LOC0 => 0,
-            CH5LOC_A::LOC1 => 1,
-            CH5LOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH5LOC`"]
@@ -176,22 +170,19 @@ impl<'a> CH5LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH6LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<CH6LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CH6LOC_A) -> Self {
-        match variant {
-            CH6LOC_A::LOC0 => 0,
-            CH6LOC_A::LOC1 => 1,
-            CH6LOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH6LOC`"]
@@ -258,22 +249,19 @@ impl<'a> CH6LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH7LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<CH7LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CH7LOC_A) -> Self {
-        match variant {
-            CH7LOC_A::LOC0 => 0,
-            CH7LOC_A::LOC1 => 1,
-            CH7LOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH7LOC`"]

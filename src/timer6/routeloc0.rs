@@ -12,37 +12,29 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CC0LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<CC0LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CC0LOC_A) -> Self {
-        match variant {
-            CC0LOC_A::LOC0 => 0,
-            CC0LOC_A::LOC1 => 1,
-            CC0LOC_A::LOC2 => 2,
-            CC0LOC_A::LOC3 => 3,
-            CC0LOC_A::LOC4 => 4,
-            CC0LOC_A::LOC5 => 5,
-            CC0LOC_A::LOC6 => 6,
-            CC0LOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CC0LOC`"]
@@ -164,37 +156,29 @@ impl<'a> CC0LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CC1LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<CC1LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CC1LOC_A) -> Self {
-        match variant {
-            CC1LOC_A::LOC0 => 0,
-            CC1LOC_A::LOC1 => 1,
-            CC1LOC_A::LOC2 => 2,
-            CC1LOC_A::LOC3 => 3,
-            CC1LOC_A::LOC4 => 4,
-            CC1LOC_A::LOC5 => 5,
-            CC1LOC_A::LOC6 => 6,
-            CC1LOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CC1LOC`"]
@@ -316,37 +300,29 @@ impl<'a> CC1LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CC2LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<CC2LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CC2LOC_A) -> Self {
-        match variant {
-            CC2LOC_A::LOC0 => 0,
-            CC2LOC_A::LOC1 => 1,
-            CC2LOC_A::LOC2 => 2,
-            CC2LOC_A::LOC3 => 3,
-            CC2LOC_A::LOC4 => 4,
-            CC2LOC_A::LOC5 => 5,
-            CC2LOC_A::LOC6 => 6,
-            CC2LOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CC2LOC`"]
@@ -468,37 +444,29 @@ impl<'a> CC2LOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CC3LOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
     #[doc = "6: Location 6"]
-    LOC6,
+    LOC6 = 6,
     #[doc = "7: Location 7"]
-    LOC7,
+    LOC7 = 7,
 }
 impl From<CC3LOC_A> for u8 {
     #[inline(always)]
     fn from(variant: CC3LOC_A) -> Self {
-        match variant {
-            CC3LOC_A::LOC0 => 0,
-            CC3LOC_A::LOC1 => 1,
-            CC3LOC_A::LOC2 => 2,
-            CC3LOC_A::LOC3 => 3,
-            CC3LOC_A::LOC4 => 4,
-            CC3LOC_A::LOC5 => 5,
-            CC3LOC_A::LOC6 => 6,
-            CC3LOC_A::LOC7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CC3LOC`"]

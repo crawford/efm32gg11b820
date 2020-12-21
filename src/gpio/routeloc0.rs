@@ -12,25 +12,21 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SWVLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
 }
 impl From<SWVLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: SWVLOC_A) -> Self {
-        match variant {
-            SWVLOC_A::LOC0 => 0,
-            SWVLOC_A::LOC1 => 1,
-            SWVLOC_A::LOC2 => 2,
-            SWVLOC_A::LOC3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SWVLOC`"]
@@ -108,31 +104,25 @@ impl<'a> SWVLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ETMLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
     #[doc = "3: Location 3"]
-    LOC3,
+    LOC3 = 3,
     #[doc = "4: Location 4"]
-    LOC4,
+    LOC4 = 4,
     #[doc = "5: Location 5"]
-    LOC5,
+    LOC5 = 5,
 }
 impl From<ETMLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: ETMLOC_A) -> Self {
-        match variant {
-            ETMLOC_A::LOC0 => 0,
-            ETMLOC_A::LOC1 => 1,
-            ETMLOC_A::LOC2 => 2,
-            ETMLOC_A::LOC3 => 3,
-            ETMLOC_A::LOC4 => 4,
-            ETMLOC_A::LOC5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ETMLOC`"]

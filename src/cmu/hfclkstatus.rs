@@ -2,34 +2,27 @@
 pub type R = crate::R<u32, super::HFCLKSTATUS>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SELECTED_A {
     #[doc = "1: HFRCO is selected as HFCLK clock source"]
-    HFRCO,
+    HFRCO = 1,
     #[doc = "2: HFXO is selected as HFCLK clock source"]
-    HFXO,
+    HFXO = 2,
     #[doc = "3: LFRCO is selected as HFCLK clock source"]
-    LFRCO,
+    LFRCO = 3,
     #[doc = "4: LFXO is selected as HFCLK clock source"]
-    LFXO,
+    LFXO = 4,
     #[doc = "5: HFRCO divided by 2 is selected as HFCLK clock source"]
-    HFRCODIV2,
+    HFRCODIV2 = 5,
     #[doc = "6: USHFRCO is selected as HFCLK clock source"]
-    USHFRCO,
+    USHFRCO = 6,
     #[doc = "7: CLKIN0 is selected as HFCLK clock source"]
-    CLKIN0,
+    CLKIN0 = 7,
 }
 impl From<SELECTED_A> for u8 {
     #[inline(always)]
     fn from(variant: SELECTED_A) -> Self {
-        match variant {
-            SELECTED_A::HFRCO => 1,
-            SELECTED_A::HFXO => 2,
-            SELECTED_A::LFRCO => 3,
-            SELECTED_A::LFXO => 4,
-            SELECTED_A::HFRCODIV2 => 5,
-            SELECTED_A::USHFRCO => 6,
-            SELECTED_A::CLKIN0 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SELECTED`"]

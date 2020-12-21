@@ -26,115 +26,81 @@ impl<'a> SIGSEL_W<'a> {
 }
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SOURCESEL_A {
     #[doc = "0: No source selected"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Peripheral Reflex System"]
-    PRS,
+    PRS = 1,
     #[doc = "8: Analog to Digital Converter 0"]
-    ADC0,
+    ADC0 = 8,
     #[doc = "9: Analog to Digital Converter 0"]
-    ADC1,
+    ADC1 = 9,
     #[doc = "10: Digital to Analog Converter 0"]
-    VDAC0,
+    VDAC0 = 10,
     #[doc = "12: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0,
+    USART0 = 12,
     #[doc = "13: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1,
+    USART1 = 13,
     #[doc = "14: Universal Synchronous/Asynchronous Receiver/Transmitter 2"]
-    USART2,
+    USART2 = 14,
     #[doc = "15: Universal Synchronous/Asynchronous Receiver/Transmitter 3"]
-    USART3,
+    USART3 = 15,
     #[doc = "16: Universal Synchronous/Asynchronous Receiver/Transmitter 4"]
-    USART4,
+    USART4 = 16,
     #[doc = "17: Universal Synchronous/Asynchronous Receiver/Transmitter 5"]
-    USART5,
+    USART5 = 17,
     #[doc = "18: Universal Asynchronous Receiver/Transmitter 0"]
-    UART0,
+    UART0 = 18,
     #[doc = "19: Universal Asynchronous Receiver/Transmitter 1"]
-    UART1,
+    UART1 = 19,
     #[doc = "20: Low Energy UART 0"]
-    LEUART0,
+    LEUART0 = 20,
     #[doc = "21: Low Energy UART 1"]
-    LEUART1,
+    LEUART1 = 21,
     #[doc = "22: I2C 0"]
-    I2C0,
+    I2C0 = 22,
     #[doc = "23: I2C 1"]
-    I2C1,
+    I2C1 = 23,
     #[doc = "24: I2C 2"]
-    I2C2,
+    I2C2 = 24,
     #[doc = "25: Timer 0"]
-    TIMER0,
+    TIMER0 = 25,
     #[doc = "26: Timer 1"]
-    TIMER1,
+    TIMER1 = 26,
     #[doc = "27: Timer 2"]
-    TIMER2,
+    TIMER2 = 27,
     #[doc = "28: Timer 3"]
-    TIMER3,
+    TIMER3 = 28,
     #[doc = "29: Timer 4"]
-    TIMER4,
+    TIMER4 = 29,
     #[doc = "30: Timer 5"]
-    TIMER5,
+    TIMER5 = 30,
     #[doc = "31: Timer 6"]
-    TIMER6,
+    TIMER6 = 31,
     #[doc = "32: Wide Timer 0"]
-    WTIMER0,
+    WTIMER0 = 32,
     #[doc = "33: Wide Timer 0"]
-    WTIMER1,
+    WTIMER1 = 33,
     #[doc = "34: Wide Timer 2"]
-    WTIMER2,
+    WTIMER2 = 34,
     #[doc = "35: Wide Timer 3"]
-    WTIMER3,
+    WTIMER3 = 35,
     #[doc = "48: Memory System Controller"]
-    MSC,
+    MSC = 48,
     #[doc = "49: Advanced Encryption Standard Accelerator"]
-    CRYPTO0,
+    CRYPTO0 = 49,
     #[doc = "50: External Bus Interface"]
-    EBI,
+    EBI = 50,
     #[doc = "61: Capacitive touch sense module"]
-    CSEN,
+    CSEN = 61,
     #[doc = "62: Low Energy Sensor Interface"]
-    LESENSE,
+    LESENSE = 62,
 }
 impl From<SOURCESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SOURCESEL_A) -> Self {
-        match variant {
-            SOURCESEL_A::NONE => 0,
-            SOURCESEL_A::PRS => 1,
-            SOURCESEL_A::ADC0 => 8,
-            SOURCESEL_A::ADC1 => 9,
-            SOURCESEL_A::VDAC0 => 10,
-            SOURCESEL_A::USART0 => 12,
-            SOURCESEL_A::USART1 => 13,
-            SOURCESEL_A::USART2 => 14,
-            SOURCESEL_A::USART3 => 15,
-            SOURCESEL_A::USART4 => 16,
-            SOURCESEL_A::USART5 => 17,
-            SOURCESEL_A::UART0 => 18,
-            SOURCESEL_A::UART1 => 19,
-            SOURCESEL_A::LEUART0 => 20,
-            SOURCESEL_A::LEUART1 => 21,
-            SOURCESEL_A::I2C0 => 22,
-            SOURCESEL_A::I2C1 => 23,
-            SOURCESEL_A::I2C2 => 24,
-            SOURCESEL_A::TIMER0 => 25,
-            SOURCESEL_A::TIMER1 => 26,
-            SOURCESEL_A::TIMER2 => 27,
-            SOURCESEL_A::TIMER3 => 28,
-            SOURCESEL_A::TIMER4 => 29,
-            SOURCESEL_A::TIMER5 => 30,
-            SOURCESEL_A::TIMER6 => 31,
-            SOURCESEL_A::WTIMER0 => 32,
-            SOURCESEL_A::WTIMER1 => 33,
-            SOURCESEL_A::WTIMER2 => 34,
-            SOURCESEL_A::WTIMER3 => 35,
-            SOURCESEL_A::MSC => 48,
-            SOURCESEL_A::CRYPTO0 => 49,
-            SOURCESEL_A::EBI => 50,
-            SOURCESEL_A::CSEN => 61,
-            SOURCESEL_A::LESENSE => 62,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SOURCESEL`"]

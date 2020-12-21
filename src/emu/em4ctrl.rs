@@ -108,22 +108,19 @@ impl<'a> RETAINULFRCO_W<'a> {
 }
 #[doc = "EM4 IO Retention Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EM4IORETMODE_A {
     #[doc = "0: No Retention: Pads enter reset state when entering EM4"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Retention through EM4: Pads enter reset state when exiting EM4"]
-    EM4EXIT,
+    EM4EXIT = 1,
     #[doc = "2: Retention through EM4 and Wakeup: software writes UNLATCH register to remove retention"]
-    SWUNLATCH,
+    SWUNLATCH = 2,
 }
 impl From<EM4IORETMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: EM4IORETMODE_A) -> Self {
-        match variant {
-            EM4IORETMODE_A::DISABLE => 0,
-            EM4IORETMODE_A::EM4EXIT => 1,
-            EM4IORETMODE_A::SWUNLATCH => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EM4IORETMODE`"]

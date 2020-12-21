@@ -6,25 +6,21 @@ pub type INITSDCLKFREQVAL_R = crate::R<u16, u16>;
 pub type INITCLCKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Driver Strength Select Value for Initialization\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INITDRVSTVAL_A {
     #[doc = "0: Driver Type B is selected (Default)"]
-    TYPEB,
+    TYPEB = 0,
     #[doc = "1: Driver Type A is selected"]
-    TYPEA,
+    TYPEA = 1,
     #[doc = "2: Driver Type C is selected"]
-    TYPEC,
+    TYPEC = 2,
     #[doc = "3: Driver Type D is selected"]
-    TYPED,
+    TYPED = 3,
 }
 impl From<INITDRVSTVAL_A> for u8 {
     #[inline(always)]
     fn from(variant: INITDRVSTVAL_A) -> Self {
-        match variant {
-            INITDRVSTVAL_A::TYPEB => 0,
-            INITDRVSTVAL_A::TYPEA => 1,
-            INITDRVSTVAL_A::TYPEC => 2,
-            INITDRVSTVAL_A::TYPED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INITDRVSTVAL`"]
@@ -68,25 +64,21 @@ pub type DSPSDCLKFREQVAL_R = crate::R<u16, u16>;
 pub type DSPCLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Driver Strength Select Value for Default Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSPDRVSTVAL_A {
     #[doc = "0: Driver Type B is selected (Default)"]
-    TYPEB,
+    TYPEB = 0,
     #[doc = "1: Driver Type A is selected"]
-    TYPEA,
+    TYPEA = 1,
     #[doc = "2: Driver Type C is selected"]
-    TYPEC,
+    TYPEC = 2,
     #[doc = "3: Driver Type D is selected"]
-    TYPED,
+    TYPED = 3,
 }
 impl From<DSPDRVSTVAL_A> for u8 {
     #[inline(always)]
     fn from(variant: DSPDRVSTVAL_A) -> Self {
-        match variant {
-            DSPDRVSTVAL_A::TYPEB => 0,
-            DSPDRVSTVAL_A::TYPEA => 1,
-            DSPDRVSTVAL_A::TYPEC => 2,
-            DSPDRVSTVAL_A::TYPED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSPDRVSTVAL`"]

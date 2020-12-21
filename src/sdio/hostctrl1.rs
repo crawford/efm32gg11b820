@@ -84,25 +84,21 @@ impl<'a> HSEN_W<'a> {
 }
 #[doc = "DMA Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMASEL_A {
     #[doc = "0: SDMA selected"]
-    SDMA,
+    SDMA = 0,
     #[doc = "1: 32-bit ADMA1 selected"]
-    ADMA1,
+    ADMA1 = 1,
     #[doc = "2: 32-bit ADMA2 selected"]
-    ADMA2,
+    ADMA2 = 2,
     #[doc = "3: 64-bit ADMA2 selected"]
-    _64BITADMA2,
+    _64BITADMA2 = 3,
 }
 impl From<DMASEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DMASEL_A) -> Self {
-        match variant {
-            DMASEL_A::SDMA => 0,
-            DMASEL_A::ADMA1 => 1,
-            DMASEL_A::ADMA2 => 2,
-            DMASEL_A::_64BITADMA2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMASEL`"]
@@ -277,22 +273,19 @@ impl<'a> SDBUSPOWER_W<'a> {
 }
 #[doc = "SD Bus Voltage Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDBUSVOLTSEL_A {
     #[doc = "5: Select 1.8V"]
-    _1P8V,
+    _1P8V = 5,
     #[doc = "6: Select 3.0V"]
-    _3P0V,
+    _3P0V = 6,
     #[doc = "7: Select 3.3V"]
-    _3P3V,
+    _3P3V = 7,
 }
 impl From<SDBUSVOLTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDBUSVOLTSEL_A) -> Self {
-        match variant {
-            SDBUSVOLTSEL_A::_1P8V => 5,
-            SDBUSVOLTSEL_A::_3P0V => 6,
-            SDBUSVOLTSEL_A::_3P3V => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDBUSVOLTSEL`"]

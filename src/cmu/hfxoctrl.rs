@@ -12,25 +12,21 @@ impl crate::ResetValue for super::HFXOCTRL {
 }
 #[doc = "HFXO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: 4 MHz - 50 MHz crystal oscillator"]
-    XTAL,
+    XTAL = 0,
     #[doc = "1: An AC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
-    ACBUFEXTCLK,
+    ACBUFEXTCLK = 1,
     #[doc = "2: A DC coupled buffer is coupled in series with HFXTAL_N pin, suitable for external sinus wave."]
-    DCBUFEXTCLK,
+    DCBUFEXTCLK = 2,
     #[doc = "3: Digital external clock can be supplied on HFXTAL_N pin."]
-    DIGEXTCLK,
+    DIGEXTCLK = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::XTAL => 0,
-            MODE_A::ACBUFEXTCLK => 1,
-            MODE_A::DCBUFEXTCLK => 2,
-            MODE_A::DIGEXTCLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -133,25 +129,21 @@ impl<'a> HFXOX2EN_W<'a> {
 }
 #[doc = "HFXO Automatic Peak Detection Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PEAKDETMODE_A {
     #[doc = "0: Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
-    ONCECMD,
+    ONCECMD = 0,
     #[doc = "1: Automatic control of HFXO peak detection sequence. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
-    AUTOCMD,
+    AUTOCMD = 1,
     #[doc = "2: CMU_CMD HFXOPEAKDETSTART can be used to trigger the peak detection sequence after HFXORDY=1."]
-    CMD,
+    CMD = 2,
     #[doc = "3: CMU_HFXOSTEADYSTATECTRL IBTRIMXOCORE and PEAKDETEN are under full software control and are allowed to be changed once HFXO is ready."]
-    MANUAL,
+    MANUAL = 3,
 }
 impl From<PEAKDETMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PEAKDETMODE_A) -> Self {
-        match variant {
-            PEAKDETMODE_A::ONCECMD => 0,
-            PEAKDETMODE_A::AUTOCMD => 1,
-            PEAKDETMODE_A::CMD => 2,
-            PEAKDETMODE_A::MANUAL => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PEAKDETMODE`"]
@@ -230,37 +222,29 @@ impl<'a> PEAKDETMODE_W<'a> {
 }
 #[doc = "HFXO Low Frequency Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFTIMEOUT_A {
     #[doc = "0: Timeout period of 0 cycles (disabled)"]
-    _0CYCLES,
+    _0CYCLES = 0,
     #[doc = "1: Timeout period of 2 cycles"]
-    _2CYCLES,
+    _2CYCLES = 1,
     #[doc = "2: Timeout period of 4 cycles"]
-    _4CYCLES,
+    _4CYCLES = 2,
     #[doc = "3: Timeout period of 16 cycles"]
-    _16CYCLES,
+    _16CYCLES = 3,
     #[doc = "4: Timeout period of 32 cycles"]
-    _32CYCLES,
+    _32CYCLES = 4,
     #[doc = "5: Timeout period of 64 cycles"]
-    _64CYCLES,
+    _64CYCLES = 5,
     #[doc = "6: Timeout period of 1024 cycles"]
-    _1KCYCLES,
+    _1KCYCLES = 6,
     #[doc = "7: Timeout period of 4096 cycles"]
-    _4KCYCLES,
+    _4KCYCLES = 7,
 }
 impl From<LFTIMEOUT_A> for u8 {
     #[inline(always)]
     fn from(variant: LFTIMEOUT_A) -> Self {
-        match variant {
-            LFTIMEOUT_A::_0CYCLES => 0,
-            LFTIMEOUT_A::_2CYCLES => 1,
-            LFTIMEOUT_A::_4CYCLES => 2,
-            LFTIMEOUT_A::_16CYCLES => 3,
-            LFTIMEOUT_A::_32CYCLES => 4,
-            LFTIMEOUT_A::_64CYCLES => 5,
-            LFTIMEOUT_A::_1KCYCLES => 6,
-            LFTIMEOUT_A::_4KCYCLES => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFTIMEOUT`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::TIMCTRL {
 }
 #[doc = "Prescaling Factor for High Frequency Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AUXPRESC_A {
     #[doc = "0: High frequency timer is clocked with AUXHFRCO/1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: High frequency timer is clocked with AUXHFRCO/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: High frequency timer is clocked with AUXHFRCO/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: High frequency timer is clocked with AUXHFRCO/8"]
-    DIV8,
+    DIV8 = 3,
 }
 impl From<AUXPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: AUXPRESC_A) -> Self {
-        match variant {
-            AUXPRESC_A::DIV1 => 0,
-            AUXPRESC_A::DIV2 => 1,
-            AUXPRESC_A::DIV4 => 2,
-            AUXPRESC_A::DIV8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AUXPRESC`"]
@@ -109,37 +105,29 @@ impl<'a> AUXPRESC_W<'a> {
 }
 #[doc = "Prescaling Factor for Low Frequency Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFPRESC_A {
     #[doc = "0: Low frequency timer is clocked with LFACLKLESENSE/1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: Low frequency timer is clocked with LFACLKLESENSE/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: Low frequency timer is clocked with LFACLKLESENSE/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: Low frequency timer is clocked with LFACLKLESENSE/8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: Low frequency timer is clocked with LFACLKLESENSE/16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: Low frequency timer is clocked with LFACLKLESENSE/32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: Low frequency timer is clocked with LFACLKLESENSE/64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: Low frequency timer is clocked with LFACLKLESENSE/128"]
-    DIV128,
+    DIV128 = 7,
 }
 impl From<LFPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: LFPRESC_A) -> Self {
-        match variant {
-            LFPRESC_A::DIV1 => 0,
-            LFPRESC_A::DIV2 => 1,
-            LFPRESC_A::DIV4 => 2,
-            LFPRESC_A::DIV8 => 3,
-            LFPRESC_A::DIV16 => 4,
-            LFPRESC_A::DIV32 => 5,
-            LFPRESC_A::DIV64 => 6,
-            LFPRESC_A::DIV128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFPRESC`"]
@@ -262,37 +250,29 @@ impl<'a> LFPRESC_W<'a> {
 }
 #[doc = "Period Counter Prescaling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PCPRESC_A {
     #[doc = "0: The period counter clock frequency is LFACLKLESENSE/1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: The period counter clock frequency is LFACLKLESENSE/2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: The period counter clock frequency is LFACLKLESENSE/4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: The period counter clock frequency is LFACLKLESENSE/8"]
-    DIV8,
+    DIV8 = 3,
     #[doc = "4: The period counter clock frequency is LFACLKLESENSE/16"]
-    DIV16,
+    DIV16 = 4,
     #[doc = "5: The period counter clock frequency is LFACLKLESENSE/32"]
-    DIV32,
+    DIV32 = 5,
     #[doc = "6: The period counter clock frequency is LFACLKLESENSE/64"]
-    DIV64,
+    DIV64 = 6,
     #[doc = "7: The period counter clock frequency is LFACLKLESENSE/128"]
-    DIV128,
+    DIV128 = 7,
 }
 impl From<PCPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PCPRESC_A) -> Self {
-        match variant {
-            PCPRESC_A::DIV1 => 0,
-            PCPRESC_A::DIV2 => 1,
-            PCPRESC_A::DIV4 => 2,
-            PCPRESC_A::DIV8 => 3,
-            PCPRESC_A::DIV16 => 4,
-            PCPRESC_A::DIV32 => 5,
-            PCPRESC_A::DIV64 => 6,
-            PCPRESC_A::DIV128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PCPRESC`"]

@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CC0_CTRL {
 }
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Compare/Capture channel turned off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Input capture"]
-    INPUTCAPTURE,
+    INPUTCAPTURE = 1,
     #[doc = "2: Output compare"]
-    OUTPUTCOMPARE,
+    OUTPUTCOMPARE = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::OFF => 0,
-            MODE_A::INPUTCAPTURE => 1,
-            MODE_A::OUTPUTCOMPARE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -94,25 +91,21 @@ impl<'a> MODE_W<'a> {
 }
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMOA_A {
     #[doc = "0: A single clock cycle pulse is generated on output"]
-    PULSE,
+    PULSE = 0,
     #[doc = "1: Toggle output on compare match"]
-    TOGGLE,
+    TOGGLE = 1,
     #[doc = "2: Clear output on compare match"]
-    CLEAR,
+    CLEAR = 2,
     #[doc = "3: Set output on compare match"]
-    SET,
+    SET = 3,
 }
 impl From<CMOA_A> for u8 {
     #[inline(always)]
     fn from(variant: CMOA_A) -> Self {
-        match variant {
-            CMOA_A::PULSE => 0,
-            CMOA_A::TOGGLE => 1,
-            CMOA_A::CLEAR => 2,
-            CMOA_A::SET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMOA`"]
@@ -191,25 +184,21 @@ impl<'a> CMOA_W<'a> {
 }
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICEDGE_A {
     #[doc = "0: Rising edges detected"]
-    RISING,
+    RISING = 0,
     #[doc = "1: Falling edges detected"]
-    FALLING,
+    FALLING = 1,
     #[doc = "2: Both edges detected"]
-    BOTH,
+    BOTH = 2,
     #[doc = "3: No edge detection, signal is left as it is"]
-    NONE,
+    NONE = 3,
 }
 impl From<ICEDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: ICEDGE_A) -> Self {
-        match variant {
-            ICEDGE_A::RISING => 0,
-            ICEDGE_A::FALLING => 1,
-            ICEDGE_A::BOTH => 2,
-            ICEDGE_A::NONE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICEDGE`"]
@@ -288,85 +277,61 @@ impl<'a> ICEDGE_W<'a> {
 }
 #[doc = "Compare/Capture Channel PRS Input Channel Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSEL_A) -> Self {
-        match variant {
-            PRSSEL_A::PRSCH0 => 0,
-            PRSSEL_A::PRSCH1 => 1,
-            PRSSEL_A::PRSCH2 => 2,
-            PRSSEL_A::PRSCH3 => 3,
-            PRSSEL_A::PRSCH4 => 4,
-            PRSSEL_A::PRSCH5 => 5,
-            PRSSEL_A::PRSCH6 => 6,
-            PRSSEL_A::PRSCH7 => 7,
-            PRSSEL_A::PRSCH8 => 8,
-            PRSSEL_A::PRSCH9 => 9,
-            PRSSEL_A::PRSCH10 => 10,
-            PRSSEL_A::PRSCH11 => 11,
-            PRSSEL_A::PRSCH12 => 12,
-            PRSSEL_A::PRSCH13 => 13,
-            PRSSEL_A::PRSCH14 => 14,
-            PRSSEL_A::PRSCH15 => 15,
-            PRSSEL_A::PRSCH16 => 16,
-            PRSSEL_A::PRSCH17 => 17,
-            PRSSEL_A::PRSCH18 => 18,
-            PRSSEL_A::PRSCH19 => 19,
-            PRSSEL_A::PRSCH20 => 20,
-            PRSSEL_A::PRSCH21 => 21,
-            PRSSEL_A::PRSCH22 => 22,
-            PRSSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSEL`"]

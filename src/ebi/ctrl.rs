@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: EBI_AD drives 8 bit data, 8 bit address, ALE not used. Extended address bits can be enabled."]
-    D8A8,
+    D8A8 = 0,
     #[doc = "1: EBI_AD drives 16 bit data, 16 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D16A16ALE,
+    D16A16ALE = 1,
     #[doc = "2: EBI_AD drives 8 bit data, 24 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D8A24ALE,
+    D8A24ALE = 2,
     #[doc = "3: EBI_AD drives 16 bit data, ALE not used. Extended address bits can be enabled."]
-    D16,
+    D16 = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::D8A8 => 0,
-            MODE_A::D16A16ALE => 1,
-            MODE_A::D8A24ALE => 2,
-            MODE_A::D16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -109,25 +105,21 @@ impl<'a> MODE_W<'a> {
 }
 #[doc = "Mode 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE1_A {
     #[doc = "0: EBI_AD drives 8 bit data, 8 bit address, ALE not used. Extended address bits can be enabled."]
-    D8A8,
+    D8A8 = 0,
     #[doc = "1: EBI_AD drives 16 bit data, 16 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D16A16ALE,
+    D16A16ALE = 1,
     #[doc = "2: EBI_AD drives 8 bit data, 24 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D8A24ALE,
+    D8A24ALE = 2,
     #[doc = "3: EBI_AD drives 16 bit data, ALE not used. Extended address bits can be enabled."]
-    D16,
+    D16 = 3,
 }
 impl From<MODE1_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE1_A) -> Self {
-        match variant {
-            MODE1_A::D8A8 => 0,
-            MODE1_A::D16A16ALE => 1,
-            MODE1_A::D8A24ALE => 2,
-            MODE1_A::D16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE1`"]
@@ -206,25 +198,21 @@ impl<'a> MODE1_W<'a> {
 }
 #[doc = "Mode 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE2_A {
     #[doc = "0: EBI_AD drives 8 bit data, 8 bit address, ALE not used. Extended address bits can be enabled."]
-    D8A8,
+    D8A8 = 0,
     #[doc = "1: EBI_AD drives 16 bit data, 16 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D16A16ALE,
+    D16A16ALE = 1,
     #[doc = "2: EBI_AD drives 8 bit data, 24 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D8A24ALE,
+    D8A24ALE = 2,
     #[doc = "3: EBI_AD drives 16 bit data, ALE not used. Extended address bits can be enabled."]
-    D16,
+    D16 = 3,
 }
 impl From<MODE2_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE2_A) -> Self {
-        match variant {
-            MODE2_A::D8A8 => 0,
-            MODE2_A::D16A16ALE => 1,
-            MODE2_A::D8A24ALE => 2,
-            MODE2_A::D16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE2`"]
@@ -303,25 +291,21 @@ impl<'a> MODE2_W<'a> {
 }
 #[doc = "Mode 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE3_A {
     #[doc = "0: EBI_AD drives 8 bit data, 8 bit address, ALE not used. Extended address bits can be enabled."]
-    D8A8,
+    D8A8 = 0,
     #[doc = "1: EBI_AD drives 16 bit data, 16 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D16A16ALE,
+    D16A16ALE = 1,
     #[doc = "2: EBI_AD drives 8 bit data, 24 bit address, ALE is used for address latching. Extended address bits can be enabled."]
-    D8A24ALE,
+    D8A24ALE = 2,
     #[doc = "3: EBI_AD drives 16 bit data, ALE not used. Extended address bits can be enabled."]
-    D16,
+    D16 = 3,
 }
 impl From<MODE3_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE3_A) -> Self {
-        match variant {
-            MODE3_A::D8A8 => 0,
-            MODE3_A::D16A16ALE => 1,
-            MODE3_A::D8A24ALE => 2,
-            MODE3_A::D16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE3`"]

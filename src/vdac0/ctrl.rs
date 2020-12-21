@@ -108,31 +108,25 @@ impl<'a> CH0PRESCRST_W<'a> {
 }
 #[doc = "Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFSEL_A {
     #[doc = "0: Internal low noise 1.25 V bandgap reference"]
-    _1V25LN,
+    _1V25LN = 0,
     #[doc = "1: Internal low noise 2.5 V bandgap reference"]
-    _2V5LN,
+    _2V5LN = 1,
     #[doc = "2: Internal 1.25 V bandgap reference"]
-    _1V25,
+    _1V25 = 2,
     #[doc = "3: Internal 2.5 V bandgap reference"]
-    _2V5,
+    _2V5 = 3,
     #[doc = "4: AVDD reference"]
-    VDD,
+    VDD = 4,
     #[doc = "6: External pin reference"]
-    EXT,
+    EXT = 6,
 }
 impl From<REFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::_1V25LN => 0,
-            REFSEL_A::_2V5LN => 1,
-            REFSEL_A::_1V25 => 2,
-            REFSEL_A::_2V5 => 3,
-            REFSEL_A::VDD => 4,
-            REFSEL_A::EXT => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFSEL`"]
@@ -232,16 +226,15 @@ impl<'a> REFSEL_W<'a> {
 }
 #[doc = "Prescaler Setting for DAC Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: `0`"]
-    NODIVISION,
+    NODIVISION = 0,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: PRESC_A) -> Self {
-        match variant {
-            PRESC_A::NODIVISION => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRESC`"]
@@ -286,25 +279,21 @@ impl<'a> PRESC_W<'a> {
 }
 #[doc = "Refresh Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFRESHPERIOD_A {
     #[doc = "0: All channels with enabled refresh are refreshed every 8 DAC_CLK cycles"]
-    _8CYCLES,
+    _8CYCLES = 0,
     #[doc = "1: All channels with enabled refresh are refreshed every 16 DAC_CLK cycles"]
-    _16CYCLES,
+    _16CYCLES = 1,
     #[doc = "2: All channels with enabled refresh are refreshed every 32 DAC_CLK cycles"]
-    _32CYCLES,
+    _32CYCLES = 2,
     #[doc = "3: All channels with enabled refresh are refreshed every 64 DAC_CLK cycles"]
-    _64CYCLES,
+    _64CYCLES = 3,
 }
 impl From<REFRESHPERIOD_A> for u8 {
     #[inline(always)]
     fn from(variant: REFRESHPERIOD_A) -> Self {
-        match variant {
-            REFRESHPERIOD_A::_8CYCLES => 0,
-            REFRESHPERIOD_A::_16CYCLES => 1,
-            REFRESHPERIOD_A::_32CYCLES => 2,
-            REFRESHPERIOD_A::_64CYCLES => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFRESHPERIOD`"]

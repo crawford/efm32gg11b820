@@ -84,25 +84,21 @@ impl<'a> AUTORECOVER_W<'a> {
 }
 #[doc = "Reference Clock Selection Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFSEL_A {
     #[doc = "0: HFXO selected"]
-    HFXO,
+    HFXO = 0,
     #[doc = "1: LFXO selected"]
-    LFXO,
+    LFXO = 1,
     #[doc = "2: USHFRCO selected"]
-    USHFRCO,
+    USHFRCO = 2,
     #[doc = "3: CLKIN0 selected"]
-    CLKIN0,
+    CLKIN0 = 3,
 }
 impl From<REFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::HFXO => 0,
-            REFSEL_A::LFXO => 1,
-            REFSEL_A::USHFRCO => 2,
-            REFSEL_A::CLKIN0 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFSEL`"]

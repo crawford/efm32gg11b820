@@ -338,37 +338,29 @@ impl<'a> FCSREMOVE_W<'a> {
 }
 #[doc = "MDC clock division\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MDCCLKDIV_A {
     #[doc = "0: divide HFBUSCLKETH by 8 (HFBUSCLKETH up to 20 MHz)"]
-    DIVBY8,
+    DIVBY8 = 0,
     #[doc = "1: divide HFBUSCLKETH by 16 (HFBUSCLKETH up to 40 MHz)"]
-    DIVBY16,
+    DIVBY16 = 1,
     #[doc = "2: divide HFBUSCLKETH by 32 (HFBUSCLKETH up to 80 MHz)"]
-    DIVBY32,
+    DIVBY32 = 2,
     #[doc = "3: divide HFBUSCLKETH by 48 (HFBUSCLKETH up to 120 MHz)"]
-    DIVBY48,
+    DIVBY48 = 3,
     #[doc = "4: divide HFBUSCLKETH by 64 (HFBUSCLKETH up to 160 MHz)"]
-    DIVBY64,
+    DIVBY64 = 4,
     #[doc = "5: divide HFBUSCLKETH by 96 (HFBUSCLKETH up to 240 MHz)"]
-    DIVBY96,
+    DIVBY96 = 5,
     #[doc = "6: divide HFBUSCLKETH by 128 (HFBUSCLKETH up to 320 MHz)"]
-    DIVBY128,
+    DIVBY128 = 6,
     #[doc = "7: divide HFBUSCLKETH by 224 (HFBUSCLKETH up to 540 MHz)"]
-    DIVBY224,
+    DIVBY224 = 7,
 }
 impl From<MDCCLKDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: MDCCLKDIV_A) -> Self {
-        match variant {
-            MDCCLKDIV_A::DIVBY8 => 0,
-            MDCCLKDIV_A::DIVBY16 => 1,
-            MDCCLKDIV_A::DIVBY32 => 2,
-            MDCCLKDIV_A::DIVBY48 => 3,
-            MDCCLKDIV_A::DIVBY64 => 4,
-            MDCCLKDIV_A::DIVBY96 => 5,
-            MDCCLKDIV_A::DIVBY128 => 6,
-            MDCCLKDIV_A::DIVBY224 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MDCCLKDIV`"]

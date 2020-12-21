@@ -12,52 +12,39 @@ impl crate::ResetValue for super::FRAME {
 }
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DATABITS_A {
     #[doc = "1: Each frame contains 4 data bits"]
-    FOUR,
+    FOUR = 1,
     #[doc = "2: Each frame contains 5 data bits"]
-    FIVE,
+    FIVE = 2,
     #[doc = "3: Each frame contains 6 data bits"]
-    SIX,
+    SIX = 3,
     #[doc = "4: Each frame contains 7 data bits"]
-    SEVEN,
+    SEVEN = 4,
     #[doc = "5: Each frame contains 8 data bits"]
-    EIGHT,
+    EIGHT = 5,
     #[doc = "6: Each frame contains 9 data bits"]
-    NINE,
+    NINE = 6,
     #[doc = "7: Each frame contains 10 data bits"]
-    TEN,
+    TEN = 7,
     #[doc = "8: Each frame contains 11 data bits"]
-    ELEVEN,
+    ELEVEN = 8,
     #[doc = "9: Each frame contains 12 data bits"]
-    TWELVE,
+    TWELVE = 9,
     #[doc = "10: Each frame contains 13 data bits"]
-    THIRTEEN,
+    THIRTEEN = 10,
     #[doc = "11: Each frame contains 14 data bits"]
-    FOURTEEN,
+    FOURTEEN = 11,
     #[doc = "12: Each frame contains 15 data bits"]
-    FIFTEEN,
+    FIFTEEN = 12,
     #[doc = "13: Each frame contains 16 data bits"]
-    SIXTEEN,
+    SIXTEEN = 13,
 }
 impl From<DATABITS_A> for u8 {
     #[inline(always)]
     fn from(variant: DATABITS_A) -> Self {
-        match variant {
-            DATABITS_A::FOUR => 1,
-            DATABITS_A::FIVE => 2,
-            DATABITS_A::SIX => 3,
-            DATABITS_A::SEVEN => 4,
-            DATABITS_A::EIGHT => 5,
-            DATABITS_A::NINE => 6,
-            DATABITS_A::TEN => 7,
-            DATABITS_A::ELEVEN => 8,
-            DATABITS_A::TWELVE => 9,
-            DATABITS_A::THIRTEEN => 10,
-            DATABITS_A::FOURTEEN => 11,
-            DATABITS_A::FIFTEEN => 12,
-            DATABITS_A::SIXTEEN => 13,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DATABITS`"]
@@ -234,22 +221,19 @@ impl<'a> DATABITS_W<'a> {
 }
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PARITY_A {
     #[doc = "0: Parity bits are not used"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Even parity are used. Parity bits are automatically generated and checked by hardware."]
-    EVEN,
+    EVEN = 2,
     #[doc = "3: Odd parity is used. Parity bits are automatically generated and checked by hardware."]
-    ODD,
+    ODD = 3,
 }
 impl From<PARITY_A> for u8 {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::NONE => 0,
-            PARITY_A::EVEN => 2,
-            PARITY_A::ODD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PARITY`"]
@@ -316,25 +300,21 @@ impl<'a> PARITY_W<'a> {
 }
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STOPBITS_A {
     #[doc = "0: The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
-    HALF,
+    HALF = 0,
     #[doc = "1: One stop bit is generated and verified"]
-    ONE,
+    ONE = 1,
     #[doc = "2: The transmitter generates one and a half stop bit. The receiver verifies the first stop bit"]
-    ONEANDAHALF,
+    ONEANDAHALF = 2,
     #[doc = "3: The transmitter generates two stop bits. The receiver checks the first stop-bit only"]
-    TWO,
+    TWO = 3,
 }
 impl From<STOPBITS_A> for u8 {
     #[inline(always)]
     fn from(variant: STOPBITS_A) -> Self {
-        match variant {
-            STOPBITS_A::HALF => 0,
-            STOPBITS_A::ONE => 1,
-            STOPBITS_A::ONEANDAHALF => 2,
-            STOPBITS_A::TWO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STOPBITS`"]

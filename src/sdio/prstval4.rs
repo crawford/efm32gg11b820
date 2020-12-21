@@ -6,25 +6,21 @@ pub type SDR25SDCLKFREQVAL_R = crate::R<u16, u16>;
 pub type SDR25CLKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Driver Strength Select Value for SDR25\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDR25DRVSTVAL_A {
     #[doc = "0: Driver Type B is selected (Default)"]
-    TYPEB,
+    TYPEB = 0,
     #[doc = "1: Driver Type A is selected"]
-    TYPEA,
+    TYPEA = 1,
     #[doc = "2: Driver Type C is selected"]
-    TYPEC,
+    TYPEC = 2,
     #[doc = "3: Driver Type D is selected"]
-    TYPED,
+    TYPED = 3,
 }
 impl From<SDR25DRVSTVAL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDR25DRVSTVAL_A) -> Self {
-        match variant {
-            SDR25DRVSTVAL_A::TYPEB => 0,
-            SDR25DRVSTVAL_A::TYPEA => 1,
-            SDR25DRVSTVAL_A::TYPEC => 2,
-            SDR25DRVSTVAL_A::TYPED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDR25DRVSTVAL`"]
@@ -68,25 +64,21 @@ pub type SDR50SDCLKFREQVAL_R = crate::R<u16, u16>;
 pub type SDR50CLCKGENVAL_R = crate::R<bool, bool>;
 #[doc = "Driver Strength Select Value for SDR50\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDR50DRVSTVAL_A {
     #[doc = "0: Driver Type B is selected (Default)"]
-    TYPEB,
+    TYPEB = 0,
     #[doc = "1: Driver Type A is selected"]
-    TYPEA,
+    TYPEA = 1,
     #[doc = "2: Driver Type C is selected"]
-    TYPEC,
+    TYPEC = 2,
     #[doc = "3: Driver Type D is selected"]
-    TYPED,
+    TYPED = 3,
 }
 impl From<SDR50DRVSTVAL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDR50DRVSTVAL_A) -> Self {
-        match variant {
-            SDR50DRVSTVAL_A::TYPEB => 0,
-            SDR50DRVSTVAL_A::TYPEA => 1,
-            SDR50DRVSTVAL_A::TYPEC => 2,
-            SDR50DRVSTVAL_A::TYPED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDR50DRVSTVAL`"]

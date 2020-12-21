@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CACHECONFIG0 {
 }
 #[doc = "Instruction Cache Low-Power Level\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CACHELPLEVEL_A {
     #[doc = "0: Base instruction cache functionality."]
-    BASE,
+    BASE = 0,
     #[doc = "1: Advanced buffering mode, where the cache uses the fetch pattern to predict highly accessed data and store it in low-energy memory."]
-    ADVANCED,
+    ADVANCED = 1,
     #[doc = "3: Minimum activity mode, which allows the cache to minimize activity in logic that it predicts has a low probability being used. This mode can introduce wait-states into the instruction fetch stream when the cache exits one of its low-activity states. The number of wait-states introduced is small, but users running with 0-wait-state memory and wishing to reduce the variability that the cache might introduce with additional wait-states may wish to lower the cache low-power level. Note, this mode includes the advanced buffering mode functionality."]
-    MINACTIVITY,
+    MINACTIVITY = 3,
 }
 impl From<CACHELPLEVEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CACHELPLEVEL_A) -> Self {
-        match variant {
-            CACHELPLEVEL_A::BASE => 0,
-            CACHELPLEVEL_A::ADVANCED => 1,
-            CACHELPLEVEL_A::MINACTIVITY => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CACHELPLEVEL`"]

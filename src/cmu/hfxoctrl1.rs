@@ -12,37 +12,29 @@ impl crate::ResetValue for super::HFXOCTRL1 {
 }
 #[doc = "Sets the Amplitude Detection Level (mV)\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PEAKDETTHR_A {
     #[doc = "0: 50mV amplitude detection level"]
-    THR0,
+    THR0 = 0,
     #[doc = "1: 75mV amplitude detection level"]
-    THR1,
+    THR1 = 1,
     #[doc = "2: 115mV amplitude detection level"]
-    THR2,
+    THR2 = 2,
     #[doc = "3: 160mV amplitude detection level"]
-    THR3,
+    THR3 = 3,
     #[doc = "4: 220mV amplitude detection level"]
-    THR4,
+    THR4 = 4,
     #[doc = "5: 260mV amplitude detection level"]
-    THR5,
+    THR5 = 5,
     #[doc = "6: 320mV amplitude detection level"]
-    THR6,
+    THR6 = 6,
     #[doc = "7: Same as THR6"]
-    THR7,
+    THR7 = 7,
 }
 impl From<PEAKDETTHR_A> for u8 {
     #[inline(always)]
     fn from(variant: PEAKDETTHR_A) -> Self {
-        match variant {
-            PEAKDETTHR_A::THR0 => 0,
-            PEAKDETTHR_A::THR1 => 1,
-            PEAKDETTHR_A::THR2 => 2,
-            PEAKDETTHR_A::THR3 => 3,
-            PEAKDETTHR_A::THR4 => 4,
-            PEAKDETTHR_A::THR5 => 5,
-            PEAKDETTHR_A::THR6 => 6,
-            PEAKDETTHR_A::THR7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PEAKDETTHR`"]

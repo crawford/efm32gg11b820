@@ -78,22 +78,19 @@ impl<'a> BASECLKFREQ_W<'a> {
 }
 #[doc = "MAX Block Length of Transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MAXBLKLEN_A {
     #[doc = "0: 512 Bytes are Selected"]
-    _512B,
+    _512B = 0,
     #[doc = "1: 1024 Bytes are Selected"]
-    _1024B,
+    _1024B = 1,
     #[doc = "2: 2048 Bytes are Selected"]
-    _2048B,
+    _2048B = 2,
 }
 impl From<MAXBLKLEN_A> for u8 {
     #[inline(always)]
     fn from(variant: MAXBLKLEN_A) -> Self {
-        match variant {
-            MAXBLKLEN_A::_512B => 0,
-            MAXBLKLEN_A::_1024B => 1,
-            MAXBLKLEN_A::_2048B => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MAXBLKLEN`"]

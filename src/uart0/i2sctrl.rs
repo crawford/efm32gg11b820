@@ -132,37 +132,29 @@ impl<'a> DELAY_W<'a> {
 }
 #[doc = "I2S Word Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FORMAT_A {
     #[doc = "0: 32-bit word, 32-bit data"]
-    W32D32,
+    W32D32 = 0,
     #[doc = "1: 32-bit word, 32-bit data with 8 lsb masked"]
-    W32D24M,
+    W32D24M = 1,
     #[doc = "2: 32-bit word, 24-bit data"]
-    W32D24,
+    W32D24 = 2,
     #[doc = "3: 32-bit word, 16-bit data"]
-    W32D16,
+    W32D16 = 3,
     #[doc = "4: 32-bit word, 8-bit data"]
-    W32D8,
+    W32D8 = 4,
     #[doc = "5: 16-bit word, 16-bit data"]
-    W16D16,
+    W16D16 = 5,
     #[doc = "6: 16-bit word, 8-bit data"]
-    W16D8,
+    W16D8 = 6,
     #[doc = "7: 8-bit word, 8-bit data"]
-    W8D8,
+    W8D8 = 7,
 }
 impl From<FORMAT_A> for u8 {
     #[inline(always)]
     fn from(variant: FORMAT_A) -> Self {
-        match variant {
-            FORMAT_A::W32D32 => 0,
-            FORMAT_A::W32D24M => 1,
-            FORMAT_A::W32D24 => 2,
-            FORMAT_A::W32D16 => 3,
-            FORMAT_A::W32D8 => 4,
-            FORMAT_A::W16D16 => 5,
-            FORMAT_A::W16D8 => 6,
-            FORMAT_A::W8D8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FORMAT`"]

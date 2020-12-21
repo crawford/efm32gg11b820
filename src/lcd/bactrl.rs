@@ -84,22 +84,19 @@ impl<'a> AEN_W<'a> {
 }
 #[doc = "Animate Register a Shift Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AREGASC_A {
     #[doc = "0: No Shift operation on Animation Register A"]
-    NOSHIFT,
+    NOSHIFT = 0,
     #[doc = "1: Animation Register A is shifted left"]
-    SHIFTLEFT,
+    SHIFTLEFT = 1,
     #[doc = "2: Animation Register A is shifted right"]
-    SHIFTRIGHT,
+    SHIFTRIGHT = 2,
 }
 impl From<AREGASC_A> for u8 {
     #[inline(always)]
     fn from(variant: AREGASC_A) -> Self {
-        match variant {
-            AREGASC_A::NOSHIFT => 0,
-            AREGASC_A::SHIFTLEFT => 1,
-            AREGASC_A::SHIFTRIGHT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AREGASC`"]
@@ -166,22 +163,19 @@ impl<'a> AREGASC_W<'a> {
 }
 #[doc = "Animate Register B Shift Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AREGBSC_A {
     #[doc = "0: No Shift operation on Animation Register B"]
-    NOSHIFT,
+    NOSHIFT = 0,
     #[doc = "1: Animation Register B is shifted left"]
-    SHIFTLEFT,
+    SHIFTLEFT = 1,
     #[doc = "2: Animation Register B is shifted right"]
-    SHIFTRIGHT,
+    SHIFTRIGHT = 2,
 }
 impl From<AREGBSC_A> for u8 {
     #[inline(always)]
     fn from(variant: AREGBSC_A) -> Self {
-        match variant {
-            AREGBSC_A::NOSHIFT => 0,
-            AREGBSC_A::SHIFTLEFT => 1,
-            AREGBSC_A::SHIFTRIGHT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AREGBSC`"]
@@ -296,25 +290,21 @@ impl<'a> FCEN_W<'a> {
 }
 #[doc = "Frame Counter Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FCPRESC_A {
     #[doc = "0: CLKFC = CLKFRAME / 1"]
-    DIV1,
+    DIV1 = 0,
     #[doc = "1: CLKFC = CLKFRAME / 2"]
-    DIV2,
+    DIV2 = 1,
     #[doc = "2: CLKFC = CLKFRAME / 4"]
-    DIV4,
+    DIV4 = 2,
     #[doc = "3: CLKFC = CLKFRAME / 8"]
-    DIV8,
+    DIV8 = 3,
 }
 impl From<FCPRESC_A> for u8 {
     #[inline(always)]
     fn from(variant: FCPRESC_A) -> Self {
-        match variant {
-            FCPRESC_A::DIV1 => 0,
-            FCPRESC_A::DIV2 => 1,
-            FCPRESC_A::DIV4 => 2,
-            FCPRESC_A::DIV8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FCPRESC`"]

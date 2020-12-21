@@ -60,22 +60,19 @@ impl<'a> DATABITS_W<'a> {
 }
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PARITY_A {
     #[doc = "0: Parity bits are not used"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Even parity are used. Parity bits are automatically generated and checked by hardware."]
-    EVEN,
+    EVEN = 2,
     #[doc = "3: Odd parity is used. Parity bits are automatically generated and checked by hardware."]
-    ODD,
+    ODD = 3,
 }
 impl From<PARITY_A> for u8 {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::NONE => 0,
-            PARITY_A::EVEN => 2,
-            PARITY_A::ODD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PARITY`"]
@@ -382,25 +379,21 @@ impl<'a> TXDMAWU_W<'a> {
 }
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TXDELAY_A {
     #[doc = "0: Frames are transmitted immediately"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Transmission of new frames are delayed by a single bit period"]
-    SINGLE,
+    SINGLE = 1,
     #[doc = "2: Transmission of new frames are delayed by two bit periods"]
-    DOUBLE,
+    DOUBLE = 2,
     #[doc = "3: Transmission of new frames are delayed by three bit periods"]
-    TRIPLE,
+    TRIPLE = 3,
 }
 impl From<TXDELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: TXDELAY_A) -> Self {
-        match variant {
-            TXDELAY_A::NONE => 0,
-            TXDELAY_A::SINGLE => 1,
-            TXDELAY_A::DOUBLE => 2,
-            TXDELAY_A::TRIPLE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TXDELAY`"]

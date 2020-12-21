@@ -26,22 +26,19 @@ impl<'a> LENGTHA_W<'a> {
 }
 #[doc = "Size of Data Blocks\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BLOCKSIZE_A {
     #[doc = "0: A block is 16 bytes long"]
-    _16BYTES,
+    _16BYTES = 0,
     #[doc = "1: A block is 32 bytes long"]
-    _32BYTES,
+    _32BYTES = 1,
     #[doc = "2: A block is 64 bytes long"]
-    _64BYTES,
+    _64BYTES = 2,
 }
 impl From<BLOCKSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: BLOCKSIZE_A) -> Self {
-        match variant {
-            BLOCKSIZE_A::_16BYTES => 0,
-            BLOCKSIZE_A::_32BYTES => 1,
-            BLOCKSIZE_A::_64BYTES => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BLOCKSIZE`"]

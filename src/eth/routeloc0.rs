@@ -12,19 +12,17 @@ impl crate::ResetValue for super::ROUTELOC0 {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MIITXLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
 }
 impl From<MIITXLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: MIITXLOC_A) -> Self {
-        match variant {
-            MIITXLOC_A::LOC0 => 0,
-            MIITXLOC_A::LOC1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MIITXLOC`"]
@@ -80,22 +78,19 @@ impl<'a> MIITXLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MIIRXLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<MIIRXLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: MIIRXLOC_A) -> Self {
-        match variant {
-            MIIRXLOC_A::LOC0 => 0,
-            MIIRXLOC_A::LOC1 => 1,
-            MIIRXLOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MIIRXLOC`"]
@@ -162,22 +157,19 @@ impl<'a> MIIRXLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MIICRSLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<MIICRSLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: MIICRSLOC_A) -> Self {
-        match variant {
-            MIICRSLOC_A::LOC0 => 0,
-            MIICRSLOC_A::LOC1 => 1,
-            MIICRSLOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MIICRSLOC`"]
@@ -244,22 +236,19 @@ impl<'a> MIICRSLOC_W<'a> {
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MIICOLLOC_A {
     #[doc = "0: Location 0"]
-    LOC0,
+    LOC0 = 0,
     #[doc = "1: Location 1"]
-    LOC1,
+    LOC1 = 1,
     #[doc = "2: Location 2"]
-    LOC2,
+    LOC2 = 2,
 }
 impl From<MIICOLLOC_A> for u8 {
     #[inline(always)]
     fn from(variant: MIICOLLOC_A) -> Self {
-        match variant {
-            MIICOLLOC_A::LOC0 => 0,
-            MIICOLLOC_A::LOC1 => 1,
-            MIICOLLOC_A::LOC2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MIICOLLOC`"]

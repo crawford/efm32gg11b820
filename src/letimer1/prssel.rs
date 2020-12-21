@@ -12,85 +12,61 @@ impl crate::ResetValue for super::PRSSEL {
 }
 #[doc = "PRS Start Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSTARTSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSTARTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSTARTSEL_A) -> Self {
-        match variant {
-            PRSSTARTSEL_A::PRSCH0 => 0,
-            PRSSTARTSEL_A::PRSCH1 => 1,
-            PRSSTARTSEL_A::PRSCH2 => 2,
-            PRSSTARTSEL_A::PRSCH3 => 3,
-            PRSSTARTSEL_A::PRSCH4 => 4,
-            PRSSTARTSEL_A::PRSCH5 => 5,
-            PRSSTARTSEL_A::PRSCH6 => 6,
-            PRSSTARTSEL_A::PRSCH7 => 7,
-            PRSSTARTSEL_A::PRSCH8 => 8,
-            PRSSTARTSEL_A::PRSCH9 => 9,
-            PRSSTARTSEL_A::PRSCH10 => 10,
-            PRSSTARTSEL_A::PRSCH11 => 11,
-            PRSSTARTSEL_A::PRSCH12 => 12,
-            PRSSTARTSEL_A::PRSCH13 => 13,
-            PRSSTARTSEL_A::PRSCH14 => 14,
-            PRSSTARTSEL_A::PRSCH15 => 15,
-            PRSSTARTSEL_A::PRSCH16 => 16,
-            PRSSTARTSEL_A::PRSCH17 => 17,
-            PRSSTARTSEL_A::PRSCH18 => 18,
-            PRSSTARTSEL_A::PRSCH19 => 19,
-            PRSSTARTSEL_A::PRSCH20 => 20,
-            PRSSTARTSEL_A::PRSCH21 => 21,
-            PRSSTARTSEL_A::PRSCH22 => 22,
-            PRSSTARTSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSTARTSEL`"]
@@ -388,85 +364,61 @@ impl<'a> PRSSTARTSEL_W<'a> {
 }
 #[doc = "PRS Stop Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSTOPSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSSTOPSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSTOPSEL_A) -> Self {
-        match variant {
-            PRSSTOPSEL_A::PRSCH0 => 0,
-            PRSSTOPSEL_A::PRSCH1 => 1,
-            PRSSTOPSEL_A::PRSCH2 => 2,
-            PRSSTOPSEL_A::PRSCH3 => 3,
-            PRSSTOPSEL_A::PRSCH4 => 4,
-            PRSSTOPSEL_A::PRSCH5 => 5,
-            PRSSTOPSEL_A::PRSCH6 => 6,
-            PRSSTOPSEL_A::PRSCH7 => 7,
-            PRSSTOPSEL_A::PRSCH8 => 8,
-            PRSSTOPSEL_A::PRSCH9 => 9,
-            PRSSTOPSEL_A::PRSCH10 => 10,
-            PRSSTOPSEL_A::PRSCH11 => 11,
-            PRSSTOPSEL_A::PRSCH12 => 12,
-            PRSSTOPSEL_A::PRSCH13 => 13,
-            PRSSTOPSEL_A::PRSCH14 => 14,
-            PRSSTOPSEL_A::PRSCH15 => 15,
-            PRSSTOPSEL_A::PRSCH16 => 16,
-            PRSSTOPSEL_A::PRSCH17 => 17,
-            PRSSTOPSEL_A::PRSCH18 => 18,
-            PRSSTOPSEL_A::PRSCH19 => 19,
-            PRSSTOPSEL_A::PRSCH20 => 20,
-            PRSSTOPSEL_A::PRSCH21 => 21,
-            PRSSTOPSEL_A::PRSCH22 => 22,
-            PRSSTOPSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSTOPSEL`"]
@@ -764,85 +716,61 @@ impl<'a> PRSSTOPSEL_W<'a> {
 }
 #[doc = "PRS Clear Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSCLEARSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0,
+    PRSCH0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1,
+    PRSCH1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2,
+    PRSCH2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3,
+    PRSCH3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4,
+    PRSCH4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5,
+    PRSCH5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6,
+    PRSCH6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7,
+    PRSCH7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8,
+    PRSCH8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9,
+    PRSCH9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10,
+    PRSCH10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11,
+    PRSCH11 = 11,
     #[doc = "12: PRS Channel 12 selected as input"]
-    PRSCH12,
+    PRSCH12 = 12,
     #[doc = "13: PRS Channel 13 selected as input"]
-    PRSCH13,
+    PRSCH13 = 13,
     #[doc = "14: PRS Channel 14 selected as input"]
-    PRSCH14,
+    PRSCH14 = 14,
     #[doc = "15: PRS Channel 15 selected as input"]
-    PRSCH15,
+    PRSCH15 = 15,
     #[doc = "16: PRS Channel 16 selected as input"]
-    PRSCH16,
+    PRSCH16 = 16,
     #[doc = "17: PRS Channel 17 selected as input"]
-    PRSCH17,
+    PRSCH17 = 17,
     #[doc = "18: PRS Channel 18 selected as input"]
-    PRSCH18,
+    PRSCH18 = 18,
     #[doc = "19: PRS Channel 19 selected as input"]
-    PRSCH19,
+    PRSCH19 = 19,
     #[doc = "20: PRS Channel 20 selected as input"]
-    PRSCH20,
+    PRSCH20 = 20,
     #[doc = "21: PRS Channel 21 selected as input"]
-    PRSCH21,
+    PRSCH21 = 21,
     #[doc = "22: PRS Channel 22 selected as input"]
-    PRSCH22,
+    PRSCH22 = 22,
     #[doc = "23: PRS Channel 23 selected as input"]
-    PRSCH23,
+    PRSCH23 = 23,
 }
 impl From<PRSCLEARSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSCLEARSEL_A) -> Self {
-        match variant {
-            PRSCLEARSEL_A::PRSCH0 => 0,
-            PRSCLEARSEL_A::PRSCH1 => 1,
-            PRSCLEARSEL_A::PRSCH2 => 2,
-            PRSCLEARSEL_A::PRSCH3 => 3,
-            PRSCLEARSEL_A::PRSCH4 => 4,
-            PRSCLEARSEL_A::PRSCH5 => 5,
-            PRSCLEARSEL_A::PRSCH6 => 6,
-            PRSCLEARSEL_A::PRSCH7 => 7,
-            PRSCLEARSEL_A::PRSCH8 => 8,
-            PRSCLEARSEL_A::PRSCH9 => 9,
-            PRSCLEARSEL_A::PRSCH10 => 10,
-            PRSCLEARSEL_A::PRSCH11 => 11,
-            PRSCLEARSEL_A::PRSCH12 => 12,
-            PRSCLEARSEL_A::PRSCH13 => 13,
-            PRSCLEARSEL_A::PRSCH14 => 14,
-            PRSCLEARSEL_A::PRSCH15 => 15,
-            PRSCLEARSEL_A::PRSCH16 => 16,
-            PRSCLEARSEL_A::PRSCH17 => 17,
-            PRSCLEARSEL_A::PRSCH18 => 18,
-            PRSCLEARSEL_A::PRSCH19 => 19,
-            PRSCLEARSEL_A::PRSCH20 => 20,
-            PRSCLEARSEL_A::PRSCH21 => 21,
-            PRSCLEARSEL_A::PRSCH22 => 22,
-            PRSCLEARSEL_A::PRSCH23 => 23,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSCLEARSEL`"]
@@ -1140,25 +1068,21 @@ impl<'a> PRSCLEARSEL_W<'a> {
 }
 #[doc = "PRS Start Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSTARTMODE_A {
     #[doc = "0: PRS cannot start the LETIMER"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Rising edge of selected PRS input can start the LETIMER"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge of selected PRS input can start the LETIMER"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can start the LETIMER"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<PRSSTARTMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSTARTMODE_A) -> Self {
-        match variant {
-            PRSSTARTMODE_A::NONE => 0,
-            PRSSTARTMODE_A::RISING => 1,
-            PRSSTARTMODE_A::FALLING => 2,
-            PRSSTARTMODE_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSTARTMODE`"]
@@ -1237,25 +1161,21 @@ impl<'a> PRSSTARTMODE_W<'a> {
 }
 #[doc = "PRS Stop Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSSTOPMODE_A {
     #[doc = "0: PRS cannot stop the LETIMER"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Rising edge of selected PRS input can stop the LETIMER"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge of selected PRS input can stop the LETIMER"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can stop the LETIMER"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<PRSSTOPMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSSTOPMODE_A) -> Self {
-        match variant {
-            PRSSTOPMODE_A::NONE => 0,
-            PRSSTOPMODE_A::RISING => 1,
-            PRSSTOPMODE_A::FALLING => 2,
-            PRSSTOPMODE_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSSTOPMODE`"]
@@ -1334,25 +1254,21 @@ impl<'a> PRSSTOPMODE_W<'a> {
 }
 #[doc = "PRS Clear Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRSCLEARMODE_A {
     #[doc = "0: PRS cannot clear the LETIMER"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Rising edge of selected PRS input can clear the LETIMER"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge of selected PRS input can clear the LETIMER"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can clear the LETIMER"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<PRSCLEARMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PRSCLEARMODE_A) -> Self {
-        match variant {
-            PRSCLEARMODE_A::NONE => 0,
-            PRSCLEARMODE_A::RISING => 1,
-            PRSCLEARMODE_A::FALLING => 2,
-            PRSCLEARMODE_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRSCLEARMODE`"]

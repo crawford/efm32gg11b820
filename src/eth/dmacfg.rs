@@ -50,25 +50,21 @@ impl<'a> HDRDATASPLITEN_W<'a> {
 }
 #[doc = "Receiver packet buffer memory size select.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXPBUFSIZE_A {
     #[doc = "0: Do not use top three address bits (0.5 Kb)"]
-    SIZE0,
+    SIZE0 = 0,
     #[doc = "1: Do not use top two address bits (1 Kb)"]
-    SIZE1,
+    SIZE1 = 1,
     #[doc = "2: Do not use top address bit (2 Kb)"]
-    SIZE2,
+    SIZE2 = 2,
     #[doc = "3: Use full configured addressable space (4 Kb)"]
-    SIZE3,
+    SIZE3 = 3,
 }
 impl From<RXPBUFSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: RXPBUFSIZE_A) -> Self {
-        match variant {
-            RXPBUFSIZE_A::SIZE0 => 0,
-            RXPBUFSIZE_A::SIZE1 => 1,
-            RXPBUFSIZE_A::SIZE2 => 2,
-            RXPBUFSIZE_A::SIZE3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXPBUFSIZE`"]

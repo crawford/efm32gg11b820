@@ -54,25 +54,21 @@ impl<'a> DMCR_W<'a> {
 }
 #[doc = "Delta Modulator Conversion Resolution.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CRMODE_A {
     #[doc = "0: 10-bit delta modulator"]
-    DM10,
+    DM10 = 0,
     #[doc = "1: 12-bit delta modulator"]
-    DM12,
+    DM12 = 1,
     #[doc = "2: 14-bit delta modulator"]
-    DM14,
+    DM14 = 2,
     #[doc = "3: 16-bit delta modulator"]
-    DM16,
+    DM16 = 3,
 }
 impl From<CRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: CRMODE_A) -> Self {
-        match variant {
-            CRMODE_A::DM10 => 0,
-            CRMODE_A::DM12 => 1,
-            CRMODE_A::DM14 => 2,
-            CRMODE_A::DM16 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CRMODE`"]
